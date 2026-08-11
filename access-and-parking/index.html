@@ -1,0 +1,743 @@
+<title>Access, Entry &amp; Parking — Zen Japanese Massage Platinum</title>
+<style>
+  :root {
+    --ground: #EEF0EE;
+    --surface: #FBFCFB;
+    --surface-sunk: #E4E7E4;
+    --ink: #1A2028;
+    --ink-soft: #4A545F;
+    --ink-faint: #6E7982;
+    --rule: #D3D8D3;
+    --rule-strong: #B9C0B9;
+    --accent: #1F3A63;
+    --accent-soft: #D9E0EC;
+    --key: #8A6620;
+    --key-soft: #EFE5D0;
+    --shadow: 0 1px 2px rgba(26, 32, 40, .06), 0 8px 24px -16px rgba(26, 32, 40, .28);
+
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --util: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #14181C;
+      --surface: #1B2026;
+      --surface-sunk: #0F1317;
+      --ink: #E7EBE8;
+      --ink-soft: #AFB8BF;
+      --ink-faint: #8A939B;
+      --rule: #2C333A;
+      --rule-strong: #3C444C;
+      --accent: #9DBBE4;
+      --accent-soft: #23303F;
+      --key: #D6B071;
+      --key-soft: #322A1B;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -18px rgba(0, 0, 0, .9);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #14181C;
+    --surface: #1B2026;
+    --surface-sunk: #0F1317;
+    --ink: #E7EBE8;
+    --ink-soft: #AFB8BF;
+    --ink-faint: #8A939B;
+    --rule: #2C333A;
+    --rule-strong: #3C444C;
+    --accent: #9DBBE4;
+    --accent-soft: #23303F;
+    --key: #D6B071;
+    --key-soft: #322A1B;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -18px rgba(0, 0, 0, .9);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 61rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4.5rem) clamp(1.1rem, 4vw, 3rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .eyebrow {
+    font-family: var(--util);
+    font-size: .7rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+    border-bottom: 2px solid var(--rule-strong);
+  }
+
+  .masthead h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5.5vw, 3.1rem);
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .standfirst {
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .branch-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .5rem;
+    list-style: none;
+    padding: 0;
+    margin: .4rem 0 0;
+  }
+
+  .branch-index a {
+    display: inline-block;
+    font-family: var(--util);
+    font-size: .74rem;
+    letter-spacing: .05em;
+    text-decoration: none;
+    color: var(--ink-soft);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: .3rem .7rem;
+    transition: border-color .15s, color .15s;
+  }
+
+  .branch-index a:hover,
+  .branch-index a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- generic section ---------- */
+
+  section { display: flex; flex-direction: column; gap: 1.4rem; }
+
+  .section-head { display: flex; flex-direction: column; gap: .35rem; }
+
+  .section-head h2 {
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .section-head p { margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
+  /* ---------- universal rules block ---------- */
+
+  .rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .rule-card {
+    background: var(--surface);
+    padding: 1.3rem 1.35rem 1.45rem;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+  }
+
+  .rule-card h3 {
+    font-size: .95rem;
+    font-weight: 650;
+    margin: 0;
+    letter-spacing: -.005em;
+  }
+
+  .rule-card p { margin: 0; font-size: .93rem; color: var(--ink-soft); }
+
+  .rule-card strong { color: var(--ink); font-weight: 650; }
+
+  .exception {
+    border-left: 3px solid var(--key);
+    background: var(--key-soft);
+    padding: .9rem 1.1rem;
+    border-radius: 0 3px 3px 0;
+    font-size: .93rem;
+    color: var(--ink-soft);
+  }
+
+  .exception strong { color: var(--ink); }
+
+  /* ---------- glance table ---------- */
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
+
+  table { border-collapse: collapse; width: 100%; min-width: 44rem; font-size: .9rem; }
+
+  th, td { text-align: left; padding: .8rem 1rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+
+  thead th {
+    font-family: var(--util);
+    font-size: .68rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 500;
+    background: var(--surface-sunk);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  td.branch { font-weight: 650; white-space: nowrap; }
+
+  td.addr { font-family: var(--util); font-size: .8rem; color: var(--ink-soft); line-height: 1.5; }
+
+  td.park { color: var(--ink-soft); }
+
+  td.park b { color: var(--key); font-weight: 650; }
+
+  /* ---------- branch cards ---------- */
+
+  .city-group { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .city-label {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-family: var(--util);
+    font-size: .7rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .city-label::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+  .branch {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    padding: clamp(1.25rem, 3vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .branch-head { display: flex; flex-direction: column; gap: .3rem; }
+
+  .branch-head h3 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  .branch-head .addr-line { font-family: var(--util); font-size: .82rem; color: var(--ink-soft); }
+
+  .rows { display: flex; flex-direction: column; gap: .9rem; }
+
+  .row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; align-items: start; }
+
+  .row > dt {
+    font-family: var(--util);
+    font-size: .68rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-top: .3rem;
+  }
+
+  .row > dd { margin: 0; }
+
+  .row ul { margin: 0; padding-left: 1.05rem; display: flex; flex-direction: column; gap: .35rem; }
+
+  .row li { font-size: .95rem; color: var(--ink-soft); }
+
+  .row li::marker { color: var(--rule-strong); }
+
+  .row li strong { color: var(--ink); font-weight: 650; }
+
+  .row li em { font-style: normal; color: var(--key); font-weight: 650; }
+
+  @media (max-width: 34rem) {
+    .row { grid-template-columns: 1fr; gap: .35rem; }
+    .row > dt { padding-top: 0; }
+  }
+
+  /* ---------- paste blocks ---------- */
+
+  .paste {
+    background: var(--surface-sunk);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 3px 3px 0;
+    padding: 1rem 1.15rem;
+    font-size: .87rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    overflow-x: auto;
+  }
+
+  .paste b { display: block; color: var(--ink); font-weight: 650; margin-bottom: .3rem; font-size: .8rem; letter-spacing: .02em; }
+
+  .paste-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: .9rem; }
+
+  /* ---------- open items ---------- */
+
+  .open-items { display: flex; flex-direction: column; gap: .8rem; margin: 0; padding: 0; list-style: none; counter-reset: item; }
+
+  .open-items li {
+    display: grid;
+    grid-template-columns: 1.9rem 1fr;
+    gap: .6rem;
+    align-items: baseline;
+    padding-bottom: .8rem;
+    border-bottom: 1px dashed var(--rule);
+    color: var(--ink-soft);
+    font-size: .95rem;
+  }
+
+  .open-items li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .open-items li::before {
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero);
+    font-family: var(--util);
+    font-size: .72rem;
+    color: var(--key);
+    letter-spacing: .05em;
+  }
+
+  .open-items strong { color: var(--ink); font-weight: 650; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.2rem;
+    font-family: var(--util);
+    font-size: .72rem;
+    letter-spacing: .04em;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 1.2rem;
+  }
+
+  a { color: var(--accent); }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">Zen Japanese Massage Platinum · Location copy</p>
+    <h1>Access, Entry &amp; Parking</h1>
+    <p class="standfirst">Master copy for the six Platinum studios — written to be pasted straight into
+      booking confirmations, website location pages and Google Business profiles. Shared rules first,
+      then each branch on its own.</p>
+    <ul class="branch-index">
+      <li><a href="#bondi">Bondi Junction</a></li>
+      <li><a href="#surry">Surry Hills</a></li>
+      <li><a href="#stleonards">St Leonards</a></li>
+      <li><a href="#westend">West End</a></li>
+      <li><a href="#teneriffe">Teneriffe</a></li>
+      <li><a href="#auckland">Auckland CBD</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Part one</p>
+      <h2>Before you arrive — true at every studio</h2>
+      <p>Say this once, at the top of a location page or confirmation email. Nothing here needs
+        repeating branch by branch.</p>
+    </div>
+
+    <div class="rules">
+      <div class="rule-card">
+        <h3>Look for Salon Lane</h3>
+        <p>Five of the six studios sit <strong>inside a Salon Lane complex</strong>. Look for the Salon
+          Lane entrance — there is no separate Zen shopfront.</p>
+      </div>
+      <div class="rule-card">
+        <h3>Locked door? Use the intercom</h3>
+        <p>Type <strong>“Zen”</strong> and select <strong>“Zen Japanese Massage.”</strong> A closed door
+          usually means therapists are in session, not that we are shut.</p>
+      </div>
+      <div class="rule-card">
+        <h3>Scan to sign in</h3>
+        <p>On entry, scan the <strong>QR code at Reception</strong> to sign in for your appointment.</p>
+      </div>
+      <div class="rule-card">
+        <h3>Customer Lounge</h3>
+        <p>Relax in the lounge once you have signed in — <strong>complimentary coffee and tea</strong>,
+          before and after your massage.</p>
+      </div>
+      <div class="rule-card">
+        <h3>Arrive five minutes early</h3>
+        <p>Enough time to sign in and settle without cutting into your treatment.</p>
+      </div>
+      <div class="rule-card">
+        <h3>Check your parking note first</h3>
+        <p>Free periods and validation differ by branch. Read the branch note <strong>before you set
+          off</strong>, not on arrival.</p>
+      </div>
+    </div>
+
+    <p class="exception"><strong>One exception — Auckland CBD.</strong> It is not a Salon Lane site: the
+      studio is on level B1, reached by the stairway beside the Barclay Apartments entrance. If the door
+      is closed, therapists are in session — wait by the door.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Part two</p>
+      <h2>All six at a glance</h2>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Branch</th><th scope="col">Address</th><th scope="col">Parking</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="branch">Bondi Junction</td>
+            <td class="addr">34 Bronte Road<br>Bondi Junction NSW 2022</td>
+            <td class="park">Westfield car park — <b>4 hrs free</b> with the Westfield app, 2 hrs without</td>
+          </tr>
+          <tr>
+            <td class="branch">Surry Hills</td>
+            <td class="addr">63 Ann Street<br>Surry Hills NSW 2010</td>
+            <td class="park">Paid street parking, plenty of it around the salon</td>
+          </tr>
+          <tr>
+            <td class="branch">St Leonards</td>
+            <td class="addr">488 Pacific Highway<br>St Leonards NSW 2065</td>
+            <td class="park">77 Nicolson St underground — <b>3 hrs free</b> with validation</td>
+          </tr>
+          <tr>
+            <td class="branch">West End</td>
+            <td class="addr">Factory 2, West Village<br>97 Boundary Street, West End QLD 4101</td>
+            <td class="park">West Village Car Park — <b>2 hrs free</b></td>
+          </tr>
+          <tr>
+            <td class="branch">Teneriffe</td>
+            <td class="addr">130 Commercial Road<br>Teneriffe QLD 4005</td>
+            <td class="park">Paid street parking, managed via the CellOPark app</td>
+          </tr>
+          <tr>
+            <td class="branch">Auckland CBD</td>
+            <td class="addr">B1, 74 Albert Street<br>Auckland Central 1010</td>
+            <td class="park">Street parking via AT Park; secure at Wilson (29 Albert St) or AT Civic / Victoria St</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Part three</p>
+      <h2>Branch by branch</h2>
+      <p>Everything specific to one studio — the entrance, the car park, and the nearest transport.</p>
+    </div>
+
+    <div class="city-group">
+      <p class="city-label">Sydney</p>
+
+      <article class="branch" id="bondi">
+        <div class="branch-head">
+          <h3>Bondi Junction</h3>
+          <span class="addr-line">34 Bronte Road, Bondi Junction NSW 2022 · inside Salon Lane</span>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt>Entry</dt>
+            <dd><ul>
+              <li>We are inside the Salon Lane complex — look for the Salon Lane entrance.</li>
+              <li>If the door is locked, use the intercom: type <strong>“Zen”</strong> and select
+                <strong>“Zen Japanese Massage.”</strong></li>
+              <li>Scan the QR code at Reception to sign in, then help yourself to coffee or tea in the
+                Customer Lounge.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Parking</dt>
+            <dd><ul>
+              <li>Westfield Bondi Junction Car Park — <em>up to 4 hours free with the Westfield app</em>,
+                or 2 hours free without it.</li>
+              <li>Download the app before you arrive; the free hours are applied as you exit.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Getting here</dt>
+            <dd><ul>
+              <li>Bondi Junction Station — train and bus interchange — is a short walk away.</li>
+            </ul></dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="branch" id="surry">
+        <div class="branch-head">
+          <h3>Surry Hills</h3>
+          <span class="addr-line">63 Ann Street, Surry Hills NSW 2010 · inside Salon Lane</span>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt>Entry</dt>
+            <dd><ul>
+              <li>We are inside the Salon Lane complex.</li>
+              <li>If the door is locked, use the intercom: type <strong>“Zen”</strong> and select
+                <strong>“Zen Japanese Massage.”</strong></li>
+              <li>Scan the QR code at Reception to sign in, then relax in the Customer Lounge.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Parking</dt>
+            <dd><ul>
+              <li>Plenty of <strong>paid street parking</strong> around the salon.</li>
+              <li>Check the signposted time limit and pay at the meter before your session.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Getting here</dt>
+            <dd><ul>
+              <li>Walkable from Central Station and the Surry Hills light rail stop.</li>
+            </ul></dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="branch" id="stleonards">
+        <div class="branch-head">
+          <h3>St Leonards</h3>
+          <span class="addr-line">488 Pacific Highway, St Leonards NSW 2065 · inside Salon Lane</span>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt>Entry</dt>
+            <dd><ul>
+              <li>We are inside the Salon Lane complex.</li>
+              <li>If the door is locked, use the intercom: type <strong>“Zen”</strong> and select
+                <strong>“Zen Japanese Massage.”</strong></li>
+              <li>Scan the QR code at Reception to sign in, then relax in the Customer Lounge.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Parking</dt>
+            <dd><ul>
+              <li>77 Nicolson Street underground car park — <em>up to 3 hours free with validation</em>.</li>
+              <li><strong>Please tell your therapist</strong> when you arrive, so your ticket is
+                validated before you leave.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Getting here</dt>
+            <dd><ul>
+              <li>St Leonards Station is a short walk away.</li>
+            </ul></dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="city-group">
+      <p class="city-label">Brisbane</p>
+
+      <article class="branch" id="westend">
+        <div class="branch-head">
+          <h3>West End</h3>
+          <span class="addr-line">Salon Lane, Factory 2, West Village, 97 Boundary Street, West End QLD 4101</span>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt>Entry</dt>
+            <dd><ul>
+              <li>We are inside the Salon Lane complex, in Factory 2 at West Village.</li>
+              <li>If the door is locked, use the intercom: type <strong>“Zen”</strong> and select
+                <strong>“Zen Japanese Massage.”</strong></li>
+              <li>Scan the QR code at Reception to sign in, then relax in the Customer Lounge.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Parking</dt>
+            <dd><ul>
+              <li>West Village Car Park — <em>up to 2 hours free</em>.</li>
+              <li>Booked a longer treatment? Allow for the paid rate beyond the free two hours.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Getting here</dt>
+            <dd><ul>
+              <li>Bus stops on Boundary Street, at the West Village entrance.</li>
+            </ul></dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="branch" id="teneriffe">
+        <div class="branch-head">
+          <h3>Teneriffe</h3>
+          <span class="addr-line">130 Commercial Road, Teneriffe QLD 4005 · inside Salon Lane</span>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt>Entry</dt>
+            <dd><ul>
+              <li>We are inside the Salon Lane complex.</li>
+              <li>If the door is locked, use the intercom: type <strong>“Zen”</strong> and select
+                <strong>“Zen Japanese Massage.”</strong></li>
+              <li>Scan the QR code at Reception to sign in, then relax in the Customer Lounge.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Parking</dt>
+            <dd><ul>
+              <li><strong>Paid street parking</strong> around the salon — easily managed via the
+                <strong>CellOPark</strong> app.</li>
+              <li>The app lets you extend remotely, which helps if your treatment runs long.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Getting here</dt>
+            <dd><ul>
+              <li>CityGlider bus stops on Commercial Road; the Teneriffe ferry terminal is nearby.</li>
+            </ul></dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="city-group">
+      <p class="city-label">Auckland</p>
+
+      <article class="branch" id="auckland">
+        <div class="branch-head">
+          <h3>Auckland CBD</h3>
+          <span class="addr-line">B1, 74 Albert Street, Auckland Central 1010</span>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt>Entry</dt>
+            <dd><ul>
+              <li>Take the <strong>stairs on the right of the Barclay Apartments entrance</strong> and
+                continue down to B1.</li>
+              <li>If the door is closed, therapists are in session — <strong>please wait by the
+                door</strong> and we will be with you shortly.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Parking</dt>
+            <dd><ul>
+              <li>Paid street parking nearby, via the <strong>AT Park</strong> app.</li>
+              <li>Secure options: <strong>Wilson Parking, 29 Albert Street</strong>, or the
+                <strong>AT car parks at Civic and Victoria Street</strong>.</li>
+            </ul></dd>
+          </div>
+          <div class="row">
+            <dt>Getting here</dt>
+            <dd><ul>
+              <li>Albert Street bus stops are at the door; Britomart and Aotea are the nearest rail
+                stations.</li>
+            </ul></dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Part four</p>
+      <h2>Short form for confirmations</h2>
+      <p>For SMS and confirmation emails, where the full page is too long.</p>
+    </div>
+    <div class="paste-grid">
+      <div class="paste"><b>Bondi Junction</b>📍 34 Bronte Rd, Bondi Junction — inside Salon Lane. Locked
+        door? Intercom: type “Zen”, select “Zen Japanese Massage.” Scan the QR code at Reception to sign
+        in. 🅿️ Westfield car park: 4 hrs free with the Westfield app, 2 hrs without.</div>
+      <div class="paste"><b>Surry Hills</b>📍 63 Ann St, Surry Hills — inside Salon Lane. Locked door?
+        Intercom: type “Zen”, select “Zen Japanese Massage.” Scan the QR code at Reception to sign in.
+        🅿️ Paid street parking around the salon.</div>
+      <div class="paste"><b>St Leonards</b>📍 488 Pacific Hwy, St Leonards — inside Salon Lane. Locked
+        door? Intercom: type “Zen”, select “Zen Japanese Massage.” Scan the QR code at Reception to sign
+        in. 🅿️ 77 Nicolson St underground: 3 hrs free with validation — please ask your therapist.</div>
+      <div class="paste"><b>West End</b>📍 Salon Lane, Factory 2, West Village, 97 Boundary St, West End.
+        Locked door? Intercom: type “Zen”, select “Zen Japanese Massage.” Scan the QR code at Reception
+        to sign in. 🅿️ West Village Car Park: up to 2 hrs free.</div>
+      <div class="paste"><b>Teneriffe</b>📍 130 Commercial Rd, Teneriffe — inside Salon Lane. Locked
+        door? Intercom: type “Zen”, select “Zen Japanese Massage.” Scan the QR code at Reception to sign
+        in. 🅿️ Paid street parking, easily managed via the CellOPark app.</div>
+      <div class="paste"><b>Auckland CBD</b>📍 B1, 74 Albert St, Auckland Central. Take the stairs on the
+        right of the Barclay Apartments entrance down to B1. If the door is closed, therapists are in
+        session — please wait by the door. 🅿️ Street parking via AT Park; secure at Wilson (29 Albert
+        St) or AT Civic / Victoria St.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Part five</p>
+      <h2>To confirm before publishing</h2>
+      <p>Drawn from the existing location copy and public listings. These points could not be verified
+        from that material.</p>
+    </div>
+    <ul class="open-items">
+      <li><span><strong>Walking times.</strong> No minute counts are quoted anywhere, because none could
+        be verified. Add them per branch if you want them — “3 min walk from Bondi Junction Station”.</span></li>
+      <li><span><strong>Transport lines.</strong> Nearest stations and stops are named, but exact routes,
+        stop names and the Auckland rail situation should be confirmed locally.</span></li>
+      <li><span><strong>Suite and shop numbers.</strong> Bondi Junction, Surry Hills, St Leonards and
+        Teneriffe are listed by street address only. If Salon Lane uses a suite number at any of them,
+        add it — it is the most common reason a guest arrives late.</span></li>
+      <li><span><strong>Parking rates and free periods.</strong> Re-check the Westfield app allowance,
+        the West Village two hours, and the 77 Nicolson Street validation before this goes live.</span></li>
+      <li><span><strong>Phone numbers.</strong> Deliberately omitted. Add a per-branch contact line if
+        guests are expected to call when they cannot get in.</span></li>
+      <li><span><strong>Sign-in and lounge at Auckland.</strong> The QR sign-in and complimentary
+        coffee/tea are stated as applying to all six. The existing Auckland copy mentions neither —
+        confirm it runs the same way.</span></li>
+      <li><span><strong>Scope.</strong> Enmore and Wollongong are intentionally excluded; this covers the
+        six Platinum branches only.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Zen Japanese Massage Platinum</span>
+    <span>Six studios · Sydney, Brisbane, Auckland</span>
+    <span>Draft for review</span>
+  </footer>
+
+</div>
