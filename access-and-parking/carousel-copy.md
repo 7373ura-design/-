@@ -46,8 +46,8 @@ This file records the text exactly as it now stands in the design.
 
 | # | Heading | Sub-line |
 |---|---|---|
-| 1 | Look for Salon Lane | Five of the six studios sit inside a Salon Lane complex |
-| 2 | Locked door? Use the intercom | Type “Zen” and select “Zen Japanese Massage” |
+| 1 | Look for Salon Lane — except Auckland | Five sit inside Salon Lane — Auckland CBD is on level B1 |
+| 2 | Locked door? Use the intercom | Type “Zen”, select “Zen Japanese Massage” — Salon Lane only |
 | 3 | A closed door isn't a closed studio | It usually means therapists are in session — please wait |
 | 4 | Scan to sign in | The QR code at Reception checks you in for your appointment |
 | 5 | Customer Lounge | Complimentary coffee and tea, before and after your massage |
