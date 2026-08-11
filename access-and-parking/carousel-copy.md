@@ -33,7 +33,7 @@ This file records the text exactly as it now stands in the design.
 | TREATMENTS<br>& PRICES | ACCESS<br>& PARKING |
 | Seven treatments,<br>times and prices | Six studios,<br>and how to find each |
 | Personalised Care | Inside Salon Lane |
-| Tailored treatments<br>to your unique needs. | Five of six studios sit<br>inside a Salon Lane. |
+| Tailored treatments<br>to your unique needs. | Five of six studios.<br>Auckland is on B1. |
 | Relax & Restore | Locked? Intercom |
 | Relieve stress, ease tension, and renew your body. | Type “Zen” and select “Zen Japanese Massage.” |
 | Mind. Body. Balance. | Scan In. Then Relax. |
