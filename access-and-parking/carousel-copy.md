@@ -33,26 +33,29 @@ This file records the text exactly as it now stands in the design.
 | TREATMENTS<br>& PRICES | ACCESS<br>& PARKING |
 | Seven treatments,<br>times and prices | Six studios,<br>and how to find each |
 | Personalised Care | Inside Salon Lane |
-| Tailored treatments<br>to your unique needs. | Five of six studios.<br>Auckland is on B1. |
+| Tailored treatments<br>to your unique needs. | Except Auckland CBD,<br>which is downstairs. |
 | Relax & Restore | Locked? Intercom |
 | Relieve stress, ease tension, and renew your body. | Type “Zen” and select “Zen Japanese Massage.” |
 | Mind. Body. Balance. | Scan In. Then Relax. |
-| Experience harmony<br>inside and out. | Coffee and tea,<br>before and after. |
+| Experience harmony<br>inside and out. | Free coffee and<br>tea in the lounge. |
 
 ## Page 2 — Before You Arrive
 
+Five items, not seven: this page carries **only what is true at every studio**. Salon Lane
+and the intercom are not — Auckland CBD has neither — so they live on the studio pages
+instead. The two unused list rows were deleted and the remaining five respaced (tops at
+440 / 590 / 740 / 890 / 1040).
+
 - **Title:** Before You Arrive
-- **Intro:** The same few minutes at the door, wherever you're booked — here's what to expect before your therapist calls you through.
+- **Intro:** These five things are the same at every studio. The entrance and the parking are on your studio's own page.
 
 | # | Heading | Sub-line |
 |---|---|---|
-| 1 | Look for Salon Lane — except Auckland | Five sit inside Salon Lane — Auckland CBD is on level B1 |
-| 2 | Locked door? Use the intercom | Type “Zen”, select “Zen Japanese Massage” — Salon Lane only |
-| 3 | A closed door isn't a closed studio | It usually means therapists are in session — please wait |
-| 4 | Scan to sign in | The QR code at Reception checks you in for your appointment |
-| 5 | Customer Lounge | Complimentary coffee and tea, before and after your massage |
-| 6 | Arrive five minutes early | Time to settle without cutting into your treatment |
-| 7 | Check your parking note | Free periods and validation differ from studio to studio |
+| 1 | Arrive five minutes early | Time to sign in and settle before your treatment starts |
+| 2 | If the door doesn't open | We're mid-session — please wait a moment at the door |
+| 3 | Scan to sign in | The QR code at Reception checks you in for your appointment |
+| 4 | Customer Lounge | Complimentary coffee and tea, before and after your massage |
+| 5 | Check your parking note | Free periods and validation differ from studio to studio |
 
 - **Footer:** Swipe to find your studio →
 
