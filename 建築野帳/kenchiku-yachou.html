@@ -1,0 +1,1183 @@
+<title>建築野帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#efeae0;
+  --paper-raised:#f8f5ed;
+  --paper-sunken:#e6e0d2;
+  --ink:#23241f;
+  --ink-soft:#3a392f;
+  --graphite:#6b6a5e;
+  --graphite-faint:#9a9686;
+  --line:#cdc6b4;
+  --line-strong:#b3ab94;
+  --accent:#c1442d;
+  --accent-ink:#ffffff;
+  --accent-soft:#ecd9c9;
+  --status-empty:#9b968a;
+  --status-draft:#a9781f;
+  --status-done:#4a7c59;
+  --shadow:rgba(35,36,31,0.10);
+  --focus:#2d6ca8;
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --paper:#1c1b17;
+    --paper-raised:#242219;
+    --paper-sunken:#151410;
+    --ink:#ece7db;
+    --ink-soft:#d8d2c2;
+    --graphite:#a39c8a;
+    --graphite-faint:#6f6b5c;
+    --line:#3a382c;
+    --line-strong:#4d4a3a;
+    --accent:#e2664a;
+    --accent-ink:#1c1b17;
+    --accent-soft:#3c2c22;
+    --status-empty:#6f6b5c;
+    --status-draft:#d9a94a;
+    --status-done:#7fb894;
+    --shadow:rgba(0,0,0,0.45);
+    --focus:#6fa8dc;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1c1b17;
+  --paper-raised:#242219;
+  --paper-sunken:#151410;
+  --ink:#ece7db;
+  --ink-soft:#d8d2c2;
+  --graphite:#a39c8a;
+  --graphite-faint:#6f6b5c;
+  --line:#3a382c;
+  --line-strong:#4d4a3a;
+  --accent:#e2664a;
+  --accent-ink:#1c1b17;
+  --accent-soft:#3c2c22;
+  --status-empty:#6f6b5c;
+  --status-draft:#d9a94a;
+  --status-done:#7fb894;
+  --shadow:rgba(0,0,0,0.45);
+  --focus:#6fa8dc;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+::selection{background:var(--accent-soft);}
+button,input,textarea,select{font-family:inherit;color:inherit;}
+button{cursor:pointer;}
+a{color:var(--accent);}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+
+.app{display:flex;flex-direction:column;min-height:100vh;}
+
+/* ---------- topbar ---------- */
+.topbar{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:16px 24px;border-bottom:1px solid var(--line);
+  background:var(--paper-raised);
+  position:sticky;top:0;z-index:20;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  font-size:26px;line-height:1;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--ink);border-radius:2px;
+  transform:rotate(-3deg);
+  flex-shrink:0;
+}
+.brand-text h1{
+  font-family:"Zen Old Mincho",serif;
+  font-size:22px;font-weight:700;margin:0;letter-spacing:.04em;
+}
+.brand-sub{margin:2px 0 0;font-size:11.5px;color:var(--graphite);letter-spacing:.02em;}
+.topbar-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-wrap:wrap;}
+#searchInput{
+  width:220px;max-width:40vw;
+  padding:9px 12px;border:1px solid var(--line-strong);border-radius:3px;
+  background:var(--paper);color:var(--ink);font-size:13.5px;
+}
+#searchInput::placeholder{color:var(--graphite-faint);}
+.btn{
+  border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);
+  padding:9px 14px;border-radius:3px;font-size:13px;font-weight:500;
+  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+  transition:background .12s,border-color .12s;
+}
+.btn:hover{border-color:var(--ink);background:var(--paper-sunken);}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+.btn-primary:hover{filter:brightness(1.08);border-color:var(--accent);}
+.btn-active{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);}
+.btn-icon{padding:8px 10px;font-size:14px;}
+.btn-danger{color:var(--accent);}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+
+/* ---------- stats strip ---------- */
+.stats-strip{
+  display:flex;gap:0;border-bottom:1px solid var(--line);background:var(--paper);
+  overflow-x:auto;
+}
+.stat{
+  flex:1;min-width:110px;padding:10px 18px;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:2px;
+}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;}
+.stat-label{font-size:11px;color:var(--graphite);letter-spacing:.03em;}
+
+/* ---------- layout ---------- */
+.layout{display:flex;flex:1;min-height:0;}
+.rail{
+  width:360px;flex-shrink:0;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;background:var(--paper-raised);
+  max-height:calc(100vh - 118px);
+}
+.rail-filters{
+  padding:12px 16px;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:6px;align-items:center;
+}
+.chip{
+  border:1px solid var(--line-strong);border-radius:20px;padding:5px 12px;
+  font-size:12px;background:var(--paper);color:var(--graphite);
+}
+.chip.chip-on{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+.sort-select{
+  margin-left:auto;border:1px solid var(--line-strong);background:var(--paper);
+  border-radius:3px;padding:5px 8px;font-size:12px;color:var(--graphite);
+}
+.rail-list{overflow-y:auto;flex:1;}
+.rail-empty{padding:32px 20px;color:var(--graphite);font-size:13px;line-height:1.7;}
+.rail-row{
+  display:flex;gap:10px;align-items:center;padding:10px 14px;
+  border-bottom:1px solid var(--line);cursor:pointer;position:relative;
+}
+.rail-row:hover{background:var(--paper-sunken);}
+.rail-row.is-selected{background:var(--accent-soft);}
+.rail-row.is-selected::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);
+}
+.rail-thumb{
+  width:48px;height:48px;border-radius:2px;object-fit:cover;flex-shrink:0;
+  border:1px solid var(--line);background:var(--paper-sunken);
+}
+.rail-thumb-empty{
+  width:48px;height:48px;border-radius:2px;flex-shrink:0;border:1px dashed var(--line-strong);
+  display:flex;align-items:center;justify-content:center;color:var(--graphite-faint);font-size:16px;
+}
+.rail-info{min-width:0;flex:1;}
+.rail-no{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--graphite-faint);}
+.rail-title{font-size:13.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rail-sub{font-size:11.5px;color:var(--graphite);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rail-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
+.status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.status-dot.empty{background:var(--status-empty);}
+.status-dot.draft{background:var(--status-draft);}
+.status-dot.done{background:var(--status-done);}
+.star{color:var(--accent);font-size:13px;}
+
+.stage{flex:1;min-width:0;overflow-y:auto;max-height:calc(100vh - 118px);}
+
+/* ---------- dashboard ---------- */
+.dashboard{max-width:720px;margin:0 auto;padding:56px 32px;}
+.dashboard h2{font-family:"Zen Old Mincho",serif;font-size:26px;margin:0 0 8px;}
+.dashboard p{color:var(--graphite);line-height:1.8;font-size:14px;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+.step{border:1px solid var(--line);border-radius:4px;padding:18px;background:var(--paper-raised);}
+.step-no{font-family:"JetBrains Mono",monospace;color:var(--accent);font-size:12px;font-weight:600;}
+.step h3{font-size:14.5px;margin:8px 0 6px;font-weight:700;}
+.step p{font-size:12.5px;margin:0;line-height:1.6;}
+.dashboard-cta{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;}
+
+/* ---------- sheet ---------- */
+.sheet{max-width:860px;margin:0 auto;padding:28px 32px 80px;}
+.sheet-toolbar{
+  display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;
+}
+.sheet-no{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--graphite);letter-spacing:.03em;}
+.status-pill{
+  font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600;letter-spacing:.02em;
+}
+.status-pill.empty{background:var(--paper-sunken);color:var(--status-empty);}
+.status-pill.draft{background:#a9781f22;color:var(--status-draft);}
+.status-pill.done{background:#4a7c5922;color:var(--status-done);}
+.completeness-track{flex:1;min-width:80px;height:5px;background:var(--paper-sunken);border-radius:3px;overflow:hidden;}
+.completeness-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .2s;}
+.completeness-pct{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--graphite);}
+
+.titleblock{
+  border:1.5px solid var(--ink);border-radius:2px;overflow:hidden;margin-bottom:22px;
+  background:var(--paper-raised);
+}
+.tb-photos{padding:14px;border-bottom:1px solid var(--line);}
+.photo-main{
+  width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:2px;background:var(--paper-sunken);
+  border:1px solid var(--line);display:block;
+}
+.photo-main-empty{
+  width:100%;aspect-ratio:16/10;border-radius:2px;background:var(--paper-sunken);
+  border:1px dashed var(--line-strong);display:flex;align-items:center;justify-content:center;
+  color:var(--graphite-faint);font-size:13px;flex-direction:column;gap:6px;
+}
+.photo-strip{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center;}
+.photo-thumb-wrap{position:relative;}
+.photo-thumb{width:64px;height:64px;object-fit:cover;border-radius:2px;border:2px solid transparent;display:block;}
+.photo-thumb.is-active{border-color:var(--accent);}
+.photo-thumb-remove{
+  position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;
+  background:var(--ink);color:var(--paper);border:none;font-size:11px;line-height:1;
+  display:flex;align-items:center;justify-content:center;padding:0;
+}
+.photo-add-btn{
+  width:64px;height:64px;border:1px dashed var(--line-strong);border-radius:2px;background:transparent;
+  color:var(--graphite);font-size:20px;display:flex;align-items:center;justify-content:center;
+}
+.photo-add-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+.tb-fields{padding:16px;display:grid;grid-template-columns:1fr;gap:0;}
+.tb-title-row{margin-bottom:14px;}
+.tb-title-row label,.field-label{
+  display:block;font-size:10.5px;color:var(--graphite);letter-spacing:.06em;margin-bottom:4px;
+  font-family:"JetBrains Mono",monospace;text-transform:uppercase;
+}
+.tb-title-row input{
+  width:100%;border:none;border-bottom:1px solid var(--line-strong);background:transparent;
+  font-family:"Zen Old Mincho",serif;font-size:24px;font-weight:700;padding:4px 0 8px;color:var(--ink);
+}
+.tb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 16px;}
+.tb-cell input,.tb-cell select{
+  width:100%;border:none;border-bottom:1px solid var(--line);background:transparent;
+  font-size:13.5px;padding:3px 0 6px;color:var(--ink);
+}
+.tb-cell input:focus,.tb-cell select:focus,.tb-title-row input:focus{
+  border-bottom-color:var(--accent);
+}
+.tb-cell.span2{grid-column:span 2;}
+
+.pitch-field{
+  border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;
+  padding:14px 16px;margin-bottom:22px;background:var(--paper-raised);
+}
+.pitch-field label{
+  font-size:10.5px;color:var(--accent);letter-spacing:.04em;font-weight:600;
+  font-family:"JetBrains Mono",monospace;display:block;margin-bottom:6px;
+}
+.pitch-field input{
+  width:100%;border:none;background:transparent;font-size:15px;color:var(--ink);
+  font-family:"Zen Kaku Gothic New",sans-serif;
+}
+
+.section-label{
+  font-family:"Zen Old Mincho",serif;font-size:15px;font-weight:700;margin:26px 0 12px;
+  padding-bottom:6px;border-bottom:1px solid var(--line);
+}
+.analysis-grid{display:flex;flex-direction:column;gap:16px;}
+.q-block{border:1px solid var(--line);border-radius:3px;padding:14px 16px;background:var(--paper-raised);}
+.q-block-head{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;}
+.q-num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);font-weight:600;}
+.q-title{font-size:13.5px;font-weight:700;}
+.q-block textarea{
+  width:100%;border:none;background:transparent;resize:vertical;min-height:64px;
+  font-size:13.5px;line-height:1.75;color:var(--ink);font-family:inherit;
+}
+.q-block textarea::placeholder{color:var(--graphite-faint);}
+
+.tags-field{margin-top:24px;}
+.tag-input-row{display:flex;gap:8px;margin:8px 0 10px;}
+.tag-input-row input{
+  flex:1;border:1px solid var(--line-strong);border-radius:3px;padding:8px 10px;
+  background:var(--paper);font-size:13px;color:var(--ink);
+}
+.tag-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.tag-chip{
+  display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--ink);
+  border-radius:20px;padding:5px 6px 5px 12px;font-size:12px;
+}
+.tag-chip button{background:none;border:none;color:var(--graphite);font-size:13px;padding:0 4px;}
+
+.sheet-footer{display:flex;justify-content:flex-end;margin-top:28px;}
+
+/* ---------- interview mode ---------- */
+.interview-view{max-width:960px;margin:0 auto;padding:28px 32px 80px;}
+.interview-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px;}
+.interview-head h2{font-family:"Zen Old Mincho",serif;font-size:22px;margin:0;}
+.interview-head p{color:var(--graphite);font-size:13px;margin:6px 0 22px;}
+.interview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.icard{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--paper-raised);cursor:pointer;}
+.icard:hover{border-color:var(--accent);}
+.icard img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--paper-sunken);}
+.icard-body{padding:12px 14px;}
+.icard-title{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:15px;margin:0 0 3px;}
+.icard-arch{font-size:12px;color:var(--graphite);margin:0 0 8px;}
+.icard-pitch{font-size:12.5px;line-height:1.6;color:var(--ink-soft);}
+.interview-empty{padding:48px 0;text-align:center;color:var(--graphite);font-size:13.5px;line-height:1.8;}
+
+/* ---------- toast / modal ---------- */
+.toast{
+  position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--paper);padding:11px 20px;border-radius:4px;
+  font-size:13px;box-shadow:0 6px 20px var(--shadow);z-index:100;max-width:90vw;text-align:center;
+}
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;
+  z-index:200;padding:20px;
+}
+.modal-box{
+  background:var(--paper-raised);border:1px solid var(--line);border-radius:5px;padding:24px;
+  max-width:420px;width:100%;box-shadow:0 12px 40px var(--shadow);
+}
+.modal-box h3{font-family:"Zen Old Mincho",serif;margin:0 0 10px;font-size:17px;}
+.modal-box p{font-size:13px;color:var(--graphite);line-height:1.7;margin:0 0 18px;}
+.modal-actions{display:flex;justify-content:flex-end;gap:10px;}
+
+@media (max-width:840px){
+  .layout{flex-direction:column;}
+  .rail{width:100%;max-height:44vh;border-right:none;border-bottom:1px solid var(--line);}
+  .stage{max-height:none;}
+  .tb-grid{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:1fr;}
+  #searchInput{width:100%;max-width:none;}
+  .topbar{padding:14px 16px;}
+}
+
+@media print{
+  .topbar,.stats-strip,.rail{display:none !important;}
+  body{background:#fff;color:#000;}
+  .interview-view{max-width:none;padding:0;}
+  .icard{break-inside:avoid;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;}
+}
+</style>
+
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">📐</span>
+      <div class="brand-text">
+        <h1>建築野帳</h1>
+        <p class="brand-sub">見た建築を、語れる記憶に変える</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <input id="searchInput" type="search" placeholder="建物名・設計者・タグで検索" aria-label="検索">
+      <button class="btn btn-primary" id="btnImport">＋ 写真を取り込む</button>
+      <button class="btn" id="btnInterviewMode">面接対策</button>
+      <button class="btn" id="btnBackup">バックアップ</button>
+      <input id="fileImportPhotos" type="file" accept="image/*" multiple hidden>
+      <input id="fileImportJson" type="file" accept="application/json" hidden>
+    </div>
+  </header>
+
+  <div class="stats-strip" id="statsStrip"></div>
+
+  <main class="layout">
+    <aside class="rail" id="rail">
+      <div class="rail-filters" id="railFilters"></div>
+      <div class="rail-list" id="railList"></div>
+    </aside>
+    <section class="stage" id="stage"></section>
+  </main>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<div id="modalRoot"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ===================== DB LAYER ===================== */
+const DB_NAME = "kenchiku-yachou";
+const DB_VERSION = 1;
+let dbPromise = null;
+
+function openDB(){
+  if(dbPromise) return dbPromise;
+  dbPromise = new Promise((resolve, reject)=>{
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = ()=>{
+      const db = req.result;
+      if(!db.objectStoreNames.contains("entries")){
+        db.createObjectStore("entries", {keyPath:"id"});
+      }
+      if(!db.objectStoreNames.contains("photos")){
+        const ps = db.createObjectStore("photos", {keyPath:"id"});
+        ps.createIndex("entryId","entryId",{unique:false});
+      }
+    };
+    req.onsuccess = ()=>resolve(req.result);
+    req.onerror = ()=>reject(req.error);
+  });
+  return dbPromise;
+}
+
+function tx(storeNames, mode){
+  return openDB().then(db=>db.transaction(storeNames, mode));
+}
+
+function dbGetAllEntries(){
+  return tx(["entries"],"readonly").then(t=>new Promise((res,rej)=>{
+    const r = t.objectStore("entries").getAll();
+    r.onsuccess=()=>res(r.result);
+    r.onerror=()=>rej(r.error);
+  }));
+}
+function dbPutEntry(entry){
+  return tx(["entries"],"readwrite").then(t=>new Promise((res,rej)=>{
+    t.objectStore("entries").put(entry);
+    t.oncomplete=()=>res();
+    t.onerror=()=>rej(t.error);
+  }));
+}
+function dbDeleteEntry(id){
+  return tx(["entries"],"readwrite").then(t=>new Promise((res,rej)=>{
+    t.objectStore("entries").delete(id);
+    t.oncomplete=()=>res();
+    t.onerror=()=>rej(t.error);
+  }));
+}
+function dbGetPhotosByEntry(entryId){
+  return tx(["photos"],"readonly").then(t=>new Promise((res,rej)=>{
+    const idx = t.objectStore("photos").index("entryId");
+    const r = idx.getAll(entryId);
+    r.onsuccess=()=>res(r.result.sort((a,b)=>a.order-b.order));
+    r.onerror=()=>rej(r.error);
+  }));
+}
+function dbGetAllPhotos(){
+  return tx(["photos"],"readonly").then(t=>new Promise((res,rej)=>{
+    const r = t.objectStore("photos").getAll();
+    r.onsuccess=()=>res(r.result);
+    r.onerror=()=>rej(r.error);
+  }));
+}
+function dbPutPhoto(photo){
+  return tx(["photos"],"readwrite").then(t=>new Promise((res,rej)=>{
+    t.objectStore("photos").put(photo);
+    t.oncomplete=()=>res();
+    t.onerror=()=>rej(t.error);
+  }));
+}
+function dbDeletePhoto(id){
+  return tx(["photos"],"readwrite").then(t=>new Promise((res,rej)=>{
+    t.objectStore("photos").delete(id);
+    t.oncomplete=()=>res();
+    t.onerror=()=>rej(t.error);
+  }));
+}
+function dbDeletePhotosByEntry(entryId){
+  return dbGetPhotosByEntry(entryId).then(photos=>
+    tx(["photos"],"readwrite").then(t=>new Promise((res,rej)=>{
+      const store = t.objectStore("photos");
+      photos.forEach(p=>store.delete(p.id));
+      t.oncomplete=()=>res();
+      t.onerror=()=>rej(t.error);
+    }))
+  );
+}
+
+/* ===================== HELPERS ===================== */
+function uid(){
+  return (crypto.randomUUID ? crypto.randomUUID() : "id-"+Date.now()+"-"+Math.random().toString(16).slice(2));
+}
+function nextSeq(){
+  const n = parseInt(localStorage.getItem("ky_seq")||"0",10) + 1;
+  try{ localStorage.setItem("ky_seq", String(n)); }catch(e){}
+  return n;
+}
+function escapeHtml(s){
+  return String(s==null?"":s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function debounce(fn, ms){
+  let t;
+  return function(...args){ clearTimeout(t); t=setTimeout(()=>fn.apply(this,args), ms); };
+}
+function toast(msg, ms=3200){
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.hidden = false;
+  clearTimeout(toast._t);
+  toast._t = setTimeout(()=>{ el.hidden = true; }, ms);
+}
+function compressImage(file, maxDim, quality){
+  return new Promise((resolve, reject)=>{
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = ()=>{
+      let {width, height} = img;
+      if(width > height && width > maxDim){ height = Math.round(height*maxDim/width); width = maxDim; }
+      else if(height >= width && height > maxDim){ width = Math.round(width*maxDim/height); height = maxDim; }
+      const canvas = document.createElement("canvas");
+      canvas.width = width; canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, width, height);
+      canvas.toBlob(blob=>{
+        URL.revokeObjectURL(url);
+        if(blob) resolve(blob); else reject(new Error("compress failed"));
+      }, "image/jpeg", quality);
+    };
+    img.onerror = ()=>{ URL.revokeObjectURL(url); reject(new Error("image load failed")); };
+    img.src = url;
+  });
+}
+function blobToDataURL(blob){
+  return new Promise((resolve, reject)=>{
+    const fr = new FileReader();
+    fr.onload = ()=>resolve(fr.result);
+    fr.onerror = reject;
+    fr.readAsDataURL(blob);
+  });
+}
+function dataURLToBlob(dataUrl){
+  const [meta, b64] = dataUrl.split(",");
+  const mime = meta.match(/data:(.*?);base64/)[1];
+  const bin = atob(b64);
+  const arr = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) arr[i] = bin.charCodeAt(i);
+  return new Blob([arr], {type:mime});
+}
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear()+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0");
+}
+
+const objectUrlCache = new Map(); // photoId -> url
+
+/* ===================== SCHEMA ===================== */
+const ANALYSIS_FIELDS = [
+  {key:"impression", title:"第一印象", ph:"空間に入った瞬間、何を感じましたか？光、音、匂い、スケール感…"},
+  {key:"structureNotes", title:"構造・技術的見どころ", ph:"架構形式、スパンの飛ばし方、構造と意匠の関係で印象に残った点は？"},
+  {key:"spatialNotes", title:"空間構成・動線", ph:"アプローチから内部への流れ、視線の抜け、天井高の変化、部屋のつながり方は？"},
+  {key:"materialLight", title:"素材と光", ph:"使われている素材とその質感、自然光・人工光の扱い方、時間帯による表情の変化は？"},
+  {key:"designIntent", title:"設計意図・文脈", ph:"設計者は何を意図したと思うか。敷地や周辺環境、時代背景との関係は？（推測でも可）"},
+  {key:"personalConnection", title:"自分との接続", ph:"なぜ心が動いたのか。将来自分が設計するとしたら、何を取り入れたいか？"},
+  {key:"comparisons", title:"比較・参照", ph:"似ている建築、影響関係にありそうな建築や思想・様式は？"}
+];
+const CORE_KEYS = ["title","architect","location","buildingUse","structureType","year"];
+const STRUCTURE_TYPES = ["RC造","S造","SRC造","木造","混構造","組積造","不明","その他"];
+
+function blankEntry(seq, titleGuess){
+  return {
+    id: uid(), seq,
+    title: titleGuess||"", architect:"", location:"", buildingUse:"", structureType:"", year:"", visitDate:"",
+    pitch:"",
+    impression:"", structureNotes:"", spatialNotes:"", materialLight:"", designIntent:"", personalConnection:"", comparisons:"",
+    tags:[], interviewFlag:false,
+    createdAt: Date.now(), updatedAt: Date.now()
+  };
+}
+function completenessPct(entry){
+  const keys = CORE_KEYS.concat(ANALYSIS_FIELDS.map(f=>f.key));
+  const filled = keys.filter(k=>(entry[k]||"").toString().trim()).length;
+  return Math.round(filled/keys.length*100);
+}
+function getStatus(entry, photoCount){
+  const pct = completenessPct(entry);
+  if(pct===0 && photoCount===0) return "empty";
+  if(pct>=65 && photoCount>0) return "done";
+  return "draft";
+}
+const STATUS_LABEL = {empty:"未記入", draft:"下書き", done:"完成"};
+
+/* ===================== STATE ===================== */
+const state = {
+  entries: [],           // array of entry objects (metadata, no blobs)
+  photoMeta: new Map(),  // entryId -> [{id, order}] (light refs; blobs fetched on demand)
+  photoBlobCache: new Map(), // photoId -> blob
+  selectedId: null,
+  mode: "browse",         // browse | interview
+  filterStatus: "all",
+  filterFlag: false,
+  search: "",
+  sort: "created_desc"
+};
+
+async function loadAll(){
+  const [entries, photos] = await Promise.all([dbGetAllEntries(), dbGetAllPhotos()]);
+  state.entries = entries;
+  state.photoMeta.clear();
+  state.photoBlobCache.clear();
+  photos.forEach(p=>{
+    if(!state.photoMeta.has(p.entryId)) state.photoMeta.set(p.entryId, []);
+    state.photoMeta.get(p.entryId).push({id:p.id, order:p.order});
+    state.photoBlobCache.set(p.id, p.blob);
+  });
+  state.photoMeta.forEach(list=>list.sort((a,b)=>a.order-b.order));
+}
+function photosFor(entryId){
+  return (state.photoMeta.get(entryId)||[]);
+}
+function photoUrl(photoId){
+  if(objectUrlCache.has(photoId)) return objectUrlCache.get(photoId);
+  const blob = state.photoBlobCache.get(photoId);
+  if(!blob) return "";
+  const url = URL.createObjectURL(blob);
+  objectUrlCache.set(photoId, url);
+  return url;
+}
+
+/* ===================== RENDER: STATS ===================== */
+function renderStats(){
+  const total = state.entries.length;
+  let done=0, draft=0, empty=0, flagged=0;
+  state.entries.forEach(e=>{
+    const st = getStatus(e, photosFor(e.id).length);
+    if(st==="done") done++; else if(st==="draft") draft++; else empty++;
+    if(e.interviewFlag) flagged++;
+  });
+  const el = document.getElementById("statsStrip");
+  el.innerHTML = `
+    <div class="stat"><span class="stat-num mono">${total}</span><span class="stat-label">総記録数</span></div>
+    <div class="stat"><span class="stat-num mono" style="color:var(--status-done)">${done}</span><span class="stat-label">完成</span></div>
+    <div class="stat"><span class="stat-num mono" style="color:var(--status-draft)">${draft}</span><span class="stat-label">下書き</span></div>
+    <div class="stat"><span class="stat-num mono" style="color:var(--status-empty)">${empty}</span><span class="stat-label">未記入</span></div>
+    <div class="stat"><span class="stat-num mono" style="color:var(--accent)">${flagged}</span><span class="stat-label">面接候補</span></div>
+  `;
+}
+
+/* ===================== RENDER: RAIL ===================== */
+function allTags(){
+  const s = new Set();
+  state.entries.forEach(e=>(e.tags||[]).forEach(t=>s.add(t)));
+  return Array.from(s).sort();
+}
+function filteredSortedEntries(){
+  let list = state.entries.slice();
+  const q = state.search.trim().toLowerCase();
+  if(q){
+    list = list.filter(e=>{
+      const hay = [e.title,e.architect,e.location,e.buildingUse,(e.tags||[]).join(" ")].join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  if(state.filterStatus !== "all"){
+    list = list.filter(e=>getStatus(e, photosFor(e.id).length) === state.filterStatus);
+  }
+  if(state.filterFlag){
+    list = list.filter(e=>e.interviewFlag);
+  }
+  switch(state.sort){
+    case "title": list.sort((a,b)=>(a.title||"").localeCompare(b.title||"","ja")); break;
+    case "visit": list.sort((a,b)=>(b.visitDate||"").localeCompare(a.visitDate||"")); break;
+    case "incomplete": list.sort((a,b)=>completenessPct(a)-completenessPct(b)); break;
+    default: list.sort((a,b)=>b.createdAt-a.createdAt);
+  }
+  return list;
+}
+
+function renderRailFilters(){
+  const el = document.getElementById("railFilters");
+  const statuses = [["all","すべて"],["empty","未記入"],["draft","下書き"],["done","完成"]];
+  el.innerHTML = `
+    <div class="chip-group" style="display:flex;gap:6px;flex-wrap:wrap;">
+      ${statuses.map(([k,label])=>`<button class="chip ${state.filterStatus===k?"chip-on":""}" data-status="${k}">${label}</button>`).join("")}
+      <button class="chip ${state.filterFlag?"chip-on":""}" data-flagtoggle="1">★ 面接候補</button>
+    </div>
+    <select class="sort-select" id="sortSelect">
+      <option value="created_desc" ${state.sort==="created_desc"?"selected":""}>取り込み順</option>
+      <option value="incomplete" ${state.sort==="incomplete"?"selected":""}>未完成を優先</option>
+      <option value="title" ${state.sort==="title"?"selected":""}>建物名順</option>
+      <option value="visit" ${state.sort==="visit"?"selected":""}>訪問日順</option>
+    </select>
+  `;
+  el.querySelectorAll("[data-status]").forEach(b=>b.addEventListener("click", ()=>{
+    state.filterStatus = b.dataset.status; renderRail();
+  }));
+  el.querySelector("[data-flagtoggle]").addEventListener("click", ()=>{
+    state.filterFlag = !state.filterFlag; renderRail();
+  });
+  el.querySelector("#sortSelect").addEventListener("change", (e)=>{
+    state.sort = e.target.value; renderRail();
+  });
+}
+
+function renderRailList(){
+  const el = document.getElementById("railList");
+  const list = filteredSortedEntries();
+  if(state.entries.length===0){
+    el.innerHTML = `<div class="rail-empty">まだ記録がありません。右上の「＋ 写真を取り込む」から、見学した建築の写真を選んでください。1枚につき1件のシートが自動で作られます。</div>`;
+    return;
+  }
+  if(list.length===0){
+    el.innerHTML = `<div class="rail-empty">条件に一致する記録がありません。</div>`;
+    return;
+  }
+  el.innerHTML = list.map(e=>{
+    const photos = photosFor(e.id);
+    const status = getStatus(e, photos.length);
+    const thumb = photos[0] ? `<img class="rail-thumb" loading="lazy" src="${photoUrl(photos[0].id)}" alt="">` : `<div class="rail-thumb-empty">—</div>`;
+    return `
+      <div class="rail-row ${state.selectedId===e.id?"is-selected":""}" data-id="${e.id}">
+        ${thumb}
+        <div class="rail-info">
+          <div class="rail-no mono">No. ${String(e.seq).padStart(3,"0")}</div>
+          <div class="rail-title">${escapeHtml(e.title||"（無題）")}</div>
+          <div class="rail-sub">${escapeHtml(e.architect||"設計者未記入")}</div>
+        </div>
+        <div class="rail-meta">
+          <span class="status-dot ${status}" title="${STATUS_LABEL[status]}"></span>
+          ${e.interviewFlag?'<span class="star">★</span>':''}
+        </div>
+      </div>`;
+  }).join("");
+  el.querySelectorAll(".rail-row").forEach(row=>{
+    row.addEventListener("click", ()=>{
+      state.selectedId = row.dataset.id;
+      renderRail();
+      renderStage();
+    });
+  });
+}
+function renderRail(){
+  renderRailFilters();
+  renderRailList();
+  renderStats();
+}
+
+/* ===================== RENDER: STAGE ===================== */
+function renderStage(){
+  const stage = document.getElementById("stage");
+  if(state.mode === "interview"){
+    renderInterviewView(stage);
+    return;
+  }
+  const entry = state.entries.find(e=>e.id===state.selectedId);
+  if(!entry){
+    renderDashboard(stage);
+    return;
+  }
+  renderSheet(stage, entry);
+}
+
+function renderDashboard(stage){
+  const total = state.entries.length;
+  const firstUnfinished = state.entries.slice().sort((a,b)=>a.seq-b.seq).find(e=>getStatus(e, photosFor(e.id).length)!=="done");
+  stage.innerHTML = `
+    <div class="dashboard">
+      <h2>建築ノートへようこそ</h2>
+      <p>写真を取り込んで、1件ずつ「なぜ心が動いたか」を言葉にしていきます。面接では量より、自分の言葉で語れる深さが評価されます。</p>
+      <div class="steps">
+        <div class="step"><div class="step-no mono">STEP 1</div><h3>写真を取り込む</h3><p>複数枚まとめて選択すると、1枚ごとに記録シートが自動で作られます。</p></div>
+        <div class="step"><div class="step-no mono">STEP 2</div><h3>設問に答える</h3><p>構造・空間・素材・設計意図など、面接で聞かれやすい観点で記入します。</p></div>
+        <div class="step"><div class="step-no mono">STEP 3</div><h3>面接対策で見返す</h3><p>★を付けた建築だけを一覧で見返し、一言サマリーを練習できます。</p></div>
+      </div>
+      <div class="dashboard-cta">
+        <button class="btn btn-primary" id="dashImport">＋ 写真を取り込む</button>
+        ${firstUnfinished? `<button class="btn" id="dashContinue">続きから記入する（No. ${String(firstUnfinished.seq).padStart(3,"0")}）</button>`:""}
+      </div>
+      ${total===0?"":`<p style="margin-top:28px;font-size:12px;color:var(--graphite-faint);">現在 ${total} 件の記録があります。写真はこのブラウザ内にのみ保存されます（サーバーには送信されません）。定期的に「バックアップ」からテキスト記録を書き出すことをおすすめします。</p>`}
+    </div>
+  `;
+  stage.querySelector("#dashImport").addEventListener("click", ()=>document.getElementById("fileImportPhotos").click());
+  const cont = stage.querySelector("#dashContinue");
+  if(cont) cont.addEventListener("click", ()=>{ state.selectedId = firstUnfinished.id; renderRail(); renderStage(); });
+}
+
+function renderSheet(stage, entry){
+  const photos = photosFor(entry.id);
+  const status = getStatus(entry, photos.length);
+  const pct = completenessPct(entry);
+  const activePhotoId = entry._activePhoto && photos.find(p=>p.id===entry._activePhoto) ? entry._activePhoto : (photos[0] && photos[0].id);
+
+  stage.innerHTML = `
+    <div class="sheet">
+      <div class="sheet-toolbar">
+        <span class="sheet-no mono">No. ${String(entry.seq).padStart(3,"0")}</span>
+        <span class="status-pill ${status}">${STATUS_LABEL[status]}</span>
+        <div class="completeness-track"><div class="completeness-fill" style="width:${pct}%"></div></div>
+        <span class="completeness-pct mono">${pct}%</span>
+        <button class="btn btn-icon ${entry.interviewFlag?"btn-active":""}" id="btnFlag" title="面接で語りたい建築としてマーク">${entry.interviewFlag?"★ 面接候補":"☆ 面接候補にする"}</button>
+        <button class="btn btn-icon btn-danger" id="btnDelete" title="この記録を削除">削除</button>
+      </div>
+
+      <div class="titleblock">
+        <div class="tb-photos">
+          ${activePhotoId
+            ? `<img class="photo-main" id="photoMain" src="${photoUrl(activePhotoId)}" alt="${escapeHtml(entry.title||"建築写真")}">`
+            : `<div class="photo-main-empty"><span>📷</span><span>写真がありません</span></div>`}
+          <div class="photo-strip" id="photoStrip">
+            ${photos.map(p=>`
+              <div class="photo-thumb-wrap">
+                <img class="photo-thumb ${p.id===activePhotoId?"is-active":""}" data-photo="${p.id}" src="${photoUrl(p.id)}" alt="">
+                <button class="photo-thumb-remove" data-removephoto="${p.id}" title="削除" aria-label="この写真を削除">×</button>
+              </div>`).join("")}
+            <button class="photo-add-btn" id="btnAddPhoto" title="写真を追加" aria-label="写真を追加">＋</button>
+            <input type="file" id="filePhotoAdd" accept="image/*" multiple hidden>
+          </div>
+        </div>
+        <div class="tb-fields">
+          <div class="tb-title-row">
+            <label for="f_title">建物名</label>
+            <input id="f_title" data-field="title" value="${escapeHtml(entry.title)}" placeholder="例：〇〇美術館">
+          </div>
+          <div class="tb-grid">
+            <div class="tb-cell span2"><label class="field-label" for="f_architect">設計者</label><input id="f_architect" data-field="architect" value="${escapeHtml(entry.architect)}" placeholder="例：安藤忠雄"></div>
+            <div class="tb-cell span2"><label class="field-label" for="f_location">所在地</label><input id="f_location" data-field="location" value="${escapeHtml(entry.location)}" placeholder="例：大阪府"></div>
+            <div class="tb-cell"><label class="field-label" for="f_use">用途</label><input id="f_use" data-field="buildingUse" value="${escapeHtml(entry.buildingUse)}" placeholder="美術館 等"></div>
+            <div class="tb-cell">
+              <label class="field-label" for="f_structure">構造種別</label>
+              <select id="f_structure" data-field="structureType">
+                <option value="">選択</option>
+                ${STRUCTURE_TYPES.map(t=>`<option value="${t}" ${entry.structureType===t?"selected":""}>${t}</option>`).join("")}
+              </select>
+            </div>
+            <div class="tb-cell"><label class="field-label" for="f_year">竣工年</label><input id="f_year" data-field="year" value="${escapeHtml(entry.year)}" placeholder="例：1997" inputmode="numeric"></div>
+            <div class="tb-cell"><label class="field-label" for="f_visit">訪問日</label><input id="f_visit" type="date" data-field="visitDate" value="${escapeHtml(entry.visitDate)}"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pitch-field">
+        <label for="f_pitch">一言サマリー（面接で最初に言う一言）</label>
+        <input id="f_pitch" data-field="pitch" value="${escapeHtml(entry.pitch)}" placeholder="例：光と構造が一体化した空間に、自分がやりたい設計の方向性を見た">
+      </div>
+
+      <div class="section-label">分析メモ</div>
+      <div class="analysis-grid">
+        ${ANALYSIS_FIELDS.map((f,i)=>`
+          <div class="q-block">
+            <div class="q-block-head">
+              <span class="q-num mono">${String(i+1).padStart(2,"0")}</span>
+              <span class="q-title">${f.title}</span>
+            </div>
+            <textarea data-field="${f.key}" placeholder="${escapeHtml(f.ph)}">${escapeHtml(entry[f.key])}</textarea>
+          </div>
+        `).join("")}
+      </div>
+
+      <div class="tags-field">
+        <div class="section-label" style="margin-top:0;">タグ</div>
+        <div class="tag-input-row">
+          <input id="tagInput" placeholder="タグを追加してEnter（例：木造、住宅、光の建築）">
+        </div>
+        <div class="tag-chips" id="tagChips">
+          ${(entry.tags||[]).map(t=>`<span class="tag-chip">${escapeHtml(t)}<button data-removetag="${escapeHtml(t)}" aria-label="タグを削除">×</button></span>`).join("")}
+        </div>
+      </div>
+
+      <div class="sheet-footer">
+        <span class="mono" style="font-size:11px;color:var(--graphite-faint);" id="saveIndicator"></span>
+      </div>
+    </div>
+  `;
+
+  const save = debounce(()=>{
+    entry.updatedAt = Date.now();
+    dbPutEntry(stripTransient(entry));
+    renderRail();
+    const ind = document.getElementById("saveIndicator");
+    if(ind) ind.textContent = "保存済み ・ " + new Date(entry.updatedAt).toLocaleTimeString("ja-JP");
+  }, 450);
+
+  stage.querySelectorAll("[data-field]").forEach(input=>{
+    input.addEventListener("input", ()=>{
+      entry[input.dataset.field] = input.value;
+      save();
+    });
+  });
+
+  stage.querySelector("#btnFlag").addEventListener("click", ()=>{
+    entry.interviewFlag = !entry.interviewFlag;
+    entry.updatedAt = Date.now();
+    dbPutEntry(stripTransient(entry));
+    renderRail(); renderStage();
+  });
+
+  stage.querySelector("#btnDelete").addEventListener("click", ()=>{
+    confirmModal({
+      title: "この記録を削除しますか？",
+      body: `「${entry.title||"（無題）"}」とすべての写真が削除されます。この操作は取り消せません。`,
+      confirmLabel: "削除する",
+      danger: true,
+      onConfirm: async ()=>{
+        await dbDeleteEntry(entry.id);
+        await dbDeletePhotosByEntry(entry.id);
+        state.entries = state.entries.filter(x=>x.id!==entry.id);
+        state.photoMeta.delete(entry.id);
+        state.selectedId = null;
+        renderRail(); renderStage();
+        toast("削除しました");
+      }
+    });
+  });
+
+  stage.querySelectorAll("[data-photo]").forEach(img=>{
+    img.addEventListener("click", ()=>{
+      entry._activePhoto = img.dataset.photo;
+      renderStage();
+    });
+  });
+  stage.querySelectorAll("[data-removephoto]").forEach(btn=>{
+    btn.addEventListener("click", async (ev)=>{
+      ev.stopPropagation();
+      const pid = btn.dataset.removephoto;
+      await dbDeletePhoto(pid);
+      const arr = state.photoMeta.get(entry.id)||[];
+      state.photoMeta.set(entry.id, arr.filter(p=>p.id!==pid));
+      state.photoBlobCache.delete(pid);
+      if(entry._activePhoto===pid) entry._activePhoto = null;
+      renderRail(); renderStage();
+    });
+  });
+
+  stage.querySelector("#btnAddPhoto").addEventListener("click", ()=>stage.querySelector("#filePhotoAdd").click());
+  stage.querySelector("#filePhotoAdd").addEventListener("change", async (ev)=>{
+    const files = Array.from(ev.target.files||[]);
+    if(files.length===0) return;
+    await addPhotosToEntry(entry.id, files);
+    renderRail(); renderStage();
+  });
+
+  const tagInput = stage.querySelector("#tagInput");
+  tagInput.addEventListener("keydown", (ev)=>{
+    if(ev.key==="Enter"){
+      ev.preventDefault();
+      const v = tagInput.value.trim();
+      if(v && !(entry.tags||[]).includes(v)){
+        entry.tags = (entry.tags||[]).concat(v);
+        entry.updatedAt = Date.now();
+        dbPutEntry(stripTransient(entry));
+        renderRail(); renderStage();
+      }
+    }
+  });
+  stage.querySelectorAll("[data-removetag]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      entry.tags = (entry.tags||[]).filter(t=>t!==btn.dataset.removetag);
+      entry.updatedAt = Date.now();
+      dbPutEntry(stripTransient(entry));
+      renderRail(); renderStage();
+    });
+  });
+}
+
+function stripTransient(entry){
+  const {_activePhoto, ...rest} = entry;
+  return rest;
+}
+
+/* ===================== INTERVIEW VIEW ===================== */
+function renderInterviewView(stage){
+  const flagged = state.entries.filter(e=>e.interviewFlag).sort((a,b)=>a.seq-b.seq);
+  stage.innerHTML = `
+    <div class="interview-view">
+      <div class="interview-head">
+        <h2>面接対策</h2>
+        <button class="btn" id="btnPrint">🖨 印刷用に表示</button>
+      </div>
+      <p>各記録シートの「☆ 面接候補にする」を押すと、ここに一覧されます。一言サマリーを声に出して練習しましょう。</p>
+      ${flagged.length===0
+        ? `<div class="interview-empty">まだ面接候補に登録された建築がありません。<br>記録シートを開いて「☆ 面接候補にする」を押してください。</div>`
+        : `<div class="interview-grid">${flagged.map(e=>{
+            const photos = photosFor(e.id);
+            const img = photos[0] ? `<img src="${photoUrl(photos[0].id)}" alt="">` : `<img src="" alt="" style="background:var(--paper-sunken);">`;
+            return `
+              <div class="icard" data-id="${e.id}">
+                ${img}
+                <div class="icard-body">
+                  <p class="icard-title">${escapeHtml(e.title||"（無題）")}</p>
+                  <p class="icard-arch">${escapeHtml(e.architect||"")}${e.year?" ／ "+escapeHtml(e.year):""}</p>
+                  <p class="icard-pitch">${escapeHtml(e.pitch || "（一言サマリー未記入）")}</p>
+                </div>
+              </div>`;
+          }).join("")}</div>`
+      }
+    </div>
+  `;
+  stage.querySelectorAll(".icard").forEach(card=>{
+    card.addEventListener("click", ()=>{
+      state.mode = "browse";
+      state.selectedId = card.dataset.id;
+      renderTopbarModeButtons();
+      renderRail(); renderStage();
+    });
+  });
+  const printBtn = stage.querySelector("#btnPrint");
+  if(printBtn) printBtn.addEventListener("click", ()=>window.print());
+}
+
+/* ===================== IMPORT PHOTOS ===================== */
+async function addPhotosToEntry(entryId, files){
+  const list = state.photoMeta.get(entryId) || [];
+  let order = list.length ? Math.max(...list.map(p=>p.order))+1 : 0;
+  for(const file of files){
+    try{
+      const blob = await compressImage(file, 1600, 0.82);
+      const photo = {id: uid(), entryId, order: order++, blob, createdAt: Date.now()};
+      await dbPutPhoto(photo);
+      state.photoBlobCache.set(photo.id, blob);
+      if(!state.photoMeta.has(entryId)) state.photoMeta.set(entryId, []);
+      state.photoMeta.get(entryId).push({id:photo.id, order:photo.order});
+    }catch(err){ console.error(err); }
+  }
+}
+
+async function bulkImportAsNewEntries(files){
+  if(files.length===0) return;
+  toast(`${files.length}件の写真を取り込んでいます…`, 60000);
+  let firstNewId = null;
+  for(const file of files){
+    const seq = nextSeq();
+    const guess = file.name.replace(/\.[^.]+$/, "").replace(/[_-]+/g," ").trim();
+    const entry = blankEntry(seq, "");
+    entry._importGuess = guess;
+    try{
+      const blob = await compressImage(file, 1600, 0.82);
+      const photo = {id: uid(), entryId: entry.id, order:0, blob, createdAt: Date.now()};
+      await dbPutPhoto(photo);
+      await dbPutEntry(stripTransient(entry));
+      state.entries.push(entry);
+      state.photoBlobCache.set(photo.id, blob);
+      state.photoMeta.set(entry.id, [{id:photo.id, order:0}]);
+      if(!firstNewId) firstNewId = entry.id;
+    }catch(err){ console.error(err); }
+  }
+  document.getElementById("toast").hidden = true;
+  toast(`${files.length}件の写真を取り込みました。シートを開いて記入しましょう。`);
+  if(firstNewId && !state.selectedId){ state.selectedId = firstNewId; }
+  renderRail(); renderStage();
+}
+
+/* ===================== BACKUP ===================== */
+async function exportBackup(){
+  const downloads = window.claude ? await window.claude.use("downloads") : null;
+  if(!downloads){
+    toast("この環境ではファイルの書き出しに対応していません。");
+    return;
+  }
+  const payload = {
+    format: "kenchiku-yachou-backup",
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    note: "写真データは含まれません（各ブラウザのローカル保存のみ）。テキスト記録の復元用バックアップです。",
+    entries: state.entries.map(stripTransient)
+  };
+  try{
+    await downloads.save({
+      filename: `建築野帳_backup_${todayStr()}.json`,
+      data: JSON.stringify(payload, null, 2)
+    });
+    toast("バックアップを保存しました。");
+  }catch(err){
+    if(err && err.code === "declined"){ return; }
+    console.error(err);
+    toast("バックアップの保存に失敗しました。");
+  }
+}
+async function importBackupFile(file){
+  try{
+    const text = await file.text();
+    const payload = JSON.parse(text);
+    if(!payload || !Array.isArray(payload.entries)) throw new Error("invalid file");
+    let restored = 0;
+    for(const e of payload.entries){
+      if(!e.id) continue;
+      const exists = state.entries.find(x=>x.id===e.id);
+      if(exists) continue;
+      await dbPutEntry(e);
+      state.entries.push(e);
+      restored++;
+    }
+    renderRail(); renderStage();
+    toast(`${restored}件のテキスト記録を復元しました（写真は含まれません）。`);
+  }catch(err){
+    console.error(err);
+    toast("バックアップファイルの読み込みに失敗しました。");
+  }
+}
+
+/* ===================== MODAL ===================== */
+function confirmModal({title, body, confirmLabel, danger, onConfirm}){
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `
+    <div class="modal-backdrop" id="modalBackdrop">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h3 id="modalTitle">${escapeHtml(title)}</h3>
+        <p>${escapeHtml(body)}</p>
+        <div class="modal-actions">
+          <button class="btn" id="modalCancel">キャンセル</button>
+          <button class="btn ${danger?"btn-danger":"btn-primary"}" id="modalConfirm">${escapeHtml(confirmLabel||"OK")}</button>
+        </div>
+      </div>
+    </div>
+  `;
+  const close = ()=>{ root.innerHTML = ""; };
+  root.querySelector("#modalCancel").addEventListener("click", close);
+  root.querySelector("#modalBackdrop").addEventListener("click", (e)=>{ if(e.target.id==="modalBackdrop") close(); });
+  root.querySelector("#modalConfirm").addEventListener("click", ()=>{ close(); onConfirm(); });
+}
+
+function backupModal(){
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `
+    <div class="modal-backdrop" id="modalBackdrop">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h3 id="modalTitle">バックアップ</h3>
+        <p>写真はこのブラウザ内にのみ保存されています。テキスト記録（建物名・分析メモ・タグなど）は書き出して手元に保管できます。</p>
+        <div class="modal-actions" style="justify-content:space-between;">
+          <button class="btn" id="modalImport">テキストを復元</button>
+          <button class="btn btn-primary" id="modalExport">テキストを書き出す</button>
+        </div>
+      </div>
+    </div>
+  `;
+  const close = ()=>{ root.innerHTML = ""; };
+  root.querySelector("#modalBackdrop").addEventListener("click", (e)=>{ if(e.target.id==="modalBackdrop") close(); });
+  root.querySelector("#modalExport").addEventListener("click", ()=>{ close(); exportBackup(); });
+  root.querySelector("#modalImport").addEventListener("click", ()=>{ close(); document.getElementById("fileImportJson").click(); });
+}
+
+/* ===================== TOPBAR WIRING ===================== */
+function renderTopbarModeButtons(){
+  document.getElementById("btnInterviewMode").classList.toggle("btn-active", state.mode==="interview");
+}
+
+function wireTopbar(){
+  document.getElementById("searchInput").addEventListener("input", debounce((e)=>{
+    state.search = e.target.value; renderRail();
+  }, 200));
+
+  document.getElementById("btnImport").addEventListener("click", ()=>document.getElementById("fileImportPhotos").click());
+  document.getElementById("fileImportPhotos").addEventListener("change", async (e)=>{
+    const files = Array.from(e.target.files||[]);
+    e.target.value = "";
+    await bulkImportAsNewEntries(files);
+  });
+
+  document.getElementById("btnInterviewMode").addEventListener("click", ()=>{
+    state.mode = state.mode==="interview" ? "browse" : "interview";
+    renderTopbarModeButtons();
+    renderStage();
+  });
+
+  document.getElementById("btnBackup").addEventListener("click", backupModal);
+  document.getElementById("fileImportJson").addEventListener("change", async (e)=>{
+    const file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if(file) await importBackupFile(file);
+  });
+}
+
+/* ===================== INIT ===================== */
+async function init(){
+  wireTopbar();
+  await loadAll();
+  renderRail();
+  renderStage();
+}
+init();
+
+})();
+</script>
