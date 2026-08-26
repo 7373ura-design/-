@@ -2,8 +2,9 @@
 
 Canvaデザイン: **2608_Bondi Junction_看板_店頭サイン4面案（左Zen Japanese・中Massage・右フルネーム・ドア上QR）白基調**
 
-- 編集: https://www.canva.com/d/vHw3OhZ4wug53BM
-- 閲覧: https://www.canva.com/d/UtgQfT8D6FWGsjf
+- デザインID: `DAHTSBFgui0`（Canva内でタイトル検索が確実です。共有リンクは再発行されることがあります）
+- 編集: https://www.canva.com/d/waAe2PhDQrsUZIU
+- 閲覧: https://www.canva.com/d/JalxjNAZypQ95Ch
 
 ## 構成（マサさん案の通り）
 
