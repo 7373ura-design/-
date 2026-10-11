@@ -13,7 +13,7 @@ import {
 } from "@/lib/enquiry";
 import { site } from "@/data/site";
 import { ArrowRight } from "@/components/illustrations/Icons";
-import { SurferMini } from "@/components/illustrations/Surfer";
+import Image from "next/image";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -136,7 +136,7 @@ export function EnquiryForm({ defaultProjectType }: { defaultProjectType?: strin
   if (status === "success") {
     return (
       <div className="relative overflow-hidden bg-paper px-6 py-16 text-center sm:px-12" role="status" aria-live="polite">
-        <SurferMini className="mx-auto w-40" />
+        <Image src="/images/logo/nami-emblem.png" alt="" width={341} height={336} className="mx-auto w-24" />
         <p className="mt-8 font-display text-5xl text-navy">Thank you.</p>
         <p className="mt-4 font-display text-2xl text-deep">We will be in touch soon.</p>
         <p className="jp-body mt-6 text-sm leading-[2] text-navy/75">

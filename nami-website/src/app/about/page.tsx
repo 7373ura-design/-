@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Photo } from "@/components/Photo";
-import { SurferSwell } from "@/components/illustrations/Surfer";
-import { JapanAustraliaSection, MeaningsSection } from "@/components/home/sections";
+import Image from "next/image";
+import { JapanAustraliaSection, MeaningsFull } from "@/components/about-sections";
 import { PrincipleCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
 import { Container, Lines, SectionHeader } from "@/components/ui";
@@ -23,9 +23,14 @@ export default function AboutPage() {
         heading={["波のように生きる、", "空間をつくる。"]}
         intro={"NAMIは、日本の美意識とオーストラリアの暮らしを\nつなぐインテリアデザインブランドです。"}
         art={
-          <div className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-full bg-paper">
-            <SurferSwell className="absolute inset-x-0 bottom-0 h-auto w-full" />
-          </div>
+          <Image
+            src="/images/illustrations/story-surfer.jpg"
+            alt="NAMIの波乗りの女の子"
+            width={928}
+            height={612}
+            priority
+            className="w-full feather"
+          />
         }
       />
 
@@ -35,8 +40,8 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <Photo
               image={{
-                src: "/images/hero/story-interior.svg",
-                alt: "Placeholder: a calm bedroom with a low bed, linen and a view to the sea at dusk",
+                src: "/images/projects/p1.jpg",
+                alt: "A coastal living room with timber ceiling and wide windows to the sea",
               }}
               className="aspect-[4/5] rounded-tr-[120px]"
             />
@@ -56,7 +61,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <MeaningsSection full />
+      <MeaningsFull />
 
       <JapanAustraliaSection />
 

@@ -7,7 +7,7 @@ import type { JournalArticle } from "@/lib/types";
  */
 const cover = (file: string, alt: string) => ({
   src: `/images/journal/${file}`,
-  alt: `Placeholder: ${alt}`,
+  alt,
 });
 
 const comingSoon = ["この記事は現在準備中です。公開まで今しばらくお待ちください。"];
@@ -21,7 +21,7 @@ export const articles: JournalArticle[] = [
     excerpt: "日本と北欧、ふたつの美意識が出会うスタイルを、NAMIの視点から考えます。",
     date: "2026-10-01",
     readingTime: "5 min",
-    cover: cover("japandi.svg", "a calm room with low timber furniture"),
+    cover: cover("j1.jpg", "a calm room with low timber furniture"),
     body: comingSoon,
     published: false,
   },
@@ -33,7 +33,7 @@ export const articles: JournalArticle[] = [
     excerpt: "玄関、縁側、バックヤード。暮らしの違いが、住まいのかたちをつくる。",
     date: "2026-10-01",
     readingTime: "6 min",
-    cover: cover("homes.svg", "a timber deck opening to a garden"),
+    cover: cover("j2.jpg", "a timber deck opening to a garden"),
     body: comingSoon,
     published: false,
   },
@@ -45,7 +45,7 @@ export const articles: JournalArticle[] = [
     excerpt: "木、土、石、リネン。時間とともに深まる素材の魅力。",
     date: "2026-10-01",
     readingTime: "4 min",
-    cover: cover("materials.svg", "timber, stone and linen textures"),
+    cover: cover("j3.jpg", "timber, stone and linen textures"),
     body: comingSoon,
     published: false,
   },
@@ -57,7 +57,7 @@ export const articles: JournalArticle[] = [
     excerpt: "何もない場所が、空間に呼吸を与える。",
     date: "2026-10-01",
     readingTime: "5 min",
-    cover: cover("ma.svg", "an empty room with soft light on a plaster wall"),
+    cover: cover("j1.jpg", "an empty room with soft light on a plaster wall"),
     body: comingSoon,
     published: false,
   },
@@ -69,7 +69,7 @@ export const articles: JournalArticle[] = [
     excerpt: "オーストラリアの気候と、日本の縁側の知恵を重ねて。",
     date: "2026-10-01",
     readingTime: "5 min",
-    cover: cover("indoor-outdoor.svg", "large sliding doors open to a garden"),
+    cover: cover("j3.jpg", "large sliding doors open to a garden"),
     body: comingSoon,
     published: false,
   },
@@ -81,7 +81,7 @@ export const articles: JournalArticle[] = [
     excerpt: "限られた空間を、豊かに使うためのヒント。",
     date: "2026-10-01",
     readingTime: "4 min",
-    cover: cover("small-space.svg", "a compact room with built-in storage"),
+    cover: cover("j2.jpg", "a compact room with built-in storage"),
     body: comingSoon,
     published: false,
   },

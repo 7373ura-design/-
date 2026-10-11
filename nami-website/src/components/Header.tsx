@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
 import { Logo } from "@/components/Logo";
 import { ArrowRight } from "@/components/illustrations/Icons";
-import { SurferMini } from "@/components/illustrations/Surfer";
-import { WaveDivider } from "@/components/WaveDivider";
+import Image from "next/image";
 
 export function Header() {
   const pathname = usePathname();
@@ -43,7 +42,7 @@ export function Header() {
       </a>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "border-b hairline bg-cream/90 backdrop-blur-md" : "border-b border-transparent"
+          scrolled ? "border-b hairline bg-cream/92 backdrop-blur-md" : "border-b border-transparent bg-cream"
         }`}
       >
         <div
@@ -51,7 +50,7 @@ export function Header() {
             scrolled ? "h-16" : "h-20 md:h-24"
           }`}
         >
-          <Logo priority className={`w-auto transition-all duration-500 ${scrolled ? "h-9" : "h-10 md:h-12"}`} />
+          <Logo priority className={`w-auto transition-all duration-500 ${scrolled ? "h-8" : "h-9 md:h-10"}`} />
 
           <nav aria-label="Main" className="hidden items-center gap-9 lg:flex">
             {navigation.map((item) => (
@@ -71,7 +70,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="group label hidden items-center gap-3 border border-navy/70 px-5 py-3 text-navy transition-colors duration-500 hover:border-vermilion hover:bg-vermilion hover:text-paper sm:inline-flex"
+              className="group label hidden items-center gap-3 rounded-full border border-navy/60 px-6 py-3 text-navy transition-colors duration-500 hover:border-navy hover:bg-navy hover:text-paper sm:inline-flex"
             >
               ENQUIRE
               <ArrowRight className="h-3 w-5 transition-transform duration-500 group-hover:translate-x-1" />
@@ -99,18 +98,18 @@ export function Header() {
         aria-modal="true"
         aria-label="Menu"
         hidden={!open}
-        className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-navy text-paper lg:hidden"
+        className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-cream text-navy lg:hidden"
       >
         <div className="flex h-20 items-center justify-between px-5 md:px-10">
-          <Logo tone="light" className="h-10 w-auto" />
+          <Logo className="h-9 w-auto" />
           <button
             type="button"
             onClick={() => setOpen(false)}
             className="relative h-11 w-11"
             aria-label="Close menu"
           >
-            <span className="absolute left-2 top-1/2 h-px w-7 rotate-45 bg-paper" />
-            <span className="absolute left-2 top-1/2 h-px w-7 -rotate-45 bg-paper" />
+            <span className="absolute left-2 top-1/2 h-px w-7 rotate-45 bg-navy" />
+            <span className="absolute left-2 top-1/2 h-px w-7 -rotate-45 bg-navy" />
           </button>
         </div>
         <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center gap-1 px-5 md:px-10">
@@ -118,25 +117,23 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex items-baseline gap-4 border-b border-paper/15 py-4"
+              className="group flex items-baseline gap-4 border-b hairline py-4"
             >
-              <span className="label text-aqua">0{i}</span>
-              <span className="font-display text-4xl tracking-[0.12em] transition-colors group-hover:text-vermilion">
+              <span className="label text-vermilion">0{i}</span>
+              <span className="font-jp text-3xl tracking-[0.12em] transition-colors group-hover:text-vermilion">
                 {item.label}
               </span>
             </Link>
           ))}
           <Link
             href="/contact"
-            className="label mt-8 inline-flex items-center justify-center gap-3 bg-vermilion px-6 py-4 text-paper"
+            className="label mt-8 inline-flex items-center justify-center gap-3 rounded-full border border-navy/60 px-6 py-4 text-navy"
           >
             ENQUIRE NOW <ArrowRight className="h-3 w-6" />
           </Link>
         </nav>
-        <div className="relative mt-8">
-          <SurferMini className="absolute -top-24 right-6 w-40" />
-          <WaveDivider fill="#075985" accent="#75C9D5" />
-          <div className="h-10 bg-deep" />
+        <div className="relative mt-8 aspect-[1644/526] w-full" aria-hidden>
+          <Image src="/images/illustrations/cta-wave.jpg" alt="" fill sizes="100vw" className="object-cover object-right" />
         </div>
       </div>
     </>

@@ -97,3 +97,11 @@ export const japanAustralia = {
   japan: ["静けさ", "余白", "素材", "職人", "四季", "内と外"],
   australia: ["自然", "光", "風", "海", "Indoor / Outdoor", "Relaxed Living"],
 };
+
+/** The four approach icons shown on Home (artwork from the NAMI reference design). */
+export const approachIcons = [
+  { icon: "/images/approach/a1.png", title: "自然とのつながり", body: "海・光・風を感じる\n空間づくり" },
+  { icon: "/images/approach/a2.png", title: "バランスと余白", body: "シンプルで豊かな\n暮らし" },
+  { icon: "/images/approach/a3.png", title: "素材の美しさ", body: "自然素材と\n手仕事の温かさ" },
+  { icon: "/images/approach/a4.png", title: "その人らしい空間", body: "ライフスタイルに\n寄り添うデザイン" },
+];

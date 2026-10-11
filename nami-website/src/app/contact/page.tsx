@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { SurferMini } from "@/components/illustrations/Surfer";
-import { WaveDivider } from "@/components/WaveDivider";
+import Image from "next/image";
 import { Container, SectionLabel } from "@/components/ui";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
@@ -38,14 +37,12 @@ export default async function ContactPage({ searchParams }: Props) {
             </p>
           </div>
           <div className="relative hidden lg:col-span-5 lg:block" aria-hidden>
-            <div className="absolute -right-10 top-0 h-48 w-48 rounded-full bg-vermilion" />
-            <SurferMini bare className="absolute right-24 top-24 w-56" />
+            <Image src="/images/illustrations/story-surfer.jpg" alt="" width={928} height={612} className="w-full feather" />
           </div>
         </Container>
-        <WaveDivider fill="#E9DCC8" accent="#75C9D5" />
       </section>
 
-      <section className="bg-beige py-16 md:py-24" aria-label="Enquiry">
+      <section className="section-rule bg-cream py-16 md:py-24" aria-label="Enquiry">
         <Container className="grid gap-12 lg:grid-cols-12">
           <aside className="space-y-10 lg:col-span-4">
             <div>

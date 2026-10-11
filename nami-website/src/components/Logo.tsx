@@ -1,30 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/**
- * The NAMI logo. Uses the image file at /images/logo/nami-logo.svg —
- * replace that file with the official logo; no code changes needed.
- * `tone="light"` turns any single-colour logo white for dark backgrounds.
- */
+/** The official NAMI logo (emblem + wordmark). `stacked` uses the vertical version. */
 export function Logo({
-  tone = "dark",
+  stacked = false,
   className = "h-10 w-auto",
   priority = false,
 }: {
-  tone?: "dark" | "light";
+  stacked?: boolean;
   className?: string;
   priority?: boolean;
 }) {
   return (
     <Link href="/" aria-label="NAMI — Home" className="inline-flex shrink-0 items-center">
       <Image
-        src="/images/logo/nami-logo.svg"
+        src={stacked ? "/images/logo/nami-logo-stacked.png" : "/images/logo/nami-logo.png"}
         alt="NAMI"
-        width={260}
-        height={72}
+        width={stacked ? 482 : 724}
+        height={stacked ? 442 : 188}
         priority={priority}
-        unoptimized
-        className={`${className} ${tone === "light" ? "brightness-0 invert" : ""}`}
+        className={className}
       />
     </Link>
   );

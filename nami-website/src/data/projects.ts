@@ -14,8 +14,8 @@ export const projectCategories: { key: "all" | ProjectCategory; label: string }[
 ];
 
 const img = (slug: string, file: string, alt: string) => ({
-  src: `/images/projects/${slug}/${file}`,
-  alt: `Concept placeholder: ${alt}`,
+  src: file.startsWith("/") ? file : `/images/projects/${slug}/${file}`,
+  alt: `Concept image: ${alt}`,
 });
 
 export const projects: Project[] = [
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: img("nami-house-01", "cover.svg", "a coastal living room with timber floors opening to the ocean"),
+    cover: img("nami-house-01", "/images/projects/p1.jpg", "a coastal living room with timber floors opening to the ocean"),
     overview:
       "海の近くに建つ家族の住まいを想定したコンセプトスタディ。日本の「内と外」の考え方と、オーストラリアのIndoor / Outdoor Livingを重ね合わせています。",
     concept:
@@ -50,13 +50,13 @@ export const projects: Project[] = [
     ],
     plan: img("nami-house-01", "plan.svg", "floor plan of the coastal home"),
     visuals: [
-      img("nami-house-01", "visual-1.svg", "living room opening to a timber deck"),
-      img("nami-house-01", "visual-2.svg", "bedroom with a low bed and ocean view"),
+      img("nami-house-01", "/images/journal/j2.jpg", "living room opening to a timber deck"),
+      img("nami-house-01", "/images/journal/j1.jpg", "bedroom with a low bed and ocean view"),
     ],
     gallery: [
-      img("nami-house-01", "gallery-1.svg", "dining corner in afternoon light"),
-      img("nami-house-01", "gallery-2.svg", "styled timber shelf with ceramics"),
-      img("nami-house-01", "gallery-3.svg", "evening view across the deck"),
+      img("nami-house-01", "/images/journal/j3.jpg", "dining corner in afternoon light"),
+      img("nami-house-01", "/images/services/s4.jpg", "styled timber shelf with ceramics"),
+      img("nami-house-01", "/images/projects/p3.jpg", "evening view across the deck"),
     ],
   },
   {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: img("nami-house-02", "cover.svg", "a compact Sydney apartment with a window seat"),
+    cover: img("nami-house-02", "/images/projects/p2.jpg", "a compact Sydney apartment with a window seat"),
     overview:
       "シドニーのコンパクトなアパートメントを想定したコンセプトスタディ。日本の狭小住宅の知恵を、オーストラリアの都市生活に取り入れます。",
     concept:
@@ -90,13 +90,13 @@ export const projects: Project[] = [
     ],
     plan: img("nami-house-02", "plan.svg", "floor plan of the small apartment"),
     visuals: [
-      img("nami-house-02", "visual-1.svg", "window seat with built-in storage"),
-      img("nami-house-02", "visual-2.svg", "kitchen and dining in one compact space"),
+      img("nami-house-02", "/images/projects/p3.jpg", "window seat with built-in storage"),
+      img("nami-house-02", "/images/journal/j2.jpg", "kitchen and dining in one compact space"),
     ],
     gallery: [
-      img("nami-house-02", "gallery-1.svg", "screen doors filtering daylight"),
-      img("nami-house-02", "gallery-2.svg", "styled reading corner"),
-      img("nami-house-02", "gallery-3.svg", "night view of the city from the window"),
+      img("nami-house-02", "/images/services/s4.jpg", "screen doors filtering daylight"),
+      img("nami-house-02", "/images/journal/j2.jpg", "styled reading corner"),
+      img("nami-house-02", "/images/projects/p2.jpg", "night view of the city from the window"),
     ],
   },
   {
@@ -108,7 +108,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: img("nami-house-03", "cover.svg", "a living space wrapped around a planted courtyard"),
+    cover: img("nami-house-03", "/images/projects/p3.jpg", "a living space wrapped around a planted courtyard"),
     overview:
       "中庭を中心に構成された住まいのコンセプトスタディ。日本の坪庭の考え方を、オーストラリアの気候と植生で再解釈しています。",
     concept:
@@ -130,13 +130,13 @@ export const projects: Project[] = [
     ],
     plan: img("nami-house-03", "plan.svg", "floor plan arranged around a courtyard"),
     visuals: [
-      img("nami-house-03", "visual-1.svg", "living room looking into the courtyard"),
-      img("nami-house-03", "visual-2.svg", "timber screen casting shadows"),
+      img("nami-house-03", "/images/journal/j2.jpg", "living room looking into the courtyard"),
+      img("nami-house-03", "/images/projects/p2.jpg", "timber screen casting shadows"),
     ],
     gallery: [
-      img("nami-house-03", "gallery-1.svg", "courtyard planting with a stone path"),
-      img("nami-house-03", "gallery-2.svg", "quiet corner with ceramics"),
-      img("nami-house-03", "gallery-3.svg", "evening light in the courtyard"),
+      img("nami-house-03", "/images/journal/j3.jpg", "courtyard planting with a stone path"),
+      img("nami-house-03", "/images/services/s4.jpg", "quiet corner with ceramics"),
+      img("nami-house-03", "/images/journal/j1.jpg", "evening light in the courtyard"),
     ],
   },
 ];

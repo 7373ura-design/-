@@ -1,5 +1,5 @@
 /**
- * Generates the placeholder "photography" used until real images exist.
+ * Generates the concept moodboards and indicative floor plans for the NAMI CONCEPT projects.
  *
  *   node scripts/generate-placeholders.mjs
  *
@@ -439,50 +439,20 @@ const P = {
 };
 
 const files = {
-  "hero/hero-coastal-interior.svg": () => living(1400, 1600, { ...P.coastal }),
-  "hero/story-interior.svg": () => bedroom(1600, 1100, { ...P.coastal, view: "ocean", sun: [0.3, 0.3], dusk: true }),
 
-  "services/consultation.svg": () => consult(1200, 1500, P.coastal),
-  "services/concept.svg": () => moodboard(1200, 1500, { swatches: ["#c9a679", "#efe6d6", "#e3d8c4", C.ocean] }),
-  "services/planning.svg": () => plan(1200, 1500, { title: "Space Planning Study", deck: true }),
-  "services/styling.svg": () => shelf(1200, 1500, P.coastal),
 
-  "projects/nami-house-01/cover.svg": () => living(1600, 1200, { ...P.coastal, sun: [0.75, 0.25] }),
   "projects/nami-house-01/mood-1.svg": () => moodboard(1200, 1200, { swatches: ["#c9a679", "#efe6d6", "#e3d8c4", "#2f7f9a"] }),
   "projects/nami-house-01/mood-2.svg": () => shelf(1200, 1200, P.coastal),
   "projects/nami-house-01/plan.svg": () => plan(1600, 1100, { title: "NAMI House 01 — Coastal Home", deck: true }),
-  "projects/nami-house-01/visual-1.svg": () => living(1600, 1000, { ...P.coastal, sun: [0.3, 0.2] }),
-  "projects/nami-house-01/visual-2.svg": () => bedroom(1600, 1000, { ...P.coastal }),
-  "projects/nami-house-01/gallery-1.svg": () => dining(1200, 1500, { ...P.coastal, view: "ocean", sun: [0.8, 0.3] }),
-  "projects/nami-house-01/gallery-2.svg": () => shelf(1200, 1500, P.coastal),
-  "projects/nami-house-01/gallery-3.svg": () => living(1200, 1500, { ...P.coastal, dusk: true, sun: [0.5, 0.45] }),
 
-  "projects/nami-house-02/cover.svg": () => bedroom(1600, 1200, { ...P.small, view: "city" }),
   "projects/nami-house-02/mood-1.svg": () => moodboard(1200, 1200, { swatches: ["#dcc29a", "#f5efe2", "#ece3d2", "#c46a4a"] }),
   "projects/nami-house-02/mood-2.svg": () => shelf(1200, 1200, P.small),
   "projects/nami-house-02/plan.svg": () => plan(1600, 1100, { title: "NAMI House 02 — Small Sydney Home" }),
-  "projects/nami-house-02/visual-1.svg": () => living(1600, 1000, { ...P.small, view: "city" }),
-  "projects/nami-house-02/visual-2.svg": () => dining(1600, 1000, { ...P.small, view: "city" }),
-  "projects/nami-house-02/gallery-1.svg": () => dining(1200, 1500, { ...P.small, view: "city" }),
-  "projects/nami-house-02/gallery-2.svg": () => shelf(1200, 1500, P.small),
-  "projects/nami-house-02/gallery-3.svg": () => living(1200, 1500, { ...P.small, view: "city", night: true }),
 
-  "projects/nami-house-03/cover.svg": () => dining(1600, 1200, { ...P.court, view: "courtyard" }),
   "projects/nami-house-03/mood-1.svg": () => moodboard(1200, 1200, { swatches: ["#a88257", "#cfae86", "#e2cfa6", "#6f8a74"], board: "#efe4d2" }),
   "projects/nami-house-03/mood-2.svg": () => shelf(1200, 1200, P.court),
   "projects/nami-house-03/plan.svg": () => plan(1600, 1100, { title: "NAMI House 03 — Courtyard House", courtyard: true }),
-  "projects/nami-house-03/visual-1.svg": () => living(1600, 1000, { ...P.court, view: "courtyard" }),
-  "projects/nami-house-03/visual-2.svg": () => bedroom(1600, 1000, { ...P.court, view: "courtyard", shoji: true }),
-  "projects/nami-house-03/gallery-1.svg": () => dining(1200, 1500, { ...P.court, view: "courtyard", shoji: true }),
-  "projects/nami-house-03/gallery-2.svg": () => shelf(1200, 1500, P.court),
-  "projects/nami-house-03/gallery-3.svg": () => living(1200, 1500, { ...P.court, view: "courtyard", dusk: true }),
 
-  "journal/japandi.svg": () => living(1200, 900, { ...P.small, view: "garden" }),
-  "journal/homes.svg": () => dining(1200, 900, { ...P.coastal, view: "garden" }),
-  "journal/materials.svg": () => moodboard(1200, 900, { swatches: ["#b88c5e", "#efe6d6", "#e3d8c4", "#6f8a74"] }),
-  "journal/ma.svg": () => bedroom(1200, 900, { ...P.court, view: "courtyard", shoji: true }),
-  "journal/indoor-outdoor.svg": () => living(1200, 900, { ...P.coastal, sun: [0.6, 0.3] }),
-  "journal/small-space.svg": () => shelf(1200, 900, P.small),
 
 };
 

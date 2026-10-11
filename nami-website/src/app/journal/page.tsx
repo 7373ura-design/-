@@ -19,7 +19,6 @@ export default function JournalPage() {
         label="JOURNAL"
         heading={["暮らしを考える、", "ヒントを届ける。"]}
         intro={"日本とオーストラリアの住まい、素材、余白。\n心地よい暮らしのためのヒントを、少しずつお届けします。"}
-        next="#F7F1E5"
       />
       <section className="bg-cream pb-24 md:pb-32" aria-label="Articles">
         <Container>

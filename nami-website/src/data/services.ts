@@ -14,8 +14,8 @@ export const services: Service[] = [
     titleJa: "空間のご相談・ヒアリング",
     summary: "今の暮らしと、これからの暮らし。まずはお話を聞くところから。",
     image: {
-      src: "/images/services/consultation.svg",
-      alt: "Placeholder: a timber table by a bright window with sketches and material samples",
+      src: "/images/services/s1.jpg",
+      alt: "a timber table by a bright window with sketches and material samples",
     },
     whatItIs:
       "ご自宅やお部屋について、今感じている悩みや理想の暮らし方をお伺いし、空間の方向性を一緒に整理するご相談です。",
@@ -45,8 +45,8 @@ export const services: Service[] = [
     titleJa: "コンセプト・素材・カラー提案",
     summary: "その人らしい空間の「軸」を、言葉と素材と色でかたちに。",
     image: {
-      src: "/images/services/concept.svg",
-      alt: "Placeholder: a moodboard of timber, linen, clay and ocean-blue swatches",
+      src: "/images/services/s2.jpg",
+      alt: "a moodboard of timber, linen, clay and ocean-blue swatches",
     },
     whatItIs:
       "暮らし方や好きなものをもとに、空間全体のコンセプトを組み立て、素材・色・雰囲気の方向性をまとめるサービスです。",
@@ -76,8 +76,8 @@ export const services: Service[] = [
     titleJa: "家具配置・空間構成",
     summary: "動線、光、余白。毎日が少し心地よくなる配置を考えます。",
     image: {
-      src: "/images/services/planning.svg",
-      alt: "Placeholder: a hand-drawn floor plan with furniture layout",
+      src: "/images/services/s3.jpg",
+      alt: "a hand-drawn floor plan with furniture layout",
     },
     whatItIs:
       "既存の間取りの中で、家具の配置や空間の使い方を整理し、動線・光・余白のバランスがとれたレイアウトをご提案します。",
@@ -107,8 +107,8 @@ export const services: Service[] = [
     titleJa: "家具・小物・仕上げの提案",
     summary: "家具、器、照明、ファブリック。最後のひと手間で空間が整う。",
     image: {
-      src: "/images/services/styling.svg",
-      alt: "Placeholder: a timber shelf styled with ceramics, books and a linen throw",
+      src: "/images/services/s4.jpg",
+      alt: "a timber shelf styled with ceramics, books and a linen throw",
     },
     whatItIs:
       "家具・照明・ファブリック・小物などのセレクトとスタイリングで、空間の仕上がりを整えるサービスです。",

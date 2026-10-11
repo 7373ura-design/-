@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f7f1e5;
-  --color-paper: #fffdf8;
+  --color-cream: #f7f3ea;
+  --color-paper: #fbf8f2;
   --color-beige: #e9dcc8;
-  --color-navy: #073b5c;
-  --color-deep: #075985;
+  --color-navy: #1e3a5c;
+  --color-deep: #2a5b86;
   --color-ocean: #008fb5;
   --color-aqua: #75c9d5;
-  --color-vermilion: #f04b32;
+  --color-vermilion: #e8553b;
 
   --font-jp: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-display: var(--font-cormorant), "Times New Roman", serif;
@@ -97,7 +97,21 @@
     background-size: 100% 1px;
   }
   .hairline {
-    border-color: color-mix(in srgb, var(--color-navy) 18%, transparent);
+    border-color: color-mix(in srgb, var(--color-navy) 14%, transparent);
+  }
+  /* The soft band between sections in the NAMI layout */
+  .section-rule {
+    border-top: 6px solid color-mix(in srgb, var(--color-paper) 70%, white);
+    box-shadow: 0 -1px 0 color-mix(in srgb, var(--color-navy) 6%, transparent);
+  }
+  /* Soft edges so painted artwork melts into the paper background */
+  .feather {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+      linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+      linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+    mask-composite: intersect;
   }
   .no-scrollbar {
     scrollbar-width: none;

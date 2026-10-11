@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { WaveDivider } from "@/components/WaveDivider";
 import { Container, Lines, SectionLabel } from "@/components/ui";
 
 /** Shared hero for inner pages: label, Japanese headline, optional intro and art. */
@@ -8,17 +7,14 @@ export function PageHero({
   heading,
   intro,
   art,
-  next = "#FFFDF8",
 }: {
   label: string;
   heading: string[];
   intro?: string;
   art?: ReactNode;
-  /** Background colour of the section that follows (wave fill). */
-  next?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-cream pt-32 md:pt-44">
+    <section className="relative overflow-hidden bg-cream pt-32 md:pt-40">
       <Container className="relative grid items-end gap-12 pb-12 md:pb-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <div data-reveal>
@@ -51,7 +47,6 @@ export function PageHero({
           </div>
         )}
       </Container>
-      <WaveDivider fill={next} accent="#75C9D5" />
     </section>
   );
 }

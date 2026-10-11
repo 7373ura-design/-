@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { Photo } from "@/components/Photo";
 import { ProjectCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
-import { WaveDivider } from "@/components/WaveDivider";
 import { ArrowLink, Container, SectionLabel } from "@/components/ui";
 import { getProject, projects } from "@/data/projects";
 
@@ -84,9 +83,7 @@ export default async function ProjectPage({ params }: Props) {
             ※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。画像はイメージです。
           </p>
         </Container>
-        <div className="mt-16">
-          <WaveDivider fill="#FFFDF8" />
-        </div>
+<div className="mt-16" />
       </section>
 
       <div className="bg-paper">

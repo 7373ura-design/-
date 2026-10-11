@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { ArrowRight } from "@/components/illustrations/Icons";
-import { WaveLine } from "@/components/WaveDivider";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-[1360px] px-5 md:px-10 lg:px-16 ${className}`}>{children}</div>;
@@ -35,7 +34,6 @@ export function SectionLabel({
     <p className={`label flex items-center gap-3 ${tone === "light" ? "text-paper/80" : "text-navy/75"}`}>
       {number && <span className="text-vermilion">{number}.</span>}
       <span>{children}</span>
-      <WaveLine className={`h-2 w-10 ${tone === "light" ? "text-aqua" : "text-ocean"}`} />
     </p>
   );
 }
@@ -64,7 +62,7 @@ export function SectionHeader({
         {label}
       </SectionLabel>
       <Tag
-        className={`jp-heading mt-6 text-[1.75rem] leading-[1.6] sm:text-4xl lg:text-[2.75rem] ${tone === "light" ? "text-paper" : "text-navy"}`}
+        className={`jp-heading mt-5 text-[1.75rem] leading-[1.5] sm:text-[2rem] lg:text-[2.35rem] ${tone === "light" ? "text-paper" : "text-navy"}`}
       >
         {heading.map((line, i) => (
           <span key={i} className="block">
@@ -85,7 +83,7 @@ export function SectionHeader({
 
 type ArrowLinkProps = ComponentProps<typeof Link> & {
   children: ReactNode;
-  variant?: "text" | "solid" | "outline" | "light";
+  variant?: "text" | "solid" | "outline" | "light" | "pill";
 };
 
 export function ArrowLink({ children, variant = "text", className = "", ...props }: ArrowLinkProps) {
@@ -94,6 +92,7 @@ export function ArrowLink({ children, variant = "text", className = "", ...props
     solid: "bg-vermilion text-paper px-7 py-4 hover:bg-navy",
     outline: "border border-navy/70 text-navy px-6 py-3.5 hover:bg-navy hover:text-paper",
     light: "border border-paper/70 text-paper px-6 py-3.5 hover:bg-paper hover:text-navy",
+    pill: "rounded-full border border-navy/60 text-navy px-7 py-3.5 hover:bg-navy hover:text-paper",
   }[variant];
   return (
     <Link
@@ -101,7 +100,7 @@ export function ArrowLink({ children, variant = "text", className = "", ...props
       className={`group label inline-flex items-center gap-3 transition-colors duration-500 ${styles} ${className}`}
     >
       <span className={variant === "text" ? "link-underline pb-1" : ""}>{children}</span>
-      <ArrowRight className="h-3 w-6 transition-transform duration-500 group-hover:translate-x-1.5" />
+      <ArrowRight className={`h-3 w-6 transition-transform duration-500 group-hover:translate-x-1.5 ${variant === "text" ? "text-vermilion" : ""}`} />
     </Link>
   );
 }

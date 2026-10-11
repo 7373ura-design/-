@@ -19,7 +19,6 @@ export default function ProjectsPage() {
         label="PROJECTS"
         heading={["暮らしの波を、", "かたちに。"]}
         intro={"NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。"}
-        next="#F7F1E5"
         art={
           <div className="border-l-2 border-vermilion pl-6">
             <p className="font-display text-3xl tracking-[0.16em] text-navy">NAMI CONCEPTS</p>

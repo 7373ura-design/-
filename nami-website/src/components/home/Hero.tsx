@@ -1,50 +1,36 @@
-import { Photo } from "@/components/Photo";
-import { Parallax } from "@/components/Motion";
-import { SurferWave } from "@/components/illustrations/Surfer";
-import { WaveDivider } from "@/components/WaveDivider";
-import { ArrowLink, Container } from "@/components/ui";
+import Image from "next/image";
 
+/**
+ * Hero — the interior photograph and the wave/sun/pine illustration are one
+ * composed image (public/images/hero/hero.jpg); the headline sits on the paper
+ * area to its left.
+ */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cream pt-28 md:pt-36" aria-labelledby="hero-heading">
-      {/* vertical brand note — desktop only */}
-      <p
-        aria-hidden
-        className="label absolute left-6 top-40 hidden text-navy/50 [writing-mode:vertical-rl] xl:block"
-      >
-        波 — 並 — N.A.M.I.
-      </p>
-
-      <Container className="relative grid items-center gap-y-14 lg:grid-cols-12 lg:gap-x-10">
-        <div className="relative z-10 lg:col-span-5 lg:pb-24">
-          <p className="label text-navy/70" data-reveal>
-            Japanese perspective on
-            <br className="sm:hidden" /> contemporary Australian living
-          </p>
+    <section className="relative bg-cream pt-20 md:pt-24" aria-labelledby="hero-heading">
+      <div className="relative mx-auto max-w-[1600px]">
+        {/* Text — in normal flow on mobile, laid over the paper area on desktop */}
+        <div className="relative z-10 px-5 pb-8 pt-8 md:absolute md:left-[5.5%] md:top-[9%] md:w-[34%] md:p-0">
           <h1
             id="hero-heading"
-            className="jp-heading mt-8 text-[2.75rem] leading-[1.45] text-navy sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]"
+            className="jp-heading text-[2.6rem] leading-[1.42] text-navy md:text-[clamp(2.2rem,4.1vw,4.4rem)]"
             data-reveal
-            style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
           >
             <span className="block">暮らしと</span>
-            <span className="block">
-              記憶を<span className="text-vermilion">、</span>
-            </span>
+            <span className="block">記憶を、</span>
             <span className="block">空間に。</span>
           </h1>
           <p
-            className="mt-8 flex items-center gap-4 font-display text-lg tracking-[0.32em] text-deep md:text-xl"
+            className="label mt-4 !text-[0.72rem] !tracking-[0.3em] text-navy md:mt-[1.2vw] md:!text-[clamp(0.62rem,0.9vw,0.85rem)]"
             data-reveal
-            style={{ "--reveal-delay": "220ms" } as React.CSSProperties}
+            style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
           >
-            <span className="h-px w-10 bg-vermilion" aria-hidden />
             NEST AND MEMORIES INSIDE
           </p>
           <p
-            className="jp-body mt-8 max-w-md text-[0.9375rem] text-navy/85"
+            className="jp-body mt-5 text-sm leading-[2] text-navy/85 md:mt-[1.6vw] md:text-[clamp(0.78rem,1.05vw,1rem)]"
             data-reveal
-            style={{ "--reveal-delay": "320ms" } as React.CSSProperties}
+            style={{ "--reveal-delay": "220ms" } as React.CSSProperties}
           >
             波のように変わる毎日に寄り添い、
             <br />
@@ -52,50 +38,29 @@ export function Hero() {
             <br />
             空間をつくるインテリアデザインブランドです。
           </p>
-          <div
-            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5"
+          <a
+            href="#story"
+            className="group label mt-6 inline-flex items-center gap-4 text-navy md:mt-[2.2vw]"
             data-reveal
-            style={{ "--reveal-delay": "420ms" } as React.CSSProperties}
+            style={{ "--reveal-delay": "320ms" } as React.CSSProperties}
           >
-            <ArrowLink href="/about" variant="outline">
-              ABOUT NAMI
-            </ArrowLink>
-            <ArrowLink href="/projects">VIEW CONCEPTS</ArrowLink>
-          </div>
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-navy/50 transition-colors group-hover:border-vermilion group-hover:text-vermilion">
+              ↓
+            </span>
+            SCROLL
+          </a>
         </div>
 
-        <div className="relative lg:col-span-7">
-          {/* the vermilion sun, peeking from behind the interior */}
-          <div
-            aria-hidden
-            className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-vermilion sm:h-56 sm:w-56 lg:-right-16 lg:-top-14 lg:h-72 lg:w-72"
+        <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[1644/772]">
+          <Image
+            src="/images/hero/hero.jpg"
+            alt="Bright coastal living room with a linen sofa, round timber table and wide glass doors opening to pine trees and the sea, framed by Japanese-style waves, a red sun and a small pine island"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[78%_50%] md:object-center"
           />
-          <Parallax speed={0.05}>
-            <Photo
-              priority
-              image={{
-                src: "/images/hero/hero-coastal-interior.svg",
-                alt: "A contemporary Australian coastal living room with timber floors, a low linen sofa and wide windows opening to the ocean",
-              }}
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              className="ml-auto aspect-[4/5] w-[88%] rounded-tl-[120px] sm:w-[80%] lg:aspect-[5/6] lg:w-[86%] lg:rounded-tl-[200px]"
-            />
-          </Parallax>
-          {/* surfer breaking out of the frame */}
-          <div className="pointer-events-none absolute -bottom-6 -left-5 w-[78%] sm:-left-6 sm:w-[66%] lg:-bottom-10 lg:-left-24 lg:w-[72%]">
-            <SurferWave sun={false} className="h-auto w-full drop-shadow-[0_18px_30px_rgba(7,59,92,0.18)]" />
-          </div>
         </div>
-      </Container>
-
-      <div className="relative mt-10 md:mt-6">
-        <a
-          href="#story"
-          className="label absolute bottom-full left-5 mb-6 hidden items-center md:flex gap-3 text-navy/70 hover:text-vermilion md:left-10 lg:left-16"
-        >
-          SCROLL <span aria-hidden className="inline-block animate-bounce">↓</span>
-        </a>
-        <WaveDivider fill="#073B5C" accent="#008FB5" />
       </div>
     </section>
   );
