@@ -13,17 +13,18 @@ npm run typecheck
 ## Pages
 `/` · `/about` · `/services` · `/projects` (+ `/projects/[slug]`) · `/contact` · `/journal` (+ `/journal/[slug]`)
 
-## What to replace
+## Images
+The logo and all imagery come from the NAMI reference files in `design/reference/`
+and are cut out by `python3 scripts/make-images-from-reference.py`. The reference
+is low resolution, so before launch replace them with full-size originals:
+
 | What | Where |
 | --- | --- |
-| **Official logo** (current file is a placeholder) | `public/images/logo/nami-logo.svg` — same filename, no code change |
-| Photography (current images are generated placeholders) | `public/images/{hero,services,projects,journal}/`, then update paths in `src/data/*.ts` |
-| Surfer illustration (currently inline SVG) | `src/components/illustrations/Surfer.tsx` |
+| Logo (horizontal / stacked / emblem) | `public/images/logo/` |
+| Hero interior + waves, closing wave, surfer girl | `public/images/hero/`, `public/images/illustrations/` |
+| Service, project and journal photos | `public/images/{services,projects,journal}/`, paths in `src/data/*.ts` |
 | Domain, email, social links | `src/data/site.ts` (or `NEXT_PUBLIC_SITE_URL`) |
-| Services / Projects / Journal content | `src/data/services.ts`, `projects.ts`, `journal.ts` |
 | Founder portrait and bio | `src/app/about/page.tsx` |
-
-Placeholder images can be regenerated with `node scripts/generate-placeholders.mjs`.
 
 Projects are **NAMI CONCEPTS** (design studies) and are labelled as such everywhere. Add real work later with `category: "residential"` or `"monitor"`.
 Journal articles are placeholders with `published: false` (shown as "Coming soon", `noindex`, excluded from the sitemap).
