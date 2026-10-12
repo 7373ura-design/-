@@ -19,8 +19,8 @@ export default function JournalPage() {
         label="JOURNAL"
         heading={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\neveryday living." }}
         intro={{
-          ja: "日本とオーストラリアの家について、\n調べたことや考えたことのメモを、少しずつ載せていきます。",
-          en: "Notes on Japanese and Australian homes: things I’ve looked into and thought about, added a little at a time.",
+          ja: "日本とオーストラリアの住まい、素材、余白。\n心地よい暮らしのためのヒントを、少しずつお届けします。",
+          en: "Homes in Japan and Australia, natural materials and the value of empty space: ideas for living well, shared a little at a time.",
         }}
       />
       <section className="bg-cream pb-24 md:pb-32" aria-label="Articles">

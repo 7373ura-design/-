@@ -37,7 +37,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         label="SERVICES"
-        heading={{ ja: "部屋のことを、\n一緒に考える。", en: "Working out\nyour rooms, together." }}
+        heading={{ ja: "暮らしを、\n一緒に整える。", en: "Shaping your home,\ntogether." }}
         intro={{
           ja: "住まいのご相談から、コンセプトづくり、空間プランニング、スタイリングまで。\nその人のライフスタイルに合わせた空間づくりをサポートします。",
           en: "From a first conversation to concept, space planning and styling, we help you create a space that suits the way you live.",

@@ -13,14 +13,14 @@ export function CTASection() {
             className="jp-heading text-[1.75rem] leading-[1.55] text-navy md:text-[clamp(1.5rem,2.7vw,2.6rem)]"
             data-reveal
           >
-            <T ja={"部屋の写真を1枚、\n送ってください。"} en={"Send me one photo\nof your room."} />
+            <T ja={"一緒に、\n心地よい空間をつくりませんか？"} en={"Shall we create a space\nthat feels like yours?"} />
           </h2>
           <p className="jp-body mt-4 text-sm text-navy/85 md:text-[clamp(0.8rem,1vw,0.95rem)]" data-reveal>
-            <T ja="話はそこから始めます。フォームからでも、メールからでも。" en="We can start from there, by form or by email." />
+            <T ja="住まいのこと、まずはお気軽にご相談ください。" en="Tell us about your home. We would love to hear from you." />
           </p>
           <div className="mt-6 md:mt-[2vw]" data-reveal>
             <ArrowLink href="/contact" variant="pill">
-              CONTACT
+              ENQUIRE NOW
             </ArrowLink>
           </div>
         </div>

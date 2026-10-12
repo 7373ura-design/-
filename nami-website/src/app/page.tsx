@@ -1,16 +1,26 @@
 import { Hero } from "@/components/home/Hero";
-import { JournalIndex, NameNotes, ProjectsLaid, StoryLaid, WorkLaid } from "@/components/home/HandLaid";
+import {
+  ApproachSection,
+  CraftSection,
+  JournalPreview,
+  MeaningsSection,
+  ProjectsPreview,
+  ServicesPreview,
+  StorySection,
+} from "@/components/home/sections";
 import { CTASection } from "@/components/CTASection";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <StoryLaid />
-      <NameNotes />
-      <WorkLaid />
-      <ProjectsLaid />
-      <JournalIndex />
+      <StorySection />
+      <MeaningsSection />
+      <ApproachSection />
+      <CraftSection />
+      <ServicesPreview />
+      <ProjectsPreview />
+      <JournalPreview />
       <CTASection />
     </>
   );

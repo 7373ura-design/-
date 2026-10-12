@@ -98,7 +98,7 @@ export const services: Service[] = [
     title: "Space Planning",
     sub: { ja: "家具配置・空間構成", en: "Furniture layout and flow" },
     summary: {
-      ja: "通り道、光、空けておく場所。毎日の動きが楽になる配置を考えます。",
+      ja: "動線、光、余白。毎日が少し心地よくなる配置を考えます。",
       en: "Movement, light and breathing room: a layout that makes every day a little easier.",
     },
     idea: { term: "3尺 — THE 910 MM MODULE", text: { ja: "日本の家は約910mmの単位で計画されます。通路の幅、収納の奥行き、家具の大きさをひとつの物差しでそろえると、空間に落ち着いたリズムが生まれます。", en: "Japanese homes are planned on a module of about 910 mm. When walkway widths, storage depths and furniture sizes follow one measure, a calm rhythm runs through the space." } },
