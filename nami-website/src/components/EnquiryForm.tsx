@@ -8,11 +8,14 @@ import {
   propertyTypes,
   timelines,
   validateEnquiry,
+  errorMessages,
+  type ErrorKey,
   type EnquiryErrors,
   type EnquiryFields,
 } from "@/lib/enquiry";
 import { site } from "@/data/site";
 import { ArrowRight } from "@/components/illustrations/Icons";
+import { T } from "@/lib/i18n";
 import Image from "next/image";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -31,7 +34,7 @@ function Field({
   id: string;
   label: string;
   required?: boolean;
-  error?: string;
+  error?: ErrorKey;
   children: React.ReactNode;
   className?: string;
 }) {
@@ -44,7 +47,7 @@ function Field({
       {children}
       {error && (
         <p id={`${id}-error`} role="alert" className="mt-2 text-xs text-vermilion">
-          {error}
+          <T ja={errorMessages[error].ja} en={errorMessages[error].en} />
         </p>
       )}
     </div>
@@ -140,9 +143,10 @@ export function EnquiryForm({ defaultProjectType }: { defaultProjectType?: strin
         <p className="mt-8 font-display text-5xl text-navy">Thank you.</p>
         <p className="mt-4 font-display text-2xl text-deep">We will be in touch soon.</p>
         <p className="jp-body mt-6 text-sm leading-[2] text-navy/75">
-          お問い合わせありがとうございます。
-          <br />
-          内容を確認のうえ、ご連絡いたします。
+          <T
+            ja={"お問い合わせありがとうございます。\n内容を確認のうえ、ご連絡いたします。"}
+            en="Thank you for getting in touch. We will read your message and reply soon."
+          />
         </p>
         {!delivered && (
           <p className="mx-auto mt-6 max-w-md border border-dashed border-vermilion/60 p-3 text-xs text-vermilion">
@@ -214,6 +218,8 @@ export function EnquiryForm({ defaultProjectType }: { defaultProjectType?: strin
             name="message"
             rows={6}
             placeholder="お部屋のこと、暮らしのこと、気になっていることを自由にお書きください。"
+            data-ph-ja="お部屋のこと、暮らしのこと、気になっていることを自由にお書きください。"
+            data-ph-en="Tell us about your space, how you live and anything on your mind."
             className={`${inputBase} resize-y`}
             {...aria("message")}
           />
@@ -252,7 +258,7 @@ export function EnquiryForm({ defaultProjectType }: { defaultProjectType?: strin
           )}
           {err("files") && (
             <p id="files-error" role="alert" className="mt-2 text-xs text-vermilion">
-              {err("files")}
+              <T ja={errorMessages[err("files")!].ja} en={errorMessages[err("files")!].en} />
             </p>
           )}
         </div>
@@ -260,11 +266,14 @@ export function EnquiryForm({ defaultProjectType }: { defaultProjectType?: strin
 
       {status === "error" && (
         <p role="alert" className="mt-8 border border-vermilion/50 bg-vermilion/5 p-4 text-sm text-navy">
-          送信できませんでした。時間をおいて再度お試しいただくか、
-          <a href={`mailto:${site.email}`} className="underline">
-            {site.email}
-          </a>
-          までご連絡ください。
+          <T
+            ja={
+              <>
+                送信できませんでした。時間をおいて再度お試しいただくか、{site.email} までご連絡ください。
+              </>
+            }
+            en={<>Your enquiry could not be sent. Please try again later, or email us at {site.email}.</>}
+          />
         </p>
       )}
 

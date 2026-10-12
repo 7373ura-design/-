@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { approachIcons, meanings, story } from "@/data/brand";
+import { approach, approachIcons, meanings, meaningsIntro, story } from "@/data/brand";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { getArticles } from "@/data/journal";
 import { meaningEmblems, ArrowRight } from "@/components/illustrations/Icons";
 import { ArrowLink, Container, Lines, SectionHeader } from "@/components/ui";
+import { T, type Bi } from "@/lib/i18n";
 
 /**
  * The NAMI two-column section: label, headline, copy and a link on the left,
@@ -25,7 +26,7 @@ function Split({
   id: string;
   number?: string;
   label: string;
-  heading: string[];
+  heading: Bi;
   body?: ReactNode;
   link?: { href: string; label: string };
   children: ReactNode;
@@ -83,7 +84,7 @@ function Card({
   alt: string;
   ratio: string;
   title: ReactNode;
-  sub: string;
+  sub: ReactNode;
   arrow?: boolean;
   index: number;
 }) {
@@ -115,6 +116,17 @@ function Card({
   );
 }
 
+/** Paragraphs in both languages. */
+export function Paras({ ja, en, gap = "mt-4" }: { ja: string[]; en: string[]; gap?: string }) {
+  const render = (list: string[]) =>
+    list.map((p, i) => (
+      <p key={i} className={i ? gap : ""}>
+        <Lines text={p} />
+      </p>
+    ));
+  return <T as="div" ja={render(ja)} en={render(en)} />;
+}
+
 export function StorySection() {
   return (
     <Split
@@ -122,17 +134,13 @@ export function StorySection() {
       number="01"
       label="STORY"
       heading={story.heading}
-      body={story.body.map((p, i) => (
-        <p key={i} className={i ? "mt-4" : ""}>
-          <Lines text={p} />
-        </p>
-      ))}
+      body={<Paras ja={story.body.ja} en={story.body.en} />}
       link={{ href: "/about", label: "MORE ABOUT NAMI" }}
     >
       <div className="relative aspect-[928/612] w-full" data-reveal>
         <Image
           src="/images/illustrations/story-surfer.jpg"
-          alt="NAMIの波乗りの女の子 — 赤いサーフボードで大きな波に乗り、亀と一緒に島と赤い太陽の方を指さしている"
+          alt="The NAMI surfer: a girl on a red surfboard riding a big wave with a turtle, pointing towards an island and a red sun"
           fill
           sizes="(min-width: 1024px) 60vw, 100vw"
           className="object-contain feather"
@@ -147,8 +155,8 @@ export function MeaningsSection() {
     <Split
       id="meaning"
       label="THE MEANING BEHIND NAMI"
-      heading={["NAMIに込めた", "3つの意味"]}
-      body={<p>波、並、そして N — A — M — I。<br />ひとつの名前に、三つの想いを込めています。</p>}
+      heading={meaningsIntro.heading}
+      body={<T as="p" ja={meaningsIntro.body.ja} en={meaningsIntro.body.en} />}
       link={{ href: "/about", label: "READ OUR STORY" }}
     >
       <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
@@ -159,9 +167,11 @@ export function MeaningsSection() {
               <Emblem className="h-20 w-20" />
               <p className="label mt-5 text-vermilion">{m.number}</p>
               <h3 className="mt-2 font-jp text-xl tracking-[0.08em] text-navy">{m.title}</h3>
-              <p className="jp-heading mt-2 text-sm text-deep">{m.lead}</p>
+              <p className="jp-heading mt-2 text-sm text-deep">
+                <T ja={m.lead.ja} en={m.lead.en} />
+              </p>
               <p className="jp-body mt-3 text-xs leading-[2] text-navy/75">
-                <Lines text={m.body[0]} />
+                <T ja={m.body.ja[0]} en={m.body.en[0]} />
               </p>
             </div>
           );
@@ -177,22 +187,14 @@ export function ApproachSection() {
       id="approach"
       number="02"
       label="APPROACH"
-      heading={["日本とオーストラリア、", "ふたつの視点から。"]}
-      body={
-        <p>
-          日本の美意識と、オーストラリアの豊かな自然。
-          <br />
-          それぞれの良さを活かしながら、
-          <br />
-          人の暮らしに寄り添う、心地よい空間をつくります。
-        </p>
-      }
+      heading={approach.heading}
+      body={<T as="p" ja={approach.body.ja} en={approach.body.en} />}
       link={{ href: "/about", label: "MORE APPROACH" }}
     >
       <ol className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-2">
         {approachIcons.map((a, i) => (
           <li
-            key={a.title}
+            key={a.icon}
             className="relative text-center"
             data-reveal
             style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}
@@ -205,9 +207,11 @@ export function ApproachSection() {
                 →
               </span>
             )}
-            <h3 className="jp-heading mt-5 text-[0.95rem] text-navy">{a.title}</h3>
+            <h3 className="jp-heading mt-5 text-[0.95rem] text-navy">
+              <T ja={a.title.ja} en={a.title.en} />
+            </h3>
             <p className="jp-body mt-2 text-xs leading-[1.9] text-navy/70">
-              <Lines text={a.body} />
+              <T ja={a.body.ja} en={a.body.en} />
             </p>
           </li>
         ))}
@@ -222,17 +226,13 @@ export function ServicesPreview() {
       id="services"
       number="03"
       label="SERVICES"
-      heading={["暮らしを整える、", "4つのサービス。"]}
+      heading={{ ja: "暮らしを整える、\n4つのサービス。", en: "Four services\nto shape your home." }}
       body={
-        <p>
-          住まいのご相談から、コンセプトづくり、
-          <br />
-          空間プランニング、スタイリングまで。
-          <br />
-          ライフスタイルに合わせた空間づくりを
-          <br />
-          サポートします。
-        </p>
+        <T
+          as="p"
+          ja={"住まいのご相談から、コンセプトづくり、\n空間プランニング、スタイリングまで。\nライフスタイルに合わせた空間づくりを\nサポートします。"}
+          en="From a first conversation to concept, space planning and styling, we help create spaces that suit the way you live."
+        />
       }
       link={{ href: "/services", label: "VIEW ALL SERVICES" }}
     >
@@ -250,7 +250,7 @@ export function ServicesPreview() {
                 {w}
               </span>
             ))}
-            sub={s.titleJa}
+            sub={<T ja={s.sub.ja} en={s.sub.en} />}
           />
         ))}
       </CardRow>
@@ -264,15 +264,13 @@ export function ProjectsPreview() {
       id="projects"
       number="04"
       label="PROJECTS"
-      heading={["暮らしの波を、", "かたちに。"]}
+      heading={{ ja: "暮らしの波を、\nかたちに。", en: "Giving shape\nto life’s waves." }}
       body={
-        <p>
-          NAMIの考え方をもとにした
-          <br />
-          コンセプトプロジェクトをご紹介します。
-          <br />
-          （今後は実際のプロジェクトも掲載していきます）
-        </p>
+        <T
+          as="p"
+          ja={"NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。\n（今後は実際のプロジェクトも掲載していきます）"}
+          en="Concept projects that show how NAMI thinks. Real client projects will be added in future."
+        />
       }
       link={{ href: "/projects", label: "VIEW ALL PROJECTS" }}
     >
@@ -301,13 +299,13 @@ export function JournalPreview() {
       id="journal"
       number="05"
       label="JOURNAL"
-      heading={["暮らしを考える、", "ヒントを届ける。"]}
+      heading={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\neveryday living." }}
       body={
-        <p>
-          インテリア、暮らし、旅、文化、素材について、
-          <br />
-          NAMIの視点でお届けします。
-        </p>
+        <T
+          as="p"
+          ja={"インテリア、暮らし、旅、文化、素材について、\nNAMIの視点でお届けします。"}
+          en="Notes on interiors, living, travel, culture and materials, from NAMI’s point of view."
+        />
       }
       link={{ href: "/journal", label: "VIEW ALL ARTICLES" }}
     >
@@ -323,7 +321,7 @@ export function JournalPreview() {
               alt={a.cover.alt}
               ratio="aspect-[165/121]"
               title={a.title}
-              sub={a.titleJa ?? ""}
+              sub={<T ja={a.titleJa ?? ""} en={a.excerpt.en} />}
             />
           ))}
       </CardRow>

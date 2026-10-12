@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container, SectionLabel } from "@/components/ui";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
+import { T } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -31,9 +32,10 @@ export default async function ContactPage({ searchParams }: Props) {
               <em className="text-deep">that feels like yours.</em>
             </h1>
             <p className="jp-body mt-8 text-[0.9375rem] text-navy/80" data-reveal>
-              住まいのこと、まずはお気軽にご相談ください。
-              <br />
-              内容を確認のうえ、ご連絡いたします。
+              <T
+                ja={"住まいのこと、まずはお気軽にご相談ください。\n内容を確認のうえ、ご連絡いたします。"}
+                en="Tell us about your home. We will read your message and get back to you."
+              />
             </p>
           </div>
           <div className="relative hidden lg:col-span-5 lg:block" aria-hidden>
@@ -49,15 +51,17 @@ export default async function ContactPage({ searchParams }: Props) {
               <p className="label text-deep">HOW IT WORKS</p>
               <ol className="mt-5 space-y-5">
                 {[
-                  ["Enquiry", "フォームから、暮らしや空間についてお聞かせください。"],
-                  ["Reply", "内容を確認し、メールでご連絡します。"],
-                  ["Conversation", "オンラインまたは対面で、詳しくお話を伺います。"],
-                ].map(([en, ja], i) => (
-                  <li key={en} className="flex gap-4">
+                  ["Enquiry", "フォームから、暮らしや空間についてお聞かせください。", "Tell us about your home and how you live, using the form."],
+                  ["Reply", "内容を確認し、メールでご連絡します。", "We read your message and reply by email."],
+                  ["Conversation", "オンラインまたは対面で、詳しくお話を伺います。", "We talk in more detail, online or in person."],
+                ].map(([step, ja, en], i) => (
+                  <li key={step} className="flex gap-4">
                     <span className="font-display text-2xl text-vermilion">0{i + 1}</span>
                     <div>
-                      <p className="font-display text-xl text-navy">{en}</p>
-                      <p className="jp-body text-sm leading-[1.9] text-navy/75">{ja}</p>
+                      <p className="font-display text-xl text-navy">{step}</p>
+                      <p className="jp-body text-sm leading-[1.9] text-navy/75">
+                        <T ja={ja} en={en} />
+                      </p>
                     </div>
                   </li>
                 ))}

@@ -7,6 +7,7 @@ import { navigation } from "@/data/site";
 import { Logo } from "@/components/Logo";
 import { ArrowRight } from "@/components/illustrations/Icons";
 import Image from "next/image";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 export function Header() {
   const pathname = usePathname();
@@ -52,7 +53,7 @@ export function Header() {
         >
           <Logo priority className={`w-auto transition-all duration-500 ${scrolled ? "h-8" : "h-9 md:h-10"}`} />
 
-          <nav aria-label="Main" className="hidden items-center gap-9 lg:flex">
+          <nav aria-label="Main" className="hidden items-center gap-7 xl:gap-9 lg:flex">
             {navigation.map((item) => (
               <Link
                 key={item.href}
@@ -67,7 +68,8 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
+            <LanguageSwitch />
             <Link
               href="/contact"
               className="group label hidden items-center gap-3 rounded-full border border-navy/60 px-6 py-3 text-navy transition-colors duration-500 hover:border-navy hover:bg-navy hover:text-paper sm:inline-flex"

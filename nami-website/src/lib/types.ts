@@ -1,3 +1,5 @@
+import type { Bi, BiList } from "@/lib/i18n";
+
 export type ImageAsset = {
   src: string;
   alt: string;
@@ -7,14 +9,15 @@ export type Service = {
   slug: string;
   number: string;
   title: string;
-  titleJa: string;
-  summary: string;
+  /** Short description under the title (Japanese / English). */
+  sub: Bi;
+  summary: Bi;
   image: ImageAsset;
-  whatItIs: string;
-  whoFor: string[];
-  included: string[];
-  process: { step: string; detail: string }[];
-  deliverables: string[];
+  whatItIs: Bi;
+  whoFor: BiList;
+  included: BiList;
+  process: { step: string; detail: Bi }[];
+  deliverables: BiList;
 };
 
 export type ProjectCategory = "concept" | "monitor" | "residential";
@@ -29,10 +32,10 @@ export type Project = {
   type: string;
   year: string;
   cover: ImageAsset;
-  overview: string;
-  concept: string;
-  designDirection: { title: string; body: string }[];
-  materials: { name: string; note: string; swatch: string }[];
+  overview: Bi;
+  concept: Bi;
+  designDirection: { title: string; body: Bi }[];
+  materials: { name: string; note: Bi; swatch: string }[];
   moodboard: ImageAsset[];
   plan: ImageAsset;
   visuals: ImageAsset[];
@@ -44,12 +47,12 @@ export type JournalArticle = {
   title: string;
   titleJa?: string;
   category: string;
-  excerpt: string;
+  excerpt: Bi;
   date: string;
   readingTime: string;
   cover: ImageAsset;
   /** Body paragraphs. Replace with MDX / CMS content later. */
-  body: string[];
+  body: BiList;
   published: boolean;
 };
 
@@ -57,14 +60,14 @@ export type Principle = {
   key: "nature" | "balance" | "material" | "simplicity" | "people";
   number: string;
   title: string;
-  titleJa: string;
-  body: string;
+  sub: Bi;
+  body: Bi;
 };
 
 export type Meaning = {
   number: string;
   kanji: string;
   title: string;
-  lead: string;
-  body: string[];
+  lead: Bi;
+  body: BiList;
 };

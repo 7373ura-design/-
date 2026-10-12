@@ -5,7 +5,9 @@ import Image from "next/image";
 import { JapanAustraliaSection, MeaningsFull } from "@/components/about-sections";
 import { PrincipleCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
-import { Container, Lines, SectionHeader } from "@/components/ui";
+import { Container, SectionHeader } from "@/components/ui";
+import { Paras } from "@/components/home/sections";
+import { T } from "@/lib/i18n";
 import { approach, principles, story } from "@/data/brand";
 
 export const metadata: Metadata = {
@@ -20,12 +22,15 @@ export default function AboutPage() {
     <>
       <PageHero
         label="ABOUT NAMI"
-        heading={["波のように生きる、", "空間をつくる。"]}
-        intro={"NAMIは、日本の美意識とオーストラリアの暮らしを\nつなぐインテリアデザインブランドです。"}
+        heading={story.heading}
+        intro={{
+          ja: "NAMIは、日本の美意識とオーストラリアの暮らしを\nつなぐインテリアデザインブランドです。",
+          en: "NAMI is an interior design brand that brings together Japanese sensibility and Australian living.",
+        }}
         art={
           <Image
             src="/images/illustrations/story-surfer.jpg"
-            alt="NAMIの波乗りの女の子"
+            alt="The NAMI surfer: a girl riding a big wave on a red surfboard"
             width={928}
             height={612}
             priority
@@ -48,14 +53,10 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <div id="what-heading">
-              <SectionHeader label="WHAT IS NAMI" heading={["NAMIとは"]} />
+              <SectionHeader label="WHAT IS NAMI" heading={{ ja: "NAMIとは", en: "What is NAMI?" }} />
             </div>
-            <div className="jp-body mt-8 space-y-6 text-[0.9375rem] text-navy/85">
-              {story.body.map((p, i) => (
-                <p key={i} data-reveal>
-                  <Lines text={p} />
-                </p>
-              ))}
+            <div className="jp-body mt-8 text-[0.9375rem] text-navy/85" data-reveal>
+              <Paras ja={story.body.ja} en={story.body.en} gap="mt-6" />
             </div>
           </div>
         </Container>
@@ -73,7 +74,7 @@ export default function AboutPage() {
               <SectionHeader label="OUR PHILOSOPHY" heading={approach.heading} />
             </div>
             <p className="jp-body text-[0.9375rem] text-navy/80 lg:col-span-5" data-reveal>
-              <Lines text={approach.body} />
+              <T ja={approach.body.ja} en={approach.body.en} />
             </p>
           </div>
           <ul className="mt-14 grid md:mt-20 md:grid-cols-5 md:[&>li:first-child]:border-l-0 md:[&>li:first-child]:pl-0">
@@ -99,9 +100,26 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
             <div id="founder-heading">
-              <SectionHeader label="FOUNDER" heading={["名前を背負って、", "空間をつくる。"]} />
+              <SectionHeader label="FOUNDER" heading={{ ja: "名前を背負って、\n空間をつくる。", en: "Putting my name\nto every space." }} />
             </div>
-            <div className="jp-body mt-8 space-y-6 text-[0.9375rem] text-navy/85" data-reveal>
+            <div className="jp-body mt-8 text-[0.9375rem] text-navy/85" data-reveal>
+              <T
+                as="div"
+                className="space-y-6"
+                en={
+                  <>
+                    <p>
+                      NAMI began with a simple wish from its founder, whose roots are in Suginami, Tokyo: to create spaces
+                      that bring out the best of both Japan and Australia.
+                    </p>
+                    <p>
+                      The name comes from part of the founder’s own name, Nanami. Putting that name to the work means
+                      taking personal responsibility for every space.
+                    </p>
+                  </>
+                }
+                ja={
+                  <>
               <p>
                 NAMIは、東京・杉並をルーツに持つ創業者の
                 <br />
@@ -116,6 +134,9 @@ export default function AboutPage() {
                 <br />
                 一つひとつの空間に向き合います。
               </p>
+                  </>
+                }
+              />
             </div>
             <p className="mt-10 font-display text-3xl tracking-[0.12em] text-navy" data-reveal>
               Nanami

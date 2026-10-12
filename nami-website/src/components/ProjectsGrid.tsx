@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ProjectCard } from "@/components/cards";
 import { projectCategories } from "@/data/projects";
 import type { Project } from "@/lib/types";
+import { T } from "@/lib/i18n";
 
 type Key = (typeof projectCategories)[number]["key"];
 
@@ -51,9 +52,10 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
           <div className="border hairline bg-paper px-6 py-16 text-center">
             <p className="label text-deep">COMING SOON</p>
             <p className="jp-body mt-4 text-[0.9375rem] text-navy/80">
-              このカテゴリーのプロジェクトは準備中です。
-              <br />
-              公開まで今しばらくお待ちください。
+              <T
+                ja={"このカテゴリーのプロジェクトは準備中です。\n公開まで今しばらくお待ちください。"}
+                en="Projects in this category are coming soon."
+              />
             </p>
           </div>
         )}

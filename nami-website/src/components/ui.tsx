@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { ArrowRight } from "@/components/illustrations/Icons";
+import { T, type Bi } from "@/lib/i18n";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-[1360px] px-5 md:px-10 lg:px-16 ${className}`}>{children}</div>;
@@ -49,8 +50,8 @@ export function SectionHeader({
 }: {
   number?: string;
   label: string;
-  heading: string[];
-  intro?: string;
+  heading: Bi;
+  intro?: Bi;
   tone?: "navy" | "light";
   align?: "left" | "center";
   as?: "h1" | "h2";
@@ -64,17 +65,13 @@ export function SectionHeader({
       <Tag
         className={`jp-heading mt-5 text-[1.75rem] leading-[1.5] sm:text-[2rem] lg:text-[2.35rem] ${tone === "light" ? "text-paper" : "text-navy"}`}
       >
-        {heading.map((line, i) => (
-          <span key={i} className="block">
-            {line}
-          </span>
-        ))}
+        <T ja={heading.ja} en={heading.en} />
       </Tag>
       {intro && (
         <p
           className={`jp-body mt-6 text-[0.9375rem] ${center ? "mx-auto" : ""} max-w-xl ${tone === "light" ? "text-paper/80" : "text-navy/80"}`}
         >
-          <Lines text={intro} />
+          <T ja={intro.ja} en={intro.en} />
         </p>
       )}
     </div>

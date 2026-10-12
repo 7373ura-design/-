@@ -3,6 +3,7 @@ import type { JournalArticle, Meaning, Principle, Project, Service } from "@/lib
 import { Photo } from "@/components/Photo";
 import { ArrowRight, meaningEmblems, principleIcons } from "@/components/illustrations/Icons";
 import { Lines } from "@/components/ui";
+import { T } from "@/lib/i18n";
 
 export function MeaningCard({ meaning, index, full = false }: { meaning: Meaning; index: number; full?: boolean }) {
   const Emblem = meaningEmblems[index % meaningEmblems.length];
@@ -36,14 +37,23 @@ export function MeaningCard({ meaning, index, full = false }: { meaning: Meaning
           meaning.title
         )}
       </h3>
-      <p className={`mt-3 text-deep ${isLatin ? "label !tracking-[0.2em]" : "jp-heading text-base"}`}>{meaning.lead}</p>
+      <p className={`mt-3 text-deep ${isLatin ? "label !tracking-[0.2em]" : "jp-heading text-base"}`}>
+        <T ja={meaning.lead.ja} en={meaning.lead.en} />
+      </p>
       <div className="mt-5 h-px w-12 bg-vermilion" aria-hidden />
       <div className="jp-body mt-6 space-y-4 text-sm leading-[2.05] text-navy/80">
-        {(full ? meaning.body : meaning.body.slice(0, 2)).map((p, i) => (
-          <p key={i}>
-            <Lines text={p} />
-          </p>
-        ))}
+        <T
+          as="div"
+          className="space-y-4"
+          ja={(full ? meaning.body.ja : meaning.body.ja.slice(0, 2)).map((p, i) => (
+            <p key={i}>
+              <Lines text={p} />
+            </p>
+          ))}
+          en={(full ? meaning.body.en : meaning.body.en.slice(0, 2)).map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        />
       </div>
     </article>
   );
@@ -61,8 +71,12 @@ export function PrincipleCard({ principle, index }: { principle: Principle; inde
       <div className="md:mt-8">
         <p className="label text-vermilion">{principle.number}</p>
         <h3 className="mt-2 font-display text-2xl tracking-[0.18em] text-navy">{principle.title}</h3>
-        <p className="jp-heading mt-1 text-[0.9375rem] text-navy">{principle.titleJa}</p>
-        <p className="jp-body mt-4 text-[0.8125rem] leading-[2] text-navy/70">{principle.body}</p>
+        <p className="jp-heading mt-1 text-[0.9375rem] text-navy">
+          <T ja={principle.sub.ja} en={principle.sub.en} />
+        </p>
+        <p className="jp-body mt-4 text-[0.8125rem] leading-[2] text-navy/70">
+          <T ja={principle.body.ja} en={principle.body.en} />
+        </p>
       </div>
     </li>
   );
@@ -89,7 +103,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
             <h3 className="font-display text-2xl leading-tight text-navy transition-colors group-hover:text-deep">
               {service.title}
             </h3>
-            <p className="jp-heading mt-2 text-sm text-navy/75">{service.titleJa}</p>
+            <p className="jp-heading mt-2 text-sm text-navy/75"><T ja={service.sub.ja} en={service.sub.en} /></p>
           </div>
         </div>
       </Link>
@@ -168,7 +182,9 @@ export function JournalCard({ article, index }: { article: JournalArticle; index
         <h3 className="mt-3 font-display text-2xl leading-snug text-navy transition-colors group-hover:text-deep">
           {article.title}
         </h3>
-        {article.titleJa && <p className="jp-heading mt-1 text-sm text-navy/75">{article.titleJa}</p>}
+        <p className="jp-heading mt-1 text-sm text-navy/75">
+          <T ja={article.titleJa ?? ""} en={article.excerpt.en} />
+        </p>
       </Link>
     </article>
   );

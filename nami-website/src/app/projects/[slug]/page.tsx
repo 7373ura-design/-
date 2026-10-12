@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
 import { ArrowLink, Container, SectionLabel } from "@/components/ui";
 import { getProject, projects } from "@/data/projects";
+import { T } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
   return {
     title: `${project.title} — ${project.subtitle}`,
-    description: project.overview,
+    description: project.overview.en,
     alternates: { canonical: `/projects/${project.slug}` },
-    openGraph: { title: `${project.title} | NAMI`, description: project.overview },
+    openGraph: { title: `${project.title} | NAMI`, description: project.overview.en },
   };
 }
 
@@ -80,7 +81,10 @@ export default async function ProjectPage({ params }: Props) {
         <Container className="mt-12">
           <Photo image={project.cover} priority className="aspect-[4/3] md:aspect-[16/9]" sizes="100vw" />
           <p className="mt-4 text-xs text-navy/60">
-            ※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。画像はイメージです。
+            <T
+              ja="※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。画像はイメージです。"
+              en="This is a NAMI concept study, not a client project. Images are for illustration only."
+            />
           </p>
         </Container>
 <div className="mt-16" />
@@ -89,13 +93,13 @@ export default async function ProjectPage({ params }: Props) {
       <div className="bg-paper">
         <Block label="PROJECT OVERVIEW">
           <p className="jp-heading text-xl leading-[2] text-navy md:text-2xl" data-reveal>
-            {project.overview}
+            <T ja={project.overview.ja} en={project.overview.en} />
           </p>
         </Block>
 
         <Block label="CONCEPT">
           <p className="jp-body text-base text-navy/85" data-reveal>
-            {project.concept}
+            <T ja={project.concept.ja} en={project.concept.en} />
           </p>
         </Block>
 
@@ -105,7 +109,9 @@ export default async function ProjectPage({ params }: Props) {
               <li key={d.title} data-reveal style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}>
                 <span className="label text-vermilion">0{i + 1}</span>
                 <h3 className="mt-3 font-display text-2xl text-navy">{d.title}</h3>
-                <p className="jp-body mt-3 text-sm leading-[2] text-navy/80">{d.body}</p>
+                <p className="jp-body mt-3 text-sm leading-[2] text-navy/80">
+                  <T ja={d.body.ja} en={d.body.en} />
+                </p>
               </li>
             ))}
           </ol>
@@ -121,7 +127,9 @@ export default async function ProjectPage({ params }: Props) {
                   style={{ backgroundColor: m.swatch }}
                 />
                 <p className="mt-4 font-display text-xl text-navy">{m.name}</p>
-                <p className="jp-heading text-sm text-navy/70">{m.note}</p>
+                <p className="jp-heading text-sm text-navy/70">
+                  <T ja={m.note.ja} en={m.note.en} />
+                </p>
               </li>
             ))}
           </ul>

@@ -121,6 +121,22 @@
   }
 }
 
+/* Language switch — both languages are in the page; show the selected one */
+html:not([data-lang="en"]) .lang-en,
+html[data-lang="en"] .lang-ja {
+  display: none !important;
+}
+html[data-lang="en"] .jp-heading {
+  letter-spacing: 0.005em;
+  line-height: 1.3;
+  font-feature-settings: normal;
+}
+html[data-lang="en"] .jp-body {
+  letter-spacing: 0.005em;
+  line-height: 1.75;
+  font-feature-settings: normal;
+}
+
 /* Scroll reveal — elements start hidden only once JS has marked the document ready */
 .js [data-reveal] {
   opacity: 0;

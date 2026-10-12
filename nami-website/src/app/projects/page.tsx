@@ -4,6 +4,7 @@ import { ProjectsGrid } from "@/components/ProjectsGrid";
 import { CTASection } from "@/components/CTASection";
 import { Container } from "@/components/ui";
 import { projects } from "@/data/projects";
+import { T } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -17,14 +18,19 @@ export default function ProjectsPage() {
     <>
       <PageHero
         label="PROJECTS"
-        heading={["暮らしの波を、", "かたちに。"]}
-        intro={"NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。"}
+        heading={{ ja: "暮らしの波を、\nかたちに。", en: "Giving shape\nto life’s waves." }}
+        intro={{
+          ja: "NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。",
+          en: "Concept projects that show how NAMI thinks about space.",
+        }}
         art={
           <div className="border-l-2 border-vermilion pl-6">
             <p className="font-display text-3xl tracking-[0.16em] text-navy">NAMI CONCEPTS</p>
             <p className="jp-body mt-4 text-sm leading-[2] text-navy/75">
-              掲載しているプロジェクトは、NAMIの考え方を表現するために制作したコンセプトスタディです。
-              実際のクライアント案件ではありません。
+              <T
+                ja="掲載しているプロジェクトは、NAMIの考え方を表現するために制作したコンセプトスタディです。実際のクライアント案件ではありません。"
+                en="These projects are concept studies created to show NAMI’s design thinking. They are not client commissions."
+              />
             </p>
           </div>
         }

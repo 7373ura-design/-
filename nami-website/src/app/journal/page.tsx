@@ -17,8 +17,11 @@ export default function JournalPage() {
     <>
       <PageHero
         label="JOURNAL"
-        heading={["暮らしを考える、", "ヒントを届ける。"]}
-        intro={"日本とオーストラリアの住まい、素材、余白。\n心地よい暮らしのためのヒントを、少しずつお届けします。"}
+        heading={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\neveryday living." }}
+        intro={{
+          ja: "日本とオーストラリアの住まい、素材、余白。\n心地よい暮らしのためのヒントを、少しずつお届けします。",
+          en: "Homes in Japan and Australia, natural materials and the value of empty space: ideas for living well, shared a little at a time.",
+        }}
       />
       <section className="bg-cream pb-24 md:pb-32" aria-label="Articles">
         <Container>

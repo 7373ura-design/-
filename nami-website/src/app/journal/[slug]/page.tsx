@@ -4,6 +4,7 @@ import { Photo } from "@/components/Photo";
 import { JournalCard } from "@/components/cards";
 import { ArrowLink, Container, SectionLabel } from "@/components/ui";
 import { articles, getArticle } from "@/data/journal";
+import { T } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,11 +18,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
   return {
     title: article.title,
-    description: article.excerpt,
+    description: article.excerpt.en,
     alternates: { canonical: `/journal/${article.slug}` },
     // Unpublished placeholders stay out of search results.
     robots: article.published ? undefined : { index: false, follow: true },
-    openGraph: { type: "article", title: `${article.title} | NAMI`, description: article.excerpt },
+    openGraph: { type: "article", title: `${article.title} | NAMI`, description: article.excerpt.en },
   };
 }
 
@@ -41,7 +42,7 @@ export default async function ArticlePage({ params }: Props) {
           {article.title}
         </h1>
         {article.titleJa && (
-          <p className="jp-heading mt-4 text-xl text-deep" data-reveal>
+          <p className="jp-heading lang-ja mt-4 text-xl text-deep" lang="ja" data-reveal>
             {article.titleJa}
           </p>
         )}
@@ -53,11 +54,16 @@ export default async function ArticlePage({ params }: Props) {
         <Photo image={article.cover} priority className="aspect-[16/9]" sizes="(min-width: 1024px) 64rem, 100vw" />
       </Container>
       <Container className="max-w-3xl py-16 md:py-24">
-        <p className="jp-heading text-xl leading-[2] text-navy">{article.excerpt}</p>
-        <div className="jp-body mt-10 space-y-6 text-base text-navy/85">
-          {article.body.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+        <p className="jp-heading text-xl leading-[2] text-navy">
+          <T ja={article.excerpt.ja} en={article.excerpt.en} />
+        </p>
+        <div className="jp-body mt-10 text-base text-navy/85">
+          <T
+            as="div"
+            className="space-y-6"
+            ja={article.body.ja.map((p, i) => <p key={i}>{p}</p>)}
+            en={article.body.en.map((p, i) => <p key={i}>{p}</p>)}
+          />
         </div>
         <ArrowLink href="/journal" className="mt-14">
           BACK TO JOURNAL

@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/Motion";
 import { site } from "@/data/site";
+import { languageScript } from "@/lib/i18n";
 import "./globals.css";
 
 const notoSerifJP = Noto_Serif_JP({
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: site.title,
     description: site.description,
     locale: site.locale,
-    alternateLocale: ["en_AU"],
+    alternateLocale: ["en_GB"],
     url: "/",
   },
   twitter: { card: "summary_large_image", title: site.title, description: site.description },
@@ -55,6 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Enables scroll-reveal styles only when JS runs, so content is never hidden without it */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        {/* Applies the saved 日本語 / English choice before first paint */}
+        <script dangerouslySetInnerHTML={{ __html: languageScript }} />
       </head>
       <body>
         <Header />

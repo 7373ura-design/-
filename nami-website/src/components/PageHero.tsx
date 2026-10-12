@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Container, Lines, SectionLabel } from "@/components/ui";
+import { Container, SectionLabel } from "@/components/ui";
+import { T, type Bi } from "@/lib/i18n";
 
 /** Shared hero for inner pages: label, Japanese headline, optional intro and art. */
 export function PageHero({
@@ -9,8 +10,8 @@ export function PageHero({
   art,
 }: {
   label: string;
-  heading: string[];
-  intro?: string;
+  heading: Bi;
+  intro?: Bi;
   art?: ReactNode;
 }) {
   return (
@@ -25,11 +26,7 @@ export function PageHero({
             data-reveal
             style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
           >
-            {heading.map((line, i) => (
-              <span key={i} className="block">
-                {line}
-              </span>
-            ))}
+            <T ja={heading.ja} en={heading.en} />
           </h1>
           {intro && (
             <p
@@ -37,7 +34,7 @@ export function PageHero({
               data-reveal
               style={{ "--reveal-delay": "200ms" } as React.CSSProperties}
             >
-              <Lines text={intro} />
+              <T ja={intro.ja} en={intro.en} />
             </p>
           )}
         </div>

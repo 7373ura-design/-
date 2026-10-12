@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { hero } from "@/data/brand";
+import { T } from "@/lib/i18n";
 
 /**
  * Hero — the interior photograph and the wave/sun/pine illustration are one
@@ -10,15 +12,13 @@ export function Hero() {
     <section className="relative bg-cream pt-20 md:pt-24" aria-labelledby="hero-heading">
       <div className="relative mx-auto max-w-[1600px]">
         {/* Text — in normal flow on mobile, laid over the paper area on desktop */}
-        <div className="relative z-10 px-5 pb-8 pt-8 md:absolute md:left-[5.5%] md:top-[9%] md:w-[34%] md:p-0">
+        <div className="relative z-10 px-5 pb-8 pt-8 md:absolute md:left-[5.5%] md:top-[9%] md:w-[36%] md:p-0">
           <h1
             id="hero-heading"
-            className="jp-heading text-[2.6rem] leading-[1.42] text-navy md:text-[clamp(2.2rem,4.1vw,4.4rem)]"
+            className="jp-heading text-[2.6rem] leading-[1.42] text-navy md:text-[clamp(2.2rem,4.1vw,4.4rem)] [html[data-lang=en]_&]:md:text-[clamp(2rem,3.5vw,3.8rem)]"
             data-reveal
           >
-            <span className="block">暮らしと</span>
-            <span className="block">記憶を、</span>
-            <span className="block">空間に。</span>
+            <T ja={hero.heading.ja} en={hero.heading.en} />
           </h1>
           <p
             className="label mt-4 !text-[0.72rem] !tracking-[0.3em] text-navy md:mt-[1.2vw] md:!text-[clamp(0.62rem,0.9vw,0.85rem)]"
@@ -28,15 +28,11 @@ export function Hero() {
             NEST AND MEMORIES INSIDE
           </p>
           <p
-            className="jp-body mt-5 text-sm leading-[2] text-navy/85 md:mt-[1.6vw] md:text-[clamp(0.78rem,1.05vw,1rem)]"
+            className="jp-body mt-5 text-sm leading-[2] text-navy/85 md:mt-[1.6vw] md:max-w-[28vw] md:text-[clamp(0.78rem,1.05vw,1rem)]"
             data-reveal
             style={{ "--reveal-delay": "220ms" } as React.CSSProperties}
           >
-            波のように変わる毎日に寄り添い、
-            <br />
-            その人だけの記憶が積み重なっていく
-            <br />
-            空間をつくるインテリアデザインブランドです。
+            <T ja={hero.body.ja} en={hero.body.en} />
           </p>
           <a
             href="#story"
