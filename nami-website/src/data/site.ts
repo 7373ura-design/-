@@ -3,7 +3,7 @@ export const site = {
   tagline: "NEST AND MEMORIES INSIDE",
   title: "NAMI — Japanese Perspective on Contemporary Australian Living",
   description:
-    "NAMI is a Japanese-Australian interior design brand creating thoughtful spaces where Japanese design sensibility meets contemporary Australian living.",
+    "NAMI is an interior design practice bringing Japanese ideas about home to Australian houses.",
   // TODO: replace with the production domain once it is connected on Vercel.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nami.example.com",
   locale: "ja_JP",

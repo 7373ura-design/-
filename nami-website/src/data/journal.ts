@@ -37,7 +37,6 @@ export const articles: JournalArticle[] = [
         "北欧は、オークやアッシュなど明るい色の木、やわらかな曲線、「ヒュッゲ」と呼ばれる居心地のよさ。日本は、濃い色の木や墨色、低い目線、余白、そして不完全さや時間の跡を美しいと感じる「わびさび」の感覚。ジャパンディは、どちらかに寄せるのではなく、その間のバランスを探すスタイルです。",
         "## 取り入れるときのコツ",
         "素材は3〜4種類に絞る。家具は少し低めにして、視線を下げる。色はベージュ・木の色・墨色を基本に、差し色はひとつだけ。手仕事を感じる器や照明をひとつ置く。そして収納を工夫して、床と棚に余白を残す。それだけで、空間は落ち着いて見えるようになります。",
-        "## NAMIの視点",
         "オーストラリアでもジャパンディはよく見かけるようになりましたが、見た目だけを真似すると、ベージュ一色の冷たい空間になりがちです。大切なのは形ではなく考え方。素材を大切にし、余白を残し、住む人の暮らしに合わせること。オーストラリアの強い光や、外とつながる暮らしの中で、日本の感覚をどう生かすかをNAMIは考えます。",
       ],
       en: [
@@ -48,7 +47,6 @@ export const articles: JournalArticle[] = [
         "Scandinavian design leans towards pale timbers like oak and ash, soft curves and hygge, a sense of cosiness. Japanese design leans towards darker timber and ink-black tones, a lower eye line, empty space, and wabi-sabi: finding beauty in imperfection and the marks of time. Japandi is not about choosing one side; it is about finding the balance between them.",
         "## How to bring it into your home",
         "Limit yourself to three or four materials. Choose slightly lower furniture to bring the eye line down. Keep to a base of natural timber, warm neutrals and charcoal, with a single accent colour. Add one handmade piece, a ceramic bowl or a paper lamp. Then use storage to keep floors and shelves clear. Those few steps alone make a room feel calmer.",
-        "## The NAMI view",
         "Japandi is everywhere in Australia now, but copying the look alone often produces a cold, all-beige room. What matters is the thinking behind it: respect for materials, room to breathe, and a home shaped around the people who live in it. NAMI asks how that Japanese sensibility can work with Australia’s strong light and its outdoor way of life.",
       ],
     },
@@ -81,7 +79,6 @@ export const articles: JournalArticle[] = [
         "鎌倉時代の随筆『徒然草』には「家の作りやうは、夏をむねとすべし」という一節があります。風が通り、湿気がこもらない家。現代の日本では、それに加えて断熱と気密を高めた家づくりが進んでいます。オーストラリアでも古い住宅は断熱が弱いことが多く、窓まわりの工夫やカーテン、ラグで快適さは大きく変わります。",
         "## 地震と自然災害",
         "地震の多い日本では、柱と梁に筋かいや耐力壁を組み合わせて揺れに耐える木造の工法が発達しました。1981年の建築基準法の改正（いわゆる新耐震基準）以降、基準はさらに厳しくなっています。柱や梁を工場で正確に加工する「プレカット」も一般的です。オーストラリアでは地震よりも、地域によって森林火災やサイクロン、シロアリへの備えが重視されます。",
-        "## NAMIの視点",
         "どちらが優れているかではなく、それぞれの家が何を大切にしてきたかを知ること。日本の精度や細やかさと、オーストラリアのおおらかで外に開いた暮らし。そのふたつを並べて、その土地とその人に合った空間を考えます。",
       ],
       en: [
@@ -98,7 +95,6 @@ export const articles: JournalArticle[] = [
         "Tsurezuregusa, a collection of essays written in the 14th century, advises that “a house should be built with summer in mind”: cool breezes, and no trapped damp. Today Japanese builders add strong insulation and airtightness to that old wisdom. Many older Australian homes are poorly insulated, and thoughtful window treatments, curtains and rugs can make a real difference to comfort.",
         "## Earthquakes and natural hazards",
         "Earthquakes shaped Japanese building. Timber post-and-beam frames are strengthened with diagonal braces and shear walls, and the rules were tightened with the 1981 revision of the Building Standard Law. Precut framing, where posts and beams are machined accurately in a factory before reaching the site, is now standard. In Australia the main concerns are different and depend on the region: bushfire, cyclones and termites.",
-        "## The NAMI view",
         "The question is not which is better, but what each kind of home has learned to value. Japanese precision and care; Australia’s relaxed, outward-looking way of life. NAMI places the two side by side to find what suits each site and each person.",
       ],
     },
@@ -106,7 +102,7 @@ export const articles: JournalArticle[] = [
   {
     slug: "why-natural-materials-matter",
     title: "Why Natural Materials Matter",
-    titleJa: "自然素材がもたらす心地よさ",
+    titleJa: "自然素材の話",
     category: "MATERIAL",
     excerpt: {
       ja: "木、土、紙、石、リネン。時間とともに深まる素材を、日本とオーストラリアの両方から。",
@@ -167,7 +163,6 @@ export const articles: JournalArticle[] = [
         "床の間は、掛け軸や花をひとつだけ飾るための小さな空間です。たくさん並べるのではなく、季節に合わせてひとつを選ぶ。その周りの何もない壁が、選んだものを引き立てます。",
         "## 暮らしの中の「間」",
         "壁を一面だけ何も飾らずに残す。玄関から部屋までの視線の抜けをつくる。家具と家具の間に人が自然に通れる幅をとる。収納を工夫して、テーブルの上を空けておく。どれも小さなことですが、空間に呼吸が生まれます。",
-        "## NAMIの視点",
         "余白は「足りない」のではなく、そこで暮らす人のための場所です。光が動き、季節が入り、思い出が置かれていく。NAMIは、余白も空間の一部としてデザインします。",
       ],
       en: [
@@ -178,7 +173,6 @@ export const articles: JournalArticle[] = [
         "The tokonoma is a small alcove for displaying a single scroll or a flower arrangement, changed with the seasons. Rather than showing many things, you choose one, and the empty wall around it lets that one thing stand out.",
         "## Ma in everyday life",
         "Leave one wall bare. Create a clear line of sight from the entrance into the home. Give people room to move easily between pieces of furniture. Use storage so the table can stay clear. Each is a small step, but together they let a space breathe.",
-        "## The NAMI view",
         "Empty space is not something missing; it is room for the people who live there. Light moves across it, the seasons come in, and memories find a place. NAMI designs empty space as part of the room.",
       ],
     },
@@ -207,7 +201,6 @@ export const articles: JournalArticle[] = [
         "オーストラリアでは、屋根付きの屋外ダイニング「アルフレスコ」や、大きく開く引き戸・折れ戸で、室内と屋外をひと続きに使う家が一般的です。バーベキューや友人との食事が、家の暮らしの中心にあります。",
         "## つなぐためのコツ",
         "室内と屋外の床の高さや色・素材をそろえる。軒やパーゴラで日陰をつくる。窓の外に見せたい景色を決める。境目に植物を置いて、緑をグラデーションのようにつなぐ。オーストラリアでは、網戸や虫対策、地域によっては森林火災への備えも忘れずに。",
-        "## NAMIの視点",
         "外とつながることは、ただ開放的にすることではありません。光や風、季節の移ろいを、暮らしの中に招き入れること。日本の縁側とオーストラリアのアルフレスコ、両方の考え方を並べて、その家らしい「内と外」をつくります。",
       ],
       en: [
@@ -220,7 +213,6 @@ export const articles: JournalArticle[] = [
         "Many Australian homes have an alfresco, a covered outdoor dining area, with large sliding or bi-fold doors that open the living room straight onto it. Barbecues and meals with friends are at the heart of home life.",
         "## Making the connection work",
         "Match the floor level, colour and material inside and out. Use eaves or a pergola for shade. Decide which view each window should frame. Place plants at the threshold so greenery flows from one side to the other. In Australia, remember fly screens and, in some areas, bushfire safety.",
-        "## The NAMI view",
         "Connecting with the outdoors is not just about opening up. It is about inviting light, breeze and the changing seasons into daily life. NAMI sets the Japanese engawa beside the Australian alfresco to create an inside–outside connection that suits each home.",
       ],
     },
@@ -249,7 +241,6 @@ export const articles: JournalArticle[] = [
         "引き戸は開き戸のように扉が回るスペースがいりません。家具を低めにすると、天井が高く感じられ、部屋が広く見えます。",
         "## 光を奥まで届ける",
         "障子のように光を通す建具や、室内窓、明るい色の壁で、窓から遠い場所まで光を届ける。小さな家ほど、光の通り道が大切です。",
-        "## NAMIの視点",
         "小さいことは、制約ではなく選ぶきっかけです。本当に必要なもの、好きなものを選んでいくと、空間はその人らしくなっていきます。",
       ],
       en: [
@@ -262,7 +253,6 @@ export const articles: JournalArticle[] = [
         "Sliding doors need no swing space, unlike hinged doors. Lower furniture makes the ceiling feel higher and the room larger.",
         "## Bringing light deep inside",
         "Light-filtering screens like shoji, internal windows and pale walls carry daylight to the parts of a home furthest from the windows. The smaller the home, the more important the path of light.",
-        "## The NAMI view",
         "A small home is not a limitation but a reason to choose carefully. Keep what you truly need and love, and the space becomes more and more your own.",
       ],
     },

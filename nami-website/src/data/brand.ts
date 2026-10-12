@@ -4,30 +4,45 @@ import type { Bi } from "@/lib/i18n";
 export const hero = {
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where life\nand memories\nfind a home." },
   body: {
-    ja: "波のように変わる毎日に寄り添い、\nその人だけの記憶が積み重なっていく\n空間をつくるインテリアデザインブランドです。",
-    en: "NAMI is an interior design brand creating spaces that move with the changing waves of everyday life, where your own memories can quietly build up.",
+    ja: "日本の家の考え方を、オーストラリアの家へ。\nインテリアデザインのNAMIです。",
+    en: "Japanese ideas about home, brought to Australian houses. I’m Nanami, and this is NAMI, my interior design practice.",
   },
 };
 
 export const story = {
-  heading: { ja: "波のように生きる、\n空間をつくる。", en: "Spaces for a life\nthat moves like waves." },
+  heading: { ja: "気分には、波がある。", en: "Moods come in waves." },
   body: {
     ja: [
-      "人生には、嬉しい日もあれば、\n落ち込む日もある。",
-      "NAMIは、そんな感情や出来事の揺らぎを\n「波」と捉えています。",
-      "月曜日の重たい朝。\n金曜日の嬉しい夜。\n日曜日の穏やかな時間。",
-      "毎日違う波があるように、\n一人ひとりの毎日に寄り添う空間を\nつくりたい。",
-      "そんな想いからNAMIは生まれました。",
+      "月曜の朝は体が重い。\n金曜の夜は少し浮かれている。\n日曜は、なにもしたくない。",
+      "家は、そのどの日にも帰ってくる場所です。",
+      "調子のいい日だけじゃなく、しんどい日にもちゃんと休める部屋。NAMIでつくりたいのは、そういう部屋です。",
     ],
     en: [
-      "Life has its bright days, and its harder ones.",
-      "At NAMI, we think of these ups and downs as waves.",
-      "A heavy Monday morning.\nA happy Friday evening.\nA calm, slow Sunday.",
-      "Every day brings a different wave, so we want to create spaces that stay with each person through all of them.",
-      "That is how NAMI began.",
+      "Monday mornings feel heavy. Friday nights, a little giddy. On Sundays I don’t want to do anything at all.",
+      "Home is where we come back to on every one of those days.",
+      "I want to design rooms that work on the good days and the hard ones. That is what NAMI is for.",
     ],
   },
 };
+
+/** Short notes on the name, used on Home. The full versions are in `meanings`. */
+export const nameNotes = [
+  {
+    mark: "波",
+    ja: "波（なみ）。毎日の気分の上がり下がり。\nそれから、私の名前 Nanami の一部。",
+    en: "波 (nami) means wave: the ups and downs of everyday life. It’s also part of my name, Nanami.",
+  },
+  {
+    mark: "並",
+    ja: "並（なみ）。「ならぶ」の並。\n木と石、古い椅子と新しい机、庭と部屋。混ぜずに、隣に置く。\n地元・杉並の「並」でもあります。",
+    en: "並, also read nami, means side by side. Timber next to stone, an old chair beside a new desk, garden beside room: placed together, not blended. It’s also the nami in Suginami, the part of Tokyo I come from.",
+  },
+  {
+    mark: "N",
+    ja: "Nest And Memories Inside。\n帰ってくる巣と、そこにたまっていく記憶。",
+    en: "Nest And Memories Inside: a nest to come home to, and the memories that collect there.",
+  },
+];
 
 export const meanings: Meaning[] = [
   {
@@ -102,8 +117,8 @@ export const meaningsIntro = {
 export const approach = {
   heading: { ja: "日本とオーストラリア、\nふたつの視点から。", en: "Two perspectives:\nJapan and Australia." },
   body: {
-    ja: "日本の美意識と、オーストラリアの豊かな自然。\nそれぞれの良さを活かしながら、\n人の暮らしに寄り添う、心地よい空間をつくります。",
-    en: "Japanese sensibility meets Australia’s natural landscape. We draw on the best of both to create calm, comfortable spaces that fit the way people live.",
+    ja: "日本の家づくりの細かさと、オーストラリアの外で過ごす暮らし。\nどちらかに寄せず、両方を同じ部屋に置いてみる。それがNAMIのやり方です。",
+    en: "The precision of Japanese homes, and the outdoor life of Australian ones. Rather than choosing one, I try to fit both into the same room.",
   },
 };
 
@@ -183,7 +198,7 @@ export const approachIcons: { icon: string; title: Bi; body: Bi }[] = [
   {
     icon: "/images/approach/a2.png",
     title: { ja: "バランスと余白", en: "Balance and space" },
-    body: { ja: "シンプルで豊かな\n暮らし", en: "Simple,\ngenerous living" },
+    body: { ja: "置くものより\n置かないものを決める", en: "Deciding what to leave out\nbefore what to put in" },
   },
   {
     icon: "/images/approach/a3.png",
@@ -193,6 +208,6 @@ export const approachIcons: { icon: string; title: Bi; body: Bi }[] = [
   {
     icon: "/images/approach/a4.png",
     title: { ja: "その人らしい空間", en: "Spaces that feel like you" },
-    body: { ja: "ライフスタイルに\n寄り添うデザイン", en: "Design shaped around\nthe way you live" },
+    body: { ja: "住む人の習慣から\n考える", en: "Starting from the habits\nof the people who live there" },
   },
 ];
