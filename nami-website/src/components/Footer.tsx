@@ -2,6 +2,7 @@ import Link from "next/link";
 import { navigation, site } from "@/data/site";
 import { Logo } from "@/components/Logo";
 import { Container } from "@/components/ui";
+import { SocialIcons } from "@/components/SocialIcons";
 
 export function Footer() {
   return (
@@ -26,20 +27,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <ul className="space-y-3">
-            {site.social.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="label link-underline pb-1 text-paper/90 hover:text-paper"
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialIcons className="self-start" />
         </div>
 
         <p className="mt-20 border-t border-paper/10 pt-6 text-[0.6875rem] tracking-[0.18em] text-paper/45">

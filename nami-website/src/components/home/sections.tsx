@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { approach, approachIcons, meanings, meaningsIntro, story } from "@/data/brand";
 import { services } from "@/data/services";
-import { craft } from "@/data/craft";
+import { craft, craftIntro } from "@/data/craft";
 import { projects } from "@/data/projects";
 import { getArticles } from "@/data/journal";
 import { Container, Lines, TextLink } from "@/components/ui";
@@ -202,11 +202,7 @@ export function CraftSection() {
               <Heading t={{ ja: "日本の家づくりから、\n学ぶこと。", en: "What Japanese homes\nteach us." }} id="craft-h" tone="paper" />
             </div>
             <Body tone="paper" className="mt-8">
-              <T
-                as="p"
-                ja="精度、寸法、揺れへの備え、気候、丁寧さ。日本の家づくりが長い時間をかけて磨いてきた知恵を、オーストラリアの暮らしに合わせて、インテリアの考え方に生かしています。"
-                en="Precision, proportion, resilience, climate and care. NAMI draws on what Japanese home building has refined over generations, and adapts it to Australian life through interior design."
-              />
+              <T as="p" ja={craftIntro.ja} en={craftIntro.en} />
             </Body>
           </div>
 
