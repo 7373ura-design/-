@@ -40,9 +40,7 @@ export function Hero() {
             data-reveal
             style={{ "--reveal-delay": "320ms" } as React.CSSProperties}
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-navy/50 transition-colors group-hover:border-vermilion group-hover:text-vermilion">
-              ↓
-            </span>
+            <span aria-hidden className="h-10 w-px bg-navy/40 transition-colors group-hover:bg-vermilion" />
             SCROLL
           </a>
         </div>

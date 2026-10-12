@@ -101,8 +101,7 @@
   }
   /* The soft band between sections in the NAMI layout */
   .section-rule {
-    border-top: 6px solid color-mix(in srgb, var(--color-paper) 70%, white);
-    box-shadow: 0 -1px 0 color-mix(in srgb, var(--color-navy) 6%, transparent);
+    border-top: 1px solid color-mix(in srgb, var(--color-navy) 8%, transparent);
   }
   /* Soft edges so painted artwork melts into the paper background */
   .feather {
@@ -140,7 +139,7 @@ html[data-lang="en"] .jp-body {
 /* Scroll reveal — elements start hidden only once JS has marked the document ready */
 .js [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 28px, 0);
+  transform: translate3d(0, 14px, 0);
   transition:
     opacity 1.1s var(--ease-wave),
     transform 1.1s var(--ease-wave);

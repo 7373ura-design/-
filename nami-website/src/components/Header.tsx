@@ -72,10 +72,9 @@ export function Header() {
             <LanguageSwitch />
             <Link
               href="/contact"
-              className="group label hidden items-center gap-3 rounded-full border border-navy/60 px-6 py-3 text-navy transition-colors duration-500 hover:border-navy hover:bg-navy hover:text-paper sm:inline-flex"
+              className="label hidden items-center border-b border-navy/30 pb-1 text-navy transition-colors hover:border-vermilion hover:text-vermilion sm:inline-flex"
             >
               ENQUIRE
-              <ArrowRight className="h-3 w-5 transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
             <button
               type="button"
@@ -129,7 +128,7 @@ export function Header() {
           ))}
           <Link
             href="/contact"
-            className="label mt-8 inline-flex items-center justify-center gap-3 rounded-full border border-navy/60 px-6 py-4 text-navy"
+            className="label mt-8 inline-flex items-center justify-center gap-3 bg-navy px-6 py-4 text-paper"
           >
             ENQUIRE NOW <ArrowRight className="h-3 w-6" />
           </Link>

@@ -6,114 +6,54 @@ import { services } from "@/data/services";
 import { craft } from "@/data/craft";
 import { projects } from "@/data/projects";
 import { getArticles } from "@/data/journal";
-import { meaningEmblems, ArrowRight } from "@/components/illustrations/Icons";
-import { ArrowLink, Container, Lines, SectionHeader } from "@/components/ui";
+import { Container, Lines, TextLink } from "@/components/ui";
 import { T, type Bi } from "@/lib/i18n";
 
-/**
- * The NAMI two-column section: label, headline, copy and a link on the left,
- * the visual content on the right. Every Home section uses it.
+/*
+ * Home sections. Each one is composed for its own content rather than poured
+ * into a shared template: the grid is 12 columns, but what sits where, how big,
+ * and how much air surrounds it changes from section to section.
+ *
+ * Shared vocabulary, kept deliberately small:
+ *  - Margin  : a vertical section name set in the left margin (desktop only)
+ *  - Heading : one heading style, used at two sizes
+ *  - Body    : one body style with a fixed measure
  */
-function Split({
-  id,
-  number,
-  label,
-  heading,
-  body,
-  link,
-  children,
-  align = "center",
-}: {
-  id: string;
-  number?: string;
-  label: string;
-  heading: Bi;
-  body?: ReactNode;
-  link?: { href: string; label: string };
-  children: ReactNode;
-  align?: "center" | "start";
-}) {
+
+function Margin({ ja, en }: { ja: string; en: string }) {
   return (
-    <section id={id} className="section-rule scroll-mt-20 bg-cream py-16 md:py-20" aria-labelledby={`${id}-heading`}>
-      <Container className={`grid gap-10 lg:grid-cols-12 lg:gap-10 ${align === "center" ? "lg:items-center" : ""}`}>
-        <div className="lg:col-span-4">
-          <div id={`${id}-heading`}>
-            <SectionHeader number={number} label={label} heading={heading} />
-          </div>
-          {body && (
-            <div className="jp-body mt-6 text-sm leading-[2.05] text-navy/85" data-reveal>
-              {body}
-            </div>
-          )}
-          {link && (
-            <div className="mt-8" data-reveal>
-              <ArrowLink href={link.href}>{link.label}</ArrowLink>
-            </div>
-          )}
-        </div>
-        <div className="min-w-0 lg:col-span-8">{children}</div>
-      </Container>
-    </section>
+    <p
+      aria-hidden
+      className="pointer-events-none absolute left-5 top-0 hidden select-none text-[0.6875rem] tracking-[0.32em] text-navy/45 [writing-mode:vertical-rl] xl:left-8 lg:block"
+    >
+      <span className="font-jp">{ja}</span>
+      <span className="mt-3 inline-block uppercase">{en}</span>
+    </p>
   );
 }
 
-/** Horizontal swipe on phones, a grid from tablet up. */
-function CardRow({ cols, children }: { cols: 3 | 4; children: ReactNode }) {
+function Heading({ t, id, size = "md", tone = "ink" }: { t: Bi; id?: string; size?: "md" | "lg"; tone?: "ink" | "paper" }) {
+  return (
+    <h2
+      id={id}
+      className={`jp-heading font-normal ${tone === "paper" ? "text-paper" : "text-navy"} ${
+        size === "lg"
+          ? "text-[1.85rem] leading-[1.55] md:text-[clamp(2.1rem,3vw,2.9rem)]"
+          : "text-[1.5rem] leading-[1.6] md:text-[clamp(1.6rem,2.1vw,2rem)]"
+      }`}
+    >
+      <T ja={t.ja} en={t.en} />
+    </h2>
+  );
+}
+
+function Body({ children, className = "", tone = "ink" }: { children: ReactNode; className?: string; tone?: "ink" | "paper" }) {
   return (
     <div
-      className={`no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 md:mx-0 md:grid md:gap-5 md:overflow-visible md:px-0 ${
-        cols === 4 ? "md:grid-cols-4" : "md:grid-cols-3"
-      }`}
+      className={`jp-body max-w-[26em] text-[0.875rem] leading-[2.1] ${tone === "paper" ? "text-paper/75" : "text-navy/75"} ${className}`}
     >
       {children}
     </div>
-  );
-}
-
-function Card({
-  href,
-  image,
-  alt,
-  ratio,
-  title,
-  sub,
-  arrow,
-  index,
-}: {
-  href: string;
-  image: string;
-  alt: string;
-  ratio: string;
-  title: ReactNode;
-  sub: ReactNode;
-  arrow?: boolean;
-  index: number;
-}) {
-  return (
-    <article
-      className="group w-[68vw] shrink-0 snap-start sm:w-[42vw] md:w-auto"
-      data-reveal
-      style={{ "--reveal-delay": `${index * 100}ms` } as React.CSSProperties}
-    >
-      <Link href={href} className="block">
-        <div className={`relative overflow-hidden rounded-[4px] bg-beige ${ratio}`}>
-          <Image
-            src={image}
-            alt={alt}
-            fill
-            sizes="(min-width: 768px) 22vw, 70vw"
-            className="object-cover transition-transform duration-[1200ms] ease-[var(--ease-wave)] group-hover:scale-[1.04]"
-          />
-        </div>
-        <div className="mt-4 flex items-start justify-between gap-3">
-          <div>
-            <h3 className="font-jp text-[1.05rem] leading-snug text-navy transition-colors group-hover:text-deep">{title}</h3>
-            <p className="jp-heading mt-2 text-xs leading-relaxed text-navy/75">{sub}</p>
-          </div>
-          {arrow && <ArrowRight className="mt-6 h-3 w-5 shrink-0 text-navy transition-transform group-hover:translate-x-1" />}
-        </div>
-      </Link>
-    </article>
   );
 }
 
@@ -128,254 +68,359 @@ export function Paras({ ja, en, gap = "mt-4" }: { ja: string[]; en: string[]; ga
   return <T as="div" ja={render(ja)} en={render(en)} />;
 }
 
+/* ------------------------------------------------------------------ Story */
+
 export function StorySection() {
   return (
-    <Split
-      id="story"
-      number="01"
-      label="STORY"
-      heading={story.heading}
-      body={<Paras ja={story.body.ja} en={story.body.en} />}
-      link={{ href: "/about", label: "MORE ABOUT NAMI" }}
-    >
-      <div className="relative aspect-[928/612] w-full" data-reveal>
-        <Image
-          src="/images/illustrations/story-surfer.jpg"
-          alt="The NAMI surfer: a girl on a red surfboard riding a big wave with a turtle, pointing towards an island and a red sun"
-          fill
-          sizes="(min-width: 1024px) 60vw, 100vw"
-          className="object-contain feather"
-        />
-      </div>
-    </Split>
+    <section id="story" className="relative scroll-mt-20 bg-cream pb-28 pt-24 md:pb-40 md:pt-32" aria-labelledby="story-h">
+      <Margin ja="物語" en="Story" />
+      <Container className="grid gap-14 lg:grid-cols-12 lg:gap-0">
+        {/* Text sits low and narrow; the illustration carries the section. */}
+        <div className="lg:col-span-4 lg:col-start-1 lg:pt-28 xl:col-start-2">
+          <Heading t={story.heading} id="story-h" />
+          <Body className="mt-10">
+            <Paras ja={story.body.ja} en={story.body.en} gap="mt-5" />
+          </Body>
+          <TextLink href="/about" className="mt-10">
+            <T ja="NAMIについて" en="About NAMI" />
+          </TextLink>
+        </div>
+        <div className="relative lg:col-span-7 lg:col-start-6 lg:-mr-16 xl:-mr-24">
+          <Image
+            src="/images/illustrations/story-surfer.jpg"
+            alt="The NAMI surfer: a girl on a red surfboard riding a big wave with a turtle, pointing towards an island and a red sun"
+            width={928}
+            height={612}
+            sizes="(min-width: 1024px) 62vw, 100vw"
+            className="w-full feather"
+          />
+        </div>
+      </Container>
+    </section>
   );
 }
 
+/* --------------------------------------------------------------- Meanings */
+
 export function MeaningsSection() {
+  // Three entries set as type, at staggered heights; the glyph is the image.
+  const offset = ["lg:col-start-2", "pl-[22%] sm:pl-0 lg:col-start-6 lg:mt-24", "pl-[8%] sm:pl-0 lg:col-start-10 lg:mt-10"];
   return (
-    <Split
-      id="meaning"
-      label="THE MEANING BEHIND NAMI"
-      heading={meaningsIntro.heading}
-      body={<T as="p" ja={meaningsIntro.body.ja} en={meaningsIntro.body.en} />}
-      link={{ href: "/about", label: "READ OUR STORY" }}
-    >
-      <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
-        {meanings.map((m, i) => {
-          const Emblem = meaningEmblems[i];
-          return (
-            <div key={m.number} data-reveal style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}>
-              <Emblem className="h-20 w-20" />
-              <p className="label mt-5 text-vermilion">{m.number}</p>
-              <h3 className="mt-2 font-jp text-xl tracking-[0.08em] text-navy">{m.title}</h3>
-              <p className="jp-heading mt-2 text-sm text-deep">
-                <T ja={m.lead.ja} en={m.lead.en} />
-              </p>
-              <p className="jp-body mt-3 text-xs leading-[2] text-navy/75">
-                <T ja={m.body.ja[0]} en={m.body.en[0]} />
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    </Split>
+    <section id="meaning" className="relative bg-paper py-24 md:py-32" aria-labelledby="meaning-h">
+      <Margin ja="名前" en="Name" />
+      <Container>
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-5 lg:col-start-2">
+            <Heading t={meaningsIntro.heading} id="meaning-h" />
+          </div>
+          <Body className="lg:col-span-4 lg:col-start-8 lg:self-end">
+            <T as="p" ja={meaningsIntro.body.ja} en={meaningsIntro.body.en} />
+          </Body>
+        </div>
+
+        <div className="mt-20 grid gap-16 sm:grid-cols-3 sm:gap-8 lg:mt-24 lg:grid-cols-12 lg:gap-0">
+          {meanings.map((m, i) => {
+            const latin = /^[A-Z]$/.test(m.kanji);
+            return (
+              <div key={m.number} className={`lg:col-span-3 ${offset[i]}`}>
+                <p
+                  aria-hidden
+                  className={`leading-none text-navy ${latin ? "font-display text-[5.5rem] font-light" : "font-jp text-[5.5rem] font-light"}`}
+                >
+                  {m.kanji}
+                </p>
+                <h3 className="mt-6 text-[0.8125rem] tracking-[0.18em] text-navy">{m.title}</h3>
+                <p className="jp-heading mt-3 text-[0.9375rem] text-vermilion">
+                  <T ja={m.lead.ja} en={m.lead.en} />
+                </p>
+                <Body className="mt-4 !text-[0.8125rem] !leading-[2]">
+                  <T as="p" ja={m.body.ja[0]} en={m.body.en[0]} />
+                </Body>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-16 lg:ml-[calc(100%/12)]">
+          <TextLink href="/about">
+            <T ja="名前の由来をもっと読む" en="Read more about the name" />
+          </TextLink>
+        </div>
+      </Container>
+    </section>
   );
 }
+
+/* --------------------------------------------------------------- Approach */
 
 export function ApproachSection() {
   return (
-    <Split
-      id="approach"
-      number="02"
-      label="APPROACH"
-      heading={approach.heading}
-      body={<T as="p" ja={approach.body.ja} en={approach.body.en} />}
-      link={{ href: "/about", label: "MORE APPROACH" }}
-    >
-      <ol className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-2">
-        {approachIcons.map((a, i) => (
-          <li
-            key={a.icon}
-            className="relative text-center"
-            data-reveal
-            style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}
-          >
-            <div className="relative mx-auto aspect-square w-[62%] max-w-[150px]">
-              <Image src={a.icon} alt="" fill sizes="150px" className="object-contain" />
-            </div>
-            {i < approachIcons.length - 1 && (
-              <span aria-hidden className="absolute right-0 top-[22%] hidden translate-x-1/2 text-navy/40 md:block">
-                →
-              </span>
-            )}
-            <h3 className="jp-heading mt-5 text-[0.95rem] text-navy">
-              <T ja={a.title.ja} en={a.title.en} />
-            </h3>
-            <p className="jp-body mt-2 text-xs leading-[1.9] text-navy/70">
-              <T ja={a.body.ja} en={a.body.en} />
-            </p>
-          </li>
-        ))}
-      </ol>
-    </Split>
-  );
-}
-
-export function ServicesPreview() {
-  return (
-    <Split
-      id="services"
-      number="03"
-      label="SERVICES"
-      heading={{ ja: "暮らしを整える、\n4つのサービス。", en: "Four services\nto shape your home." }}
-      body={
-        <T
-          as="p"
-          ja={"住まいのご相談から、コンセプトづくり、\n空間プランニング、スタイリングまで。\nライフスタイルに合わせた空間づくりを\nサポートします。"}
-          en="From a first conversation to concept, space planning and styling, we help create spaces that suit the way you live."
-        />
-      }
-      link={{ href: "/services", label: "VIEW ALL SERVICES" }}
-    >
-      <CardRow cols={4}>
-        {services.map((s, i) => (
-          <Card
-            key={s.slug}
-            index={i}
-            href={`/services#${s.slug}`}
-            image={s.image.src}
-            alt={s.image.alt}
-            ratio="aspect-[128/114]"
-            title={s.title.split(" ").map((w, j) => (
-              <span key={j} className="block">
-                {w}
-              </span>
-            ))}
-            sub={<T ja={s.sub.ja} en={s.sub.en} />}
-          />
-        ))}
-      </CardRow>
-    </Split>
-  );
-}
-
-export function ProjectsPreview() {
-  return (
-    <Split
-      id="projects"
-      number="04"
-      label="PROJECTS"
-      heading={{ ja: "暮らしの波を、\nかたちに。", en: "Giving shape\nto life’s waves." }}
-      body={
-        <T
-          as="p"
-          ja={"NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。\n（今後は実際のプロジェクトも掲載していきます）"}
-          en="Concept projects that show how NAMI thinks. Real client projects will be added in future."
-        />
-      }
-      link={{ href: "/projects", label: "VIEW ALL PROJECTS" }}
-    >
-      <CardRow cols={3}>
-        {projects.map((p, i) => (
-          <Card
-            key={p.slug}
-            index={i}
-            href={`/projects/${p.slug}`}
-            image={p.cover.src}
-            alt={p.cover.alt}
-            ratio="aspect-[180/145]"
-            title={p.title}
-            sub={p.subtitle}
-            arrow
-          />
-        ))}
-      </CardRow>
-    </Split>
-  );
-}
-
-export function JournalPreview() {
-  return (
-    <Split
-      id="journal"
-      number="05"
-      label="JOURNAL"
-      heading={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\neveryday living." }}
-      body={
-        <T
-          as="p"
-          ja={"インテリア、暮らし、旅、文化、素材について、\nNAMIの視点でお届けします。"}
-          en="Notes on interiors, living, travel, culture and materials, from NAMI’s point of view."
-        />
-      }
-      link={{ href: "/journal", label: "VIEW ALL ARTICLES" }}
-    >
-      <CardRow cols={3}>
-        {getArticles()
-          .slice(0, 3)
-          .map((a, i) => (
-            <Card
-              key={a.slug}
-              index={i}
-              href={`/journal/${a.slug}`}
-              image={a.cover.src}
-              alt={a.cover.alt}
-              ratio="aspect-[165/121]"
-              title={a.title}
-              sub={<T ja={a.titleJa ?? ""} en={a.excerpt.en} />}
-            />
-          ))}
-      </CardRow>
-    </Split>
-  );
-}
-
-export function CraftSection() {
-  return (
-    <section id="craft" className="section-rule scroll-mt-20 bg-cream py-16 md:py-20" aria-labelledby="craft-heading">
+    <section id="approach" className="relative bg-cream py-28 md:py-36" aria-labelledby="approach-h">
+      <Margin ja="視点" en="Approach" />
       <Container>
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-5" id="craft-heading">
-            <SectionHeader
-              label="JAPANESE HOME CRAFT"
-              heading={{ ja: "日本の家づくりから、\n学ぶこと。", en: "What Japanese homes\nteach us." }}
-            />
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-6 lg:col-start-2">
+            <Heading t={approach.heading} id="approach-h" size="lg" />
           </div>
-          <div className="jp-body text-sm leading-[2.05] text-navy/85 lg:col-span-6 lg:col-start-7" data-reveal>
-            <T
-              as="p"
-              ja="精度、寸法、揺れへの備え、気候、丁寧さ。日本の家づくりが長い時間をかけて磨いてきた知恵を、オーストラリアの暮らしに合わせて、インテリアの考え方に生かしています。"
-              en="Precision, proportion, resilience, climate and care. NAMI draws on what Japanese home building has refined over generations, and adapts it to Australian life through interior design."
-            />
-          </div>
+          <Body className="lg:col-span-4 lg:col-start-8 lg:self-end">
+            <T as="p" ja={approach.body.ja} en={approach.body.en} />
+          </Body>
         </div>
-        <ol className="mt-12 grid gap-px overflow-hidden rounded-[4px] border hairline bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
-          {craft.map((c, i) => (
-            <li
-              key={c.title}
-              className="bg-cream p-6 md:p-8"
-              data-reveal
-              style={{ "--reveal-delay": `${(i % 3) * 100}ms` } as React.CSSProperties}
-            >
-              <p className="label flex items-baseline gap-3 text-navy/70">
-                <span className="text-vermilion">{c.number}</span>
-                {c.title}
-              </p>
-              <h3 className="jp-heading mt-4 text-xl text-navy">
-                <T ja={c.heading.ja} en={c.heading.en} />
+
+        {/* A quiet row, pushed to the right so the heading keeps the left. */}
+        <ol className="mt-20 grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4 lg:ml-[calc(100%*3/12)] lg:mt-28">
+          {approachIcons.map((a) => (
+            <li key={a.icon}>
+              <div className="relative h-16 w-16">
+                <Image src={a.icon} alt="" fill sizes="64px" className="object-contain" />
+              </div>
+              <h3 className="jp-heading mt-6 text-[0.9375rem] text-navy">
+                <T ja={a.title.ja} en={a.title.en} />
               </h3>
-              <p className="jp-body mt-3 text-[0.8125rem] leading-[1.95] text-navy/80">
-                <T ja={c.body.ja} en={c.body.en} />
+              <p className="jp-body mt-2 text-[0.75rem] leading-[1.9] text-navy/60">
+                <T ja={a.body.ja} en={a.body.en} />
               </p>
             </li>
           ))}
         </ol>
-        <p className="mt-6 text-xs leading-relaxed text-navy/60">
+      </Container>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ Craft */
+
+/** The one dense, dark passage on the page: indigo, set like a reference list. */
+export function CraftSection() {
+  return (
+    <section id="craft" className="relative scroll-mt-20 bg-navy py-24 text-paper md:py-28" aria-labelledby="craft-h">
+      <Container>
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4 lg:col-start-2">
+            <p className="text-[0.6875rem] uppercase tracking-[0.3em] text-paper/50">Japanese home craft</p>
+            <div className="mt-6">
+              <Heading t={{ ja: "日本の家づくりから、\n学ぶこと。", en: "What Japanese homes\nteach us." }} id="craft-h" tone="paper" />
+            </div>
+            <Body tone="paper" className="mt-8">
+              <T
+                as="p"
+                ja="精度、寸法、揺れへの備え、気候、丁寧さ。日本の家づくりが長い時間をかけて磨いてきた知恵を、オーストラリアの暮らしに合わせて、インテリアの考え方に生かしています。"
+                en="Precision, proportion, resilience, climate and care. NAMI draws on what Japanese home building has refined over generations, and adapts it to Australian life through interior design."
+              />
+            </Body>
+          </div>
+
+          <ol className="grid gap-x-12 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
+            {craft.map((c) => (
+              <li key={c.title} className="border-t border-paper/15 py-6">
+                <p className="flex items-baseline gap-3 text-[0.6875rem] tracking-[0.24em] text-paper/45">
+                  <span>{c.number}</span>
+                  {c.title}
+                </p>
+                <h3 className="jp-heading mt-3 text-[1.0625rem] text-paper">
+                  <T ja={c.heading.ja} en={c.heading.en} />
+                </h3>
+                <p className="jp-body mt-2 text-[0.78rem] leading-[1.95] text-paper/65">
+                  <T ja={c.body.ja} en={c.body.en} />
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <p className="mt-14 text-[0.6875rem] leading-relaxed text-paper/45 lg:ml-[calc(100%/12)]">
           <T
-            ja="※ NAMIはインテリアデザインのブランドです。建築・施工など資格が必要な工事は、有資格の建築会社・専門家が担当します。"
+            ja="NAMIはインテリアデザインのブランドです。建築・施工など資格が必要な工事は、有資格の建築会社・専門家が担当します。"
             en="NAMI is an interior design brand. Building work and other regulated services are carried out by licensed builders and professionals."
           />
         </p>
+      </Container>
+    </section>
+  );
+}
+
+/* --------------------------------------------------------------- Services */
+
+function Shot({ src, alt, ratio, sizes }: { src: string; alt: string; ratio: string; sizes: string }) {
+  return (
+    <div className={`relative overflow-hidden bg-beige ${ratio}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        className="object-cover transition-transform duration-[1600ms] ease-[var(--ease-wave)] group-hover:scale-[1.03]"
+      />
+    </div>
+  );
+}
+
+export function ServicesPreview() {
+  // Four services at four different sizes: one leads, three answer it.
+  const layout = [
+    { box: "lg:col-span-5 lg:col-start-1 lg:row-span-2", ratio: "aspect-[4/5]", sizes: "(min-width:1024px) 38vw, 90vw" },
+    { box: "ml-auto w-3/4 sm:ml-0 sm:w-auto lg:col-span-3 lg:col-start-7 lg:mt-20", ratio: "aspect-square", sizes: "(min-width:1024px) 22vw, 60vw" },
+    { box: "w-2/3 sm:w-auto lg:col-span-3 lg:col-start-10", ratio: "aspect-[4/5]", sizes: "(min-width:1024px) 22vw, 60vw" },
+    { box: "ml-auto w-5/6 sm:ml-0 sm:w-auto lg:col-span-4 lg:col-start-8 lg:mt-4", ratio: "aspect-[4/3]", sizes: "(min-width:1024px) 30vw, 70vw" },
+  ];
+  return (
+    <section id="services" className="relative bg-cream py-28 md:py-36" aria-labelledby="services-h">
+      <Margin ja="仕事" en="Services" />
+      <Container>
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-5 lg:col-start-2">
+            <Heading t={{ ja: "暮らしを整える、\n4つのサービス。", en: "Four services\nto shape your home." }} id="services-h" />
+          </div>
+          <div className="lg:col-span-4 lg:col-start-8 lg:self-end">
+            <Body>
+              <T
+                as="p"
+                ja="住まいのご相談から、コンセプトづくり、空間プランニング、スタイリングまで。ライフスタイルに合わせた空間づくりをサポートします。"
+                en="From a first conversation to concept, space planning and styling, we help create spaces that suit the way you live."
+              />
+            </Body>
+            <TextLink href="/services" className="mt-6">
+              <T ja="サービスの詳細" en="All services" />
+            </TextLink>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-24 lg:grid-cols-12 lg:gap-y-10">
+          {services.map((s, i) => (
+            <Link key={s.slug} href={`/services#${s.slug}`} className={`group block ${layout[i].box}`}>
+              <Shot src={s.image.src} alt={s.image.alt} ratio={layout[i].ratio} sizes={layout[i].sizes} />
+              <div className="mt-4 flex items-baseline gap-4">
+                <span className="text-[0.6875rem] tracking-[0.2em] text-navy/40">{s.number}</span>
+                <div>
+                  <h3 className="font-display text-[1.25rem] leading-tight text-navy transition-colors group-hover:text-vermilion">
+                    {s.title}
+                  </h3>
+                  <p className="jp-heading mt-1 text-[0.75rem] text-navy/60">
+                    <T ja={s.sub.ja} en={s.sub.en} />
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* --------------------------------------------------------------- Projects */
+
+export function ProjectsPreview() {
+  const [lead, ...rest] = projects;
+  return (
+    <section id="projects" className="relative bg-paper py-28 md:py-36" aria-labelledby="projects-h">
+      <Margin ja="作例" en="Projects" />
+      <Container>
+        {/* The first project is shown large, bleeding to the left edge. */}
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <Link href={`/projects/${lead.slug}`} className="group block lg:col-span-7 lg:-ml-16 xl:-ml-24">
+            <Shot src={lead.cover.src} alt={lead.cover.alt} ratio="aspect-[4/3]" sizes="(min-width:1024px) 60vw, 100vw" />
+          </Link>
+          <div className="lg:col-span-4 lg:col-start-9">
+            <Heading t={{ ja: "暮らしの波を、\nかたちに。", en: "Giving shape\nto life’s waves." }} id="projects-h" />
+            <Body className="mt-6">
+              <T
+                as="p"
+                ja="NAMIの考え方をもとにしたコンセプトプロジェクトです。（今後は実際のプロジェクトも掲載していきます）"
+                en="Concept projects that show how NAMI thinks. Real client projects will be added in future."
+              />
+            </Body>
+            <Link href={`/projects/${lead.slug}`} className="group mt-10 block border-t hairline pt-5">
+              <p className="text-[0.6875rem] tracking-[0.2em] text-navy/45">{lead.number}</p>
+              <p className="mt-2 font-display text-[1.5rem] text-navy transition-colors group-hover:text-vermilion">{lead.title}</p>
+              <p className="mt-1 text-[0.8125rem] text-navy/60">{lead.subtitle}</p>
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-20 grid gap-12 sm:grid-cols-2 lg:mt-28 lg:grid-cols-12 lg:gap-0">
+          {rest.map((p, i) => (
+            <Link
+              key={p.slug}
+              href={`/projects/${p.slug}`}
+              className={`group block ${i === 0 ? "lg:col-span-4 lg:col-start-2" : "lg:col-span-5 lg:col-start-7 lg:mt-32"}`}
+            >
+              <Shot
+                src={p.cover.src}
+                alt={p.cover.alt}
+                ratio={i === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}
+                sizes="(min-width:1024px) 34vw, 90vw"
+              />
+              <div className="mt-4 flex items-baseline gap-4">
+                <span className="text-[0.6875rem] tracking-[0.2em] text-navy/40">{p.number}</span>
+                <div>
+                  <p className="font-display text-[1.25rem] text-navy transition-colors group-hover:text-vermilion">{p.title}</p>
+                  <p className="mt-1 text-[0.8125rem] text-navy/60">{p.subtitle}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-16 lg:ml-[calc(100%/12)]">
+          <TextLink href="/projects">
+            <T ja="プロジェクト一覧" en="All projects" />
+          </TextLink>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- Journal */
+
+export function JournalPreview() {
+  const [first, ...rest] = getArticles();
+  return (
+    <section id="journal" className="relative bg-cream py-28 md:py-32" aria-labelledby="journal-h">
+      <Margin ja="手帖" en="Journal" />
+      <Container className="grid gap-14 lg:grid-cols-12">
+        <div className="lg:col-span-3 lg:col-start-2">
+          <Heading t={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\neveryday living." }} id="journal-h" />
+          <Body className="mt-6">
+            <T
+              as="p"
+              ja="インテリア、暮らし、旅、文化、素材について、NAMIの視点でお届けします。"
+              en="Notes on interiors, living, travel, culture and materials, from NAMI’s point of view."
+            />
+          </Body>
+          <TextLink href="/journal" className="mt-8">
+            <T ja="すべての記事" en="All articles" />
+          </TextLink>
+        </div>
+
+        <div className="lg:col-span-7 lg:col-start-6">
+          {/* One article with a picture, the rest as a plain contents list. */}
+          <Link href={`/journal/${first.slug}`} className="group grid gap-6 sm:grid-cols-[1.1fr_1fr] sm:items-end">
+            <Shot src={first.cover.src} alt={first.cover.alt} ratio="aspect-[4/3]" sizes="(min-width:1024px) 30vw, 90vw" />
+            <div>
+              <p className="text-[0.6875rem] uppercase tracking-[0.2em] text-navy/45">{first.category}</p>
+              <p className="mt-3 font-display text-[1.5rem] leading-snug text-navy transition-colors group-hover:text-vermilion">
+                {first.title}
+              </p>
+              <p className="jp-heading mt-2 text-[0.8125rem] text-navy/60">
+                <T ja={first.titleJa ?? ""} en={first.excerpt.en} />
+              </p>
+            </div>
+          </Link>
+          <ul className="mt-12">
+            {rest.map((a) => (
+              <li key={a.slug} className="border-t hairline last:border-b">
+                <Link href={`/journal/${a.slug}`} className="group grid grid-cols-[6.5rem_1fr] items-baseline gap-4 py-4 sm:grid-cols-[6.5rem_1fr_auto]">
+                  <span className="text-[0.6875rem] uppercase tracking-[0.18em] text-navy/40">{a.category}</span>
+                  <span className="text-[0.9375rem] text-navy transition-colors group-hover:text-vermilion">{a.title}</span>
+                  <span className="jp-heading col-start-2 text-[0.75rem] text-navy/50 sm:col-start-auto">
+                    <T ja={a.titleJa ?? ""} en="" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Container>
     </section>
   );

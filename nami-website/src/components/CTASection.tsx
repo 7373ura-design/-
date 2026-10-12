@@ -10,12 +10,12 @@ export function CTASection() {
         <div className="relative z-10 px-5 pt-14 md:absolute md:left-[5.5%] md:top-[16%] md:w-[48%] md:p-0">
           <h2
             id="cta-heading"
-            className="jp-heading text-[1.75rem] leading-[1.55] text-navy md:text-[clamp(1.5rem,2.7vw,2.6rem)]"
+            className="jp-heading font-normal text-[1.6rem] leading-[1.6] text-navy md:text-[clamp(1.4rem,2.2vw,2.2rem)]"
             data-reveal
           >
             <T ja={"一緒に、\n心地よい空間をつくりませんか？"} en={"Shall we create a space\nthat feels like yours?"} />
           </h2>
-          <p className="jp-body mt-4 text-sm text-navy/85 md:text-[clamp(0.8rem,1vw,0.95rem)]" data-reveal>
+          <p className="jp-body mt-5 text-[0.875rem] text-navy/70" data-reveal>
             <T ja="住まいのこと、まずはお気軽にご相談ください。" en="Tell us about your home. We would love to hear from you." />
           </p>
           <div className="mt-6 md:mt-[2vw]" data-reveal>

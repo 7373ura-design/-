@@ -33,7 +33,7 @@ export function SectionLabel({
 }) {
   return (
     <p className={`label flex items-center gap-3 ${tone === "light" ? "text-paper/80" : "text-navy/75"}`}>
-      {number && <span className="text-vermilion">{number}.</span>}
+      {number && <span className="text-navy/40">{number}</span>}
       <span>{children}</span>
     </p>
   );
@@ -86,10 +86,10 @@ type ArrowLinkProps = ComponentProps<typeof Link> & {
 export function ArrowLink({ children, variant = "text", className = "", ...props }: ArrowLinkProps) {
   const styles = {
     text: "text-navy hover:text-vermilion",
-    solid: "bg-vermilion text-paper px-7 py-4 hover:bg-navy",
-    outline: "border border-navy/70 text-navy px-6 py-3.5 hover:bg-navy hover:text-paper",
-    light: "border border-paper/70 text-paper px-6 py-3.5 hover:bg-paper hover:text-navy",
-    pill: "rounded-full border border-navy/60 text-navy px-7 py-3.5 hover:bg-navy hover:text-paper",
+    solid: "bg-navy text-paper px-7 py-4 hover:bg-deep",
+    outline: "border border-navy/50 text-navy px-6 py-3.5 hover:border-navy hover:bg-navy hover:text-paper",
+    light: "border border-paper/60 text-paper px-6 py-3.5 hover:bg-paper hover:text-navy",
+    pill: "bg-navy text-paper px-7 py-4 hover:bg-deep",
   }[variant];
   return (
     <Link
@@ -97,7 +97,20 @@ export function ArrowLink({ children, variant = "text", className = "", ...props
       className={`group label inline-flex items-center gap-3 transition-colors duration-500 ${styles} ${className}`}
     >
       <span className={variant === "text" ? "link-underline pb-1" : ""}>{children}</span>
-      <ArrowRight className={`h-3 w-6 transition-transform duration-500 group-hover:translate-x-1.5 ${variant === "text" ? "text-vermilion" : ""}`} />
+      <ArrowRight className="h-2.5 w-5 transition-transform duration-500 group-hover:translate-x-1" />
+    </Link>
+  );
+}
+
+/** The quiet link used across Home: underlined text, a short rule, no button. */
+export function TextLink({ href, children, className = "" }: { href: string; children: ReactNode; className?: string }) {
+  return (
+    <Link
+      href={href}
+      className={`group inline-flex items-center gap-3 text-[0.8125rem] tracking-[0.04em] text-navy transition-colors hover:text-vermilion ${className}`}
+    >
+      <span className="border-b border-current/30 pb-0.5 group-hover:border-current">{children}</span>
+      <span aria-hidden className="h-px w-6 bg-current transition-all duration-500 group-hover:w-9" />
     </Link>
   );
 }

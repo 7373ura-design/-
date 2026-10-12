@@ -6,13 +6,12 @@ import { Container } from "@/components/ui";
 export function Footer() {
   return (
     <footer className="relative bg-navy text-paper">
-      <Container className="pb-10 pt-14 md:pt-16">
+      <Container className="pb-10 pt-16 md:pt-24">
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr] md:gap-8">
           <div>
-            <div className="inline-block rounded-[6px] bg-cream px-5 py-4">
-              <Logo stacked className="h-24 w-auto" />
-            </div>
-            <p className="label mt-6 text-paper/75">{site.tagline}</p>
+            {/* Single-colour (white) version of the logo for the dark ground */}
+            <Logo className="h-9 w-auto brightness-0 invert" />
+            <p className="mt-6 text-[0.6875rem] tracking-[0.3em] text-paper/55">{site.tagline}</p>
           </div>
 
           <nav aria-label="Footer">
@@ -43,7 +42,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <p className="label mt-14 border-t border-paper/15 pt-6 !tracking-[0.18em] text-paper/60">
+        <p className="mt-20 border-t border-paper/10 pt-6 text-[0.6875rem] tracking-[0.18em] text-paper/45">
           © 2026 NAMI. All rights reserved.
         </p>
       </Container>
