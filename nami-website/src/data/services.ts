@@ -16,6 +16,7 @@ export const services: Service[] = [
       ja: "今の暮らしと、これからの暮らし。まずはお話を聞くところから。",
       en: "How you live now, and how you would like to live. It all starts with a conversation.",
     },
+    idea: { term: "間取り — MADORI", text: { ja: "日本語で間取りは「間（ま）をどう取るか」。部屋の大きさより先に、暮らしの流れと、その間にある余白を一緒に考えます。", en: "The Japanese word for a floor plan, madori, means “taking ma”: deciding how the spaces between will work. Before room sizes, we look at the flow of your day and the space around it." } },
     image: { src: "/images/services/s1.jpg", alt: "Hands sketching a floor plan at a timber table beside a cup of tea" },
     whatItIs: {
       ja: "ご自宅やお部屋について、今感じている悩みや理想の暮らし方をお伺いし、空間の方向性を一緒に整理するご相談です。",
@@ -62,6 +63,7 @@ export const services: Service[] = [
       ja: "その人らしい空間の「軸」を、言葉と素材と色でかたちに。",
       en: "We give your space a clear idea at its heart, expressed through words, materials and colour.",
     },
+    idea: { term: "経年変化 — AGEING WELL", text: { ja: "時間とともに深まる素材を選ぶこと。木、漆喰、和紙、リネン。傷や色の変化も、暮らしの記録として楽しめる素材を提案します。", en: "Choosing materials that get better with age: timber, lime plaster, paper, linen. We suggest materials whose marks and changes become a record of life lived." } },
     image: { src: "/images/services/s2.jpg", alt: "A moodboard of fabric, paper and indigo samples laid out on a table" },
     whatItIs: {
       ja: "暮らし方や好きなものをもとに、空間全体のコンセプトを組み立て、素材・色・雰囲気の方向性をまとめるサービスです。",
@@ -99,6 +101,7 @@ export const services: Service[] = [
       ja: "動線、光、余白。毎日が少し心地よくなる配置を考えます。",
       en: "Movement, light and breathing room: a layout that makes every day a little easier.",
     },
+    idea: { term: "3尺 — THE 910 MM MODULE", text: { ja: "日本の家は約910mmの単位で計画されます。通路の幅、収納の奥行き、家具の大きさをひとつの物差しでそろえると、空間に落ち着いたリズムが生まれます。", en: "Japanese homes are planned on a module of about 910 mm. When walkway widths, storage depths and furniture sizes follow one measure, a calm rhythm runs through the space." } },
     image: { src: "/images/services/s3.jpg", alt: "A floor plan on a tablet next to a laptop" },
     whatItIs: {
       ja: "既存の間取りの中で、家具の配置や空間の使い方を整理し、動線・光・余白のバランスがとれたレイアウトをご提案します。",
@@ -136,6 +139,7 @@ export const services: Service[] = [
       ja: "家具、器、照明、ファブリック。最後のひと手間で空間が整う。",
       en: "Furniture, ceramics, lighting and textiles: the final touches that bring a space together.",
     },
+    idea: { term: "床の間 — TOKONOMA", text: { ja: "床の間には、季節に合わせてひとつだけを飾ります。たくさん並べるより、選んだひとつと、その周りの余白を大切にするスタイリングです。", en: "A tokonoma alcove displays one thing at a time, changed with the seasons. Our styling favours one well-chosen piece, and the space around it, over many." } },
     image: { src: "/images/services/s4.jpg", alt: "Curved timber shelves styled with plants and ceramics" },
     whatItIs: {
       ja: "家具・照明・ファブリック・小物などのセレクトとスタイリングで、空間の仕上がりを整えるサービスです。",

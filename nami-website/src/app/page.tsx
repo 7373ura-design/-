@@ -1,6 +1,7 @@
 import { Hero } from "@/components/home/Hero";
 import {
   ApproachSection,
+  CraftSection,
   JournalPreview,
   MeaningsSection,
   ProjectsPreview,
@@ -16,6 +17,7 @@ export default function HomePage() {
       <StorySection />
       <MeaningsSection />
       <ApproachSection />
+      <CraftSection />
       <ServicesPreview />
       <ProjectsPreview />
       <JournalPreview />

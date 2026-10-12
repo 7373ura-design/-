@@ -12,6 +12,8 @@ export type Service = {
   /** Short description under the title (Japanese / English). */
   sub: Bi;
   summary: Bi;
+  /** The Japanese idea behind the service. */
+  idea: { term: string; text: Bi };
   image: ImageAsset;
   whatItIs: Bi;
   whoFor: BiList;

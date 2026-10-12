@@ -6,7 +6,7 @@ import { JapanAustraliaSection, MeaningsFull } from "@/components/about-sections
 import { PrincipleCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
 import { Container, SectionHeader } from "@/components/ui";
-import { Paras } from "@/components/home/sections";
+import { CraftSection, Paras } from "@/components/home/sections";
 import { T } from "@/lib/i18n";
 import { approach, principles, story } from "@/data/brand";
 
@@ -65,6 +65,8 @@ export default function AboutPage() {
       <MeaningsFull />
 
       <JapanAustraliaSection />
+
+      <CraftSection />
 
       {/* Philosophy */}
       <section className="border-y hairline bg-paper py-20 md:py-28" aria-labelledby="philosophy-heading">

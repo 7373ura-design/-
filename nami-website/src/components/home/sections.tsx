@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { approach, approachIcons, meanings, meaningsIntro, story } from "@/data/brand";
 import { services } from "@/data/services";
+import { craft } from "@/data/craft";
 import { projects } from "@/data/projects";
 import { getArticles } from "@/data/journal";
 import { meaningEmblems, ArrowRight } from "@/components/illustrations/Icons";
@@ -326,5 +327,56 @@ export function JournalPreview() {
           ))}
       </CardRow>
     </Split>
+  );
+}
+
+export function CraftSection() {
+  return (
+    <section id="craft" className="section-rule scroll-mt-20 bg-cream py-16 md:py-20" aria-labelledby="craft-heading">
+      <Container>
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-5" id="craft-heading">
+            <SectionHeader
+              label="JAPANESE HOME CRAFT"
+              heading={{ ja: "日本の家づくりから、\n学ぶこと。", en: "What Japanese homes\nteach us." }}
+            />
+          </div>
+          <div className="jp-body text-sm leading-[2.05] text-navy/85 lg:col-span-6 lg:col-start-7" data-reveal>
+            <T
+              as="p"
+              ja="精度、寸法、揺れへの備え、気候、丁寧さ。日本の家づくりが長い時間をかけて磨いてきた知恵を、オーストラリアの暮らしに合わせて、インテリアの考え方に生かしています。"
+              en="Precision, proportion, resilience, climate and care. NAMI draws on what Japanese home building has refined over generations, and adapts it to Australian life through interior design."
+            />
+          </div>
+        </div>
+        <ol className="mt-12 grid gap-px overflow-hidden rounded-[4px] border hairline bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
+          {craft.map((c, i) => (
+            <li
+              key={c.title}
+              className="bg-cream p-6 md:p-8"
+              data-reveal
+              style={{ "--reveal-delay": `${(i % 3) * 100}ms` } as React.CSSProperties}
+            >
+              <p className="label flex items-baseline gap-3 text-navy/70">
+                <span className="text-vermilion">{c.number}</span>
+                {c.title}
+              </p>
+              <h3 className="jp-heading mt-4 text-xl text-navy">
+                <T ja={c.heading.ja} en={c.heading.en} />
+              </h3>
+              <p className="jp-body mt-3 text-[0.8125rem] leading-[1.95] text-navy/80">
+                <T ja={c.body.ja} en={c.body.en} />
+              </p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 text-xs leading-relaxed text-navy/60">
+          <T
+            ja="※ NAMIはインテリアデザインのブランドです。建築・施工など資格が必要な工事は、有資格の建築会社・専門家が担当します。"
+            en="NAMI is an interior design brand. Building work and other regulated services are carried out by licensed builders and professionals."
+          />
+        </p>
+      </Container>
+    </section>
   );
 }

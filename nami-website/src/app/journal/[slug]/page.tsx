@@ -8,6 +8,17 @@ import { T } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
 
+/** "## " paragraphs become subheadings. */
+function renderPara(p: string, i: number) {
+  return p.startsWith("## ") ? (
+    <h2 key={i} className="jp-heading !mt-12 text-2xl text-navy">
+      {p.slice(3)}
+    </h2>
+  ) : (
+    <p key={i}>{p}</p>
+  );
+}
+
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
@@ -61,8 +72,8 @@ export default async function ArticlePage({ params }: Props) {
           <T
             as="div"
             className="space-y-6"
-            ja={article.body.ja.map((p, i) => <p key={i}>{p}</p>)}
-            en={article.body.en.map((p, i) => <p key={i}>{p}</p>)}
+            ja={article.body.ja.map(renderPara)}
+            en={article.body.en.map(renderPara)}
           />
         </div>
         <ArrowLink href="/journal" className="mt-14">

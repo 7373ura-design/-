@@ -88,6 +88,13 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
+                <div className="mt-10 border-l-2 border-vermilion bg-cream/70 px-5 py-4" data-reveal>
+                  <p className="label text-deep">THE JAPANESE IDEA · {s.idea.term}</p>
+                  <p className="jp-body mt-2 text-sm leading-[1.95] text-navy/85">
+                    <T ja={s.idea.text.ja} en={s.idea.text.en} />
+                  </p>
+                </div>
+
                 <div className="mt-12 grid gap-10 border-t hairline pt-10 sm:grid-cols-2" data-reveal>
                   <div className="sm:col-span-2">
                     <h3 className="label text-deep">WHAT IT IS</h3>
