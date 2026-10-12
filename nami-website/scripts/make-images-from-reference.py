@@ -74,7 +74,17 @@ save(up(cta),"illustrations/cta-wave.jpg",88)
 # story illustration
 save(up(ref[440:746,358:822].copy()),"illustrations/story-surfer.jpg",90)
 
-def crop(x0,y0,x1,y1,path): save(up(ref[y0:y1,x0:x1].copy(),3),path,90)
+try:
+    import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from esrgan import up as esrgan_up  # AI upscaling for the framed photos
+except Exception as e:  # torch not installed: fall back to plain resampling
+    print("Real-ESRGAN unavailable, using Lanczos:", e); esrgan_up = None
+
+def crop(x0,y0,x1,y1,path):
+    c=ref[y0:y1,x0:x1].copy()
+    if esrgan_up is None:
+        return save(up(c,3),path,90)
+    save(Image.fromarray(cv2.cvtColor(esrgan_up(c),cv2.COLOR_BGR2RGB)),path,92)
 for i,(x0,x1) in enumerate([(263,391),(403,531),(544,672),(685,813)]):
     crop(x0,988,x1,1102,f"services/s{i+1}.jpg")
 for i,(x0,x1) in enumerate([(263,443),(456,635),(648,819)]):
