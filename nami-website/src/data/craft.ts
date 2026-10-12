@@ -42,28 +42,28 @@ export const craft: { number: string; title: string; heading: Bi; body: Bi }[] =
   {
     number: "04",
     title: "CLIMATE",
-    heading: { ja: "軒と風で、夏を涼しく", en: "Eaves and breeze for summer" },
+    heading: { ja: "軒と風と断熱で、夏も冬も", en: "Eaves, breeze and insulation" },
     body: {
-      ja: "深い軒は、高い夏の日差しを遮り、低い冬の日差しを部屋の奥まで届けます。南半球のオーストラリアでは、リビングを北向きにするのが基本です。風の通り道をふさがない家具の配置や、天井ファンとの組み合わせで、夏の暑さをしのぎやすくします。",
-      en: "Deep eaves block the high summer sun and let the low winter sun reach deep into a room. In the southern hemisphere, living areas ideally face north. We place furniture so it doesn’t block cross-breezes, and pair it with ceiling fans, to make Australian summers easier to live with.",
+      ja: "深い軒は、高い夏の日差しを遮り、低い冬の日差しを部屋の奥まで届けます。南半球のオーストラリアでは、リビングを北向きにするのが基本です。風の通り道をふさがない家具の配置に加えて、厚手のカーテンや窓まわりの断熱で、夏の暑さと冬の冷えをやわらげます。",
+      en: "Deep eaves block the high summer sun and let the low winter sun reach deep into a room. In the southern hemisphere, living areas ideally face north. Alongside furniture that doesn’t block cross-breezes, heavier curtains and better-insulated windows help with both summer heat and winter cold.",
     },
   },
   {
     number: "05",
-    title: "ENTRY",
-    heading: { ja: "玄関で、外と内を分ける", en: "An entry that separates outside from in" },
+    title: "CARE",
+    heading: { ja: "整理・整頓から始める", en: "It starts with sorting and order" },
     body: {
-      ja: "日本の家では玄関で靴を脱ぎます。海や庭から砂や土を持ち込みやすいオーストラリアの家こそ、入口に靴やバッグ、鍵を置く場所があると、家の中がずっと片付きます。靴を脱ぐかどうかは、住む人に合わせて決めます。",
-      en: "In Japan, shoes come off at the genkan, the entrance. In Australian homes, where sand and garden soil come in easily, a proper drop zone by the door for shoes, bags and keys keeps the rest of the house noticeably tidier. Whether shoes come off is up to the people who live there.",
+      ja: "日本の建築現場では、整理・整頓・清掃・清潔・しつけの「5S」で、きれいな現場と丁寧な仕事を保ちます。家の中では、それが「すべての物に置き場所がある」収納計画になります。玄関に靴やバッグ、鍵の置き場をつくるのもそのひとつ。海や庭から砂を持ち込みやすいオーストラリアの家では、特に効きます。",
+      en: "Japanese building sites use 5S (sort, set in order, shine, standardise, sustain) to keep work tidy and careful. Inside a home, it becomes storage planned so that everything has a place, starting with a spot by the door for shoes, bags and keys. In Australian homes, where sand and garden soil come in easily, it makes a real difference.",
     },
   },
   {
     number: "06",
     title: "LEFT BEHIND",
-    heading: { ja: "持ち込まないもの", en: "What we leave behind" },
+    heading: { ja: "そのまま持ち込まないもの", en: "What we don’t copy" },
     body: {
-      ja: "地震の多い日本ほどの耐震の工夫は、オーストラリアの住宅では基本的に必要ありません（背の高い家具の固定は、子どもやペットのためにも勧めています）。狭い部屋を前提にした寸法や、靴やペットに弱い畳もそのままは使いません。持ち込むのは形ではなく、考え方です。",
-      en: "Australia has far fewer earthquakes than Japan, so Japanese-level seismic detailing isn’t needed in most homes (we still suggest fixing tall furniture to the wall, for children and pets). Nor do we copy proportions designed for very small rooms, or tatami floors that don’t suit shoes and pets. We bring the thinking, not the forms.",
+      ja: "建物の耐震は、オーストラリアの基準に沿って建築士や施工会社が判断する領域です。NAMIはインテリアの側から、背の高い家具を固定する、寝る場所の近くに重いものを置かない、といったことを提案します。狭い部屋を前提にした寸法や、靴やペットに弱い畳もそのままは使いません。持ち込むのは形ではなく、考え方です。",
+      en: "A building’s earthquake resistance is designed by engineers and builders to Australian standards. From the interior side, NAMI suggests fixing tall furniture to the wall and keeping heavy objects away from where you sleep. Nor do we copy proportions made for very small rooms, or tatami floors that don’t suit shoes and pets. We bring the thinking, not the forms.",
     },
   },
 ];
