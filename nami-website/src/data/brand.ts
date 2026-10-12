@@ -192,7 +192,7 @@ export const approachIcons: { icon: string; title: Bi; body: Bi }[] = [
   },
   {
     icon: "/images/approach/a4.png",
-    title: { ja: "その人らしい空間", en: "Spaces that feel like you" },
+    title: { ja: "その人らしい暮らし", en: "A home that feels like you" },
     body: { ja: "ライフスタイルに\n寄り添うデザイン", en: "Design shaped around\nthe way you live" },
   },
 ];

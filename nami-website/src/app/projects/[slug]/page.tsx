@@ -82,8 +82,8 @@ export default async function ProjectPage({ params }: Props) {
           <Photo image={project.cover} priority className="aspect-[4/3] md:aspect-[16/9]" sizes="100vw" />
           <p className="mt-4 text-xs text-navy/60">
             <T
-              ja="※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。画像はイメージです。"
-              en="This is a NAMI concept study, not a client project. Images are for illustration only."
+              ja="※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。画像はイメージです。デッキ・中庭・軒など建物に関わる部分は、実際には建築士・施工会社と進める内容です。"
+              en="This is a NAMI concept study, not a client project. Images are for illustration only. Building elements such as decks, courtyards and eaves would be designed and built with licensed architects and builders."
             />
           </p>
         </Container>

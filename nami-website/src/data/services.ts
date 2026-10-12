@@ -101,7 +101,7 @@ export const services: Service[] = [
       ja: "動線、光、余白。毎日が少し心地よくなる配置を考えます。",
       en: "Movement, light and breathing room: a layout that makes every day a little easier.",
     },
-    idea: { term: "3尺 — THE 910 MM MODULE", text: { ja: "日本の家は約910mmの単位で計画されます。通路の幅、収納の奥行き、家具の大きさをひとつの物差しでそろえると、空間に落ち着いたリズムが生まれます。", en: "Japanese homes are planned on a module of about 910 mm. When walkway widths, storage depths and furniture sizes follow one measure, a calm rhythm runs through the space." } },
+    idea: { term: "ひとつの物差し — ONE MEASURE", text: { ja: "日本の家は約910mm（3尺）の単位で計画されます。オーストラリアの家では、板材の1200mm幅や間柱の450・600mm間隔を物差しにして、通路の幅、収納の奥行き、家具の大きさをそろえます。空間に落ち着いたリズムが生まれます。", en: "Japanese homes are planned on a module of about 910 mm. In Australian homes we use the local measures instead, 1200 mm sheets and 450 or 600 mm stud spacing, to line up walkway widths, storage depths and furniture sizes. A calm rhythm runs through the space." } },
     image: { src: "/images/services/s3.jpg", alt: "A floor plan on a tablet next to a laptop" },
     whatItIs: {
       ja: "既存の間取りの中で、家具の配置や空間の使い方を整理し、動線・光・余白のバランスがとれたレイアウトをご提案します。",
