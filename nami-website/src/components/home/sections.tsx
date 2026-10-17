@@ -5,6 +5,7 @@ import { services } from "@/data/services";
 import { craft, craftIntro } from "@/data/craft";
 import { projects } from "@/data/projects";
 import { getArticles } from "@/data/journal";
+import { getWorks } from "@/data/works";
 import { Container, Lines, TextLink } from "@/components/ui";
 import { Art, IconList, PostHead, type IconName } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
@@ -194,7 +195,7 @@ export function RootsSection() {
 
 /* --------------------------------------------------------------- Services */
 
-function Card({
+export function Card({
   href,
   src,
   alt,
@@ -208,7 +209,7 @@ function Card({
   src: string;
   alt: string;
   no: string;
-  title: string;
+  title: string | Bi;
   line: Bi;
   ratio?: string;
   sizes: string;
@@ -225,7 +226,9 @@ function Card({
         />
       </div>
       <p className="kicker mt-6 text-vermilion">{no}.</p>
-      <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">{title}</h3>
+      <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">
+        {typeof title === "string" ? title : <T ja={title.ja} en={title.en} />}
+      </h3>
       <p className="mt-1.5 text-[0.8125rem] text-navy/65">
         <T ja={line.ja} en={line.en} />
       </p>
@@ -274,6 +277,42 @@ export function ServicesPreview() {
 /* --------------------------------------------------------------- Projects */
 
 export function ProjectsPreview() {
+  const works = getWorks();
+  // Real homes lead once their photos are in; until then, the concept studies.
+  if (works.length > 0) {
+    return (
+      <Post id="projects" labelledBy="projects-h" art={<Art name="pavilion" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
+        <PostHead
+          kicker="SELECTED WORKS"
+          title={{ ja: "暮らしの波を、\nかたちに。", en: "Giving Shape\nto Life’s Waves" }}
+          sub="HOMES WE HAVE WORKED ON"
+          id="projects-h"
+        >
+          <T as="p" ja="これまでに手がけた住まいの一部をご紹介します。" en="A selection of homes we have worked on." />
+        </PostHead>
+        <div className="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-3">
+          {works.slice(0, 3).map((w) => (
+            <Card
+              key={w.slug}
+              href={`/works/${w.slug}`}
+              src={w.photos[0].src}
+              alt={w.photos[0].alt}
+              no={w.number}
+              title={w.title}
+              line={{ ja: `${w.type.ja} · ${w.location}`, en: `${w.type.en} · ${w.location}` }}
+              ratio="aspect-[4/3]"
+              sizes="(min-width:768px) 30vw, 90vw"
+            />
+          ))}
+        </div>
+        <div className="mt-14 text-center">
+          <TextLink href="/projects">
+            <T ja="プロジェクト一覧" en="All projects" />
+          </TextLink>
+        </div>
+      </Post>
+    );
+  }
   return (
     <Post id="projects" labelledBy="projects-h" art={<Art name="pavilion" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
       <PostHead
