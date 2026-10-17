@@ -44,5 +44,11 @@ a = np.clip((np.abs(img - ref).sum(2) - 20) / 30, 0, 1)
 a = cv2.GaussianBlur(a, (0, 0), 1.5)[..., None]
 out = out * a + paper * (1 - a)
 
-cv2.imwrite(OUT, np.clip(out, 0, 255).astype(np.uint8)[:, :, ::-1], [cv2.IMWRITE_JPEG_QUALITY, 92])
+import sys  # noqa: E402
+
+sys.path.insert(0, HERE)
+from woodblock import woodblock  # noqa: E402
+
+out = np.clip(out, 0, 255).astype(np.uint8)[:, :, ::-1]
+cv2.imwrite(OUT, woodblock(np.ascontiguousarray(out), 18), [cv2.IMWRITE_JPEG_QUALITY, 90])
 print(OUT)

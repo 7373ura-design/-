@@ -45,7 +45,7 @@ export function Hero() {
             height={612}
             priority
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="feather w-full"
+            className="w-full"
           />
         </div>
       </Container>

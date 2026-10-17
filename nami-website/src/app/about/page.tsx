@@ -40,7 +40,7 @@ export default function AboutPage() {
               alt="The NAMI surfer: a girl riding a big wave on a red surfboard"
               width={928}
               height={612}
-              className="w-full feather"
+              className="w-full"
             />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">

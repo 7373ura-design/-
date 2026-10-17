@@ -43,3 +43,13 @@ for name in CROPS:
         continue
     cv2.imwrite(path, (img * a + PAPER * (1 - a)).astype(np.uint8), [cv2.IMWRITE_JPEG_QUALITY, 88])
     print("flattened", name)
+
+# Finally, print each one as a woodblock: flat inks, clean edges, paper grain.
+from woodblock import woodblock  # noqa: E402
+
+SETTINGS = {"harbour": (16, True)}  # name: (inks, fine)
+for name in CROPS:
+    path = os.path.join(out, f"{name}.jpg")
+    k, fine = SETTINGS.get(name, (12, False))
+    cv2.imwrite(path, woodblock(cv2.imread(path), k, fine=fine), [cv2.IMWRITE_JPEG_QUALITY, 90])
+    print("woodblock", name)
