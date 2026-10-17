@@ -1,5 +1,11 @@
 // Static preview behaviour: header on scroll, mobile menu, scroll reveal, project filter, form.
 (function () {
+  // Open every page at its top. In a framed preview the viewer keeps its own
+  // scroll position across pages, so ask it to bring this page's top (or the linked section) into view.
+  var target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!target) window.scrollTo(0, 0);
+  if (window.top !== window) (target || document.documentElement).scrollIntoView({ block: "start" });
+
   var header = document.querySelector("header");
   var onScroll = function () {
     if (!header) return;
