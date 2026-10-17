@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { Photo } from "@/components/Photo";
+import { CircleIcon, type IconName } from "@/components/washi";
 import { CTASection } from "@/components/CTASection";
 import { ArrowLink, Container } from "@/components/ui";
 import { services } from "@/data/services";
@@ -31,6 +31,8 @@ function DetailList({ title, items }: { title: string; items: BiList }) {
     </div>
   );
 }
+
+const serviceIcons: IconName[] = ["chat", "pen", "ruler", "chair"];
 
 export default function ServicesPage() {
   return (
@@ -70,14 +72,12 @@ export default function ServicesPage() {
             className="scroll-mt-24 border-b hairline py-20 md:py-28"
             aria-labelledby={`${s.slug}-title`}
           >
-            <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className={`lg:col-span-5 ${i % 2 ? "lg:order-2 lg:col-start-8" : ""}`}>
-                <div className="lg:sticky lg:top-28">
-                  <Photo image={s.image} className="aspect-[4/5]" sizes="(min-width: 1024px) 40vw, 100vw" />
-                </div>
+            <Container className="max-w-4xl">
+              <div className="mb-8 flex justify-center" aria-hidden>
+                <CircleIcon name={serviceIcons[i]} size="lg" />
               </div>
-              <div className={`lg:col-span-7 ${i % 2 ? "lg:order-1" : ""}`}>
-                <div data-reveal>
+              <div>
+                <div className="text-center" data-reveal>
                   <p className="kicker"><span className="mr-3 text-vermilion">{s.number}.</span>SERVICE</p>
                   <h2 id={`${s.slug}-title`} className="title mt-4 text-4xl md:text-5xl">
                     {s.title}

@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 import { getArticles } from "@/data/journal";
 import { getWorks } from "@/data/works";
 import { Container, Lines, TextLink } from "@/components/ui";
-import { Art, IconList, PostHead, type IconName } from "@/components/washi";
+import { Art, CircleIcon, IconList, PostHead, type IconName } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
 
 /*
@@ -236,6 +236,8 @@ export function Card({
   );
 }
 
+const serviceIcons: IconName[] = ["chat", "pen", "ruler", "chair"];
+
 export function ServicesPreview() {
   return (
     <Post id="services" labelledBy="services-h" className="section-rule">
@@ -251,18 +253,21 @@ export function ServicesPreview() {
           en="From a first conversation to concept, space planning and styling, we help create spaces that suit the way you live."
         />
       </PostHead>
-      <div className="mt-16 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map((s) => (
-          <Card
-            key={s.slug}
-            href={`/services#${s.slug}`}
-            src={s.image.src}
-            alt={s.image.alt}
-            no={s.number}
-            title={s.title}
-            line={s.sub}
-            sizes="(min-width:1024px) 22vw, (min-width:640px) 45vw, 90vw"
-          />
+      <div className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+        {services.map((s, i) => (
+          <Link key={s.slug} href={`/services#${s.slug}`} className="group block text-center" data-reveal>
+            <span className="inline-flex transition-colors group-hover:[&>span]:border-vermilion group-hover:[&>span]:text-vermilion">
+              <CircleIcon name={serviceIcons[i]} size="lg" />
+            </span>
+            <p className="kicker mt-6 text-vermilion">{s.number}.</p>
+            <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">{s.title}</h3>
+            <p className="subline mt-2 !normal-case !tracking-[0.04em] text-[0.8125rem]">
+              <T ja={s.sub.ja} en={s.sub.en} />
+            </p>
+            <p className="jp-body mx-auto mt-4 max-w-[20em] text-[0.8125rem] text-navy/70">
+              <T ja={s.summary.ja} en={s.summary.en} />
+            </p>
+          </Link>
         ))}
       </div>
       <div className="mt-14 text-center">
@@ -337,6 +342,7 @@ export function ProjectsPreview() {
             no={p.number}
             title={p.title}
             line={{ ja: p.subtitle, en: p.subtitle }}
+            ratio="aspect-[3/2]"
             sizes="(min-width:768px) 30vw, 90vw"
           />
         ))}

@@ -173,25 +173,21 @@ export const japanAustralia: { japan: Bi[]; australia: Bi[] } = {
   ],
 };
 
-/** The four approach icons shown on Home (artwork from the NAMI reference design). */
-export const approachIcons: { icon: string; title: Bi; body: Bi }[] = [
+/** The four approach points shown on Home. */
+export const approachIcons: { title: Bi; body: Bi }[] = [
   {
-    icon: "/images/approach/a1.png",
     title: { ja: "自然とのつながり", en: "Connection to nature" },
     body: { ja: "海・光・風を感じる\n空間づくり", en: "Spaces that let in\nthe sea, light and breeze" },
   },
   {
-    icon: "/images/approach/a2.png",
     title: { ja: "バランスと余白", en: "Balance and space" },
     body: { ja: "シンプルで豊かな\n暮らし", en: "Simple,\ngenerous living" },
   },
   {
-    icon: "/images/approach/a3.png",
     title: { ja: "素材の美しさ", en: "Beautiful materials" },
     body: { ja: "自然素材と\n手仕事の温かさ", en: "Natural materials\nand the warmth of craft" },
   },
   {
-    icon: "/images/approach/a4.png",
     title: { ja: "その人らしい暮らし", en: "A home that feels like you" },
     body: { ja: "ライフスタイルに\n寄り添うデザイン", en: "Design shaped around\nthe way you live" },
   },

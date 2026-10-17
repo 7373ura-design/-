@@ -14,7 +14,6 @@ export type Service = {
   summary: Bi;
   /** The Japanese idea behind the service. */
   idea: { term: string; text: Bi };
-  image: ImageAsset;
   whatItIs: Bi;
   whoFor: BiList;
   included: BiList;
@@ -38,10 +37,6 @@ export type Project = {
   concept: Bi;
   designDirection: { title: string; body: Bi }[];
   materials: { name: string; note: Bi; swatch: string }[];
-  moodboard: ImageAsset[];
-  plan: ImageAsset;
-  visuals: ImageAsset[];
-  gallery: ImageAsset[];
 };
 
 export type JournalArticle = {

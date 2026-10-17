@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { JournalArticle, Meaning, Principle, Project, Service } from "@/lib/types";
+import type { JournalArticle, Meaning, Principle, Project } from "@/lib/types";
 import { Photo } from "@/components/Photo";
 import { meaningEmblems, principleIcons } from "@/components/illustrations/Icons";
 import { Lines } from "@/components/ui";
@@ -82,35 +82,6 @@ export function PrincipleCard({ principle, index }: { principle: Principle; inde
   );
 }
 
-export function ServiceCard({ service, index }: { service: Service; index: number }) {
-  return (
-    <article
-      className="group relative w-[78vw] shrink-0 snap-start sm:w-[46vw] md:w-auto"
-      data-reveal
-      style={{ "--reveal-delay": `${index * 110}ms` } as React.CSSProperties}
-    >
-      <Link href={`/services#${service.slug}`} className="block">
-        <Photo
-          image={service.image}
-          hoverZoom
-          reveal={false}
-          sizes="(min-width: 768px) 25vw, 80vw"
-          className="aspect-[4/5]"
-        />
-        <div className="mt-6 flex items-baseline gap-4">
-          <span className="font-display text-xl text-vermilion">{service.number}</span>
-          <div>
-            <h3 className="font-display text-2xl leading-tight text-navy transition-colors group-hover:text-deep">
-              {service.title}
-            </h3>
-            <p className="jp-heading mt-2 text-sm text-navy/75"><T ja={service.sub.ja} en={service.sub.en} /></p>
-          </div>
-        </div>
-      </Link>
-    </article>
-  );
-}
-
 export function ProjectCard({
   project,
   index,
@@ -136,7 +107,7 @@ export function ProjectCard({
             hoverZoom
             reveal={false}
             sizes="(min-width: 768px) 40vw, 85vw"
-            className={size === "lg" ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]"}
+            className="aspect-[3/2]"
           />
           <span className="kicker absolute left-4 top-4 bg-cream/90 px-3 py-1.5 !text-[0.625rem]">NAMI CONCEPT</span>
         </div>

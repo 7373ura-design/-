@@ -13,11 +13,6 @@ export const projectCategories: { key: "all" | ProjectCategory; label: string }[
   { key: "residential", label: "RESIDENTIAL" },
 ];
 
-const img = (slug: string, file: string, alt: string) => ({
-  src: file.startsWith("/") ? file : `/images/projects/${slug}/${file}`,
-  alt: `Concept image: ${alt}`,
-});
-
 export const projects: Project[] = [
   {
     slug: "nami-house-01",
@@ -28,7 +23,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: img("nami-house-01", "/images/projects/p1.jpg", "a coastal living room with timber floors opening to the ocean"),
+    cover: { src: "/images/washi/wave-sun.jpg", alt: "Illustration: a breaking wave and a red sun over the sea" },
     overview: {
       ja: "海の近くに建つ家族の住まいを想定したコンセプトスタディ。日本の「内と外」の考え方と、オーストラリアのIndoor / Outdoor Livingを重ね合わせています。",
       en: "A concept study for a family home near the sea. It brings together the Japanese idea of “inside and outside” and Australian indoor–outdoor living.",
@@ -48,20 +43,6 @@ export const projects: Project[] = [
       { name: "Washed Linen", note: { ja: "ファブリック", en: "Textiles" }, swatch: "#e3d8c4" },
       { name: "Ocean Glaze", note: { ja: "器・タイル", en: "Ceramics and tiles" }, swatch: "#2f7f9a" },
     ],
-    moodboard: [
-      img("nami-house-01", "mood-1.svg", "timber, linen and lime plaster samples"),
-      img("nami-house-01", "mood-2.svg", "ceramics and natural textures"),
-    ],
-    plan: img("nami-house-01", "plan.svg", "floor plan of the coastal home"),
-    visuals: [
-      img("nami-house-01", "/images/journal/j2.jpg", "living room opening to a timber deck"),
-      img("nami-house-01", "/images/journal/j1.jpg", "bedroom with a low bed and ocean view"),
-    ],
-    gallery: [
-      img("nami-house-01", "/images/journal/j3.jpg", "dining corner in afternoon light"),
-      img("nami-house-01", "/images/services/s4.jpg", "styled timber shelf with ceramics"),
-      img("nami-house-01", "/images/projects/p3.jpg", "evening view across the deck"),
-    ],
   },
   {
     slug: "nami-house-02",
@@ -72,7 +53,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: img("nami-house-02", "/images/projects/p2.jpg", "a compact Sydney apartment with a window seat"),
+    cover: { src: "/images/washi/maple-window.jpg", alt: "Illustration: red maple leaves outside a paper window, cushions and an open book on the sill" },
     overview: {
       ja: "シドニーのコンパクトなアパートメントを想定したコンセプトスタディ。日本の狭小住宅の知恵を、オーストラリアの都市生活に取り入れます。",
       en: "A concept study for a compact Sydney apartment, bringing ideas from Japan’s small homes to Australian city living.",
@@ -92,20 +73,6 @@ export const projects: Project[] = [
       { name: "Terracotta", note: { ja: "床タイル", en: "Floor tiles" }, swatch: "#c46a4a" },
       { name: "Deep Navy", note: { ja: "アクセント", en: "Accent" }, swatch: "#073b5c" },
     ],
-    moodboard: [
-      img("nami-house-02", "mood-1.svg", "plywood, washi and terracotta samples"),
-      img("nami-house-02", "mood-2.svg", "compact furniture details"),
-    ],
-    plan: img("nami-house-02", "plan.svg", "floor plan of the small apartment"),
-    visuals: [
-      img("nami-house-02", "/images/projects/p3.jpg", "window seat with built-in storage"),
-      img("nami-house-02", "/images/journal/j2.jpg", "kitchen and dining in one compact space"),
-    ],
-    gallery: [
-      img("nami-house-02", "/images/services/s4.jpg", "screen doors filtering daylight"),
-      img("nami-house-02", "/images/journal/j2.jpg", "styled reading corner"),
-      img("nami-house-02", "/images/projects/p2.jpg", "night view of the city from the window"),
-    ],
   },
   {
     slug: "nami-house-03",
@@ -116,7 +83,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: img("nami-house-03", "/images/projects/p3.jpg", "a living space wrapped around a planted courtyard"),
+    cover: { src: "/images/washi/maple-island.jpg", alt: "Illustration: a red maple and a standing stone on a raked-gravel island" },
     overview: {
       ja: "中庭を中心に構成された住まいのコンセプトスタディ。日本の坪庭の考え方を、オーストラリアの気候と植生で再解釈しています。",
       en: "A concept study for a home arranged around a courtyard, reinterpreting the Japanese tsuboniwa, a small inner garden, for Australia’s climate and plants.",
@@ -135,20 +102,6 @@ export const projects: Project[] = [
       { name: "Rammed Earth", note: { ja: "壁", en: "Walls" }, swatch: "#cfae86" },
       { name: "Sandstone", note: { ja: "中庭", en: "Courtyard" }, swatch: "#e2cfa6" },
       { name: "Eucalypt Green", note: { ja: "植栽", en: "Planting" }, swatch: "#6f8a74" },
-    ],
-    moodboard: [
-      img("nami-house-03", "mood-1.svg", "spotted gum, rammed earth and sandstone samples"),
-      img("nami-house-03", "mood-2.svg", "native plants and stone textures"),
-    ],
-    plan: img("nami-house-03", "plan.svg", "floor plan arranged around a courtyard"),
-    visuals: [
-      img("nami-house-03", "/images/journal/j2.jpg", "living room looking into the courtyard"),
-      img("nami-house-03", "/images/projects/p2.jpg", "timber screen casting shadows"),
-    ],
-    gallery: [
-      img("nami-house-03", "/images/journal/j3.jpg", "courtyard planting with a stone path"),
-      img("nami-house-03", "/images/services/s4.jpg", "quiet corner with ceramics"),
-      img("nami-house-03", "/images/journal/j1.jpg", "evening light in the courtyard"),
     ],
   },
 ];

@@ -133,8 +133,8 @@ export function Header() {
             ENQUIRE NOW <ArrowRight className="h-3 w-6" />
           </Link>
         </nav>
-        <div className="relative mt-8 aspect-[1644/526] w-full" aria-hidden>
-          <Image src="/images/illustrations/cta-wave.jpg" alt="" fill sizes="100vw" className="object-cover object-right" />
+        <div className="relative mt-8 aspect-[2/1] w-full" aria-hidden>
+          <Image src="/images/washi/wave-sun.jpg" alt="" fill sizes="100vw" className="object-cover object-bottom" />
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Photo } from "@/components/Photo";
+import Image from "next/image";
 import { ProjectCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
 import { ArrowLink, Container, SectionLabel } from "@/components/ui";
@@ -81,11 +81,13 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </Container>
         <Container className="mt-12">
-          <Photo image={project.cover} priority className="aspect-[4/3] md:aspect-[16/9]" sizes="100vw" />
+          <div className="relative aspect-[2/1] overflow-hidden">
+            <Image src={project.cover.src} alt={project.cover.alt} fill priority sizes="100vw" className="object-cover" />
+          </div>
           <p className="mt-4 text-xs text-navy/60">
             <T
-              ja="※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。画像はイメージです。デッキ・中庭・軒など建物に関わる部分は、実際には建築士・施工会社と進める内容です。"
-              en="This is a NAMI concept study, not a client project. Images are for illustration only. Building elements such as decks, courtyards and eaves would be designed and built with licensed architects and builders."
+              ja="※ このプロジェクトはNAMIのコンセプトスタディです。実在のクライアント案件ではありません。デッキ・中庭・軒など建物に関わる部分は、実際には建築士・施工会社と進める内容です。"
+              en="This is a NAMI concept study, not a client project. Building elements such as decks, courtyards and eaves would be designed and built with licensed architects and builders."
             />
           </p>
         </Container>
@@ -137,39 +139,6 @@ export default async function ProjectPage({ params }: Props) {
           </ul>
         </Block>
 
-        <Block label="MOODBOARD">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {project.moodboard.map((img) => (
-              <Photo key={img.src} image={img} className="aspect-square" sizes="(min-width: 640px) 40vw, 100vw" />
-            ))}
-          </div>
-        </Block>
-
-        <Block label="FLOOR PLAN">
-          <Photo image={project.plan} className="aspect-[16/11] border hairline" sizes="(min-width: 1024px) 70vw, 100vw" />
-          <p className="mt-3 text-xs text-navy/60">Indicative concept plan — not for construction.</p>
-        </Block>
-
-        <Block label="3D / VISUALS">
-          <div className="grid gap-6">
-            {project.visuals.map((img) => (
-              <Photo key={img.src} image={img} className="aspect-[16/10]" sizes="(min-width: 1024px) 70vw, 100vw" />
-            ))}
-          </div>
-        </Block>
-
-        <Block label="GALLERY">
-          <div className="grid gap-6 sm:grid-cols-3">
-            {project.gallery.map((img, i) => (
-              <Photo
-                key={img.src}
-                image={img}
-                className={`aspect-[4/5] ${i === 1 ? "sm:mt-12" : ""}`}
-                sizes="(min-width: 640px) 25vw, 100vw"
-              />
-            ))}
-          </div>
-        </Block>
       </div>
 
       <section className="section-rule py-20 md:py-28" aria-labelledby="more-heading">
