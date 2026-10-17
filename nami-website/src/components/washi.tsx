@@ -24,6 +24,13 @@ const ART = {
   "great-wave": "A great wave rising towards a snow-capped mountain",
   shoji: "A room with shoji screens and a low table opening onto trees and grasses",
   byobu: "A timber lounge chair beside a gold folding screen of pines and a bonsai",
+  desk: "A tea cup, rolled-out floor plans and material samples on a desk by a paper window",
+  "aus-house": "A low Australian house among gum trees and grass trees",
+  washitsu: "A tatami room with a low table, an iron teapot and a hanging scroll of a crane",
+  village: "Old Japanese houses and stepping stones through a moss garden",
+  fuji: "Mount Fuji and a red sun over a calm bay with pines",
+  bridge: "A red arched bridge over a lotus pond, with a stone lantern and eucalyptus",
+  "luna-park": "The smiling gate of Luna Park in Sydney between spreading trees",
 } as const;
 
 export type ArtName = keyof typeof ART;

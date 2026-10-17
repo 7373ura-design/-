@@ -29,7 +29,7 @@ export default function ProjectsPage() {
             : { ja: "NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。", en: "Concept projects that show how NAMI thinks about space." }
         }
         sub={works.length > 0 ? "WORKS AND CONCEPTS" : "CONCEPT STUDIES, NOT CLIENT WORK"}
-        art="moon-window"
+        art="village"
       />
       {works.length > 0 && (
         <section className="pb-24 md:pb-32" aria-labelledby="works-h">

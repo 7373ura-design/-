@@ -65,7 +65,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "8 min",
-    cover: cover("shoji.jpg", "A room with shoji screens and a low table opening onto trees and grasses"),
+    cover: cover("aus-house.jpg", "A low Australian house among gum trees and grass trees"),
     published: true,
     body: {
       ja: [
@@ -237,7 +237,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "5 min",
-    cover: cover("maple-window.jpg", "Red maple leaves outside a paper window, cushions and an open book on the sill"),
+    cover: cover("washitsu.jpg", "A tatami room with a low table, an iron teapot and a hanging scroll of a crane"),
     published: true,
     body: {
       ja: [

@@ -23,7 +23,7 @@ export const projects: Project[] = [
     location: "Sydney, Australia",
     type: "Residential Concept",
     year: "2026",
-    cover: { src: "/images/washi/wave-sun.jpg", alt: "Illustration: a breaking wave and a red sun over the sea" },
+    cover: { src: "/images/washi/fuji.jpg", alt: "Illustration: Mount Fuji and a red sun over a calm bay with pines" },
     overview: {
       ja: "海の近くに建つ家族の住まいを想定したコンセプトスタディ。日本の「内と外」の考え方と、オーストラリアのIndoor / Outdoor Livingを重ね合わせています。",
       en: "A concept study for a family home near the sea. It brings together the Japanese idea of “inside and outside” and Australian indoor–outdoor living.",

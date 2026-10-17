@@ -28,7 +28,7 @@ export default async function ContactPage({ searchParams }: Props) {
           ja: "住まいのこと、まずはお気軽にご相談ください。\n内容を確認のうえ、ご連絡いたします。",
           en: "Tell us about your home. We will read your message and get back to you.",
         }}
-        art="tea"
+        art="bridge"
       />
 
       <section className="section-rule py-16 md:py-24" aria-label="Enquiry">

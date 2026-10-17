@@ -41,7 +41,7 @@ export default function ServicesPage() {
         label="SERVICES"
         heading={{ ja: "暮らしを、\n一緒に整える。", en: "Shaping Your Home,\nTogether" }}
         sub="FROM FIRST CONVERSATION TO FINAL TOUCH"
-        art="byobu"
+        art="desk"
         intro={{
           ja: "住まいのご相談から、コンセプトづくり、空間プランニング、スタイリングまで。\nその人のライフスタイルに合わせた空間づくりをサポートします。",
           en: "From a first conversation to concept, space planning and styling, we help you create a space that suits the way you live.",

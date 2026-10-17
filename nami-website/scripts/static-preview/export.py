@@ -21,6 +21,8 @@ projects=["nami-house-01","nami-house-02","nami-house-03"]
 arts=["what-is-japandi","japanese-vs-australian-homes","why-natural-materials-matter","the-japanese-concept-of-ma","indoor-outdoor-living","small-space-living-in-japan"]
 for s in projects: routes[f"/projects/{s}"]=f"project-{s}.html"
 for s in arts: routes[f"/journal/{s}"]=f"journal-{s}.html"
+works=["new-lynn-house","remuera-renovation","glen-innes-unit","hillcrest-house"]
+for s in works: routes[f"/works/{s}"]=f"works-{s}.html"
 
 # CSS
 home=get("/")
