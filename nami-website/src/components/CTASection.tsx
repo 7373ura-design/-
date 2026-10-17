@@ -1,33 +1,67 @@
-import Image from "next/image";
-import { ArrowLink } from "@/components/ui";
-import { T } from "@/lib/i18n";
+import Link from "next/link";
+import { site } from "@/data/site";
+import { Art, CircleIcon, PostHead, type IconName } from "@/components/washi";
+import { Container } from "@/components/ui";
+import { T, type Bi } from "@/lib/i18n";
 
-/** Closing call-to-action over the wave, sun and pine-island illustration. */
+const next: { icon: IconName; href: string; title: Bi; line: Bi; external?: boolean }[] = [
+  {
+    icon: "chat",
+    href: "/contact",
+    title: { ja: "相談する", en: "Make an Enquiry" },
+    line: { ja: "住まいのこと、まずはお気軽に", en: "Tell us about your home" },
+  },
+  {
+    icon: "bookmark",
+    href: "/journal",
+    title: { ja: "ジャーナルを読む", en: "Read the Journal" },
+    line: { ja: "オーストラリアの暮らしのヒント", en: "Ideas for Australian living" },
+  },
+  {
+    icon: "heart",
+    href: site.social[0].href,
+    title: { ja: "Instagramをフォロー", en: "Follow NAMI" },
+    line: { ja: "新しい投稿をお届けします", en: "New posts on Instagram" },
+    external: true,
+  },
+];
+
+/** Closing post: Sydney Harbour, an invitation, and three next steps. */
 export function CTASection() {
   return (
-    <section className="section-rule relative bg-cream" aria-labelledby="cta-heading">
-      <div className="relative mx-auto max-w-[1600px]">
-        <div className="relative z-10 px-5 pt-14 md:absolute md:left-[5.5%] md:top-[16%] md:w-[48%] md:p-0">
-          <h2
-            id="cta-heading"
-            className="jp-heading font-normal text-[1.6rem] leading-[1.6] text-navy md:text-[clamp(1.4rem,2.2vw,2.2rem)]"
-            data-reveal
-          >
-            <T ja={"一緒に、\n心地よい空間をつくりませんか？"} en={"Shall we create a space\nthat feels like yours?"} />
-          </h2>
-          <p className="jp-body mt-5 text-[0.875rem] text-navy/70" data-reveal>
-            <T ja="住まいのこと、まずはお気軽にご相談ください。" en="Tell us about your home. We would love to hear from you." />
-          </p>
-          <div className="mt-6 md:mt-[2vw]" data-reveal>
-            <ArrowLink href="/contact" variant="pill">
-              ENQUIRE NOW
-            </ArrowLink>
-          </div>
-        </div>
-        <div className="relative -mt-6 aspect-[1644/526] w-full md:mt-0">
-          <Image src="/images/illustrations/cta-wave.jpg" alt="" fill sizes="100vw" className="object-cover object-right" />
-        </div>
-      </div>
+    <section className="relative" aria-labelledby="cta-heading">
+      <Art name="harbour" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />
+      <Container className="pb-24 pt-14 md:pb-32 md:pt-20">
+        <PostHead
+          kicker="GET TO KNOW NAMI"
+          title={{ ja: "一緒に、\n心地よい空間をつくりませんか？", en: "Shall We Create a Space\nThat Feels Like Yours?" }}
+          sub="THIS IS JUST THE BEGINNING"
+          id="cta-heading"
+        />
+        <ul className="mx-auto mt-12 w-fit space-y-6">
+          {next.map((n) => (
+            <li key={n.icon}>
+              <Link
+                href={n.href}
+                {...(n.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="group flex items-center gap-5"
+              >
+                <span className="transition-colors group-hover:[&>span]:border-vermilion group-hover:[&>span]:text-vermilion">
+                  <CircleIcon name={n.icon} />
+                </span>
+                <span>
+                  <span className="title block text-[1.2rem] !leading-snug transition-colors group-hover:text-deep">
+                    <T ja={n.title.ja} en={n.title.en} />
+                  </span>
+                  <span className="mt-0.5 block text-[0.8125rem] text-navy/70">
+                    <T ja={n.line.ja} en={n.line.en} />
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Container>
     </section>
   );
 }

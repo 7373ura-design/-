@@ -28,7 +28,7 @@ css=""
 for href in re.findall(r'<link rel="stylesheet" href="([^"]+)"',home): css+=get(href)+"\n"
 css=re.sub(r'@font-face\s*{[^}]*}','',css)
 css+='''
-html:root{--font-noto-serif-jp:"Noto Serif JP";--font-cormorant:"Cormorant Garamond";--font-dm-sans:"DM Sans";color-scheme:light}
+html:root{--font-noto-serif-jp:"Noto Serif JP";--font-caslon:"Libre Caslon Text";--font-dm-sans:"DM Sans";color-scheme:light}
 body{background:#F7F1E5}
 '''
 open(f"{OUT}/site.css","w").write(css)
@@ -59,7 +59,7 @@ for r,fn in routes.items():
     head=f'''<title>{title}</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.add("js");document.documentElement.className+=" {htmlcls}";</script>\n<script>{LANG_SCRIPT}</script>'''
     tail=f'<script src="site.js"></script>'

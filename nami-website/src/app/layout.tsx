@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, DM_Sans, Noto_Serif_JP } from "next/font/google";
+import { DM_Sans, Libre_Caslon_Text, Noto_Serif_JP } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/Motion";
@@ -15,10 +15,11 @@ const notoSerifJP = Noto_Serif_JP({
   preload: false,
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ["400", "500"],
+const caslon = Libre_Caslon_Text({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-cormorant",
+  variable: "--font-caslon",
   display: "swap",
 });
 
@@ -47,12 +48,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F7F1E5",
+  themeColor: "#F2E8D9",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${notoSerifJP.variable} ${cormorant.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="ja" className={`${notoSerifJP.variable} ${caslon.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <head>
         {/* Enables scroll-reveal styles only when JS runs, so content is never hidden without it */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

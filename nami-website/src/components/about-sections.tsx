@@ -1,29 +1,20 @@
 import { japanAustralia, meanings } from "@/data/brand";
 import { MeaningCard } from "@/components/cards";
 import { ArrowLink, Container } from "@/components/ui";
+import { Art, PostHead } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
 
 export function MeaningsFull({ full = true }: { full?: boolean }) {
   return (
-    <section className="bg-cream py-20 md:py-28" aria-labelledby="meanings-heading">
-      <Container>
-        <div className="text-center" data-reveal>
-          <p className="label text-deep">THE MEANING BEHIND NAMI</p>
-          <h2 id="meanings-heading" className="jp-heading mt-5 text-[1.75rem] text-navy sm:text-4xl">
-            <T
-              ja={
-                <>
-                  NAMIに込めた<span className="text-vermilion">3</span>つの意味
-                </>
-              }
-              en={
-                <>
-                  <span className="text-vermilion">Three</span> meanings behind NAMI
-                </>
-              }
-            />
-          </h2>
-        </div>
+    <section aria-labelledby="meanings-heading">
+      <Art name="scrolls" position="50% 40%" />
+      <Container className="pb-24 pt-14 md:pb-28 md:pt-20">
+        <PostHead
+          kicker="THE MEANING BEHIND NAMI"
+          title={{ ja: "NAMIに込めた\n3つの意味", en: "One Name,\nThree Meanings" }}
+          sub="波 · 並 · NEST AND MEMORIES INSIDE"
+          id="meanings-heading"
+        />
         <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-3 md:gap-0 md:divide-x md:divide-navy/15 [&>*]:md:px-8 lg:[&>*]:px-12 md:[&>*:first-child]:pl-0 md:[&>*:last-child]:pr-0">
           {meanings.map((m, i) => (
             <MeaningCard key={m.number} meaning={m} index={i} full={full} />
@@ -42,13 +33,13 @@ export function MeaningsFull({ full = true }: { full?: boolean }) {
 export function JapanAustraliaSection() {
   const Side = ({ title, sub, items, align }: { title: string; sub: Bi; items: Bi[]; align: "left" | "right" }) => (
     <div className={`text-center ${align === "left" ? "md:text-right" : "md:text-left"}`} data-reveal>
-      <p className="font-display text-3xl tracking-[0.3em] text-navy md:text-4xl">{title}</p>
-      <p className="label mt-2 text-deep">
+      <p className="title text-3xl tracking-[0.2em] md:text-4xl">{title}</p>
+      <p className="subline mt-2">
         <T ja={sub.ja} en={sub.en} />
       </p>
       <ul className={`mt-8 flex flex-wrap justify-center gap-2.5 ${align === "left" ? "md:justify-end" : "md:justify-start"}`}>
         {items.map((item) => (
-          <li key={item.en} className="border hairline bg-paper px-4 py-2 text-sm text-navy">
+          <li key={item.en} className="rounded-full border border-navy/25 px-4 py-2 text-sm text-navy">
             <T ja={item.ja} en={item.en} className="font-jp tracking-[0.08em]" />
           </li>
         ))}
@@ -57,7 +48,7 @@ export function JapanAustraliaSection() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-beige/45 py-20 md:py-28" aria-labelledby="jxa-heading">
+    <section className="section-rule relative overflow-hidden py-20 md:py-28" aria-labelledby="jxa-heading">
       <span
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-jp text-[24rem] leading-none text-navy/[0.035] md:text-[36rem]"
@@ -65,12 +56,12 @@ export function JapanAustraliaSection() {
         並
       </span>
       <Container className="relative">
-        <div className="text-center" data-reveal>
-          <p className="label text-deep">JAPAN × AUSTRALIA</p>
-          <h2 id="jxa-heading" className="jp-heading mt-5 text-[1.6rem] text-navy sm:text-3xl">
-            <T ja="異なるものを、並べて生かす。" en="Different things, side by side." />
-          </h2>
-        </div>
+        <PostHead
+          kicker="IN BETWEEN"
+          title={{ ja: "異なるものを、並べて生かす。", en: "Different Things,\nSide by Side" }}
+          sub="JAPAN × AUSTRALIA"
+          id="jxa-heading"
+        />
         <div className="mt-14 grid items-center gap-10 md:mt-20 md:grid-cols-[1fr_auto_1fr] md:gap-12 lg:gap-20">
           <Side title="JAPAN" sub={{ ja: "日本の美意識", en: "Japanese sensibility" }} items={japanAustralia.japan} align="left" />
           <div className="relative mx-auto flex h-40 w-40 items-center justify-center md:h-52 md:w-52" data-reveal>

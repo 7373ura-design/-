@@ -18,24 +18,22 @@ export default function ProjectsPage() {
     <>
       <PageHero
         label="PROJECTS"
-        heading={{ ja: "暮らしの波を、\nかたちに。", en: "Giving shape\nto life’s waves." }}
+        heading={{ ja: "暮らしの波を、\nかたちに。", en: "Giving Shape\nto Life’s Waves" }}
         intro={{
           ja: "NAMIの考え方をもとにした\nコンセプトプロジェクトをご紹介します。",
           en: "Concept projects that show how NAMI thinks about space.",
         }}
-        art={
-          <div className="border-l-2 border-vermilion pl-6">
-            <p className="font-display text-3xl tracking-[0.16em] text-navy">NAMI CONCEPTS</p>
-            <p className="jp-body mt-4 text-sm leading-[2] text-navy/75">
-              <T
-                ja="掲載しているプロジェクトは、NAMIの考え方を表現するために制作したコンセプトスタディです。実際のクライアント案件ではありません。"
-                en="These projects are concept studies created to show NAMI’s design thinking. They are not client commissions."
-              />
-            </p>
-          </div>
-        }
-      />
-      <section className="bg-cream pb-24 pt-6 md:pb-32" aria-label="Project list">
+        sub="CONCEPT STUDIES, NOT CLIENT WORK"
+        art="moon-window"
+      >
+        <p className="text-center text-[0.8125rem] leading-[1.9] text-navy/65">
+          <T
+            ja="掲載しているプロジェクトは、NAMIの考え方を表現するために制作したコンセプトスタディです。実際のクライアント案件ではありません。"
+            en="These projects are concept studies created to show NAMI’s design thinking. They are not client commissions."
+          />
+        </p>
+      </PageHero>
+      <section className="pb-24 md:pb-32" aria-label="Project list">
         <Container>
           <ProjectsGrid projects={projects} />
         </Container>

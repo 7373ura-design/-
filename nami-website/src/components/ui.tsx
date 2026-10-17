@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { ArrowRight } from "@/components/illustrations/Icons";
 import { T, type Bi } from "@/lib/i18n";
+import { PostHead } from "@/components/washi";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-[1360px] px-5 md:px-10 lg:px-16 ${className}`}>{children}</div>;
@@ -44,7 +45,7 @@ export function SectionHeader({
   label,
   heading,
   intro,
-  tone = "navy",
+  sub,
   align = "left",
   as: Tag = "h2",
 }: {
@@ -52,29 +53,14 @@ export function SectionHeader({
   label: string;
   heading: Bi;
   intro?: Bi;
-  tone?: "navy" | "light";
+  sub?: string;
   align?: "left" | "center";
   as?: "h1" | "h2";
 }) {
-  const center = align === "center";
   return (
-    <div className={`${center ? "mx-auto text-center [&_p.label]:justify-center" : ""}`} data-reveal>
-      <SectionLabel number={number} tone={tone}>
-        {label}
-      </SectionLabel>
-      <Tag
-        className={`jp-heading mt-5 text-[1.75rem] leading-[1.5] sm:text-[2rem] lg:text-[2.35rem] ${tone === "light" ? "text-paper" : "text-navy"}`}
-      >
-        <T ja={heading.ja} en={heading.en} />
-      </Tag>
-      {intro && (
-        <p
-          className={`jp-body mt-6 text-[0.9375rem] ${center ? "mx-auto" : ""} max-w-xl ${tone === "light" ? "text-paper/80" : "text-navy/80"}`}
-        >
-          <T ja={intro.ja} en={intro.en} />
-        </p>
-      )}
-    </div>
+    <PostHead no={number} kicker={label} title={heading} sub={sub} align={align} as={Tag}>
+      {intro && <T ja={intro.ja} en={intro.en} />}
+    </PostHead>
   );
 }
 

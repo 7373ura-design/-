@@ -2,7 +2,7 @@ import type { Meaning, Principle } from "@/lib/types";
 import type { Bi } from "@/lib/i18n";
 
 export const hero = {
-  heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where life\nand memories\nfind a home." },
+  heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
     ja: "波のように変わる毎日に寄り添い、\nその人だけの記憶が積み重なっていく\n空間をつくるインテリアデザインブランドです。",
     en: "NAMI is an interior design brand creating spaces that move with the changing waves of everyday life, where your own memories can quietly build up.",
@@ -10,7 +10,7 @@ export const hero = {
 };
 
 export const story = {
-  heading: { ja: "波のように生きる、\n空間をつくる。", en: "Spaces for a life\nthat moves like waves." },
+  heading: { ja: "波のように生きる、\n空間をつくる。", en: "Spaces for a Life\nThat Moves Like Waves" },
   body: {
     ja: [
       "人生には、嬉しい日もあれば、\n落ち込む日もある。",
@@ -92,7 +92,7 @@ export const meanings: Meaning[] = [
 ];
 
 export const meaningsIntro = {
-  heading: { ja: "NAMIに込めた\n3つの意味", en: "Three meanings\nbehind NAMI" },
+  heading: { ja: "NAMIに込めた\n3つの意味", en: "One Name,\nThree Meanings" },
   body: {
     ja: "波、並、そして N — A — M — I。\nひとつの名前に、三つの想いを込めています。",
     en: "波, 並 and N — A — M — I.\nThree ideas carried in one name.",
@@ -100,7 +100,7 @@ export const meaningsIntro = {
 };
 
 export const approach = {
-  heading: { ja: "日本とオーストラリア、\nふたつの視点から。", en: "Two perspectives:\nJapan and Australia." },
+  heading: { ja: "日本とオーストラリア、\nふたつの視点から。", en: "Japan × Australia" },
   body: {
     ja: "日本の美意識と、オーストラリアの豊かな自然。\nそれぞれの良さを活かしながら、\n人の暮らしに寄り添う、心地よい空間をつくります。",
     en: "Japanese sensibility meets Australia’s natural landscape. We draw on the best of both to create calm, comfortable spaces that fit the way people live.",

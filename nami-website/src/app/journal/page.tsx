@@ -17,15 +17,18 @@ export default function JournalPage() {
     <>
       <PageHero
         label="JOURNAL"
-        heading={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\neveryday living." }}
+        heading={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\nAustralian Living" }}
+        sub="NOTES ON HOMES, MATERIALS AND CULTURE"
+        art="wave-sun"
+        artPosition="50% 70%"
         intro={{
           ja: "日本とオーストラリアの住まい、素材、余白。\n心地よい暮らしのためのヒントを、少しずつお届けします。",
           en: "Homes in Japan and Australia, natural materials and the value of empty space: ideas for living well, shared a little at a time.",
         }}
       />
-      <section className="bg-cream pb-24 md:pb-32" aria-label="Articles">
+      <section className="pb-24 md:pb-32" aria-label="Articles">
         <Container>
-          <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 [&_article]:w-auto">
+          <div className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3 [&_article]:w-auto">
             {articles.map((a, i) => (
               <JournalCard key={a.slug} article={a} index={i % 3} />
             ))}

@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f7f3ea;
-  --color-paper: #fbf8f2;
-  --color-beige: #e9dcc8;
+  /* Washi: the warm, fibrous paper of the NAMI Instagram posts */
+  --color-cream: #f2e8d9;
+  --color-paper: #f6efe3;
+  --color-beige: #e4d5bf;
   --color-navy: #1e3a5c;
   --color-deep: #2a5b86;
-  --color-ocean: #008fb5;
+  --color-ocean: #2a8bc0;
   --color-aqua: #75c9d5;
   --color-vermilion: #e8553b;
 
   --font-jp: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-display: var(--font-caslon), var(--font-noto-serif-jp), Georgia, serif;
+  --font-serif: var(--font-caslon), var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
 
   --ease-wave: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -42,16 +44,19 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  /* Faint paper grain over the cream ground */
+  /* Washi over everything: soft mottling, short pale fibres and a fine grain, multiplied onto the page */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 60;
-    opacity: 0.35;
     mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.01875 0.05' numOctaves='4' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.58 0 0 0 0 0.46 1.3 0 0 0 -0.7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0046875' numOctaves='3' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.5 0 0 0 0 0.38 0.6 0 0 0 -0.22'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23c%29'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='1' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
+    opacity: 0.55;
   }
   ::selection {
     background: var(--color-vermilion);
@@ -72,18 +77,56 @@
     font-weight: 500;
   }
   .jp-heading {
-    font-family: var(--font-jp);
-    font-weight: 500;
+    font-family: var(--font-serif);
+    font-weight: 400;
     letter-spacing: 0.08em;
     line-height: 1.55;
     font-feature-settings: "palt";
   }
   .jp-body {
-    font-family: var(--font-jp);
+    font-family: var(--font-serif);
     font-weight: 400;
     line-height: 2.15;
     letter-spacing: 0.06em;
     font-feature-settings: "palt";
+  }
+  /* Post typography, as on the NAMI Instagram carousels */
+  .kicker {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-navy);
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--color-navy);
+    letter-spacing: -0.005em;
+    line-height: 1.15;
+  }
+  .subline {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-ocean);
+  }
+  .rule {
+    display: block;
+    height: 1px;
+    width: 2.75rem;
+    background: color-mix(in srgb, var(--color-vermilion) 55%, var(--color-beige));
+  }
+  /* Illustration that sits on paper: let its edges dissolve into the page */
+  .on-paper {
+    -webkit-mask-image: radial-gradient(ellipse 70% 72% at 50% 50%, #000 62%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 72% at 50% 50%, #000 62%, transparent 100%);
+  }
+  .fade-top {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%);
+    mask-image: linear-gradient(to bottom, transparent, #000 22%);
   }
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
@@ -126,13 +169,19 @@ html[data-lang="en"] .lang-ja {
   display: none !important;
 }
 html[data-lang="en"] .jp-heading {
-  letter-spacing: 0.005em;
-  line-height: 1.3;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
   font-feature-settings: normal;
 }
+/* Japanese titles keep the mincho rhythm */
+html:not([data-lang="en"]) .title {
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  font-feature-settings: "palt";
+}
 html[data-lang="en"] .jp-body {
-  letter-spacing: 0.005em;
-  line-height: 1.75;
+  letter-spacing: 0;
+  line-height: 1.8;
   font-feature-settings: normal;
 }
 

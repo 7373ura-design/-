@@ -9,8 +9,9 @@ import type { JournalArticle } from "@/lib/types";
  * Japanese and English lists are written separately (not line-by-line
  * translations), so they may differ in length.
  */
+// Covers are the woodblock-style illustrations from the NAMI Instagram posts.
 const cover = (file: string, alt: string) => ({
-  src: `/images/journal/${file}`,
+  src: `/images/washi/${file}`,
   alt,
 });
 
@@ -26,7 +27,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "5 min",
-    cover: cover("j1.jpg", "A calm room with a low timber table and a large window framing the sea"),
+    cover: cover("byobu.jpg", "A timber lounge chair beside a gold folding screen of pines and a bonsai"),
     published: true,
     body: {
       ja: [
@@ -64,7 +65,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "8 min",
-    cover: cover("j2.jpg", "A sunlit room with indoor plants and soft shadows on the wall"),
+    cover: cover("shoji.jpg", "A room with shoji screens and a low table opening onto trees and grasses"),
     published: true,
     body: {
       ja: [
@@ -114,7 +115,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "6 min",
-    cover: cover("j3.jpg", "A rocky coastline with pine trees above a calm bay"),
+    cover: cover("tea.jpg", "A navy tea bowl mended with gold, a whisk and a vase with a red camellia"),
     published: true,
     body: {
       ja: [
@@ -156,7 +157,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "5 min",
-    cover: cover("j1.jpg", "A quiet room with a single low table in front of a window"),
+    cover: cover("moon-window.jpg", "A round moon window looking onto a pine and a small stone garden"),
     published: true,
     body: {
       ja: [
@@ -194,7 +195,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "6 min",
-    cover: cover("j3.jpg", "Pine trees and a sandy cove seen from above"),
+    cover: cover("pavilion.jpg", "A timber pavilion with a stone lantern and a red maple by the water"),
     published: true,
     body: {
       ja: [
@@ -236,7 +237,7 @@ export const articles: JournalArticle[] = [
     },
     date: "2026-10-12",
     readingTime: "5 min",
-    cover: cover("j2.jpg", "Plants and soft shadows in a compact sunlit room"),
+    cover: cover("maple-window.jpg", "Red maple leaves outside a paper window, cushions and an open book on the sill"),
     published: true,
     body: {
       ja: [

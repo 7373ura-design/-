@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { Photo } from "@/components/Photo";
 import Image from "next/image";
 import { JapanAustraliaSection, MeaningsFull } from "@/components/about-sections";
 import { PrincipleCard } from "@/components/cards";
@@ -27,33 +26,26 @@ export default function AboutPage() {
           ja: "NAMIは、日本の美意識とオーストラリアの暮らしを\nつなぐインテリアデザインブランドです。",
           en: "NAMI is an interior design brand that brings together Japanese sensibility and Australian living.",
         }}
-        art={
-          <Image
-            src="/images/illustrations/story-surfer.jpg"
-            alt="The NAMI surfer: a girl riding a big wave on a red surfboard"
-            width={928}
-            height={612}
-            priority
-            className="w-full feather"
-          />
-        }
+        sub="ONE NAME. THREE MEANINGS."
+        art="great-wave"
+        artPosition="50% 80%"
       />
 
       {/* NAMIとは */}
-      <section className="bg-paper py-20 md:py-28" aria-labelledby="what-heading">
+      <section className="py-16 md:py-24" aria-labelledby="what-heading">
         <Container className="grid items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Photo
-              image={{
-                src: "/images/projects/p1.jpg",
-                alt: "A coastal living room with timber ceiling and wide windows to the sea",
-              }}
-              className="aspect-[4/5] rounded-tr-[120px]"
+            <Image
+              src="/images/illustrations/story-surfer.jpg"
+              alt="The NAMI surfer: a girl riding a big wave on a red surfboard"
+              width={928}
+              height={612}
+              className="w-full feather"
             />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <div id="what-heading">
-              <SectionHeader label="WHAT IS NAMI" heading={{ ja: "NAMIとは", en: "What is NAMI?" }} />
+              <SectionHeader number="01" label="WHAT IS NAMI" heading={{ ja: "NAMIとは", en: "What is NAMI?" }} sub="LIFE MOVES IN WAVES" />
             </div>
             <div className="jp-body mt-8 text-[0.9375rem] text-navy/85" data-reveal>
               <Paras ja={story.body.ja} en={story.body.en} gap="mt-6" />
@@ -69,11 +61,11 @@ export default function AboutPage() {
       <CraftSection />
 
       {/* Philosophy */}
-      <section className="border-y hairline bg-paper py-20 md:py-28" aria-labelledby="philosophy-heading">
+      <section className="section-rule py-20 md:py-28" aria-labelledby="philosophy-heading">
         <Container>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7" id="philosophy-heading">
-              <SectionHeader label="OUR PHILOSOPHY" heading={approach.heading} />
+              <SectionHeader label="OUR PHILOSOPHY" heading={{ ja: "大切にしている、\n5つのこと。", en: "Five Things\nWe Hold On To" }} sub="WHAT WE BELIEVE" />
             </div>
             <p className="jp-body text-[0.9375rem] text-navy/80 lg:col-span-5" data-reveal>
               <T ja={approach.body.ja} en={approach.body.en} />
@@ -88,7 +80,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder — intentionally modest; no invented credentials */}
-      <section className="bg-cream py-20 md:py-28" aria-labelledby="founder-heading">
+      <section className="section-rule py-20 md:py-28" aria-labelledby="founder-heading">
         <Container className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div
@@ -102,7 +94,7 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
             <div id="founder-heading">
-              <SectionHeader label="FOUNDER" heading={{ ja: "名前を背負って、\n空間をつくる。", en: "Putting my name\nto every space." }} />
+              <SectionHeader label="FOUNDER" heading={{ ja: "名前を背負って、\n空間をつくる。", en: "Putting My Name\nto Every Space" }} sub="WHY THIS NAME" />
             </div>
             <div className="jp-body mt-8 text-[0.9375rem] text-navy/85" data-reveal>
               <T

@@ -50,7 +50,7 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
           </div>
         ) : (
           <div className="border hairline bg-paper px-6 py-16 text-center">
-            <p className="label text-deep">COMING SOON</p>
+            <p className="subline">COMING SOON</p>
             <p className="jp-body mt-4 text-[0.9375rem] text-navy/80">
               <T
                 ja={"このカテゴリーのプロジェクトは準備中です。\n公開まで今しばらくお待ちください。"}

@@ -31,8 +31,9 @@ function Block({ label, title, children }: { label: string; title?: string; chil
     <section className="border-t hairline py-16 md:py-20">
       <Container className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-3" data-reveal>
-          <SectionLabel>{label}</SectionLabel>
-          {title && <h2 className="jp-heading mt-4 text-2xl text-navy">{title}</h2>}
+          <p className="kicker">{label}</p>
+          <span className="rule mt-4" aria-hidden />
+          {title && <h2 className="title mt-4 text-2xl">{title}</h2>}
         </div>
         <div className="lg:col-span-9">{children}</div>
       </Container>
@@ -49,7 +50,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-cream pt-28 md:pt-40">
+      <section className="pt-28 md:pt-40">
         <Container>
           <nav aria-label="Breadcrumb" className="label text-navy/60" data-reveal>
             <Link href="/projects" className="link-underline pb-1 hover:text-vermilion">
@@ -60,9 +61,10 @@ export default async function ProjectPage({ params }: Props) {
           </nav>
           <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8" data-reveal>
-              <p className="font-display text-xl text-vermilion">{project.number}</p>
-              <h1 className="mt-2 font-display text-5xl text-navy sm:text-6xl lg:text-7xl">{project.title}</h1>
-              <p className="mt-4 font-display text-2xl text-deep md:text-3xl">{project.subtitle}</p>
+              <p className="kicker"><span className="mr-3 text-vermilion">{project.number}.</span>NAMI CONCEPT</p>
+              <h1 className="title mt-4 text-5xl sm:text-6xl lg:text-7xl">{project.title}</h1>
+              <p className="subline mt-4">{project.subtitle}</p>
+              <span className="rule mt-6" aria-hidden />
             </div>
             <dl className="grid grid-cols-3 gap-4 border-t hairline pt-6 lg:col-span-4 lg:grid-cols-1 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" data-reveal>
               {[
@@ -90,7 +92,7 @@ export default async function ProjectPage({ params }: Props) {
 <div className="mt-16" />
       </section>
 
-      <div className="bg-paper">
+      <div>
         <Block label="PROJECT OVERVIEW">
           <p className="jp-heading text-xl leading-[2] text-navy md:text-2xl" data-reveal>
             <T ja={project.overview.ja} en={project.overview.en} />
@@ -107,8 +109,8 @@ export default async function ProjectPage({ params }: Props) {
           <ol className="grid gap-8 md:grid-cols-3">
             {project.designDirection.map((d, i) => (
               <li key={d.title} data-reveal style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}>
-                <span className="label text-vermilion">0{i + 1}</span>
-                <h3 className="mt-3 font-display text-2xl text-navy">{d.title}</h3>
+                <span className="kicker text-vermilion">0{i + 1}.</span>
+                <h3 className="title mt-3 text-2xl">{d.title}</h3>
                 <p className="jp-body mt-3 text-sm leading-[2] text-navy/80">
                   <T ja={d.body.ja} en={d.body.en} />
                 </p>
@@ -126,7 +128,7 @@ export default async function ProjectPage({ params }: Props) {
                   className="block aspect-square w-full rounded-full border hairline"
                   style={{ backgroundColor: m.swatch }}
                 />
-                <p className="mt-4 font-display text-xl text-navy">{m.name}</p>
+                <p className="title mt-4 text-xl">{m.name}</p>
                 <p className="jp-heading text-sm text-navy/70">
                   <T ja={m.note.ja} en={m.note.en} />
                 </p>
@@ -170,11 +172,11 @@ export default async function ProjectPage({ params }: Props) {
         </Block>
       </div>
 
-      <section className="border-t hairline bg-cream py-20 md:py-28" aria-labelledby="more-heading">
+      <section className="section-rule py-20 md:py-28" aria-labelledby="more-heading">
         <Container>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <h2 id="more-heading" className="font-display text-4xl text-navy">
-              More concepts
+            <h2 id="more-heading" className="title text-4xl">
+              More Concepts
             </h2>
             <ArrowLink href="/projects">ALL PROJECTS</ArrowLink>
           </div>

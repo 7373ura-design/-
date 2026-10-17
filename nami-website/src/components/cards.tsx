@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { JournalArticle, Meaning, Principle, Project, Service } from "@/lib/types";
 import { Photo } from "@/components/Photo";
-import { ArrowRight, meaningEmblems, principleIcons } from "@/components/illustrations/Icons";
+import { meaningEmblems, principleIcons } from "@/components/illustrations/Icons";
 import { Lines } from "@/components/ui";
 import { T } from "@/lib/i18n";
 
@@ -24,9 +24,9 @@ export function MeaningCard({ meaning, index, full = false }: { meaning: Meaning
       </span>
       <div className="flex items-center gap-5">
         <Emblem className="h-16 w-16 shrink-0 md:h-20 md:w-20" />
-        <span className="font-display text-4xl text-vermilion">{meaning.number}</span>
+        <span className="kicker text-vermilion">{meaning.number}.</span>
       </div>
-      <h3 className="mt-8 font-display text-[1.75rem] tracking-[0.14em] text-navy md:text-3xl">
+      <h3 className="title mt-8 text-[1.75rem] tracking-[0.06em] md:text-3xl">
         {meaning.title.includes("—") && !isLatin ? (
           <>
             <span className="font-jp tracking-normal">{meaning.title.split(" — ")[0]}</span>
@@ -37,10 +37,10 @@ export function MeaningCard({ meaning, index, full = false }: { meaning: Meaning
           meaning.title
         )}
       </h3>
-      <p className={`mt-3 text-deep ${isLatin ? "label !tracking-[0.2em]" : "jp-heading text-base"}`}>
+      <p className={`mt-3 ${isLatin ? "subline" : "subline !normal-case !tracking-[0.04em] text-[0.9375rem]"}`}>
         <T ja={meaning.lead.ja} en={meaning.lead.en} />
       </p>
-      <div className="mt-5 h-px w-12 bg-vermilion" aria-hidden />
+      <span className="rule mt-5" aria-hidden />
       <div className="jp-body mt-6 space-y-4 text-sm leading-[2.05] text-navy/80">
         <T
           as="div"
@@ -69,8 +69,8 @@ export function PrincipleCard({ principle, index }: { principle: Principle; inde
     >
       <Icon className="h-12 w-12 shrink-0 text-deep transition-colors duration-500 group-hover:text-vermilion md:h-14 md:w-14" />
       <div className="md:mt-8">
-        <p className="label text-vermilion">{principle.number}</p>
-        <h3 className="mt-2 font-display text-2xl tracking-[0.18em] text-navy">{principle.title}</h3>
+        <p className="kicker text-vermilion">{principle.number}.</p>
+        <h3 className="title mt-2 text-[1.35rem] tracking-[0.12em]">{principle.title}</h3>
         <p className="jp-heading mt-1 text-[0.9375rem] text-navy">
           <T ja={principle.sub.ja} en={principle.sub.en} />
         </p>
@@ -138,22 +138,15 @@ export function ProjectCard({
             sizes="(min-width: 768px) 40vw, 85vw"
             className={size === "lg" ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]"}
           />
-          <span className="label absolute left-4 top-4 bg-paper/90 px-3 py-1.5 text-navy">NAMI CONCEPT</span>
+          <span className="kicker absolute left-4 top-4 bg-cream/90 px-3 py-1.5 !text-[0.625rem]">NAMI CONCEPT</span>
         </div>
-        <div className={`mt-6 flex items-start justify-between gap-6 border-b pb-5 ${dark ? "border-paper/20" : "hairline"}`}>
-          <div>
-            <p className={`label ${dark ? "text-aqua" : "text-deep"}`}>{project.number} / {project.type}</p>
-            <h3 className={`mt-3 font-display text-3xl ${dark ? "text-paper" : "text-navy"}`}>{project.title}</h3>
-            <p className={`mt-1 text-sm ${dark ? "text-paper/75" : "text-navy/70"}`}>{project.subtitle}</p>
-          </div>
-          <span
-            className={`mt-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors duration-500 group-hover:border-vermilion group-hover:bg-vermilion group-hover:text-paper ${
-              dark ? "border-paper/40 text-paper" : "border-navy/40 text-navy"
-            }`}
-          >
-            <ArrowRight className="h-3 w-5" />
-            <span className="sr-only">View {project.title}</span>
-          </span>
+        <div className="mt-6 text-center">
+          <p className={`kicker ${dark ? "!text-paper/70" : ""}`}>
+            <span className="mr-3 text-vermilion">{project.number}.</span>
+            {project.type}
+          </p>
+          <h3 className={`title mt-3 text-[1.6rem] transition-colors group-hover:text-deep ${dark ? "!text-paper" : ""}`}>{project.title}</h3>
+          <p className={`mt-1 text-[0.8125rem] ${dark ? "text-paper/75" : "text-navy/65"}`}>{project.subtitle}</p>
         </div>
       </Link>
     </article>
@@ -163,7 +156,7 @@ export function ProjectCard({
 export function JournalCard({ article, index }: { article: JournalArticle; index: number }) {
   return (
     <article
-      className="group w-[74vw] shrink-0 snap-start sm:w-[44vw] md:w-auto"
+      className="group w-[74vw] shrink-0 snap-start text-center sm:w-[44vw] md:w-auto"
       data-reveal
       style={{ "--reveal-delay": `${index * 110}ms` } as React.CSSProperties}
     >
@@ -173,16 +166,14 @@ export function JournalCard({ article, index }: { article: JournalArticle; index
           hoverZoom
           reveal={false}
           sizes="(min-width: 768px) 30vw, 75vw"
-          className="aspect-[4/3]"
+          className="aspect-[3/2]"
         />
-        <p className="label mt-5 flex items-center gap-3 text-deep">
+        <p className="kicker mt-6">
           {article.category}
-          {!article.published && <span className="text-navy/50">· COMING SOON</span>}
+          {!article.published && <span className="text-navy/50"> · COMING SOON</span>}
         </p>
-        <h3 className="mt-3 font-display text-2xl leading-snug text-navy transition-colors group-hover:text-deep">
-          {article.title}
-        </h3>
-        <p className="jp-heading mt-1 text-sm text-navy/75">
+        <h3 className="title mt-3 text-[1.5rem] !leading-snug transition-colors group-hover:text-deep">{article.title}</h3>
+        <p className="subline mt-2 !normal-case !tracking-[0.04em] text-[0.8125rem]">
           <T ja={article.titleJa ?? ""} en={article.excerpt.en} />
         </p>
       </Link>
