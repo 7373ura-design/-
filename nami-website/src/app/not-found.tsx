@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <section className="pb-28 pt-40 text-center md:pt-48">
       <Container>
-        <Image src="/images/illustrations/story-surfer.jpg" alt="" width={928} height={612} className="mx-auto w-full max-w-md feather" />
+        <Image src="/images/washi/surfer.jpg" alt="" width={928} height={612} className="mx-auto w-full max-w-md feather" />
         <p className="label mt-10 text-deep">404 — PAGE NOT FOUND</p>
         <h1 className="title mt-6 text-3xl md:text-4xl">
           <T ja="波にさらわれてしまったようです。" en="This page seems to have been washed away." />

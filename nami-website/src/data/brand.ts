@@ -196,3 +196,39 @@ export const approachIcons: { icon: string; title: Bi; body: Bi }[] = [
     body: { ja: "ライフスタイルに\n寄り添うデザイン", en: "Design shaped around\nthe way you live" },
   },
 ];
+
+/**
+ * NAMI's link with Japan Homes, written for clients: what the connection is,
+ * what it gives them, and who does what. NAMI designs interiors; building
+ * work stays with licensed builders.
+ */
+export const roots: {
+  heading: Bi;
+  body: Bi;
+  points: { title: Bi; line: Bi }[];
+  note: Bi;
+} = {
+  heading: { ja: "20年以上の家づくりに、\n支えられて。", en: "Backed by\n20+ Years of Building" },
+  body: {
+    ja: "NAMIは、Japan Homesとのつながりから生まれました。Japan Homesは、日本の家づくりの考え方を生かしながら、20年以上にわたってオーストラリアとニュージーランドで住まいを建ててきた住宅会社です。",
+    en: "NAMI grew out of our connection with Japan Homes, a builder that has spent more than 20 years building homes across Australia and New Zealand with Japanese building methods.",
+  },
+  points: [
+    {
+      title: { ja: "現場を知っている提案", en: "Advice grounded in building" },
+      line: { ja: "実際に家を建ててきた知識をもとに、無理のない提案をします", en: "Ideas checked against how homes are really built" },
+    },
+    {
+      title: { ja: "オーストラリアの住まいに合わせて", en: "Made for Australian homes" },
+      line: { ja: "気候や基準、暮らし方を踏まえて考えます", en: "Climate, standards and the way people live here" },
+    },
+    {
+      title: { ja: "役割がはっきりしている", en: "Clear roles" },
+      line: { ja: "NAMIはインテリア。建築工事は有資格の施工会社が担当します", en: "NAMI designs interiors; building work is done by licensed builders" },
+    },
+  ],
+  note: {
+    ja: "ご相談の最初に、誰が何を担当するのかをきちんとご説明します。わからないことは、いつでもお気軽にお尋ねください。",
+    en: "From the first conversation, we explain clearly who does what. If anything is unclear, just ask.",
+  },
+};

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { approach, approachIcons, meanings, meaningsIntro, story } from "@/data/brand";
+import { approach, approachIcons, meanings, meaningsIntro, roots, story } from "@/data/brand";
 import { services } from "@/data/services";
 import { craft, craftIntro } from "@/data/craft";
 import { projects } from "@/data/projects";
@@ -51,22 +51,10 @@ function Post({
 
 export function StorySection() {
   return (
-    <Post id="story" labelledBy="story-h">
-      <div className="mx-auto max-w-3xl" data-reveal>
-        <Image
-          src="/images/illustrations/story-surfer.jpg"
-          alt="The NAMI surfer: a girl on a red surfboard riding a big wave with a turtle, pointing towards an island and a red sun"
-          width={928}
-          height={612}
-          sizes="(min-width: 768px) 48rem, 100vw"
-          className="w-full feather"
-        />
-      </div>
-      <div className="mt-6">
-        <PostHead no="01" kicker="OUR STORY" title={story.heading} sub="LIFE MOVES IN WAVES" id="story-h">
-          <Paras ja={story.body.ja} en={story.body.en} gap="mt-4" />
-        </PostHead>
-      </div>
+    <Post id="story" labelledBy="story-h" art={<Art name="wave-sun" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
+      <PostHead no="01" kicker="OUR STORY" title={story.heading} sub="LIFE MOVES IN WAVES" id="story-h">
+        <Paras ja={story.body.ja} en={story.body.en} gap="mt-4" />
+      </PostHead>
       <div className="mt-10 text-center">
         <TextLink href="/about">
           <T ja="NAMIについて" en="About NAMI" />
@@ -146,7 +134,7 @@ export function ApproachSection() {
 
 export function CraftSection() {
   return (
-    <Post id="craft" labelledBy="craft-h" art={<Art name="gum-frame" position="50% 100%" className="h-[clamp(220px,36vw,500px)]" />}>
+    <Post id="craft" labelledBy="craft-h" art={<Art name="maple-island" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
       <PostHead
         kicker="JAPANESE HOME CRAFT"
         title={{ ja: "日本の家づくりから、\n学ぶこと。", en: "What Japanese Homes\nTeach Us" }}
@@ -177,6 +165,28 @@ export function CraftSection() {
           ja="NAMIはインテリアデザインのブランドです。建築・施工など資格が必要な工事は、有資格の建築会社・専門家が担当します。"
           en="NAMI is an interior design brand. Building work and other regulated services are carried out by licensed builders and professionals."
         />
+      </p>
+    </Post>
+  );
+}
+
+/* ------------------------------------------------------------------ Roots */
+
+const rootIcons: IconName[] = ["home", "sun", "compass"];
+
+/** Japan Homes: the connection, what it gives clients, and who does what. */
+export function RootsSection() {
+  return (
+    <Post id="roots" labelledBy="roots-h" art={<Art name="gum-frame" position="50% 100%" className="h-[clamp(220px,36vw,500px)]" />}>
+      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="TOGETHER WITH JAPAN HOMES" id="roots-h">
+        <T as="p" ja={roots.body.ja} en={roots.body.en} />
+      </PostHead>
+      <IconList
+        className="mt-12"
+        items={roots.points.map((p, i) => ({ icon: rootIcons[i], title: p.title, line: p.line }))}
+      />
+      <p className="jp-body mx-auto mt-12 max-w-[30em] text-center text-[0.8125rem] text-navy/65">
+        <T ja={roots.note.ja} en={roots.note.en} />
       </p>
     </Post>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { hero } from "@/data/brand";
 import { Art, Rule } from "@/components/washi";
 import { Container } from "@/components/ui";
@@ -10,14 +11,14 @@ import { T } from "@/lib/i18n";
 export function Hero() {
   return (
     <section className="relative pt-28 md:pt-36" aria-labelledby="hero-heading">
-      <Container className="relative z-10">
-        <div className="md:ml-[4%]">
+      <Container className="relative z-10 grid items-center gap-10 md:grid-cols-12">
+        <div className="md:col-span-6 md:ml-[8%]">
           <p className="kicker" data-reveal>
             JAPANESE × AUSTRALIAN INTERIOR DESIGN
           </p>
           <h1
             id="hero-heading"
-            className="title mt-6 text-[2.75rem] md:text-[clamp(3.2rem,6.4vw,6rem)] [html:not([data-lang=en])_&]:md:text-[clamp(2.6rem,4.8vw,4.6rem)]"
+            className="title mt-6 text-[2.75rem] md:text-[clamp(2.8rem,5vw,4.8rem)] [html:not([data-lang=en])_&]:md:text-[clamp(2.6rem,4.8vw,4.6rem)]"
             data-reveal
             style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
           >
@@ -34,6 +35,18 @@ export function Hero() {
           >
             <T ja={hero.body.ja} en={hero.body.en} />
           </p>
+        </div>
+        {/* The NAMI surfer, recoloured to sit with the woodblock-style art */}
+        <div className="md:col-span-6" data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
+          <Image
+            src="/images/washi/surfer.jpg"
+            alt="The NAMI surfer: a girl with a basket of tools on her back rides a red surfboard over a big wave, a turtle beside her, pointing towards an island and a red sun"
+            width={928}
+            height={612}
+            priority
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="feather w-full"
+          />
         </div>
       </Container>
       <div className="mt-10 md:mt-8">

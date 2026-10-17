@@ -5,6 +5,7 @@ import {
   JournalPreview,
   MeaningsSection,
   ProjectsPreview,
+  RootsSection,
   ServicesPreview,
   StorySection,
 } from "@/components/home/sections";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <MeaningsSection />
       <ApproachSection />
       <CraftSection />
+      <RootsSection />
       <ServicesPreview />
       <ProjectsPreview />
       <JournalPreview />

@@ -5,7 +5,7 @@ import { JapanAustraliaSection, MeaningsFull } from "@/components/about-sections
 import { PrincipleCard } from "@/components/cards";
 import { CTASection } from "@/components/CTASection";
 import { Container, SectionHeader } from "@/components/ui";
-import { CraftSection, Paras } from "@/components/home/sections";
+import { CraftSection, Paras, RootsSection } from "@/components/home/sections";
 import { T } from "@/lib/i18n";
 import { approach, principles, story } from "@/data/brand";
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
         <Container className="grid items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Image
-              src="/images/illustrations/story-surfer.jpg"
+              src="/images/washi/surfer.jpg"
               alt="The NAMI surfer: a girl riding a big wave on a red surfboard"
               width={928}
               height={612}
@@ -59,6 +59,8 @@ export default function AboutPage() {
       <JapanAustraliaSection />
 
       <CraftSection />
+
+      <RootsSection />
 
       {/* Philosophy */}
       <section className="section-rule py-20 md:py-28" aria-labelledby="philosophy-heading">
