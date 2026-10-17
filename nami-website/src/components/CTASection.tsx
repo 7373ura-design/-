@@ -12,10 +12,10 @@ const next: { icon: IconName; href: string; title: Bi; line: Bi; external?: bool
     line: { ja: "住まいのこと、まずはお気軽に", en: "Tell us about your home" },
   },
   {
-    icon: "bookmark",
-    href: "/journal",
-    title: { ja: "ジャーナルを読む", en: "Read the Journal" },
-    line: { ja: "オーストラリアの暮らしのヒント", en: "Ideas for Australian living" },
+    icon: "home",
+    href: "/projects",
+    title: { ja: "手がけた住まいを見る", en: "See Our Projects" },
+    line: { ja: "これまでの住まい", en: "Homes we have worked on" },
   },
   {
     icon: "heart",

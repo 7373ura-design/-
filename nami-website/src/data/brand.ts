@@ -1,230 +1,106 @@
-import type { Meaning, Principle } from "@/lib/types";
 import type { Bi } from "@/lib/i18n";
 
+/**
+ * Brand copy. The English is the wording of the NAMI Instagram posts
+ * ("What is NAMI?"); the Japanese follows it. Keep the two in step with the
+ * posts rather than adding to them here.
+ */
+
 export const hero = {
+  kicker: "JAPANDI INTERIOR DESIGN, SYDNEY",
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
-    ja: "波のように変わる毎日に寄り添い、\nその人だけの記憶が積み重なっていく\n空間をつくるインテリアデザインブランドです。",
-    en: "NAMI is an interior design brand creating spaces that move with the changing waves of everyday life, where your own memories can quietly build up.",
+    ja: "NAMIはシドニーのインテリアデザインスタジオです。日本の考え方をオーストラリアの暮らしに合わせた、穏やかで自然なジャパンディの住まいをつくります。ひと部屋から家全体まで、最初のアイデアから最終プランまで。レイアウト、素材、家具、スタイリングをご一緒に考えます。",
+    en: "NAMI is a Sydney interior design studio. We create calm, natural Japandi homes — Japanese principles, shaped for Australian life. From one room to a whole home, we guide you from first idea to final plan — layout, materials, furniture, styling.",
   },
 };
 
-export const story = {
-  heading: { ja: "波のように生きる、\n空間をつくる。", en: "Spaces for a Life\nThat Moves Like Waves" },
-  body: {
-    ja: [
-      "人生には、嬉しい日もあれば、\n落ち込む日もある。",
-      "NAMIは、そんな感情や出来事の揺らぎを\n「波」と捉えています。",
-      "月曜日の重たい朝。\n金曜日の嬉しい夜。\n日曜日の穏やかな時間。",
-      "毎日違う波があるように、\n一人ひとりの毎日に寄り添う空間を\nつくりたい。",
-      "そんな想いからNAMIは生まれました。",
-    ],
-    en: [
-      "Life has its bright days, and its harder ones.",
-      "At NAMI, we think of these ups and downs as waves.",
-      "A heavy Monday morning.\nA happy Friday evening.\nA calm, slow Sunday.",
-      "Every day brings a different wave, so we want to create spaces that stay with each person through all of them.",
-      "That is how NAMI began.",
-    ],
-  },
-};
+export type Meaning = { number: string; glyph: string; title: Bi; sub: string; lead: Bi; body: Bi };
 
 export const meanings: Meaning[] = [
   {
     number: "01",
-    kanji: "波",
-    title: "波 — NAMI",
-    lead: { ja: "日々の揺らぎを、波として。", en: "Wave: the rhythm of everyday life" },
+    glyph: "波",
+    title: { ja: "Waves", en: "Waves" },
+    sub: "LIFE MOVES IN WAVES.",
+    lead: {
+      ja: "暮らしとともに動く家。穏やかな日にも、忙しい日にも。",
+      en: "Homes that move with life — calm on quiet days, ready for the busy ones.",
+    },
     body: {
-      ja: [
-        "人生には、嬉しい日もあれば、\n落ち込む日もある。",
-        "NAMIは、そんな日々の揺らぎを\n「波」と捉えています。",
-        "またNAMIは、\n自分の名前「Nanami」の一部から生まれた名前。",
-        "自分の名前を背負い、\n責任を持って空間をつくる。\nそんな意味も込めています。",
-      ],
-      en: [
-        "In Japanese, the character 波 (nami) means “wave”. Life has good days and difficult ones, and we see these everyday ups and downs as waves.",
-        "The name also comes from part of the founder’s own name, Nanami.",
-        "Putting that name to our work is a promise: we take personal responsibility for every space we create.",
-      ],
+      ja: "穏やかな日もあれば、慌ただしい日もある。家は、人生のどの季節にも寄り添い、それでも自分らしくいられる場所であってほしい。集まる場所、くつろぐ片隅、毎日を楽にする収納。暮らしに合わせて変わっていける部屋をデザインします。",
+      en: "Some days are calm, some are full. A home should hold you through every season of life — and still feel like yours. We design rooms that adapt as you do: space to gather, corners to rest, and storage that keeps everyday life easy.",
     },
   },
   {
     number: "02",
-    kanji: "並",
-    title: "並 — NAMI",
-    lead: { ja: "異なるものを、並べて生かす。", en: "Side by side: letting differences sit together" },
+    glyph: "並",
+    title: { ja: "Side by Side", en: "Side by Side" },
+    sub: "DIFFERENT, TOGETHER.",
+    lead: {
+      ja: "異なるものを、バランスよく。日本とオーストラリア、古いものと新しいもの、自然と住まい。",
+      en: "Different things in balance: Japan and Australia, old and new, nature and home.",
+    },
     body: {
-      ja: [
-        "自然と暮らし。建築と自然。\n庭と室内。光と影。\n人と空間。古いものと新しいもの。",
-        "異なるものを無理に一つにするのではなく、\nそれぞれの個性を生かしながら並べる。",
-        "「並」は、私の故郷である\n東京・杉並にもつながっています。",
-        "どこへ進んでも、\n自分がどこから来たのかを忘れない。\nそんなルーツもNAMIという名前に残しています。",
-      ],
-      en: [
-        "The character 並, also read nami, means “side by side” or “in a row”. Nature and living. Architecture and landscape. Garden and interior. Light and shadow. People and space. Old and new.",
-        "Rather than forcing different things to become one, we place them side by side, so each keeps its own character.",
-        "並 is also the “nami” in Suginami, the part of Tokyo the founder calls home.",
-        "Wherever NAMI goes, it remembers where it came from.",
-      ],
+      ja: "日本とオーストラリア。古いものと新しいもの。自然と建築。それぞれの個性を生かしながら、その間のバランスを見つけます。石の隣に木。大きな窓の隣に、和紙のやわらかな光。のびやかな暮らしの隣に、静かな秩序。",
+      en: "Japan and Australia. Old and new. Nature and architecture. We let each keep its character — and find the balance between them. Timber beside stone. Soft paper light beside big windows. Quiet order beside relaxed, open living.",
     },
   },
   {
     number: "03",
-    kanji: "N",
-    title: "N — A — M — I",
-    lead: { ja: "Nest And Memories Inside", en: "Nest And Memories Inside" },
-    body: {
-      ja: [
-        "Nest — 安心して帰れる場所。\nMemories — そこで積み重なっていく思い出。\nInside — その空間の内側に残っていくもの。",
-        "家族との時間。一人の時間。\n笑った日。泣いた日。\n光、匂い、音、素材、家具、景色。",
-        "そうした日々のすべてが、\nその人だけの記憶になっていく。",
-        "NAMIは、ただ住むための建物ではなく、\n人生と思い出が積み重なっていく場所を\nつくることを目指します。",
-      ],
-      en: [
-        "Nest: a place you feel safe coming home to.\nMemories: the moments that gather there.\nInside: everything that stays within a space.",
-        "Time with family. Time alone. Days of laughter, days of tears. Light, scent, sound, materials, furniture, views.",
-        "All of it becomes part of someone’s own memories.",
-        "NAMI sets out to create more than somewhere to live: places where life and memories can build up over time.",
-      ],
+    glyph: "N",
+    title: { ja: "N.A.M.I", en: "N.A.M.I" },
+    sub: "NEST AND MEMORIES INSIDE",
+    lead: {
+      ja: "Nest And Memories Inside。帰りたくなる場所と、そこに積み重なる物語。",
+      en: "Nest And Memories Inside — a place to come home to, and the stories it keeps.",
     },
+    body: { ja: "", en: "" },
   },
 ];
 
-export const meaningsIntro = {
-  heading: { ja: "NAMIに込めた\n3つの意味", en: "One Name,\nThree Meanings" },
-  body: {
-    ja: "波、並、そして N — A — M — I。\nひとつの名前に、三つの想いを込めています。",
-    en: "波, 並 and N — A — M — I.\nThree ideas carried in one name.",
-  },
-};
-
-export const approach = {
-  heading: { ja: "日本とオーストラリア、\nふたつの視点から。", en: "Japan × Australia" },
-  body: {
-    ja: "日本の美意識と、オーストラリアの豊かな自然。\nそれぞれの良さを活かしながら、\n人の暮らしに寄り添う、心地よい空間をつくります。",
-    en: "Japanese sensibility meets Australia’s natural landscape. We draw on the best of both to create calm, comfortable spaces that fit the way people live.",
-  },
-};
-
-export const principles: Principle[] = [
-  {
-    key: "nature",
-    number: "01",
-    title: "NATURE",
-    sub: { ja: "自然とのつながり", en: "Connection to nature" },
-    body: { ja: "光、風、庭、海。外の気配を室内に招き入れる。", en: "Light, breeze, garden and sea, brought indoors." },
-  },
-  {
-    key: "balance",
-    number: "02",
-    title: "BALANCE",
-    sub: { ja: "バランスと余白", en: "Balance and space" },
-    body: {
-      ja: "置くものと、置かないもの。余白も空間の一部として。",
-      en: "What to include and what to leave out. Empty space is part of the design.",
-    },
-  },
-  {
-    key: "material",
-    number: "03",
-    title: "MATERIAL",
-    sub: { ja: "素材の美しさ", en: "The beauty of materials" },
-    body: {
-      ja: "木、土、石、紙、リネン。時間とともに深まる素材を。",
-      en: "Timber, clay, stone, paper and linen: materials that grow richer with time.",
-    },
-  },
-  {
-    key: "simplicity",
-    number: "04",
-    title: "SIMPLICITY",
-    sub: { ja: "足しすぎない", en: "Never too much" },
-    body: { ja: "必要なものを、必要なだけ。静かで、使いやすく。", en: "Only what is needed. Quiet, and easy to live with." },
-  },
-  {
-    key: "people",
-    number: "05",
-    title: "PEOPLE",
-    sub: { ja: "その人らしい暮らし", en: "A home that feels like you" },
-    body: {
-      ja: "住む人の習慣、記憶、好きなもの。そこから始める。",
-      en: "We start with the people who live there: their habits, memories and favourite things.",
-    },
-  },
+/** The four letters of N.A.M.I, as on the post. */
+export const letters: { letter: string; word: string; line: Bi }[] = [
+  { letter: "N", word: "Nest", line: { ja: "毎日帰りたくなる場所", en: "A place you want to come home to, every single day" } },
+  { letter: "A", word: "And", line: { ja: "人と空間、そして外の自然をつなぐ", en: "Connecting people, space and the nature outside" } },
+  { letter: "M", word: "Memories", line: { ja: "ここで過ごす時間が、少しずつ家族の思い出になる", en: "Time spent here slowly becomes family memory" } },
+  { letter: "I", word: "Inside", line: { ja: "モノだけでなく、心に残る気持ち", en: "The feelings that stay with you, not just the things" } },
 ];
 
-export const japanAustralia: { japan: Bi[]; australia: Bi[] } = {
-  japan: [
-    { ja: "静けさ", en: "Stillness" },
-    { ja: "余白", en: "Space" },
-    { ja: "素材", en: "Materials" },
-    { ja: "職人", en: "Craft" },
-    { ja: "四季", en: "Four seasons" },
-    { ja: "内と外", en: "Inside and out" },
-  ],
-  australia: [
-    { ja: "自然", en: "Nature" },
-    { ja: "光", en: "Light" },
-    { ja: "風", en: "Breeze" },
-    { ja: "海", en: "Ocean" },
-    { ja: "Indoor / Outdoor", en: "Indoor / outdoor" },
-    { ja: "Relaxed Living", en: "Relaxed living" },
-  ],
+export const nameCare = {
+  heading: { ja: "大切に背負う名前", en: "A Name We Carry With Care" },
+  body: {
+    ja: "家はこうあってほしい。穏やかで、変わっていけて、思い出に満ちている。そんな想いを込めた名前です。そしてそれは約束でもあります。まず話を聴くこと。あなたの暮らし方を尊重すること。ひとつひとつの空間を丁寧にデザインすること。",
+    en: "A name that holds what we believe a home should be: calm yet changing, full of memories. It is also a promise — to listen first, to respect how you live, and to design every space with care.",
+  },
 };
 
-/** The four approach points shown on Home. */
-export const approachIcons: { title: Bi; body: Bi }[] = [
-  {
-    title: { ja: "自然とのつながり", en: "Connection to nature" },
-    body: { ja: "海・光・風を感じる\n空間づくり", en: "Spaces that let in\nthe sea, light and breeze" },
-  },
-  {
-    title: { ja: "バランスと余白", en: "Balance and space" },
-    body: { ja: "シンプルで豊かな\n暮らし", en: "Simple,\ngenerous living" },
-  },
-  {
-    title: { ja: "素材の美しさ", en: "Beautiful materials" },
-    body: { ja: "自然素材と\n手仕事の温かさ", en: "Natural materials\nand the warmth of craft" },
-  },
-  {
-    title: { ja: "その人らしい暮らし", en: "A home that feels like you" },
-    body: { ja: "ライフスタイルに\n寄り添うデザイン", en: "Design shaped around\nthe way you live" },
-  },
-];
-
-/**
- * NAMI's link with Japan Homes, written for clients: what the connection is,
- * what it gives them, and who does what. NAMI designs interiors; building
- * work stays with licensed builders.
- */
-export const roots: {
-  heading: Bi;
-  body: Bi;
-  points: { title: Bi; line: Bi }[];
-  note: Bi;
-} = {
-  heading: { ja: "20年以上の家づくりに、\n支えられて。", en: "Backed by\n20+ Years of Building" },
+export const roots = {
+  heading: { ja: "20年以上の家づくりに、\n支えられて。", en: "Backed by 20+ Years" },
   body: {
-    ja: "NAMIは、Japan Homesとのつながりから生まれました。Japan Homesは、日本の家づくりの考え方を生かしながら、20年以上にわたってオーストラリアとニュージーランドで住まいを建ててきた住宅会社です。",
-    en: "NAMI grew out of our connection with Japan Homes, a builder that has spent more than 20 years building homes across Australia and New Zealand with Japanese building methods.",
+    ja: "NAMIは、Japan Homesとのつながりから生まれました。オーストラリアとニュージーランドで20年以上、美しく実用的な住まいを建ててきた経験があります。だからこそ、図面の上だけでなく、実際のオーストラリアの家で生きるデザインができます。",
+    en: "NAMI grows from our connection with Japan Homes — over 20 years of building beautiful, practical homes across Australia and New Zealand. That experience means designs that work in real Australian homes, not just on paper.",
   },
-  points: [
-    {
-      title: { ja: "現場を知っている提案", en: "Advice grounded in building" },
-      line: { ja: "実際に家を建ててきた知識をもとに、無理のない提案をします", en: "Ideas checked against how homes are really built" },
-    },
-    {
-      title: { ja: "オーストラリアの住まいに合わせて", en: "Made for Australian homes" },
-      line: { ja: "気候や基準、暮らし方を踏まえて考えます", en: "Climate, standards and the way people live here" },
-    },
-    {
-      title: { ja: "役割がはっきりしている", en: "Clear roles" },
-      line: { ja: "NAMIはインテリア。建築工事は有資格の施工会社が担当します", en: "NAMI designs interiors; building work is done by licensed builders" },
-    },
-  ],
   note: {
-    ja: "ご相談の最初に、誰が何を担当するのかをきちんとご説明します。わからないことは、いつでもお気軽にお尋ねください。",
-    en: "From the first conversation, we explain clearly who does what. If anything is unclear, just ask.",
+    ja: "NAMIはインテリアを担当し、建築工事は有資格の施工会社が行います。",
+    en: "NAMI designs interiors; building work is done by licensed builders.",
   },
+};
+
+export const promise = {
+  heading: { ja: "すべての住まいへの約束", en: "Our Promise to Every Home" },
+  items: [
+    {
+      title: { ja: "ともに育つ家", en: "Homes that grow with you" },
+      line: { ja: "今の暮らしと、これからの年月のために", en: "Designed for the life you live now — and for the years ahead of you." },
+    },
+    {
+      title: { ja: "同じではなく、調和を", en: "Balance, not sameness" },
+      line: { ja: "素材も文化もアイデアも、それぞれの個性のまま並べて", en: "Every material, culture and idea keeps its own character, side by side." },
+    },
+    {
+      title: { ja: "思い出を抱く空間", en: "Spaces that hold memories" },
+      line: { ja: "家族の物語を、年を重ねて静かに抱く家", en: "A home that quietly holds your family’s story, year after year." },
+    },
+  ],
 };

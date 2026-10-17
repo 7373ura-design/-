@@ -21,50 +21,7 @@ export type Service = {
   deliverables: BiList;
 };
 
-export type ProjectCategory = "concept" | "monitor" | "residential";
 
-export type Project = {
-  slug: string;
-  number: string;
-  title: string;
-  subtitle: string;
-  category: ProjectCategory;
-  location: string;
-  type: string;
-  year: string;
-  cover: ImageAsset;
-  overview: Bi;
-  concept: Bi;
-  designDirection: { title: string; body: Bi }[];
-  materials: { name: string; note: Bi; swatch: string }[];
-};
 
-export type JournalArticle = {
-  slug: string;
-  title: string;
-  titleJa?: string;
-  category: string;
-  excerpt: Bi;
-  date: string;
-  readingTime: string;
-  cover: ImageAsset;
-  /** Body paragraphs. Replace with MDX / CMS content later. */
-  body: BiList;
-  published: boolean;
-};
 
-export type Principle = {
-  key: "nature" | "balance" | "material" | "simplicity" | "people";
-  number: string;
-  title: string;
-  sub: Bi;
-  body: Bi;
-};
 
-export type Meaning = {
-  number: string;
-  kanji: string;
-  title: string;
-  lead: Bi;
-  body: BiList;
-};

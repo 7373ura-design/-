@@ -1,31 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { approach, approachIcons, meanings, meaningsIntro, roots, story } from "@/data/brand";
+import { letters, meanings, nameCare, promise, roots } from "@/data/brand";
 import { services } from "@/data/services";
-import { craft, craftIntro } from "@/data/craft";
-import { projects } from "@/data/projects";
-import { getArticles } from "@/data/journal";
 import { getWorks } from "@/data/works";
-import { Container, Lines, TextLink } from "@/components/ui";
-import { Art, CircleIcon, IconList, PostHead, type IconName } from "@/components/washi";
+import { Container, TextLink } from "@/components/ui";
+import { Art, CircleIcon, IconList, PostHead, type ArtName, type IconName } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
 
 /*
- * Home is set like the NAMI Instagram carousels, one post after another:
+ * Sections shared by Home and About, set like the NAMI Instagram carousels:
  * an illustration across the page, then a centred block of kicker, serif
- * title, blue subline, a short rule and a few lines of text.
+ * title, blue subline, a short rule and the post's own words.
  */
-
-/** Paragraphs in both languages. */
-export function Paras({ ja, en, gap = "mt-4" }: { ja: string[]; en: string[]; gap?: string }) {
-  const render = (list: string[]) =>
-    list.map((p, i) => (
-      <p key={i} className={i ? gap : ""}>
-        <Lines text={p} />
-      </p>
-    ));
-  return <T as="div" ja={render(ja)} en={render(en)} />;
-}
 
 function Post({
   id,
@@ -36,165 +22,19 @@ function Post({
 }: {
   id?: string;
   labelledBy: string;
-  art?: React.ReactNode;
+  art?: ArtName;
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative scroll-mt-16 ${className}`} aria-labelledby={labelledBy}>
-      {art}
+    <section id={id} className={`relative scroll-mt-16 ${art ? "" : "section-rule"} ${className}`} aria-labelledby={labelledBy}>
+      {art && <Art name={art} position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}
       <Container className="pb-24 pt-14 md:pb-32 md:pt-20">{children}</Container>
     </section>
   );
 }
 
-/* ------------------------------------------------------------------ Story */
-
-export function StorySection() {
-  return (
-    <Post id="story" labelledBy="story-h" art={<Art name="wave-sun" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
-      <PostHead no="01" kicker="OUR STORY" title={story.heading} sub="LIFE MOVES IN WAVES" id="story-h">
-        <Paras ja={story.body.ja} en={story.body.en} gap="mt-4" />
-      </PostHead>
-      <div className="mt-10 text-center">
-        <TextLink href="/about">
-          <T ja="NAMIについて" en="About NAMI" />
-        </TextLink>
-      </div>
-    </Post>
-  );
-}
-
-/* --------------------------------------------------------------- Meanings */
-
-const meaningNames: Bi[] = [
-  { ja: "波", en: "波  Waves" },
-  { ja: "並", en: "並  Side by Side" },
-  { ja: "N.A.M.I", en: "N.A.M.I" },
-];
-
-export function MeaningsSection() {
-  return (
-    <Post id="meaning" labelledBy="meaning-h" art={<Art name="scrolls" position="50% 40%" />}>
-      <PostHead kicker="THE NAME" title={meaningsIntro.heading} sub="THE STORY BEHIND NAMI" id="meaning-h">
-        <T as="p" ja={meaningsIntro.body.ja} en={meaningsIntro.body.en} />
-      </PostHead>
-
-      <ol className="mx-auto mt-14 grid max-w-5xl gap-12 md:grid-cols-3 md:gap-10">
-        {meanings.map((m, i) => (
-          <li key={m.number} className="text-center" data-reveal style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}>
-            <p className="kicker text-vermilion">{m.number}.</p>
-            <p aria-hidden className={`mt-4 leading-none text-navy ${/^[A-Z]$/.test(m.kanji) ? "font-display text-[3.4rem]" : "font-jp text-[3.4rem] font-light"}`}>
-              {m.kanji}
-            </p>
-            <h3 className="title mt-5 text-[1.35rem]">
-              <T ja={meaningNames[i].ja} en={meaningNames[i].en} />
-            </h3>
-            <p className="subline mt-2 !normal-case !tracking-[0.04em] text-[0.8125rem]">
-              <T ja={m.lead.ja} en={m.lead.en} />
-            </p>
-            <div className="jp-body mx-auto mt-4 max-w-[22em] text-[0.875rem] text-navy/75">
-              <T as="p" ja={m.body.ja[0]} en={m.body.en[0]} />
-            </div>
-          </li>
-        ))}
-      </ol>
-
-      <div className="mt-14 text-center">
-        <TextLink href="/about">
-          <T ja="名前の由来をもっと読む" en="Read more about the name" />
-        </TextLink>
-      </div>
-    </Post>
-  );
-}
-
-/* --------------------------------------------------------------- Approach */
-
-const approachIconNames: IconName[] = ["leaf", "infinity", "chair", "home"];
-
-export function ApproachSection() {
-  return (
-    <Post id="approach" labelledBy="approach-h" art={<Art name="shoji" />}>
-      <PostHead no="02" kicker="IN BETWEEN" title={approach.heading} sub="NOT COPYING. REINTERPRETING." id="approach-h">
-        <T as="p" ja={approach.body.ja} en={approach.body.en} />
-      </PostHead>
-      <IconList
-        className="mt-14 sm:grid sm:grid-cols-2 sm:gap-x-16 sm:gap-y-8 sm:space-y-0"
-        items={approachIcons.map((a, i) => ({
-          icon: approachIconNames[i],
-          title: a.title,
-          line: { ja: a.body.ja.replace("\n", ""), en: a.body.en.replace("\n", " ") },
-        }))}
-      />
-    </Post>
-  );
-}
-
-/* ------------------------------------------------------------------ Craft */
-
-export function CraftSection() {
-  return (
-    <Post id="craft" labelledBy="craft-h" art={<Art name="maple-island" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
-      <PostHead
-        kicker="JAPANESE HOME CRAFT"
-        title={{ ja: "日本の家づくりから、\n学ぶこと。", en: "What Japanese Homes\nTeach Us" }}
-        sub="THE THINKING, NOT THE FORMS"
-        id="craft-h"
-      >
-        <T as="p" ja={craftIntro.ja} en={craftIntro.en} />
-      </PostHead>
-
-      <ol className="mx-auto mt-16 grid max-w-5xl gap-x-14 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-        {craft.map((c, i) => (
-          <li key={c.title} data-reveal style={{ "--reveal-delay": `${(i % 3) * 90}ms` } as React.CSSProperties}>
-            <p className="kicker">
-              <span className="mr-3 text-vermilion">{c.number}.</span>
-              {c.title}
-            </p>
-            <h3 className="title mt-3 text-[1.25rem] !leading-snug">
-              <T ja={c.heading.ja} en={c.heading.en} />
-            </h3>
-            <p className="jp-body mt-3 text-[0.8125rem] leading-[1.95] text-navy/75">
-              <T ja={c.body.ja} en={c.body.en} />
-            </p>
-          </li>
-        ))}
-      </ol>
-      <p className="mx-auto mt-14 max-w-2xl text-center text-[0.75rem] leading-relaxed text-navy/55">
-        <T
-          ja="NAMIはインテリアデザインのブランドです。建築・施工など資格が必要な工事は、有資格の建築会社・専門家が担当します。"
-          en="NAMI is an interior design brand. Building work and other regulated services are carried out by licensed builders and professionals."
-        />
-      </p>
-    </Post>
-  );
-}
-
-/* ------------------------------------------------------------------ Roots */
-
-const rootIcons: IconName[] = ["home", "sun", "compass"];
-
-/** Japan Homes: the connection, what it gives clients, and who does what. */
-export function RootsSection() {
-  return (
-    <Post id="roots" labelledBy="roots-h" art={<Art name="gum-frame" position="50% 100%" className="h-[clamp(220px,36vw,500px)]" />}>
-      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="TOGETHER WITH JAPAN HOMES" id="roots-h">
-        <T as="p" ja={roots.body.ja} en={roots.body.en} />
-      </PostHead>
-      <IconList
-        className="mt-12"
-        items={roots.points.map((p, i) => ({ icon: rootIcons[i], title: p.title, line: p.line }))}
-      />
-      <p className="jp-body mx-auto mt-12 max-w-[30em] text-center text-[0.8125rem] text-navy/65">
-        <T ja={roots.note.ja} en={roots.note.en} />
-      </p>
-    </Post>
-  );
-}
-
-/* --------------------------------------------------------------- Services */
-
+/** A picture card: photo, number, title and one line. */
 export function Card({
   href,
   src,
@@ -202,7 +42,7 @@ export function Card({
   no,
   title,
   line,
-  ratio = "aspect-[4/5]",
+  ratio = "aspect-[4/3]",
   sizes,
 }: {
   href: string;
@@ -236,24 +76,131 @@ export function Card({
   );
 }
 
+/* ------------------------------------------------------------------ Works */
+
+/** The completed homes: the heart of the site. */
+export function WorksSection() {
+  const works = getWorks();
+  if (works.length === 0) return null;
+  return (
+    <Post id="works" labelledBy="works-h">
+      <PostHead kicker="SELECTED WORKS" title={{ ja: "手がけた住まい", en: "Homes We Have Worked On" }} id="works-h" />
+      <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
+        {works.map((w) => (
+          <Card
+            key={w.slug}
+            href={`/works/${w.slug}`}
+            src={w.photos[0].src}
+            alt={w.photos[0].alt}
+            no={w.number}
+            title={w.title}
+            line={{ ja: `${w.type.ja} · ${w.location}`, en: `${w.type.en} · ${w.location}` }}
+            sizes="(min-width:768px) 45vw, 90vw"
+          />
+        ))}
+      </div>
+    </Post>
+  );
+}
+
+/* --------------------------------------------------------------- Meanings */
+
+/** One Name, Three Meanings. `full` adds each post's longer text and the N.A.M.I letters. */
+export function MeaningsSection({ full = false }: { full?: boolean }) {
+  return (
+    <Post id="meaning" labelledBy="meaning-h" art="scrolls">
+      <PostHead kicker="THE STORY BEHIND NAMI" title={{ ja: "ひとつの名前、\n3つの意味", en: "One Name,\nThree Meanings" }} id="meaning-h" />
+      <ol className="mx-auto mt-14 grid max-w-5xl gap-12 md:grid-cols-3 md:gap-10">
+        {meanings.map((m, i) => (
+          <li key={m.number} className="text-center" data-reveal style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}>
+            <p className="kicker text-vermilion">{m.number}.</p>
+            <p aria-hidden className={`mt-4 leading-none text-navy ${m.glyph === "N" ? "font-display text-[3.4rem]" : "font-jp text-[3.4rem] font-light"}`}>
+              {m.glyph}
+            </p>
+            <h3 className="title mt-5 text-[1.35rem]">
+              <T ja={m.title.ja} en={m.title.en} />
+            </h3>
+            <p className="subline mt-2">{m.sub}</p>
+            <p className="jp-body mx-auto mt-4 max-w-[22em] text-[0.875rem] text-navy/75">
+              <T ja={full && m.body.en ? m.body.ja : m.lead.ja} en={full && m.body.en ? m.body.en : m.lead.en} />
+            </p>
+          </li>
+        ))}
+      </ol>
+      {full ? (
+        <ul className="mx-auto mt-16 w-fit space-y-5">
+          {letters.map((l) => (
+            <li key={l.letter} className="flex items-baseline gap-5" data-reveal>
+              <span className="title w-6 text-[1.6rem] text-vermilion">{l.letter}</span>
+              <span>
+                <span className="title block text-[1.15rem]">{l.word}</span>
+                <span className="block text-[0.8125rem] text-navy/70">
+                  <T ja={l.line.ja} en={l.line.en} />
+                </span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="mt-14 text-center">
+          <TextLink href="/about">
+            <T ja="NAMIについて" en="About NAMI" />
+          </TextLink>
+        </div>
+      )}
+    </Post>
+  );
+}
+
+/* -------------------------------------------------------------- Name care */
+
+export function NameCareSection() {
+  return (
+    <Post id="name" labelledBy="name-h" art="tea">
+      <PostHead kicker="WHY THIS NAME" title={nameCare.heading} sub="AND A PROMISE BEHIND IT" id="name-h">
+        <T as="p" ja={nameCare.body.ja} en={nameCare.body.en} />
+      </PostHead>
+    </Post>
+  );
+}
+
+/* ------------------------------------------------------------------ Roots */
+
+export function RootsSection() {
+  return (
+    <Post id="roots" labelledBy="roots-h" art="gum-frame">
+      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="TOGETHER WITH JAPAN HOMES" id="roots-h">
+        <T as="p" ja={roots.body.ja} en={roots.body.en} />
+      </PostHead>
+      <p className="mx-auto mt-8 max-w-[30em] text-center text-[0.8125rem] text-navy/60">
+        <T ja={roots.note.ja} en={roots.note.en} />
+      </p>
+    </Post>
+  );
+}
+
+/* ---------------------------------------------------------------- Promise */
+
+const promiseIcons: IconName[] = ["home", "infinity", "heart"];
+
+export function PromiseSection() {
+  return (
+    <Post id="promise" labelledBy="promise-h" art="pavilion">
+      <PostHead kicker="WHAT WE BELIEVE" title={promise.heading} id="promise-h" />
+      <IconList className="mt-12" items={promise.items.map((p, i) => ({ icon: promiseIcons[i], title: p.title, line: p.line }))} />
+    </Post>
+  );
+}
+
+/* --------------------------------------------------------------- Services */
+
 const serviceIcons: IconName[] = ["chat", "pen", "ruler", "chair"];
 
 export function ServicesPreview() {
   return (
-    <Post id="services" labelledBy="services-h" className="section-rule">
-      <PostHead
-        kicker="WHAT WE DO"
-        title={{ ja: "暮らしを整える、\n4つのサービス。", en: "Four Ways to\nShape Your Home" }}
-        sub="FROM FIRST CONVERSATION TO FINAL TOUCH"
-        id="services-h"
-      >
-        <T
-          as="p"
-          ja="住まいのご相談から、コンセプトづくり、空間プランニング、スタイリングまで。ライフスタイルに合わせた空間づくりをサポートします。"
-          en="From a first conversation to concept, space planning and styling, we help create spaces that suit the way you live."
-        />
-      </PostHead>
-      <div className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+    <Post id="services" labelledBy="services-h" art="desk">
+      <PostHead kicker="WHAT WE DO" title={{ ja: "サービス", en: "Services" }} sub="FROM ONE ROOM TO A WHOLE HOME" id="services-h" />
+      <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((s, i) => (
           <Link key={s.slug} href={`/services#${s.slug}`} className="group block text-center" data-reveal>
             <span className="inline-flex transition-colors group-hover:[&>span]:border-vermilion group-hover:[&>span]:text-vermilion">
@@ -261,132 +208,11 @@ export function ServicesPreview() {
             </span>
             <p className="kicker mt-6 text-vermilion">{s.number}.</p>
             <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">{s.title}</h3>
-            <p className="subline mt-2 !normal-case !tracking-[0.04em] text-[0.8125rem]">
+            <p className="mt-2 text-[0.8125rem] text-navy/65">
               <T ja={s.sub.ja} en={s.sub.en} />
-            </p>
-            <p className="jp-body mx-auto mt-4 max-w-[20em] text-[0.8125rem] text-navy/70">
-              <T ja={s.summary.ja} en={s.summary.en} />
             </p>
           </Link>
         ))}
-      </div>
-      <div className="mt-14 text-center">
-        <TextLink href="/services">
-          <T ja="サービスの詳細" en="All services" />
-        </TextLink>
-      </div>
-    </Post>
-  );
-}
-
-/* --------------------------------------------------------------- Projects */
-
-export function ProjectsPreview() {
-  const works = getWorks();
-  // Real homes lead once their photos are in; until then, the concept studies.
-  if (works.length > 0) {
-    return (
-      <Post id="projects" labelledBy="projects-h" art={<Art name="pavilion" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
-        <PostHead
-          kicker="SELECTED WORKS"
-          title={{ ja: "暮らしの波を、\nかたちに。", en: "Giving Shape\nto Life’s Waves" }}
-          sub="HOMES WE HAVE WORKED ON"
-          id="projects-h"
-        >
-          <T as="p" ja="これまでに手がけた住まいの一部をご紹介します。" en="A selection of homes we have worked on." />
-        </PostHead>
-        <div className="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-3">
-          {works.slice(0, 3).map((w) => (
-            <Card
-              key={w.slug}
-              href={`/works/${w.slug}`}
-              src={w.photos[0].src}
-              alt={w.photos[0].alt}
-              no={w.number}
-              title={w.title}
-              line={{ ja: `${w.type.ja} · ${w.location}`, en: `${w.type.en} · ${w.location}` }}
-              ratio="aspect-[4/3]"
-              sizes="(min-width:768px) 30vw, 90vw"
-            />
-          ))}
-        </div>
-        <div className="mt-14 text-center">
-          <TextLink href="/projects">
-            <T ja="プロジェクト一覧" en="All projects" />
-          </TextLink>
-        </div>
-      </Post>
-    );
-  }
-  return (
-    <Post id="projects" labelledBy="projects-h" art={<Art name="pavilion" position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}>
-      <PostHead
-        kicker="NAMI CONCEPTS"
-        title={{ ja: "暮らしの波を、\nかたちに。", en: "Giving Shape\nto Life’s Waves" }}
-        sub="CONCEPT STUDIES, NOT CLIENT WORK"
-        id="projects-h"
-      >
-        <T
-          as="p"
-          ja="NAMIの考え方をもとにしたコンセプトプロジェクトです。（今後は実際のプロジェクトも掲載していきます）"
-          en="Concept projects that show how NAMI thinks. Real client projects will be added in future."
-        />
-      </PostHead>
-      <div className="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-3">
-        {projects.map((p) => (
-          <Card
-            key={p.slug}
-            href={`/projects/${p.slug}`}
-            src={p.cover.src}
-            alt={p.cover.alt}
-            no={p.number}
-            title={p.title}
-            line={{ ja: p.subtitle, en: p.subtitle }}
-            ratio="aspect-[3/2]"
-            sizes="(min-width:768px) 30vw, 90vw"
-          />
-        ))}
-      </div>
-      <div className="mt-14 text-center">
-        <TextLink href="/projects">
-          <T ja="プロジェクト一覧" en="All projects" />
-        </TextLink>
-      </div>
-    </Post>
-  );
-}
-
-/* ---------------------------------------------------------------- Journal */
-
-export function JournalPreview() {
-  const list = getArticles().slice(0, 3);
-  return (
-    <Post id="journal" labelledBy="journal-h" className="section-rule">
-      <PostHead
-        kicker="JOURNAL"
-        title={{ ja: "暮らしを考える、\nヒントを届ける。", en: "Ideas for\nAustralian Living" }}
-        sub="NOTES ON HOMES, MATERIALS AND CULTURE"
-        id="journal-h"
-      />
-      <div className="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-3">
-        {list.map((a, i) => (
-          <Card
-            key={a.slug}
-            href={`/journal/${a.slug}`}
-            src={a.cover.src}
-            alt={a.cover.alt}
-            no={String(i + 1).padStart(2, "0")}
-            title={a.title}
-            line={{ ja: a.titleJa ?? a.title, en: a.category.charAt(0) + a.category.slice(1).toLowerCase() }}
-            ratio="aspect-[3/2]"
-            sizes="(min-width:768px) 30vw, 90vw"
-          />
-        ))}
-      </div>
-      <div className="mt-14 text-center">
-        <TextLink href="/journal">
-          <T ja="すべての記事" en="All articles" />
-        </TextLink>
       </div>
     </Post>
   );

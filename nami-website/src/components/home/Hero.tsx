@@ -14,7 +14,7 @@ export function Hero() {
       <Container className="relative z-10 grid items-center gap-10 md:grid-cols-12">
         <div className="md:col-span-6 md:ml-[8%]">
           <p className="kicker" data-reveal>
-            JAPANESE × AUSTRALIAN INTERIOR DESIGN
+            {hero.kicker}
           </p>
           <h1
             id="hero-heading"

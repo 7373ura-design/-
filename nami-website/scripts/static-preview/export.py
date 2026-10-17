@@ -14,13 +14,9 @@ B=os.environ.get("NAMI_BASE","http://localhost:3200")
 OUT=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,"..","nami-static-preview")
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT)
 get=lambda p: urllib.request.urlopen(B+p).read().decode()
-routes={"/":"index.html","/about":"about.html","/services":"services.html","/projects":"projects.html","/contact":"contact.html","/journal":"journal.html"}
+routes={"/":"index.html","/about":"about.html","/services":"services.html","/projects":"projects.html","/contact":"contact.html"}
 from importlib import import_module
 import json
-projects=["nami-house-01","nami-house-02","nami-house-03"]
-arts=["what-is-japandi","japanese-vs-australian-homes","why-natural-materials-matter","the-japanese-concept-of-ma","indoor-outdoor-living","small-space-living-in-japan"]
-for s in projects: routes[f"/projects/{s}"]=f"project-{s}.html"
-for s in arts: routes[f"/journal/{s}"]=f"journal-{s}.html"
 works=["new-lynn-house","remuera-renovation","glen-innes-unit","hillcrest-house"]
 for s in works: routes[f"/works/{s}"]=f"works-{s}.html"
 
