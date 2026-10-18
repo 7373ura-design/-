@@ -261,82 +261,6 @@ header[data-hidden="true"] {
   will-change: transform;
 }
 
-/* The sea on Home: swells slide past at their own pace, the surfer rides across */
-.surf-scene {
-  container-type: inline-size;
-}
-.surf-sun {
-  position: absolute;
-  right: 16%;
-  bottom: 58%;
-  width: clamp(44px, 8cqw, 116px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 42% 38%, #f07a52, #e2552f 70%);
-  transform: translateY(50%);
-  box-shadow: 0 0 0 1px rgba(226, 85, 47, 0.25);
-}
-.surf-horizon {
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 58%;
-  background:
-    repeating-linear-gradient(to bottom, transparent 0 9px, rgba(255, 255, 255, 0.35) 9px 10px),
-    linear-gradient(to bottom, #dcebe6, #c4ddd8);
-}
-.swell {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 200%;
-  animation: swell-slide linear infinite;
-  will-change: transform;
-}
-@keyframes swell-slide {
-  to { transform: translate3d(-50%, 0, 0); }
-}
-.surf-rider {
-  position: absolute;
-  left: 0;
-  bottom: 22%;
-  height: 52%;
-  transform: translate3d(-45cqw, 0, 0);
-  animation: surf-across 18s linear infinite;
-  will-change: transform;
-}
-.surf-rider img {
-  height: 100%;
-  width: auto;
-  transform-origin: 40% 90%;
-  animation: surf-bob 2.6s ease-in-out infinite;
-}
-/* Her wake: a streak of white foam trailing from the tail of the board */
-.surf-rider::before {
-  content: "";
-  position: absolute;
-  right: 72%;
-  bottom: 4%;
-  width: 70%;
-  height: 9%;
-  border-radius: 50%;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  filter: blur(1.5px);
-}
-/* Everything rests while scrolled out of view (set by nami.js) */
-.surf-scene.is-offscreen .swell,
-.surf-scene.is-offscreen .surf-rider,
-.surf-scene.is-offscreen .surf-rider img {
-  animation-play-state: paused;
-}
-@keyframes surf-across {
-  0% { transform: translate3d(-45cqw, 0, 0); }
-  88% { transform: translate3d(108cqw, 0, 0); }
-  100% { transform: translate3d(108cqw, 0, 0); }
-}
-@keyframes surf-bob {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2.5deg); }
-  50% { transform: translate3d(0, -6%, 0) rotate(2deg); }
-}
 
 /* The short rule under each title draws itself in */
 .js [data-reveal] .rule {
@@ -566,15 +490,6 @@ label {
 @media (prefers-reduced-motion: reduce) {
   [data-parallax] > img {
     transform: none;
-  }
-  /* The sea is still and she waits on the water instead of riding across */
-  .swell,
-  .surf-rider,
-  .surf-rider img {
-    animation: none;
-  }
-  .surf-rider {
-    transform: translate3d(52cqw, 0, 0);
   }
   .js [data-reveal] .rule {
     transform: none;

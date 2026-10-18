@@ -1,8 +1,7 @@
 /*
  * NAMI — small enhancements shared by the site and its static preview:
  *  1. scroll progress line and a header that steps aside while you read
- *  2. gentle parallax on the illustrations ([data-parallax]); animations that
- *     run only while on screen ([data-play-in-view])
+ *  2. gentle parallax on the illustrations ([data-parallax])
  *  3. a full-screen photo viewer with swipe ([data-lightbox])
  *  4. the four-step booking request ([data-booking])
  * Everything is progressive: without this file the pages still work.
@@ -63,19 +62,6 @@
   }
   window.addEventListener("scroll", requestFrame, { passive: true });
   window.addEventListener("resize", requestFrame, { passive: true });
-
-  /* Animations that rest while scrolled out of view ([data-play-in-view]) */
-  var playIO = "IntersectionObserver" in window
-    ? new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { en.target.classList.toggle("is-offscreen", !en.isIntersecting); });
-      })
-    : null;
-  function initPlayers() {
-    $$("[data-play-in-view]:not([data-ready])").forEach(function (el) {
-      el.setAttribute("data-ready", "");
-      if (playIO) playIO.observe(el);
-    });
-  }
 
   /* ------------------------------------------------------ 3. photo viewer */
 
@@ -433,7 +419,6 @@
 
   function init() {
     parallaxItems = $$("[data-parallax]");
-    initPlayers();
     initLightboxes();
     initBookings();
     requestFrame();
