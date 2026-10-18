@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { letters, meanings, nameCare, promise, roots } from "@/data/brand";
+import { background, letters, meanings, promise, roots } from "@/data/brand";
 import { Container } from "@/components/ui";
 import { Art, IconList, PostHead, type ArtName, type IconName } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
@@ -115,14 +115,20 @@ export function MeaningsSection() {
   );
 }
 
-/* -------------------------------------------------------------- Name care */
+/* ------------------------------------------------------------- Background */
 
-export function NameCareSection() {
+const backgroundIcons: IconName[] = ["bookmark", "leaf", "ruler"];
+
+export function BackgroundSection() {
   return (
-    <Post id="name" labelledBy="name-h" art="tea">
-      <PostHead kicker="WHY THIS NAME" title={nameCare.heading} sub="AND A PROMISE BEHIND IT" id="name-h">
-        <T as="p" ja={nameCare.body.ja} en={nameCare.body.en} />
+    <Post id="background" labelledBy="background-h" art="tea">
+      <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="ARCHITECTURE, GARDENS, DRAFTING" id="background-h">
+        <T as="p" ja={background.body.ja} en={background.body.en} />
       </PostHead>
+      <IconList
+        className="mt-12"
+        items={background.items.map((b, i) => ({ icon: backgroundIcons[i], title: b.title, line: b.line }))}
+      />
     </Post>
   );
 }
@@ -132,12 +138,9 @@ export function NameCareSection() {
 export function RootsSection() {
   return (
     <Post id="roots" labelledBy="roots-h" art="gum-frame">
-      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="TOGETHER WITH JAPAN HOMES" id="roots-h">
+      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="20+ YEARS OF BUILDING IN AUSTRALIA" id="roots-h">
         <T as="p" ja={roots.body.ja} en={roots.body.en} />
       </PostHead>
-      <p className="mx-auto mt-8 max-w-[30em] text-center text-[0.8125rem] text-navy/60">
-        <T ja={roots.note.ja} en={roots.note.en} />
-      </p>
     </Post>
   );
 }

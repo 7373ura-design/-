@@ -67,23 +67,25 @@ export const letters: { letter: string; word: string; line: Bi }[] = [
   { letter: "I", word: "Inside", line: { ja: "モノだけでなく、心に残る気持ち", en: "The feelings that stay with you, not just the things" } },
 ];
 
-export const nameCare = {
-  heading: { ja: "大切に背負う名前", en: "A Name We Carry With Care" },
+/** The designer's background: training in Japan and Australia. */
+export const background = {
+  heading: { ja: "日本とオーストラリアで\n培ったデザイン", en: "Trained in Japan\nand Australia" },
   body: {
-    ja: "家はこうあってほしい。穏やかで、変わっていけて、思い出に満ちている。そんな想いを込めた名前です。そしてそれは約束でもあります。まず話を聴くこと。あなたの暮らし方を尊重すること。ひとつひとつの空間を丁寧にデザインすること。",
-    en: "A name that holds what we believe a home should be: calm yet changing, full of memories. It is also a promise — to listen first, to respect how you live, and to design every space with care.",
+    ja: "日本の大学で建築を学び、建築学の学位を取得。日本庭園をはじめ、日本の空間づくりを専門的に学んできました。オーストラリアでは住宅製図（Certificate IV in Residential Drafting）の専門教育を通して、この国の住まいのつくり方を身につけています。住まいの骨格から考えたインテリアをご提案します。",
+    en: "A degree in architecture from a Japanese university, with specialist study of Japanese gardens and Japanese ways of shaping space. In Australia, training in Residential Drafting (Certificate IV) grounds that knowledge in how homes here are drawn and built. Our interiors start from the bones of your home.",
   },
+  items: [
+    { title: { ja: "建築学の学位", en: "Architecture degree" }, line: { ja: "日本の大学", en: "University in Japan" } },
+    { title: { ja: "日本庭園", en: "Japanese gardens" }, line: { ja: "日本の空間づくりを専門的に", en: "Specialist study of Japanese space" } },
+    { title: { ja: "Residential Drafting", en: "Residential Drafting" }, line: { ja: "Certificate IV（オーストラリア）", en: "Certificate IV, Australia" } },
+  ],
 };
 
 export const roots = {
-  heading: { ja: "20年以上の家づくりに、\n支えられて。", en: "Backed by 20+ Years" },
+  heading: { ja: "Japan Homes 公認", en: "Recognised by Japan Homes" },
   body: {
-    ja: "NAMIは、Japan Homesとのつながりから生まれました。オーストラリアとニュージーランドで20年以上、美しく実用的な住まいを建ててきた経験があります。だからこそ、図面の上だけでなく、実際のオーストラリアの家で生きるデザインができます。",
-    en: "NAMI grows from our connection with Japan Homes — over 20 years of building beautiful, practical homes across Australia and New Zealand. That experience means designs that work in real Australian homes, not just on paper.",
-  },
-  note: {
-    ja: "NAMIはインテリアを担当し、建築工事は有資格の施工会社が行います。",
-    en: "NAMI designs interiors; building work is done by licensed builders.",
+    ja: "NAMIは、Japan Homes公認のインテリアデザインです。オーストラリアで20年以上、実用的な住まいを建ててきたJapan Homesの経験を生かし、図面の上だけでなく、実際のオーストラリアの家で生きるデザインをお届けします。",
+    en: "NAMI is the interior design studio recognised by Japan Homes. Drawing on Japan Homes’ 20+ years of building practical homes in Australia, we create designs that work in real Australian homes, not just on paper.",
   },
 };
 

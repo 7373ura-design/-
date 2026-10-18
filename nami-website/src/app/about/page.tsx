@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { MeaningsSection, NameCareSection, PromiseSection, RootsSection } from "@/components/home/sections";
+import { BackgroundSection, MeaningsSection, PromiseSection, RootsSection } from "@/components/home/sections";
 import { hero } from "@/data/brand";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function AboutPage() {
         artPosition="50% 80%"
       />
       <MeaningsSection />
-      <NameCareSection />
+      <BackgroundSection />
       <RootsSection />
       <PromiseSection />
     </>
