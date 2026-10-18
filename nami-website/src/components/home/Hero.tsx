@@ -11,14 +11,14 @@ import { T } from "@/lib/i18n";
 export function Hero() {
   return (
     <section className="relative pt-20 md:pt-24" aria-labelledby="hero-heading">
-      <div className="relative aspect-[2400/1582] max-h-[86svh] w-full overflow-hidden">
+      <div className="relative aspect-[3/2] max-h-[86svh] w-full overflow-hidden">
         <Image
           src="/images/washi/surfer-wide.jpg"
-          alt="The NAMI surfer: a girl with a basket of tools on her back rides a red surfboard over a big wave, a turtle beside her, pointing towards an island and a red sun"
+          alt="Woodblock print of the NAMI surfer: a girl with a basket of rolled drawings, rulers and pencils on her back rides a red surfboard out of a great wave, a sea turtle beside her, pointing towards a pine island and the rising sun"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_22%]"
+          className="object-cover object-[50%_75%]"
         />
       </div>
 
