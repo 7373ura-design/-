@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SurfScene } from "@/components/home/SurfScene";
 import { hero } from "@/data/brand";
 import { Rule } from "@/components/washi";
 import { Container } from "@/components/ui";
@@ -42,17 +42,7 @@ export function Hero() {
       </Container>
 
       {/* The sea, and the NAMI surfer riding across it */}
-      <div
-        className="surf-scene relative -order-1 h-[clamp(230px,56vw,420px)] w-full overflow-hidden md:order-none md:h-auto md:min-h-[320px] md:flex-1"
-        role="img"
-        aria-label="The NAMI surfer, a girl with a basket of tools on her back, rides her red board across the waves towards the rising sun"
-        data-play-in-view
-      >
-        <Image src="/images/washi/wave-sun.jpg" alt="" fill priority sizes="100vw" className="object-cover object-bottom" />
-        <div className="surf-rider" aria-hidden>
-          <Image src="/images/washi/surfer-rider.webp" alt="" width={732} height={816} priority sizes="(min-width: 768px) 22vw, 40vw" />
-        </div>
-      </div>
+      <SurfScene className="-order-1 h-[clamp(240px,62vw,440px)] md:order-none md:h-auto md:min-h-[320px] md:flex-1" />
     </section>
   );
 }
