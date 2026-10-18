@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             {/* Single-colour (white) version of the logo for the dark ground */}
             <Logo className="h-9 w-auto brightness-0 invert" />
-            <p className="mt-6 text-[0.6875rem] tracking-[0.3em] text-paper/55">{site.tagline}</p>
+            <p className="mt-6 text-[0.6875rem] tracking-[0.12em] text-paper/55">{site.tagline}</p>
           </div>
 
           <nav aria-label="Footer">

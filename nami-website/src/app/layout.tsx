@@ -1,32 +1,28 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { DM_Sans, Libre_Caslon_Text, Noto_Serif_JP } from "next/font/google";
+import { Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
 import { languageScript } from "@/lib/i18n";
 import "./globals.css";
 
-const notoSerifJP = Noto_Serif_JP({
+// Shippori Mincho: a mincho cut from letterpress type, for Japanese and English alike
+const mincho = Shippori_Mincho({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-noto-serif-jp",
+  variable: "--font-mincho",
   display: "swap",
   preload: false,
 });
 
-const caslon = Libre_Caslon_Text({
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+// Zen Kaku Gothic New: a quiet gothic for menus, labels and the form
+const gothic = Zen_Kaku_Gothic_New({
+  weight: ["400", "500"],
   subsets: ["latin"],
-  variable: "--font-caslon",
+  variable: "--font-gothic",
   display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -54,7 +50,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${notoSerifJP.variable} ${caslon.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="ja" className={`${mincho.variable} ${gothic.variable}`} suppressHydrationWarning>
       <head>
         {/* Applies the saved 日本語 / English choice before first paint */}
         <script dangerouslySetInnerHTML={{ __html: languageScript }} />
