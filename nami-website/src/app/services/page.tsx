@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { CircleIcon, type IconName } from "@/components/washi";
-import { CTASection } from "@/components/CTASection";
 import { ArrowLink, Container } from "@/components/ui";
 import { services } from "@/data/services";
 import { T } from "@/lib/i18n";
@@ -77,7 +76,6 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <CTASection />
     </>
   );
 }

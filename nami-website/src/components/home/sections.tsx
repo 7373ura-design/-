@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { letters, meanings, nameCare, promise, roots } from "@/data/brand";
-import { services } from "@/data/services";
-import { getWorks } from "@/data/works";
-import { Container, TextLink } from "@/components/ui";
-import { Art, CircleIcon, IconList, PostHead, type ArtName, type IconName } from "@/components/washi";
+import { Container } from "@/components/ui";
+import { Art, IconList, PostHead, type ArtName, type IconName } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
 
 /*
- * Sections shared by Home and About, set like the NAMI Instagram carousels:
+ * Sections of the About page (and the shared Card), set like the NAMI Instagram carousels:
  * an illustration across the page, then a centred block of kicker, serif
  * title, blue subline, a short rule and the post's own words.
  */
@@ -76,37 +74,10 @@ export function Card({
   );
 }
 
-/* ------------------------------------------------------------------ Works */
-
-/** The completed homes: the heart of the site. */
-export function WorksSection() {
-  const works = getWorks();
-  if (works.length === 0) return null;
-  return (
-    <Post id="works" labelledBy="works-h">
-      <PostHead kicker="SELECTED WORKS" title={{ ja: "手がけた住まい", en: "Homes We Have Worked On" }} id="works-h" />
-      <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
-        {works.map((w) => (
-          <Card
-            key={w.slug}
-            href={`/works/${w.slug}`}
-            src={w.photos[0].src}
-            alt={w.photos[0].alt}
-            no={w.number}
-            title={w.title}
-            line={{ ja: `${w.type.ja} · ${w.location}`, en: `${w.type.en} · ${w.location}` }}
-            sizes="(min-width:768px) 45vw, 90vw"
-          />
-        ))}
-      </div>
-    </Post>
-  );
-}
-
 /* --------------------------------------------------------------- Meanings */
 
-/** One Name, Three Meanings. `full` adds each post's longer text and the N.A.M.I letters. */
-export function MeaningsSection({ full = false }: { full?: boolean }) {
+/** One Name, Three Meanings, with each post's text and the N.A.M.I letters. */
+export function MeaningsSection() {
   return (
     <Post id="meaning" labelledBy="meaning-h" art="scrolls">
       <PostHead kicker="THE STORY BEHIND NAMI" title={{ ja: "ひとつの名前、\n3つの意味", en: "One Name,\nThree Meanings" }} id="meaning-h" />
@@ -122,12 +93,11 @@ export function MeaningsSection({ full = false }: { full?: boolean }) {
             </h3>
             <p className="subline mt-2">{m.sub}</p>
             <p className="jp-body mx-auto mt-4 max-w-[22em] text-[0.875rem] text-navy/75">
-              <T ja={full && m.body.en ? m.body.ja : m.lead.ja} en={full && m.body.en ? m.body.en : m.lead.en} />
+              <T ja={m.body.en ? m.body.ja : m.lead.ja} en={m.body.en ? m.body.en : m.lead.en} />
             </p>
           </li>
         ))}
       </ol>
-      {full ? (
         <ul className="mx-auto mt-16 w-fit space-y-5">
           {letters.map((l) => (
             <li key={l.letter} className="flex items-baseline gap-5" data-reveal>
@@ -141,13 +111,6 @@ export function MeaningsSection({ full = false }: { full?: boolean }) {
             </li>
           ))}
         </ul>
-      ) : (
-        <div className="mt-14 text-center">
-          <TextLink href="/about">
-            <T ja="NAMIについて" en="About NAMI" />
-          </TextLink>
-        </div>
-      )}
     </Post>
   );
 }
@@ -188,32 +151,6 @@ export function PromiseSection() {
     <Post id="promise" labelledBy="promise-h" art="pavilion">
       <PostHead kicker="WHAT WE BELIEVE" title={promise.heading} id="promise-h" />
       <IconList className="mt-12" items={promise.items.map((p, i) => ({ icon: promiseIcons[i], title: p.title, line: p.line }))} />
-    </Post>
-  );
-}
-
-/* --------------------------------------------------------------- Services */
-
-const serviceIcons: IconName[] = ["chat", "pen", "ruler", "chair"];
-
-export function ServicesPreview() {
-  return (
-    <Post id="services" labelledBy="services-h" art="desk">
-      <PostHead kicker="WHAT WE DO" title={{ ja: "サービス", en: "Services" }} sub="FROM ONE ROOM TO A WHOLE HOME" id="services-h" />
-      <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map((s, i) => (
-          <Link key={s.slug} href={`/services#${s.slug}`} className="group block text-center" data-reveal>
-            <span className="inline-flex transition-colors group-hover:[&>span]:border-vermilion group-hover:[&>span]:text-vermilion">
-              <CircleIcon name={serviceIcons[i]} size="lg" />
-            </span>
-            <p className="kicker mt-6 text-vermilion">{s.number}.</p>
-            <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">{s.title}</h3>
-            <p className="mt-2 text-[0.8125rem] text-navy/65">
-              <T ja={s.sub.ja} en={s.sub.en} />
-            </p>
-          </Link>
-        ))}
-      </div>
     </Post>
   );
 }

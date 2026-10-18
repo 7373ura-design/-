@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { CTASection } from "@/components/CTASection";
 import { MeaningsSection, NameCareSection, PromiseSection, RootsSection } from "@/components/home/sections";
 import { hero } from "@/data/brand";
 
@@ -21,11 +20,10 @@ export default function AboutPage() {
         art="great-wave"
         artPosition="50% 80%"
       />
-      <MeaningsSection full />
+      <MeaningsSection />
       <NameCareSection />
       <RootsSection />
       <PromiseSection />
-      <CTASection />
     </>
   );
 }

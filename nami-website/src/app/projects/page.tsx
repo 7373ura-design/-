@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { CTASection } from "@/components/CTASection";
 import { Container } from "@/components/ui";
 import { Card } from "@/components/home/sections";
 import { getWorks } from "@/data/works";
@@ -39,7 +38,6 @@ export default function ProjectsPage() {
           </div>
         </Container>
       </section>
-      <CTASection />
     </>
   );
 }

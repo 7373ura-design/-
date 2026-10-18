@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CTASection } from "@/components/CTASection";
 import { Container, TextLink } from "@/components/ui";
 import { PostHead } from "@/components/washi";
 import { getWork, getWorks } from "@/data/works";
@@ -95,7 +94,6 @@ export default async function WorkPage({ params }: Props) {
         </section>
       )}
 
-      <CTASection />
     </>
   );
 }
