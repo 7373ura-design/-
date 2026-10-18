@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BookingForm } from "@/components/BookingForm";
+import { EnquiryForm } from "@/components/EnquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/ui";
 import { services } from "@/data/services";
@@ -8,7 +8,7 @@ import { T } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a consultation with NAMI: choose a service, a date and a time.",
+  description: "Send NAMI an enquiry. We reply by email.",
   alternates: { canonical: "/contact" },
 };
 
@@ -22,16 +22,16 @@ export default async function ContactPage({ searchParams }: Props) {
     <>
       <PageHero
         label="CONTACT"
-        heading={{ ja: "ご相談のご予約", en: "Book a Consultation" }}
+        heading={{ ja: "お問い合わせ", en: "Enquiry" }}
         sub="START WITH A CONVERSATION"
         intro={{
-          ja: "ご相談内容と、ご希望の日時を選んでください。\n内容を確認のうえ、メールでご連絡します。",
-          en: "Choose a service and a time that suits you. We will confirm by email.",
+          ja: "暮らしや空間について、お気軽にお聞かせください。\n内容を確認のうえ、メールでお返事します。",
+          en: "Tell us a little about your home. We will reply by email.",
         }}
         art="bridge"
       />
 
-      <section className="section-rule py-16 md:py-24" aria-label="Booking">
+      <section className="section-rule py-16 md:py-24" aria-label="Enquiry">
         <Container className="grid gap-12 lg:grid-cols-12">
           <aside className="order-2 min-w-0 space-y-10 lg:order-1 lg:col-span-4">
             <div>
@@ -62,7 +62,7 @@ export default async function ContactPage({ searchParams }: Props) {
             </div>
           </aside>
           <div className="order-1 min-w-0 lg:order-2 lg:col-span-8">
-            <BookingForm preset={preset} />
+            <EnquiryForm preset={preset} />
           </div>
         </Container>
       </section>

@@ -1,7 +1,7 @@
 /*
  * NAMI — small enhancements shared by the site and its static preview:
  *  1. a full-screen photo viewer with swipe ([data-lightbox])
- *  2. the four-step booking request ([data-booking])
+ *  2. the enquiry form ([data-enquiry])
  * Everything is progressive: without this file the pages still work.
  */
 (function () {
@@ -115,42 +115,16 @@
     });
   }
 
-  /* ---------------------------------------------------------- 2. booking */
+  /* ---------------------------------------------------------- 2. enquiry */
 
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
-  var iso = function (d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); };
-  var both = function (ja, en) {
-    return '<span lang="ja" class="lang-ja">' + ja + '</span><span lang="en-GB" class="lang-en">' + en + "</span>";
-  };
-  var esc = function (s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
-  };
-  function dateParts(value) {
-    var p = value.split("-");
-    return new Date(+p[0], +p[1] - 1, +p[2]);
-  }
-  function dateLabel(value) {
-    var d = dateParts(value);
-    var ja = d.toLocaleDateString("ja-JP", { month: "long", day: "numeric", weekday: "short" });
-    var en = d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
-    return both(ja, en);
-  }
 
-  function setupBooking(form) {
+  function setupEnquiry(form) {
     form.setAttribute("data-ready", "");
-    form.classList.add("is-enhanced");
-    var steps = $$("[data-step]", form);
-    var dots = $$("[data-progress] li", form);
-    var barEl = form.querySelector("[data-bar]");
-    var prev = form.querySelector("[data-prev]");
-    var next = form.querySelector("[data-next]");
     var submit = form.querySelector("[data-submit]");
     var status = form.querySelector("[data-status]");
-    var done = form.parentElement.querySelector("[data-booking-done]");
-    var current = 0;
+    var done = form.parentElement.querySelector("[data-enquiry-done]");
+    var fields = ["name", "email", "message"];
 
     // Preset the service from ?service= (links from the Services page)
     var wanted = new URLSearchParams(location.search).get("service");
@@ -160,48 +134,12 @@
       });
     }
 
-    // Date picker: the next three weeks, Sundays off, as a swipeable strip
-    var strip = form.querySelector("[data-dates]");
-    var dateInput = form.querySelector('input[name="preferredDate"]');
-    var day = new Date();
-    day.setHours(0, 0, 0, 0);
-    for (var n = 0, made = 0; made < 18 && n < 40; n++) {
-      day.setDate(day.getDate() + 1);
-      if (day.getDay() === 0) continue;
-      made++;
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "date-chip";
-      b.setAttribute("aria-pressed", "false");
-      b.setAttribute("data-value", iso(day));
-      b.innerHTML =
-        '<span class="date-chip-wd">' + both(day.toLocaleDateString("ja-JP", { weekday: "short" }), day.toLocaleDateString("en-GB", { weekday: "short" })) + "</span>" +
-        '<span class="date-chip-d">' + day.getDate() + "</span>" +
-        '<span class="date-chip-m">' + both(day.getMonth() + 1 + "月", day.toLocaleDateString("en-GB", { month: "short" })) + "</span>";
-      strip.appendChild(b);
-    }
-    strip.addEventListener("click", function (e) {
-      var chip = e.target.closest(".date-chip");
-      if (!chip) return;
-      $$(".date-chip", strip).forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
-      dateInput.value = chip.getAttribute("data-value");
-      check("preferredDate");
-    });
-
-    function value(name) {
-      var el = form.elements[name];
-      return el ? el.value || "" : "";
-    }
     function errorKey(name) {
-      var v = value(name);
+      var v = form.elements[name].value || "";
       switch (name) {
-        case "projectType": return v ? null : "projectTypeRequired";
-        case "consultType": return v ? null : "consultTypeRequired";
-        case "preferredDate": return v ? null : "dateRequired";
-        case "preferredTime": return v ? null : "timeRequired";
         case "name": return v.trim() ? null : "nameRequired";
         case "email": return !v.trim() ? "emailRequired" : EMAIL.test(v.trim()) ? null : "emailInvalid";
-        case "message": return v.length > 5000 ? "messageTooLong" : null;
+        case "message": return !v.trim() ? "messageRequired" : v.length > 5000 ? "messageTooLong" : null;
       }
       return null;
     }
@@ -217,135 +155,36 @@
       showError(name, k);
       return !k;
     }
-    function focusField(name) {
-      var el = form.elements[name];
-      if (name === "preferredDate") el = strip.querySelector(".date-chip");
-      else if (el && !el.focus && el.length) el = el[0];
-      if (el && el.focus) el.focus();
-    }
-    function validStep(i) {
-      var names = (steps[i].getAttribute("data-fields") || "").split(" ").filter(Boolean);
-      var first = null;
-      names.forEach(function (n) { if (!check(n) && !first) first = n; });
-      if (first) focusField(first);
-      return !first;
-    }
-    form.addEventListener("change", function (e) {
-      var n = e.target.name;
-      if (n && form.querySelector('[data-error-for="' + n + '"]:not([hidden])')) check(n);
-    });
     form.addEventListener("input", function (e) {
       var n = e.target.name;
       if (n && form.querySelector('[data-error-for="' + n + '"]:not([hidden])')) check(n);
     });
 
-    function fillSummary(root) {
-      $$("[data-sum]", root).forEach(function (dd) {
-        var name = dd.getAttribute("data-sum");
-        var v = value(name);
-        var html = "—";
-        if (v) {
-          var radio = form.querySelector('input[name="' + name + '"]:checked');
-          var label = radio && radio.closest("label") && radio.closest("label").querySelector("[data-label]");
-          if (name === "preferredDate") html = dateLabel(v);
-          else if (label) html = label.innerHTML;
-          else html = esc(v).replace(/\n/g, "<br>");
-        }
-        dd.innerHTML = html;
-      });
-    }
-
-    function show(i, scroll) {
-      current = i;
-      steps.forEach(function (s, j) { s.classList.toggle("is-active", j === i); });
-      dots.forEach(function (d, j) {
-        d.classList.toggle("is-done", j < i);
-        d.classList.toggle("is-current", j === i);
-        if (j === i) d.setAttribute("aria-current", "step"); else d.removeAttribute("aria-current");
-      });
-      barEl.style.transform = "scaleX(" + (i + 1) / steps.length + ")";
-      prev.style.visibility = i === 0 ? "hidden" : "visible";
-      next.hidden = i === steps.length - 1;
-      submit.hidden = i !== steps.length - 1;
-      status.hidden = true;
-      if (i === steps.length - 1) fillSummary(form);
-      if (scroll) {
-        var top = form.getBoundingClientRect().top + window.scrollY - 96;
-        if (window.scrollY > top) window.scrollTo(0, top);
-        var t = steps[i].querySelector("[data-step-title]");
-        if (t) t.focus({ preventScroll: true });
-      }
-    }
-    next.addEventListener("click", function () { if (validStep(current)) show(current + 1, true); });
-    prev.addEventListener("click", function () { if (current > 0) show(current - 1, true); });
-    // Tap a summary row's step number in the progress bar to go back and edit
-    dots.forEach(function (d, j) {
-      d.addEventListener("click", function () { if (j < current) show(j, true); });
-    });
-
     function finish() {
-      var now = new Date();
-      var ref = "NAMI-" + String(now.getFullYear()).slice(2) + pad(now.getMonth() + 1) + pad(now.getDate()) + "-" +
-        Math.random().toString(36).slice(2, 6).toUpperCase();
-      done.querySelector("[data-ref]").textContent = ref;
-      var sum = form.querySelector("[data-summary]").cloneNode(true);
-      fillSummary(sum);
-      var holder = done.querySelector("[data-done-summary]");
-      holder.innerHTML = "";
-      holder.appendChild(sum);
-
-      done.querySelector("[data-ics]").onclick = function () {
-        var d = value("preferredDate").replace(/-/g, "");
-        var t = value("preferredTime").replace(":", "");
-        var end = pad(Math.floor((+t.slice(0, 2) * 60 + +t.slice(2) + 60) / 60)) + pad((+t.slice(2) + 60) % 60);
-        var ics = [
-          "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//NAMI//Booking//EN", "BEGIN:VEVENT",
-          "UID:" + ref + "@nami", "DTSTAMP:" + now.toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z",
-          "DTSTART;TZID=Australia/Sydney:" + d + "T" + t + "00",
-          "DTEND;TZID=Australia/Sydney:" + d + "T" + end + "00",
-          "SUMMARY:NAMI consultation (requested)",
-          "DESCRIPTION:" + value("projectType") + " — " + value("consultType") + ". Ref " + ref + ". Time to be confirmed by email.",
-          "STATUS:TENTATIVE", "END:VEVENT", "END:VCALENDAR",
-        ].join("\r\n");
-        var a = document.createElement("a");
-        a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
-        a.download = "nami-consultation.ics";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-      };
-
       form.hidden = true;
       done.hidden = false;
-      var top = done.getBoundingClientRect().top + window.scrollY - 110;
-      window.scrollTo(0, top);
+      window.scrollTo(0, done.getBoundingClientRect().top + window.scrollY - 110);
       done.querySelector("[data-done-title]").focus({ preventScroll: true });
     }
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      for (var i = 0; i < steps.length; i++) {
-        if (!validStep(i)) { show(i, true); return; }
-      }
+      var first = null;
+      fields.forEach(function (n) { if (!check(n) && !first) first = n; });
+      if (first) { form.elements[first].focus(); return; }
+      status.hidden = true;
       submit.disabled = true;
       submit.setAttribute("aria-busy", "true");
-      var demo = form.hasAttribute("data-demo");
-      var request = demo
-        ? new Promise(function (resolve) { setTimeout(function () { resolve({ ok: true }); }, 700); })
+      var request = form.hasAttribute("data-demo")
+        ? new Promise(function (resolve) { setTimeout(function () { resolve({ ok: true }); }, 500); })
         : fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
             .then(function (res) { return res.json().catch(function () { return { ok: false }; }); });
       request
         .then(function (j) {
           if (j && j.ok) return finish();
           if (j && j.errors) {
-            var firstStep = steps.length;
-            Object.keys(j.errors).forEach(function (n) {
-              showError(n, j.errors[n]);
-              steps.forEach(function (s, k) {
-                if ((" " + s.getAttribute("data-fields") + " ").indexOf(" " + n + " ") !== -1) firstStep = Math.min(firstStep, k);
-              });
-            });
-            if (firstStep < steps.length) return show(firstStep, true);
+            Object.keys(j.errors).forEach(function (n) { showError(n, j.errors[n]); });
+            return;
           }
           status.hidden = false;
         })
@@ -355,19 +194,17 @@
           submit.removeAttribute("aria-busy");
         });
     });
-
-    show(0, false);
   }
 
-  function initBookings() {
-    $$("form[data-booking]:not([data-ready])").forEach(setupBooking);
+  function initEnquiries() {
+    $$("form[data-enquiry]:not([data-ready])").forEach(setupEnquiry);
   }
 
   /* --------------------------------------------------------------- init */
 
   function init() {
     initLightboxes();
-    initBookings();
+    initEnquiries();
   }
   init();
   // The site swaps pages without a full reload: pick up new content as it arrives

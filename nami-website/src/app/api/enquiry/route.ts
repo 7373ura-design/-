@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { fieldNames, validateEnquiry, type EnquiryFields } from "@/lib/enquiry";
 
 /**
- * Booking-request endpoint.
+ * Enquiry endpoint.
  *
  * Delivery is pluggable via environment variables — nothing is sent unless a
  * provider is configured:
@@ -73,8 +73,8 @@ async function sendWithResend(fields: EnquiryFields) {
       from: process.env.ENQUIRY_FROM_EMAIL ?? "NAMI Website <onboarding@resend.dev>",
       to: [process.env.ENQUIRY_TO_EMAIL],
       reply_to: fields.email,
-      subject: `Booking request — ${fields.projectType} — ${fields.preferredDate} ${fields.preferredTime} — ${fields.name}`,
-      html: `<h2>New NAMI booking request</h2><table>${rows}</table>`,
+      subject: `Enquiry — ${fields.name}${fields.projectType ? ` — ${fields.projectType}` : ""}`,
+      html: `<h2>New NAMI enquiry</h2><table>${rows}</table>`,
     }),
   });
   if (!res.ok) throw new Error(`Resend responded ${res.status}: ${await res.text()}`);
