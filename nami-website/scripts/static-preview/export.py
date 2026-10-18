@@ -27,7 +27,6 @@ for href in re.findall(r'<link rel="stylesheet" href="([^"]+)"',home): css+=get(
 css=re.sub(r'@font-face\s*{[^}]*}','',css)
 css+='''
 html:root{--font-noto-serif-jp:"Noto Serif JP";--font-caslon:"Libre Caslon Text";--font-dm-sans:"DM Sans";color-scheme:light}
-body{background:#F7F1E5}
 '''
 open(f"{OUT}/site.css","w").write(css)
 
@@ -53,6 +52,8 @@ for r,fn in routes.items():
     body=re.sub(r'src="/_next/image\?url=([^&"]+)[^"]*"',lambda m:'src="'+unquote(m.group(1)).lstrip('/')+'"',body)
     body=re.sub(r'src="/images/',r'src="images/',body)
     body=body.replace('action="javascript', 'data-x="')
+    # No server in the preview: the booking form shows its confirmation without sending
+    body=re.sub(r'(<form[^>]*\sdata-booking(="[^"]*")?)',r'\1 data-demo=""',body)
     htmlcls=re.search(r'<html[^>]*class="([^"]*)"',h).group(1)
     head=f'''<title>{title}</title>
 <meta name="color-scheme" content="light">
@@ -60,7 +61,7 @@ for r,fn in routes.items():
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.add("js");document.documentElement.className+=" {htmlcls}";</script>\n<script>{LANG_SCRIPT}</script>'''
-    tail=f'<script src="site.js"></script>'
+    tail=f'<script src="site.js"></script><script src="js/nami.js"></script>'
     if fn=="index.html":
         doc=f"{head}\n{body}\n{tail}\n"
     else:
@@ -69,6 +70,7 @@ for r,fn in routes.items():
 shutil.copytree(os.path.join(ROOT,"public/images"),f"{OUT}/images",ignore=shutil.ignore_patterns("*.md"))
 import subprocess
 shutil.copy(os.path.join(HERE,"site.js"),f"{OUT}/site.js")
+shutil.copytree(os.path.join(ROOT,"public/js"),f"{OUT}/js")
 print(len(routes),"pages")
 
 # Post-process: link "/" to "./", and give the main page a charset for local viewing

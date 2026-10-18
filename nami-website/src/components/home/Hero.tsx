@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { hero } from "@/data/brand";
-import { Art, Rule } from "@/components/washi";
+import { Rule } from "@/components/washi";
 import { Container } from "@/components/ui";
 import { T } from "@/lib/i18n";
 
 /**
  * Hero — the cover of the NAMI posts: a large serif title and blue subline on
- * the paper, with the pines-and-waves illustration rising from the bottom.
+ * the paper, beside the NAMI surfer.
  */
 export function Hero() {
   return (
-    <section className="relative pt-28 md:pt-36" aria-labelledby="hero-heading">
-      <Container className="relative z-10 grid items-center gap-10 md:grid-cols-12">
+    <section className="relative pb-24 pt-28 md:pb-32 md:pt-36" aria-labelledby="hero-heading">
+      <Container className="relative z-10 grid items-center gap-6 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-6 md:ml-[8%]">
           <p className="kicker" data-reveal>
             {hero.kicker}
@@ -37,7 +37,8 @@ export function Hero() {
           </p>
         </div>
         {/* The NAMI surfer, recoloured to sit with the woodblock-style art */}
-        <div className="md:col-span-6" data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
+        <div className="-order-1 mx-auto w-[88%] md:order-none md:col-span-6 md:w-full" data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
+          <div data-parallax="soft">
           <Image
             src="/images/washi/surfer.jpg"
             alt="The NAMI surfer: a girl with a basket of tools on her back rides a red surfboard over a big wave, a turtle beside her, pointing towards an island and a red sun"
@@ -45,13 +46,11 @@ export function Hero() {
             height={612}
             priority
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="w-full"
+            className="float-gently w-full"
           />
+          </div>
         </div>
       </Container>
-      <div className="mt-10 md:mt-8">
-        <Art name="hills" priority className="h-[clamp(300px,52vw,820px)]" position="50% 100%" />
-      </div>
     </section>
   );
 }

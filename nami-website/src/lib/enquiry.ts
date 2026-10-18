@@ -1,28 +1,21 @@
-/** Shared enquiry form schema — used by the form UI and the API route. */
+/** Shared booking-request schema — used by the booking form and the API route. */
 
 export const projectTypes = [
   "Interior Consultation",
   "Concept Design",
   "Space Planning",
   "Styling",
-  "Other",
 ] as const;
 
-export const propertyTypes = ["House", "Apartment", "Townhouse", "Commercial", "Other"] as const;
-
-export const budgetRanges = [
-  "Under AUD 5,000",
-  "AUD 5,000 – 15,000",
-  "AUD 15,000 – 50,000",
-  "AUD 50,000+",
-  "Not sure yet",
+/** How the first consultation takes place. */
+export const consultTypes = [
+  { value: "Online", ja: "オンライン", en: "Online" },
+  { value: "In person", ja: "対面（シドニー）", en: "In person (Sydney)" },
+  { value: "Phone", ja: "お電話", en: "Phone" },
 ] as const;
 
-export const timelines = ["As soon as possible", "Within 3 months", "3 – 6 months", "6 months +", "Just exploring"] as const;
-
-export const MAX_FILES = 5;
-export const MAX_TOTAL_BYTES = 10 * 1024 * 1024; // 10 MB
-export const ACCEPTED_FILE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/heic", "application/pdf"];
+/** Times offered for a first consultation (Sydney time). */
+export const timeSlots = ["10:00", "11:30", "13:00", "14:30", "16:00"] as const;
 
 export type EnquiryFields = {
   name: string;
@@ -30,42 +23,51 @@ export type EnquiryFields = {
   phone: string;
   location: string;
   projectType: string;
-  propertyType: string;
-  budget: string;
-  timeline: string;
+  consultType: string;
+  preferredDate: string;
+  preferredTime: string;
   message: string;
 };
+
+export const fieldNames: (keyof EnquiryFields)[] = [
+  "name",
+  "email",
+  "phone",
+  "location",
+  "projectType",
+  "consultType",
+  "preferredDate",
+  "preferredTime",
+  "message",
+];
 
 /** Validation messages in both languages; the API returns the keys, the form shows the text. */
 export const errorMessages = {
   nameRequired: { ja: "お名前を入力してください。", en: "Please enter your name." },
   emailRequired: { ja: "メールアドレスを入力してください。", en: "Please enter your email address." },
   emailInvalid: { ja: "メールアドレスの形式をご確認ください。", en: "Please check your email address." },
-  projectTypeRequired: { ja: "ご相談内容を選択してください。", en: "Please choose a project type." },
-  messageRequired: { ja: "メッセージを入力してください。", en: "Please write a message." },
+  projectTypeRequired: { ja: "ご相談内容を選んでください。", en: "Please choose a service." },
+  consultTypeRequired: { ja: "ご相談の方法を選んでください。", en: "Please choose how you would like to meet." },
+  dateRequired: { ja: "ご希望の日にちを選んでください。", en: "Please choose a date." },
+  timeRequired: { ja: "ご希望の時間を選んでください。", en: "Please choose a time." },
   messageTooLong: { ja: "メッセージは5000文字以内でお願いします。", en: "Please keep your message under 5,000 characters." },
-  tooManyFiles: { ja: "ファイルは5点までです。", en: "You can upload up to 5 files." },
-  filesTooLarge: { ja: "ファイルの合計は10MBまでです。", en: "Files can be up to 10 MB in total." },
-  fileType: { ja: "JPG / PNG / WebP / HEIC / PDF のみアップロードできます。", en: "Only JPG, PNG, WebP, HEIC and PDF files can be uploaded." },
 } as const;
 
 export type ErrorKey = keyof typeof errorMessages;
-export type EnquiryErrors = Partial<Record<keyof EnquiryFields | "files", ErrorKey>>;
+export type EnquiryErrors = Partial<Record<keyof EnquiryFields, ErrorKey>>;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
-export function validateEnquiry(fields: EnquiryFields, files: { size: number; type: string }[] = []): EnquiryErrors {
+export function validateEnquiry(fields: EnquiryFields): EnquiryErrors {
   const errors: EnquiryErrors = {};
   if (!fields.name.trim()) errors.name = "nameRequired";
   if (!fields.email.trim()) errors.email = "emailRequired";
   else if (!EMAIL_RE.test(fields.email.trim())) errors.email = "emailInvalid";
-  if (!fields.projectType) errors.projectType = "projectTypeRequired";
-  if (!fields.message.trim()) errors.message = "messageRequired";
-  else if (fields.message.length > 5000) errors.message = "messageTooLong";
-
-  if (files.length > MAX_FILES) errors.files = "tooManyFiles";
-  else if (files.reduce((n, f) => n + f.size, 0) > MAX_TOTAL_BYTES) errors.files = "filesTooLarge";
-  else if (files.some((f) => f.type && !ACCEPTED_FILE_TYPES.includes(f.type)))
-    errors.files = "fileType";
+  if (!projectTypes.includes(fields.projectType as (typeof projectTypes)[number])) errors.projectType = "projectTypeRequired";
+  if (!consultTypes.some((c) => c.value === fields.consultType)) errors.consultType = "consultTypeRequired";
+  if (!DATE_RE.test(fields.preferredDate)) errors.preferredDate = "dateRequired";
+  if (!timeSlots.includes(fields.preferredTime as (typeof timeSlots)[number])) errors.preferredTime = "timeRequired";
+  if (fields.message.length > 5000) errors.message = "messageTooLong";
   return errors;
 }

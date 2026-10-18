@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { DM_Sans, Libre_Caslon_Text, Noto_Serif_JP } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  viewportFit: "cover",
   themeColor: "#F2E8D9",
 };
 
@@ -65,6 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <RevealObserver />
+        {/* Parallax, header, photo viewer and booking steps (shared with the static preview) */}
+        <Script src="/js/nami.js" strategy="afterInteractive" />
       </body>
     </html>
   );

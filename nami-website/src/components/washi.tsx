@@ -65,7 +65,7 @@ export function Art({
     );
   }
   return (
-    <div className={`relative w-full overflow-hidden ${className}`}>
+    <div className={`relative w-full overflow-hidden ${className}`} data-parallax>
       <Image
         src={`/images/washi/${name}.jpg`}
         alt={decorative ? "" : ART[name]}

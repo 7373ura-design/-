@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EnquiryForm } from "@/components/EnquiryForm";
+import { BookingForm } from "@/components/BookingForm";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/ui";
 import { services } from "@/data/services";
@@ -8,7 +8,7 @@ import { T } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Let's create a space that feels like yours. Enquire with NAMI about your home.",
+  description: "Book a consultation with NAMI: choose a service, a date and a time.",
   alternates: { canonical: "/contact" },
 };
 
@@ -22,18 +22,18 @@ export default async function ContactPage({ searchParams }: Props) {
     <>
       <PageHero
         label="CONTACT"
-        heading={{ ja: "一緒に、\n心地よい空間を。", en: "Let’s Create a Space\nThat Feels Like Yours" }}
+        heading={{ ja: "ご相談のご予約", en: "Book a Consultation" }}
         sub="START WITH A CONVERSATION"
         intro={{
-          ja: "住まいのこと、まずはお気軽にご相談ください。\n内容を確認のうえ、ご連絡いたします。",
-          en: "Tell us about your home. We will read your message and get back to you.",
+          ja: "ご相談内容と、ご希望の日時を選んでください。\n内容を確認のうえ、メールでご連絡します。",
+          en: "Choose a service and a time that suits you. We will confirm by email.",
         }}
         art="bridge"
       />
 
-      <section className="section-rule py-16 md:py-24" aria-label="Enquiry">
+      <section className="section-rule py-16 md:py-24" aria-label="Booking">
         <Container className="grid gap-12 lg:grid-cols-12">
-          <aside className="space-y-10 lg:col-span-4">
+          <aside className="order-2 min-w-0 space-y-10 lg:order-1 lg:col-span-4">
             <div>
               <p className="kicker">HOW IT WORKS</p>
               <ol className="mt-5 space-y-5">
@@ -61,8 +61,8 @@ export default async function ContactPage({ searchParams }: Props) {
               </a>
             </div>
           </aside>
-          <div className="lg:col-span-8">
-            <EnquiryForm defaultProjectType={preset} />
+          <div className="order-1 min-w-0 lg:order-2 lg:col-span-8">
+            <BookingForm preset={preset} />
           </div>
         </Container>
       </section>

@@ -32,9 +32,9 @@ export default async function WorkPage({ params }: Props) {
   const others = getWorks().filter((w) => w.slug !== work.slug);
 
   return (
-    <>
+    <div data-lightbox>
       <section className="pt-20 md:pt-24">
-        <div className="relative h-[clamp(260px,52vw,720px)] w-full overflow-hidden bg-beige">
+        <div className="relative h-[clamp(260px,52vw,720px)] w-full overflow-hidden bg-beige" data-lightbox-item>
           <Image src={cover.src} alt={cover.alt} fill priority sizes="100vw" className="object-cover" />
         </div>
         <Container className="pb-16 pt-14 md:pb-20 md:pt-20">
@@ -56,7 +56,8 @@ export default async function WorkPage({ params }: Props) {
               <div
                 key={p.src}
                 className={`relative overflow-hidden bg-beige ${i % 3 === 2 || rest.length === 1 ? "aspect-[16/9] md:col-span-2" : "aspect-[4/3]"}`}
-                data-reveal
+                data-reveal="image"
+                data-lightbox-item
               >
                 <Image src={p.src} alt={p.alt} fill sizes={i % 3 === 2 ? "100vw" : "(min-width: 768px) 50vw, 100vw"} className="object-cover" />
               </div>
@@ -94,6 +95,6 @@ export default async function WorkPage({ params }: Props) {
         </section>
       )}
 
-    </>
+    </div>
   );
 }

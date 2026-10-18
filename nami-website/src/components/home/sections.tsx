@@ -53,7 +53,7 @@ export function Card({
   sizes: string;
 }) {
   return (
-    <Link href={href} className="group block text-center" data-reveal>
+    <Link href={href} className="press group block text-center transition-transform" data-reveal>
       <div className={`relative overflow-hidden bg-beige ${ratio}`}>
         <Image
           src={src}
