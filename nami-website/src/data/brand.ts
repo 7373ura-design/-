@@ -10,8 +10,8 @@ export const hero = {
   kicker: "JAPANDI INTERIOR DESIGN, SYDNEY",
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
-    ja: "NAMIはシドニーのインテリアデザインスタジオです。日本の考え方をオーストラリアの暮らしに合わせた、穏やかで自然なジャパンディの住まいをつくります。ひと部屋から家全体まで、最初のアイデアから最終プランまで。レイアウト、素材、家具、スタイリングをご一緒に考えます。",
-    en: "NAMI is a Sydney interior design studio. We create calm, natural Japandi homes — Japanese principles, shaped for Australian life. From one room to a whole home, we guide you from first idea to final plan — layout, materials, furniture, styling.",
+    ja: "NAMIはシドニーのインテリアデザインスタジオです。日本の考え方をオーストラリアの暮らしに合わせた、穏やかで自然なジャパンディの住まいをつくります。",
+    en: "NAMI is a Sydney interior design studio. We create calm, natural Japandi homes — Japanese principles, shaped for Australian life.",
   },
 };
 

@@ -14,7 +14,7 @@ B=os.environ.get("NAMI_BASE","http://localhost:3200")
 OUT=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,"..","nami-static-preview")
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT)
 get=lambda p: urllib.request.urlopen(B+p).read().decode()
-routes={"/":"index.html","/about":"about.html","/services":"services.html","/projects":"projects.html","/contact":"contact.html"}
+routes={"/":"index.html","/services":"services.html","/projects":"projects.html","/contact":"contact.html"}
 from importlib import import_module
 import json
 works=["new-lynn-house","remuera-renovation","glen-innes-unit","hillcrest-house"]

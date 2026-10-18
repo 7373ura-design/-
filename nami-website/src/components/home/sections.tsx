@@ -6,7 +6,7 @@ import { Art, IconList, PostHead, type ArtName, type IconName } from "@/componen
 import { T, type Bi } from "@/lib/i18n";
 
 /*
- * Sections of the About page (and the shared Card), set like the NAMI Instagram carousels:
+ * Sections of the home page (and the shared Card), set like the NAMI Instagram carousels:
  * an illustration across the page, then a centred block of kicker, serif
  * title, blue subline, a short rule and the post's own words.
  */
