@@ -1,35 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Shippori_Mincho, Yuji_Syuku, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Shippori_Mincho } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
 import { languageScript } from "@/lib/i18n";
 import "./globals.css";
 
-// Shippori Mincho: a mincho cut from letterpress type, for Japanese and English alike
+// One typeface for every word on the site, Japanese and English alike:
+// Shippori Mincho, a mincho cut from letterpress type
 const mincho = Shippori_Mincho({
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-mincho",
-  display: "swap",
-  preload: false,
-});
-
-// Titles: Yuji Syuku, a brush-written face whose English letters share the same hand
-const syuku = Yuji_Syuku({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--font-syuku",
-  display: "swap",
-  preload: false,
-});
-
-// Zen Kaku Gothic New: a quiet gothic for menus, labels and the form
-const gothic = Zen_Kaku_Gothic_New({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-gothic",
   display: "swap",
   preload: false,
 });
@@ -59,7 +42,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${mincho.variable} ${gothic.variable} ${syuku.variable}`} suppressHydrationWarning>
+    <html lang="ja" className={mincho.variable} suppressHydrationWarning>
       <head>
         {/* Applies the saved 日本語 / English choice before first paint */}
         <script dangerouslySetInnerHTML={{ __html: languageScript }} />

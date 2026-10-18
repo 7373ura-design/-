@@ -14,8 +14,9 @@
   --font-jp: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-display: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-serif: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-title: var(--font-syuku), "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-sans: var(--font-gothic), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --font-title: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
+  /* One typeface throughout: "sans" is kept as a name only */
+  --font-sans: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
 
   --ease-wave: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -88,7 +89,7 @@
   }
   .title {
     font-family: var(--font-title);
-    font-weight: 400;
+    font-weight: 500;
     color: var(--color-navy);
     letter-spacing: -0.005em;
     line-height: 1.15;
@@ -204,12 +205,6 @@ html[data-lang="en"] .jp-heading {
   line-height: 1.2;
   font-feature-settings: normal;
 }
-/* Yuji Syuku sets its English letters wide; close them up */
-.title .lang-en,
-html[data-lang="en"] .title {
-  letter-spacing: -0.09em;
-}
-
 /* Japanese titles keep the mincho rhythm and break between phrases, not inside words */
 html:not([data-lang="en"]) .title {
   word-break: auto-phrase;
