@@ -6,51 +6,53 @@ import { T } from "@/lib/i18n";
 
 /**
  * Hero — the cover of the NAMI posts: a large serif title and blue subline on
- * the paper, beside the NAMI surfer.
+ * the paper, and below it the sea, where the NAMI surfer rides across towards
+ * the sun she is pointing at. On phones the sea comes first.
  */
 export function Hero() {
   return (
-    <section className="relative pb-24 pt-28 md:pb-32 md:pt-36" aria-labelledby="hero-heading">
-      <Container className="relative z-10 grid items-center gap-6 md:grid-cols-12 md:gap-10">
-        <div className="md:col-span-6 md:ml-[8%]">
+    <section className="relative flex flex-col pt-20 md:h-[100svh] md:min-h-[700px] md:pt-24" aria-labelledby="hero-heading">
+      <Container className="relative z-10 grid gap-x-12 pb-12 pt-10 md:grid-cols-12 md:items-end md:pb-10 md:pt-4">
+        <div className="md:col-span-7 md:ml-[4%]">
           <p className="kicker" data-reveal>
             {hero.kicker}
           </p>
           <h1
             id="hero-heading"
-            className="title mt-6 text-[2.75rem] md:text-[clamp(2.8rem,5vw,4.8rem)] [html:not([data-lang=en])_&]:md:text-[clamp(2.6rem,4.8vw,4.6rem)]"
+            className="title mt-6 text-[2.75rem] md:mt-5 md:text-[clamp(2.6rem,4.2vw,4.2rem)] [html:not([data-lang=en])_&]:md:text-[clamp(2.4rem,3.8vw,3.8rem)]"
             data-reveal
             style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
           >
             <T ja={hero.heading.ja} en={hero.heading.en} />
           </h1>
-          <p className="subline mt-4 md:text-[0.78rem]" data-reveal style={{ "--reveal-delay": "180ms" } as React.CSSProperties}>
+        </div>
+        <div className="md:col-span-5 md:pb-2">
+          <p className="subline mt-4 md:mt-0 md:text-[0.78rem]" data-reveal style={{ "--reveal-delay": "180ms" } as React.CSSProperties}>
             NEST AND MEMORIES INSIDE
           </p>
-          <Rule className="mt-6" />
+          <Rule className="mt-6 md:mt-4" />
           <p
-            className="jp-body mt-6 max-w-[30em] text-[0.9375rem] text-navy/80"
+            className="jp-body mt-6 max-w-[34em] text-[0.9375rem] text-navy/80 md:mt-4 md:text-[0.875rem]"
             data-reveal
             style={{ "--reveal-delay": "260ms" } as React.CSSProperties}
           >
             <T ja={hero.body.ja} en={hero.body.en} />
           </p>
         </div>
-        {/* The NAMI surfer, recoloured to sit with the woodblock-style art */}
-        <div className="-order-1 mx-auto w-[88%] md:order-none md:col-span-6 md:w-full" data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
-          <div data-parallax="soft">
-          <Image
-            src="/images/washi/surfer.jpg"
-            alt="The NAMI surfer: a girl with a basket of tools on her back rides a red surfboard over a big wave, a turtle beside her, pointing towards an island and a red sun"
-            width={928}
-            height={612}
-            priority
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="float-gently w-full"
-          />
-          </div>
-        </div>
       </Container>
+
+      {/* The sea, and the NAMI surfer riding across it */}
+      <div
+        className="surf-scene relative -order-1 h-[clamp(230px,56vw,420px)] w-full overflow-hidden md:order-none md:h-auto md:min-h-[320px] md:flex-1"
+        role="img"
+        aria-label="The NAMI surfer, a girl with a basket of tools on her back, rides her red board across the waves towards the rising sun"
+        data-play-in-view
+      >
+        <Image src="/images/washi/wave-sun.jpg" alt="" fill priority sizes="100vw" className="object-cover object-bottom" />
+        <div className="surf-rider" aria-hidden>
+          <Image src="/images/washi/surfer-rider.webp" alt="" width={732} height={816} priority sizes="(min-width: 768px) 22vw, 40vw" />
+        </div>
+      </div>
     </section>
   );
 }

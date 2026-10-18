@@ -256,22 +256,55 @@ header[data-hidden="true"] {
 }
 
 /* Illustrations drift a little slower than the page */
-[data-parallax]:not([data-parallax="soft"]) > img {
+[data-parallax] > img {
   transform: translate3d(0, calc(var(--p, 0) * 6%), 0) scale(1.14);
   will-change: transform;
 }
-[data-parallax="soft"] {
-  transform: translate3d(0, calc(var(--p, 0) * -36px), 0);
+
+/* The NAMI surfer rides across the sea towards the sun, bobbing on the swell */
+.surf-scene {
+  container-type: inline-size;
+}
+.surf-rider {
+  position: absolute;
+  left: 0;
+  bottom: 7%;
+  height: 64%;
+  transform: translate3d(-45cqw, 0, 0);
+  animation: surf-across 15s linear infinite;
   will-change: transform;
 }
-
-/* The surfer rides her wave */
-@keyframes nami-float {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  50% { transform: translate3d(0, -12px, 0) rotate(-1deg); }
+/* Rest while scrolled out of view (set by nami.js) */
+.surf-scene.is-offscreen .surf-rider,
+.surf-scene.is-offscreen .surf-rider img {
+  animation-play-state: paused;
 }
-.float-gently {
-  animation: nami-float 6.5s ease-in-out infinite;
+.surf-rider img {
+  height: 100%;
+  width: auto;
+  transform-origin: 40% 90%;
+  animation: surf-bob 2.6s ease-in-out infinite;
+}
+/* Her wake: a streak of white foam trailing from the tail of the board */
+.surf-rider::before {
+  content: "";
+  position: absolute;
+  right: 72%;
+  bottom: 4%;
+  width: 70%;
+  height: 9%;
+  border-radius: 50%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  filter: blur(1.5px);
+}
+@keyframes surf-across {
+  0% { transform: translate3d(-45cqw, 0, 0); }
+  86% { transform: translate3d(108cqw, 0, 0); }
+  100% { transform: translate3d(108cqw, 0, 0); }
+}
+@keyframes surf-bob {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2.5deg); }
+  50% { transform: translate3d(0, -5%, 0) rotate(2deg); }
 }
 
 /* The short rule under each title draws itself in */
@@ -500,12 +533,16 @@ label {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-parallax]:not([data-parallax="soft"]) > img,
-  [data-parallax="soft"] {
+  [data-parallax] > img {
     transform: none;
   }
-  .float-gently {
+  /* She waits on the water instead of riding across */
+  .surf-rider,
+  .surf-rider img {
     animation: none;
+  }
+  .surf-rider {
+    transform: translate3d(52cqw, 0, 0);
   }
   .js [data-reveal] .rule {
     transform: none;
