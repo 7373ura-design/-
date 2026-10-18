@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Gloock, Kaisei_Tokumin, Shippori_Mincho, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Shippori_Mincho, Yuji_Syuku, Zen_Kaku_Gothic_New } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
@@ -16,20 +16,13 @@ const mincho = Shippori_Mincho({
   preload: false,
 });
 
-// Titles: Kaisei Tokumin, a high-contrast display mincho, with Gloock for English
-const tokumin = Kaisei_Tokumin({
-  weight: ["500"],
-  subsets: ["latin"],
-  variable: "--font-tokumin",
-  display: "swap",
-  preload: false,
-});
-
-const gloock = Gloock({
+// Titles: Yuji Syuku, a brush-written face whose English letters share the same hand
+const syuku = Yuji_Syuku({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-gloock",
+  variable: "--font-syuku",
   display: "swap",
+  preload: false,
 });
 
 // Zen Kaku Gothic New: a quiet gothic for menus, labels and the form
@@ -66,7 +59,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${mincho.variable} ${gothic.variable} ${tokumin.variable} ${gloock.variable}`} suppressHydrationWarning>
+    <html lang="ja" className={`${mincho.variable} ${gothic.variable} ${syuku.variable}`} suppressHydrationWarning>
       <head>
         {/* Applies the saved 日本語 / English choice before first paint */}
         <script dangerouslySetInnerHTML={{ __html: languageScript }} />
