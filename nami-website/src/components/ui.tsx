@@ -96,7 +96,7 @@ export function TextLink({ href, children, className = "" }: { href: string; chi
       className={`group inline-flex items-center gap-3 text-[0.8125rem] tracking-[0.04em] text-navy transition-colors hover:text-vermilion ${className}`}
     >
       <span className="border-b border-current/30 pb-0.5 group-hover:border-current">{children}</span>
-      <span aria-hidden className="h-px w-6 bg-current transition-all duration-500 group-hover:w-9" />
+      <span aria-hidden className="h-px w-6 bg-current" />
     </Link>
   );
 }

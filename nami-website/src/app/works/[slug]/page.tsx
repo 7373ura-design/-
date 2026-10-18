@@ -56,7 +56,6 @@ export default async function WorkPage({ params }: Props) {
               <div
                 key={p.src}
                 className={`relative overflow-hidden bg-beige ${i % 3 === 2 || rest.length === 1 ? "aspect-[16/9] md:col-span-2" : "aspect-[4/3]"}`}
-                data-reveal="image"
                 data-lightbox-item
               >
                 <Image src={p.src} alt={p.alt} fill sizes={i % 3 === 2 ? "100vw" : "(min-width: 768px) 50vw, 100vw"} className="object-cover" />
@@ -74,7 +73,7 @@ export default async function WorkPage({ params }: Props) {
               {others.map((w) => (
                 <Link key={w.slug} href={`/works/${w.slug}`} className="group block text-center">
                   <div className="relative aspect-[4/3] overflow-hidden bg-beige">
-                    <Image src={w.photos[0].src} alt={w.photos[0].alt} fill sizes="(min-width:768px) 30vw, 90vw" className="object-cover transition-transform duration-[1600ms] group-hover:scale-[1.03]" />
+                    <Image src={w.photos[0].src} alt={w.photos[0].alt} fill sizes="(min-width:768px) 30vw, 90vw" className="object-cover" />
                   </div>
                   <p className="kicker mt-6 text-vermilion">{w.number}.</p>
                   <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">

@@ -1,15 +1,12 @@
 /*
  * NAMI — small enhancements shared by the site and its static preview:
- *  1. scroll progress line and a header that steps aside while you read
- *  2. gentle parallax on the illustrations ([data-parallax])
- *  3. a full-screen photo viewer with swipe ([data-lightbox])
- *  4. the four-step booking request ([data-booking])
+ *  1. a full-screen photo viewer with swipe ([data-lightbox])
+ *  2. the four-step booking request ([data-booking])
  * Everything is progressive: without this file the pages still work.
  */
 (function () {
   "use strict";
 
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var isEn = function () {
     return document.documentElement.getAttribute("data-lang") === "en";
   };
@@ -17,53 +14,7 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   };
 
-  /* ---------------------------------------------- 1. progress and header */
-
-  var bar = document.createElement("div");
-  bar.className = "scroll-progress";
-  bar.setAttribute("aria-hidden", "true");
-  document.body.appendChild(bar);
-
-  var lastY = window.scrollY;
-  var ticking = false;
-  var parallaxItems = [];
-
-  function frame() {
-    ticking = false;
-    var y = window.scrollY;
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, y / max) : 0) + ")";
-
-    var header = document.querySelector("header");
-    if (header && Math.abs(y - lastY) > 6) {
-      var hide = y > lastY && y > 160 && document.body.style.overflow !== "hidden" && !header.contains(document.activeElement);
-      header.setAttribute("data-hidden", hide ? "true" : "false");
-      lastY = y;
-    }
-    if (y < 10 && header) header.setAttribute("data-hidden", "false");
-
-    if (!reduce) {
-      var vh = window.innerHeight;
-      for (var i = 0; i < parallaxItems.length; i++) {
-        var el = parallaxItems[i];
-        var r = el.getBoundingClientRect();
-        if (r.bottom < -100 || r.top > vh + 100) continue;
-        // -1 when the element enters at the bottom, +1 as it leaves at the top
-        var p = (vh / 2 - (r.top + r.height / 2)) / (vh / 2 + r.height / 2);
-        el.style.setProperty("--p", Math.max(-1, Math.min(1, p)).toFixed(3));
-      }
-    }
-  }
-  function requestFrame() {
-    if (!ticking) {
-      ticking = true;
-      window.requestAnimationFrame(frame);
-    }
-  }
-  window.addEventListener("scroll", requestFrame, { passive: true });
-  window.addEventListener("resize", requestFrame, { passive: true });
-
-  /* ------------------------------------------------------ 3. photo viewer */
+  /* ------------------------------------------------------ 1. photo viewer */
 
   var box = null;
   var boxItems = [];
@@ -119,8 +70,6 @@
   function render() {
     var img = box.querySelector(".lightbox-img");
     var item = boxItems[boxIndex];
-    img.classList.remove("is-in");
-    img.onload = function () { img.classList.add("is-in"); };
     img.src = bigSrc(item);
     img.alt = item.alt || "";
     box.querySelector(".lightbox-count").textContent = boxIndex + 1 + " / " + boxItems.length;
@@ -166,7 +115,7 @@
     });
   }
 
-  /* ---------------------------------------------------------- 4. booking */
+  /* ---------------------------------------------------------- 2. booking */
 
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
@@ -322,7 +271,7 @@
       if (i === steps.length - 1) fillSummary(form);
       if (scroll) {
         var top = form.getBoundingClientRect().top + window.scrollY - 96;
-        if (window.scrollY > top) window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
+        if (window.scrollY > top) window.scrollTo(0, top);
         var t = steps[i].querySelector("[data-step-title]");
         if (t) t.focus({ preventScroll: true });
       }
@@ -368,9 +317,8 @@
 
       form.hidden = true;
       done.hidden = false;
-      done.classList.add("is-in");
       var top = done.getBoundingClientRect().top + window.scrollY - 110;
-      window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
+      window.scrollTo(0, top);
       done.querySelector("[data-done-title]").focus({ preventScroll: true });
     }
 
@@ -418,10 +366,8 @@
   /* --------------------------------------------------------------- init */
 
   function init() {
-    parallaxItems = $$("[data-parallax]");
     initLightboxes();
     initBookings();
-    requestFrame();
   }
   init();
   // The site swaps pages without a full reload: pick up new content as it arrives

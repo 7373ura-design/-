@@ -12,15 +12,6 @@ import { LanguageSwitch } from "@/components/LanguageSwitch";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   // Close the menu on navigation
   useEffect(() => setOpen(false), [pathname]);
 
@@ -41,17 +32,9 @@ export function Header() {
       >
         Skip to content
       </a>
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "border-b hairline bg-cream/92 backdrop-blur-md" : "border-b border-transparent bg-cream"
-        }`}
-      >
-        <div
-          className={`mx-auto flex w-full max-w-[1360px] items-center justify-between px-5 transition-all duration-500 md:px-10 lg:px-16 ${
-            scrolled ? "h-16" : "h-20 md:h-24"
-          }`}
-        >
-          <Logo priority className={`w-auto transition-all duration-500 ${scrolled ? "h-8" : "h-9 md:h-10"}`} />
+      <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-cream">
+        <div className="mx-auto flex h-20 w-full max-w-[1360px] items-center justify-between px-5 md:h-24 md:px-10 lg:px-16">
+          <Logo priority className="h-9 w-auto md:h-10" />
 
           <nav aria-label="Main" className="hidden items-center gap-7 xl:gap-9 lg:flex">
             {navigation.map((item) => (

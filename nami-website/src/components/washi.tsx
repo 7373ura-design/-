@@ -65,7 +65,7 @@ export function Art({
     );
   }
   return (
-    <div className={`relative w-full overflow-hidden ${className}`} data-parallax>
+    <div className={`relative w-full overflow-hidden ${className}`}>
       <Image
         src={`/images/washi/${name}.jpg`}
         alt={decorative ? "" : ART[name]}
@@ -111,7 +111,7 @@ export function PostHead({
     lg: "text-[2.4rem] md:text-[clamp(2.8rem,4.6vw,4.4rem)]",
   }[size];
   return (
-    <div className={center ? "mx-auto text-center" : ""} data-reveal>
+    <div className={center ? "mx-auto text-center" : ""}>
       {(no || kicker) && (
         <p className="kicker mb-4">
           {no && <span className="mr-3 text-vermilion">{no}.</span>}
@@ -190,7 +190,7 @@ export function IconList({
   return (
     <ul className={`mx-auto w-fit space-y-6 text-left ${className}`}>
       {items.map((it, i) => (
-        <li key={i} className="flex items-center gap-5" data-reveal style={{ "--reveal-delay": `${i * 90}ms` } as React.CSSProperties}>
+        <li key={i} className="flex items-center gap-5">
           <CircleIcon name={it.icon} />
           <div>
             <p className="title text-[1.2rem] !leading-snug">

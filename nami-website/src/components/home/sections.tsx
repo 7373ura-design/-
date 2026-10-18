@@ -53,14 +53,14 @@ export function Card({
   sizes: string;
 }) {
   return (
-    <Link href={href} className="press group block text-center transition-transform" data-reveal>
+    <Link href={href} className="group block text-center">
       <div className={`relative overflow-hidden bg-beige ${ratio}`}>
         <Image
           src={src}
           alt={alt}
           fill
           sizes={sizes}
-          className="object-cover transition-transform duration-[1600ms] ease-[var(--ease-wave)] group-hover:scale-[1.03]"
+          className="object-cover"
         />
       </div>
       <p className="kicker mt-6 text-vermilion">{no}.</p>
@@ -83,7 +83,7 @@ export function MeaningsSection() {
       <PostHead kicker="THE STORY BEHIND NAMI" title={{ ja: "ひとつの名前、\n3つの意味", en: "One Name,\nThree Meanings" }} id="meaning-h" />
       <ol className="mx-auto mt-14 grid max-w-5xl gap-12 md:grid-cols-3 md:gap-10">
         {meanings.map((m, i) => (
-          <li key={m.number} className="text-center" data-reveal style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}>
+          <li key={m.number} className="text-center">
             <p className="kicker text-vermilion">{m.number}.</p>
             <p aria-hidden className={`mt-4 leading-none text-navy ${m.glyph === "N" ? "font-display text-[3.4rem]" : "font-jp text-[3.4rem] font-light"}`}>
               {m.glyph}
@@ -100,7 +100,7 @@ export function MeaningsSection() {
       </ol>
         <ul className="mx-auto mt-16 w-fit space-y-5">
           {letters.map((l) => (
-            <li key={l.letter} className="flex items-baseline gap-5" data-reveal>
+            <li key={l.letter} className="flex items-baseline gap-5">
               <span className="title w-6 text-[1.6rem] text-vermilion">{l.letter}</span>
               <span>
                 <span className="title block text-[1.15rem]">{l.word}</span>

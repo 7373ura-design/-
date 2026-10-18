@@ -3,7 +3,6 @@ import Script from "next/script";
 import { DM_Sans, Libre_Caslon_Text, Noto_Serif_JP } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { RevealObserver } from "@/components/Motion";
 import { site } from "@/data/site";
 import { languageScript } from "@/lib/i18n";
 import "./globals.css";
@@ -57,8 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja" className={`${notoSerifJP.variable} ${caslon.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <head>
-        {/* Enables scroll-reveal styles only when JS runs, so content is never hidden without it */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {/* Applies the saved 日本語 / English choice before first paint */}
         <script dangerouslySetInnerHTML={{ __html: languageScript }} />
       </head>
@@ -66,8 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <RevealObserver />
-        {/* Parallax, header, photo viewer and booking steps (shared with the static preview) */}
+        {/* Photo viewer and booking steps (shared with the static preview) */}
         <Script src="/js/nami.js" strategy="afterInteractive" />
       </body>
     </html>
