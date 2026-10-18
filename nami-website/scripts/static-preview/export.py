@@ -26,7 +26,7 @@ css=""
 for href in re.findall(r'<link rel="stylesheet" href="([^"]+)"',home): css+=get(href)+"\n"
 css=re.sub(r'@font-face\s*{[^}]*}','',css)
 css+='''
-html:root{--font-mincho:"Shippori Mincho";--font-gothic:"Zen Kaku Gothic New";color-scheme:light}
+html:root{--font-mincho:"Shippori Mincho";--font-gothic:"Zen Kaku Gothic New";--font-tokumin:"Kaisei Tokumin";--font-gloock:"Gloock";color-scheme:light}
 '''
 open(f"{OUT}/site.css","w").write(css)
 
@@ -58,7 +58,7 @@ for r,fn in routes.items():
     head=f'''<title>{title}</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&family=Kaisei+Tokumin:wght@500&family=Gloock&display=swap">
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.add("js");document.documentElement.className+=" {htmlcls}";</script>\n<script>{LANG_SCRIPT}</script>'''
     tail=f'<script src="site.js"></script><script src="js/nami.js"></script>'

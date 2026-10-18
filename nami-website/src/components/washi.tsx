@@ -106,26 +106,33 @@ export function PostHead({
 }) {
   const center = align === "center";
   const sizes = {
-    sm: "text-[1.6rem] md:text-[2rem]",
-    md: "text-[2rem] md:text-[2.75rem]",
-    lg: "text-[2.4rem] md:text-[clamp(2.8rem,4.6vw,4.4rem)]",
+    sm: "text-[1.6rem] md:text-[2.1rem]",
+    md: "text-[2rem] md:text-[2.6rem]",
+    lg: "text-[2.4rem] md:text-[clamp(2.8rem,4.2vw,4rem)]",
   }[size];
+  // Two columns from tablet up: in Japanese the title stands vertically on the right,
+  // as in a printed book; in English it sits on the left. Phones stack the two.
   return (
-    <div className={center ? "mx-auto text-center" : ""}>
-      {(no || kicker) && (
-        <p className="kicker mb-4">
-          {no && <span className="mr-3 text-vermilion">{no}.</span>}
-          {kicker}
-        </p>
+    <div className={`post-head ${center ? "md:mx-auto md:w-fit md:max-w-full" : ""}`}>
+      <div className="post-head-title">
+        {(no || kicker) && (
+          <p className="kicker post-head-kicker mb-4">
+            {no && <span className="mr-3 text-vermilion">{no}.</span>}
+            {kicker}
+          </p>
+        )}
+        <Tag id={id} className={`title tategaki ${sizes}`}>
+          <T ja={title.ja} en={title.en} />
+        </Tag>
+      </div>
+      {(sub || children) && (
+        <div className="post-head-text">
+          {sub && <p className="subline">{sub}</p>}
+          <Rule className="mt-4" />
+          {children && <div className="jp-body mt-6 max-w-[30em] text-[0.9375rem] text-navy/80">{children}</div>}
+        </div>
       )}
-      <Tag id={id} className={`title ${sizes}`}>
-        <T ja={title.ja} en={title.en} />
-      </Tag>
-      {sub && <p className="subline mt-3">{sub}</p>}
-      <Rule className={`mt-5 ${center ? "mx-auto" : ""}`} />
-      {children && (
-        <div className={`jp-body mt-6 text-[0.9375rem] text-navy/80 ${center ? "mx-auto" : ""} max-w-[34em]`}>{children}</div>
-      )}
+      {!sub && !children && <Rule className="mt-5 post-head-rule" />}
     </div>
   );
 }

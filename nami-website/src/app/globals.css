@@ -14,6 +14,7 @@
   --font-jp: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-display: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-serif: var(--font-mincho), "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-title: var(--font-gloock), var(--font-tokumin), "Hiragino Mincho ProN", serif;
   --font-sans: var(--font-gothic), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
 
   --ease-wave: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -86,7 +87,7 @@
     color: var(--color-navy);
   }
   .title {
-    font-family: var(--font-serif);
+    font-family: var(--font-title);
     font-weight: 400;
     color: var(--color-navy);
     letter-spacing: -0.005em;
@@ -145,6 +146,50 @@
     scrollbar-width: none;
   }
   .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Section heads: stacked on phones; two columns from tablet up */
+.post-head-text {
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .post-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 4.5rem;
+  }
+  .post-head-text {
+    margin-top: 0;
+    padding-top: 0.5rem;
+  }
+  html[data-lang="en"] .post-head-text {
+    max-width: 30em;
+    padding-top: 2.4rem;
+  }
+  /* Japanese: title set vertically on the right, read first */
+  html:not([data-lang="en"]) .post-head {
+    flex-direction: row-reverse;
+  }
+  html:not([data-lang="en"]) .post-head-title {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1.25rem;
+  }
+  html:not([data-lang="en"]) .post-head-kicker {
+    writing-mode: vertical-rl;
+    margin: 0.4rem 0 0;
+  }
+  html:not([data-lang="en"]) .tategaki {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-wrap: nowrap;
+    word-break: keep-all;
+    line-height: 1.7;
+    letter-spacing: 0.14em;
+  }
+  html:not([data-lang="en"]) .post-head-rule {
     display: none;
   }
 }
