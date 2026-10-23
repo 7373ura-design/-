@@ -1,7 +1,6 @@
 /*
  * NAMI — small enhancements shared by the site and its static preview:
- *  1. a full-screen photo viewer with swipe ([data-lightbox])
- *  2. the enquiry form ([data-enquiry])
+ *  a full-screen photo viewer with swipe ([data-lightbox])
  * Everything is progressive: without this file the pages still work.
  */
 (function () {
@@ -14,7 +13,7 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   };
 
-  /* ------------------------------------------------------ 1. photo viewer */
+  /* ------------------------------------------------------- photo viewer */
 
   var box = null;
   var boxItems = [];
@@ -115,96 +114,10 @@
     });
   }
 
-  /* ---------------------------------------------------------- 2. enquiry */
-
-  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  function setupEnquiry(form) {
-    form.setAttribute("data-ready", "");
-    var submit = form.querySelector("[data-submit]");
-    var status = form.querySelector("[data-status]");
-    var done = form.parentElement.querySelector("[data-enquiry-done]");
-    var fields = ["name", "email", "message"];
-
-    // Preset the service from ?service= (links from the Services page)
-    var wanted = new URLSearchParams(location.search).get("service");
-    if (wanted) {
-      $$('input[name="projectType"]', form).forEach(function (r) {
-        if (r.value.toLowerCase().replace(/\s+/g, "-") === wanted) r.checked = true;
-      });
-    }
-
-    function errorKey(name) {
-      var v = form.elements[name].value || "";
-      switch (name) {
-        case "name": return v.trim() ? null : "nameRequired";
-        case "email": return !v.trim() ? "emailRequired" : EMAIL.test(v.trim()) ? null : "emailInvalid";
-        case "message": return !v.trim() ? "messageRequired" : v.length > 5000 ? "messageTooLong" : null;
-      }
-      return null;
-    }
-    function showError(name, key) {
-      $$('[data-error-for="' + name + '"]', form).forEach(function (p) {
-        p.hidden = p.getAttribute("data-error") !== key;
-      });
-      var el = form.elements[name];
-      if (el && el.setAttribute) el.setAttribute("aria-invalid", key ? "true" : "false");
-    }
-    function check(name) {
-      var k = errorKey(name);
-      showError(name, k);
-      return !k;
-    }
-    form.addEventListener("input", function (e) {
-      var n = e.target.name;
-      if (n && form.querySelector('[data-error-for="' + n + '"]:not([hidden])')) check(n);
-    });
-
-    function finish() {
-      form.hidden = true;
-      done.hidden = false;
-      window.scrollTo(0, done.getBoundingClientRect().top + window.scrollY - 110);
-      done.querySelector("[data-done-title]").focus({ preventScroll: true });
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var first = null;
-      fields.forEach(function (n) { if (!check(n) && !first) first = n; });
-      if (first) { form.elements[first].focus(); return; }
-      status.hidden = true;
-      submit.disabled = true;
-      submit.setAttribute("aria-busy", "true");
-      var request = form.hasAttribute("data-demo")
-        ? new Promise(function (resolve) { setTimeout(function () { resolve({ ok: true }); }, 500); })
-        : fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
-            .then(function (res) { return res.json().catch(function () { return { ok: false }; }); });
-      request
-        .then(function (j) {
-          if (j && j.ok) return finish();
-          if (j && j.errors) {
-            Object.keys(j.errors).forEach(function (n) { showError(n, j.errors[n]); });
-            return;
-          }
-          status.hidden = false;
-        })
-        .catch(function () { status.hidden = false; })
-        .then(function () {
-          submit.disabled = false;
-          submit.removeAttribute("aria-busy");
-        });
-    });
-  }
-
-  function initEnquiries() {
-    $$("form[data-enquiry]:not([data-ready])").forEach(setupEnquiry);
-  }
-
   /* --------------------------------------------------------------- init */
 
   function init() {
     initLightboxes();
-    initEnquiries();
   }
   init();
   // The site swaps pages without a full reload: pick up new content as it arrives

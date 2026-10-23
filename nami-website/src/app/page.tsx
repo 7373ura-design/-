@@ -1,15 +1,17 @@
 import { Hero } from "@/components/home/Hero";
-import { BackgroundSection, MeaningsSection, PromiseSection, RootsSection } from "@/components/home/sections";
+import { BackgroundSection, ContactSection, RootsSection, WorksSection } from "@/components/home/sections";
 
-/** Home is also the About page: who NAMI is, in the order of the Instagram posts. */
+/** One page: the work first, then who NAMI is and how to get in touch. */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <MeaningsSection />
-      <BackgroundSection />
-      <RootsSection />
-      <PromiseSection />
+      <WorksSection />
+      <div id="about" className="scroll-mt-16">
+        <BackgroundSection />
+        <RootsSection />
+      </div>
+      <ContactSection />
     </>
   );
 }

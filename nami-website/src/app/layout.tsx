@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        {/* Photo viewer and enquiry form (shared with the static preview) */}
+        {/* Photo viewer (shared with the static preview) */}
         <Script src="/js/nami.js" strategy="afterInteractive" />
       </body>
     </html>

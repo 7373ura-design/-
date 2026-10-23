@@ -86,7 +86,7 @@ export default async function WorkPage({ params }: Props) {
               ))}
             </div>
             <div className="mt-14 text-center">
-              <TextLink href="/projects">
+              <TextLink href="/#works">
                 <T ja="プロジェクト一覧" en="All projects" />
               </TextLink>
             </div>

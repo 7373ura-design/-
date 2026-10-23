@@ -25,22 +25,20 @@ here is already in this folder; treat the Next.js site as the source of truth.
 
 ## Pages
 
+A portfolio site: one home page plus a page for each of the four homes.
+
 | Page | Illustration | Content |
 | --- | --- | --- |
-| Home | `surfer-wide.jpg` (hero), `scrolls`, `tea`, `gum-frame`, `pavilion` | Hero, One Name Three Meanings, Background, Japan Homes, Promise (`src/app/page.tsx`) |
-| Services | `desk` | Four services (`src/data/services.ts`) and the Please Note box |
-| Projects | `village` | Four homes, linking to each project page |
+| Home | `surfer-wide.jpg` (hero), `tea`, `gum-frame`, `bridge` | Hero, Works (the four homes), About (Background, Japan Homes), Contact (`src/app/page.tsx`) |
 | Project × 4 | — | 12 photos each from `public/images/portfolio/<home>/`, with a photo viewer |
-| Contact | `bridge` | Enquiry form and How It Works |
 
-Menu: SERVICES / PROJECTS / CONTACT, the logo goes Home, plus 日本語 / EN and
-ENQUIRE.
+Menu: WORKS / ABOUT / CONTACT (links to the sections of the home page), the
+logo goes to the top, plus 日本語 / EN.
 
-## Enquiry form
+## Contact
 
-Fields: name*, email*, phone, suburb, service (optional choice of the four),
-message*. No dates or meeting method. On success show the thank-you note from
-`src/components/EnquiryForm.tsx`.
+No form. Contact is by email or Instagram DM:
 
-Send notifications to **hello@nami.example.com** for now (a placeholder: change
-it in Webflow's form settings when the real address is ready).
+- Email: **hello@nami-studio.com.au**
+- Instagram: the only outside link on the site (account URL still to come;
+  `site.instagram` in `src/data/site.ts`).

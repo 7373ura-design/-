@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { background, letters, meanings, promise, roots } from "@/data/brand";
+import { background, roots } from "@/data/brand";
+import { site } from "@/data/site";
+import { getWorks } from "@/data/works";
 import { Container } from "@/components/ui";
 import { Art, IconList, PostHead, type ArtName, type IconName } from "@/components/washi";
+import { InstagramIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
 
 /*
@@ -74,43 +77,27 @@ export function Card({
   );
 }
 
-/* --------------------------------------------------------------- Meanings */
+/* ------------------------------------------------------------------ Works */
 
-/** One Name, Three Meanings, with each post's text and the N.A.M.I letters. */
-export function MeaningsSection() {
+export function WorksSection() {
+  const works = getWorks();
   return (
-    <Post id="meaning" labelledBy="meaning-h" art="scrolls">
-      <PostHead kicker="THE STORY BEHIND NAMI" title={{ ja: "ひとつの名前、\n3つの意味", en: "One Name,\nThree Meanings" }} id="meaning-h" />
-      <ol className="mx-auto mt-14 grid max-w-5xl gap-12 md:grid-cols-3 md:gap-10">
-        {meanings.map((m, i) => (
-          <li key={m.number} className="text-center">
-            <p className="kicker text-vermilion">{m.number}.</p>
-            <p aria-hidden className={`mt-4 leading-none text-navy ${m.glyph === "N" ? "font-display text-[3.4rem]" : "font-jp text-[3.4rem] font-light"}`}>
-              {m.glyph}
-            </p>
-            <h3 className="title mt-5 text-[1.35rem]">
-              <T ja={m.title.ja} en={m.title.en} />
-            </h3>
-            <p className="subline mt-2">{m.sub}</p>
-            <p className="jp-body mx-auto mt-4 max-w-[22em] text-[0.875rem] text-navy/75">
-              <T ja={m.body.en ? m.body.ja : m.lead.ja} en={m.body.en ? m.body.en : m.lead.en} />
-            </p>
-          </li>
+    <Post id="works" labelledBy="works-h">
+      <PostHead kicker="WORKS" title={{ ja: "手がけた住まい", en: "Homes We Have Worked On" }} id="works-h" />
+      <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
+        {works.map((w) => (
+          <Card
+            key={w.slug}
+            href={`/works/${w.slug}`}
+            src={w.photos[0].src}
+            alt={w.photos[0].alt}
+            no={w.number}
+            title={w.title}
+            line={{ ja: `${w.type.ja} · ${w.location}`, en: `${w.type.en} · ${w.location}` }}
+            sizes="(min-width:768px) 45vw, 90vw"
+          />
         ))}
-      </ol>
-        <ul className="mx-auto mt-16 w-fit space-y-5">
-          {letters.map((l) => (
-            <li key={l.letter} className="flex items-baseline gap-5">
-              <span className="title w-6 text-[1.6rem] text-vermilion">{l.letter}</span>
-              <span>
-                <span className="title block text-[1.15rem]">{l.word}</span>
-                <span className="block text-[0.8125rem] text-navy/70">
-                  <T ja={l.line.ja} en={l.line.en} />
-                </span>
-              </span>
-            </li>
-          ))}
-        </ul>
+      </div>
     </Post>
   );
 }
@@ -145,15 +132,35 @@ export function RootsSection() {
   );
 }
 
-/* ---------------------------------------------------------------- Promise */
+/* ---------------------------------------------------------------- Contact */
 
-const promiseIcons: IconName[] = ["home", "infinity", "heart"];
-
-export function PromiseSection() {
+export function ContactSection() {
   return (
-    <Post id="promise" labelledBy="promise-h" art="pavilion">
-      <PostHead kicker="WHAT WE BELIEVE" title={promise.heading} id="promise-h" />
-      <IconList className="mt-12" items={promise.items.map((p, i) => ({ icon: promiseIcons[i], title: p.title, line: p.line }))} />
+    <Post id="contact" labelledBy="contact-h" art="bridge">
+      <PostHead kicker="CONTACT" title={{ ja: "お問い合わせ", en: "Get in Touch" }} sub="EMAIL OR INSTAGRAM" id="contact-h">
+        <T
+          as="p"
+          ja="ご相談やご質問は、メールまたはInstagramのDMからお気軽にどうぞ。"
+          en="For a chat about your home, email us or send a DM on Instagram."
+        />
+      </PostHead>
+      <div className="mx-auto mt-12 flex max-w-xl flex-col gap-4 sm:flex-row sm:justify-center">
+        <a
+          href={`mailto:${site.email}`}
+          className="flex min-h-14 items-center justify-center bg-navy px-8 text-[0.9375rem] text-paper transition-colors hover:bg-deep"
+        >
+          {site.email}
+        </a>
+        <a
+          href={site.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex min-h-14 items-center justify-center gap-3 border border-navy/40 px-8 text-[0.9375rem] text-navy transition-colors hover:border-navy"
+        >
+          <InstagramIcon className="h-5 w-5" />
+          <T ja="InstagramでDM" en="DM on Instagram" />
+        </a>
+      </div>
     </Post>
   );
 }

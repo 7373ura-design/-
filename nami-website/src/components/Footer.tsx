@@ -1,36 +1,27 @@
-import Link from "next/link";
-import { navigation, site } from "@/data/site";
+import { site } from "@/data/site";
 import { Logo } from "@/components/Logo";
 import { Container } from "@/components/ui";
-import { SocialIcons } from "@/components/SocialIcons";
+import { InstagramLink } from "@/components/SocialIcons";
 
 export function Footer() {
   return (
     <footer className="relative bg-navy text-paper">
-      <Container className="pb-10 pt-16 md:pt-24">
-        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr] md:gap-8">
+      <Container className="pb-10 pt-16 md:pt-20">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div>
             {/* Single-colour (white) version of the logo for the dark ground */}
             <Logo className="h-9 w-auto brightness-0 invert" />
-            <p className="mt-6 text-[0.6875rem] tracking-[0.12em] text-paper/55">{site.tagline}</p>
+            <p className="mt-6 text-[0.75rem] tracking-[0.12em] text-paper/55">{site.tagline}</p>
           </div>
-
-          <nav aria-label="Footer">
-            <ul className="space-y-3">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="label link-underline pb-1 text-paper/90 hover:text-paper">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <SocialIcons className="self-start" />
+          <div className="flex items-center gap-6">
+            <a href={`mailto:${site.email}`} className="link-underline pb-1 text-[0.9375rem] text-paper/90 hover:text-paper">
+              {site.email}
+            </a>
+            <InstagramLink className="text-paper/75 hover:text-paper" />
+          </div>
         </div>
 
-        <p className="mt-20 border-t border-paper/10 pt-6 text-[0.6875rem] tracking-[0.18em] text-paper/45">
+        <p className="mt-16 border-t border-paper/10 pt-6 text-[0.75rem] tracking-[0.12em] text-paper/45">
           © 2026 NAMI. All rights reserved.
         </p>
       </Container>

@@ -7,18 +7,13 @@ export const site = {
   // TODO: replace with the production domain once it is connected on Vercel.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nami.example.com",
   locale: "ja_JP",
-  // TODO: replace with real profile URLs.
-  social: [
-    { label: "Instagram", href: "https://instagram.com/" },
-    { label: "Facebook", href: "https://facebook.com/" },
-    { label: "LinkedIn", href: "https://linkedin.com/" },
-  ],
-  // TODO: replace with the real enquiry address.
-  email: "hello@nami.example.com",
+  // TODO: replace with the NAMI account URL once confirmed.
+  instagram: "https://instagram.com/",
+  email: "hello@nami-studio.com.au",
 };
 
 export const navigation = [
-  { label: "SERVICES", href: "/services" },
-  { label: "PROJECTS", href: "/projects" },
-  { label: "CONTACT", href: "/contact" },
+  { label: "WORKS", href: "/#works" },
+  { label: "ABOUT", href: "/#about" },
+  { label: "CONTACT", href: "/#contact" },
 ];

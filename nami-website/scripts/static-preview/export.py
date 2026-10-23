@@ -14,7 +14,7 @@ B=os.environ.get("NAMI_BASE","http://localhost:3200")
 OUT=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,"..","nami-static-preview")
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT)
 get=lambda p: urllib.request.urlopen(B+p).read().decode()
-routes={"/":"index.html","/services":"services.html","/projects":"projects.html","/contact":"contact.html"}
+routes={"/":"index.html",}
 from importlib import import_module
 import json
 works=["new-lynn-house","remuera-renovation","glen-innes-unit","hillcrest-house"]
@@ -52,8 +52,6 @@ for r,fn in routes.items():
     body=re.sub(r'src="/_next/image\?url=([^&"]+)[^"]*"',lambda m:'src="'+unquote(m.group(1)).lstrip('/')+'"',body)
     body=re.sub(r'src="/images/',r'src="images/',body)
     body=body.replace('action="javascript', 'data-x="')
-    # No server in the preview: the enquiry form shows its confirmation without sending
-    body=re.sub(r'(<form[^>]*\sdata-enquiry(="[^"]*")?)',r'\1 data-demo=""',body)
     htmlcls=re.search(r'<html[^>]*class="([^"]*)"',h).group(1)
     head=f'''<title>{title}</title>
 <meta name="color-scheme" content="light">

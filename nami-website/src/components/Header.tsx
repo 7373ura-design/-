@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
 import { Logo } from "@/components/Logo";
-import { ArrowRight } from "@/components/illustrations/Icons";
 import Image from "next/image";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
 
@@ -22,7 +21,6 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <>
@@ -41,10 +39,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={`label link-underline pb-1 transition-colors hover:text-vermilion ${
-                  isActive(item.href) ? "text-vermilion" : "text-navy"
-                }`}
+                className="label link-underline pb-1 text-navy transition-colors hover:text-vermilion"
               >
                 {item.label}
               </Link>
@@ -53,12 +48,6 @@ export function Header() {
 
           <div className="flex items-center gap-3 md:gap-4">
             <LanguageSwitch />
-            <Link
-              href="/contact"
-              className="label hidden items-center border-b border-navy/30 pb-1 text-navy transition-colors hover:border-vermilion hover:text-vermilion sm:inline-flex"
-            >
-              ENQUIRE
-            </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -97,24 +86,19 @@ export function Header() {
           </button>
         </div>
         <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center gap-1 px-5 md:px-10">
-          {[{ label: "HOME", href: "/" }, ...navigation].map((item, i) => (
+          {navigation.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => setOpen(false)}
               className="group flex items-baseline gap-4 border-b hairline py-4"
             >
-              <span className="label text-vermilion">0{i}</span>
+              <span className="label text-vermilion">0{i + 1}</span>
               <span className="font-jp text-3xl tracking-[0.12em] transition-colors group-hover:text-vermilion">
                 {item.label}
               </span>
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="label mt-8 inline-flex items-center justify-center gap-3 bg-navy px-6 py-4 text-paper"
-          >
-            ENQUIRE NOW <ArrowRight className="h-3 w-6" />
-          </Link>
         </nav>
         <div className="relative mt-8 aspect-[2/1] w-full" aria-hidden>
           <Image src="/images/washi/wave-sun.jpg" alt="" fill sizes="100vw" className="object-cover object-bottom" />
