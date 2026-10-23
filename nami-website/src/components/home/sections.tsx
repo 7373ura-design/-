@@ -125,7 +125,7 @@ export function BackgroundSection() {
 export function RootsSection() {
   return (
     <Post id="roots" labelledBy="roots-h" art="gum-frame">
-      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="20+ YEARS OF BUILDING IN AUSTRALIA" id="roots-h">
+      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="20+ YEARS IN NEW ZEALAND AND AUSTRALIA" id="roots-h">
         <T as="p" ja={roots.body.ja} en={roots.body.en} />
       </PostHead>
     </Post>

@@ -32,7 +32,7 @@ export const background = {
 export const roots = {
   heading: { ja: "Japan Homes 公認", en: "Recognised by Japan Homes" },
   body: {
-    ja: "NAMIは、Japan Homes公認のインテリアデザインです。オーストラリアで20年以上、実用的な住まいを建ててきたJapan Homesの経験を生かし、図面の上だけでなく、実際のオーストラリアの家で生きるデザインをお届けします。",
-    en: "NAMI is the interior design studio recognised by Japan Homes. Drawing on Japan Homes’ 20+ years of building practical homes in Australia, we create designs that work in real Australian homes, not just on paper.",
+    ja: "NAMIは、Japan Homes公認のインテリアデザインです。ニュージーランドとオーストラリアで20年以上、実用的な住まいを建ててきたJapan Homesの経験を生かし、図面の上だけでなく、実際の家で生きるデザインをお届けします。",
+    en: "NAMI is the interior design studio recognised by Japan Homes. Drawing on Japan Homes’ 20+ years of building practical homes in New Zealand and Australia, we create designs that work in real homes, not just on paper.",
   },
 };
