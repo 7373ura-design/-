@@ -1,3 +1,6 @@
+import { site } from "@/data/site";
+import { T } from "@/lib/i18n";
+
 /** The Instagram mark, drawn on a 24px grid. */
 export function InstagramIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
@@ -28,5 +31,36 @@ export function MailIcon({ className = "h-6 w-6" }: { className?: string }) {
       <rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
       <path d="M4 7.5l8 6 8-6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     </svg>
+  );
+}
+
+/**
+ * Email as a tap-to-open card: the address and a copy button (copying is wired
+ * in nami.js). Works without JavaScript too: the address can be selected.
+ */
+export function EmailButton({
+  className,
+  cardClassName = "bottom-full right-0 mb-3",
+  children,
+}: {
+  className: string;
+  cardClassName?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <details className="mail-pop relative">
+      <summary className={`cursor-pointer list-none [&::-webkit-details-marker]:hidden ${className}`}>{children}</summary>
+      <div className={`absolute z-10 w-max rounded-md bg-paper px-4 py-3 text-navy shadow-lg ring-1 ring-navy/10 ${cardClassName}`}>
+        <p className="select-all text-[0.9375rem]">{site.email}</p>
+        <button type="button" data-copy={site.email} className="mt-2 text-[0.8125rem] text-vermilion underline underline-offset-4">
+          <span data-copy-label>
+            <T ja="コピーする" en="Copy" />
+          </span>
+          <span data-copy-done hidden>
+            <T ja="コピーしました" en="Copied" />
+          </span>
+        </button>
+      </div>
+    </details>
   );
 }

@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 import { getWorks } from "@/data/works";
 import { Container } from "@/components/ui";
 import { Art, PostHead, type ArtName } from "@/components/washi";
-import { InstagramIcon } from "@/components/SocialIcons";
+import { EmailButton, FacebookIcon, InstagramIcon, MailIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
 
 /*
@@ -138,30 +138,39 @@ export function BackgroundSection() {
 
 /* ---------------------------------------------------------------- Contact */
 
+const contactButton =
+  "flex min-h-14 w-full items-center justify-center gap-3 bg-navy px-6 text-[0.9375rem] text-paper transition-colors hover:bg-deep";
+
 export function ContactSection() {
   return (
     <Post id="contact" labelledBy="contact-h" art="bridge">
-      <PostHead kicker="CONTACT" title={{ ja: "お問い合わせ", en: "Get in Touch" }} sub="EMAIL OR INSTAGRAM" id="contact-h">
+      <PostHead kicker="CONTACT" title={{ ja: "お問い合わせ", en: "Get in Touch" }} sub="EMAIL · INSTAGRAM · FACEBOOK" id="contact-h">
         <T
           as="p"
-          ja="ご相談やご質問は、メールまたはInstagramのDMからお気軽にどうぞ。"
-          en="For a chat about your home, email us or send a DM on Instagram."
+          ja="ご相談やご質問は、メール、またはInstagram・FacebookのDMからお気軽にどうぞ。"
+          en="For a chat about your home, email us or send a DM on Instagram or Facebook."
         />
       </PostHead>
-      <div className="mx-auto mt-12 flex max-w-xl flex-col gap-4 sm:flex-row sm:justify-center">
-        <p className="flex min-h-14 select-all items-center justify-center border border-navy/25 px-8 text-[0.9375rem] text-navy">
-          {site.email}
-        </p>
-        <a
-          href={site.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex min-h-14 items-center justify-center gap-3 bg-navy px-8 text-[0.9375rem] text-paper transition-colors hover:bg-deep"
-        >
-          <InstagramIcon className="h-5 w-5" />
-          {site.instagramHandle}
-        </a>
-      </div>
+      <ul className="mx-auto mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
+        <li>
+          <EmailButton className={contactButton} cardClassName="left-1/2 top-full mt-2 -translate-x-1/2">
+            <MailIcon className="h-5 w-5" />
+            <T ja="メール" en="Email" />
+          </EmailButton>
+        </li>
+        <li>
+          <a href={site.instagram} target="_blank" rel="noopener noreferrer" className={contactButton}>
+            <InstagramIcon className="h-5 w-5" />
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href={site.facebook} target="_blank" rel="noopener noreferrer" className={contactButton}>
+            <FacebookIcon className="h-5 w-5" />
+            Facebook
+          </a>
+        </li>
+      </ul>
     </Post>
   );
 }
