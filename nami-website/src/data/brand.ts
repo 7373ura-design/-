@@ -19,11 +19,11 @@ export const hero = {
 export const background = {
   heading: { ja: "日本とオーストラリアで\n培ったデザイン", en: "Trained in Japan\nand Australia" },
   body: {
-    ja: "日本の大学で建築を学び、建築学の学位を取得。日本庭園をはじめ、日本の空間づくりを専門的に学んできました。オーストラリアでは住宅製図（Certificate IV in Residential Drafting）の専門教育を通して、この国の住まいのつくり方を身につけています。住まいの骨格から考えたインテリアをご提案します。",
-    en: "A degree in architecture from a Japanese university, with specialist study of Japanese gardens and Japanese ways of shaping space. In Australia, training in Residential Drafting (Certificate IV) grounds that knowledge in how homes here are drawn and built. Our interiors start from the bones of your home.",
+    ja: "日本の大学で建築を学び、日本庭園をはじめ、日本の空間づくりを専門的に学んできました。オーストラリアでは住宅製図（Certificate IV in Residential Drafting）の専門教育を通して、この国の住まいのつくり方を身につけています。住まいの骨格から考えたインテリアをご提案します。",
+    en: "Architecture studied at university in Japan, with specialist study of Japanese gardens and Japanese ways of shaping space. In Australia, training in Residential Drafting (Certificate IV) grounds that knowledge in how homes here are drawn and built. Our interiors start from the bones of your home.",
   },
   items: [
-    { title: { ja: "建築学の学位", en: "Architecture degree" }, line: { ja: "日本の大学", en: "University in Japan" } },
+    { title: { ja: "建築", en: "Architecture" }, line: { ja: "日本の大学で学ぶ", en: "Studied at university in Japan" } },
     { title: { ja: "日本庭園", en: "Japanese gardens" }, line: { ja: "日本の空間づくりを専門的に", en: "Specialist study of Japanese space" } },
     { title: { ja: "Residential Drafting", en: "Residential Drafting" }, line: { ja: "Certificate IV（オーストラリア）", en: "Certificate IV, Australia" } },
   ],
