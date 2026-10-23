@@ -4,7 +4,7 @@ import { background } from "@/data/brand";
 import { site } from "@/data/site";
 import { getWorks } from "@/data/works";
 import { Container } from "@/components/ui";
-import { Art, IconList, PostHead, type ArtName, type IconName } from "@/components/washi";
+import { Art, PostHead, type ArtName } from "@/components/washi";
 import { InstagramIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
 
@@ -73,6 +73,9 @@ export function Card({
       <p className="mt-1.5 text-[0.8125rem] text-navy/65">
         <T ja={line.ja} en={line.en} />
       </p>
+      <p className="mt-3 text-[0.8125rem] text-vermilion">
+        <T ja="写真をタップして詳細へ →" en="Tap the photo for details →" />
+      </p>
     </Link>
   );
 }
@@ -83,7 +86,13 @@ export function WorksSection() {
   const works = getWorks();
   return (
     <Post id="works" labelledBy="works-h">
-      <PostHead kicker="WORKS" title={{ ja: "手がけた住まい", en: "Homes We Have Worked On" }} id="works-h" />
+      <PostHead kicker="WORKS" title={{ ja: "手がけた住まい", en: "Homes We Have Worked On" }} id="works-h">
+        <T
+          as="p"
+          ja="写真をタップすると、それぞれの住まいのこだわりと、ほかの写真をご覧いただけます。"
+          en="Tap a photo to see what shaped each home, with more pictures."
+        />
+      </PostHead>
       <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
         {works.map((w) => (
           <Card
@@ -104,17 +113,24 @@ export function WorksSection() {
 
 /* ------------------------------------------------------------- Background */
 
-const backgroundIcons: IconName[] = ["bookmark", "leaf", "ruler", "home"];
-
 export function BackgroundSection() {
   return (
     <Post id="background" labelledBy="background-h" art="tea">
       <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="ARCHITECTURE · GARDENS · DRAFTING · JAPAN HOMES" id="background-h">
         <T as="p" ja={background.body.ja} en={background.body.en} />
-        <IconList
-          className="!mx-0 mt-10"
-          items={background.items.map((b, i) => ({ icon: backgroundIcons[i], title: b.title, line: b.line }))}
-        />
+        {/* A plain list, ruled like a page of notes */}
+        <dl className="mt-10 border-b border-navy/15">
+          {background.items.map((b) => (
+            <div key={b.title.en} className="grid gap-1 border-t border-navy/15 py-4 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+              <dt className="title text-[1.05rem] !leading-snug">
+                <T ja={b.title.ja} en={b.title.en} />
+              </dt>
+              <dd className="text-[0.875rem] leading-relaxed text-navy/75">
+                <T ja={b.line.ja} en={b.line.en} />
+              </dd>
+            </div>
+          ))}
+        </dl>
       </PostHead>
     </Post>
   );
