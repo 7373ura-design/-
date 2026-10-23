@@ -14,7 +14,7 @@ export function Hero() {
       <div className="relative aspect-[3/2] max-h-[86svh] w-full overflow-hidden">
         <Image
           src="/images/washi/surfer-wide.jpg"
-          alt="Japanese woodblock print (hanga) of the NAMI surfer: a girl with a basket of rolled drawings, a ruler and pencils on her back rides a red surfboard over a wave, a sea turtle swimming beside her, pointing towards a green island and the red sun"
+          alt="Woodblock-style picture of the NAMI surfer: a girl with a basket of rolled drawings, a ruler and pencils on her back rides a red surfboard over a wave, a sea turtle swimming beside her, pointing towards a green island and the red sun"
           fill
           priority
           sizes="100vw"
