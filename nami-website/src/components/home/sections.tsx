@@ -68,7 +68,7 @@ export function Card({
       </div>
       <p className="kicker mt-6 text-vermilion">{no}.</p>
       <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">
-        {typeof title === "string" ? title : <T ja={title.ja} en={title.en} />}
+        {typeof title === "string" ? title : <T ja={title.ja.replace("\n", "")} en={title.en} />}
       </h3>
       <p className="mt-1.5 text-[0.8125rem] text-navy/65">
         <T ja={line.ja} en={line.en} />

@@ -45,7 +45,9 @@ export default async function WorkPage({ params }: Props) {
             title={work.title}
             sub={`${work.type.en.toUpperCase()} · ${work.location.toUpperCase()}`}
             size="lg"
-          />
+          >
+            <T ja={work.story.ja} en={work.story.en} />
+          </PostHead>
         </Container>
       </section>
 
@@ -77,7 +79,7 @@ export default async function WorkPage({ params }: Props) {
                   </div>
                   <p className="kicker mt-6 text-vermilion">{w.number}.</p>
                   <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">
-                    <T ja={w.title.ja} en={w.title.en} />
+                    <T ja={w.title.ja.replace("\n", "")} en={w.title.en} />
                   </h3>
                   <p className="mt-1.5 text-[0.8125rem] text-navy/65">
                     <T ja={`${w.type.ja} · ${w.location}`} en={`${w.type.en} · ${w.location}`} />
