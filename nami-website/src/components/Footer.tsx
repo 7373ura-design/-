@@ -14,9 +14,7 @@ export function Footer() {
             <p className="mt-6 text-[0.75rem] tracking-[0.12em] text-paper/55">{site.tagline}</p>
           </div>
           <div className="flex items-center gap-6">
-            <a href={`mailto:${site.email}`} className="link-underline pb-1 text-[0.9375rem] text-paper/90 hover:text-paper">
-              {site.email}
-            </a>
+            <p className="text-[0.9375rem] text-paper/90">{site.email}</p>
             <InstagramLink className="text-paper/75 hover:text-paper" />
           </div>
         </div>

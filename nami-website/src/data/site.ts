@@ -7,8 +7,8 @@ export const site = {
   // TODO: replace with the production domain once it is connected on Vercel.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nami.example.com",
   locale: "ja_JP",
-  // TODO: replace with the NAMI account URL once confirmed.
-  instagram: "https://instagram.com/",
+  instagram: "https://www.instagram.com/nami.studio_au/",
+  instagramHandle: "@nami.studio_au",
   email: "hello@nami-studio.com.au",
 };
 

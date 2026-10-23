@@ -145,20 +145,17 @@ export function ContactSection() {
         />
       </PostHead>
       <div className="mx-auto mt-12 flex max-w-xl flex-col gap-4 sm:flex-row sm:justify-center">
-        <a
-          href={`mailto:${site.email}`}
-          className="flex min-h-14 items-center justify-center bg-navy px-8 text-[0.9375rem] text-paper transition-colors hover:bg-deep"
-        >
+        <p className="flex min-h-14 select-all items-center justify-center border border-navy/25 px-8 text-[0.9375rem] text-navy">
           {site.email}
-        </a>
+        </p>
         <a
           href={site.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-h-14 items-center justify-center gap-3 border border-navy/40 px-8 text-[0.9375rem] text-navy transition-colors hover:border-navy"
+          className="flex min-h-14 items-center justify-center gap-3 bg-navy px-8 text-[0.9375rem] text-paper transition-colors hover:bg-deep"
         >
           <InstagramIcon className="h-5 w-5" />
-          <T ja="InstagramでDM" en="DM on Instagram" />
+          {site.instagramHandle}
         </a>
       </div>
     </Post>

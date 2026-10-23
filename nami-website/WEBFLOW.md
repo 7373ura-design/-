@@ -39,6 +39,6 @@ logo goes to the top, plus 日本語 / EN.
 
 No form. Contact is by email or Instagram DM:
 
-- Email: **hello@nami-studio.com.au**
-- Instagram: the only outside link on the site (account URL still to come;
-  `site.instagram` in `src/data/site.ts`).
+- Email: **hello@nami-studio.com.au**, shown as plain text (not a link)
+- Instagram: **@nami.studio_au** (https://www.instagram.com/nami.studio_au/),
+  the only link that leaves the site
