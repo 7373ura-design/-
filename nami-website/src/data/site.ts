@@ -9,6 +9,8 @@ export const site = {
   locale: "ja_JP",
   instagram: "https://www.instagram.com/nami.studio_au/",
   instagramHandle: "@nami.studio_au",
+  // TODO: replace with the NAMI Facebook page once confirmed.
+  facebook: "https://www.facebook.com/",
   email: "hello@nami-studio.com.au",
 };
 

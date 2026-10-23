@@ -1,6 +1,7 @@
 /*
  * NAMI — small enhancements shared by the site and its static preview:
- *  a full-screen photo viewer with swipe ([data-lightbox])
+ *  a full-screen photo viewer with swipe ([data-lightbox]),
+ *  and copy-to-clipboard buttons ([data-copy])
  * Everything is progressive: without this file the pages still work.
  */
 (function () {
@@ -113,6 +114,24 @@
       });
     });
   }
+
+  /* ---------------------------------------------------------------- copy */
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy]");
+    if (b) {
+      var done = function () {
+        b.querySelector("[data-copy-label]").hidden = true;
+        b.querySelector("[data-copy-done]").hidden = false;
+      };
+      if (navigator.clipboard) navigator.clipboard.writeText(b.getAttribute("data-copy")).then(done, function () {});
+      return;
+    }
+    // Close an open email card when tapping elsewhere
+    $$("details.mail-pop[open]").forEach(function (d) {
+      if (!d.contains(e.target)) d.removeAttribute("open");
+    });
+  });
 
   /* --------------------------------------------------------------- init */
 
