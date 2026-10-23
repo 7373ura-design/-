@@ -203,7 +203,7 @@ export function IconList({
             <p className="title text-[1.2rem] !leading-snug">
               <T ja={it.title.ja} en={it.title.en} />
             </p>
-            <p className="mt-0.5 text-[0.8125rem] text-navy/70">
+            <p className="mt-0.5 max-w-[30em] text-[0.8125rem] text-navy/70">
               <T ja={it.line.ja} en={it.line.en} />
             </p>
           </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { background, roots } from "@/data/brand";
+import { background } from "@/data/brand";
 import { site } from "@/data/site";
 import { getWorks } from "@/data/works";
 import { Container } from "@/components/ui";
@@ -104,29 +104,17 @@ export function WorksSection() {
 
 /* ------------------------------------------------------------- Background */
 
-const backgroundIcons: IconName[] = ["bookmark", "leaf", "ruler"];
+const backgroundIcons: IconName[] = ["bookmark", "leaf", "ruler", "home"];
 
 export function BackgroundSection() {
   return (
     <Post id="background" labelledBy="background-h" art="tea">
-      <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="ARCHITECTURE, GARDENS, DRAFTING" id="background-h">
+      <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="ARCHITECTURE · GARDENS · DRAFTING · JAPAN HOMES" id="background-h">
         <T as="p" ja={background.body.ja} en={background.body.en} />
-      </PostHead>
-      <IconList
-        className="mt-12"
-        items={background.items.map((b, i) => ({ icon: backgroundIcons[i], title: b.title, line: b.line }))}
-      />
-    </Post>
-  );
-}
-
-/* ------------------------------------------------------------------ Roots */
-
-export function RootsSection() {
-  return (
-    <Post id="roots" labelledBy="roots-h" art="gum-frame">
-      <PostHead kicker="OUR ROOTS" title={roots.heading} sub="20+ YEARS IN NEW ZEALAND AND AUSTRALIA" id="roots-h">
-        <T as="p" ja={roots.body.ja} en={roots.body.en} />
+        <IconList
+          className="!mx-0 mt-10"
+          items={background.items.map((b, i) => ({ icon: backgroundIcons[i], title: b.title, line: b.line }))}
+        />
       </PostHead>
     </Post>
   );

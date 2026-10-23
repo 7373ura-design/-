@@ -29,7 +29,7 @@ A portfolio site: one home page plus a page for each of the four homes.
 
 | Page | Illustration | Content |
 | --- | --- | --- |
-| Home | `surfer-wide.jpg` (hero), `tea`, `gum-frame`, `bridge` | Hero, Works (the four homes), About (Background, Japan Homes), Contact (`src/app/page.tsx`) |
+| Home | `surfer-wide.jpg` (hero), `tea`, `bridge` | Hero, Works (the four homes), About (a short line and a list: architecture, qualifications, Residential Drafting, Japan Homes), Contact (`src/app/page.tsx`) |
 | Project × 4 | — | 12 photos each from `public/images/portfolio/<home>/`, with a photo viewer |
 
 Menu: WORKS / ABOUT / CONTACT (links to the sections of the home page), the
