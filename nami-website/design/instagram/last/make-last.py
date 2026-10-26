@@ -1,20 +1,33 @@
-L="/home/user/-/nami-website/public/images/logo/nami-logo.png"
+R="/home/user/-/nami-website"
+W=f"{R}/design/instagram/washi-paper.jpg"
+P=f"{R}/public/images/washi/wave-sun.jpg"
+E=f"{R}/public/images/logo/nami-emblem.png"
+# Instagram icons, drawn as simple outlines so they read as the real buttons
+BOOK='<svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg>'
+SEND='<svg viewBox="0 0 24 24"><path d="M22 3 9.5 13.5M22 3l-7 18-5.5-7.5L2 10z"/></svg>'
+PLUS='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v9M7.5 12h9"/></svg>'
 open("final_last.html","w").write(f'''<!doctype html><html><head><meta charset=utf-8>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Jost:wght@400;500&display=block" rel="stylesheet"><style>
-*{{margin:0;padding:0;box-sizing:border-box}}body{{width:1080px;height:1350px;background:#f4f1ec;color:#1e3a5c;font-family:Jost,sans-serif}}
-.s{{width:1080px;height:1350px;padding:150px 110px 0;position:relative}}
-h1{{font-family:'Playfair Display';font-weight:600;font-size:104px;line-height:1.08;letter-spacing:.01em}}
-.lead{{font-size:34px;line-height:1.5;margin:44px 0 70px;color:#3d5570;max-width:820px}}
-.row{{display:flex;align-items:baseline;border-top:2px solid rgba(30,58,92,.18);padding:30px 0}}
-.row:last-of-type{{border-bottom:2px solid rgba(30,58,92,.18)}}
-.k{{width:250px;font-weight:500;font-size:26px;letter-spacing:.22em;color:#e8553b}}
-.v{{font-size:36px;line-height:1.3}}
-.logo{{position:absolute;left:50%;bottom:110px;transform:translateX(-50%);width:300px}}
-</style></head><body><div class="s">
-<h1>NO QUESTION<br>IS TOO SMALL</h1>
-<p class="lead">Thinking about your home, big change or small detail? We'd love to hear from you.</p>
-<div class="row"><div class="k">DM</div><div class="v">@nami.studio_au</div></div>
-<div class="row"><div class="k">EMAIL</div><div class="v">hello@nami-studio.com.au</div></div>
-<div class="row"><div class="k">FOLLOW</div><div class="v">for more homes</div></div>
-<div class="row"><div class="k">SAVE</div><div class="v">this post for your next project</div></div>
-<img class="logo" src="file://{L}"></div></body></html>''')
+*{{margin:0;padding:0;box-sizing:border-box}}body{{width:1080px;height:1350px;color:#1e3a5c;font-family:Jost,sans-serif}}
+.s{{width:1080px;height:1350px;position:relative;overflow:hidden;background:#efe6d6 url(file://{W}) center/cover}}
+.print{{position:absolute;left:0;right:0;bottom:0;height:560px;background:url(file://{P}) center 62%/cover;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34%);mask-image:linear-gradient(to bottom,transparent 0,#000 34%)}}
+.top{{position:absolute;top:96px;left:0;right:0;text-align:center}}
+.em{{width:92px;height:92px;display:block;margin:0 auto 34px}}
+.k{{font-weight:500;font-size:22px;letter-spacing:.42em;color:#e8553b;margin-bottom:26px}}
+h1{{font-family:'Playfair Display';font-weight:600;font-size:96px;line-height:1.06}}
+.lead{{font-size:31px;line-height:1.55;margin:34px auto 0;color:#3d5570;max-width:760px}}
+.dm{{display:inline-block;margin-top:46px;background:#1e3a5c;color:#f6efe2;font-size:34px;letter-spacing:.04em;padding:22px 48px;border-radius:999px}}
+.mail{{margin-top:20px;font-size:27px;color:#3d5570}}
+.acts{{display:flex;justify-content:center;gap:66px;margin-top:52px}}
+.a{{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:20px;font-weight:500;letter-spacing:.24em}}
+.a svg{{width:46px;height:46px;fill:none;stroke:#1e3a5c;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}}
+</style></head><body><div class="s"><div class="print"></div><div class="top">
+<img class="em" src="file://{E}">
+<div class="k">NEST AND MEMORIES INSIDE</div>
+<h1>No question<br>is too small</h1>
+<p class="lead">Thinking about your home, a big change or a small detail? We'd love to hear from you.</p>
+<div class="dm">DM @nami.studio_au</div>
+<div class="mail">or hello@nami-studio.com.au</div>
+<div class="acts"><div class="a">{BOOK}SAVE</div><div class="a">{SEND}SHARE</div><div class="a">{PLUS}FOLLOW</div></div>
+</div></div></body></html>''')
