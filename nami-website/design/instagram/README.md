@@ -16,3 +16,9 @@ with `deviceScaleFactor: 2` (2160×2700).
 
 `photos/<home>/NN.jpg` are the carousel photos: the 2560px versions from
 Houzz (sharper than the 1800px website copies), centre-cropped to 4:5.
+
+## Closing slide
+
+`last/last.jpg` is the final slide of every carousel: DM, email, follow and
+save, with the NAMI logo. Rebuild with `last/make-last.py` and the same 2x
+Playwright screenshot as the covers.
