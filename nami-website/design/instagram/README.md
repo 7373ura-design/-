@@ -5,3 +5,10 @@ same washi texture as the website (`body::before` in `src/app/globals.css`) with
 added kozo fibres. To render it again:
 
     node design/instagram/render.js "$PWD/design/instagram/washi-paper.html" washi.png
+
+## Carousel covers
+
+`covers/*.jpg` are the first slide of each home's Instagram carousel: the first
+portfolio photo darkened, with the title in Playfair Display. The rest of the
+carousel is photos only; the text goes in the post caption. Rebuild with
+`covers/make-covers.py` (writes HTML) and a Playwright screenshot at 1080×1350.
