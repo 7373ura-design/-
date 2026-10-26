@@ -116,7 +116,7 @@ export function WorksSection() {
 export function BackgroundSection() {
   return (
     <Post id="background" labelledBy="background-h" art="tea">
-      <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="ARCHITECTURE · GARDENS · DRAFTING · JAPAN HOMES" id="background-h">
+      <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="JAPAN · AUSTRALIA · NEW ZEALAND" id="background-h">
         <T as="p" ja={background.body.ja} en={background.body.en} />
         {/* A plain list, ruled like a page of notes */}
         <dl className="mt-10 border-b border-navy/15">

@@ -17,10 +17,10 @@ export const hero = {
 
 /** About NAMI: one short line, then the designer's training and Japan Homes, as a list. */
 export const background = {
-  heading: { ja: "日本とオーストラリアで\n培ったデザイン", en: "Trained in Japan\nand Australia" },
+  heading: { ja: "日本とオーストラリアで学び、\nニュージーランドで形に", en: "Learned in Japan\nand Australia,\nBuilt in New Zealand" },
   body: {
-    ja: "日本で学んだ空間づくりと、ニュージーランド・オーストラリアの家づくりの経験をもとに、住まいの骨格から考えたインテリアをご提案します。",
-    en: "Grounded in Japanese ways of shaping space and in building homes in New Zealand and Australia, our interiors start from the bones of your home.",
+    ja: "日本とオーストラリアで学んだ空間づくりを、ニュージーランドの住まいで形にしてきました。住まいの骨格から考えたインテリアをご提案します。",
+    en: "Ways of shaping space learned in Japan and Australia, brought to life in homes across New Zealand. Our interiors start from the bones of your home.",
   },
   items: [
     { title: { ja: "建築", en: "Architecture" }, line: { ja: "日本の大学で建築を学ぶ", en: "Studied architecture at university in Japan" } },

@@ -5,20 +5,20 @@ import { Container } from "@/components/ui";
 import { T } from "@/lib/i18n";
 
 /**
- * Hero — the NAMI surfer across the full width of the page, like the
- * illustration that opens each post, with the title and text set below.
+ * Hero — a quiet Japanese room opening onto an Oceania landscape, across the
+ * full width of the page, with the title and text set below.
  */
 export function Hero() {
   return (
     <section className="relative pt-20 md:pt-24" aria-labelledby="hero-heading">
-      <div className="relative aspect-[3/2] max-h-[86svh] w-full overflow-hidden">
+      <div className="relative aspect-[4/3] max-h-[80svh] w-full overflow-hidden sm:aspect-[2160/1119]">
         <Image
-          src="/images/washi/surfer-wide.jpg"
-          alt="Woodblock-style picture of the NAMI surfer: a girl with a basket of rolled drawings, a ruler and pencils on her back rides a red surfboard over a wave, a sea turtle swimming beside her, pointing towards a green island and the red sun"
+          src="/images/washi/shoji.jpg"
+          alt="Woodblock-style picture of a quiet Japanese room: an open shoji screen, a low timber bench with a vase, and a gum-tree landscape beyond"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_75%]"
+          className="object-cover object-[35%_50%]"
         />
       </div>
 
