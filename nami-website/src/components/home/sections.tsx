@@ -86,13 +86,7 @@ export function WorksSection() {
   const works = getWorks();
   return (
     <Post id="works" labelledBy="works-h">
-      <PostHead kicker="WORKS" title={{ ja: "手がけた住まい", en: "Homes We Have Worked On" }} id="works-h">
-        <T
-          as="p"
-          ja="写真をタップすると、それぞれの住まいのこだわりと、ほかの写真をご覧いただけます。"
-          en="Tap a photo to see what shaped each home, with more pictures."
-        />
-      </PostHead>
+      <PostHead title={{ ja: "作品", en: "Works" }} id="works-h" />
       <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
         {works.map((w) => (
           <Card
@@ -116,10 +110,9 @@ export function WorksSection() {
 export function BackgroundSection() {
   return (
     <Post id="background" labelledBy="background-h" art="tea">
-      <PostHead kicker="OUR BACKGROUND" title={background.heading} sub="JAPAN · AUSTRALIA · NEW ZEALAND" id="background-h">
-        <T as="p" ja={background.body.ja} en={background.body.en} />
+      <PostHead title={{ ja: "プロフィール", en: "About" }} id="background-h">
         {/* A plain list, ruled like a page of notes */}
-        <dl className="mt-10 border-b border-navy/15">
+        <dl className="border-b border-navy/15">
           {background.items.map((b) => (
             <div key={b.title.en} className="grid gap-1 border-t border-navy/15 py-4 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
               <dt className="title text-[1.05rem] !leading-snug">
@@ -144,13 +137,7 @@ const contactButton =
 export function ContactSection() {
   return (
     <Post id="contact" labelledBy="contact-h" art="bridge">
-      <PostHead kicker="CONTACT" title={{ ja: "お問い合わせ", en: "Get in Touch" }} sub="EMAIL · INSTAGRAM · FACEBOOK" id="contact-h">
-        <T
-          as="p"
-          ja="ご相談やご質問は、メール、またはInstagram・FacebookのDMからお気軽にどうぞ。"
-          en="For a chat about your home, email us or send a DM on Instagram or Facebook."
-        />
-      </PostHead>
+      <PostHead title={{ ja: "お問い合わせ", en: "Contact" }} id="contact-h" />
       <ul className="mx-auto mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
         <li>
           <EmailButton className={contactButton} cardClassName="left-1/2 top-full mt-2 -translate-x-1/2">

@@ -10,18 +10,13 @@ export const hero = {
   kicker: "JAPANDI INTERIOR DESIGN, SYDNEY",
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
-    ja: "NAMIはシドニーのインテリアデザインスタジオです。日本の考え方をオーストラリアの暮らしに合わせた、穏やかで自然なジャパンディの住まいをつくります。",
-    en: "NAMI is a Sydney interior design studio. We create calm, natural Japandi homes — Japanese principles, shaped for Australian life.",
+    ja: "日本の美意識を、今の暮らしに。",
+    en: "Japanese sensibility, for the way you live now.",
   },
 };
 
-/** About NAMI: one short line, then the designer's training and Japan Homes, as a list. */
+/** About NAMI: the designer's training and Japan Homes, as a list. */
 export const background = {
-  heading: { ja: "日本とオーストラリアで学び、\nニュージーランドで形に", en: "Learned in Japan\nand Australia,\nBuilt in New Zealand" },
-  body: {
-    ja: "日本とオーストラリアで学んだ空間づくりを、ニュージーランドの住まいで形にしてきました。住まいの骨格から考えたインテリアをご提案します。",
-    en: "Ways of shaping space learned in Japan and Australia, brought to life in homes across New Zealand. Our interiors start from the bones of your home.",
-  },
   items: [
     { title: { ja: "建築", en: "Architecture" }, line: { ja: "日本の大学で建築を学ぶ", en: "Studied architecture at university in Japan" } },
     {

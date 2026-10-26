@@ -22,6 +22,8 @@ here is already in this folder; treat the Next.js site as the source of truth.
   the text on the left. In English the title is on the left. Phones stack them.
 - No animation anywhere.
 - Illustrations: `public/images/washi/*.jpg`, full width between sections.
+- Section titles are short (作品 / Works, プロフィール / About, お問い合わせ / Contact),
+  with no extra labels or repeated explanations.
 
 ## Pages
 
@@ -29,7 +31,7 @@ A portfolio site: one home page plus a page for each of the four homes.
 
 | Page | Illustration | Content |
 | --- | --- | --- |
-| Home | `shoji` (hero), `tea`, `bridge`; the surfer cut-out `surfer-mark.png` sits on the footer's top edge | Hero, Works (the four homes), About (a short line and a list: architecture, qualifications, Residential Drafting, Japan Homes), Contact (`src/app/page.tsx`) |
+| Home | `shoji` (hero), `tea`, `bridge`; the surfer cut-out `surfer-mark.png` sits on the footer's top edge | Hero, Works (the four homes), About (a list: architecture, qualifications, Residential Drafting, Japan Homes), Contact (`src/app/page.tsx`) |
 | Project × 4 | — | 12 photos each from `public/images/portfolio/<home>/`, with a photo viewer |
 
 Menu: WORKS / ABOUT / CONTACT (links to the sections of the home page), the
