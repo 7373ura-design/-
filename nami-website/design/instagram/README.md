@@ -11,4 +11,8 @@ added kozo fibres. To render it again:
 `covers/*.jpg` are the first slide of each home's Instagram carousel: the first
 portfolio photo darkened, with the title in Playfair Display. The rest of the
 carousel is photos only; the text goes in the post caption. Rebuild with
-`covers/make-covers.py` (writes HTML) and a Playwright screenshot at 1080×1350.
+`covers/make-covers.py` (writes HTML) and a Playwright screenshot at 1080×1350
+with `deviceScaleFactor: 2` (2160×2700).
+
+`photos/<home>/NN.jpg` are the carousel photos: the 2560px versions from
+Houzz (sharper than the 1800px website copies), centre-cropped to 4:5.
