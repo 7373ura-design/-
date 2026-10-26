@@ -1,0 +1,26 @@
+<!doctype html><html><head><style>
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden}
+body{background:#f2e8d9;position:relative}
+#t{position:absolute;inset:0;mix-blend-mode:multiply;background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.01875 0.05' numOctaves='4' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.58 0 0 0 0 0.46 1.3 0 0 0 -0.7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0046875' numOctaves='3' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.5 0 0 0 0 0.38 0.6 0 0 0 -0.22'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23c%29'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='1' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E"); opacity:0.75}
+canvas{position:absolute;inset:0}
+</style></head><body><canvas id=c width=1080 height=1350></canvas><div id=t></div>
+<script>
+let s=7;const r=()=>{s=(s*16807)%2147483647;return s/2147483647};
+const g=document.getElementById('c').getContext('2d');
+// kozo fibres: long pale strands and a few darker ones
+function strand(light){
+  let x=r()*1180-50,y=r()*1450-50,a=r()*Math.PI*2,len=40+r()*260;
+  g.beginPath();g.moveTo(x,y);
+  for(let i=0;i<len;i+=6){a+=(r()-0.5)*0.35;x+=Math.cos(a)*6;y+=Math.sin(a)*6;g.lineTo(x,y)}
+  g.lineWidth=0.4+r()*1.1;
+  g.strokeStyle=light?`rgba(255,252,244,${0.35+r()*0.4})`:`rgba(150,125,90,${0.10+r()*0.16})`;
+  g.stroke();
+}
+for(let i=0;i<1400;i++)strand(true);
+for(let i=0;i<300;i++)strand(false);
+// tiny specks of bark
+for(let i=0;i<260;i++){g.fillStyle=`rgba(120,95,65,${0.12+r()*0.25})`;g.beginPath();g.ellipse(r()*1080,r()*1350,0.5+r()*1.6,0.4+r()*0.9,r()*3,0,7);g.fill()}
+</script></body></html>
