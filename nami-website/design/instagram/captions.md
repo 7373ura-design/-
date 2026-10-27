@@ -1,61 +1,62 @@
 # Instagram captions
 
 One caption per carousel. The first line is the hook (the only line shown
-before "more"); the middle is the story from `src/data/works.ts`; then the
-call to action and hashtags.
+before "more"); the middle retells the story from `src/data/works.ts` in a
+reader-first voice; the last lines say where the home is, invite a DM and
+carry six searchable hashtags.
 
-## 01 — New Lynn House (Colour and Calm)
+## 01 — New Lynn (Colour and Calm)
 
 ```
-A red front door was never meant to be this calm.
+Can a bold red home still feel calm inside? This one does.
 
-New Lynn House · New home
+Outside, warm red and soft brown cladding make a welcoming first impression. Inside, everything slows down: white walls, light timber cabinetry and wood floors. A black front door and slim black handles add just enough contrast, and a wave-shaped pendant light gives the kitchen a quiet focal point.
 
-Outside, a warm red facade is paired with soft brown cladding for a look that is both inviting and refined. Inside, a white base is softened by light timber cabinetry and wood floors. A black front door and slim black handles add definition, and a wave-like pendant light brings a quiet accent to the kitchen. White, timber and black, nothing more: a calm Japandi balance.
+White, timber and black. Nothing more, and nothing missing.
 
-Save this for your next project, and DM us with any questions about your own home.
+A new home we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
-## 02 — Remuera Renovation (Old Meets New)
+## 02 — Remuera (Old Meets New)
 
 ```
-Learning from the old to create the new.
+A wooden bath on the deck, and the ritual of Japanese bathing at home.
 
-Remuera Renovation
+This renovation keeps the character of the original house and brings in the Japanese way of living, shaped for everyday life today. Timber slat screens wrap the entry and ceiling, with hidden lighting for a soft evening glow. A wooden soaking tub sits out on the deck, with a timber bath and low stool inside. Warm floors, a jute rug, and the same slat detail repeated on the kitchen island.
 
-The idea here is onko-chishin: learning from the old to create the new. Japanese ways of living are shaped to suit a New Zealand lifestyle. Timber slat screens wrap the entry and ceiling, with hidden lighting that casts a soft glow. A wooden soaking tub on the deck, and a timber bath and low stool in the bathroom, bring the Japanese ritual of bathing into everyday life. Warm timber floors, a jute rug, and the slat detail repeated on the kitchen island. The character of the original home stays, and tradition and modern life become one.
+Old and new, living side by side.
 
-Save this for your next project, and DM us with any questions about your own home.
+A renovation we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #renovation
 ```
 
-## 03 — Glen Innes Unit (Into the Garden)
+## 03 — Glen Innes (Into the Garden)
 
 ```
-Why the kitchen wall in this home is green.
+We painted the kitchen green to bring the garden inside.
 
-Glen Innes Unit · New home
+Wide sliding doors open the living space straight onto a timber deck, lawn and planting, and pale wood floors run right through from inside to out. Outside, black vertical cladding with a soft apricot tone under the eaves. In the kitchen, a soft green wall balanced with warm timber, so the garden feels part of the home all day long.
 
-A home that opens onto a lush, green garden. Black vertical cladding, with a soft apricot tone tucked under the eaves, gives a calm presence. White gravel and stepping stones lead through the garden, and a timber deck reaches out towards the lawn and planting. Wide sliding doors join inside and out, and pale wood floors run straight onto the deck. To carry the beauty of the garden indoors, the kitchen wall is a soft green, and the balance between that green and the warm timber of the kitchen was the heart of the design.
+A home that lives with its garden.
 
-Save this for your next project, and DM us with any questions about your own home.
+A new home we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
-## 04 — Hillcrest House (Simply Quiet)
+## 04 — Hillcrest (Simply Quiet)
 
 ```
-A few colours, a few materials, and a whole home that feels quiet.
+Fewer colours, fewer materials, and a home that feels completely calm.
 
-Hillcrest House · New home
+Set on a hilltop, this home opens to the city and sky through a wide deck and big windows, while slim high windows frame the greenery like pictures. White walls and light timber floors fill it with light. Charcoal carpet makes the bedrooms restful. Woven pendants over a timber kitchen, a floating timber vanity with black tapware in the bathroom.
 
-A home where simplicity and harmony come first. Set on a hilltop, it opens to the city and sky through a generous deck and wide windows, while slim high windows frame greenery like a picture. White walls and light timber floors spread the light, and deep charcoal carpet brings calm to the bedrooms. Timber cabinetry and woven pendant lights in the kitchen, a floating timber vanity and black tapware in the bathroom. With only a few colours and materials, the whole home feels clean and quietly complete.
+Simple, and quietly complete.
 
-Save this for your next project, and DM us with any questions about your own home.
+A new home we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
