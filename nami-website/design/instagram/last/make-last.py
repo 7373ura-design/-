@@ -10,17 +10,17 @@ li="".join(f'<li><svg viewBox="0 0 24 24">{s}</svg><p><b>{k}</b> {v}</p></li>' f
 open("final_last.html","w").write(f'''<!doctype html><html><head><meta charset=utf-8>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=block" rel="stylesheet"><style>
 *{{margin:0;padding:0;box-sizing:border-box}}body{{width:1080px;height:1350px;color:#1e3a5c;font-family:Jost,sans-serif}}
-.s{{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f1ec;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:440px}}
+.s{{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f1ec;display:flex;flex-direction:column;align-items:center;justify-content:center}}
 .k{{font-size:20px;letter-spacing:.42em;color:#7a8a9c}}
-h1{{font-family:'Playfair Display';font-weight:500;font-size:100px;line-height:1.05;text-align:center}}
+h1{{font-family:'Playfair Display';font-weight:500;font-size:112px;line-height:1.05;text-align:center}}
 h1 i{{font-style:italic}}
 .rule{{width:56px;height:1.5px;background:#1e3a5c;opacity:.5;margin:46px 0 52px}}
-ul{{list-style:none;display:flex;flex-direction:column;gap:34px}}
+ul{{list-style:none;display:flex;flex-direction:column;gap:40px}}
 li{{display:flex;align-items:center;gap:36px}}
-svg{{width:48px;height:48px;flex:none;fill:none;stroke:#1e3a5c;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}}
-p{{font-size:35px;color:#4a5f78;letter-spacing:.01em}} b{{font-weight:500;color:#1e3a5c}}
+svg{{width:56px;height:56px;flex:none;fill:none;stroke:#1e3a5c;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}}
+p{{font-size:44px;color:#4a5f78;letter-spacing:.01em}} b{{font-weight:500;color:#1e3a5c}}
 
-.ill{{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);width:690px;height:460px;background:url(file://{I}) center/cover;filter:saturate(.85);-webkit-mask-image:radial-gradient(ellipse 60% 62% at 50% 55%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 62% at 50% 55%,#000 70%,transparent 100%)}}
+.ill{{margin-top:80px;width:540px;height:360px;background:url(file://{I}) center/contain no-repeat;filter:saturate(.85)}}
 </style></head><body><div class="s">
 <h1>Thanks for <i>looking</i></h1>
 <div class="rule"></div>
