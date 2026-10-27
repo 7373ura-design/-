@@ -19,15 +19,18 @@ Houzz (sharper than the 1800px website copies), centre-cropped to 4:5.
 
 ## Closing slide
 
-The final slide of every carousel is a background image with live Canva
-text on top, so the wording can be edited in Canva.
+The final slide of every carousel is built from separate Canva elements, so
+the wording, icons, rule and illustration can each be edited or moved.
 
-- `last/make-washi.py` makes the washi paper texture (`washi.png`).
-- `last/make-last-bg.py` lays the icons, rule and woodblock surfer over it;
-  render it with the same 2x Playwright screenshot as the covers and save
-  as `last-bg.jpg`.
+- `last/make-washi.py` makes the washi paper texture (`washi.png`,
+  uploaded as `washi-bg.jpg`).
+- `last/make-icons.py` writes the four icon pages; screenshot them at 4x with
+  a transparent background into `last/icons/`.
+- `last/surfer-canva.png` is the woodblock surfer, trimmed and slightly
+  desaturated.
 - In Canva the heading uses a serif and the four action lines a spaced
   sans, both taken from the earlier NAMI posts. The source page is the
   Canva design "NAMI 投稿03 FOUNDING MONITORS" resized to 1080x1350
   (DAHZL-IxBd8); it is inserted into each carousel as page 13.
-- `last/last.jpg` and `last/make-last.py` are the older flat-image version.
+- `last/make-last-bg.py` (`last-bg.jpg`) is the earlier single-image
+  background, and `last/last.jpg` / `make-last.py` the first flat version.
