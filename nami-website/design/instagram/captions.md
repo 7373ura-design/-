@@ -1,34 +1,34 @@
 # Instagram captions
 
-One caption per carousel, English first, then Japanese. The first line is
-the hook (the only line shown before "more"). The body explains the design
-intent and the practical thinking behind what is in the photos, rather than
-describing what can already be seen. No suburb or country is named; six
-searchable hashtags at the end.
+One caption per carousel, English first, then Japanese. The first line is a
+hook (the only line shown before "more"). The body picks one thing a client
+might see as a downside and shows how the design turns it into an upside,
+told plainly from the client's side rather than as design theory. No suburb
+or country is named; six searchable hashtags at the end.
 
 ## 01 (cover: Bold Outside, Calm Inside)
 
 ```
-Why this home is bold outside but calm inside.
+Would you live in a red house?
 (日本語は下に続きます)
 
-The red exterior gives the house a clear identity on the street. Inside, we wanted the opposite: a place where your eyes can rest after a long day. So we kept the interior to three colours only, white, timber and black.
+A lot of people love a bold colour but worry it will feel like too much to live with every day.
 
-White makes the rooms feel bigger and brighter. Light timber adds warmth so the white never feels cold. Black is used only in small amounts, on the front door and handles, to give the space some structure without making it heavy.
+Here is the thing: you only see the outside of your home for a few seconds a day, when you come home. The rest of the time you are inside. So we let the outside be bold, easy to spot from the street and a small lift every time you pull in, and made the inside the opposite. White, light timber and a little black. Nothing that shouts.
 
-The wave-shaped pendant over the kitchen is the one playful piece. When everything else is quiet, one small detail is enough to give a room character.
+You get the fun of the red without living in it.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-外は印象的に、中は落ち着いて。その理由。
+赤い家に、住めますか？
 
-赤い外観は、通りから見たときに家の個性になります。一方で室内は、一日の終わりに目と気持ちが休まる場所にしたいと考えました。そのため、室内の色は白・木・黒の3色だけに絞っています。
+はっきりした色は好きだけど、毎日暮らすには派手すぎないか心配。そんな声をよく聞きます。
 
-白は部屋を広く明るく見せ、明るい木目が白の冷たさをやわらげます。黒は玄関ドアや取っ手など、ごく一部だけ。空間を引き締めつつ、重たくならない量にしています。
+でも実は、家の外観を見るのは、帰ってくる時のほんの数秒だけ。それ以外の時間は、ずっと中にいます。だから外は思い切って赤に。通りからすぐに見つけられて、帰るたびに少し気分が上がる色です。その分、中は正反対にしました。白と明るい木、ほんの少しの黒。主張するものは何も置いていません。
 
-キッチンの波の形のペンダントライトは、唯一の遊び心です。ほかが静かだからこそ、小さなひとつで部屋に個性が生まれます。
+赤の楽しさはそのままに、暮らすのは落ち着いた空間で。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -38,26 +38,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 02 (cover: A Bath Under the Sky)
 
 ```
-Bringing the Japanese bath into everyday life.
+An old house isn't a problem. It's a head start.
 (日本語は下に続きます)
 
-In Japan, a bath is not only for getting clean. It is time to slow down and reset at the end of the day. We wanted this home to have that time built in, so there is a wooden soaking tub on the deck and a timber bath with a low stool inside.
+Old houses come with a list of worries. Dark rooms, odd layouts, a deck that only gets used on sunny weekends. It is tempting to start again.
 
-The timber slat screens at the entry and ceiling do two jobs. They soften the light from the hidden fittings behind them, and they give privacy without closing the space off. The same slat detail is repeated on the kitchen island so the house reads as one.
+But an old house also has something a new one can't buy: character, and a sense that people have lived there for a long time. So instead of replacing it, we kept it and asked what it was missing.
 
-Rather than replacing the character of the original home, we added to it. Old and new sit together, and the house keeps its story.
+The answer was a reason to slow down. We put a wooden soaking tub out on the deck. Now the deck isn't a weekend space anymore, it's where the day ends. Inside, timber slats soften the light so the older rooms feel warm instead of dim.
+
+Same house. A different way of living in it.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-日本のお風呂の時間を、毎日の暮らしに。
+古い家は、悩みじゃなくて、スタート地点。
 
-日本のお風呂は、体を洗うためだけの場所ではありません。一日の終わりに、ゆっくり気持ちを切り替える時間です。その時間を暮らしに取り入れたくて、デッキに木の湯船を、浴室には木の浴槽と低いスツールを置きました。
+古い家には心配ごとがつきものです。暗い部屋、今の暮らしに合わない間取り、晴れた週末にしか使わないデッキ。いっそ建て替えたくなる気持ちもわかります。
 
-玄関と天井の木の格子には、2つの役割があります。奥の間接照明の光をやわらげること、そして空間を閉じずに目線をさえぎること。キッチンにも同じ格子を繰り返して、家全体にまとまりを持たせています。
+でも古い家には、新築ではお金で買えないものがあります。長く人が暮らしてきた家だけが持つ、味わいです。だから壊すのではなく残して、この家に足りないものは何かを考えました。
 
-元の家の良さを消すのではなく、そこに足していく。古いものと新しいものが並び、家の歴史が続いていくリノベーションです。
+答えは「ひと息つく理由」でした。デッキに木の湯船を置いたら、デッキは週末だけの場所ではなく、毎日の一日を終える場所に変わりました。室内は木の格子で光をやわらげて、少し暗かった部屋を、温かく落ち着いた雰囲気にしています。
+
+同じ家なのに、暮らし方が変わる。そんなリノベーションです。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -67,26 +71,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 03 (cover: The Garden Comes Inside)
 
 ```
-Why we chose a green wall for this kitchen.
+How to make a small home feel bigger, without adding a single room.
 (日本語は下に続きます)
 
-This home is all about its garden, so we asked one question: how do you still feel the garden when you are inside cooking or eating?
+This is a compact home. Usually that means making every room work harder. We looked at it the other way: the garden is a room too, you just need a reason to use it.
 
-The answer was colour. A soft green on the kitchen wall picks up the planting outside the window, so inside and outside feel connected even with the doors closed. We kept the green muted and paired it with warm timber, so it stays calm and does not tire over time.
+So the living area opens straight onto the deck with wide sliding doors, and the floor runs out at the same level. On a nice day the house is suddenly twice the size.
 
-On the practical side, the wide sliding doors and the floor running at the same level onto the deck make the living space and garden work as one room. It is easy to step out with a coffee, and easy for kids to move between the two.
+And on a cold or rainy day, when the doors are shut? That's why the kitchen wall is green. It picks up the garden outside the window, so you still feel connected to it from the inside.
+
+Small on paper, big in everyday life.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-このキッチンの壁を緑にした理由。
+部屋を増やさずに、小さな家を広くする方法。
 
-庭が主役の家なので、ひとつのことを考えました。料理や食事をしている時にも、庭を感じられるにはどうしたらいいか。
+これはコンパクトな家です。ふつうなら、限られた部屋をどう工夫して使うかを考えます。でも私たちは逆から考えました。庭もひとつの部屋。使いたくなる理由さえあればいいんです。
 
-答えは色でした。キッチンの壁の淡いグリーンが窓の外の植栽とつながり、ドアを閉めていても内と外がひと続きに感じられます。グリーンはくすんだトーンにして、温かい木の色と合わせることで、落ち着きがあり飽きのこない空間にしています。
+そこでリビングは大きな引き戸でデッキへそのまま開き、床も同じ高さで外まで続けました。天気のいい日は、家がいきなり倍の広さになります。
 
-機能面では、大きな引き戸と、段差なくデッキへ続く床で、リビングと庭がひとつの部屋のように使えます。コーヒーを持って気軽に外へ出たり、子どもが内と外を自由に行き来できたりします。
+では、寒い日や雨の日、ドアを閉めている時は？ そのためにキッチンの壁をグリーンにしました。窓の外の緑とつながって、中にいても庭を近くに感じられます。
+
+図面の上では小さくても、暮らしの中では広い家です。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -96,26 +104,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 04 (cover: Less Colour, More Calm)
 
 ```
-Why fewer colours and materials make a home feel calmer.
+Isn't a simple home a bit boring?
 (日本語は下に続きます)
 
-Every extra colour or material is one more thing for the eye to process. In this home we kept the list short on purpose: white walls, light timber, charcoal and black. The result is a home that feels calm without you noticing why.
+It's a fair question. White walls, light timber, a few dark accents. On paper it can sound plain.
 
-The site has a wide view, so the design steps back and lets the view do the work. The large deck and windows open the main rooms to the sky, while the slim high windows frame the trees and keep privacy from the neighbours.
+But this home sits on a hill with a view of the city and the sky, and that view changes every hour. If the house had lots of colour and pattern, it would be competing with it. By keeping the inside quiet, the view becomes the thing you look at, and the house just frames it.
 
-In the bedrooms, the dark charcoal carpet is a deliberate change of mood. The living areas are bright for daytime, and the bedrooms are darker and softer for rest.
+A hilltop also means you can feel exposed. So the big windows face the view, and on the sides we used slim, high windows. You get the light and the treetops, without feeling like people can see in.
+
+Simple, so the best part of the site gets to stand out.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-色と素材を減らすと、家はもっと落ち着く。
+シンプルな家って、つまらなくない？
 
-色や素材がひとつ増えるたびに、目が受け取る情報もひとつ増えます。この家では、白い壁・明るい木・チャコール・黒と、あえて数を絞りました。理由はわからなくても、自然と落ち着く家になっています。
+そう思うのも自然です。白い壁に明るい木、少しの濃い色。文字にすると、地味に聞こえるかもしれません。
 
-眺めのいい敷地なので、デザインは一歩引いて、景色を主役にしました。大きなデッキと窓でメインの部屋を空に開き、高い位置の細長い窓では緑を切り取りながら、隣家からの視線を避けています。
+でもこの家は丘の上にあって、街と空の景色が一日中ずっと変わり続けます。もし家の中に色や柄がたくさんあったら、その景色と張り合ってしまう。だから中は静かにして、景色を主役に。家はそれを切り取る額縁に徹しています。
 
-寝室の濃いチャコールのカーペットは、意図的に雰囲気を変えるためのものです。昼を過ごすリビングは明るく、休むための寝室は暗くやわらかく。
+丘の上は、まわりから見られている感じがしやすい場所でもあります。そこで大きな窓は景色の方向に、横の面には高い位置の細長い窓を。光や木々は入ってくるのに、外からの視線は気になりません。
+
+シンプルなのは、この土地の一番いいところを引き立てるためです。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
