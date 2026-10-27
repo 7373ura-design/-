@@ -2,7 +2,7 @@
 
 One caption per carousel. The first line is the hook (the only line shown
 before "more"); the middle retells the story from `src/data/works.ts` in a
-reader-first voice; the last lines say where the home is, invite a DM and
+reader-first voice; the last lines invite a DM (no location named) and
 carry six searchable hashtags.
 
 ## 01 — New Lynn (cover: Bold Outside, Calm Inside)
@@ -14,7 +14,7 @@ Outside, warm red and soft brown cladding make a welcoming first impression. Ins
 
 White, timber and black. Nothing more, and nothing missing.
 
-A new home we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
+Designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
@@ -28,7 +28,7 @@ This renovation keeps the character of the original house and brings in the Japa
 
 Old and new, living side by side.
 
-A renovation we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
+Designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #renovation
 ```
@@ -42,7 +42,7 @@ Wide sliding doors open the living space straight onto a timber deck, lawn and p
 
 A home that lives with its garden.
 
-A new home we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
+Designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
@@ -56,7 +56,7 @@ Set on a hilltop, this home opens to the city and sky through a wide deck and bi
 
 Simple, and quietly complete.
 
-A new home we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
+Designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
