@@ -19,6 +19,15 @@ Houzz (sharper than the 1800px website copies), centre-cropped to 4:5.
 
 ## Closing slide
 
-`last/last.jpg` is the final slide of every carousel: DM, email, follow and
-save, with the NAMI logo. Rebuild with `last/make-last.py` and the same 2x
-Playwright screenshot as the covers.
+The final slide of every carousel is a background image with live Canva
+text on top, so the wording can be edited in Canva.
+
+- `last/make-washi.py` makes the washi paper texture (`washi.png`).
+- `last/make-last-bg.py` lays the icons, rule and woodblock surfer over it;
+  render it with the same 2x Playwright screenshot as the covers and save
+  as `last-bg.jpg`.
+- In Canva the heading uses a serif and the four action lines a spaced
+  sans, both taken from the earlier NAMI posts. The source page is the
+  Canva design "NAMI 投稿03 FOUNDING MONITORS" resized to 1080x1350
+  (DAHZL-IxBd8); it is inserted into each carousel as page 13.
+- `last/last.jpg` and `last/make-last.py` are the older flat-image version.
