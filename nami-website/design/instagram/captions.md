@@ -34,7 +34,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 外は明るく迎えてくれて、中は温かくくつろげる家です。
 
-オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
+オーストラリアで住まいのデザインを手がけています。気になることがあれば、気軽にDMしてください。
 
 #namistudio #japandi #japandiinterior #sydneyinteriors #newbuild
 ```
@@ -67,7 +67,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 家の年月を隠すのではなく、その続きを描く。そんなリノベーションです。
 
-オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
+オーストラリアで住まいのデザインを手がけています。気になることがあれば、気軽にDMしてください。
 
 #namistudio #japandi #japandiinterior #sydneyinteriors #renovation
 ```
@@ -100,7 +100,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 家の中にいても、外にいても。緑に包まれた暮らし。
 
-オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
+オーストラリアで住まいのデザインを手がけています。気になることがあれば、気軽にDMしてください。
 
 #namistudio #japandi #japandiinterior #sydneyinteriors #newbuild
 ```
@@ -133,7 +133,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 素材の一つひとつにこだわりながら、主役は丘の上からの景色。そんな家です。
 
-オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
+オーストラリアで住まいのデザインを手がけています。気になることがあれば、気軽にDMしてください。
 
 #namistudio #japandi #japandiinterior #sydneyinteriors #newbuild
 ```
