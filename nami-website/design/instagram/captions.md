@@ -5,7 +5,7 @@ before "more"); the middle retells the story from `src/data/works.ts` in a
 reader-first voice; the last lines say where the home is, invite a DM and
 carry six searchable hashtags.
 
-## 01 — New Lynn (Colour and Calm)
+## 01 — New Lynn (cover: Bold Outside, Calm Inside)
 
 ```
 Can a bold red home still feel calm inside? This one does.
@@ -14,12 +14,12 @@ Outside, warm red and soft brown cladding make a welcoming first impression. Ins
 
 White, timber and black. Nothing more, and nothing missing.
 
-A new home we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
+A new home we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
-## 02 — Remuera (Old Meets New)
+## 02 — Remuera (cover: A Bath Under the Sky)
 
 ```
 A wooden bath on the deck, and the ritual of Japanese bathing at home.
@@ -28,12 +28,12 @@ This renovation keeps the character of the original house and brings in the Japa
 
 Old and new, living side by side.
 
-A renovation we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
+A renovation we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #renovation
 ```
 
-## 03 — Glen Innes (Into the Garden)
+## 03 — Glen Innes (cover: The Garden Comes Inside)
 
 ```
 We painted the kitchen green to bring the garden inside.
@@ -42,12 +42,12 @@ Wide sliding doors open the living space straight onto a timber deck, lawn and p
 
 A home that lives with its garden.
 
-A new home we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
+A new home we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
-## 04 — Hillcrest (Simply Quiet)
+## 04 — Hillcrest (cover: Less Colour, More Calm)
 
 ```
 Fewer colours, fewer materials, and a home that feels completely calm.
@@ -56,7 +56,7 @@ Set on a hilltop, this home opens to the city and sky through a wide deck and bi
 
 Simple, and quietly complete.
 
-A new home we designed in Auckland, New Zealand. Now designing homes across Australia. DM us to start yours.
+A new home we designed in New Zealand. Now designing homes across Australia. DM us to start yours.
 
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
