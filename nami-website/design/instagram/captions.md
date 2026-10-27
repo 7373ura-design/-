@@ -4,7 +4,7 @@ One caption per carousel, English first, then Japanese. The first line is a
 hook (the only line shown before "more"). The body explains the thinking
 behind the design from the client's side: what it gives them day to day,
 and how it feels. Never put the home down; the owners should enjoy reading
-it. No suburb or country is named; six searchable hashtags at the end.
+it. No suburb or country is named; five hashtags (#namistudio first) at the end.
 
 ## 01 (cover: Welcome Home)
 
@@ -36,7 +36,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
-#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
+#namistudio #japandi #japandiinterior #sydneyinteriors #newbuild
 ```
 
 ## 02 (cover: Old Meets New)
@@ -69,7 +69,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
-#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #renovation
+#namistudio #japandi #japandiinterior #sydneyinteriors #renovation
 ```
 
 ## 03 (cover: Living in Green)
@@ -102,7 +102,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
-#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
+#namistudio #japandi #japandiinterior #sydneyinteriors #newbuild
 ```
 
 ## 04 (cover: Simply Special)
@@ -135,5 +135,5 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
-#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
+#namistudio #japandi #japandiinterior #sydneyinteriors #newbuild
 ```
