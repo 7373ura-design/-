@@ -75,7 +75,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 03 (cover: The Garden Comes Inside)
 
 ```
-A home where the green outside follows you in.
+The garden stays with you, even with the doors closed.
 (日本語は下に続きます)
 
 The garden here is full of green, and we wanted that feeling to carry on indoors rather than stop at the window.
@@ -84,13 +84,13 @@ That is where the soft green on the kitchen wall comes from. It is taken from th
 
 Wide sliding doors open the living space onto the timber deck, and the floor carries on outside, so on a fine day you can move between the two without thinking about it.
 
-Green you can feel all day, whether the doors are open or closed.
+Green close by, in every season.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-外の緑が、そのまま中まで続く家。
+ドアを閉めても、緑がそばにある家。
 
 この家の庭は緑がとても豊かです。その心地よさを、窓のところで止めずに、室内まで感じられるようにしたいと考えました。
 
@@ -98,7 +98,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 大きな引き戸を開ければ、リビングからそのままウッドデッキへ。床も外まで続いているので、天気のいい日は内と外を自然に行き来できます。
 
-ドアを開けていても閉めていても、一日中緑を感じられる家です。
+季節を問わず、いつも緑を身近に感じられる家です。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -111,13 +111,13 @@ We design homes across Australia. Send us a DM if you have any questions.
 Why a simple home can feel the most special.
 (日本語は下に続きます)
 
-White walls, light timber, a few dark accents. We kept the list of colours and materials short on purpose.
+White walls, light timber, a few dark accents. We kept the number of colours and materials small on purpose, and put our care into each one instead.
 
-This home sits on a hill with a view of the city and the sky, and that view changes all day long. Because the view is so alive, we kept the inside quiet and let it take centre stage. The house simply frames it.
+The timber floors and cabinetry were chosen for their warmth, so the white walls always feel soft rather than cold. Woven pendant lights over the kitchen add texture and a gentle glow in the evening. In the bedrooms, a deep charcoal carpet makes the rooms feel cosy and restful, and in the bathroom a floating timber vanity sits with black tapware for a clean, quiet finish.
 
-The big windows face the view, and on the sides, slim high windows frame the treetops like pictures. Light comes in from every direction, and the rooms still feel calm and private.
+And then there is the view. The home sits on a hill looking out over the city and the sky, which changes all day long. The big windows face it, and slim high windows on the sides frame the treetops and bring in light from every direction. With the view as the highlight, the simple materials inside really come to life.
 
-Simple, so the best part of the site gets to stand out.
+Fewer things, each one chosen with care.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
@@ -125,13 +125,13 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 シンプルな家が、一番特別に感じられる理由。
 
-白い壁に明るい木、少しの濃い色。色と素材の数は、あえて少なくしました。
+白い壁に明るい木、少しの濃い色。色と素材の数はあえて少なくして、そのぶん一つひとつを丁寧に選びました。
 
-この家は丘の上にあって、街と空の景色が一日中ずっと変わり続けます。だからこそ中は静かにして、景色を主役に。家はそれを切り取る額縁に徹しています。
+木の床や吊り戸棚は、温かみを大切に選んだもの。白い壁が冷たく見えず、いつもやわらかく感じられます。キッチンの上の編み込みのペンダントライトは、素材の表情と、夜のやさしい明かりを添えてくれます。寝室には深いチャコールのカーペットを敷いて、包まれるような落ち着いた空間に。浴室は浮かせた木の洗面台に黒の水栓を合わせ、すっきりと静かに仕上げています。
 
-大きな窓は景色の方向に、横の面には高い位置の細長い窓を。木々を絵のように切り取りながら、たっぷりの光を取り込み、落ち着いて過ごせる空間にしています。
+そしてこの家には、丘の上からの景色があります。街と空の表情は、一日中ずっと変わり続けます。大きな窓は景色の方向に、横の面には高い位置の細長い窓を設けて、木々を切り取りながら四方から光を取り込みました。景色という主役があるからこそ、シンプルな素材の良さが一層引き立ちます。
 
-シンプルなのは、この土地の一番いいところを引き立てるためです。
+数を絞って、一つひとつにこだわった家です。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
