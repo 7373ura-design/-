@@ -15,7 +15,7 @@ Outside, a warm red facade is paired with soft brown cladding for a look that is
 
 Save this for your next project, and DM us with any questions about your own home.
 
-#japandi #japandiinterior #interiordesign #aucklandhomes #nzhomes #newbuild
+#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
 ## 02 — Remuera Renovation (Old Meets New)
@@ -29,7 +29,7 @@ The idea here is onko-chishin: learning from the old to create the new. Japanese
 
 Save this for your next project, and DM us with any questions about your own home.
 
-#japandi #japandiinterior #interiordesign #aucklandhomes #nzhomes #renovation
+#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #renovation
 ```
 
 ## 03 — Glen Innes Unit (Into the Garden)
@@ -43,7 +43,7 @@ A home that opens onto a lush, green garden. Black vertical cladding, with a sof
 
 Save this for your next project, and DM us with any questions about your own home.
 
-#japandi #japandiinterior #interiordesign #aucklandhomes #nzhomes #newbuild
+#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
 ## 04 — Hillcrest House (Simply Quiet)
@@ -57,5 +57,5 @@ A home where simplicity and harmony come first. Set on a hilltop, it opens to th
 
 Save this for your next project, and DM us with any questions about your own home.
 
-#japandi #japandiinterior #interiordesign #aucklandhomes #nzhomes #newbuild
+#japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
