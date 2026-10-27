@@ -42,30 +42,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 02 (cover: A Bath Under the Sky)
 
 ```
-In Japan, a bath isn't just for getting clean.
+Onko-chishin: learning from the old to create the new.
 (日本語は下に続きます)
 
-It is the moment you let the day go. You soak, you slow down, and you come out a little lighter. We wanted this home to have that time built into everyday life.
+This is a Japanese phrase we keep coming back to, and it is the reason we love renovations.
 
-So there is a wooden soaking tub out on the deck, under the open sky, and a timber bath with a low wooden stool inside, the way a Japanese bathroom is set up. Timber feels warm to the touch and gives off a soft scent when it is wet, which is a big part of why bathing in Japan feels so relaxing.
+An older home carries things a new build can't: the proportions of its rooms, the way the light comes in, the feeling that a family has already made memories here. Instead of starting from zero, a renovation lets you begin with all of that.
 
-The timber slat screens at the entry and ceiling come from Japanese townhouses too. They let light and air through, soften the glow of the hidden lighting, and give a gentle sense of privacy without closing the space off.
+So our job here was to listen to the house first. We kept its character and brought in Japanese ideas that suit it. Timber slat screens at the entry and ceiling, like those on old Japanese townhouses, softening the light and adding a sense of privacy. Warm timber floors and a jute rug. A wooden soaking tub out on the deck, and a timber bath inside. The same slat detail repeats on the kitchen island, so the old and the new read as one home.
 
-The original home already had a lot of character, so the idea was onko-chishin, a Japanese phrase that means learning from the old to create the new. We kept what made the house special and added the Japanese way of living to it.
+Nothing here tries to hide the age of the house. It simply gives it a new chapter.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-日本のお風呂は、体を洗うためだけの場所じゃない。
+温故知新。古きを知り、新しきを生み出す。
 
-一日の終わりに、その日のことを手放す時間。湯船につかってゆっくりして、少し軽くなって上がる。この家には、そんな時間を毎日の暮らしに取り入れたいと考えました。
+私たちが大切にしている言葉で、リノベーションが好きな理由でもあります。
 
-デッキには空の下で入れる木の湯船を、浴室には日本の浴室のように、木の浴槽と低い木の椅子を置いています。木は肌ざわりが温かく、濡れるとほのかに香ります。日本のお風呂がくつろげる理由のひとつです。
+年月を重ねた家には、新築にはないものがあります。部屋のバランス、光の入り方、そしてすでに家族の思い出がしみ込んでいること。リノベーションは、ゼロからではなく、そのすべてを持ったところから始められます。
 
-玄関と天井の木の格子も、日本の町家から来たものです。光と風を通しながら、間接照明の明かりをやわらげ、空間を閉じずにやさしく目線をさえぎります。
+だからこの家では、まず家の声を聞くことから始めました。この家らしさを残しながら、合う形で日本の知恵を取り入れています。玄関と天井には、昔の町家のような木の格子。光をやわらげ、さりげなく目線をさえぎります。温かみのある無垢の床とジュートのラグ。デッキには木の湯船、浴室には木の浴槽。キッチンにも同じ格子を繰り返して、古いものと新しいものがひとつの家としてつながるようにしました。
 
-もともと味わいのある家だったので、テーマは「温故知新」。古きを知り、新しきを生み出すという意味の言葉です。この家らしさはそのままに、日本の暮らし方を足しました。
+家の年月を隠すのではなく、その続きを描く。そんなリノベーションです。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -75,30 +75,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 03 (cover: The Garden Comes Inside)
 
 ```
-Why we chose a green wall for this kitchen.
+A home where the green outside follows you in.
 (日本語は下に続きます)
 
-This home was designed around its garden. The lawn, the planting, the stepping stones through white gravel. We wanted the family to feel close to it all day, not only when they are outside.
+The garden here is full of green, and we wanted that feeling to carry on indoors rather than stop at the window.
 
-Wide sliding doors open the living area straight onto the timber deck, and the pale wood floor carries on outside. On a sunny day, the living room and the garden become one big space, perfect for a morning coffee or for kids running in and out.
+That is where the soft green on the kitchen wall comes from. It is taken from the planting outside, so when you look from the kitchen out to the garden, the colours flow into each other. We then matched the tone of the pale wood floor and the timber cabinetry to that green, so the whole room sits together naturally, a little like the colours you find in a garden: leaves, wood, light.
 
-But there are also days when the doors stay closed. That is where the green kitchen wall comes in. It picks up the colour of the garden outside the window, so even on a rainy day, the garden still feels part of the room. We chose a soft, muted green and paired it with warm timber, so it stays calm and easy to live with for years.
+Wide sliding doors open the living space onto the timber deck, and the floor carries on outside, so on a fine day you can move between the two without thinking about it.
 
-A home where the garden is always nearby.
+Green you can feel all day, whether the doors are open or closed.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-このキッチンの壁を、緑にした理由。
+外の緑が、そのまま中まで続く家。
 
-この家は、庭を中心に設計しました。芝生、植栽、白い砂利に敷いた飛び石。外にいる時だけでなく、一日中庭を身近に感じられる家にしたいと考えました。
+この家の庭は緑がとても豊かです。その心地よさを、窓のところで止めずに、室内まで感じられるようにしたいと考えました。
 
-大きな引き戸を開けると、リビングからそのままウッドデッキへ。明るい木の床が外まで続きます。晴れた日は、リビングと庭がひとつの大きな空間に。朝のコーヒーを外で飲んだり、子どもたちが自由に出入りしたりできます。
+キッチンの壁のやわらかなグリーンは、外の植栽から取った色です。キッチンから庭を眺めると、内と外の色が自然につながって見えます。さらに、明るい木の床や木のキッチンの色味もそのグリーンに合わせました。葉っぱ、木、光。庭にある色のように、部屋全体がしっくりなじむようにしています。
 
-でも、ドアを閉めている日もあります。そこで生きてくるのが、キッチンのグリーンの壁です。窓の外の庭の色とつながって、雨の日でも庭が部屋の一部のように感じられます。グリーンはやわらかく落ち着いた色を選び、温かい木と合わせて、何年たっても飽きずに暮らせるようにしました。
+大きな引き戸を開ければ、リビングからそのままウッドデッキへ。床も外まで続いているので、天気のいい日は内と外を自然に行き来できます。
 
-いつも庭がそばにある家です。
+ドアを開けていても閉めていても、一日中緑を感じられる家です。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -108,12 +108,12 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 04 (cover: Less Colour, More Calm)
 
 ```
-Isn't a simple home a bit boring?
+Why a simple home can feel the most special.
 (日本語は下に続きます)
 
-It's a fair question. White walls, light timber, a few dark accents. On paper it can sound plain.
+White walls, light timber, a few dark accents. We kept the list of colours and materials short on purpose.
 
-But this home sits on a hill with a view of the city and the sky, and that view changes every hour. If the house had lots of colour and pattern, it would be competing with it. By keeping the inside quiet, the view becomes the thing you look at, and the house just frames it.
+This home sits on a hill with a view of the city and the sky, and that view changes every hour. If the house had lots of colour and pattern, it would be competing with it. By keeping the inside quiet, the view becomes the thing you look at, and the house just frames it.
 
 A hilltop also means you can feel exposed. So the big windows face the view, and on the sides we used slim, high windows. You get the light and the treetops, without feeling like people can see in.
 
@@ -123,11 +123,11 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-シンプルな家って、つまらなくない？
+シンプルな家が、一番特別に感じられる理由。
 
-そう思うのも自然です。白い壁に明るい木、少しの濃い色。文字にすると、地味に聞こえるかもしれません。
+白い壁に明るい木、少しの濃い色。色と素材の数は、あえて少なくしました。
 
-でもこの家は丘の上にあって、街と空の景色が一日中ずっと変わり続けます。もし家の中に色や柄がたくさんあったら、その景色と張り合ってしまう。だから中は静かにして、景色を主役に。家はそれを切り取る額縁に徹しています。
+この家は丘の上にあって、街と空の景色が一日中ずっと変わり続けます。もし家の中に色や柄がたくさんあったら、その景色と張り合ってしまう。だから中は静かにして、景色を主役に。家はそれを切り取る額縁に徹しています。
 
 丘の上は、まわりから見られている感じがしやすい場所でもあります。そこで大きな窓は景色の方向に、横の面には高い位置の細長い窓を。光や木々は入ってくるのに、外からの視線は気になりません。
 
