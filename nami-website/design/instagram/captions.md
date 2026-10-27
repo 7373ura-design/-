@@ -1,34 +1,38 @@
 # Instagram captions
 
 One caption per carousel, English first, then Japanese. The first line is a
-hook (the only line shown before "more"). The body picks one thing a client
-might see as a downside and shows how the design turns it into an upside,
-told plainly from the client's side rather than as design theory. No suburb
-or country is named; six searchable hashtags at the end.
+hook (the only line shown before "more"). The body explains the thinking
+behind the design from the client's side: what it gives them day to day,
+and how it feels. Never put the home down; the owners should enjoy reading
+it. No suburb or country is named; six searchable hashtags at the end.
 
 ## 01 (cover: Bold Outside, Calm Inside)
 
 ```
-Would you live in a red house?
+A home that greets you in red, and lets you unwind in white.
 (日本語は下に続きます)
 
-A lot of people love a bold colour but worry it will feel like too much to live with every day.
+We designed this home around the moment you come back to it.
 
-Here is the thing: you only see the outside of your home for a few seconds a day, when you come home. The rest of the time you are inside. So we let the outside be bold, easy to spot from the street and a small lift every time you pull in, and made the inside the opposite. White, light timber and a little black. Nothing that shouts.
+From the street, the warm red cladding is the first thing you see. It is easy to spot, cheerful, and gives the house a clear personality of its own. Then you open the black front door, and the mood changes completely. White walls, light timber cabinetry and wood floors. The inside is kept quiet on purpose, so that once you are home, there is nothing asking for your attention.
 
-You get the fun of the red without living in it.
+The black is used in small touches, the front door and slim handles, to tie the inside and outside together. And over the kitchen, a wave-shaped pendant light: one small, playful piece that makes the space feel like yours.
+
+Lively on the outside, restful on the inside. Two moods in one home.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-赤い家に、住めますか？
+赤で迎えて、白でくつろぐ家。
 
-はっきりした色は好きだけど、毎日暮らすには派手すぎないか心配。そんな声をよく聞きます。
+この家は「帰ってくる瞬間」を大切に設計しました。
 
-でも実は、家の外観を見るのは、帰ってくる時のほんの数秒だけ。それ以外の時間は、ずっと中にいます。だから外は思い切って赤に。通りからすぐに見つけられて、帰るたびに少し気分が上がる色です。その分、中は正反対にしました。白と明るい木、ほんの少しの黒。主張するものは何も置いていません。
+通りから最初に目に入るのは、温かみのある赤い外壁。すぐに見つけられて、明るく、家にしっかりとした個性を与えてくれます。そして黒い玄関ドアを開けると、雰囲気はがらりと変わります。白い壁、明るい木の吊り戸棚、木の床。家に帰ったら何にも気を取られずに過ごせるように、室内はあえて静かにまとめました。
 
-赤の楽しさはそのままに、暮らすのは落ち着いた空間で。
+黒は玄関ドアや細い取っ手など、ほんの少しだけ。外と中をさりげなくつないでいます。そしてキッチンの上には、波の形のペンダントライト。小さな遊び心がひとつあるだけで、空間に住む人らしさが生まれます。
+
+外は明るく、中はゆったり。ふたつの表情を持つ家です。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -38,30 +42,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 02 (cover: A Bath Under the Sky)
 
 ```
-An old house isn't a problem. It's a head start.
+In Japan, a bath isn't just for getting clean.
 (日本語は下に続きます)
 
-Old houses come with a list of worries. Dark rooms, odd layouts, a deck that only gets used on sunny weekends. It is tempting to start again.
+It is the moment you let the day go. You soak, you slow down, and you come out a little lighter. We wanted this home to have that time built into everyday life.
 
-But an old house also has something a new one can't buy: character, and a sense that people have lived there for a long time. So instead of replacing it, we kept it and asked what it was missing.
+So there is a wooden soaking tub out on the deck, under the open sky, and a timber bath with a low wooden stool inside, the way a Japanese bathroom is set up. Timber feels warm to the touch and gives off a soft scent when it is wet, which is a big part of why bathing in Japan feels so relaxing.
 
-The answer was a reason to slow down. We put a wooden soaking tub out on the deck. Now the deck isn't a weekend space anymore, it's where the day ends. Inside, timber slats soften the light so the older rooms feel warm instead of dim.
+The timber slat screens at the entry and ceiling come from Japanese townhouses too. They let light and air through, soften the glow of the hidden lighting, and give a gentle sense of privacy without closing the space off.
 
-Same house. A different way of living in it.
+The original home already had a lot of character, so the idea was onko-chishin, a Japanese phrase that means learning from the old to create the new. We kept what made the house special and added the Japanese way of living to it.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-古い家は、悩みじゃなくて、スタート地点。
+日本のお風呂は、体を洗うためだけの場所じゃない。
 
-古い家には心配ごとがつきものです。暗い部屋、今の暮らしに合わない間取り、晴れた週末にしか使わないデッキ。いっそ建て替えたくなる気持ちもわかります。
+一日の終わりに、その日のことを手放す時間。湯船につかってゆっくりして、少し軽くなって上がる。この家には、そんな時間を毎日の暮らしに取り入れたいと考えました。
 
-でも古い家には、新築ではお金で買えないものがあります。長く人が暮らしてきた家だけが持つ、味わいです。だから壊すのではなく残して、この家に足りないものは何かを考えました。
+デッキには空の下で入れる木の湯船を、浴室には日本の浴室のように、木の浴槽と低い木の椅子を置いています。木は肌ざわりが温かく、濡れるとほのかに香ります。日本のお風呂がくつろげる理由のひとつです。
 
-答えは「ひと息つく理由」でした。デッキに木の湯船を置いたら、デッキは週末だけの場所ではなく、毎日の一日を終える場所に変わりました。室内は木の格子で光をやわらげて、少し暗かった部屋を、温かく落ち着いた雰囲気にしています。
+玄関と天井の木の格子も、日本の町家から来たものです。光と風を通しながら、間接照明の明かりをやわらげ、空間を閉じずにやさしく目線をさえぎります。
 
-同じ家なのに、暮らし方が変わる。そんなリノベーションです。
+もともと味わいのある家だったので、テーマは「温故知新」。古きを知り、新しきを生み出すという意味の言葉です。この家らしさはそのままに、日本の暮らし方を足しました。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
@@ -71,30 +75,30 @@ We design homes across Australia. Send us a DM if you have any questions.
 ## 03 (cover: The Garden Comes Inside)
 
 ```
-How to make a small home feel bigger, without adding a single room.
+Why we chose a green wall for this kitchen.
 (日本語は下に続きます)
 
-This is a compact home. Usually that means making every room work harder. We looked at it the other way: the garden is a room too, you just need a reason to use it.
+This home was designed around its garden. The lawn, the planting, the stepping stones through white gravel. We wanted the family to feel close to it all day, not only when they are outside.
 
-So the living area opens straight onto the deck with wide sliding doors, and the floor runs out at the same level. On a nice day the house is suddenly twice the size.
+Wide sliding doors open the living area straight onto the timber deck, and the pale wood floor carries on outside. On a sunny day, the living room and the garden become one big space, perfect for a morning coffee or for kids running in and out.
 
-And on a cold or rainy day, when the doors are shut? That's why the kitchen wall is green. It picks up the garden outside the window, so you still feel connected to it from the inside.
+But there are also days when the doors stay closed. That is where the green kitchen wall comes in. It picks up the colour of the garden outside the window, so even on a rainy day, the garden still feels part of the room. We chose a soft, muted green and paired it with warm timber, so it stays calm and easy to live with for years.
 
-Small on paper, big in everyday life.
+A home where the garden is always nearby.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
 —
 
-部屋を増やさずに、小さな家を広くする方法。
+このキッチンの壁を、緑にした理由。
 
-これはコンパクトな家です。ふつうなら、限られた部屋をどう工夫して使うかを考えます。でも私たちは逆から考えました。庭もひとつの部屋。使いたくなる理由さえあればいいんです。
+この家は、庭を中心に設計しました。芝生、植栽、白い砂利に敷いた飛び石。外にいる時だけでなく、一日中庭を身近に感じられる家にしたいと考えました。
 
-そこでリビングは大きな引き戸でデッキへそのまま開き、床も同じ高さで外まで続けました。天気のいい日は、家がいきなり倍の広さになります。
+大きな引き戸を開けると、リビングからそのままウッドデッキへ。明るい木の床が外まで続きます。晴れた日は、リビングと庭がひとつの大きな空間に。朝のコーヒーを外で飲んだり、子どもたちが自由に出入りしたりできます。
 
-では、寒い日や雨の日、ドアを閉めている時は？ そのためにキッチンの壁をグリーンにしました。窓の外の緑とつながって、中にいても庭を近くに感じられます。
+でも、ドアを閉めている日もあります。そこで生きてくるのが、キッチンのグリーンの壁です。窓の外の庭の色とつながって、雨の日でも庭が部屋の一部のように感じられます。グリーンはやわらかく落ち着いた色を選び、温かい木と合わせて、何年たっても飽きずに暮らせるようにしました。
 
-図面の上では小さくても、暮らしの中では広い家です。
+いつも庭がそばにある家です。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
