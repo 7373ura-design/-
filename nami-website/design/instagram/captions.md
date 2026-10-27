@@ -6,7 +6,7 @@ behind the design from the client's side: what it gives them day to day,
 and how it feels. Never put the home down; the owners should enjoy reading
 it. No suburb or country is named; six searchable hashtags at the end.
 
-## 01 (cover: Bold Outside, Calm Inside)
+## 01 (cover: Welcome Home)
 
 ```
 A home that feels good to come back to, every single time.
@@ -39,7 +39,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
-## 02 (cover: A Bath Under the Sky)
+## 02 (cover: Old Meets New)
 
 ```
 Learning from the old to create the new.
@@ -72,7 +72,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #renovation
 ```
 
-## 03 (cover: The Garden Comes Inside)
+## 03 (cover: Living in Green)
 
 ```
 A home where green is always close by.
@@ -105,7 +105,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 #japandi #japandiinterior #interiordesign #australianhomes #sydneyinteriors #newbuild
 ```
 
-## 04 (cover: Less Colour, More Calm)
+## 04 (cover: Simply Special)
 
 ```
 Why a simple home can feel the most special.
