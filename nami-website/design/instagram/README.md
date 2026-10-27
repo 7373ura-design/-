@@ -8,11 +8,15 @@ added kozo fibres. To render it again:
 
 ## Carousel covers
 
-`covers/*.jpg` are the first slide of each home's Instagram carousel: the first
-portfolio photo darkened, with the title in Playfair Display. The rest of the
-carousel is photos only; the text goes in the post caption. Rebuild with
-`covers/make-covers.py` (writes HTML) and a Playwright screenshot at 1080×1350
-with `deviceScaleFactor: 2` (2160×2700).
+The first slide of each carousel is the first portfolio photo darkened
+(`covers/bg-<home>.jpg`, from `covers/make-cover-bg.py`) with the title as
+live Canva text in the closing slide's serif, a short rule and a spaced-caps
+label. The rest of the carousel is photos only; the text goes in the post
+caption.
+
+`covers/*.jpg` (other than `bg-*`) are the earlier flat covers with the title
+in Playfair Display, built with `covers/make-covers.py` and a Playwright
+screenshot at 1080×1350 with `deviceScaleFactor: 2` (2160×2700).
 
 `photos/<home>/NN.jpg` are the carousel photos: the 2560px versions from
 Houzz (sharper than the 1800px website copies), centre-cropped to 4:5.
