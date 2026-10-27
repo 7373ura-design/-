@@ -80,7 +80,7 @@ A home where the green outside follows you in.
 
 The garden here is full of green, and we wanted that feeling to carry on indoors rather than stop at the window.
 
-That is where the soft green on the kitchen wall comes from. It is taken from the planting outside, so when you look from the kitchen out to the garden, the colours flow into each other. We then matched the tone of the pale wood floor and the timber cabinetry to that green, so the whole room sits together naturally, a little like the colours you find in a garden: leaves, wood, light.
+That is where the soft green on the kitchen wall comes from. It is taken from the planting outside, so when you look from the kitchen out to the garden, the colours flow into each other. We then designed the pale wood floor and the timber kitchen to sit with that green, so the whole room comes together naturally, a little like the colours you find in a garden: leaves, wood, light.
 
 Wide sliding doors open the living space onto the timber deck, and the floor carries on outside, so on a fine day you can move between the two without thinking about it.
 
@@ -94,7 +94,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 この家の庭は緑がとても豊かです。その心地よさを、窓のところで止めずに、室内まで感じられるようにしたいと考えました。
 
-キッチンの壁のやわらかなグリーンは、外の植栽から取った色です。キッチンから庭を眺めると、内と外の色が自然につながって見えます。さらに、明るい木の床や木のキッチンの色味もそのグリーンに合わせました。葉っぱ、木、光。庭にある色のように、部屋全体がしっくりなじむようにしています。
+キッチンの壁のやわらかなグリーンは、外の植栽から取った色です。キッチンから庭を眺めると、内と外の色が自然につながって見えます。さらに、明るい木の床や木のキッチンの色味も、そのグリーンに合うようにデザインしました。葉っぱ、木、光。庭にある色のように、部屋全体がしっくりなじむようにしています。
 
 大きな引き戸を開ければ、リビングからそのままウッドデッキへ。床も外まで続いているので、天気のいい日は内と外を自然に行き来できます。
 
@@ -113,9 +113,9 @@ Why a simple home can feel the most special.
 
 White walls, light timber, a few dark accents. We kept the list of colours and materials short on purpose.
 
-This home sits on a hill with a view of the city and the sky, and that view changes every hour. If the house had lots of colour and pattern, it would be competing with it. By keeping the inside quiet, the view becomes the thing you look at, and the house just frames it.
+This home sits on a hill with a view of the city and the sky, and that view changes all day long. Because the view is so alive, we kept the inside quiet and let it take centre stage. The house simply frames it.
 
-A hilltop also means you can feel exposed. So the big windows face the view, and on the sides we used slim, high windows. You get the light and the treetops, without feeling like people can see in.
+The big windows face the view, and on the sides, slim high windows frame the treetops like pictures. Light comes in from every direction, and the rooms still feel calm and private.
 
 Simple, so the best part of the site gets to stand out.
 
@@ -127,9 +127,9 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 白い壁に明るい木、少しの濃い色。色と素材の数は、あえて少なくしました。
 
-この家は丘の上にあって、街と空の景色が一日中ずっと変わり続けます。もし家の中に色や柄がたくさんあったら、その景色と張り合ってしまう。だから中は静かにして、景色を主役に。家はそれを切り取る額縁に徹しています。
+この家は丘の上にあって、街と空の景色が一日中ずっと変わり続けます。だからこそ中は静かにして、景色を主役に。家はそれを切り取る額縁に徹しています。
 
-丘の上は、まわりから見られている感じがしやすい場所でもあります。そこで大きな窓は景色の方向に、横の面には高い位置の細長い窓を。光や木々は入ってくるのに、外からの視線は気になりません。
+大きな窓は景色の方向に、横の面には高い位置の細長い窓を。木々を絵のように切り取りながら、たっぷりの光を取り込み、落ち着いて過ごせる空間にしています。
 
 シンプルなのは、この土地の一番いいところを引き立てるためです。
 
