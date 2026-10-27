@@ -10,7 +10,7 @@ li="".join(f'<li><svg viewBox="0 0 24 24">{s}</svg><p><b>{k}</b> {v}</p></li>' f
 open("final_last.html","w").write(f'''<!doctype html><html><head><meta charset=utf-8>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=block" rel="stylesheet"><style>
 *{{margin:0;padding:0;box-sizing:border-box}}body{{width:1080px;height:1350px;color:#1e3a5c;font-family:Jost,sans-serif}}
-.s{{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f1ec;display:flex;flex-direction:column;align-items:center;padding-top:120px}}
+.s{{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f1ec;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:440px}}
 .k{{font-size:20px;letter-spacing:.42em;color:#7a8a9c}}
 h1{{font-family:'Playfair Display';font-weight:500;font-size:100px;line-height:1.05;text-align:center}}
 h1 i{{font-style:italic}}
@@ -20,7 +20,7 @@ li{{display:flex;align-items:center;gap:36px}}
 svg{{width:48px;height:48px;flex:none;fill:none;stroke:#1e3a5c;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}}
 p{{font-size:35px;color:#4a5f78;letter-spacing:.01em}} b{{font-weight:500;color:#1e3a5c}}
 
-.ill{{position:absolute;left:0;bottom:0;width:1080px;height:640px;background:url(file://{I}) center 40%/cover;filter:saturate(.85);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%)}}
+.ill{{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);width:690px;height:460px;background:url(file://{I}) center/cover;filter:saturate(.85);-webkit-mask-image:radial-gradient(ellipse 60% 62% at 50% 55%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 60% 62% at 50% 55%,#000 70%,transparent 100%)}}
 </style></head><body><div class="s">
 <h1>Thanks for <i>looking</i></h1>
 <div class="rule"></div>
