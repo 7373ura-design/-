@@ -84,7 +84,7 @@ That is where the soft green on the kitchen wall comes from. It is taken from th
 
 Wide sliding doors open the living space onto the timber deck, and the floor carries on outside, so on a fine day you can move between the two without thinking about it.
 
-Inside or out, green is part of everyday life.
+Inside or out, a life wrapped in green.
 
 We design homes across Australia. Send us a DM if you have any questions.
 
@@ -98,7 +98,7 @@ We design homes across Australia. Send us a DM if you have any questions.
 
 大きな引き戸を開ければ、リビングからそのままウッドデッキへ。床も外まで続いているので、天気のいい日は内と外を自然に行き来できます。
 
-家の中にいても外にいても、緑に包まれて過ごせます。
+家の中にいても、外にいても。緑に包まれた暮らし。
 
 オーストラリアで家づくりのお手伝いをしています。気になることがあれば、気軽にDMしてください。
 
