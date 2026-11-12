@@ -51,8 +51,8 @@ export function EmailButton({
     <details className="mail-pop relative">
       <summary className={`cursor-pointer list-none [&::-webkit-details-marker]:hidden ${className}`}>{children}</summary>
       <div className={`absolute z-10 w-max rounded-md bg-paper px-4 py-3 text-navy shadow-lg ring-1 ring-navy/10 ${cardClassName}`}>
-        <p className="select-all text-[0.9375rem]">{site.email}</p>
-        <button type="button" data-copy={site.email} className="mt-2 text-[0.8125rem] text-vermilion underline underline-offset-4">
+        <p className="select-all text-[1.0625rem]">{site.email}</p>
+        <button type="button" data-copy={site.email} className="mt-2 text-[0.9375rem] text-vermilion underline underline-offset-4">
           <span data-copy-label>
             <T ja="コピーする" en="Copy" />
           </span>

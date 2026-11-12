@@ -69,13 +69,13 @@ export function Card({
         />
       </div>
       <p className="kicker mt-6 text-vermilion">{no}.</p>
-      <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">
+      <h3 className="title mt-2 text-[1.5rem] transition-colors group-hover:text-deep">
         {typeof title === "string" ? title : <T ja={title.ja.replace("\n", "")} en={title.en} />}
       </h3>
-      <p className="mt-1.5 text-[0.8125rem] text-navy/65">
+      <p className="mt-1.5 text-[0.9375rem] text-navy/65">
         <T ja={line.ja} en={line.en} />
       </p>
-      <p className="mt-3 text-[0.8125rem] text-vermilion">
+      <p className="mt-3 text-[0.9375rem] text-vermilion">
         <T ja="写真をタップして詳細へ →" en="Tap the photo for details →" />
       </p>
     </Link>
@@ -115,10 +115,10 @@ function Notes({ items }: { items: { title: Bi; line: Bi }[] }) {
     <dl className="border-b border-navy/15">
       {items.map((b) => (
         <div key={b.title.en} className="grid gap-1 border-t border-navy/15 py-4 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
-          <dt className="title text-[1.05rem] !leading-snug">
+          <dt className="title text-[1.2rem] !leading-snug">
             <T ja={b.title.ja} en={b.title.en} />
           </dt>
-          <dd className="text-[0.875rem] leading-relaxed text-navy/75">
+          <dd className="text-[1rem] leading-relaxed text-navy/75">
             <T ja={b.line.ja} en={b.line.en} />
           </dd>
         </div>
@@ -134,7 +134,7 @@ export function ServicesSection({ lang }: { lang: Lang }) {
         <Notes items={services.items} />
         {answeredFaq().length > 0 && (
           <p className="mt-6">
-            <Link href={localHref(lang, "/faq")} className="text-[0.8125rem] text-vermilion hover:underline">
+            <Link href={localHref(lang, "/faq")} className="text-[0.9375rem] text-vermilion hover:underline">
               <T ja="よくあるご質問を見る →" en="Read our FAQ →" />
             </Link>
           </p>
@@ -159,13 +159,13 @@ export function BackgroundSection() {
 /* ---------------------------------------------------------------- Contact */
 
 const contactButton =
-  "flex min-h-14 w-full items-center justify-center gap-3 bg-navy px-6 text-[0.9375rem] text-paper transition-colors hover:bg-deep";
+  "flex min-h-14 w-full items-center justify-center gap-3 bg-navy px-6 text-[1.0625rem] text-paper transition-colors hover:bg-deep";
 
 export function ContactSection() {
   return (
     <Post id="contact" labelledBy="contact-h" art="bridge">
       <PostHead title={{ ja: "お問い合わせ", en: "Contact" }} id="contact-h" />
-      <p className="jp-body mx-auto mt-10 max-w-2xl text-center text-[0.9375rem] text-navy/80">
+      <p className="jp-body mx-auto mt-10 max-w-2xl text-center text-[1.0625rem] text-navy/80">
         <T ja={`${site.base.ja}。`} en={`${site.base.en}.`} />
         <br />
         <T ja="家づくりのご相談は、お気軽にどうぞ。" en="Get in touch any time about your home." />

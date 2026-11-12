@@ -77,8 +77,8 @@ export function FaqView({ lang }: { lang: Lang }) {
               <dl className="mt-5 border-b border-navy/15">
                 {g.items.map((i) => (
                   <div key={i.q.en} className="border-t border-navy/15 py-6">
-                    <dt className="title text-[1.05rem] !leading-snug">{i.q[lang]}</dt>
-                    <dd className="jp-body mt-3 text-[0.9375rem] leading-relaxed text-navy/80">
+                    <dt className="title text-[1.2rem] !leading-snug">{i.q[lang]}</dt>
+                    <dd className="jp-body mt-3 text-[1.0625rem] leading-relaxed text-navy/80">
                       <Answer text={i.a[lang]} />
                     </dd>
                   </div>
@@ -86,7 +86,7 @@ export function FaqView({ lang }: { lang: Lang }) {
               </dl>
             </div>
           ))}
-          <p className="jp-body mt-14 text-center text-[0.9375rem] text-navy/80">
+          <p className="jp-body mt-14 text-center text-[1.0625rem] text-navy/80">
             {lang === "ja" ? "ほかにも気になることがあれば、お気軽にお問い合わせください。" : "Have another question? We are happy to help."}
           </p>
           <div className="mt-6 text-center">

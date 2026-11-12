@@ -33,8 +33,8 @@ export function Footer({ lang }: { lang: Lang }) {
             </li>
           </ul>
         </div>
-        <p className="mt-10 text-[0.8125rem] text-paper/70">{site.base[lang]}</p>
-        <p className="mt-2 text-[0.75rem] tracking-[0.08em] text-paper/40">© 2026 NAMI</p>
+        <p className="mt-10 text-[0.9375rem] text-paper/70">{site.base[lang]}</p>
+        <p className="mt-2 text-[0.875rem] tracking-[0.08em] text-paper/40">© 2026 NAMI</p>
       </Container>
     </footer>
   );

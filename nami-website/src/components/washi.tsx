@@ -129,7 +129,7 @@ export function PostHead({
         <div className="post-head-text">
           {sub && <p className="subline">{sub}</p>}
           <Rule className="mt-4" />
-          {children && <div className="jp-body mt-6 max-w-[30em] text-[0.9375rem] text-navy/80">{children}</div>}
+          {children && <div className="jp-body mt-6 max-w-[30em] text-[1.0625rem] text-navy/80">{children}</div>}
         </div>
       )}
       {!sub && !children && <Rule className="mt-5 post-head-rule" />}

@@ -12,7 +12,7 @@ export function NotFoundView({ lang }: { lang: Lang }) {
         <h1 className="title mt-6 text-3xl md:text-4xl">
           <T ja="波にさらわれてしまったようです。" en="This page seems to have been washed away." />
         </h1>
-        <p className="jp-body mt-6 text-[0.9375rem] text-navy/75">
+        <p className="jp-body mt-6 text-[1.0625rem] text-navy/75">
           <T ja="お探しのページは見つかりませんでした。" en="We couldn’t find the page you were looking for." />
         </p>
         <div className="mt-10">

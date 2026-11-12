@@ -62,7 +62,7 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
             sub={`JAPANDI ${work.type.en.toUpperCase()}`}
             size="lg"
           >
-            <p className="title !text-[1.15rem] !leading-relaxed text-navy">{work.lead[lang]}</p>
+            <p className="title !text-[1.3rem] !leading-relaxed text-navy">{work.lead[lang]}</p>
             {work.story[lang].map((para) => (
               <p key={para} className="mt-4">
                 {para}
@@ -99,10 +99,10 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
                     <Image src={w.photos[0].src} alt={w.photos[0].alt} fill sizes="(min-width:768px) 30vw, 90vw" className="object-cover" />
                   </div>
                   <p className="kicker mt-6 text-vermilion">{w.number}.</p>
-                  <h3 className="title mt-2 text-[1.35rem] transition-colors group-hover:text-deep">
+                  <h3 className="title mt-2 text-[1.5rem] transition-colors group-hover:text-deep">
                     <T ja={w.title.ja.replace("\n", "")} en={w.title.en} />
                   </h3>
-                  <p className="mt-1.5 text-[0.8125rem] text-navy/65">
+                  <p className="mt-1.5 text-[0.9375rem] text-navy/65">
                     <T ja={w.type.ja} en={w.type.en} />
                   </p>
                 </Link>
