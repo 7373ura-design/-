@@ -1,16 +1,29 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { createContext, useContext, type ReactNode } from "react";
+import type { Lang } from "@/lib/lang";
 
 /**
- * Bilingual copy. Both languages are rendered into the page and CSS shows the
- * one selected on <html data-lang>. The choice is remembered in localStorage,
- * so it works on static hosting too and never causes a hydration mismatch.
+ * Bilingual copy. English is the main site at "/", Japanese is the sub site at
+ * "/ja". Each page is rendered in its own language only, so search engines see
+ * one language per address (linked to each other with hreflang).
  */
 export type Bi = { ja: string; en: string };
 export type BiList = { ja: string[]; en: string[] };
 
 type Tag = "span" | "div" | "p";
 
-/** Render either a pair of strings (with "\n" line breaks) or a pair of nodes. */
+const LangContext = createContext<Lang>("en");
+
+export function LangProvider({ lang, children }: { lang: Lang; children: ReactNode }) {
+  return <LangContext.Provider value={lang}>{children}</LangContext.Provider>;
+}
+
+export function useLang() {
+  return useContext(LangContext);
+}
+
+/** Render the current language's string (with "\n" line breaks) or node. */
 export function T({
   ja,
   en,
@@ -22,7 +35,9 @@ export function T({
   as?: Tag;
   className?: string;
 }) {
-  const render = (v: ReactNode) =>
+  const lang = useLang();
+  const v = lang === "ja" ? ja : en;
+  const content =
     typeof v === "string"
       ? v.split("\n").map((line, i, all) => (
           <span key={i}>
@@ -31,22 +46,10 @@ export function T({
           </span>
         ))
       : v;
-  return (
-    <>
-      <Tag lang="ja" className={`lang-ja ${className ?? ""}`}>
-        {render(ja)}
-      </Tag>
-      <Tag lang="en-GB" className={`lang-en ${className ?? ""}`}>
-        {render(en)}
-      </Tag>
-    </>
-  );
+  return <Tag className={className}>{content}</Tag>;
 }
 
 /** Shorthand for a Bi value. */
 export function B({ t, as, className }: { t: Bi; as?: Tag; className?: string }) {
   return <T ja={t.ja} en={t.en} as={as} className={className} />;
 }
-
-/** Runs before paint: applies the saved language and wires up every [data-lang-set] button. */
-export const languageScript = `(function(){var d=document.documentElement;function set(l,save){d.setAttribute('data-lang',l);d.lang=l==='en'?'en-GB':'ja';document.querySelectorAll('[data-lang-set]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-lang-set')===l))});document.querySelectorAll('[data-ph-'+l+']').forEach(function(f){f.setAttribute('placeholder',f.getAttribute('data-ph-'+l))});if(save){try{localStorage.setItem('nami-lang',l)}catch(e){}}}var s='ja';try{s=localStorage.getItem('nami-lang')||'ja'}catch(e){}set(s);document.addEventListener('DOMContentLoaded',function(){set(d.getAttribute('data-lang')||'ja')});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-lang-set]');if(b){set(b.getAttribute('data-lang-set'),true)}})})();`;

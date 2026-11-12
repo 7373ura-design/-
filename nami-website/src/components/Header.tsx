@@ -4,12 +4,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
+import { answeredFaq } from "@/data/faq";
+import { langOfPath, localHref } from "@/lib/lang";
 import { Logo } from "@/components/Logo";
 import Image from "next/image";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
+  const lang = langOfPath(pathname);
+  const hasFaq = answeredFaq().length > 0;
+  const menu = navigation
+    .filter((item) => item.href !== "/faq" || hasFaq)
+    .map((item) => ({ ...item, href: localHref(lang, item.href) }));
   const [open, setOpen] = useState(false);
   // Close the menu on navigation
   useEffect(() => setOpen(false), [pathname]);
@@ -32,10 +39,10 @@ export function Header() {
       </a>
       <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-cream">
         <div className="mx-auto flex h-20 w-full max-w-[1360px] items-center justify-between px-5 md:h-24 md:px-10 lg:px-16">
-          <Logo priority className="h-9 w-auto md:h-10" />
+          <Logo href={localHref(lang, "/")} priority className="h-9 w-auto md:h-10" />
 
           <nav aria-label="Main" className="hidden items-center gap-7 xl:gap-9 lg:flex">
-            {navigation.map((item) => (
+            {menu.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -74,7 +81,7 @@ export function Header() {
         className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-cream text-navy lg:hidden"
       >
         <div className="flex h-20 items-center justify-between px-5 md:px-10">
-          <Logo className="h-9 w-auto" />
+          <Logo href={localHref(lang, "/")} className="h-9 w-auto" />
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -86,7 +93,7 @@ export function Header() {
           </button>
         </div>
         <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center gap-1 px-5 md:px-10">
-          {navigation.map((item, i) => (
+          {menu.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}

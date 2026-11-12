@@ -14,11 +14,15 @@ B=os.environ.get("NAMI_BASE","http://localhost:3200")
 OUT=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,"..","nami-static-preview")
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT)
 get=lambda p: urllib.request.urlopen(B+p).read().decode()
-routes={"/":"index.html",}
-from importlib import import_module
-import json
-works=["new-lynn-house","remuera-renovation","glen-innes-unit","hillcrest-house"]
-for s in works: routes[f"/works/{s}"]=f"works-{s}.html"
+# English is the main site ("/"), Japanese the sub site ("/ja")
+routes={"/":"index.html","/ja":"ja.html"}
+works=["welcome-home","old-meets-new","living-in-green","simply-special"]
+for s in works:
+    routes[f"/works/{s}"]=f"works-{s}.html"
+    routes[f"/ja/works/{s}"]=f"ja-works-{s}.html"
+for r,fn in [("/faq","faq.html"),("/ja/faq","ja-faq.html")]:
+    try: urllib.request.urlopen(B+r); routes[r]=fn
+    except Exception: pass
 
 # CSS
 home=get("/")
@@ -37,8 +41,6 @@ def link(m):
     return m.group(0)
 
 JS=open(os.path.join(HERE,"site.js")).read()
-_i18n=open(os.path.join(ROOT,"src/lib/i18n.tsx")).read()
-LANG_SCRIPT=re.search(r"export const languageScript = `(.*?)`;",_i18n,re.S).group(1)
 for r,fn in routes.items():
     h=get(r)
     title=re.search(r"<title>(.*?)</title>",h).group(1)
@@ -46,6 +48,8 @@ for r,fn in routes.items():
     body=re.sub(r"<script\b.*?</script>","",body,flags=re.S)
     body=re.sub(r'<link [^>]*>',"",body)
     body=re.sub(r'href=(["\'])(/[^"\'#]*)(#[^"\']*)?\1',link,body)
+    # Same-page section links on the Japanese home
+    body=body.replace('href="/ja#','href="ja.html#')
     body=body.replace('href="#','href="#')
     from urllib.parse import unquote
     body=re.sub(r'\s(srcSet|srcset|sizes)="[^"]*"','',body)
@@ -53,17 +57,19 @@ for r,fn in routes.items():
     body=re.sub(r'src="/images/',r'src="images/',body)
     body=body.replace('action="javascript', 'data-x="')
     htmlcls=re.search(r'<html[^>]*class="([^"]*)"',h).group(1)
+    lang=re.search(r'<html[^>]*data-lang="([^"]*)"',h).group(1)
+    htmllang=re.search(r'<html[^>]*lang="([^"]*)"',h).group(1)
     head=f'''<title>{title}</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="site.css">
-<script>document.documentElement.classList.add("js");document.documentElement.className+=" {htmlcls}";</script>\n<script>{LANG_SCRIPT}</script>'''
+<script>document.documentElement.classList.add("js");document.documentElement.className+=" {htmlcls}";document.documentElement.setAttribute("data-lang","{lang}");document.documentElement.lang="{htmllang}";</script>'''
     tail=f'<script src="site.js"></script><script src="js/nami.js"></script>'
     if fn=="index.html":
         doc=f"{head}\n{body}\n{tail}\n"
     else:
-        doc=f'<!doctype html>\n<html lang="ja" class="{htmlcls}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">{head}</head><body>{body}{tail}</body></html>\n'
+        doc=f'<!doctype html>\n<html lang="{htmllang}" data-lang="{lang}" class="{htmlcls}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">{head}</head><body>{body}{tail}</body></html>\n'
     open(f"{OUT}/{fn}","w").write(doc)
 shutil.copytree(os.path.join(ROOT,"public/images"),f"{OUT}/images",ignore=shutil.ignore_patterns("*.md"))
 import subprocess

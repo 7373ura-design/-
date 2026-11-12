@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { ArrowLink, Container } from "@/components/ui";
 import { T } from "@/lib/i18n";
+import { localHref, type Lang } from "@/lib/lang";
 
-export default function NotFound() {
+export function NotFoundView({ lang }: { lang: Lang }) {
   return (
     <section className="pb-28 pt-40 text-center md:pt-48">
       <Container>
@@ -15,7 +16,7 @@ export default function NotFound() {
           <T ja="お探しのページは見つかりませんでした。" en="We couldn’t find the page you were looking for." />
         </p>
         <div className="mt-10">
-          <ArrowLink href="/" variant="outline">
+          <ArrowLink href={localHref(lang, "/")} variant="outline">
             BACK TO HOME
           </ArrowLink>
         </div>

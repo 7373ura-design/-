@@ -1,22 +1,25 @@
-/**
- * 日本語 / EN switch. The buttons carry no state of their own: the small script
- * in the root layout (languageScript) reads the saved choice, sets
- * <html data-lang> and keeps aria-pressed in sync (set before hydration, hence
- * suppressHydrationWarning), so this works the same on a
- * server-rendered page and on a static export.
- */
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { langOfPath, localHref, stripLang } from "@/lib/lang";
+
+/** EN / 日本語: links to the same page in the other language (English at "/", Japanese at "/ja"). */
 export function LanguageSwitch({ className = "" }: { className?: string }) {
+  const pathname = usePathname() || "/";
+  const lang = langOfPath(pathname);
+  const path = stripLang(pathname);
   const btn =
-    "label px-1 py-1 !tracking-[0.12em] text-navy/45 transition-colors hover:text-navy aria-pressed:text-navy aria-pressed:underline aria-pressed:decoration-vermilion aria-pressed:underline-offset-[6px]";
+    "label px-1 py-1 !tracking-[0.12em] text-navy/45 transition-colors hover:text-navy aria-[current=page]:text-navy aria-[current=page]:underline aria-[current=page]:decoration-vermilion aria-[current=page]:underline-offset-[6px]";
   return (
-    <div role="group" aria-label="Language / 言語" className={`inline-flex items-center gap-1.5 ${className}`}>
-      <button type="button" data-lang-set="ja" lang="ja" className={btn} suppressHydrationWarning>
-        日本語
-      </button>
-      <span aria-hidden className="text-navy/25">/</span>
-      <button type="button" data-lang-set="en" lang="en" className={btn} suppressHydrationWarning>
+    <nav aria-label="Language / 言語" className={`inline-flex items-center gap-1.5 ${className}`}>
+      <Link href={path} hrefLang="en-AU" lang="en" className={btn} aria-current={lang === "en" ? "page" : undefined}>
         EN
-      </button>
-    </div>
+      </Link>
+      <span aria-hidden className="text-navy/25">/</span>
+      <Link href={localHref("ja", path)} hrefLang="ja" lang="ja" className={btn} aria-current={lang === "ja" ? "page" : undefined}>
+        日本語
+      </Link>
+    </nav>
   );
 }

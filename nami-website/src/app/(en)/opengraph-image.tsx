@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "NAMI — Japanese Perspective on Contemporary Australian Living";
+export const alt = "NAMI — Japandi interior design, based in Sydney";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             NEST AND MEMORIES INSIDE
           </div>
           <div style={{ fontSize: 30, marginTop: 36, color: "#075985" }}>
-            Japanese perspective on contemporary Australian living
+            Japandi interior design · Based in Sydney
           </div>
         </div>
       </div>

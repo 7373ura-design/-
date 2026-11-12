@@ -7,6 +7,7 @@ import { Container } from "@/components/ui";
 import { Art, PostHead, type ArtName } from "@/components/washi";
 import { EmailButton, FacebookIcon, InstagramIcon, MailIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
+import { localHref, type Lang } from "@/lib/lang";
 
 /*
  * Sections of the home page (and the shared Card), set like the NAMI Instagram carousels:
@@ -82,7 +83,7 @@ export function Card({
 
 /* ------------------------------------------------------------------ Works */
 
-export function WorksSection() {
+export function WorksSection({ lang }: { lang: Lang }) {
   const works = getWorks();
   return (
     <Post id="works" labelledBy="works-h">
@@ -91,12 +92,12 @@ export function WorksSection() {
         {works.map((w) => (
           <Card
             key={w.slug}
-            href={`/works/${w.slug}`}
+            href={localHref(lang, `/works/${w.slug}`)}
             src={w.photos[0].src}
             alt={w.photos[0].alt}
             no={w.number}
             title={w.title}
-            line={{ ja: `${w.type.ja} · ${w.location}`, en: `${w.type.en} · ${w.location}` }}
+            line={w.type}
             sizes="(min-width:768px) 45vw, 90vw"
           />
         ))}
@@ -138,7 +139,12 @@ export function ContactSection() {
   return (
     <Post id="contact" labelledBy="contact-h" art="bridge">
       <PostHead title={{ ja: "お問い合わせ", en: "Contact" }} id="contact-h" />
-      <ul className="mx-auto mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
+      <p className="jp-body mx-auto mt-10 max-w-2xl text-center text-[0.9375rem] text-navy/80">
+        <T ja={`${site.base.ja}。`} en={`${site.base.en}.`} />
+        <br />
+        <T ja="家づくりのご相談は、お気軽にどうぞ。" en="Get in touch any time about your home." />
+      </p>
+      <ul className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
         <li>
           <EmailButton className={contactButton} cardClassName="left-1/2 top-full mt-2 -translate-x-1/2">
             <MailIcon className="h-5 w-5" />

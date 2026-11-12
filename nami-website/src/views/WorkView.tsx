@@ -6,25 +6,31 @@ import { Container, TextLink } from "@/components/ui";
 import { PostHead } from "@/components/washi";
 import { getWork, getWorks } from "@/data/works";
 import { T } from "@/lib/i18n";
+import { alternates } from "@/lib/meta";
+import { localHref, type Lang } from "@/lib/lang";
 
-type Props = { params: Promise<{ slug: string }> };
+export type WorkProps = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
+export function workParams() {
   return getWorks().map((w) => ({ slug: w.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function workMetadata(lang: Lang, { params }: WorkProps): Promise<Metadata> {
   const { slug } = await params;
   const work = getWork(slug);
   if (!work) return {};
   return {
-    title: `${work.title.en} — ${work.location}`,
-    description: `${work.type.en} in ${work.location}, by NAMI.`,
-    alternates: { canonical: `/works/${work.slug}` },
+    title: lang === "ja" ? `${work.title.ja}｜${work.type.ja}` : `${work.title.en} | Japandi ${work.type.en}`,
+    description:
+      lang === "ja"
+        ? `${work.lead.ja}シドニーを拠点とするNAMIによる、ジャパンディの${work.type.ja}のインテリアデザイン。`
+        : `${work.lead.en} Japandi interior design for a ${work.type.en.toLowerCase()} by NAMI, based in Sydney.`,
+    alternates: alternates(lang, `/works/${work.slug}`),
+    openGraph: { images: [{ url: work.photos[0].src }] },
   };
 }
 
-export default async function WorkPage({ params }: Props) {
+export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
   const { slug } = await params;
   const work = getWork(slug);
   if (!work) notFound();
@@ -43,10 +49,15 @@ export default async function WorkPage({ params }: Props) {
             no={work.number}
             kicker="WORKS"
             title={work.title}
-            sub={`${work.type.en.toUpperCase()} · ${work.location.toUpperCase()}`}
+            sub={`JAPANDI ${work.type.en.toUpperCase()}`}
             size="lg"
           >
-            <T ja={work.story.ja} en={work.story.en} />
+            <p className="title !text-[1.15rem] !leading-relaxed text-navy">{work.lead[lang]}</p>
+            {work.story[lang].map((para) => (
+              <p key={para} className="mt-4">
+                {para}
+              </p>
+            ))}
           </PostHead>
         </Container>
       </section>
@@ -73,7 +84,7 @@ export default async function WorkPage({ params }: Props) {
             <PostHead kicker="MORE WORKS" title={{ ja: "ほかの住まい", en: "More Homes" }} id="more-works" />
             <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-3">
               {others.map((w) => (
-                <Link key={w.slug} href={`/works/${w.slug}`} className="group block text-center">
+                <Link key={w.slug} href={localHref(lang, `/works/${w.slug}`)} className="group block text-center">
                   <div className="relative aspect-[4/3] overflow-hidden bg-beige">
                     <Image src={w.photos[0].src} alt={w.photos[0].alt} fill sizes="(min-width:768px) 30vw, 90vw" className="object-cover" />
                   </div>
@@ -82,13 +93,13 @@ export default async function WorkPage({ params }: Props) {
                     <T ja={w.title.ja.replace("\n", "")} en={w.title.en} />
                   </h3>
                   <p className="mt-1.5 text-[0.8125rem] text-navy/65">
-                    <T ja={`${w.type.ja} · ${w.location}`} en={`${w.type.en} · ${w.location}`} />
+                    <T ja={w.type.ja} en={w.type.en} />
                   </p>
                 </Link>
               ))}
             </div>
             <div className="mt-14 text-center">
-              <TextLink href="/#works">
+              <TextLink href={localHref(lang, "/#works")}>
                 <T ja="プロジェクト一覧" en="All projects" />
               </TextLink>
             </div>

@@ -1,59 +1,98 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Bi } from "@/lib/i18n";
+import type { Bi, BiList } from "@/lib/i18n";
 
 /**
  * Completed homes — real client work. Photos are read at build time from
- * public/images/portfolio/<folder>/ (jpg, jpeg, png or webp, in file-name
+ * public/images/portfolio/<slug>/ (jpg, jpeg, png or webp, in file-name
  * order; the first is the cover). A work appears on the site only once its
  * folder has at least one photo.
+ *
+ * Titles and words follow the NAMI Instagram posts (design/instagram/captions.md):
+ * the lead is the post's first line, the story its body. No suburb or country
+ * is named.
  */
-/** story: where the design focused and where it finds Japandi, shown on the project page. */
-type WorkInfo = { slug: string; folder: string; title: Bi; type: Bi; location: string; story: Bi };
+type WorkInfo = { slug: string; title: Bi; type: Bi; lead: Bi; story: BiList };
 
 const info: WorkInfo[] = [
   {
-    slug: "new-lynn-house",
-    folder: "new-lynn",
-    title: { ja: "ニューリンの家", en: "New Lynn House" },
-    type: { ja: "新築", en: "New home" },
-    location: "New Lynn",
+    slug: "welcome-home",
+    title: { ja: "Welcome Home", en: "Welcome Home" },
+    type: { ja: "新築", en: "New Home" },
+    lead: { ja: "帰ってくるたびに、ほっとする家。", en: "A home that feels good to come back to, every single time." },
     story: {
-      ja: "外観は、赤みのある外壁とブラウンの壁を組み合わせて、温かみがありながら洗練された印象にまとめました。室内は白を基調に、明るい木目の吊り戸棚とフローリングでやわらかさを足しています。黒い玄関ドアや取っ手のラインで全体を引き締め、キッチンには波のような形のペンダントライトをアクセントに。白・木・黒の3色に絞った、静かなジャパンディのバランスです。",
-      en: "Outside, a warm red facade is paired with soft brown cladding for a look that is both inviting and refined. Inside, a white base is softened by light timber cabinetry and wood floors. A black front door and slim black handles add definition, and a wave-like pendant light brings a quiet accent to the kitchen. White, timber and black, nothing more: a calm Japandi balance.",
+      ja: [
+        "この家は「帰ってくる瞬間」を大切に設計しました。",
+        "通りから最初に目に入るのは、温かみのある赤い外壁。すぐに見つけられて、明るく、家ならではの個性になっています。黒い玄関ドアを開けると、雰囲気はやわらかく変わります。白い壁が部屋を明るく見せ、明るい木の床や吊り戸棚が温かみを添えて、くつろげる空間に。",
+        "黒は玄関ドアや細い取っ手など、細かなところに。外と中をさりげなくつないでいます。キッチンの上には波の形のペンダントライト。家の中心に小さな個性と、夜のやさしい明かりを添えてくれます。",
+        "外は明るく迎えてくれて、中は温かくくつろげる家です。",
+      ],
+      en: [
+        "We designed this home around the moment you come back to it.",
+        "From the street, the warm red cladding is the first thing you see. It is easy to spot, cheerful, and gives the house a personality of its own. Open the black front door and the mood softens. White walls brighten every room, and light timber floors and cabinetry add warmth, so the space feels relaxed rather than plain.",
+        "The black carries through in small details, the front door and slim handles, linking the inside to the outside. Over the kitchen, a wave-shaped pendant light gives the heart of the home a little character, and a soft glow in the evening.",
+        "Bright and welcoming on the outside, warm and easy on the inside.",
+      ],
     },
   },
   {
-    slug: "remuera-renovation",
-    folder: "remuera",
-    title: { ja: "レムエラの\nリノベーション", en: "Remuera Renovation" },
+    slug: "old-meets-new",
+    title: { ja: "Old Meets New", en: "Old Meets New" },
     type: { ja: "リノベーション", en: "Renovation" },
-    location: "Remuera",
+    lead: { ja: "古きを知り、新しきを生み出す。", en: "Learning from the old to create the new." },
     story: {
-      ja: "テーマは「温故知新」。日本の住まいの知恵を、ニュージーランドの暮らし方に合わせて生かしました。玄関と天井には木の格子を重ね、間接照明でやわらかな光を落としています。デッキには木の湯船、浴室には木の浴槽と低い木のスツール。日本の入浴の時間を、今の暮らしのなかに取り入れました。温かみのある無垢の床、ジュートのラグ、キッチンにも繰り返した格子のデザイン。古い家の良さを残しながら、伝統と今の生活がひとつになった住まいです。",
-      en: "The idea here is onko-chishin: learning from the old to create the new. Japanese ways of living are shaped to suit a New Zealand lifestyle. Timber slat screens wrap the entry and ceiling, with hidden lighting that casts a soft glow. A wooden soaking tub on the deck, and a timber bath and low stool in the bathroom, bring the Japanese ritual of bathing into everyday life. Warm timber floors, a jute rug, and the slat detail repeated on the kitchen island. The character of the original home stays, and tradition and modern life become one.",
+      ja: [
+        "「温故知新」。私たちが大切にしている言葉で、リノベーションが好きな理由でもあります。",
+        "年月を重ねた家には、新築にはないものがあります。部屋のバランス、光の入り方、そしてすでに家族の思い出がしみ込んでいること。リノベーションは、ゼロからではなく、そのすべてを持ったところから始められます。",
+        "だからこの家では、まずこの家がもともと持っている良さを見つけることから始めました。この家らしさを残しながら、合う形で日本の知恵を取り入れています。玄関と天井には、昔の町家のような木の格子。光をやわらげ、さりげなく目線をさえぎります。温かみのある無垢の床とジュートのラグ。デッキには木の湯船、浴室には木の浴槽。キッチンにも同じ格子を繰り返して、古いものと新しいものがひとつの家としてつながるようにしました。",
+        "家の年月を隠すのではなく、その続きを描く。そんなリノベーションです。",
+      ],
+      en: [
+        "In Japanese this idea is called onko-chishin. We come back to it often, and it is the reason we love renovations.",
+        "An older home carries things a new build can't: the proportions of its rooms, the way the light comes in, the feeling that a family has already made memories here. Instead of starting from zero, a renovation lets you begin with all of that.",
+        "So we started by finding what was already good about this house. We kept its character and brought in Japanese ideas that suit it. Timber slat screens at the entry and ceiling, like those on old Japanese townhouses, softening the light and adding a sense of privacy. Warm timber floors and a jute rug. A wooden soaking tub out on the deck, and a timber bath inside. The same slat detail repeats on the kitchen island, so the old and the new read as one home.",
+        "Nothing here tries to hide the age of the house. It simply gives it a new chapter.",
+      ],
     },
   },
   {
-    slug: "glen-innes-unit",
-    folder: "glen-innes",
-    title: { ja: "グレンイネスの\nユニット", en: "Glen Innes Unit" },
-    type: { ja: "新築", en: "New home" },
-    location: "Glen Innes",
+    slug: "living-in-green",
+    title: { ja: "Living in Green", en: "Living in Green" },
+    type: { ja: "新築", en: "New Home" },
+    lead: { ja: "いつも緑を身近に感じられる家。", en: "A home where green is always close by." },
     story: {
-      ja: "緑あふれる庭に開かれた住まいです。黒い縦張りの外壁に、軒下だけやわらかなアプリコット色を差して、落ち着いた佇まいに。庭には白い砂利と飛び石を敷き、張り出したウッドデッキから芝生と植栽へゆるやかにつなげました。大きな窓で内と外がひとつになり、明るい木の床がそのままデッキへ続きます。外の緑の美しさを室内にも取り入れたくて、キッチンの壁には淡いグリーンを。そのグリーンと、キッチンの木の色とのバランスを特に大切にしました。",
-      en: "A home that opens onto a lush, green garden. Black vertical cladding, with a soft apricot tone tucked under the eaves, gives a calm presence. White gravel and stepping stones lead through the garden, and a timber deck reaches out towards the lawn and planting. Wide sliding doors join inside and out, and pale wood floors run straight onto the deck. To carry the beauty of the garden indoors, the kitchen wall is a soft green, and the balance between that green and the warm timber of the kitchen was the heart of the design.",
+      ja: [
+        "この家の庭は緑がとても豊かです。その心地よさを、窓のところで止めずに、室内まで感じられるようにしたいと考えました。",
+        "キッチンの壁のやわらかなグリーンは、外の植栽から取った色です。キッチンから庭を眺めると、内と外の色が自然につながって見えます。さらに、明るい木の床や木のキッチンの色味も、そのグリーンに合うようにデザインしました。葉っぱ、木、光。庭にある色のように、部屋全体がしっくりなじむようにしています。",
+        "大きな引き戸を開ければ、リビングからそのままウッドデッキへ。床も外まで続いているので、天気のいい日は内と外を自然に行き来できます。",
+        "家の中にいても、外にいても。緑に包まれた暮らし。",
+      ],
+      en: [
+        "The garden here is full of green, and we wanted that feeling to carry on indoors rather than stop at the window.",
+        "That is where the soft green on the kitchen wall comes from. It is taken from the planting outside, so when you look from the kitchen out to the garden, the colours flow into each other. We then designed the pale wood floor and the timber kitchen to sit with that green, so the whole room comes together naturally, a little like the colours you find in a garden: leaves, wood, light.",
+        "Wide sliding doors open the living space onto the timber deck, and the floor carries on outside, so on a fine day you can move between the two without thinking about it.",
+        "Inside or out, a life wrapped in green.",
+      ],
     },
   },
   {
-    slug: "hillcrest-house",
-    folder: "hillcrest",
-    title: { ja: "ヒルクレストの家", en: "Hillcrest House" },
-    type: { ja: "新築", en: "New home" },
-    location: "Hillcrest",
+    slug: "simply-special",
+    title: { ja: "Simply Special", en: "Simply Special" },
+    type: { ja: "新築", en: "New Home" },
+    lead: { ja: "シンプルな家が、一番特別に感じられる理由。", en: "Why a simple home can feel the most special." },
     story: {
-      ja: "「シンプルに、まとまりよく」を大切にした住まいです。丘の上の眺めを生かし、デッキと大きな窓から街と空を取り込みました。高い位置の細長い窓は、緑や空を絵のように切り取ります。室内は白い壁と明るい木の床で光を広げ、寝室は濃いチャコールのカーペットで落ち着きを。キッチンの木の吊り戸棚と編み込みのペンダントライト、浴室の木の洗面台と黒い水栓。色と素材の数を絞り、全体がすっきりとひとつにまとまっています。",
-      en: "A home where simplicity and harmony come first. Set on a hilltop, it opens to the city and sky through a generous deck and wide windows, while slim high windows frame greenery like a picture. White walls and light timber floors spread the light, and deep charcoal carpet brings calm to the bedrooms. Timber cabinetry and woven pendant lights in the kitchen, a floating timber vanity and black tapware in the bathroom. With only a few colours and materials, the whole home feels clean and quietly complete.",
+      ja: [
+        "白い壁に明るい木、少しの濃い色。色と素材の数はあえて少なくして、そのぶん一つひとつを丁寧に選びました。",
+        "木の床や吊り戸棚は、温かみを大切に選んだもの。白い壁が冷たく見えず、いつもやわらかく感じられます。キッチンの上の編み込みのペンダントライトは、素材の表情と、夜のやさしい明かりを添えてくれます。寝室には深いチャコールのカーペットを敷いて、包まれるような落ち着いた空間に。浴室は浮かせた木の洗面台に黒の水栓を合わせ、すっきりと静かに仕上げています。",
+        "そしてこの家には、丘の上からの景色があります。街と空の表情は、一日中ずっと変わり続けます。大きな窓は、景色を切り取る額縁のように。どの部屋にいても、景色が主役になります。横の面には高い位置の細長い窓を設けて、木々を切り取りながら四方から光を取り込みました。景色という主役があるからこそ、シンプルな素材の良さが一層引き立ちます。",
+        "素材の一つひとつにこだわりながら、主役は丘の上からの景色。そんな家です。",
+      ],
+      en: [
+        "White walls, light timber, a few dark accents. We kept the number of colours and materials small on purpose, and put our care into each one instead.",
+        "The timber floors and cabinetry were chosen for their warmth, so the white walls always feel soft rather than cold. Woven pendant lights over the kitchen add texture and a gentle glow in the evening. In the bedrooms, a deep charcoal carpet makes the rooms feel cosy and restful, and in the bathroom a floating timber vanity sits with black tapware for a clean, quiet finish.",
+        "And then there is the view. The home sits on a hill looking out over the city and the sky, which changes all day long. The big windows face it and work like picture frames, turning the view into the main feature of every room. Slim high windows on the sides frame the treetops and bring in light from every direction. With the view as the highlight, the simple materials inside really come to life.",
+        "Each material chosen with care, and the view from the hill at the centre of it all.",
+      ],
     },
   },
 ];
@@ -65,7 +104,7 @@ const DIR = path.join(process.cwd(), "public", "images", "portfolio");
 function photosOf(w: WorkInfo) {
   let files: string[] = [];
   try {
-    files = fs.readdirSync(path.join(DIR, w.folder));
+    files = fs.readdirSync(path.join(DIR, w.slug));
   } catch {
     return [];
   }
@@ -73,8 +112,8 @@ function photosOf(w: WorkInfo) {
     .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     .map((f, i) => ({
-      src: `/images/portfolio/${w.folder}/${encodeURIComponent(f)}`,
-      alt: `${w.title.en}, ${w.location} — photo ${i + 1}`,
+      src: `/images/portfolio/${w.slug}/${encodeURIComponent(f)}`,
+      alt: `${w.title.en}: Japandi ${w.type.en.toLowerCase()} interior by NAMI, photo ${i + 1}`,
     }));
 }
 
@@ -89,6 +128,3 @@ export function getWorks(): Work[] {
 export function getWork(slug: string) {
   return getWorks().find((w) => w.slug === slug);
 }
-
-/** Every slug, photos or not — for static generation. */
-export const workSlugs = info.map((w) => w.slug);

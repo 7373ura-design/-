@@ -6,13 +6,15 @@ export function Logo({
   stacked = false,
   className = "h-10 w-auto",
   priority = false,
+  href = "/",
 }: {
   stacked?: boolean;
   className?: string;
   priority?: boolean;
+  href?: string;
 }) {
   return (
-    <Link href="/" aria-label="NAMI — Home" className="inline-flex shrink-0 items-center">
+    <Link href={href} aria-label="NAMI — Home" className="inline-flex shrink-0 items-center">
       <Image
         src={stacked ? "/images/logo/nami-logo-stacked.png" : "/images/logo/nami-logo.png"}
         alt="NAMI"
