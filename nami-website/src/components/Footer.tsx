@@ -9,15 +9,26 @@ const icon = "flex h-11 w-11 items-center justify-center rounded-full text-paper
 /** The logo, three marks (email, Instagram, Facebook) and the year. */
 export function Footer() {
   return (
-    <footer className="relative bg-navy text-paper">
-      {/* The NAMI surfer riding over the top edge of the footer */}
+    <footer className="relative mt-16 bg-navy text-paper md:mt-20">
+      {/* The top edge of the footer is a wave, and the NAMI surfer rides its crest */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 1440 100"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute inset-x-0 bottom-full block h-12 w-full text-navy md:h-20"
+      >
+        <path
+          fill="currentColor"
+          d="M0 100V62C90 44 190 40 300 56S520 86 640 72 840 30 960 34 1090 66 1160 52 1240 6 1290 4 1360 38 1440 44V100Z"
+        />
+      </svg>
       <Image
         src="/images/washi/surfer-mark.png"
         alt=""
         width={574}
         height={640}
         sizes="140px"
-        className="pointer-events-none absolute left-1/2 top-0 h-auto w-[104px] -translate-x-1/2 -translate-y-[55%] md:w-[132px]"
+        className="pointer-events-none absolute bottom-full left-[82%] h-auto w-[78px] md:left-[89.6%] -translate-x-1/2 translate-y-[38%] md:w-[120px] md:translate-y-[30%]"
       />
       <Container className="pb-12 pt-20 md:py-14">
         <div className="flex items-center justify-between gap-6">
