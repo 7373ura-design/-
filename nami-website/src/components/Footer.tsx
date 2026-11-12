@@ -9,27 +9,28 @@ const icon = "flex h-11 w-11 items-center justify-center rounded-full text-paper
 /** The logo, three marks (email, Instagram, Facebook) and the year. */
 export function Footer() {
   return (
-    <footer className="relative mt-16 bg-navy text-paper md:mt-20">
-      {/* The top edge of the footer is a wave, and the NAMI surfer rides its crest */}
+    <footer className="relative mt-36 bg-navy text-paper md:mt-64">
+      {/* The top edge of the footer is the sea: a gentle swell across the page that
+          builds on the right into a breaking wave, with the NAMI surfer on its face */}
       <svg
         aria-hidden="true"
-        viewBox="0 0 1440 100"
+        viewBox="0 0 1440 60"
         preserveAspectRatio="none"
-        className="pointer-events-none absolute inset-x-0 bottom-full block h-12 w-full text-navy md:h-20"
+        className="pointer-events-none absolute inset-x-0 bottom-full block h-8 w-full text-navy md:h-14"
       >
-        <path
-          fill="currentColor"
-          d="M0 100V62C90 44 190 40 300 56S520 86 640 72 840 30 960 34 1090 66 1160 52 1240 6 1290 4 1360 38 1440 44V100Z"
-        />
+        <path fill="currentColor" d="M0 60V40C120 26 240 24 360 34S600 50 720 42 960 26 1080 34 1200 52 1440 58V60Z" />
       </svg>
-      <Image
-        src="/images/washi/surfer-mark.png"
-        alt=""
-        width={574}
-        height={640}
-        sizes="140px"
-        className="pointer-events-none absolute bottom-full left-[82%] h-auto w-[78px] md:left-[89.6%] -translate-x-1/2 translate-y-[38%] md:w-[120px] md:translate-y-[30%]"
-      />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-[calc(100%-2px)] right-0 aspect-[2/1] w-[300px] md:w-[540px]">
+        <Image src="/images/washi/footer-wave.svg" alt="" fill sizes="540px" className="object-contain" />
+        <Image
+          src="/images/washi/surfer-mark.png"
+          alt=""
+          width={574}
+          height={640}
+          sizes="110px"
+          className="absolute bottom-[8.9%] right-[20.7%] h-auto w-[19.3%]"
+        />
+      </div>
       <Container className="pb-12 pt-20 md:py-14">
         <div className="flex items-center justify-between gap-6">
           {/* Single-colour (white) version of the logo for the dark ground */}

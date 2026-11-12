@@ -10,7 +10,7 @@ export const site = {
   instagram: "https://www.instagram.com/nami.studio_au/",
   instagramHandle: "@nami.studio_au",
   // TODO: replace with the NAMI Facebook page once confirmed.
-  facebook: "https://www.facebook.com/",
+  facebook: "https://www.facebook.com/share/1CV1XTPuqW/",
   email: "hello@nami-studio.com.au",
 };
 

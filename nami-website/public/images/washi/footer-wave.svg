@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320">
+  <!-- wave body: long back rising to a tall crest that curls forward -->
+  <path fill="#1e3a5c" d="M0 320V292C90 288 170 276 230 244C282 216 308 150 344 100C372 62 408 42 448 42C494 42 528 66 542 102C552 128 544 152 526 160C510 166 496 156 500 140C504 126 518 124 526 132C518 108 494 96 468 100C432 106 414 142 418 182C424 232 474 272 566 292C596 298 624 300 640 300V320Z"/>
+  <!-- the face, lighter where the light passes through -->
+  <path fill="#2a5b86" d="M418 182C414 142 432 106 468 100C484 97 498 101 510 110C482 116 462 138 460 174C458 220 498 262 566 292C478 272 424 232 418 182Z"/>
+  <!-- foam: a thin rim along the crest with woodblock claws hanging from the lip -->
+  <path fill="#f6efe3" d="M344 100C372 62 408 42 448 42C494 42 528 66 542 102C552 128 544 152 526 160C510 166 496 156 500 140C504 126 518 124 526 132C524 118 516 106 506 98C514 112 512 124 504 126C500 112 490 102 478 96C484 108 480 118 472 118C470 104 458 94 444 92C448 102 442 110 434 108C432 94 420 86 404 88C396 78 374 76 356 86Z"/>
+  <g fill="#f6efe3"><circle cx="562" cy="110" r="5"/><circle cx="576" cy="126" r="3.5"/><circle cx="566" cy="146" r="2.5"/><circle cx="552" cy="86" r="3"/></g>
+  <!-- whitewater trailing off the base -->
+  <path fill="#f6efe3" opacity=".9" d="M486 272C516 284 560 292 620 296C596 302 534 300 494 288C474 282 472 272 486 272Z"/>
+</svg>
