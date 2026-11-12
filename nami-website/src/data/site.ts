@@ -20,6 +20,7 @@ export const site = {
 /** Main menu. FAQ appears once at least one answer is written (src/data/faq.ts). */
 export const navigation = [
   { label: "WORKS", href: "/#works" },
+  { label: "SERVICES", href: "/#services" },
   { label: "ABOUT", href: "/#about" },
   { label: "FAQ", href: "/faq" },
   { label: "CONTACT", href: "/#contact" },

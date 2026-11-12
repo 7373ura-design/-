@@ -6,6 +6,7 @@ import { Container, TextLink } from "@/components/ui";
 import { PostHead } from "@/components/washi";
 import { getWork, getWorks } from "@/data/works";
 import { T } from "@/lib/i18n";
+import { JsonLd, breadcrumbLd, projectLd } from "@/components/JsonLd";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
 
@@ -39,6 +40,15 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
 
   return (
     <div data-lightbox>
+      <JsonLd
+        data={[
+          projectLd(lang, work),
+          breadcrumbLd(lang, [
+            { name: lang === "ja" ? "作品" : "Works", path: "/#works" },
+            { name: work.title[lang], path: `/works/${work.slug}` },
+          ]),
+        ]}
+      />
       <section className="pt-20 md:pt-24">
         <div className="relative h-[clamp(260px,52vw,720px)] w-full overflow-hidden bg-beige" data-lightbox-item>
           <Image src={cover.src} alt={cover.alt} fill priority sizes="100vw" className="object-cover" />

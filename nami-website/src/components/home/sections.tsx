@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { background } from "@/data/brand";
+import { background, services } from "@/data/brand";
+import { answeredFaq } from "@/data/faq";
 import { site } from "@/data/site";
 import { getWorks } from "@/data/works";
 import { Container } from "@/components/ui";
@@ -106,25 +107,50 @@ export function WorksSection({ lang }: { lang: Lang }) {
   );
 }
 
+/* ---------------------------------------------------------------- Services */
+
+/** A plain list, ruled like a page of notes. */
+function Notes({ items }: { items: { title: Bi; line: Bi }[] }) {
+  return (
+    <dl className="border-b border-navy/15">
+      {items.map((b) => (
+        <div key={b.title.en} className="grid gap-1 border-t border-navy/15 py-4 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+          <dt className="title text-[1.05rem] !leading-snug">
+            <T ja={b.title.ja} en={b.title.en} />
+          </dt>
+          <dd className="text-[0.875rem] leading-relaxed text-navy/75">
+            <T ja={b.line.ja} en={b.line.en} />
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+export function ServicesSection({ lang }: { lang: Lang }) {
+  return (
+    <Post id="services" labelledBy="services-h">
+      <PostHead title={{ ja: "サービス", en: "Services" }} id="services-h">
+        <Notes items={services.items} />
+        {answeredFaq().length > 0 && (
+          <p className="mt-6">
+            <Link href={localHref(lang, "/faq")} className="text-[0.8125rem] text-vermilion hover:underline">
+              <T ja="よくあるご質問を見る →" en="Read our FAQ →" />
+            </Link>
+          </p>
+        )}
+      </PostHead>
+    </Post>
+  );
+}
+
 /* ------------------------------------------------------------- Background */
 
 export function BackgroundSection() {
   return (
     <Post id="background" labelledBy="background-h" art="tea">
       <PostHead title={{ ja: "プロフィール", en: "About" }} id="background-h">
-        {/* A plain list, ruled like a page of notes */}
-        <dl className="border-b border-navy/15">
-          {background.items.map((b) => (
-            <div key={b.title.en} className="grid gap-1 border-t border-navy/15 py-4 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
-              <dt className="title text-[1.05rem] !leading-snug">
-                <T ja={b.title.ja} en={b.title.en} />
-              </dt>
-              <dd className="text-[0.875rem] leading-relaxed text-navy/75">
-                <T ja={b.line.ja} en={b.line.en} />
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <Notes items={background.items} />
       </PostHead>
     </Post>
   );
