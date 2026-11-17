@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>NAMI Founding Monitors Entry Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --navy:#1D3F6E; --ink:#3C4B63; --muted:#7B8799; --red:#E4552F; --cream:#FBF6EC; --line:#C9D3DF; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Jost',Helvetica,sans-serif; color:var(--ink); background:#fff; }
+  .sheet { width:210mm; height:297mm; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; }
+  .card { position:relative; padding:7mm 7.5mm 6mm; background:var(--cream); border:0.2mm dashed #d9d2c3; display:flex; flex-direction:column; }
+  .top { display:flex; justify-content:space-between; align-items:baseline; font-size:6.6pt; letter-spacing:.18em; color:var(--muted); }
+  .top b { color:var(--navy); font-weight:500; }
+  h1 { font-family:'Shippori Mincho',Georgia,serif; color:var(--navy); font-weight:600; font-size:17pt; margin:2.2mm 0 .6mm; letter-spacing:.02em; }
+  .lead { font-size:7.8pt; margin:0 0 .4mm; color:var(--ink); }
+  .lead em { font-style:normal; color:var(--red); font-weight:500; }
+  .fine { font-size:5.6pt; color:var(--muted); margin:0 0 2.4mm; }
+  .f { display:flex; align-items:flex-end; gap:2mm; height:7.2mm; border-bottom:0.25mm solid var(--line); font-size:7pt; }
+  .f label { white-space:nowrap; color:var(--navy); font-weight:500; padding-bottom:.8mm; }
+  .f.req label::after { content:" *"; color:var(--red); }
+  .f.email { height:8.4mm; border-bottom-color:var(--navy); }
+  .f small { margin-left:auto; color:var(--muted); font-size:5.6pt; padding-bottom:.9mm; }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:3mm; }
+  .opts { font-size:6.8pt; margin-top:2mm; line-height:1.75; }
+  .opts span.k { color:var(--navy); font-weight:500; display:inline-block; width:12mm; }
+  .box { display:inline-block; width:2.4mm; height:2.4mm; border:0.25mm solid var(--navy); vertical-align:-.3mm; margin:0 .8mm 0 1.6mm; }
+  .q { margin-top:2.2mm; font-size:7pt; color:var(--navy); font-weight:500; }
+  .q i { font-weight:400; color:var(--muted); font-style:normal; font-size:6pt; }
+  .ln { height:6.6mm; border-bottom:0.25mm solid var(--line); }
+  .consent { margin-top:auto; font-size:5.9pt; line-height:1.5; color:var(--ink); }
+  .consent div { display:flex; gap:1mm; margin-top:.8mm; }
+  .consent .box { margin-left:0; flex:none; margin-top:.2mm; }
+  .foot { margin-top:2mm; padding-top:1.6mm; border-top:0.25mm solid var(--line); font-size:6pt; color:var(--navy); display:flex; justify-content:space-between; }
+  .foot b { color:var(--red); font-weight:500; }
+  .no { position:absolute; right:7.5mm; bottom:2mm; font-size:5pt; color:#b9b2a3; letter-spacing:.1em; }
+</style></head><body>
+<div class="sheet">
+<!--CARD-->
+</div>
+<script>
+const card = `
+<div class="card">
+  <div class="top"><b>NAMI STUDIO</b><span>MATSURI SYDNEY · 6 DEC</span></div>
+  <h1>Founding Monitors</h1>
+  <p class="lead"><em>10 Sydney homes.</em> Free Japandi interior design.</p>
+  <p class="fine">Design fee only — furniture, materials and construction are not included.</p>
+  <div class="f req"><label>Name</label></div>
+  <div class="f req email"><label>Email</label><small>we'll contact you here</small></div>
+  <div class="row2">
+    <div class="f"><label>Phone</label><small>optional</small></div>
+    <div class="f"><label>Instagram @</label></div>
+  </div>
+  <div class="f req"><label>Suburb</label></div>
+  <div class="opts">
+    <div><span class="k">Home</span><span class="box"></span>House<span class="box"></span>Apartment<span class="box"></span>Townhouse<span class="box"></span>Own<span class="box"></span>Rent</div>
+    <div><span class="k">Space</span><span class="box"></span>Living<span class="box"></span>Bedroom<span class="box"></span>Kitchen<span class="box"></span>Entry<span class="box"></span>Outdoor</div>
+    <div><span class="k">Timing</span><span class="box"></span>Soon<span class="box"></span>Early 2027<span class="box"></span>Later in 2027<span class="box"></span>Just curious</div>
+  </div>
+  <div class="q">What kind of home would you love to live in? <i>— a few words is fine</i></div>
+  <div class="ln"></div><div class="ln"></div><div class="ln"></div>
+  <div class="q">What would you most like to change? <i>— e.g. clutter, light, layout, feel</i></div>
+  <div class="ln"></div><div class="ln"></div>
+  <div class="consent">
+    <div><span class="box"></span><span>Yes, NAMI STUDIO may email me about Founding Monitors. <b>(required)</b></span></div>
+    <div><span class="box"></span><span>Also send me NAMI's DIY ideas &amp; news now and then. (optional — unsubscribe any time)</span></div>
+    <div style="color:var(--muted)">Your details are used only by NAMI STUDIO and never shared or sold.</div>
+  </div>
+  <div class="foot"><span>We'll email you <b>within a week</b>.</span><span>Every entry gets a little thank-you ✦</span></div>
+</div>`;
+document.querySelector('.sheet').innerHTML = card.repeat(4);
+</script>
+</body></html>
