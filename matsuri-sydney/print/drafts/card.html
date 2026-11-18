@@ -1,55 +1,58 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
 .row{display:flex;gap:10mm;margin-bottom:8mm}
 .col p{font-size:8pt;color:#777;margin-bottom:2mm}
-.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden;padding:6mm 6.5mm;display:flex;flex-direction:column}
-.logo{display:flex;align-items:center;gap:2.6mm}
-.logo img.m{width:11mm}.logo img.w{height:5.2mm}
-.studio{font-size:5.2pt;letter-spacing:.32em;color:var(--muted);margin-top:.6mm}
-.name{font-size:12pt;margin-top:auto;letter-spacing:.04em;position:relative}
-.role{font-size:6pt;color:var(--muted);letter-spacing:.06em;margin-top:.4mm;position:relative}
-.line{width:44mm;margin-top:2.4mm;border-top:.25mm solid var(--line)}
-.contact{position:relative;margin-top:2mm;font-size:6.2pt;line-height:1.7;display:grid;grid-template-columns:auto 1fr;column-gap:2.6mm;width:max-content}
-.contact b{color:var(--navy);font-weight:500}
-.qrs{display:flex;gap:2.2mm;position:absolute;right:6.5mm;top:6mm}
-.qrs div{display:flex;flex-direction:column;align-items:center;font-size:4.8pt;color:var(--navy);font-weight:500;letter-spacing:.04em}
-.qrs img{width:13.5mm;margin-bottom:.8mm}
-svg.deco{position:absolute;right:0;bottom:0}
+.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
+/* front */
+.f{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.f .m{width:13mm;margin-bottom:3mm}
+.f .w{height:7.4mm}
+.f .studio{font-size:5.6pt;letter-spacing:.5em;color:var(--muted);margin:1.4mm 0 0 .5em}
+.f .sub{font-size:6pt;letter-spacing:.22em;color:var(--navy);margin-top:4mm}
+.f2 .nm{font-size:17pt;letter-spacing:.06em}
+.f2 .rl{font-size:6pt;letter-spacing:.35em;color:var(--muted);margin-top:1.6mm}
+.f2 .brand{position:absolute;bottom:5mm;display:flex;gap:1.8mm;align-items:center}
+.f2 .brand img{height:4.2mm}
+/* back */
+.b{display:flex;padding:6mm 6mm}
+.b .left{width:33mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.b .ct{font-size:5.2pt;letter-spacing:.24em;color:var(--navy);line-height:1.5;margin-bottom:2.2mm}
+.b .qrs{display:flex;gap:2mm}
+.b .qrs div{font-size:4.8pt;color:var(--navy);font-weight:500}
+.b .qrs img{width:14mm;display:block;margin-bottom:.8mm}
+.b .handle{font-size:5.4pt;color:var(--muted);margin-top:1.8mm}
+.b .div{width:.25mm;background:var(--line);margin:0 5mm}
+.b .right{flex:1;display:flex;flex-direction:column;justify-content:center}
+.b .lg{display:flex;gap:1.8mm;align-items:center}
+.b .lg img.mk{height:6mm}.b .lg img.wm{height:3.8mm}
+.b .nm{font-size:10pt;margin-top:2.6mm}
+.b .rl{font-size:5.4pt;letter-spacing:.2em;color:var(--muted);margin-top:.4mm}
+.b .rule{width:12mm;border-top:.3mm solid var(--red);margin:2.4mm 0}
+.b .it{display:flex;align-items:center;gap:1.8mm;font-size:6pt;line-height:1;margin:1.1mm 0}
+.b .it svg{width:2.8mm;height:2.8mm;flex:none}
+.b .note{font-size:4.8pt;letter-spacing:.14em;color:var(--navy);margin-top:2.4mm;line-height:1.5}
 </style></head><body>
 <div class="row">
-<div class="col"><p>案1：ロゴと同じ形の波（3色を重ねる）</p>
-<div class="card">
- <svg class="deco" width="52mm" height="22mm" viewBox="0 0 520 220" preserveAspectRatio="none">
-  <path d="M0 220 C120 210 170 120 260 110 C360 100 390 170 450 150 C490 136 505 95 520 70 L520 220Z" fill="#7FC4DA"/>
-  <path d="M90 220 C190 205 230 150 310 145 C390 140 410 195 470 180 C500 172 512 150 520 135 L520 220Z" fill="#2A8FB8"/>
-  <path d="M200 220 C280 210 320 180 380 182 C440 184 460 215 520 200 L520 220Z" fill="#1D3F6E"/>
- </svg>
- <div class="logo"><img class="m" src="mark.png"><div><img class="w" src="wordmark.png"><div class="studio">STUDIO</div></div></div>
- <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
- <div class="name serif">Nanami Ura</div><div class="role">Interior Designer</div>
- <div class="line"></div>
- <div class="contact"><b>E</b><span>hello@nami-studio.com.au</span><b>M</b><span>0406 880 243</span></div>
-</div></div>
-<div class="col"><p>案2：青海波（日本の伝統の波柄）をうすく</p>
-<div class="card">
- <svg class="deco" width="40mm" height="24mm" viewBox="0 0 400 240">
-  <defs>
-   <pattern id="sg" width="40" height="20" patternUnits="userSpaceOnUse">
-    <g fill="none" stroke="#2A8FB8" stroke-width="1.6">
-     <circle cx="20" cy="20" r="18"/><circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
-     <circle cx="0" cy="10" r="18"/><circle cx="0" cy="10" r="12"/><circle cx="0" cy="10" r="6"/>
-     <circle cx="40" cy="10" r="18"/><circle cx="40" cy="10" r="12"/><circle cx="40" cy="10" r="6"/>
-    </g>
-   </pattern>
-   <radialGradient id="fade" cx="100%" cy="100%" r="100%"><stop offset="0.35" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
-   <mask id="m"><rect width="400" height="240" fill="url(#fade)"/></mask>
-  </defs>
-  <rect width="400" height="240" fill="url(#sg)" mask="url(#m)" opacity=".55"/>
- </svg>
- <div class="logo"><img class="m" src="mark.png"><div><img class="w" src="wordmark.png"><div class="studio">STUDIO</div></div></div>
- <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
- <div class="name serif">Nanami Ura</div><div class="role">Interior Designer</div>
- <div class="line"></div>
- <div class="contact"><b>E</b><span>hello@nami-studio.com.au</span><b>M</b><span>0406 880 243</span></div>
-</div></div>
+ <div class="col"><p>表面 案A：NAMIのロゴを主役に</p>
+  <div class="card f"><img class="m" src="mark.png"><img class="w" src="wordmark.png"><div class="studio">STUDIO</div><div class="sub">JAPANDI INTERIOR DESIGN · SYDNEY</div></div></div>
+ <div class="col"><p>表面 案B：名前を主役に（参考画像に近い）</p>
+  <div class="card f f2"><div class="nm serif">NANAMI URA</div><div class="rl">INTERIOR DESIGNER</div><div class="brand"><img src="mark.png"><img src="wordmark.png"></div></div></div>
+</div>
+<div class="row">
+ <div class="col"><p>裏面：左にQR、右に連絡先</p>
+  <div class="card b">
+   <div class="left"><div class="ct">CONNECT<br>WITH US</div>
+    <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
+    <div class="handle">@nami.studio</div></div>
+   <div class="div"></div>
+   <div class="right">
+    <div class="lg"><img class="mk" src="mark.png"><img class="wm" src="wordmark.png"></div>
+    <div class="nm serif">Nanami Ura</div><div class="rl">INTERIOR DESIGNER</div>
+    <div class="rule"></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="#1D3F6E" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>hello@nami-studio.com.au</div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="#1D3F6E" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>0406 880 243</div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="#1D3F6E" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sydney, NSW</div>
+    <div class="note">RESIDENTIAL &amp; COMMERCIAL<br>NEW BUILDS · RENOVATIONS</div>
+   </div>
+  </div></div>
 </div>
 </body></html>
