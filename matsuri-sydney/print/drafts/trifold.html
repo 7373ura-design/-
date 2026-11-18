@@ -1,0 +1,116 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
+.sheet{width:297mm;height:210mm;display:grid;grid-template-columns:repeat(3,99mm);background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);margin-bottom:10mm}
+.p{padding:12mm 10mm;border-right:.2mm dashed #d8d0c0;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.p:last-child{border-right:0}
+.k{font-size:6.5pt;letter-spacing:.28em;color:var(--red);font-weight:500}
+h2{font-size:17pt;line-height:1.25;margin:2.5mm 0 4mm}
+p.t{font-size:8.6pt;line-height:1.6;margin-bottom:3mm}
+.small{font-size:7.2pt;color:var(--muted);line-height:1.55}
+.meaning div{display:flex;gap:3mm;align-items:baseline;padding:2.2mm 0;border-top:.25mm solid var(--line);font-size:8pt}
+.meaning b{font-family:'Shippori Mincho';color:var(--navy);font-size:13pt;width:9mm}
+.fit div{padding:2.6mm 0;border-top:.25mm solid var(--line)}
+.fit b{display:block;color:var(--navy);font-weight:500;font-size:8.6pt}
+.fit span{font-size:7.8pt}
+.kanji{margin-top:auto;font-family:'Shippori Mincho';color:var(--navy);font-size:20pt;letter-spacing:.1em}
+ul.q{list-style:none;font-size:8pt;line-height:1.85}
+ul.q li::before{content:"— ";color:var(--red)}
+.box{margin-top:auto;background:var(--navy);color:#fff;padding:5mm;border-radius:1mm}
+.box b{display:block;font-family:'Shippori Mincho';font-size:11pt;margin-bottom:1mm}
+.box span{font-size:7.6pt;line-height:1.5;color:#dfe6f0}
+.works{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:1mm}
+.w .ph{height:40mm;border-radius:.8mm;background:linear-gradient(135deg,#d9cdb8,#b9a88c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:7pt;letter-spacing:.1em}
+.w b{display:block;font-size:8pt;color:var(--navy);font-weight:500;margin-top:1.4mm}
+.w span{font-size:6.6pt;color:var(--muted)}
+.cover{padding:0;background:var(--cream)}
+.cover .art{height:118mm;background:url(surf.png) 35% center/cover}
+.cover .inner{padding:9mm 10mm;display:flex;flex-direction:column;flex:1}
+.cover .logo{display:flex;gap:3mm;align-items:center}
+.cover .logo img.m{width:15mm}.cover .logo img.w{height:7mm}
+.cover h1{font-size:19pt;line-height:1.25;margin-top:6mm}
+.cover .sub{font-size:7.4pt;letter-spacing:.2em;color:var(--muted);margin-top:auto}
+.steps{counter-reset:s}
+.steps div{display:flex;gap:3mm;padding:2.2mm 0;border-top:.25mm solid var(--line);font-size:8pt}
+.steps div::before{counter-increment:s;content:"0" counter(s);font-family:'Shippori Mincho';color:var(--red);font-size:10pt;width:7mm}
+.steps b{color:var(--navy);font-weight:500;display:block}
+.contact{display:flex;gap:4mm;align-items:center;margin-top:auto}
+.contact img{width:24mm}
+.contact div{font-size:7.6pt;line-height:1.7}
+.mon{border:.3mm solid var(--red);padding:3.5mm;margin:4mm 0;border-radius:1mm}
+.mon b{color:var(--red);font-weight:500;font-size:7pt;letter-spacing:.2em}
+.mon div{font-size:8pt;color:var(--navy);margin-top:.8mm}
+</style></head><body>
+<p class="lbl">三つ折りチラシ 試作（DL・A4三つ折り）　外側：左＝開いて最初の面／中央＝裏面／右＝表紙 ／ 写真・連絡先・QRは仮</p>
+<div class="sheet">
+  <div class="p">
+    <div class="k">ABOUT</div>
+    <h2 class="serif">What is NAMI?</h2>
+    <p class="t">A Sydney-based design studio for homes and businesses — new builds and renovations, designed for today and the years ahead.</p>
+    <p class="t">We bring Japanese calm and Australian openness together, with natural materials made for everyday life.</p>
+    <div class="meaning" style="margin-top:auto">
+      <div><b>波</b><span><strong>Waves</strong> — life moves in waves; home is where you come back to.</span></div>
+      <div><b>並</b><span><strong>Side by Side</strong> — Japan and Australia, each with its own character.</span></div>
+      <div><b>N</b><span><strong>Nest And Memories Inside</strong></span></div>
+    </div>
+  </div>
+  <div class="p">
+    <div class="k">GET STARTED</div>
+    <h2 class="serif">Let's design<br>your home.</h2>
+    <div class="steps">
+      <div><span><b>Chat</b>Tell us about your space and how you live.</span></div>
+      <div><span><b>Concept</b>Mood, materials and a plan for your budget.</span></div>
+      <div><span><b>Design</b>Detailed design, from layout to finishes.</span></div>
+      <div><span><b>Build</b>We manage construction with Japan Homes.</span></div>
+    </div>
+    <div class="mon"><b>FOUNDING MONITORS</b><div>10 Sydney homes · free design fee.<br>Ask us at the booth today.</div></div>
+    <div class="contact"><img src="qr.png"><div><b style="color:var(--navy)">@nami.studio</b><br>hello@namistudio.com.au<br>04xx xxx xxx<br><span class="small">ABN xx xxx xxx xxx</span></div></div>
+  </div>
+  <div class="p cover">
+    <div class="art"></div>
+    <div class="inner">
+      <div class="logo"><img class="m" src="mark.png"><img class="w" src="wordmark.png"></div>
+      <h1 class="serif">A new wave of<br>Japandi in Sydney.</h1>
+      <div class="sub">INTERIOR · JAPANESE GARDEN · RENOVATION</div>
+    </div>
+  </div>
+</div>
+<p class="lbl">内側：左→中→右</p>
+<div class="sheet">
+  <div class="p">
+    <div class="k">WHY JAPANDI</div>
+    <h2 class="serif">In Japan, we never called it Japandi.</h2>
+    <p class="t">It was never just a look — it was a way of living, full of soft light, natural wood and space to breathe.</p>
+    <div class="fit">
+      <div><b>Ma (間) × Open-plan</b><span>Big open rooms that still feel calm.</span></div>
+      <div><b>Soft light × Strong sun</b><span>Screens that soften the Australian sun.</span></div>
+      <div><b>Natural materials × Relaxed living</b><span>Warm materials made for everyday life.</span></div>
+    </div>
+    <div class="kanji">温故知新</div>
+    <div class="small">Learning from the old to create the new.</div>
+  </div>
+  <div class="p">
+    <div class="k">TRUST</div>
+    <h2 class="serif">In Safe Hands.</h2>
+    <p class="t">Qualified in</p>
+    <ul class="q">
+      <li>Interior Design &amp; Property Styling</li>
+      <li>Japanese Garden Design</li>
+      <li>Japandi Design</li>
+      <li>Architecture — Japan</li>
+      <li>Real Estate — NSW &amp; Japan</li>
+    </ul>
+    <p class="t" style="margin-top:4mm">So we design beyond taste — with your property's value in mind.</p>
+    <div class="box"><b>Mentored by Japan Homes</b><span>20+ years of housing in Australia &amp; NZ. We manage construction too — so your budget shapes the design from the very first sketch.</span></div>
+  </div>
+  <div class="p">
+    <div class="k">SELECTED WORKS</div>
+    <h2 class="serif">Homes we love.</h2>
+    <div class="works">
+      <div class="w"><div class="ph">PHOTO</div><b>Welcome Home</b><span>New home · New Lynn</span></div>
+      <div class="w"><div class="ph">PHOTO</div><b>Old Meets New</b><span>Renovation · Remuera</span></div>
+      <div class="w"><div class="ph">PHOTO</div><b>Living in Green</b><span>New home · Glen Innes</span></div>
+      <div class="w"><div class="ph">PHOTO</div><b>Simply Special</b><span>New home · Hillcrest</span></div>
+    </div>
+    <div class="small" style="margin-top:auto">See more homes on Instagram.</div>
+  </div>
+</div>
+</body></html>
