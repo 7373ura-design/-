@@ -1,35 +1,55 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
-.row{display:flex;gap:10mm;margin-bottom:8mm;align-items:flex-start}
+.row{display:flex;gap:10mm;margin-bottom:8mm}
 .col p{font-size:8pt;color:#777;margin-bottom:2mm}
-.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
-.front{padding:6mm 6.5mm;display:flex;flex-direction:column}
+.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden;padding:6mm 6.5mm;display:flex;flex-direction:column}
 .logo{display:flex;align-items:center;gap:2.6mm}
 .logo img.m{width:11mm}.logo img.w{height:5.2mm}
 .studio{font-size:5.2pt;letter-spacing:.32em;color:var(--muted);margin-top:.6mm}
-.name{font-size:12pt;margin-top:auto;letter-spacing:.04em}
-.role{font-size:6pt;color:var(--muted);letter-spacing:.06em;margin-top:.4mm}
-.bottom{display:flex;align-items:flex-end;justify-content:space-between;margin-top:2.4mm;padding-top:2mm;border-top:.25mm solid var(--line)}
-.contact{font-size:6.2pt;line-height:1.7;display:grid;grid-template-columns:auto 1fr;column-gap:2.6mm}
+.name{font-size:12pt;margin-top:auto;letter-spacing:.04em;position:relative}
+.role{font-size:6pt;color:var(--muted);letter-spacing:.06em;margin-top:.4mm;position:relative}
+.line{width:44mm;margin-top:2.4mm;border-top:.25mm solid var(--line)}
+.contact{position:relative;margin-top:2mm;font-size:6.2pt;line-height:1.7;display:grid;grid-template-columns:auto 1fr;column-gap:2.6mm;width:max-content}
 .contact b{color:var(--navy);font-weight:500}
 .qrs{display:flex;gap:2.2mm;position:absolute;right:6.5mm;top:6mm}
 .qrs div{display:flex;flex-direction:column;align-items:center;font-size:4.8pt;color:var(--navy);font-weight:500;letter-spacing:.04em}
 .qrs img{width:13.5mm;margin-bottom:.8mm}
-.art{background:url(surf.png) center/cover}
-.tag{position:absolute;left:0;right:0;top:4.2mm;text-align:center;font-size:7.6pt;color:var(--navy);letter-spacing:.03em}
+svg.deco{position:absolute;right:0;bottom:0}
 </style></head><body>
 <div class="row">
- <div class="col"><p>表面（共通）：ウェブサイトの行を削除、QR 2つを右上へ</p>
-  <div class="card front">
-   <div class="logo"><img class="m" src="mark.png"><div><img class="w" src="wordmark.png"><div class="studio">STUDIO</div></div></div>
-   <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
-   <div class="name serif">Nanami Ura</div>
-   <div class="role">Founder · Interior &amp; Garden Designer</div>
-   <div class="bottom"><div class="contact"><b>E</b><span>hello@nami-studio.com.au</span><b>M</b><span>0406 880 243</span></div></div>
-  </div>
- </div>
-</div>
-<div class="row">
- <div class="col"><p>裏面 案A：イラストだけ（全体を見せる）</p><div class="card art"></div></div>
- <div class="col"><p>裏面 案B：イラスト＋上の空にキャッチコピー</p><div class="card art"><div class="tag serif">A new wave of Japandi in Sydney.</div></div></div>
+<div class="col"><p>案1：ロゴと同じ形の波（3色を重ねる）</p>
+<div class="card">
+ <svg class="deco" width="52mm" height="22mm" viewBox="0 0 520 220" preserveAspectRatio="none">
+  <path d="M0 220 C120 210 170 120 260 110 C360 100 390 170 450 150 C490 136 505 95 520 70 L520 220Z" fill="#7FC4DA"/>
+  <path d="M90 220 C190 205 230 150 310 145 C390 140 410 195 470 180 C500 172 512 150 520 135 L520 220Z" fill="#2A8FB8"/>
+  <path d="M200 220 C280 210 320 180 380 182 C440 184 460 215 520 200 L520 220Z" fill="#1D3F6E"/>
+ </svg>
+ <div class="logo"><img class="m" src="mark.png"><div><img class="w" src="wordmark.png"><div class="studio">STUDIO</div></div></div>
+ <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
+ <div class="name serif">Nanami Ura</div><div class="role">Interior Designer</div>
+ <div class="line"></div>
+ <div class="contact"><b>E</b><span>hello@nami-studio.com.au</span><b>M</b><span>0406 880 243</span></div>
+</div></div>
+<div class="col"><p>案2：青海波（日本の伝統の波柄）をうすく</p>
+<div class="card">
+ <svg class="deco" width="40mm" height="24mm" viewBox="0 0 400 240">
+  <defs>
+   <pattern id="sg" width="40" height="20" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="#2A8FB8" stroke-width="1.6">
+     <circle cx="20" cy="20" r="18"/><circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
+     <circle cx="0" cy="10" r="18"/><circle cx="0" cy="10" r="12"/><circle cx="0" cy="10" r="6"/>
+     <circle cx="40" cy="10" r="18"/><circle cx="40" cy="10" r="12"/><circle cx="40" cy="10" r="6"/>
+    </g>
+   </pattern>
+   <radialGradient id="fade" cx="100%" cy="100%" r="100%"><stop offset="0.35" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+   <mask id="m"><rect width="400" height="240" fill="url(#fade)"/></mask>
+  </defs>
+  <rect width="400" height="240" fill="url(#sg)" mask="url(#m)" opacity=".55"/>
+ </svg>
+ <div class="logo"><img class="m" src="mark.png"><div><img class="w" src="wordmark.png"><div class="studio">STUDIO</div></div></div>
+ <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
+ <div class="name serif">Nanami Ura</div><div class="role">Interior Designer</div>
+ <div class="line"></div>
+ <div class="contact"><b>E</b><span>hello@nami-studio.com.au</span><b>M</b><span>0406 880 243</span></div>
+</div></div>
 </div>
 </body></html>
