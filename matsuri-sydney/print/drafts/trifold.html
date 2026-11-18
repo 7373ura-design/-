@@ -33,13 +33,13 @@ ul.q li::before{content:"— ";color:var(--red)}
 .steps div::before{counter-increment:s;content:"0" counter(s);font-family:'Shippori Mincho';color:var(--red);font-size:10pt;width:7mm}
 .steps b{color:var(--navy);font-weight:500;display:block}
 .contact{display:flex;gap:4mm;align-items:center;margin-top:auto}
-.contact img{width:24mm}
+.contact .q2{display:flex;gap:3mm}.contact .q2 div{text-align:center;font-size:6.4pt;color:var(--navy);font-weight:500}.contact img{width:21mm;display:block;margin-bottom:1mm}
 .contact div{font-size:7.6pt;line-height:1.7}
 .mon{border:.3mm solid var(--red);padding:3.5mm;margin:4mm 0;border-radius:1mm}
 .mon b{color:var(--red);font-weight:500;font-size:7pt;letter-spacing:.2em}
 .mon div{font-size:8pt;color:var(--navy);margin-top:.8mm}
 </style></head><body>
-<p class="lbl">三つ折りチラシ 試作（DL・A4三つ折り）　外側：左＝開いて最初の面／中央＝裏面／右＝表紙 ／ 写真・連絡先・QRは仮</p>
+<p class="lbl">三つ折りチラシ 試作（DL・A4三つ折り）　外側：左＝開いて最初の面／中央＝裏面／右＝表紙 ／ 写真・Instagram QR・ABNは仮</p>
 <div class="sheet">
   <div class="p">
     <div class="k">ABOUT</div>
@@ -62,7 +62,7 @@ ul.q li::before{content:"— ";color:var(--red)}
       <div><span><b>Build</b>We manage construction with Japan Homes.</span></div>
     </div>
     <div class="mon"><b>FOUNDING MONITORS</b><div>10 Sydney homes · free design fee.<br>Ask us at the booth today.</div></div>
-    <div class="contact"><img src="qr.png"><div><b style="color:var(--navy)">@nami.studio</b><br>hello@namistudio.com.au<br>04xx xxx xxx<br><span class="small">ABN xx xxx xxx xxx</span></div></div>
+    <div class="contact" style="flex-direction:column;align-items:flex-start"><div class="q2"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div><div><b style="color:var(--navy)">nami-studio.com.au</b><br>hello@nami-studio.com.au<br>0406 880 243<br><span class="small">ABN xx xxx xxx xxx</span></div></div>
   </div>
   <div class="p cover">
     <div class="art"></div>
