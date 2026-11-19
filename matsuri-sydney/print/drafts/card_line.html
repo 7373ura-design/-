@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;right:-13mm;top:50%;transform:translateY(-50%);width:50mm;height:50mm;background:url(mark.png) center/contain no-repeat;z-index:1}
+.min{font-family:'Shippori Mincho';font-weight:500;color:var(--navy)}
+.role{font-family:'Jost';color:var(--muted);font-size:5.4pt;letter-spacing:.32em}
+.abs{position:absolute;left:7mm}
+.red{background:var(--red)}
+.foot{position:absolute;left:7mm;bottom:6mm;display:flex;align-items:center;gap:1.6mm}
+.foot img{height:2.8mm}.foot span{font-family:'Jost';color:var(--muted);font-size:4.6pt;letter-spacing:.4em}
+</style></head><body>
+<div class="grid">
+ <div class="col"><p>A：2番そのまま（名前2行＋短い横線）</p><div class="card">
+  <div class="abs" style="top:12mm"><div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div>
+   <div class="red" style="width:8mm;height:.35mm;margin:2.6mm 0 2mm"></div><div class="role">INTERIOR DESIGNER</div></div>
+  <div class="foot"><img src="wordmark.png"><span>STUDIO</span></div></div></div>
+
+ <div class="col"><p>B：2番の名前＋4番の縦線</p><div class="card">
+  <div class="abs" style="top:11mm;display:flex;gap:4mm">
+   <div class="red" style="width:.4mm"></div>
+   <div><div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div><div class="role" style="margin-top:2.4mm">INTERIOR DESIGNER</div></div></div>
+  <div class="foot"><img src="wordmark.png"><span>STUDIO</span></div></div></div>
+
+ <div class="col"><p>C：横線を左端から（紙の端からスッと伸びる）</p><div class="card">
+  <div class="abs" style="top:12mm"><div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div></div>
+  <div class="red" style="position:absolute;left:0;top:31.5mm;width:22mm;height:.35mm"></div>
+  <div class="abs role" style="top:34mm">INTERIOR DESIGNER</div>
+  <div class="foot"><img src="wordmark.png"><span>STUDIO</span></div></div></div>
+
+ <div class="col"><p>D：横線をマークまで伸ばす（水平線のように）</p><div class="card">
+  <div class="abs" style="top:12mm"><div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div></div>
+  <div class="red" style="position:absolute;left:7mm;right:30mm;top:31.5mm;height:.3mm"></div>
+  <div class="abs role" style="top:34mm">INTERIOR DESIGNER</div>
+  <div class="foot"><img src="wordmark.png"><span>STUDIO</span></div></div></div>
+
+ <div class="col"><p>E：4番（縦線でロゴ・名前をまとめる）を名前大きめに</p><div class="card">
+  <div class="abs" style="top:0;bottom:0;display:flex;align-items:center"><div style="border-left:.4mm solid var(--red);padding-left:4mm">
+   <img src="wordmark.png" style="height:3.2mm;display:block;margin-bottom:4.5mm">
+   <div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div>
+   <div class="role" style="margin-top:2.2mm">INTERIOR DESIGNER</div></div></div></div></div>
+
+ <div class="col"><p>F：縦線を上端から下端まで通す</p><div class="card">
+  <div class="red" style="position:absolute;left:7mm;top:0;bottom:0;width:.35mm"></div>
+  <div style="position:absolute;left:11mm;top:12mm"><div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div><div class="role" style="margin-top:2.4mm">INTERIOR DESIGNER</div></div>
+  <div style="position:absolute;left:11mm;bottom:6mm;display:flex;align-items:center;gap:1.6mm"><img src="wordmark.png" style="height:2.8mm"><span style="font-family:Jost;color:var(--muted);font-size:4.6pt;letter-spacing:.4em">STUDIO</span></div></div></div>
+</div></body></html>
