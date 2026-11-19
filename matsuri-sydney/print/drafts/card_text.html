@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;right:-13mm;top:50%;transform:translateY(-50%);width:50mm;height:50mm;background:url(mark.png) center/contain no-repeat}
+.min{font-family:'Shippori Mincho';font-weight:500;color:var(--navy)}
+.sans{font-family:'Jost';color:var(--navy)}
+.cg{font-family:'Cormorant Garamond';color:var(--navy)}
+.mut{color:var(--muted)}
+.abs{position:absolute;left:7mm}
+</style></head><body>
+<div class="grid">
+ <div class="col"><p>1：今の形（ロゴ→名前→肩書き）</p><div class="card">
+  <div class="abs" style="top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark.png" style="height:4mm;align-self:flex-start;margin-bottom:9mm">
+   <div class="min" style="font-size:12pt;letter-spacing:.14em">NANAMI URA</div>
+   <div class="sans mut" style="font-size:5.4pt;letter-spacing:.32em;margin-top:1.6mm">INTERIOR DESIGNER</div></div></div></div>
+
+ <div class="col"><p>2：名前を主役に（ロゴは下に小さく）</p><div class="card">
+  <div class="abs" style="top:12mm">
+   <div class="min" style="font-size:15pt;letter-spacing:.1em;line-height:1.15">Nanami<br>Ura</div>
+   <div style="width:8mm;border-top:.35mm solid var(--red);margin:2.6mm 0 2mm"></div>
+   <div class="sans mut" style="font-size:5.4pt;letter-spacing:.32em">INTERIOR DESIGNER</div></div>
+  <div class="abs" style="bottom:6mm;display:flex;align-items:center;gap:1.6mm"><img src="wordmark.png" style="height:2.8mm"><span class="sans mut" style="font-size:4.6pt;letter-spacing:.4em">STUDIO</span></div></div></div>
+
+ <div class="col"><p>3：上下に分ける（ロゴは上、名前は下）</p><div class="card">
+  <div class="abs" style="top:7mm"><img src="wordmark.png" style="height:4mm;display:block"><div class="sans mut" style="font-size:4.6pt;letter-spacing:.5em;margin-top:1mm">STUDIO</div></div>
+  <div class="abs" style="bottom:7mm"><div class="min" style="font-size:11pt;letter-spacing:.16em">NANAMI URA</div>
+   <div class="sans mut" style="font-size:5.2pt;letter-spacing:.32em;margin-top:1.4mm">INTERIOR DESIGNER · SYDNEY</div></div></div></div>
+
+ <div class="col"><p>4：細い朱色の縦線でまとめる</p><div class="card">
+  <div class="abs" style="top:0;bottom:0;display:flex;align-items:center">
+   <div style="border-left:.4mm solid var(--red);padding-left:4mm">
+    <img src="wordmark.png" style="height:3.4mm;display:block;margin-bottom:5mm">
+    <div class="min" style="font-size:12pt;letter-spacing:.14em">NANAMI URA</div>
+    <div class="sans mut" style="font-size:5.2pt;letter-spacing:.32em;margin-top:1.4mm">INTERIOR DESIGNER</div></div></div></div></div>
+
+ <div class="col"><p>5：細いゴシック体で軽く・今っぽく</p><div class="card">
+  <div class="abs" style="top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <div class="sans" style="font-size:11pt;font-weight:300;letter-spacing:.38em">NANAMI URA</div>
+   <div class="cg" style="font-size:8pt;font-style:italic;margin-top:1mm;color:var(--ink)">Interior Designer</div>
+   <img src="wordmark.png" style="height:3.2mm;align-self:flex-start;margin-top:8mm"></div></div></div>
+
+ <div class="col"><p>6：日本語の名前を添える（漢字は要確認）</p><div class="card">
+  <div class="abs" style="top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark.png" style="height:3.6mm;align-self:flex-start;margin-bottom:7mm">
+   <div class="min" style="font-size:7pt;letter-spacing:.5em;color:var(--muted);margin-bottom:1.2mm">浦 七海</div><div class="min" style="font-size:12pt;letter-spacing:.14em">NANAMI URA</div>
+   <div class="sans mut" style="font-size:5.2pt;letter-spacing:.32em;margin-top:1.6mm">INTERIOR DESIGNER</div></div></div></div>
+</div></body></html>
