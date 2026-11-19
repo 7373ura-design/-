@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden;background:var(--cream)}
+.a{position:absolute}
+.navy{background:var(--navy)}
+.min{font-family:'Shippori Mincho';font-weight:500;color:var(--navy);font-size:15.5pt;letter-spacing:.06em}
+.role{font-family:'Jost';font-size:5.8pt;letter-spacing:.28em;color:var(--ink)}
+.lb{font-family:Jost;font-size:5.2pt;letter-spacing:.2em;font-weight:500}
+.v{font-family:Jost;font-size:8.4pt;color:#fff}
+.qc{font-family:Jost;font-size:5pt;letter-spacing:.2em;text-align:center;margin-top:.8mm;font-weight:500}
+.qr{width:15mm;display:block;padding:1mm;background:#fff}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs><pattern id="sg" width="24" height="12" patternUnits="userSpaceOnUse"><g fill="none" stroke="#284c80" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/><circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g></pattern></defs></svg>
+<div class="grid">
+ <div class="col"><p>表A：NAMIロゴ＋「FOUNDER」だけ（NAMIの文字を1回に）</p><div class="card">
+  <div class="a" style="left:5mm;top:0;bottom:0;width:.4mm;background:var(--red)"></div>
+  <img class="a" src="mark.png" style="right:-16mm;top:50%;transform:translateY(-50%);width:58mm">
+  <div class="a" style="left:9.5mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark.png" style="height:6.4mm;align-self:flex-start"><div class="min" style="margin-top:4.5mm">Nanami Ura</div><div class="role" style="margin-top:2.2mm">FOUNDER</div></div></div></div>
+ <div class="col"><p>表B：NAMIロゴなし（マークがロゴの代わり）</p><div class="card">
+  <div class="a" style="left:5mm;top:0;bottom:0;width:.4mm;background:var(--red)"></div>
+  <img class="a" src="mark.png" style="right:-16mm;top:50%;transform:translateY(-50%);width:58mm">
+  <div class="a" style="left:9.5mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <div class="min" style="font-size:15.5pt">Nanami Ura</div><div class="role" style="margin-top:2.6mm">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>裏1：ロゴの代わりに一言、見出しをオレンジに</p><div class="card navy">
+  <div class="a" style="left:0;top:0;bottom:0;right:30mm"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#sg)"/></svg></div>
+  <div class="a" style="right:30mm;top:0;bottom:0;width:.4mm;background:var(--red)"></div>
+  <div class="a" style="left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:2.3mm">
+   <div style="font-family:'Shippori Mincho';color:#fff;font-size:8pt;margin-bottom:1.6mm">Japandi Interior Design<span style="color:var(--red)"> ·</span> Sydney</div>
+   <div><div class="lb" style="color:#F07B55">EMAIL</div><div class="v">hello@nami-studio.com.au</div></div>
+   <div><div class="lb" style="color:#F07B55">PHONE</div><div class="v">0406 880 243</div></div>
+   <div><div class="lb" style="color:#F07B55">INSTAGRAM</div><div class="v">@nami.studio_au</div></div></div>
+  <div class="a" style="right:7.5mm;top:5.5mm;bottom:5.5mm;display:flex;flex-direction:column;justify-content:space-between">
+   <div><img class="qr" src="qr_ig.png"><div class="qc" style="color:#e3e9f1">INSTAGRAM</div></div><div><img class="qr" src="qr_web.png"><div class="qc" style="color:#e3e9f1">WEBSITE</div></div></div></div></div>
+
+ <div class="col"><p>裏2：QR側を水色に（ロゴの波の色）</p><div class="card navy">
+  <div class="a" style="left:0;top:0;bottom:0;right:30mm"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#sg)"/></svg></div>
+  <div class="a" style="right:0;top:0;bottom:0;width:30mm;background:#2A8FB8"></div>
+  <div class="a" style="right:30mm;top:0;bottom:0;width:.5mm;background:var(--red)"></div>
+  <div class="a" style="left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:2.3mm">
+   <div style="font-family:'Shippori Mincho';color:#fff;font-size:8pt;margin-bottom:1.6mm">Japandi Interior Design · Sydney</div>
+   <div><div class="lb" style="color:#9fd3e6">EMAIL</div><div class="v">hello@nami-studio.com.au</div></div>
+   <div><div class="lb" style="color:#9fd3e6">PHONE</div><div class="v">0406 880 243</div></div>
+   <div><div class="lb" style="color:#9fd3e6">INSTAGRAM</div><div class="v">@nami.studio_au</div></div></div>
+  <div class="a" style="right:7.5mm;top:5.5mm;bottom:5.5mm;display:flex;flex-direction:column;justify-content:space-between">
+   <div><img class="qr" src="qr_ig.png"><div class="qc" style="color:#fff">INSTAGRAM</div></div><div><img class="qr" src="qr_web.png"><div class="qc" style="color:#fff">WEBSITE</div></div></div></div></div>
+
+ <div class="col"><p>裏3：QR側をクリームに＋小さな朱色の太陽</p><div class="card navy">
+  <div class="a" style="left:0;top:0;bottom:0;right:30mm"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#sg)"/></svg></div>
+  <div class="a" style="right:0;top:0;bottom:0;width:30mm;background:var(--cream)"></div>
+  <div class="a" style="left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:2.3mm">
+   <div style="display:flex;align-items:center;gap:2mm;margin-bottom:1.6mm"><span style="width:3mm;height:3mm;border-radius:50%;background:var(--red);display:inline-block"></span><span style="font-family:'Shippori Mincho';color:#fff;font-size:8pt">Japandi Interior Design · Sydney</span></div>
+   <div><div class="lb" style="color:#b4cbe3">EMAIL</div><div class="v">hello@nami-studio.com.au</div></div>
+   <div><div class="lb" style="color:#b4cbe3">PHONE</div><div class="v">0406 880 243</div></div>
+   <div><div class="lb" style="color:#b4cbe3">INSTAGRAM</div><div class="v">@nami.studio_au</div></div></div>
+  <div class="a" style="right:7.5mm;top:5.5mm;bottom:5.5mm;display:flex;flex-direction:column;justify-content:space-between">
+   <div><img class="qr" src="qr_ig.png" style="background:none;padding:0"><div class="qc" style="color:var(--navy)">INSTAGRAM</div></div><div><img class="qr" src="qr_web.png" style="background:none;padding:0"><div class="qc" style="color:var(--navy)">WEBSITE</div></div></div></div></div>
+
+ <div class="col"><p>裏4：QR側を朱色に（表の太陽とつながる）</p><div class="card navy">
+  <div class="a" style="left:0;top:0;bottom:0;right:30mm"><svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#sg)"/></svg></div>
+  <div class="a" style="right:0;top:0;bottom:0;width:30mm;background:var(--red)"></div>
+  <div class="a" style="left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:2.3mm">
+   <div style="font-family:'Shippori Mincho';color:#fff;font-size:8pt;margin-bottom:1.6mm">Japandi Interior Design · Sydney</div>
+   <div><div class="lb" style="color:#b4cbe3">EMAIL</div><div class="v">hello@nami-studio.com.au</div></div>
+   <div><div class="lb" style="color:#b4cbe3">PHONE</div><div class="v">0406 880 243</div></div>
+   <div><div class="lb" style="color:#b4cbe3">INSTAGRAM</div><div class="v">@nami.studio_au</div></div></div>
+  <div class="a" style="right:7.5mm;top:5.5mm;bottom:5.5mm;display:flex;flex-direction:column;justify-content:space-between">
+   <div><img class="qr" src="qr_ig.png"><div class="qc" style="color:#fff">INSTAGRAM</div></div><div><img class="qr" src="qr_web.png"><div class="qc" style="color:#fff">WEBSITE</div></div></div></div></div>
+</div></body></html>
