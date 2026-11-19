@@ -1,58 +1,65 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
-.row{display:flex;gap:10mm;margin-bottom:8mm}
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
 .col p{font-size:8pt;color:#777;margin-bottom:2mm}
 .card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
-/* front */
-.f{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.f .m{width:13mm;margin-bottom:3mm}
-.f .w{height:7.4mm}
-.f .studio{font-size:5.6pt;letter-spacing:.5em;color:var(--muted);margin:1.4mm 0 0 .5em}
-.f .sub{font-size:6pt;letter-spacing:.22em;color:var(--navy);margin-top:4mm}
-.f2 .nm{font-size:17pt;letter-spacing:.06em}
-.f2 .rl{font-size:6pt;letter-spacing:.35em;color:var(--muted);margin-top:1.6mm}
-.f2 .brand{position:absolute;bottom:5mm;display:flex;gap:1.8mm;align-items:center}
-.f2 .brand img{height:4.2mm}
-/* back */
-.b{display:flex;padding:6mm 6mm}
-.b .left{width:33mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.b .ct{font-size:5.2pt;letter-spacing:.24em;color:var(--navy);line-height:1.5;margin-bottom:2.2mm}
-.b .qrs{display:flex;gap:2mm}
-.b .qrs div{font-size:4.8pt;color:var(--navy);font-weight:500}
-.b .qrs img{width:14mm;display:block;margin-bottom:.8mm}
-.b .handle{font-size:5.4pt;color:var(--muted);margin-top:1.8mm}
-.b .div{width:.25mm;background:var(--line);margin:0 5mm}
-.b .right{flex:1;display:flex;flex-direction:column;justify-content:center}
-.b .lg{display:flex;gap:1.8mm;align-items:center}
-.b .lg img.mk{height:6mm}.b .lg img.wm{height:3.8mm}
-.b .nm{font-size:10pt;margin-top:2.6mm}
-.b .rl{font-size:5.4pt;letter-spacing:.2em;color:var(--muted);margin-top:.4mm}
-.b .rule{width:12mm;border-top:.3mm solid var(--red);margin:2.4mm 0}
-.b .it{display:flex;align-items:center;gap:1.8mm;font-size:6pt;line-height:1;margin:1.1mm 0}
-.b .it svg{width:2.8mm;height:2.8mm;flex:none}
-.b .note{font-size:4.8pt;letter-spacing:.14em;color:var(--navy);margin-top:2.4mm;line-height:1.5}
+.navy{background:var(--navy);color:var(--cream)}
+.cap{font-family:'Jost';letter-spacing:.32em;font-size:5.4pt;text-transform:uppercase}
+.nm{font-family:'Shippori Mincho';font-weight:500;letter-spacing:.14em}
+/* F1 split */
+.f1{display:flex;align-items:center}
+.f1 .l{width:40mm;height:100%;display:flex;align-items:center;justify-content:center;border-right:.25mm solid var(--line)}
+.f1 .l img{width:22mm}
+.f1 .r{padding-left:7mm}
+.f1 .r .nm{font-size:12.5pt;color:var(--navy)}
+.f1 .r .cap{color:var(--muted);margin-top:1.6mm}
+.f1 .r .wm{height:3.4mm;margin-top:6mm;opacity:.9}
+/* F2 navy */
+.f2 .mk{position:absolute;left:7mm;top:7mm;width:13mm}
+.f2 .tate{position:absolute;right:7mm;top:7mm;writing-mode:vertical-rl;font-family:'Shippori Mincho';font-size:7pt;letter-spacing:.5em;color:#c9d3df}
+.f2 .bottom{position:absolute;left:7mm;bottom:7mm}
+.f2 .nm{font-size:12.5pt}
+.f2 .cap{color:#c9d3df;margin-top:1.4mm}
+.f2 .dot{display:inline-block;width:1.6mm;height:1.6mm;border-radius:50%;background:var(--red);margin-right:2mm;vertical-align:.3mm}
+/* F3 oversized mark */
+.f3 .big{position:absolute;right:-13mm;top:50%;transform:translateY(-50%);width:50mm;opacity:1}
+.f3 .t{position:absolute;left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+.f3 .wm{height:4mm;margin-bottom:9mm;align-self:flex-start}
+.f3 .nm{font-size:12pt;color:var(--navy)}
+.f3 .cap{color:var(--muted);margin-top:1.6mm}
+/* back common */
+.b{padding:6.5mm 7mm;display:flex;gap:6mm}
+.b .info{flex:1;display:flex;flex-direction:column}
+.b .wm{height:3.6mm;align-self:flex-start}
+.b .tag{margin-top:1.4mm}
+.b dl{margin-top:auto;display:grid;grid-template-columns:auto 1fr;column-gap:3.2mm;row-gap:1.5mm;align-items:baseline}
+.b dt{font-family:'Jost';font-size:4.6pt;letter-spacing:.24em}
+.b dd{font-size:6.6pt}
+.b .qrs{display:flex;flex-direction:column;justify-content:space-between;gap:2mm}
+.b .qrs div{display:flex;flex-direction:column;align-items:center;font-family:'Jost';font-size:4.4pt;letter-spacing:.24em}
+.b .qrs img{width:15mm;margin-bottom:.7mm}
+.b1 dt,.b1 .qrs div{color:var(--red)} .b1 dd{color:var(--navy)} .b1 .tag{color:var(--muted)}
+.b2 dt{color:#9fb3cc} .b2 .qrs div{color:#c9d3df} .b2 .tag{color:#9fb3cc}
+.b2 .qrs img{background:#fff;padding:1mm;width:15mm}
+.b1 .rule{width:10mm;border-top:.3mm solid var(--red);margin-top:2.4mm}
 </style></head><body>
-<div class="row">
- <div class="col"><p>表面 案A：NAMIのロゴを主役に</p>
-  <div class="card f"><img class="m" src="mark.png"><img class="w" src="wordmark.png"><div class="studio">STUDIO</div><div class="sub">JAPANDI INTERIOR DESIGN · SYDNEY</div></div></div>
- <div class="col"><p>表面 案B：名前を主役に（参考画像に近い）</p>
-  <div class="card f f2"><div class="nm serif">NANAMI URA</div><div class="rl">INTERIOR DESIGNER</div><div class="brand"><img src="mark.png"><img src="wordmark.png"></div></div></div>
-</div>
-<div class="row">
- <div class="col"><p>裏面：左にQR、右に連絡先</p>
-  <div class="card b">
-   <div class="left"><div class="ct">CONNECT<br>WITH US</div>
-    <div class="qrs"><div><img src="qr_ig.png">Instagram</div><div><img src="qr_web.png">Website</div></div>
-    <div class="handle">@nami.studio_au</div></div>
-   <div class="div"></div>
-   <div class="right">
-    <div class="lg"><img class="mk" src="mark.png"><img class="wm" src="wordmark.png"></div>
-    <div class="nm serif">Nanami Ura</div><div class="rl">INTERIOR DESIGNER</div>
-    <div class="rule"></div>
-    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="#1D3F6E" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>hello@nami-studio.com.au</div>
-    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="#1D3F6E" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>0406 880 243</div>
-    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="#1D3F6E" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sydney, NSW</div>
-    <div class="note">RESIDENTIAL &amp; COMMERCIAL<br>NEW BUILDS · RENOVATIONS</div>
-   </div>
-  </div></div>
+<div class="grid">
+ <div class="col"><p>表面 案1：左にマーク、右に名前（2分割）</p>
+  <div class="card f1"><div class="l"><img src="mark.png"></div>
+   <div class="r"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div><img class="wm" src="wordmark.png"></div></div></div>
+ <div class="col"><p>表面 案2：紺の地に、クリーム色の文字</p>
+  <div class="card navy f2"><img class="mk" src="mark.png"><div class="tate">波 ・ 並</div>
+   <div class="bottom"><div class="nm">NANAMI URA</div><div class="cap"><span class="dot"></span>Interior Designer · NAMI Studio</div></div></div></div>
+ <div class="col"><p>表面 案3：マークを大きく、右にはみ出させる</p>
+  <div class="card f3"><img class="big" src="mark.png">
+   <div class="t"><img class="wm" src="wordmark.png"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div></div></div></div>
+ <div class="col"></div>
+ <div class="col"><p>裏面 案1：クリーム（名前なし・情報だけ）</p>
+  <div class="card b b1"><div class="info"><img class="wm" src="wordmark.png"><div class="cap tag">Japandi Interior Design · Sydney</div><div class="rule"></div>
+   <dl><dt>EMAIL</dt><dd>hello@nami-studio.com.au</dd><dt>PHONE</dt><dd>0406 880 243</dd><dt>WEB</dt><dd>nami-studio.com.au</dd><dt>INSTA</dt><dd>@nami.studio_au</dd></dl></div>
+   <div class="qrs"><div><img src="qr_ig.png">INSTAGRAM</div><div><img src="qr_web.png">WEBSITE</div></div></div></div>
+ <div class="col"><p>裏面 案2：紺（表がクリームの時に合わせる）</p>
+  <div class="card navy b b2"><div class="info"><img class="wm" src="wordmark_cream.png"><div class="cap tag">Japandi Interior Design · Sydney</div>
+   <dl><dt>EMAIL</dt><dd>hello@nami-studio.com.au</dd><dt>PHONE</dt><dd>0406 880 243</dd><dt>WEB</dt><dd>nami-studio.com.au</dd><dt>INSTA</dt><dd>@nami.studio_au</dd></dl></div>
+   <div class="qrs"><div><img src="qr_ig.png">INSTAGRAM</div><div><img src="qr_web.png">WEBSITE</div></div></div></div>
 </div>
 </body></html>
