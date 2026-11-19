@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
+.washi{background:url(washi.jpg) center/cover}
+.min{font-family:'Shippori Mincho';font-weight:500;color:var(--navy)}
+.role{font-family:'Jost';color:var(--muted);font-size:5.2pt;letter-spacing:.28em}
+.red{background:var(--red)}
+.a{position:absolute}
+</style></head><body>
+<div class="grid">
+
+ <div class="col"><p>1：風景画のように（下に波、右上に太陽）</p><div class="card washi">
+  <div class="a" style="right:9mm;top:6mm;width:15mm;height:15mm;border-radius:50%;background:#F0643F"></div>
+  <svg class="a" style="left:0;bottom:0" width="90mm" height="24mm" viewBox="0 0 900 240" preserveAspectRatio="none">
+   <path d="M0 90 C150 40 260 120 400 90 C540 60 600 10 720 40 C800 60 860 50 900 30 L900 240 L0 240Z" fill="#7FC4DA"/>
+   <path d="M0 140 C120 100 240 170 380 140 C520 110 620 70 740 105 C820 128 870 110 900 95 L900 240 L0 240Z" fill="#2A8FB8"/>
+   <path d="M0 190 C160 160 300 215 460 190 C600 168 700 150 900 170 L900 240 L0 240Z" fill="#1D3F6E"/>
+  </svg>
+  <div class="a" style="left:7mm;top:7mm"><img src="wordmark.png" style="height:4.6mm;display:block">
+   <div class="min" style="font-size:12.5pt;letter-spacing:.08em;margin-top:4mm">Nanami Ura</div>
+   <div class="red" style="width:10mm;height:.3mm;margin:1.8mm 0"></div>
+   <div class="role">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>2：アートプリント風（マークを真ん中に、名前は縦書き）</p><div class="card washi">
+  <img class="a" src="mark.png" style="left:50%;top:50%;transform:translate(-50%,-52%);width:33mm">
+  <div class="a" style="left:6mm;top:6mm"><img src="wordmark.png" style="height:3.6mm"></div>
+  <div class="a min" style="right:6mm;top:6mm;writing-mode:vertical-rl;font-size:9pt;letter-spacing:.2em">Nanami Ura</div>
+  <div class="a role" style="left:6mm;bottom:5.5mm;font-size:4.8pt">FOUNDER · NAMI STUDIO</div>
+  <div class="a role" style="right:6mm;bottom:5.5mm;font-size:4.8pt;color:var(--red)">SYDNEY</div></div></div>
+
+ <div class="col"><p>3：お守り・チケット風（細い枠で囲む）</p><div class="card washi">
+  <div class="a" style="inset:3.5mm;border:.3mm solid var(--navy);border-radius:.8mm"></div>
+  <div class="a" style="inset:4.6mm;border:.15mm solid var(--navy);border-radius:.6mm"></div>
+  <img class="a" src="mark.png" style="right:9mm;top:50%;transform:translateY(-50%);width:28mm">
+  <div class="a" style="left:10mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark.png" style="height:4.6mm;align-self:flex-start">
+   <div class="min" style="font-size:12.5pt;letter-spacing:.08em;margin-top:4mm">Nanami Ura</div>
+   <div class="red" style="width:10mm;height:.3mm;margin:1.8mm 0"></div>
+   <div class="role">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>4：紺に青海波（日本の波柄）を敷く</p><div class="card" style="background:var(--navy)">
+  <svg class="a" style="inset:0" width="90mm" height="55mm"><defs><pattern id="sg" width="24" height="12" patternUnits="userSpaceOnUse">
+   <g fill="none" stroke="#2c548a" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/>
+   <circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g></pattern></defs>
+   <rect width="100%" height="100%" fill="url(#sg)"/></svg>
+  <img class="a" src="mark.png" style="right:-13mm;top:50%;transform:translateY(-50%);width:50mm">
+  <div class="a" style="left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark_cream.png" style="height:5mm;align-self:flex-start">
+   <div class="min" style="font-size:13pt;letter-spacing:.08em;margin-top:4.5mm;color:var(--cream)">Nanami Ura</div>
+   <div class="red" style="width:10mm;height:.3mm;margin:1.8mm 0"></div>
+   <div class="role" style="color:#c9d3df">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>5：朱色の太陽を背景いっぱいに</p><div class="card" style="background:#E4552F">
+  <img class="a" src="mark.png" style="right:-13mm;top:50%;transform:translateY(-50%);width:50mm">
+  <div class="a" style="left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark_cream.png" style="height:5mm;align-self:flex-start">
+   <div class="min" style="font-size:13pt;letter-spacing:.08em;margin-top:4.5mm;color:var(--cream)">Nanami Ura</div>
+   <div style="width:10mm;height:.3mm;margin:1.8mm 0;background:var(--cream)"></div>
+   <div class="role" style="color:#fbe3d9">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>6：今の案3を和紙の質感にしただけ</p><div class="card washi">
+  <img class="a" src="mark.png" style="right:-16mm;top:50%;transform:translateY(-50%);width:58mm">
+  <div class="a" style="left:6.5mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+   <img src="wordmark.png" style="height:6.4mm;align-self:flex-start">
+   <div class="min" style="font-size:15.5pt;letter-spacing:.06em;margin-top:4.5mm">Nanami Ura</div>
+   <div class="red" style="width:42mm;height:.35mm;margin:2mm 0"></div>
+   <div class="role" style="font-size:5.8pt">FOUNDER · NAMI STUDIO</div></div></div></div>
+</div></body></html>
