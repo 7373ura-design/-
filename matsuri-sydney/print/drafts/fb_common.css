@@ -1,0 +1,16 @@
+@import url('common.css');
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden;background:var(--cream)}
+.a{position:absolute}
+.red{background:var(--red)}
+.mk{position:absolute;right:-16mm;top:50%;transform:translateY(-50%);width:58mm}
+.txt{position:absolute;left:6.5mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+.wm{height:6.4mm;align-self:flex-start}
+.min{font-family:'Shippori Mincho';font-weight:500;color:var(--navy);font-size:15.5pt;letter-spacing:.06em;margin-top:4.5mm}
+.role{font-family:'Jost';font-size:5.8pt;letter-spacing:.28em;color:var(--ink)}
+.navy{background:var(--navy)}
+.lbl2{font-family:'Jost';font-size:5.2pt;letter-spacing:.2em;color:#a9c4e0;font-weight:500}
+.val{font-family:'Jost';font-size:8.2pt;color:#fff;letter-spacing:.01em}
+.qr{background:#fff;padding:1mm;display:block}
+.qcap{font-family:'Jost';font-size:5pt;letter-spacing:.2em;color:#e3e9f1;text-align:center;margin-top:.8mm;font-weight:500}
