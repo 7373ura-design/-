@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden;background:var(--navy)}
+.a{position:absolute}
+.min{font-family:'Shippori Mincho';font-weight:500}
+.role{font-family:'Jost';font-size:5.6pt;letter-spacing:.28em}
+.mk{position:absolute;right:-13mm;top:50%;transform:translateY(-50%);width:50mm}
+.txt{position:absolute;left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <pattern id="sgA" width="24" height="12" patternUnits="userSpaceOnUse"><g fill="none" stroke="#33609a" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/><circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g></pattern>
+ <pattern id="sgB" width="24" height="12" patternUnits="userSpaceOnUse"><g fill="none" stroke="#264a7d" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/><circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g></pattern>
+ <pattern id="sgC" width="24" height="12" patternUnits="userSpaceOnUse"><g fill="none" stroke="#a9d1e0" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/><circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g></pattern>
+ <linearGradient id="fadeL" x1="0" x2="1"><stop offset=".18" stop-color="#000"/><stop offset=".48" stop-color="#fff"/></linearGradient>
+ <mask id="mL"><rect width="100%" height="100%" fill="url(#fadeL)"/></mask>
+</defs></svg>
+<div class="grid">
+ <div class="col"><p>A：柄を右側だけに（文字の下は無地の紺）</p><div class="card">
+  <svg class="a" style="inset:0;-webkit-mask-image:linear-gradient(90deg,transparent 22%,#000 50%);mask-image:linear-gradient(90deg,transparent 22%,#000 50%)" width="90mm" height="55mm"><rect width="100%" height="100%" fill="url(#sgA)"/></svg>
+  <img class="mk" src="mark.png">
+  <div class="txt"><img src="wordmark_cream.png" style="height:6mm;align-self:flex-start">
+   <div class="min" style="font-size:15pt;letter-spacing:.06em;margin-top:4.5mm;color:#fff">Nanami Ura</div>
+   <div style="width:10mm;height:.4mm;margin:2mm 0;background:var(--red)"></div>
+   <div class="role" style="color:#e3e9f1">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>B：柄を全体に、でもかなり薄く＋文字を大きく</p><div class="card">
+  <svg class="a" style="inset:0" width="90mm" height="55mm"><rect width="100%" height="100%" fill="url(#sgB)"/></svg>
+  <img class="mk" src="mark.png">
+  <div class="txt"><img src="wordmark_cream.png" style="height:6mm;align-self:flex-start">
+   <div class="min" style="font-size:15pt;letter-spacing:.06em;margin-top:4.5mm;color:#fff">Nanami Ura</div>
+   <div style="width:10mm;height:.4mm;margin:2mm 0;background:var(--red)"></div>
+   <div class="role" style="color:#e3e9f1">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>C：文字の部分だけ紺の帯を敷く</p><div class="card">
+  <svg class="a" style="inset:0" width="90mm" height="55mm"><rect width="100%" height="100%" fill="url(#sgA)"/></svg>
+  <img class="mk" src="mark.png">
+  <div class="a" style="left:0;top:0;bottom:0;width:48mm;background:var(--navy);border-right:.4mm solid var(--red)"></div>
+  <div class="txt"><img src="wordmark_cream.png" style="height:6mm;align-self:flex-start">
+   <div class="min" style="font-size:15pt;letter-spacing:.06em;margin-top:4.5mm;color:#fff">Nanami Ura</div>
+   <div class="role" style="color:#e3e9f1;margin-top:2.2mm">FOUNDER · NAMI STUDIO</div></div></div></div>
+
+ <div class="col"><p>D：クリーム地に水色の青海波（右側だけ）</p><div class="card" style="background:var(--cream)">
+  <svg class="a" style="inset:0;-webkit-mask-image:linear-gradient(90deg,transparent 45%,#000 68%);mask-image:linear-gradient(90deg,transparent 45%,#000 68%)" width="90mm" height="55mm"><rect width="100%" height="100%" fill="url(#sgC)"/></svg>
+  <img class="mk" src="mark.png">
+  <div class="txt"><img src="wordmark.png" style="height:6mm;align-self:flex-start">
+   <div class="min" style="font-size:15pt;letter-spacing:.06em;margin-top:4.5mm;color:var(--navy)">Nanami Ura</div>
+   <div style="width:10mm;height:.4mm;margin:2mm 0;background:var(--red)"></div>
+   <div class="role" style="color:var(--ink)">FOUNDER · NAMI STUDIO</div></div></div></div>
+</div></body></html>
