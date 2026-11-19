@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css"><style>
+.grid{display:grid;grid-template-columns:90mm 90mm;gap:9mm 10mm}
+.col p{font-size:8pt;color:#777;margin-bottom:2mm}
+.card{width:90mm;height:55mm;background:var(--cream);box-shadow:0 1mm 4mm rgba(0,0,0,.15);position:relative;overflow:hidden}
+.navy{background:var(--navy)}
+.cap{font-family:'Jost';letter-spacing:.32em;font-size:5.4pt;color:var(--muted);margin-top:1.6mm}
+.nm{font-family:'Shippori Mincho';font-weight:500;letter-spacing:.14em;font-size:12pt;color:var(--navy)}
+.t{position:absolute;left:7mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+.wm{height:4mm;align-self:flex-start}
+img.big{position:absolute}
+</style></head><body>
+<div class="grid">
+ <div class="col"><p>A：前回の案3（基本形）</p>
+  <div class="card"><img class="big" src="mark.png" style="right:-13mm;top:50%;transform:translateY(-50%);width:50mm">
+   <div class="t"><img class="wm" src="wordmark.png" style="margin-bottom:9mm"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div></div></div></div>
+ <div class="col"><p>B：紺の地に、マークを月のように</p>
+  <div class="card navy"><img class="big" src="mark.png" style="right:-13mm;top:50%;transform:translateY(-50%);width:50mm">
+   <div class="t"><img class="wm" src="wordmark_cream.png" style="margin-bottom:9mm"><div class="nm" style="color:var(--cream)">NANAMI URA</div><div class="cap" style="color:#9fb3cc">Interior Designer</div></div></div></div>
+ <div class="col"><p>C：もっと大きく、右下の角から</p>
+  <div class="card"><img class="big" src="mark.png" style="right:-22mm;bottom:-24mm;width:66mm">
+   <div style="position:absolute;left:7mm;top:7mm"><img class="wm" src="wordmark.png"></div>
+   <div style="position:absolute;left:7mm;bottom:7mm"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div></div></div></div>
+ <div class="col"><p>D：右上に、太陽と山だけ見せる</p>
+  <div class="card"><img class="big" src="mark.png" style="right:-16mm;top:-22mm;width:58mm">
+   <div style="position:absolute;left:7mm;bottom:7mm"><img class="wm" src="wordmark.png" style="display:block;margin-bottom:5mm"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div></div></div></div>
+ <div class="col"><p>E：マークを紺一色で薄く（透かし風）</p>
+  <div class="card"><img class="big" src="mark_mono.png" style="right:-14mm;top:50%;transform:translateY(-50%);width:54mm;opacity:.22">
+   <div class="t"><img class="wm" src="wordmark.png" style="margin-bottom:9mm"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div></div></div></div>
+ <div class="col"><p>F：上下2段（上半分にマーク、下に名前）</p>
+  <div class="card"><div style="position:absolute;left:0;right:0;top:0;height:31mm;overflow:hidden;border-bottom:.3mm solid var(--red)"><img class="big" src="mark.png" style="right:-6mm;top:-8mm;width:52mm"></div>
+   <div style="position:absolute;left:7mm;top:9mm"><img class="wm" src="wordmark.png"></div>
+   <div style="position:absolute;left:7mm;bottom:6.5mm"><div class="nm">NANAMI URA</div><div class="cap">Interior Designer</div></div></div></div>
+</div>
+</body></html>
