@@ -44,9 +44,9 @@ p.append(page(f'''{top(L,2,N)}
 <div class="chip"><i>QUALIFIED</i>Japandi Design</div>
 <div class="chip"><i>QUALIFIED</i>Architecture — Japan</div>
 <div class="chip"><i>QUALIFIED</i>Real Estate — NSW &amp; Japan</div>
-<div class="chip"><i>LEADER</i>JDF — First Australia Leader</div>
-<div class="chip"><i>LEADER</i>Sugu-Yaru-Ka (Act Now Team) — First Leader, 20s</div>
-<div class="body" style="margin-top:36px">Design, gardens, architecture and property —<br>so every idea is made with your home's<br><b style="color:{NAVY};font-weight:500">value</b> in mind, not just its look.</div></div>'''))
+<div class="body" style="margin-top:30px;font-size:31px">Design, gardens, architecture and property —<br>so every idea is made with your home's<br><b style="color:{NAVY};font-weight:500">value</b> in mind, not just its look.</div>
+<div style="margin-top:44px;border-left:5px solid {RED};padding-left:28px"><div style="font-size:22px;letter-spacing:.24em;color:{RED}">AUSTRALIA LEAD · JDF</div>
+<div style="font-size:31px;line-height:1.5;color:{NAVY};margin-top:8px">Connecting you with authentic Japanese makers<br>and suppliers — tatami, hinoki baths and more.</div></div></div>'''))
 p.append(page(f'''{top(L,3,N,True)}
 <div style="position:absolute;left:90px;right:90px;top:230px">
 <div style="font-size:26px;letter-spacing:.3em;color:#F07B55">IN SAFE HANDS</div>

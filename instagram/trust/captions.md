@@ -11,6 +11,8 @@ Hi, I'm Nanami — the founder of NAMI Studio. 🌊
 
 I'm qualified in interior design & property styling, Japanese garden design, Japandi design, architecture (Japan) and real estate (NSW & Japan) — and mentored by Japan Homes, with 20+ years of building homes in Australia & NZ.
 
+As Australia lead for JDF, I can also connect you with authentic Japanese makers and suppliers — tatami, hinoki baths and more.
+
 When I moved from Japan to Australia, homes here felt so different. The longer I lived here, the more I saw how well Japanese calm fits Australian life. NAMI is where the two live side by side.
 
 Let's design your home together.
