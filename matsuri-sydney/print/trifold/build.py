@@ -32,20 +32,20 @@ END='</body></html>'
 
 # ---------- shared content blocks ----------
 def offer(dark=False):
-    return f'''<div class="eyebrow">MATSURI SYDNEY · 6 DEC</div>
+    return f'''<div class="eyebrow">FOUNDING MONITORS</div>
 <div class="h" style="font-size:24pt;margin:3mm 0 4mm">See our design<br>for your home —<br>before you decide.</div>
 <div class="rule"></div>
-<p class="t" style="margin:5mm 0 4mm">For our first ten Sydney homes, the design fee is on us — so you can see what NAMI can do first.</p>
+<p class="t" style="margin:5mm 0 4mm">For our first ten homes, the design fee is on us — so you can see what NAMI can do first.</p>
 <ul class="list">
 <li><span>FREE</span><div><b>Interior design</b><br>One-on-one, idea to final plan.</div></li>
 <li><span>NOT INCL.</span><div><b>Furniture &amp; build</b><br>Buy only what you choose.</div></li>
 <li><span>IN RETURN</span><div><b>Before &amp; after photos</b><br>And your honest feedback.</div></li>
 </ul>
-<div style="margin-top:auto" class="cap">10 HOMES ONLY · MATSURI GUESTS<br><span style="color:var(--navy);letter-spacing:.02em;font-size:11.5pt;font-weight:500">Leave your email at our booth —<br>we'll contact you.</span></div>'''
+<div style="margin-top:auto" class="cap">10 HOMES ONLY<br><span style="color:var(--navy);letter-spacing:.02em;font-size:11.5pt;font-weight:500">Scan the QR or email us<br>to apply.</span></div>'''
 
 def contact(dark=True, wm='nami_wordmark_cream.svg'):
     return f'''<img src="{wm}" style="height:8mm;align-self:flex-start">
-<div class="cap" style="margin-top:2.6mm">INTERIOR DESIGN · SYDNEY</div>
+<div class="cap" style="margin-top:2.6mm">INTERIOR DESIGN</div>
 <div class="hair" style="margin:7mm 0 6mm"></div>
 <div class="h" style="font-size:21pt">Let's design<br>your home.</div>
 <p class="t" style="margin-top:4mm">Homes, renovations, rooms and gardens. Start with a chat.</p>
@@ -56,7 +56,7 @@ def contact(dark=True, wm='nami_wordmark_cream.svg'):
 
 def founder():
     return '''<div class="eyebrow">ABOUT NAMI</div>
-<div class="h" style="font-size:22pt;margin:3mm 0 3mm">A Sydney-based<br>design studio.</div>
+<div class="h" style="font-size:22pt;margin:3mm 0 3mm">A Japandi<br>design studio.</div>
 <p class="t">Homes &amp; businesses, new builds &amp; renovations.</p>
 <div class="cap" style="margin:3mm 0 0">FOUNDER · NANAMI URA</div>
 <div class="eyebrow" style="margin-top:5mm">OUR EXPERTISE · QUALIFIED IN</div>
@@ -75,7 +75,7 @@ def founder():
 def japandi():
     return '''<div class="eyebrow">WHAT WE'VE DONE</div>
 <div class="h" style="font-size:19pt;margin:2mm 0 2mm">In Japan, we never<br>called it Japandi.</div>
-<p class="t">Here's how we've brought it to Sydney.</p>
+<p class="t">Here's how we bring it to life.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.4mm;margin-top:4mm">
  <div><div class="ph" style="height:26mm;background-image:url(img/zen_before_single.jpg);filter:saturate(.6)"></div><div class="cap" style="font-size:9pt;margin-top:1mm">BEFORE</div></div>
  <div><div class="ph" style="height:26mm;background-image:url(img/zen_after_single.jpg)"></div><div class="cap" style="font-size:9pt;margin-top:1mm;color:var(--red)">AFTER</div></div>
@@ -105,7 +105,7 @@ A=BASE+f'''
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,30,55,.55) 0%,rgba(15,30,55,0) 38%,rgba(15,30,55,0) 60%,rgba(15,30,55,.6) 100%)"></div>
   <div class="pad" style="color:#fff">
    <div style="display:flex;align-items:center;gap:3mm"><img src="nami_mark.svg" style="width:13mm"><img src="nami_wordmark_cream.svg" style="height:7mm"></div>
-   <div style="margin-top:auto"><div class="h" style="color:#fff;font-size:22pt">A new wave of<br>Japandi in Sydney.</div>
+   <div style="margin-top:auto"><div class="h" style="color:#fff;font-size:22pt">A new wave<br>of Japandi.</div>
    <div class="cap" style="color:#E6ECF4;margin-top:4mm">INTERIOR DESIGN · NEW BUILDS · RENOVATIONS</div></div></div></div>
 </div>
 <div class="sheet">
@@ -125,8 +125,8 @@ B=BASE+f'''
   <img src="nami_mark.svg" style="position:absolute;width:118mm;right:-46mm;top:38mm">
   <div class="pad" style="left:17mm">
    <img src="nami_wordmark.svg" style="height:11mm;align-self:flex-start">
-   <div class="cap" style="margin-top:3mm">INTERIOR DESIGN · SYDNEY</div>
-   <div style="margin-top:auto"><div class="h" style="font-size:21pt">A new wave of<br>Japandi in Sydney.</div></div></div></div>
+   <div class="cap" style="margin-top:3mm">INTERIOR DESIGN</div>
+   <div style="margin-top:auto"><div class="h" style="font-size:21pt">A new wave<br>of Japandi.</div></div></div></div>
 </div>
 <div class="sheet">
  <div class="pn i1"><div class="pad">{founder()}</div></div>
@@ -145,7 +145,7 @@ C=BASE+f'''
   <div class="ph" style="position:absolute;left:0;right:0;top:0;height:128mm;background-image:url(img/rem_04.jpg)"></div>
   <div class="pad" style="top:138mm;align-items:flex-start">
    <div style="display:flex;align-items:center;gap:3mm"><img src="nami_mark.svg" style="width:12mm"><img src="nami_wordmark.svg" style="height:6.5mm"></div>
-   <div class="h" style="font-size:17pt;margin-top:5mm">A new wave of<br>Japandi in Sydney.</div>
+   <div class="h" style="font-size:17pt;margin-top:5mm">A new wave<br>of Japandi.</div>
    <div class="cap" style="margin-top:auto">INTERIOR DESIGN · NEW BUILDS · RENOVATIONS</div></div></div>
 </div>
 <div class="sheet">
