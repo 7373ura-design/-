@@ -26,7 +26,7 @@ CSS_EXTRA="""<style>
 .col{position:absolute;inset:13mm 10mm 11mm 10mm;display:flex;flex-direction:column;justify-content:space-between}
 .o1 .col,.i1 .col{left:14mm}.o3 .col,.i3 .col{right:14mm}
 .L{padding:2.6mm 0;border-top:.2mm solid var(--line)}.L .mk{color:var(--red);font-weight:600;margin-right:3mm}
-.L2{margin-top:3.6mm;color:var(--navy)}.L3{margin-top:.6mm}
+.L2{margin-top:3.2mm;color:var(--navy)}.L3{margin-top:.6mm}
 .B b{font-weight:500!important}
 .tag{display:inline-block;border:.3mm solid var(--line);border-radius:5mm;padding:1mm 2.6mm;margin:0 1.6mm 1.6mm 0;font-size:10.5pt;color:var(--navy)}
 </style>"""
@@ -71,30 +71,26 @@ cover="""<div style="position:absolute;left:11mm;top:0;bottom:0;width:.4mm;backg
 
 about="""<div class="col" style="justify-content:flex-start">
 <div class="eyebrow">ABOUT NAMI</div>
-<div class="H" style="margin:4mm 0 0">Why NAMI.</div>
-<p class="B" style="margin-top:5mm">New builds, renovations and gardens — designed for today and the years ahead.</p>
-<div style="margin-top:6mm">
-<p class="B L2"><b>Mentored by Japan Homes</b></p><p class="B L3">20+ years building in AU &amp; NZ</p>
-<p class="B L2"><b>Design to build</b></p><p class="B L3">We manage construction, on budget</p>
-<p class="B L2"><b>Quality from Japan</b></p><p class="B L3">Our trusted network of Japanese makers delivers premium, quality-assured tatami, hinoki baths and craft</p>
+<div class="H" style="margin:3mm 0 0">Why NAMI.</div>
+<div style="margin-top:3mm">
+<p class="B L2"><b>Japanese quality of life, in Australia</b></p><p class="B L3">We know how to bring the comfort of Japanese living into Australian homes.</p>
+<p class="B L2"><b>Responsible from design to build</b></p><p class="B L3">Budget-aware from the first sketch, and with you to the last detail.</p>
+<p class="B L2"><b>Japan Homes know-how</b></p><p class="B L3">20+ years of experience and a trusted network of makers let us recreate true Japanese quality.</p>
+<p class="B L2"><b>Qualified across design &amp; property</b></p><p class="B L3">Interior design, Japanese gardens, Japandi, architecture (JP) and real estate (NSW, JP).</p>
 </div>
-<div style="margin-top:auto;background:var(--navy);padding:5mm 5mm 4.5mm">
-<div style="display:flex;align-items:center;gap:3.5mm"><p style="font-family:'Shippori Mincho';color:#fff;font-size:34pt;line-height:1">5</p><div><p style="color:#fff;font-size:13pt;font-weight:500">qualifications</p><p style="color:#DCE3EE;font-size:11pt">across Japan &amp; Australia</p></div></div>
-<p style="color:#DCE3EE;margin-top:3mm;line-height:1.55;font-size:11pt">Interior Design · Property Styling<br>Japanese Garden · Japandi Design<br>Architecture (JP) · Real Estate (NSW, JP)</p>
-</div>
+<div style="margin-top:auto;height:40mm;background:#E9E1D2;display:flex;align-items:center;justify-content:center"><p class="S" style="color:#8C8270">PHOTO — hinoki bath / tatami</p></div>
 </div>"""
 
-why="""<div class="ph" style="position:absolute;left:0;right:0;top:0;height:66mm;background-image:url(img/rem_02.jpg)"></div>
-<div class="col" style="top:76mm;justify-content:flex-start">
+why="""<div class="ph" style="position:absolute;left:0;right:0;top:0;height:60mm;background-image:url(img/rem_02.jpg)"></div>
+<div class="col" style="top:68mm;justify-content:flex-start">
 <div class="eyebrow">WHY JAPANDI</div>
-<div class="H" style="font-size:20pt;margin:4mm 0 0">In Japan, we never<br>called it Japandi.</div>
-<p class="B" style="margin-top:5mm">It was a way of living, not just a look. We bring the reasons behind it.</p>
-<div style="margin-top:7mm">
-<div class="L" style="display:flex;gap:3mm;"><p class="B" style="color:var(--red);width:5mm;flex:none;font-family:'Shippori Mincho'">間</p><p class="B"><b>Calm</b> in open-plan rooms</p></div>
-<div class="L" style="display:flex;gap:3mm;"><p class="B" style="color:var(--red);width:5mm;flex:none;font-family:'Shippori Mincho'">光</p><p class="B"><b>Soft light</b> under a strong sun</p></div>
-<div class="L" style="display:flex;gap:3mm;"><p class="B" style="color:var(--red);width:5mm;flex:none;font-family:'Shippori Mincho'">木</p><p class="B"><b>Natural materials</b> for every day</p></div>
+<div class="H" style="font-size:20pt;margin:3mm 0 0">In Japan, we never<br>called it Japandi.</div>
+<p class="B" style="margin-top:3mm">It was a way of living, not just a look. We bring the reasons behind it.</p>
+<div style="margin-top:2mm">
+<p class="B L2"><b>Calm in open-plan rooms</b></p><p class="B L3">Japanese "ma" — balanced space and zoning — keeps large rooms quiet.</p>
+<p class="B L2"><b>Soft light under a strong sun</b></p><p class="B L3">Screens, shade and layered materials soften harsh Australian light.</p>
+<p class="B L2"><b>Natural materials, every day</b></p><p class="B L3">Warm timber, paper and stone that age well and are easy to live with.</p>
 </div>
-<div style="margin-top:auto"><div class="H" style="font-size:16pt;letter-spacing:.14em;margin:0">温故知新</div><p class="S" style="margin-top:1.5mm">Learning from the old to create the new.</p></div>
 </div>"""
 
 items=[('rem_03','Old Meets New','Renovation'),('glen_02','Living in Green','New home'),('lynn_02','Welcome Home','New home'),('hill_04','Simply Special','New home'),(None,'Project name','Type'),(None,'Project name','Type')]
