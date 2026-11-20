@@ -10,7 +10,7 @@ ICON={
 }
 def ic(k):
     return f'<span style="width:8mm;height:8mm;border-radius:50%;background:#FBF6EC;color:#1D3F6E;display:inline-flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" width="4.6mm" height="4.6mm">{ICON[k]}</svg></span>'
-row=lambda k,t: f'<div style="display:flex;align-items:center;gap:3mm;margin-top:2mm">{ic(k)}<span style="color:#fff;font-size:12pt">{t}</span></div>'
+row=lambda k,t: f'<div style="display:flex;align-items:center;gap:3.2mm;margin-top:2.6mm">{ic(k)}<span style="color:#fff;font-size:12pt">{t}</span></div>'
 CSS_EXTRA="""<style>
 /* one type scale for every panel */
 .eyebrow{font-size:10pt!important;letter-spacing:.16em!important}
@@ -25,39 +25,36 @@ CSS_EXTRA="""<style>
 .dark .row2{border-color:rgba(255,255,255,.16)}
 .col{position:absolute;inset:13mm 10mm 11mm 10mm;display:flex;flex-direction:column;justify-content:space-between}
 .o1 .col,.i1 .col{left:14mm}.o3 .col,.i3 .col{right:14mm}
+.L{padding:2.6mm 0;border-top:.2mm solid var(--line)}.L .mk{color:var(--red);font-weight:600;margin-right:3mm}
+.L2{margin-top:3.6mm;color:var(--navy)}.L3{margin-top:.6mm}
+.B b{font-weight:500!important}
 .tag{display:inline-block;border:.3mm solid var(--line);border-radius:5mm;padding:1mm 2.6mm;margin:0 1.6mm 1.6mm 0;font-size:10.5pt;color:var(--navy)}
 </style>"""
 
-flap=f"""<div class="col">
-<div>
+flap=f"""<div class="col" style="justify-content:flex-start">
 <div class="eyebrow">FOUNDING DESIGN · FINAL ROUND</div>
-<div class="H">One final round —<br>10 homes only.</div>
-<div class="rule"></div>
-<p class="B" style="margin-top:3.5mm">Thank you for the warm response to our first round. For everyone who missed out, here's one last chance.</p>
-</div>
-<div>
-<div class="eyebrow" style="margin-bottom:1.5mm">A$0 DESIGN FEE</div>
-<div class="row2 B"><i>✓</i><span><b>Personal design consultation</b></span></div>
-<div class="row2 B"><i>✓</i><span><b>Tailored design concept</b></span></div>
-<div class="row2 B"><i>✓</i><span><b>Up to two rounds of revisions</b></span></div>
-<p class="S" style="margin-top:2.5mm;letter-spacing:.02em;line-height:1.4;font-size:11pt">In return: your feedback and photos for our portfolio. Furniture and construction not included.</p>
-</div>
-<div style="border-top:.3mm solid var(--red);padding-top:3mm">
-<div class="B"><b>Want the details?</b><br>Email us or DM @nami.studio_au.</div>
+<div class="H" style="margin:4mm 0 0">One final round —<br>10 homes only.</div>
+<p class="B" style="margin-top:5mm">Thank you for the warm response to our first round. For everyone who missed out, here's one last chance.</p>
+<div class="eyebrow" style="margin-top:9mm">A$0 DESIGN FEE</div>
+<p class="B L" style="margin-top:3mm"><span class="mk">✓</span> Personal design consultation</p>
+<p class="B L"><span class="mk">✓</span> Tailored design concept</p>
+<p class="B L"><span class="mk">✓</span> Up to two rounds of revisions</p>
+<p class="B" style="margin-top:5mm;color:var(--muted)">In return: your feedback and photos for our portfolio. Furniture and construction not included.</p>
+<div style="margin-top:auto;border-top:.3mm solid var(--red);padding-top:4mm">
+<p class="B"><b>Want the details?</b></p>
+<p class="B">Email us or DM @nami.studio_au.</p>
 </div>
 </div>"""
 
-back=f"""<div class="col">
+back=f"""<div class="col" style="justify-content:flex-start">
 <img src="nami_wordmark_cream.svg" style="height:8.5mm;align-self:flex-start">
-<div>
-<div class="H">Let's design<br>your home.</div>
-<p class="B">From a small everyday worry to a full renovation or a new build — tell us anything.</p>
-<p class="B" style="margin-top:2mm;color:#fff;font-weight:500">It all starts with a chat.</p>
-</div>
-<div>
-<div style="display:flex;gap:5mm;margin-bottom:4mm">
-<div><img class="qr" src="qr_ig.png" style="width:23mm"><div class="S" style="margin-top:1.4mm;text-align:center">Instagram</div></div>
-<div><img class="qr" src="qr_web.png" style="width:23mm"><div class="S" style="margin-top:1.4mm;text-align:center">Website</div></div></div>
+<div class="H" style="margin:14mm 0 0">Let's design<br>your home.</div>
+<p class="B" style="margin-top:5mm">From a small everyday worry to a full renovation or a new build — tell us anything.</p>
+<p class="B" style="margin-top:3mm;color:#fff"><b>It all starts with a chat.</b></p>
+<div style="margin-top:auto">
+<div style="display:flex;gap:5mm;margin-bottom:5mm">
+<div><img class="qr" src="qr_ig.png" style="width:23mm"><p class="S" style="margin-top:1.6mm;text-align:center">Instagram</p></div>
+<div><img class="qr" src="qr_web.png" style="width:23mm"><p class="S" style="margin-top:1.6mm;text-align:center">Website</p></div></div>
 {row('mail','hello@nami-studio.com.au')}
 {row('phone','0406 880 243')}
 {row('ig','@nami.studio_au')}
@@ -71,37 +68,34 @@ cover="""<div style="position:absolute;left:11mm;top:0;bottom:0;width:.4mm;backg
 <div><div class="H" style="font-size:24pt;margin:0 0 3mm">A new wave<br>of Japandi.</div>
 <p class="B" style="max-width:64mm">Calm, natural homes — inspired by Japan, made for everyday life.</p></div></div>"""
 
-about="""<div class="col">
-<div>
+about="""<div class="col" style="justify-content:flex-start">
 <div class="eyebrow">ABOUT NAMI</div>
-<div class="H">Why NAMI.</div>
-<p class="B">New builds, renovations and gardens — designed for today and the years ahead.</p>
+<div class="H" style="margin:4mm 0 0">Why NAMI.</div>
+<p class="B" style="margin-top:5mm">New builds, renovations and gardens — designed for today and the years ahead.</p>
+<div style="margin-top:8mm">
+<p class="B L2"><b>Mentored by Japan Homes</b></p><p class="B L3">20+ years building in AU &amp; NZ</p>
+<p class="B L2"><b>Design to build</b></p><p class="B L3">We manage construction, on budget</p>
+<p class="B L2"><b>Authentic Japanese makers</b></p><p class="B L3">Tatami, hinoki and more</p>
+<p class="B L2"><b>Japanese gardens</b></p><p class="B L3">From balcony to backyard</p>
 </div>
-<div>
-<div class="row2 B"><i>—</i><span><b>Mentored by Japan Homes</b><br>20+ years building in AU &amp; NZ</span></div>
-<div class="row2 B"><i>—</i><span><b>Design to build</b><br>We manage construction, on budget</span></div>
-<div class="row2 B"><i>—</i><span><b>Authentic Japanese makers</b><br>Tatami, hinoki and more</span></div>
-<div class="row2 B"><i>—</i><span><b>Japanese gardens</b><br>From balcony to backyard</span></div>
-</div>
-<div>
-<div class="eyebrow" style="margin-bottom:2mm">QUALIFIED IN</div>
-<span class="tag">Interior Design</span><span class="tag">Property Styling</span><span class="tag">Japanese Garden</span><span class="tag">Japandi Design</span><span class="tag">Architecture (JP)</span><span class="tag">Real Estate (NSW · JP)</span>
-<div class="S" style="margin-top:1mm">Founder · Nanami Ura</div>
+<div style="margin-top:auto">
+<div class="eyebrow" style="margin-bottom:3mm">QUALIFIED IN</div>
+<p class="B" style="color:var(--navy);line-height:1.6">Interior Design · Property Styling<br>Japanese Garden · Japandi Design<br>Architecture (JP) · Real Estate (NSW, JP)</p>
+<p class="S" style="margin-top:3mm">Founder · Nanami Ura</p>
 </div>
 </div>"""
 
 why="""<div class="ph" style="position:absolute;left:0;right:0;top:0;height:66mm;background-image:url(img/rem_02.jpg)"></div>
-<div class="col" style="top:74mm">
-<div>
+<div class="col" style="top:76mm;justify-content:flex-start">
 <div class="eyebrow">WHY JAPANDI</div>
-<div class="H" style="font-size:20pt">In Japan, we never<br>called it Japandi.</div>
-<p class="B">It was a way of living, not just a look. We bring the reasons behind it.</p>
-<div style="margin-top:5mm">
-<div class="row2 B" style="grid-template-columns:11mm 1fr"><i style="font-family:'Shippori Mincho'">間</i><span><b>Calm</b> in open-plan rooms</span></div>
-<div class="row2 B" style="grid-template-columns:11mm 1fr"><i style="font-family:'Shippori Mincho'">光</i><span><b>Soft light</b> under a strong sun</span></div>
-<div class="row2 B" style="grid-template-columns:11mm 1fr"><i style="font-family:'Shippori Mincho'">木</i><span><b>Natural materials</b> for every day</span></div>
-</div></div>
-<div><div class="H" style="font-size:16pt;letter-spacing:.14em;margin:0">温故知新</div><div class="S">Learning from the old to create the new.</div></div>
+<div class="H" style="font-size:20pt;margin:4mm 0 0">In Japan, we never<br>called it Japandi.</div>
+<p class="B" style="margin-top:5mm">It was a way of living, not just a look. We bring the reasons behind it.</p>
+<div style="margin-top:7mm">
+<p class="B L"><span class="mk" style="font-family:'Shippori Mincho'">間</span> <b>Calm</b> in open-plan rooms</p>
+<p class="B L"><span class="mk" style="font-family:'Shippori Mincho'">光</span> <b>Soft light</b> under a strong sun</p>
+<p class="B L"><span class="mk" style="font-family:'Shippori Mincho'">木</span> <b>Natural materials</b> for every day</p>
+</div>
+<div style="margin-top:auto"><div class="H" style="font-size:16pt;letter-spacing:.14em;margin:0">温故知新</div><p class="S" style="margin-top:1.5mm">Learning from the old to create the new.</p></div>
 </div>"""
 
 items=[('rem_03','Old Meets New','Renovation'),('glen_02','Living in Green','New home'),('lynn_02','Welcome Home','New home'),('hill_04','Simply Special','New home'),(None,'Project name','Type'),(None,'Project name','Type')]
