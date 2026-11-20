@@ -38,13 +38,15 @@ p.append(page(f'''{top(L,1,N)}
 <div class="photo" style="position:absolute;right:90px;top:330px;width:400px;height:500px">PHOTO</div>'''))
 p.append(page(f'''{top(L,2,N)}
 <div style="position:absolute;left:90px;right:90px;top:200px">
-<h1 style="font-size:76px">Qualified to design<br>beyond taste.</h1><div class="rule" style="margin:40px 0 50px"></div>
+<h1 style="font-size:76px">Qualified to design<br>beyond taste.</h1><div class="rule" style="margin:36px 0 40px"></div>
 <div class="chip"><i>QUALIFIED</i>Interior Design &amp; Property Styling</div>
 <div class="chip"><i>QUALIFIED</i>Japanese Garden Design</div>
 <div class="chip"><i>QUALIFIED</i>Japandi Design</div>
 <div class="chip"><i>QUALIFIED</i>Architecture — Japan</div>
 <div class="chip"><i>QUALIFIED</i>Real Estate — NSW &amp; Japan</div>
-<div class="body" style="margin-top:50px">Design, gardens, architecture and property —<br>so every idea is made with your home's<br><b style="color:{NAVY};font-weight:500">value</b> in mind, not just its look.</div></div>'''))
+<div class="chip"><i>LEADER</i>JDF — First Australia Leader</div>
+<div class="chip"><i>LEADER</i>Sugu-Yaru-Ka (Act Now Team) — First Leader, 20s</div>
+<div class="body" style="margin-top:36px">Design, gardens, architecture and property —<br>so every idea is made with your home's<br><b style="color:{NAVY};font-weight:500">value</b> in mind, not just its look.</div></div>'''))
 p.append(page(f'''{top(L,3,N,True)}
 <div style="position:absolute;left:90px;right:90px;top:230px">
 <div style="font-size:26px;letter-spacing:.3em;color:#F07B55">IN SAFE HANDS</div>
