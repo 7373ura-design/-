@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><title>NAMI business card</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@page{size:90mm 55mm;margin:0}
+:root{--navy:#1D3F6E;--ink:#3C4B63;--red:#E4552F;--cream:#FBF6EC}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+/* 96x61 = 90x55 + 3mm bleed each side; content positions measured from trim (add 3mm) */
+.page{width:90mm;height:55mm;position:relative;overflow:hidden;break-after:page}
+.in{position:absolute;left:-3mm;top:-3mm;width:96mm;height:61mm}
+.a{position:absolute}
+.front{background:var(--cream)}
+.back{background:var(--navy)}
+</style></head><body>
+
+<div class="page front" data-document-role="page" data-label="Front"><div class="in">
+ <div class="a" style="left:8mm;top:0;bottom:0;width:.4mm;background:var(--red)"></div>
+ <img class="a" src="nami_mark.svg" style="right:-13mm;top:50%;transform:translateY(-50%);width:58mm">
+ <div class="a" style="left:12.5mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
+  <img src="nami_wordmark.svg" style="height:6.4mm;align-self:flex-start">
+  <div style="font-family:'Shippori Mincho';font-weight:500;color:var(--navy);font-size:15.5pt;letter-spacing:.06em;margin-top:4.5mm">Nanami Ura</div>
+  <div style="font-family:'Jost';font-size:5.8pt;letter-spacing:.28em;color:var(--ink);margin-top:2.2mm">FOUNDER · NAMI STUDIO</div>
+ </div>
+</div></div>
+
+<div class="page back" data-document-role="page" data-label="Back"><div class="in">
+ <div class="a" style="left:0;top:0;bottom:0;right:33mm;overflow:hidden">
+  <svg width="100%" height="100%"><defs><pattern id="sg" width="24" height="12" patternUnits="userSpaceOnUse"><g fill="none" stroke="#284c80" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/><circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#sg)"/></svg>
+ </div>
+ <div class="a" style="right:33mm;top:0;bottom:0;width:.4mm;background:var(--red)"></div>
+ <div class="a" style="left:10mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:2.3mm">
+  <div style="font-family:'Shippori Mincho';color:#fff;font-size:8pt;margin-bottom:1.6mm">Interior Design</div>
+  <div><div style="font-family:Jost;font-size:5.2pt;letter-spacing:.2em;color:#F07B55;font-weight:500">EMAIL</div><div style="font-family:Jost;font-size:8.4pt;color:#fff">hello@nami-studio.com.au</div></div>
+  <div><div style="font-family:Jost;font-size:5.2pt;letter-spacing:.2em;color:#F07B55;font-weight:500">PHONE</div><div style="font-family:Jost;font-size:8.4pt;color:#fff">0406 880 243</div></div>
+  <div><div style="font-family:Jost;font-size:5.2pt;letter-spacing:.2em;color:#F07B55;font-weight:500">INSTAGRAM</div><div style="font-family:Jost;font-size:8.4pt;color:#fff">@nami.studio_au</div></div>
+ </div>
+ <div class="a" style="right:10.5mm;top:8.5mm;bottom:8.5mm;display:flex;flex-direction:column;justify-content:space-between;align-items:center">
+  <div><img src="qr_ig.png" style="width:15mm;background:#fff;padding:1mm;display:block"><div style="font-family:Jost;font-size:5pt;letter-spacing:.2em;color:#e3e9f1;text-align:center;margin-top:.8mm;font-weight:500">INSTAGRAM</div></div>
+  <div><img src="qr_web.png" style="width:15mm;background:#fff;padding:1mm;display:block"><div style="font-family:Jost;font-size:5pt;letter-spacing:.2em;color:#e3e9f1;text-align:center;margin-top:.8mm;font-weight:500">WEBSITE</div></div>
+ </div>
+</div></div>
+</body></html>
