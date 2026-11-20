@@ -55,18 +55,22 @@ def contact(dark=True, wm='nami_wordmark_cream.svg'):
 <div class="t" style="margin-top:5mm;font-weight:400;line-height:1.9">hello@nami-studio.com.au<br>0406 880 243<br>@nami.studio_au · nami-studio.com.au</div>'''
 
 def founder():
-    return '''<div class="eyebrow">THE FOUNDER</div>
-<div class="h" style="font-size:21pt;margin:4mm 0 1.5mm">Nanami Ura</div>
-<div class="cap">FOUNDER · NAMI STUDIO</div>
-<p class="t" style="margin:5mm 0 4mm">From Japan, the granddaughter of an architect. From law and real estate to interiors, I design homes the way I learned in Japan — with the land, the budget and the people who live there in mind.</p>
-<ul class="list">
-<li><span>REAL ESTATE</span><div><b>Licensed in Japan (Takken)</b> — passed in 2.5 months with the top score in the company; President's Award.</div></li>
-<li><span>NSW</span><div><b>Assistant Agent, NSW Fair Trading</b> — real estate registration in Australia.</div></li>
-<li><span>DESIGN</span><div><b>Interior Design &amp; Property Styling · Japanese Garden · Japandi Design</b></div></li>
-<li><span>BUILT</span><div><b>ZEN Japanese Massage, Enmore</b> — interior proposal selected and built.</div></li>
-<li><span>DRAWING</span><div><b>Hand-drawn perspectives</b>, trained under specialist Kazushi Sakamoto.</div></li>
-<li><span>STUDY</span><div><b>Law, Aoyama Gakuin University</b> · Residential Drafting, TAFE NSW (2027)</div></li>
-</ul>'''
+    return '''<div class="eyebrow">ABOUT NAMI</div>
+<div class="h" style="font-size:19pt;margin:4mm 0 4mm">A Sydney-based<br>design studio.</div>
+<p class="t">Residential &amp; commercial, new builds &amp; renovations — designing for today and the years ahead.</p>
+<div class="cap" style="margin:3mm 0 0">FOUNDER · NANAMI URA</div>
+<div class="eyebrow" style="margin-top:7mm">OUR EXPERTISE</div>
+<ul class="list" style="margin-top:3mm">
+<li><span>QUALIFIED</span><div><b>Interior Design &amp; Property Styling</b></div></li>
+<li><span>QUALIFIED</span><div><b>Japanese Garden Design</b></div></li>
+<li><span>QUALIFIED</span><div><b>Japandi Design</b></div></li>
+<li><span>QUALIFIED</span><div><b>Architecture — Japan</b></div></li>
+<li><span>QUALIFIED</span><div><b>Real Estate — NSW &amp; Japan</b></div></li>
+</ul>
+<p class="t" style="margin-top:3mm">So we design beyond taste, with your property's value in mind.</p>
+<div style="margin-top:auto;display:grid;grid-template-columns:auto 1fr;gap:1.6mm 3mm;align-items:baseline">
+<span class="h" style="font-size:12pt;color:var(--red)">波</span><span class="t" style="font-size:7.4pt"><b>Waves</b> — life moves in waves; home is where you come back to.</span>
+<span class="h" style="font-size:12pt;color:var(--red)">並</span><span class="t" style="font-size:7.4pt"><b>Side by side</b> — Japanese calm, Australian openness.</span></div>'''
 
 def japandi():
     return '''<div class="eyebrow">WHY JAPANDI, WHY US</div>
