@@ -14,10 +14,10 @@ row=lambda k,t: f'<div style="display:flex;align-items:center;gap:3mm;margin-top
 CSS_EXTRA='<style>.chk{display:flex;gap:2.4mm;align-items:baseline;margin:1.4mm 0}.chk i{font-style:normal;color:var(--red);font-weight:600}.chk b{font-weight:500;color:var(--navy)}.mini{font-size:10.5pt;line-height:1.4}</style>'
 
 flap=f'''<div class="pad">
-<div class="eyebrow">FOUNDING DESIGN EXPERIENCE</div>
-<div class="h" style="font-size:21pt;margin:3mm 0 3mm">Celebrating<br>our beginning.</div>
+<div class="eyebrow">FOUNDING DESIGN · FINAL ROUND</div>
+<div class="h" style="font-size:21pt;margin:3mm 0 3mm">One final round —<br>10 homes only.</div>
 <div class="rule"></div>
-<p class="t" style="margin:3.5mm 0 3mm">To mark the launch of NAMI, we're inviting <b>10 homes</b> to become part of our founding design collection.</p>
+<p class="t mini" style="margin:3.5mm 0 3mm">Thank you for the warm response to our first 3 founding homes. For everyone who missed out — and so more people can experience NAMI — we're opening <b>one last round of 10 homes</b>.</p>
 <div class="eyebrow" style="font-size:9pt">A$0 DESIGN FEE — WHAT'S INCLUDED</div>
 <div class="chk t mini"><i>✓</i><span><b>Personal design consultation</b> — your home, lifestyle and vision</span></div>
 <div class="chk t mini"><i>✓</i><span><b>Tailored design concept</b> — inspired by your needs and style</span></div>
