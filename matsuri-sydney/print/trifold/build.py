@@ -49,9 +49,10 @@ def contact(dark=True, wm='nami_wordmark_cream.svg'):
 <div class="hair" style="margin:7mm 0 6mm"></div>
 <div class="h" style="font-size:15pt">Let's design<br>your home.</div>
 <p class="t" style="margin-top:4mm">Homes, renovations, single rooms and gardens. Start with a chat — we'll take it from there.</p>
-<div style="margin-top:auto;display:flex;gap:5mm">
-<div><img class="qr" src="qr_ig.png" style="width:21mm"><div class="cap" style="margin-top:1.4mm;text-align:center">INSTAGRAM</div></div>
-<div><img class="qr" src="qr_web.png" style="width:21mm"><div class="cap" style="margin-top:1.4mm;text-align:center">WEBSITE</div></div></div>
+<div style="margin-top:auto;display:flex;gap:3.5mm">
+<div><img class="qr" src="qr_ig.png" style="width:19mm"><div class="cap" style="margin-top:1.4mm;text-align:center">INSTAGRAM</div></div>
+<div><div class="qr" style="width:19mm;height:19mm;display:flex;align-items:center;justify-content:center;font-size:5pt;color:#999;border:.3mm dashed #bbb;text-align:center">FACEBOOK<br>QR</div><div class="cap" style="margin-top:1.4mm;text-align:center">FACEBOOK</div></div>
+<div><img class="qr" src="qr_web.png" style="width:19mm"><div class="cap" style="margin-top:1.4mm;text-align:center">WEBSITE</div></div></div>
 <div class="t" style="margin-top:5mm;font-weight:400;line-height:1.9">hello@nami-studio.com.au<br>0406 880 243<br>@nami.studio_au · nami-studio.com.au</div>'''
 
 def founder():
@@ -73,15 +74,18 @@ def founder():
 <span class="h" style="font-size:12pt;color:var(--red)">並</span><span class="t" style="font-size:7.4pt"><b>Side by side</b> — Japanese calm, Australian openness.</span></div>'''
 
 def japandi():
-    return '''<div class="eyebrow">WHY JAPANDI, WHY US</div>
-<div class="h" style="font-size:19pt;margin:4mm 0 5mm">In Japan, we never<br>called it Japandi.</div>
-<p class="t">It was simply how we lived — soft light, natural wood and room to breathe. We bring the reasons behind the look, not just the look, to Australian homes.</p>
-<ul class="list" style="margin-top:4mm">
-<li><span>間 MA</span><div><b>Space to breathe</b> — open-plan rooms that still feel calm.</div></li>
-<li><span>光 LIGHT</span><div><b>Soft light</b> — layers and screens for the Australian sun.</div></li>
-<li><span>庭 GARDEN</span><div><b>Inside meets outside</b> — Japanese garden thinking, balcony to backyard.</div></li>
-<li><span>本物 REAL</span><div><b>Authentic makers</b> — tatami, hinoki and more, through our JDF Australia network.</div></li>
-<li><span>安心 TRUST</span><div><b>Mentored by Japan Homes</b> — 20+ years building in Australia &amp; NZ, so designs are buildable and on budget.</div></li>
+    return '''<div class="eyebrow">WHAT WE'VE DONE</div>
+<div class="h" style="font-size:17pt;margin:4mm 0 3mm">In Japan, we never<br>called it Japandi.</div>
+<p class="t">It's simply how we live. Here's how we've brought it to Sydney.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2.4mm;margin-top:4mm">
+ <div><div class="ph" style="height:30mm;background-image:url(img/zen_before_single.jpg);filter:saturate(.6)"></div><div class="cap" style="font-size:5.2pt;margin-top:1mm">BEFORE</div></div>
+ <div><div class="ph" style="height:30mm;background-image:url(img/zen_after_single.jpg)"></div><div class="cap" style="font-size:5.2pt;margin-top:1mm;color:var(--red)">AFTER</div></div>
+</div>
+<div class="wt" style="font-size:8.6pt;font-weight:500;margin-top:2.6mm">ZEN Japanese Massage, Enmore</div>
+<p class="t" style="font-size:7.6pt;line-height:1.6">Interior renovation — our design proposal was selected and built. Japanese calm, with minimal changes and cost.</p>
+<ul class="list" style="margin-top:3mm">
+<li><span>JAPAN HOMES</span><div><b>Mentored &amp; backed</b> — 20+ years of housing in Australia &amp; NZ. We manage construction too, so we design with your budget in mind.</div></li>
+<li><span>JDF</span><div><b>Australia lead</b> — connecting you with authentic Japanese makers: tatami, hinoki and more.</div></li>
 </ul>'''
 
 def works(cols=2, h=40):
