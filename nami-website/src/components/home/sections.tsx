@@ -7,6 +7,7 @@ import { Notes } from "@/components/blocks";
 import { Art, PostHead, type ArtName } from "@/components/washi";
 import { EmailButton, FacebookIcon, InstagramIcon, MailIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
+import type { Lang } from "@/lib/lang";
 
 /*
  * Sections of the home page (and the shared Card), set like the NAMI Instagram carousels:
@@ -85,7 +86,7 @@ export function Card({
 export function BackgroundSection() {
   return (
     <Post id="background" labelledBy="background-h" art="tea">
-      <PostHead title={{ ja: "プロフィール", en: "About" }} id="background-h">
+      <PostHead kicker="ABOUT NAMI" title={{ ja: "日本出身の\nデザイナー。", en: "A designer\nfrom Japan." }} id="background-h">
         <Notes items={background.items} />
       </PostHead>
     </Post>
@@ -96,17 +97,26 @@ export function BackgroundSection() {
 
 const contactButton =
   "flex min-h-14 w-full items-center justify-center gap-3 bg-navy px-6 text-[1.0625rem] text-paper transition-colors hover:bg-deep";
+const field = "mt-1.5 w-full border border-navy/25 bg-paper/70 px-3 py-2.5 text-[1rem] text-navy outline-none focus:border-navy";
 
-export function ContactSection() {
+/** Start a project: what we do and where, direct links, and an enquiry form (sent as an email). */
+export function ContactSection({ lang }: { lang: Lang }) {
+  const ja = lang === "ja";
   return (
     <Post id="contact" labelledBy="contact-h" art="bridge">
-      <PostHead title={{ ja: "お問い合わせ", en: "Contact" }} id="contact-h" />
-      <p className="jp-body mx-auto mt-10 max-w-2xl text-center text-[1.0625rem] text-navy/80">
-        <T ja={`${site.base.ja}。`} en={`${site.base.en}.`} />
-        <br />
-        <T ja="家づくりのご相談は、お気軽にどうぞ。" en="Get in touch any time about your home." />
-      </p>
-      <ul className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+      <PostHead kicker="START A PROJECT" title={{ ja: "あなたの空間を、\n一緒に。", en: "Let\u2019s design\nyour space." }} id="contact-h">
+        <p>
+          <T ja="住まい · お店 · オフィス" en="Homes · Shops · Offices" />
+          <br />
+          <T ja={`${site.base.ja}。`} en={`${site.base.en}.`} />
+        </p>
+        <p className="mt-3">
+          <a href={`mailto:${site.email}`} className="text-vermilion hover:underline">
+            {site.email}
+          </a>
+        </p>
+      </PostHead>
+      <ul className="mx-auto mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
         <li>
           <EmailButton className={contactButton} cardClassName="left-1/2 top-full mt-2 -translate-x-1/2">
             <MailIcon className="h-5 w-5" />
@@ -126,6 +136,46 @@ export function ContactSection() {
           </a>
         </li>
       </ul>
+
+      <form id="enquiry" data-enquiry={site.email} className="mx-auto mt-14 max-w-2xl scroll-mt-28 border border-navy/15 bg-cream/70 p-6 md:p-8">
+        <p className="kicker text-vermilion">{ja ? "ご相談フォーム" : "PROJECT ENQUIRY"}</p>
+        <p className="title mt-2 text-[1.5rem]">{ja ? "空間について、少し教えてください。" : "Tell us a little about your space."}</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <label className="text-[0.9375rem] text-navy/80">
+            {ja ? "お名前 *" : "Name *"}
+            <input name="name" required className={field} />
+          </label>
+          <label className="text-[0.9375rem] text-navy/80">
+            {ja ? "メールアドレス *" : "Email *"}
+            <input name="email" type="email" required className={field} />
+          </label>
+          <label className="text-[0.9375rem] text-navy/80">
+            {ja ? "電話番号" : "Phone"}
+            <input name="phone" type="tel" className={field} />
+          </label>
+          <label className="text-[0.9375rem] text-navy/80">
+            {ja ? "ご相談の種類" : "Project type"}
+            <select name="type" className={field} defaultValue={ja ? "住まい（新築・リノベーション）" : "Home (new build or renovation)"}>
+              {(ja
+                ? ["住まい（新築・リノベーション）", "住まい（1部屋・スタイリング）", "お店・オフィス", "その他"]
+                : ["Home (new build or renovation)", "Home (single room or styling)", "Shop or office", "Other"]
+              ).map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </label>
+          <label className="text-[0.9375rem] text-navy/80 sm:col-span-2">
+            {ja ? "ご相談内容" : "Tell us about your project"}
+            <textarea name="message" rows={5} className={field} />
+          </label>
+        </div>
+        <button type="submit" className="label mt-6 inline-flex items-center gap-2 bg-navy px-7 py-4 text-paper transition-colors hover:bg-deep">
+          {ja ? "送信する" : "Send enquiry"} <span aria-hidden>→</span>
+        </button>
+        <p className="mt-3 text-[0.875rem] text-navy/60">
+          {ja ? "送信すると、内容が入ったメールが開きます。そのまま送ってください。" : "Sending opens an email with your details filled in, ready to send."}
+        </p>
+      </form>
     </Post>
   );
 }

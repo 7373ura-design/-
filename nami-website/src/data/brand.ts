@@ -51,20 +51,22 @@ export const businesses = [
   {
     key: "homes",
     href: "/homes",
-    label: "HOMES",
     title: { en: "Homes", ja: "住まい" },
+    meta: { en: "Residential · Explore homes", ja: "住まい · 詳しく見る" },
+    strip: ["/images/portfolio/old-meets-new/03.jpg", "/images/portfolio/living-in-green/10.jpg", "/images/portfolio/old-meets-new/05.jpg"],
     line: {
       en: "New builds, renovations and single-room styling, plus budget styling with IKEA and Kmart",
       ja: "新築、リノベーション、1部屋のスタイリング。IKEAやKmartを使った手軽なスタイリングも",
     },
-    image: "/images/portfolio/welcome-home/01.jpg",
-    alt: "Welcome Home: a Japandi new home designed by NAMI",
+    image: "/images/portfolio/old-meets-new/02.jpg",
+    alt: "Old Meets New: a Japandi renovation by NAMI with timber slat screens at the entry",
   },
   {
     key: "commercial",
     href: "/commercial",
-    label: "SHOPS & OFFICES",
     title: { en: "Shops and Offices", ja: "お店・オフィス" },
+    meta: { en: "Commercial · Explore shops and offices", ja: "お店・オフィス · 詳しく見る" },
+    strip: ["/images/washi/byobu.jpg", "/images/washi/scrolls.jpg", "/images/washi/tea.jpg"],
     line: {
       en: "Offices, clinics, schools, shops and cafés, with a free design proposal and building by Japan Homes",
       ja: "オフィス、クリニック、教室、お店、カフェ。無料のデザイン提案と、ジャパンホームズによる工事",
@@ -93,3 +95,12 @@ export const strengths = [
     line: { en: "Talk to us in either language, in person in Sydney or online", ja: "どちらの言葉でも。シドニーで直接でも、オンラインでも" },
   },
 ];
+
+/** Our philosophy, shared by both businesses. */
+export const philosophy = {
+  title: { en: "Design begins with light,\nnatural materials\nand calm.", ja: "デザインは、\n光と自然素材と\n落ち着きから。" },
+  body: {
+    en: "We plan how daylight moves through each room, choose natural materials such as timber, paper and stone, and keep only what is needed. The result is a space that stays calm and easy to live or work in for years, rather than one that follows a trend.",
+    ja: "部屋ごとに光の入り方を考え、木・紙・石などの自然素材を選び、必要なものだけを残します。流行を追うのではなく、何年たっても落ち着いて、暮らしやすく働きやすい空間をつくります。",
+  },
+};

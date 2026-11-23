@@ -50,6 +50,12 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3 md:gap-4">
+            <Link
+              href={localHref(lang, "/#enquiry")}
+              className="label hidden bg-navy px-4 py-2.5 text-paper transition-colors hover:bg-deep sm:inline-flex"
+            >
+              {lang === "ja" ? "相談する" : "ENQUIRE"}
+            </Link>
             <LanguageSwitch />
             <button
               type="button"

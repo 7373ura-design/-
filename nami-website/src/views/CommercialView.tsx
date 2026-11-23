@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { CtaBand, FaqList, Glossary, PageHero, Section, Notes, Steps, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { commercialFaq, commercialHero, commercialSteps, freeProposal, sectors, staffBenefit } from "@/data/commercial";
 import { glossary } from "@/data/homes";
 import type { Faq } from "@/data/faq";
 import { alternates } from "@/lib/meta";
-import type { Lang } from "@/lib/lang";
+import { localHref, type Lang } from "@/lib/lang";
 
 export function commercialMetadata(lang: Lang): Metadata {
   return lang === "ja"
@@ -43,11 +43,22 @@ export function CommercialView({ lang }: { lang: Lang }) {
           breadcrumbLd(lang, [{ name: lang === "ja" ? "お店・オフィス" : "Shops and Offices", path: "/commercial" }]),
         ]}
       />
-      <PageHero id="commercial-h" kicker={commercialHero.kicker} title={commercialHero.title} body={commercialHero.body} art="byobu" />
+      <OverlayHero
+        id="commercial-h"
+        eyebrow={{ en: "Shops & Offices · Japandi Interior Design · Sydney", ja: "お店・オフィス · ジャパンディ · シドニー" }}
+        title={{ en: "Japandi design\nfor offices and shops.", ja: "日本の美意識を、\nお店とオフィスに。" }}
+        body={commercialHero.body}
+        image={{ src: "/images/washi/byobu.jpg", alt: "A timber lounge chair beside a gold folding screen of pines and a bonsai", position: "50% 60%" }}
+        links={[
+          { href: "#free-proposal", label: { en: "What's free", ja: "無料の内容を見る" } },
+          { href: localHref(lang, "/#contact"), label: { en: "Ask for a free proposal", ja: "無料提案を相談する" } },
+        ]}
+      />
 
       <Section
         id="free-proposal"
-        title={{ en: "Free Design Proposal", ja: "無料のデザイン提案" }}
+        kicker="FREE DESIGN PROPOSAL"
+        title={{ en: "Up to 3D renders,\nfree.", ja: "3Dパースまで、\n無料で。" }}
         intro={{
           en: "Most studios stop at a consultation and a floor plan. Ours goes all the way to 3D renders and a furniture list, free when the project is built with Japan Homes. Places are limited.",
           ja: "多くの会社は、無料の範囲が相談と間取り図までです。NAMIは3Dパースや家具リストまで無料でご提案します(ジャパンホームズで施工する場合)。無料の枠には限りがあります。",
@@ -56,13 +67,14 @@ export function CommercialView({ lang }: { lang: Lang }) {
         <Notes items={freeProposal} />
       </Section>
 
-      <Section id="sectors" title={{ en: "Who We Design For", ja: "対象の業種" }}>
+      <Section id="sectors" kicker="WHO WE DESIGN FOR" title={{ en: "Offices, clinics,\nschools and shops.", ja: "オフィス、クリニック、\n教室、お店。" }}>
         <Notes items={sectors} />
       </Section>
 
       <Section
         id="japandi-at-work"
-        title={{ en: "Japandi at Work", ja: "働く場所にジャパンディを" }}
+        kicker="JAPANDI AT WORK"
+        title={{ en: "Calm spaces\nthat work hard.", ja: "働く場所に、\n日本の落ち着きを。" }}
         intro={{
           en: "Calm, uncluttered and warm: Japanese materials make a reception, treatment room or shop floor feel welcoming.",
           ja: "落ち着いていて、すっきりして、温かい。日本の素材が、受付や診察室、売り場を迎え入れるような空間にします。",
@@ -72,13 +84,13 @@ export function CommercialView({ lang }: { lang: Lang }) {
         <Glossary items={atWork} />
       </Section>
 
-      <Section id="process" title={{ en: "How It Works", ja: "進め方" }}>
+      <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilt by Japan Homes.", ja: "デザインはNAMI、\n工事はジャパンホームズ。" }}>
         <Steps items={commercialSteps} />
       </Section>
 
-      <Section id="staff-benefit" title={staffBenefit.title} intro={staffBenefit.body} />
+      <Section id="staff-benefit" kicker="STAFF BENEFIT" title={staffBenefit.title} intro={staffBenefit.body} />
 
-      <Section id="faq" title={{ en: "Questions", ja: "よくあるご質問" }} kicker="FAQ" wide>
+      <Section id="faq" kicker="FAQ" title={{ en: "Questions,\nanswered.", ja: "よくあるご質問。" }} wide>
         <FaqList lang={lang} groups={[{ items: faq }]} />
       </Section>
 

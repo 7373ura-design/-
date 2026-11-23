@@ -133,6 +133,27 @@
     });
   });
 
+  /* ------------------------------------------------------------ enquiry */
+
+  // The enquiry form has no server behind it: it opens an email with the details filled in.
+  document.addEventListener("submit", function (e) {
+    var f = e.target.closest && e.target.closest("form[data-enquiry]");
+    if (!f) return;
+    e.preventDefault();
+    var v = function (n) { var el = f.elements[n]; return el ? el.value.trim() : ""; };
+    var ja = !isEn();
+    var subject = (ja ? "【NAMI】ご相談: " : "NAMI enquiry: ") + v("type") + " / " + v("name");
+    var body = [
+      (ja ? "お名前: " : "Name: ") + v("name"),
+      (ja ? "メール: " : "Email: ") + v("email"),
+      (ja ? "電話: " : "Phone: ") + v("phone"),
+      (ja ? "種類: " : "Project type: ") + v("type"),
+      "",
+      v("message"),
+    ].join("\n");
+    window.location.href = "mailto:" + f.getAttribute("data-enquiry") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+
   /* --------------------------------------------------------------- init */
 
   function init() {

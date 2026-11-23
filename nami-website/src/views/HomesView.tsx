@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Card } from "@/components/home/sections";
-import { CtaBand, FaqList, Glossary, PageHero, Section, Notes, Steps, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { glossary, homeServices, homeSteps, homesHero } from "@/data/homes";
 import { answeredFaq } from "@/data/faq";
@@ -44,15 +43,27 @@ export function HomesView({ lang }: { lang: Lang }) {
           breadcrumbLd(lang, [{ name: lang === "ja" ? "住まい" : "Homes", path: "/homes" }]),
         ]}
       />
-      <PageHero id="homes-h" kicker={homesHero.kicker} title={homesHero.title} body={homesHero.body} art="washitsu" />
+      <OverlayHero
+        id="homes-h"
+        eyebrow={{ en: "Homes · Japandi Interior Design · Sydney", ja: "住まい · ジャパンディ · シドニー" }}
+        title={{ en: "Japandi interiors\nfor your home.", ja: "日本の美意識を、\n住まいに。" }}
+        body={homesHero.body}
+        image={{ src: "/images/portfolio/old-meets-new/03.jpg", alt: "Old Meets New: timber slat screens and a warm timber floor in a Japandi renovation by NAMI" }}
+        links={[
+          { href: "#projects", label: { en: "See projects", ja: "作品を見る" } },
+          { href: localHref(lang, "/#contact"), label: { en: "Start a project", ja: "相談する" } },
+        ]}
+        caption="OLD MEETS NEW"
+      />
 
-      <Section id="services" title={{ en: "Services", ja: "サービス" }}>
+      <Section id="services" kicker="SERVICES" title={{ en: "From one room\nto the whole home.", ja: "1部屋から、\n家まるごとまで。" }}>
         <Notes items={homeServices} />
       </Section>
 
       <Section
         id="budget"
-        title={{ en: "Japandi on a Budget", ja: "手軽にジャパンディ" }}
+        kicker="BUDGET STYLING"
+        title={{ en: "Japandi\non a budget.", ja: "手軽に、\nジャパンディ。" }}
         intro={{
           en: "A Japandi home does not have to be expensive. We style rooms with affordable pieces from IKEA, Kmart and similar stores, choosing fewer things with care and keeping colours and materials simple. We share ideas you can try yourself on Instagram, and we are happy to advise on DIY projects.",
           ja: "ジャパンディの家は、お金をかけなくてもつくれます。IKEAやKmartなど手に入りやすい家具や雑貨を使い、物を絞って丁寧に選び、色と素材をシンプルにまとめます。自分で試せるアイデアはInstagramで発信中。DIYのご相談にも対応しています。",
@@ -65,18 +76,18 @@ export function HomesView({ lang }: { lang: Lang }) {
         </p>
       </Section>
 
-      <Section id="projects" title={{ en: "Projects", ja: "作品" }} wide>
-        <div className="grid gap-x-8 gap-y-14 md:grid-cols-2">
+      <Section id="projects" kicker="PROJECTS" title={{ en: "Complete homes.\nTheir own stories.", ja: "完成した住まいと、\nそれぞれの物語。" }} wide>
+        <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
           {works.map((w) => (
-            <Card
+            <StoryCard
               key={w.slug}
               href={localHref(lang, `/homes/projects/${w.slug}`)}
-              src={w.photos[0].src}
-              alt={w.photos[0].alt}
               no={w.number}
               title={w.title}
-              line={w.type}
-              sizes="(min-width:768px) 45vw, 90vw"
+              copy={w.lead}
+              meta={{ en: `${w.type.en} · Explore the full project`, ja: `${w.type.ja} · 作品を詳しく見る` }}
+              cover={w.photos[0]}
+              strip={w.photos.slice(1, 4).map((p) => p.src)}
             />
           ))}
         </div>
@@ -84,7 +95,8 @@ export function HomesView({ lang }: { lang: Lang }) {
 
       <Section
         id="japanese-design"
-        title={{ en: "Japanese Design, Explained", ja: "日本のデザイン用語" }}
+        kicker="JAPANESE DESIGN, EXPLAINED"
+        title={{ en: "Hinoki, shoji, tatami\nand more.", ja: "檜、障子、畳。\n日本のデザイン用語。" }}
         intro={{
           en: "Words you may have heard, what they mean, and how we bring them into an Australian home.",
           ja: "聞いたことのある言葉の意味と、オーストラリアの家への取り入れ方をご紹介します。",
@@ -94,11 +106,11 @@ export function HomesView({ lang }: { lang: Lang }) {
         <Glossary items={glossary} />
       </Section>
 
-      <Section id="process" title={{ en: "How It Works", ja: "進め方" }}>
+      <Section id="process" kicker="HOW IT WORKS" title={{ en: "Six simple steps.", ja: "6つのステップ。" }}>
         <Steps items={homeSteps} />
       </Section>
 
-      <Section id="faq" title={{ en: "Questions", ja: "よくあるご質問" }} kicker="FAQ" wide>
+      <Section id="faq" kicker="FAQ" title={{ en: "Questions,\nanswered.", ja: "よくあるご質問。" }} wide>
         <FaqList lang={lang} groups={faq} />
       </Section>
 

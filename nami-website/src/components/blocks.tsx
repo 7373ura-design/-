@@ -178,34 +178,27 @@ export function faqLd(lang: Lang, items: Required<Faq>[]) {
   };
 }
 
-/** The two businesses as large picture cards. */
+/** The two businesses as story cards. */
 export function ChoiceCards({
   lang,
   items,
 }: {
   lang: Lang;
-  items: readonly { key: string; href: string; label: string; title: Bi; line: Bi; image: string; alt: string }[];
+  items: readonly { key: string; href: string; title: Bi; line: Bi; meta: Bi; image: string; alt: string; strip: readonly string[] }[];
 }) {
   return (
-    <div className="grid gap-8 md:grid-cols-2">
-      {items.map((b) => (
-        <Link key={b.key} href={localHref(lang, b.href)} className="group block border border-navy/15 bg-cream/60 transition-colors hover:border-navy/40">
-          <div className="relative aspect-[4/3] overflow-hidden bg-beige">
-            <Image src={b.image} alt={b.alt} fill sizes="(min-width:768px) 45vw, 90vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-          </div>
-          <div className="p-6 md:p-8">
-            <p className="kicker text-vermilion">{b.label}</p>
-            <h3 className="title mt-2 text-[2rem]">
-              <T ja={b.title.ja} en={b.title.en} />
-            </h3>
-            <p className="mt-3 text-[1.0625rem] leading-relaxed text-navy/75">
-              <T ja={b.line.ja} en={b.line.en} />
-            </p>
-            <p className="label mt-6 inline-flex items-center gap-2 bg-navy px-5 py-3 text-paper transition-colors group-hover:bg-deep">
-              <T ja="詳しく見る" en="Learn more" /> <span aria-hidden>→</span>
-            </p>
-          </div>
-        </Link>
+    <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
+      {items.map((b, i) => (
+        <StoryCard
+          key={b.key}
+          href={localHref(lang, b.href)}
+          no={String(i + 1).padStart(2, "0")}
+          title={b.title}
+          copy={b.line}
+          meta={b.meta}
+          cover={{ src: b.image, alt: b.alt }}
+          strip={[...b.strip]}
+        />
       ))}
     </div>
   );
@@ -247,35 +240,108 @@ export function CtaBand({ lang, title, line }: { lang: Lang; title: Bi; line: Bi
   );
 }
 
-/** Top of a business page: picture band, then the h1 block. */
-export function PageHero({
+/**
+ * Top of a page: a large picture with the headline over it (eyebrow, h1, a
+ * short line and links), like a magazine cover.
+ */
+export function OverlayHero({
   id,
-  kicker,
+  eyebrow,
   title,
   body,
-  art,
-  photo,
+  image,
+  links,
+  caption,
 }: {
   id: string;
-  kicker: string;
+  eyebrow: Bi;
   title: Bi;
-  body: Bi;
-  art?: ArtName;
-  photo?: { src: string; alt: string };
+  body?: Bi;
+  image: { src: string; alt: string; position?: string };
+  links: { href: string; label: Bi }[];
+  caption?: string;
 }) {
   return (
     <section className="relative pt-20 md:pt-24" aria-labelledby={id}>
-      {art && <Art name={art} priority className="h-[clamp(220px,38vw,520px)]" />}
-      {photo && (
-        <div className="relative h-[clamp(220px,38vw,520px)] w-full overflow-hidden bg-beige">
-          <Image src={photo.src} alt={photo.alt} fill priority sizes="100vw" className="object-cover" />
-        </div>
-      )}
-      <Container className="pb-20 pt-12 md:pb-24 md:pt-16">
-        <PostHead as="h1" id={id} kicker={kicker} title={title} size="lg">
-          <T ja={body.ja} en={body.en} />
-        </PostHead>
-      </Container>
+      <div className="relative h-[min(84svh,860px)] min-h-[540px] w-full overflow-hidden bg-navy">
+        <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: image.position ?? "center" }} />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/45 to-navy/5" />
+        <Container className="absolute inset-x-0 bottom-0 pb-12 md:pb-16">
+          <p className="kicker !text-paper/85">
+            <T ja={eyebrow.ja} en={eyebrow.en} />
+          </p>
+          <h1 id={id} className="title mt-4 max-w-4xl !text-paper text-[clamp(2.3rem,5.4vw,4.75rem)] !leading-[1.08]">
+            <T ja={title.ja} en={title.en} />
+          </h1>
+          {body && (
+            <p className="jp-body mt-5 max-w-2xl text-[1.0625rem] text-paper/85">
+              <T ja={body.ja} en={body.en} />
+            </p>
+          )}
+          <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3">
+            {links.map((l) => (
+              <HeroLink key={l.href} href={l.href} label={l.label} />
+            ))}
+          </div>
+        </Container>
+        {caption && <p className="label absolute bottom-5 right-5 hidden text-paper/70 md:block">{caption}</p>}
+      </div>
     </section>
+  );
+}
+
+function HeroLink({ href, label }: { href: string; label: Bi }) {
+  return (
+    <Link href={href} className="label group inline-flex items-center gap-3 border-b border-paper/50 pb-1 text-paper transition-colors hover:border-paper">
+      <T ja={label.ja} en={label.en} />
+      <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+    </Link>
+  );
+}
+
+/** A large picture card with a strip of three more photos, a line of copy and where it leads. */
+export function StoryCard({
+  href,
+  no,
+  title,
+  copy,
+  meta,
+  cover,
+  strip,
+}: {
+  href: string;
+  no: string;
+  title: Bi;
+  copy: Bi;
+  meta: Bi;
+  cover: { src: string; alt: string };
+  strip: string[];
+}) {
+  return (
+    <Link href={href} className="group block">
+      <div className="relative aspect-[16/10] overflow-hidden bg-beige">
+        <Image src={cover.src} alt={cover.alt} fill sizes="(min-width:768px) 45vw, 90vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+        <span className="label absolute left-4 top-4 bg-cream/90 px-2 py-1 text-navy">{no}</span>
+        <span aria-hidden className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-cream/90 text-navy transition-transform group-hover:translate-x-1">
+          →
+        </span>
+      </div>
+      <div className="mt-2 grid grid-cols-3 gap-2" aria-hidden>
+        {strip.slice(0, 3).map((src) => (
+          <div key={src} className="relative aspect-[4/3] overflow-hidden bg-beige">
+            <Image src={src} alt="" fill sizes="(min-width:768px) 15vw, 30vw" className="object-cover" />
+          </div>
+        ))}
+      </div>
+      <h3 className="title mt-5 text-[1.75rem] transition-colors group-hover:text-deep">
+        <T ja={title.ja} en={title.en} />
+      </h3>
+      <p className="mt-2 text-[1.0625rem] leading-relaxed text-navy/75">
+        <T ja={copy.ja} en={copy.en} />
+      </p>
+      <p className="label mt-4 text-vermilion">
+        <T ja={meta.ja} en={meta.en} /> <span aria-hidden>→</span>
+      </p>
+    </Link>
   );
 }
