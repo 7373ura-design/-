@@ -1,6 +1,6 @@
 # Matsuri前に出すDIY投稿3本：材料と作り方
 
-撮影日：11/26（リース）、11/28（風呂敷・しめ飾り）
+撮影日：11/26（リース）、11/28（風呂敷・だるまと鏡餅を作り始める）、11/30（だるまと鏡餅の仕上げ）
 作ったものはそのままブースに飾る。
 
 ---
@@ -95,65 +95,61 @@
 
 ---
 
-## ③ お正月のしめ飾り（12/3投稿）
+## ③ 糸で作るだるまと鏡餅（12/3投稿）
 
-**ポイント：** 日本人が作るからこそ意味が伝わる投稿。「何のために飾るのか」「いつ飾るのか」まで説明すると、保存されやすい。
+**ポイント：** 風船に糸を巻いて固めるだけ。針と糸で作れて簡単なのに、日本らしさがはっきり伝わる。ブースの飾りにもなり、子どもにも喜ばれる。
+**注意：** 乾くのに丸1〜2日かかる。**11/28に作って、11/30に仕上げる** 予定にする。
 
-### 材料（目安 $10〜15）
-| もの | 買う場所 | メモ |
+### 材料（目安 $15〜20）
+| もの | 英語での呼び方 | 買う場所 |
 |---|---|---|
-| しめ縄（輪の形、またはまっすぐなもの） | Daiso（正月用品があれば） | なければ麻ひも3本をねじって輪にする（Daiso / Bunnings） |
-| 水引（赤と白、金） | Daiso | なければ赤と白の細いリボン |
-| 白い紙（コピー用紙でOK） | | 紙垂（しで）を作る |
-| 小さなみかん、またはフェイクのオレンジ | スーパー / Daiso | 本来は「橙（だいだい）」。家が代々続くようにという意味 |
-| 松や笹の枝（造花でも可） | Daiso / Kmart / 庭 | |
-| 扇子、または赤い折り紙（あれば） | Daiso | |
-| グルーガン、ワイヤー、はさみ | | |
-
-### 紙垂（しで）の作り方
-1. 白い紙を 6cm × 24cm の帯に切る。
-2. 縦に半分に折る（幅3cmの細い帯になる）。
-3. 長い方向に4等分の位置で、左右から交互に3か所、切り込みを入れる（最後まで切らない。端を5mmほど残す）。
-4. 広げて、切った部分を1段ずつ手前に折り下げていくと、ジグザグの形になる。
-5. 2本作って、しめ縄の下に付ける。
+| 刺繍糸（だるま用に赤、鏡餅用に白、橙用にオレンジ） | embroidery floss / embroidery thread | Spotlight / Kmart / Daiso |
+| 水風船（小さい風船） | water balloons | Kmart / Big W / Daiso / スーパーのパーティー用品の棚 |
+| 太い針（穴の大きいもの） | tapestry needle / darning needle | Spotlight / Daiso |
+| 木工用ボンド | PVA glue（白いボトル） | Kmart / Officeworks / Bunnings |
+| 折り紙 | origami paper | Daiso / Kmart / Officeworks |
+| 顔を描くペン（黒・金） | Posca pen / permanent marker | Kmart / Officeworks |
+| あれば：ワセリンか油（風船に塗ると糸がはがれやすい） | Vaseline | スーパー |
 
 ### 作り方
-1. しめ縄を置き、中心（下の方）を決める。
-2. 松や笹の枝を、中心から左右に広がるようにグルーガンで付ける。
-3. 中心にみかん（またはフェイクのオレンジ）を付ける。
-4. 水引を蝶結びにして、みかんの上か横に付ける。
-5. 紙垂2本を下に付ける。
-6. 扇子や赤い折り紙をアクセントに足して完成。
+1. 針に刺繍糸を通す。その針をボンドの容器の横（下の方）に刺して、反対側まで通す。針だけ抜くと、糸がボンドの中を通る状態になる。
+2. 風船をふくらませて口を結ぶ（だるまはこぶし大、鏡餅は大と小の2つ）。表面にワセリンを薄く塗っておくと、あとで外しやすい。
+3. 糸を引っぱると、ボンドがついた糸が出てくる。それを風船にいろんな方向からぐるぐる巻きつける。たくさん巻くほどしっかりする。
+4. 吊るして丸1〜2日乾かす（夏のシドニーなら1日でもOK）。
+5. 完全に固まったら、針で風船を割って、糸の間から引き抜く。へこんだら、風船をもう一度入れて内側からふくらませると形が戻る。
+6. 仕上げをする。
+   - **だるま（赤）：** 底を少し押してつぶし、立つようにする。白い折り紙を丸く切って顔の位置に貼り、眉・ひげ・目の輪郭をペンで描く。**目は描かないで白いまま残す**（下の「文化の説明」で使う）。
+   - **鏡餅（白）：** 大きい玉の上に小さい玉を重ねてボンドで留める。オレンジの糸で小さい玉を作って一番上にのせる（橙＝だいだい）。下に赤と白の折り紙を敷く。
+
+### 撮影の流れ
+完成品（だるまと鏡餅を並べたところ）→ 材料 → 針をボンドに刺すところ（ここが一番「えっ」となるポイント）→ 巻く → 乾いたら風船を割る → 顔を描く → だるまの片目を描き入れる → 完成品
 
 ### 文化の説明（キャプションに入れる）
-- しめ飾りは、新しい年の神様（年神様）を迎えるために玄関に飾る。家を清めて、悪いものが入らないようにする意味がある。
-- 飾るのは12月28日がよい。29日は「9＝苦」につながり、31日は「一夜飾り」と言って避けるのが一般的。
-- 1月7日ごろ（松の内の終わり）に外す。
+- **だるま：** 願い事をするときに片方の目を描き、願いがかなったらもう片方の目を描く。転んでも起き上がる「七転び八起き」の縁起物。
+- **鏡餅：** 新しい年の神様（年神様）へのお供え。丸いお餅は円満、重ねるのは「年を重ねる」「福が重なる」という意味。上の橙は「家が代々続く」。
+- 鏡餅は1月11日の「鏡開き」で下げて、お餅を食べる。
 
 ### キャプション（英語）
-> Japanese New Year door decoration with Daiso finds 🎍
-> *Shimekazari* (しめ飾り) welcomes the New Year god and keeps bad luck out.
-> 🍊 Orange = family continuing for generations
-> ⚪ Zig-zag paper (shide) = purity
-> 🔴⚪ Mizuhiki cord = celebration
+> Make a Japanese daruma & kagami mochi with just thread and a balloon 🎈
 >
-> 📅 Hang it on 28 Dec (avoid the 29th — "9" sounds like "suffering" in Japanese) and take it down around 7 Jan.
+> 🔴 Daruma (だるま) — paint one eye when you make a wish, and the other when it comes true.
+> ⚪ Kagami mochi (鏡餅) — a New Year offering. Two stacked rounds mean "another year, more good fortune". The orange on top means the family continues for generations.
 >
-> 🛒 Shimenawa rope – Daiso $__ / Mizuhiki – Daiso $__ / Faux orange – Daiso $__
-> Save for New Year & follow for more Japanese wisdom ✨
-> #japanesenewyear #shimekazari #oshogatsu #daisohaul #japaneseculture #japandi
+> 🛒 Embroidery thread – Spotlight $__ / Water balloons – Kmart $__ / PVA glue – Officeworks $__ / Origami paper – Daiso $__
+> Tip: push the needle through the glue bottle so the thread coats itself!
+>
+> What would you wish for in 2027? Tell me below 👇
+> Save for New Year & follow for more Japanese DIY ✨
+> #daruma #kagamimochi #japanesenewyear #oshogatsu #kidscraft #japandi #sydneycraft
 
-### 参考リンク
-- https://www.instagram.com/reel/DS2DBx3E8i-/ （Daisoのしめ縄で作る正月飾り）
-- https://www.instagram.com/reel/DSj1R2Pk1Vh/ （折り紙のしめ縄）
-- しめ飾りの意味の解説（英語）：https://seattlejapanesegarden.org/blog/2021/12/7/japanese-new-years-decorations
+⚠️ 針を使うので、子どもが作るときは大人が見ていること（キャプションにも一言入れる）
 
 ---
 
-## 買い物メモ（11/24 Daiso、11/25 Kmart・IKEA）
-- **Daiso：** しめ縄、水引（赤・白・金）、フェイクのオレンジ、麻ひも、ワイヤー、赤い玉、扇子、正方形の布
-- **Kmart：** リースの土台、ドライフラワー、ティータオル（風呂敷用）、グルーガン
-- **IKEA：** 造花のユーカリやグリーン（SMYCKA）
+## 買い物メモ
+- **Spotlight：** 刺繍糸（赤・白・オレンジ）、太い針、リースの土台、ドライフラワー、造花
+- **Daiso：** 折り紙、水風船、正方形の布（風呂敷用）、麻ひも、ワイヤー、赤い玉
+- **Kmart：** ティータオル（風呂敷用）、グルーガン、Poscaペン、PVAボンド
+- **IKEA：** 造花のグリーン（SMYCKA）
 
 ※ 値札とレシートは捨てずに取っておく（キャプションの値段に使う）
-※ Daisoにしめ縄がない場合は、麻ひもで代用する
