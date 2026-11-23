@@ -7,7 +7,7 @@ opens with a double-click (even straight from an email or a zip) with no other
 files beside it. Pages are switched by the address's #page=... part; each switch
 reloads the file so the page scripts start fresh.
 """
-import base64, json, mimetypes, os, re, sys
+import base64, html as htmllib, json, mimetypes, os, re, sys
 
 SRC, OUT = sys.argv[1], sys.argv[2]
 read = lambda p: open(os.path.join(SRC, p), encoding="utf-8").read()
@@ -43,7 +43,7 @@ for p in pages:
     body = re.sub(r'<script src="(site|js/nami)\.js"></script>', "", body)
     body = re.sub(r'src="(images/[^"]+)"', img, body)
     body = re.sub(r'href="([^"]+)"', lambda m: link(m, p), body)
-    meta[p] = {"title": title, "lang": lang}
+    meta[p] = {"title": htmllib.unescape(title), "lang": lang}
     templates.append(f'<template id="page:{p}">{body}</template>')
 
 cls = re.search(r'className\+=" ([^"]*)"', read("index.html")).group(1)
