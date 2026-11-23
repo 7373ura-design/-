@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, SubNav, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
-import { commercialFaq, commercialHero, commercialSteps, freeProposal, sectors, staffBenefit } from "@/data/commercial";
+import { commercialFaq, commercialHero, commercialSteps, conceptProject, freeProposal, sectors, staffBenefit } from "@/data/commercial";
+import Image from "next/image";
+import { Container } from "@/components/ui";
+import { T } from "@/lib/i18n";
 import { glossary } from "@/data/homes";
 import type { Faq } from "@/data/faq";
 import { alternates } from "@/lib/meta";
@@ -47,6 +50,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
         lang={lang}
         current="commercial"
         links={[
+          { href: "#concept", label: { en: "Concept project", ja: "デザイン事例" } },
           { href: "#free-proposal", label: { en: "Free proposal", ja: "無料の提案" } },
           { href: "#sectors", label: { en: "Who it's for", ja: "対象の業種" } },
           { href: "#japandi-at-work", label: { en: "Japandi at work", ja: "ジャパンディ" } },
@@ -61,12 +65,47 @@ export function CommercialView({ lang }: { lang: Lang }) {
         eyebrow={{ en: "Shops & Offices · Japandi Interior Design · Sydney", ja: "お店・オフィス · ジャパンディ · シドニー" }}
         title={{ en: "Japandi design\nfor offices and shops.", ja: "日本の美意識を、\nお店とオフィスに。" }}
         body={commercialHero.body}
-        image={{ src: "/images/washi/byobu.jpg", alt: "A timber lounge chair beside a gold folding screen of pines and a bonsai", position: "50% 60%" }}
+        image={{ src: "/images/concepts/sunrise-and-waves/01-lounge.jpg", alt: "Sunrise & Waves, a Japanese massage studio concept by NAMI: lounge with timber slats and seigaiha fabric across the ceiling", position: "50% 55%" }}
         links={[
+          { href: "#concept", label: { en: "See a concept project", ja: "デザイン事例を見る" } },
           { href: "#free-proposal", label: { en: "What's free", ja: "無料の内容を見る" } },
           { href: localHref(lang, "/#contact"), label: { en: "Ask for a free proposal", ja: "無料提案を相談する" } },
         ]}
+        caption="SUNRISE & WAVES · CONCEPT DESIGN"
       />
+
+      <section id="concept" className="section-rule relative scroll-mt-36 md:scroll-mt-40" aria-labelledby="concept-h">
+        <Container className="pb-24 pt-14 md:pb-32 md:pt-20">
+          <p className="kicker text-vermilion">CONCEPT PROJECT</p>
+          <h2 id="concept-h" className="title mt-3 text-[clamp(2rem,4vw,3rem)]">{conceptProject.title}</h2>
+          <p className="label mt-2 text-deep">
+            <T ja={conceptProject.kind.ja} en={conceptProject.kind.en} />
+          </p>
+          <p className="jp-body mt-5 max-w-3xl text-[1.0625rem] text-navy/80">
+            <T ja={conceptProject.lead.ja} en={conceptProject.lead.en} />
+          </p>
+          <div className="mt-10 grid gap-x-6 gap-y-10 md:grid-cols-3" data-lightbox>
+            {conceptProject.rooms.map((r, i) => (
+              <figure key={r.src} className={i === 0 ? "md:col-span-3" : ""}>
+                <div className={`relative overflow-hidden bg-beige ${i === 0 ? "aspect-[16/9]" : "aspect-[4/5]"}`} data-lightbox-item>
+                  <Image src={r.src} alt={r.alt} fill sizes={i === 0 ? "100vw" : "(min-width:768px) 30vw, 90vw"} className="object-cover" />
+                </div>
+                <figcaption className="mt-3">
+                  <span className="title text-[1.3rem]">
+                    <T ja={r.title.ja} en={r.title.en} />
+                  </span>
+                  <span className="mt-1 block text-[1rem] leading-relaxed text-navy/75">
+                    <T ja={r.line.ja} en={r.line.en} />
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="mt-6 text-[0.875rem] text-navy/55">
+            <T ja={conceptProject.note.ja} en={conceptProject.note.en} />
+          </p>
+        </Container>
+      </section>
 
       <Section
         id="free-proposal"
