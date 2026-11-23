@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { background, services } from "@/data/brand";
-import { answeredFaq } from "@/data/faq";
+import { background } from "@/data/brand";
 import { site } from "@/data/site";
-import { getWorks } from "@/data/works";
 import { Container } from "@/components/ui";
+import { Notes } from "@/components/blocks";
 import { Art, PostHead, type ArtName } from "@/components/washi";
 import { EmailButton, FacebookIcon, InstagramIcon, MailIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
-import { localHref, type Lang } from "@/lib/lang";
 
 /*
  * Sections of the home page (and the shared Card), set like the NAMI Instagram carousels:
@@ -79,68 +77,6 @@ export function Card({
         <T ja="写真をタップして詳細へ →" en="Tap the photo for details →" />
       </p>
     </Link>
-  );
-}
-
-/* ------------------------------------------------------------------ Works */
-
-export function WorksSection({ lang }: { lang: Lang }) {
-  const works = getWorks();
-  return (
-    <Post id="works" labelledBy="works-h">
-      <PostHead title={{ ja: "作品", en: "Works" }} id="works-h" />
-      <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2">
-        {works.map((w) => (
-          <Card
-            key={w.slug}
-            href={localHref(lang, `/works/${w.slug}`)}
-            src={w.photos[0].src}
-            alt={w.photos[0].alt}
-            no={w.number}
-            title={w.title}
-            line={w.type}
-            sizes="(min-width:768px) 45vw, 90vw"
-          />
-        ))}
-      </div>
-    </Post>
-  );
-}
-
-/* ---------------------------------------------------------------- Services */
-
-/** A plain list, ruled like a page of notes. */
-function Notes({ items }: { items: { title: Bi; line: Bi }[] }) {
-  return (
-    <dl className="border-b border-navy/15">
-      {items.map((b) => (
-        <div key={b.title.en} className="grid gap-1 border-t border-navy/15 py-4 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
-          <dt className="title text-[1.2rem] !leading-snug">
-            <T ja={b.title.ja} en={b.title.en} />
-          </dt>
-          <dd className="text-[1rem] leading-relaxed text-navy/75">
-            <T ja={b.line.ja} en={b.line.en} />
-          </dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
-
-export function ServicesSection({ lang }: { lang: Lang }) {
-  return (
-    <Post id="services" labelledBy="services-h">
-      <PostHead title={{ ja: "サービス", en: "Services" }} id="services-h">
-        <Notes items={services.items} />
-        {answeredFaq().length > 0 && (
-          <p className="mt-6">
-            <Link href={localHref(lang, "/faq")} className="text-[0.9375rem] text-vermilion hover:underline">
-              <T ja="よくあるご質問を見る →" en="Read our FAQ →" />
-            </Link>
-          </p>
-        )}
-      </PostHead>
-    </Post>
   );
 }
 

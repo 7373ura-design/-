@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
-import { answeredFaq } from "@/data/faq";
 import { langOfPath, localHref } from "@/lib/lang";
 import { Logo } from "@/components/Logo";
 import Image from "next/image";
@@ -13,10 +12,7 @@ import { LanguageSwitch } from "@/components/LanguageSwitch";
 export function Header() {
   const pathname = usePathname() || "/";
   const lang = langOfPath(pathname);
-  const hasFaq = answeredFaq().length > 0;
-  const menu = navigation
-    .filter((item) => item.href !== "/faq" || hasFaq)
-    .map((item) => ({ ...item, href: localHref(lang, item.href) }));
+  const menu = navigation.map((item) => ({ ...item, href: localHref(lang, item.href) }));
   const [open, setOpen] = useState(false);
   // Close the menu on navigation
   useEffect(() => setOpen(false), [pathname]);

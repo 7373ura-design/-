@@ -8,6 +8,11 @@ import type { Bi } from "@/lib/i18n";
 
 export const hero = {
   kicker: "JAPANDI INTERIOR DESIGN, SYDNEY",
+  /** The shared summary on the top page, before the two businesses. */
+  intro: {
+    en: "NAMI is a Japandi interior design studio based in Sydney, led by a designer from Japan. We design homes, and shops and offices, bringing Japanese ideas of light, natural materials and calm to the way Australians live and work.",
+    ja: "NAMIは、シドニーを拠点とするジャパンディのインテリアデザインスタジオです。デザイナーは日本出身。住まいと、お店・オフィスのデザインを手がけ、日本の光の取り入れ方、自然素材、落ち着きを、オーストラリアの暮らしと仕事の場に届けます。",
+  },
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
     ja: "日本の美意識を、今の暮らしに。",
@@ -41,35 +46,50 @@ export const background = {
   ],
 };
 
-/** What NAMI does, as a list on the home page (the same ground as the FAQ answers). */
-export const services = {
-  items: [
-    {
-      title: { ja: "内装デザイン", en: "Interior design" },
-      line: { ja: "家全体から1部屋まで。新築にもリノベーションにも対応", en: "Whole homes or single rooms, for new builds and renovations" },
+/** The two businesses, chosen on the top page. */
+export const businesses = [
+  {
+    key: "homes",
+    href: "/homes",
+    label: "HOMES",
+    title: { en: "Homes", ja: "住まい" },
+    line: {
+      en: "New builds, renovations and single-room styling, plus budget styling with IKEA and Kmart",
+      ja: "新築、リノベーション、1部屋のスタイリング。IKEAやKmartを使った手軽なスタイリングも",
     },
-    {
-      title: { ja: "色と素材の選定", en: "Colours and materials" },
-      line: { ja: "外壁・床・キッチン・浴室を、全体のバランスを見てご提案", en: "Cladding, floors, kitchens and bathrooms, chosen to work together" },
+    image: "/images/portfolio/welcome-home/01.jpg",
+    alt: "Welcome Home: a Japandi new home designed by NAMI",
+  },
+  {
+    key: "commercial",
+    href: "/commercial",
+    label: "SHOPS & OFFICES",
+    title: { en: "Shops and Offices", ja: "お店・オフィス" },
+    line: {
+      en: "Offices, clinics, schools, shops and cafés, with a free design proposal and building by Japan Homes",
+      ja: "オフィス、クリニック、教室、お店、カフェ。無料のデザイン提案と、ジャパンホームズによる工事",
     },
-    {
-      title: { ja: "家具・照明・スタイリング", en: "Furniture, lighting and styling" },
-      line: { ja: "今お持ちの家具を生かした提案も", en: "Including designs built around the furniture you already have" },
-    },
-    {
-      title: { ja: "日本の要素", en: "Japanese elements" },
-      line: { ja: "畳コーナー、障子風の建具、木の格子、木のお風呂", en: "Tatami corners, shoji-style screens, timber slats and timber baths" },
-    },
-    {
-      title: { ja: "庭と外まわり", en: "Gardens and outdoors" },
-      line: { ja: "室内とつながる日本庭園やデッキまわり", en: "Japanese gardens and decks that connect with the rooms inside" },
-    },
-    {
-      title: { ja: "対応エリア", en: "Where we work" },
-      line: {
-        ja: "シドニー拠点。オーストラリア各地とニュージーランドにも対応。オンライン相談は日本語・英語で",
-        en: "Based in Sydney, working across Australia and in New Zealand. Online consultations in English or Japanese",
-      },
-    },
-  ],
-};
+    image: "/images/washi/desk.jpg",
+    alt: "A tea cup, floor plans and material samples on a designer's desk",
+  },
+] as const;
+
+/** What both businesses share. */
+export const strengths = [
+  {
+    title: { en: "A designer from Japan", ja: "日本出身のデザイナー" },
+    line: { en: "The Japanese way of living, known first-hand, not just studied", ja: "日本の住まいの考え方を、学んだだけでなく実体験として" },
+  },
+  {
+    title: { en: "Japandi, made for Australia", ja: "オーストラリアに合うジャパンディ" },
+    line: { en: "Hinoki, shoji, tatami and washi, shaped for Australian homes, light and climate", ja: "檜、障子、畳、和紙を、オーストラリアの家と光と気候に合わせて" },
+  },
+  {
+    title: { en: "Built with Japan Homes", ja: "ジャパンホームズと施工" },
+    line: { en: "Building work by our licensed partner, with over 20 years in New Zealand and Australia", ja: "ニュージーランドとオーストラリアで20年以上の実績を持つ、ライセンスのあるパートナーが工事" },
+  },
+  {
+    title: { en: "English and Japanese", ja: "日本語と英語" },
+    line: { en: "Talk to us in either language, in person in Sydney or online", ja: "どちらの言葉でも。シドニーで直接でも、オンラインでも" },
+  },
+];

@@ -67,8 +67,30 @@ export function projectLd(lang: Lang, w: { slug: string; title: { en: string; ja
     about: lang === "ja" ? `ジャパンディのインテリアデザイン（${w.type.ja}）` : `Japandi interior design for a ${w.type.en.toLowerCase()}`,
     genre: "Japandi interior design",
     inLanguage: lang === "ja" ? "ja" : "en-AU",
-    url: abs(localHref(lang, `/works/${w.slug}`)),
+    url: abs(localHref(lang, `/homes/projects/${w.slug}`)),
     image: w.photos.map((p) => abs(p.src)),
     creator: { "@id": abs("/#organization") },
+  };
+}
+
+/** One of NAMI's services, for a business page. */
+export function serviceLd(lang: Lang, s: { path: string; name: string; serviceType: string; description: string; offers: string[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.name,
+    serviceType: s.serviceType,
+    description: s.description,
+    url: abs(localHref(lang, s.path)),
+    provider: { "@id": abs("/#organization") },
+    areaServed: [
+      { "@type": "City", name: "Sydney" },
+      { "@type": "Country", name: "Australia" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: s.name,
+      itemListElement: s.offers.map((o) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: o } })),
+    },
   };
 }

@@ -4,8 +4,8 @@ export const site = {
   /** Search titles and descriptions. Sydney is home base; work is taken on across Australia. */
   title: { en: "NAMI | Japandi Interior Design, Based in Sydney", ja: "NAMI | シドニー拠点のジャパンディ・インテリアデザイン" },
   description: {
-    en: "NAMI is a Japanese-Australian interior design studio based in Sydney. We design Japandi homes, new builds and renovations, for clients in Sydney and across Australia.",
-    ja: "NAMIはシドニーを拠点とする日系インテリアデザインスタジオです。日本の美意識を生かしたジャパンディの住まいを、新築・リノベーションともに、シドニーをはじめオーストラリア各地でデザインしています。",
+    en: "NAMI is a Japandi interior design studio based in Sydney, led by a designer from Japan. We design homes (new builds, renovations and styling) and shops and offices, for clients in Sydney and across Australia.",
+    ja: "NAMIはシドニーを拠点とするジャパンディのインテリアデザインスタジオです。デザイナーは日本出身。住まい(新築・リノベーション・スタイリング)と、お店・オフィスのデザインを、シドニーをはじめオーストラリア各地で手がけています。",
   },
   /** Shown on the page: where NAMI is and where it works. */
   base: { en: "Based in Sydney, working across Australia", ja: "シドニーを拠点に、オーストラリア各地に対応しています" },
@@ -17,11 +17,10 @@ export const site = {
   email: "hello@nami-studio.com.au",
 };
 
-/** Main menu. FAQ appears once at least one answer is written (src/data/faq.ts). */
+/** Main menu: the two businesses, then who NAMI is and how to get in touch. */
 export const navigation = [
-  { label: "WORKS", href: "/#works" },
-  { label: "SERVICES", href: "/#services" },
+  { label: "HOMES", href: "/homes" },
+  { label: "SHOPS & OFFICES", href: "/commercial" },
   { label: "ABOUT", href: "/#about" },
-  { label: "FAQ", href: "/faq" },
   { label: "CONTACT", href: "/#contact" },
 ];

@@ -26,7 +26,7 @@ export async function workMetadata(lang: Lang, { params }: WorkProps): Promise<M
       lang === "ja"
         ? `${work.lead.ja}シドニーを拠点とするNAMIによる、ジャパンディの${work.type.ja}のインテリアデザイン。`
         : `${work.lead.en} Japandi interior design for a ${work.type.en.toLowerCase()} by NAMI, based in Sydney.`,
-    alternates: alternates(lang, `/works/${work.slug}`),
+    alternates: alternates(lang, `/homes/projects/${work.slug}`),
     openGraph: { images: [{ url: work.photos[0].src }] },
   };
 }
@@ -44,8 +44,8 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
         data={[
           projectLd(lang, work),
           breadcrumbLd(lang, [
-            { name: lang === "ja" ? "作品" : "Works", path: "/#works" },
-            { name: work.title[lang], path: `/works/${work.slug}` },
+            { name: lang === "ja" ? "住まい" : "Homes", path: "/homes" },
+            { name: work.title[lang], path: `/homes/projects/${work.slug}` },
           ]),
         ]}
       />
@@ -57,7 +57,7 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
           <PostHead
             as="h1"
             no={work.number}
-            kicker="WORKS"
+            kicker="PROJECTS"
             title={work.title}
             sub={`JAPANDI ${work.type.en.toUpperCase()}`}
             size="lg"
@@ -91,10 +91,10 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
       {others.length > 0 && (
         <section className="section-rule py-20 md:py-28" aria-labelledby="more-works">
           <Container>
-            <PostHead kicker="MORE WORKS" title={{ ja: "ほかの住まい", en: "More Homes" }} id="more-works" />
+            <PostHead kicker="MORE PROJECTS" title={{ ja: "ほかの住まい", en: "More Homes" }} id="more-works" />
             <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-3">
               {others.map((w) => (
-                <Link key={w.slug} href={localHref(lang, `/works/${w.slug}`)} className="group block text-center">
+                <Link key={w.slug} href={localHref(lang, `/homes/projects/${w.slug}`)} className="group block text-center">
                   <div className="relative aspect-[4/3] overflow-hidden bg-beige">
                     <Image src={w.photos[0].src} alt={w.photos[0].alt} fill sizes="(min-width:768px) 30vw, 90vw" className="object-cover" />
                   </div>
@@ -109,7 +109,7 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
               ))}
             </div>
             <div className="mt-14 text-center">
-              <TextLink href={localHref(lang, "/#works")}>
+              <TextLink href={localHref(lang, "/homes#projects")}>
                 <T ja="プロジェクト一覧" en="All projects" />
               </TextLink>
             </div>

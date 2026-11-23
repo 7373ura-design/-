@@ -24,7 +24,7 @@ export function Hero() {
 
       <Container className="pb-20 pt-12 md:pb-28 md:pt-20">
         <PostHead as="h1" id="hero-heading" kicker={hero.kicker} title={hero.heading} sub="NEST AND MEMORIES INSIDE" size="lg">
-          <T ja={hero.body.ja} en={hero.body.en} />
+          <T ja={hero.intro.ja} en={hero.intro.en} />
         </PostHead>
       </Container>
     </section>

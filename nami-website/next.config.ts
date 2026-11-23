@@ -8,14 +8,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/about", destination: "/#about", permanent: true },
-      { source: "/projects", destination: "/#works", permanent: true },
-      { source: "/services", destination: "/", permanent: true },
+      { source: "/projects", destination: "/homes#projects", permanent: true },
+      { source: "/services", destination: "/homes#services", permanent: true },
+      { source: "/faq", destination: "/homes#faq", permanent: true },
+      { source: "/ja/faq", destination: "/ja/homes#faq", permanent: true },
+      { source: "/works/new-lynn-house", destination: "/homes/projects/welcome-home", permanent: true },
+      { source: "/works/remuera-renovation", destination: "/homes/projects/old-meets-new", permanent: true },
+      { source: "/works/glen-innes-unit", destination: "/homes/projects/living-in-green", permanent: true },
+      { source: "/works/hillcrest-house", destination: "/homes/projects/simply-special", permanent: true },
+      { source: "/works/:slug", destination: "/homes/projects/:slug", permanent: true },
+      { source: "/ja/works/:slug", destination: "/ja/homes/projects/:slug", permanent: true },
       { source: "/contact", destination: "/#contact", permanent: true },
       // Project pages are named after their Instagram posts
-      { source: "/works/new-lynn-house", destination: "/works/welcome-home", permanent: true },
-      { source: "/works/remuera-renovation", destination: "/works/old-meets-new", permanent: true },
-      { source: "/works/glen-innes-unit", destination: "/works/living-in-green", permanent: true },
-      { source: "/works/hillcrest-house", destination: "/works/simply-special", permanent: true },
     ];
   },
   images: {
