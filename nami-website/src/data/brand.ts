@@ -66,7 +66,7 @@ export const businesses = [
     href: "/commercial",
     title: { en: "Shops and Offices", ja: "お店・オフィス" },
     meta: { en: "Commercial · Explore shops and offices", ja: "お店・オフィス · 詳しく見る" },
-    strip: ["/images/concepts/sunrise-and-waves/02-reception.jpg", "/images/concepts/sunrise-and-waves/03-sunrise-room.jpg", "/images/concepts/sunrise-and-waves/04-waves-room.jpg"],
+    strip: ["/images/concepts/engawa-office/01-reception.jpg", "/images/concepts/sunrise-and-waves/02-reception.jpg", "/images/concepts/sunrise-and-waves/03-sunrise-room.jpg"],
     line: {
       en: "Offices, clinics, schools, shops and cafés, with a free design proposal and building by Japan Homes",
       ja: "オフィス、クリニック、教室、お店、カフェ。無料のデザイン提案と、ジャパンホームズによる工事",

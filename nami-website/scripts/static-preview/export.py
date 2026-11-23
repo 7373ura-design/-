@@ -19,6 +19,9 @@ routes={"/":"index.html","/ja":"ja.html",
         "/homes":"homes.html","/ja/homes":"ja-homes.html",
         "/commercial":"commercial.html","/ja/commercial":"ja-commercial.html"}
 works=["welcome-home","old-meets-new","living-in-green","simply-special"]
+for s in ["sunrise-and-waves","engawa-office"]:
+    routes[f"/commercial/concepts/{s}"]=f"concept-{s}.html"
+    routes[f"/ja/commercial/concepts/{s}"]=f"ja-concept-{s}.html"
 for s in works:
     routes[f"/homes/projects/{s}"]=f"project-{s}.html"
     routes[f"/ja/homes/projects/{s}"]=f"ja-project-{s}.html"

@@ -3,6 +3,7 @@ import { background, strengths } from "@/data/brand";
 import { glossary, homeServices } from "@/data/homes";
 import { commercialFaq, freeProposal, sectors } from "@/data/commercial";
 import { getWorks } from "@/data/works";
+import { concepts } from "@/data/concepts";
 import { answeredFaq, type Faq } from "@/data/faq";
 
 export const dynamic = "force-static";
@@ -33,6 +34,8 @@ export function GET() {
     `## Shops and offices (${abs("/commercial")})`,
     "Free design proposal (when built with Japan Homes; limited places):",
     ...freeProposal.map((s) => `- ${s.title.en}: ${s.line.en}`),
+    "Concept projects (design visualisations; Engawa Office is a sample for a fictional company):",
+    ...concepts.map((c) => `- [${c.title}](${abs(`/commercial/concepts/${c.slug}`)}): ${c.kind.en}. ${c.lead.en}`),
     "Who we design for:",
     ...sectors.map((s) => `- ${s.title.en}: ${s.line.en}`),
     "",
