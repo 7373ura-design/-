@@ -128,3 +128,6 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:14px;color:var(
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer a{text-decoration:none}
 footer nav{display:flex;gap:20px;flex-wrap:wrap}
+.card .cimg{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:18px}
+.ba{grid-template-columns:repeat(4,1fr)}
+@media(max-width:800px){.ba{grid-template-columns:1fr 1fr}}
