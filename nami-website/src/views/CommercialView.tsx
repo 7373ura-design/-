@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, SubNav, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { commercialFaq, commercialHero, commercialSteps, freeProposal, sectors, staffBenefit } from "@/data/commercial";
 import { glossary } from "@/data/homes";
@@ -43,7 +43,20 @@ export function CommercialView({ lang }: { lang: Lang }) {
           breadcrumbLd(lang, [{ name: lang === "ja" ? "お店・オフィス" : "Shops and Offices", path: "/commercial" }]),
         ]}
       />
+      <SubNav
+        lang={lang}
+        current="commercial"
+        links={[
+          { href: "#free-proposal", label: { en: "Free proposal", ja: "無料の提案" } },
+          { href: "#sectors", label: { en: "Who it's for", ja: "対象の業種" } },
+          { href: "#japandi-at-work", label: { en: "Japandi at work", ja: "ジャパンディ" } },
+          { href: "#process", label: { en: "How it works", ja: "進め方" } },
+          { href: "#staff-benefit", label: { en: "Staff benefit", ja: "社員特典" } },
+          { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
+        ]}
+      />
       <OverlayHero
+        flush
         id="commercial-h"
         eyebrow={{ en: "Shops & Offices · Japandi Interior Design · Sydney", ja: "お店・オフィス · ジャパンディ · シドニー" }}
         title={{ en: "Japandi design\nfor offices and shops.", ja: "日本の美意識を、\nお店とオフィスに。" }}

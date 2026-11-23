@@ -7,6 +7,7 @@ import { PostHead } from "@/components/washi";
 import { getWork, getWorks } from "@/data/works";
 import { T } from "@/lib/i18n";
 import { JsonLd, breadcrumbLd, projectLd } from "@/components/JsonLd";
+import { SubNav } from "@/components/blocks";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
 
@@ -49,7 +50,8 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
           ]),
         ]}
       />
-      <section className="pt-20 md:pt-24">
+      <SubNav lang={lang} current="homes" back={{ href: "/homes#projects", label: { en: "All projects", ja: "作品一覧" } }} links={[]} />
+      <section>
         <div className="relative h-[clamp(260px,52vw,720px)] w-full overflow-hidden bg-beige" data-lightbox-item>
           <Image src={cover.src} alt={cover.alt} fill priority sizes="100vw" className="object-cover" />
         </div>

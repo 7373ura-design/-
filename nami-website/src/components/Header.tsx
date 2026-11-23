@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
-import { langOfPath, localHref } from "@/lib/lang";
+import { langOfPath, localHref, stripLang } from "@/lib/lang";
 import { Logo } from "@/components/Logo";
 import Image from "next/image";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
@@ -12,7 +12,13 @@ import { LanguageSwitch } from "@/components/LanguageSwitch";
 export function Header() {
   const pathname = usePathname() || "/";
   const lang = langOfPath(pathname);
-  const menu = navigation.map((item) => ({ ...item, href: localHref(lang, item.href) }));
+  const here = stripLang(pathname);
+  const menu = navigation.map((item) => ({
+    label: item.label[lang],
+    href: localHref(lang, item.href),
+    // The business page you are on (or one of its projects) is marked in the menu
+    current: !item.href.includes("#") && (here === item.href || here.startsWith(item.href + "/")),
+  }));
   const [open, setOpen] = useState(false);
   // Close the menu on navigation
   useEffect(() => setOpen(false), [pathname]);
@@ -42,7 +48,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="label link-underline pb-1 text-navy transition-colors hover:text-vermilion"
+                aria-current={item.current ? "page" : undefined}
+                className="label link-underline pb-1 text-navy transition-colors hover:text-vermilion aria-[current=page]:text-vermilion aria-[current=page]:underline aria-[current=page]:decoration-vermilion aria-[current=page]:underline-offset-[8px]"
               >
                 {item.label}
               </Link>

@@ -19,8 +19,8 @@ export const site = {
 
 /** Main menu: the two businesses, then who NAMI is and how to get in touch. */
 export const navigation = [
-  { label: "HOMES", href: "/homes" },
-  { label: "SHOPS & OFFICES", href: "/commercial" },
-  { label: "ABOUT", href: "/#about" },
-  { label: "CONTACT", href: "/#contact" },
+  { label: { en: "HOMES", ja: "住まい" }, href: "/homes" },
+  { label: { en: "SHOPS & OFFICES", ja: "お店・オフィス" }, href: "/commercial" },
+  { label: { en: "ABOUT", ja: "プロフィール" }, href: "/#about" },
+  { label: { en: "CONTACT", ja: "お問い合わせ" }, href: "/#contact" },
 ];

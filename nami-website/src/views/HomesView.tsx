@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { glossary, homeServices, homeSteps, homesHero } from "@/data/homes";
 import { answeredFaq } from "@/data/faq";
@@ -43,7 +43,20 @@ export function HomesView({ lang }: { lang: Lang }) {
           breadcrumbLd(lang, [{ name: lang === "ja" ? "住まい" : "Homes", path: "/homes" }]),
         ]}
       />
+      <SubNav
+        lang={lang}
+        current="homes"
+        links={[
+          { href: "#services", label: { en: "Services", ja: "サービス" } },
+          { href: "#budget", label: { en: "Budget styling", ja: "手軽なスタイリング" } },
+          { href: "#projects", label: { en: "Projects", ja: "作品" } },
+          { href: "#japanese-design", label: { en: "Japanese design", ja: "用語解説" } },
+          { href: "#process", label: { en: "How it works", ja: "進め方" } },
+          { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
+        ]}
+      />
       <OverlayHero
+        flush
         id="homes-h"
         eyebrow={{ en: "Homes · Japandi Interior Design · Sydney", ja: "住まい · ジャパンディ · シドニー" }}
         title={{ en: "Japandi interiors\nfor your home.", ja: "日本の美意識を、\n住まいに。" }}

@@ -31,7 +31,7 @@ export function Section({
   wide?: boolean;
 }) {
   return (
-    <section id={id} className={`relative scroll-mt-16 ${art ? "" : "section-rule"}`} aria-labelledby={`${id}-h`}>
+    <section id={id} className={`relative scroll-mt-36 md:scroll-mt-40 ${art ? "" : "section-rule"}`} aria-labelledby={`${id}-h`}>
       {art && <Art name={art} position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}
       <Container className="pb-24 pt-14 md:pb-32 md:pt-20">
         <PostHead kicker={kicker} title={title} id={`${id}-h`}>
@@ -250,23 +250,29 @@ export function OverlayHero({
   title,
   body,
   image,
-  links,
+  links = [],
+  choices,
   caption,
+  flush = false,
 }: {
   id: string;
   eyebrow: Bi;
   title: Bi;
   body?: Bi;
   image: { src: string; alt: string; position?: string };
-  links: { href: string; label: Bi }[];
+  links?: { href: string; label: Bi }[];
+  /** Large buttons to choose where to go next (the top page's two businesses). */
+  choices?: { href: string; title: Bi; line: Bi }[];
   caption?: string;
+  /** Directly under the section bar (no room left for the fixed header). */
+  flush?: boolean;
 }) {
   return (
-    <section className="relative pt-20 md:pt-24" aria-labelledby={id}>
-      <div className="relative h-[min(84svh,860px)] min-h-[540px] w-full overflow-hidden bg-navy">
+    <section className={`relative ${flush ? "" : "pt-20 md:pt-24"}`} aria-labelledby={id}>
+      <div className={`relative w-full overflow-hidden bg-navy ${choices ? "min-h-[640px] md:h-[min(90svh,900px)]" : "h-[min(70svh,720px)] min-h-[480px]"}`}>
         <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: image.position ?? "center" }} />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/45 to-navy/5" />
-        <Container className="absolute inset-x-0 bottom-0 pb-12 md:pb-16">
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20" />
+        <Container className={`${choices ? "relative pt-24 md:absolute md:inset-x-0 md:bottom-0 md:pt-0" : "absolute inset-x-0 bottom-0"} pb-10 md:pb-14`}>
           <p className="kicker !text-paper/85">
             <T ja={eyebrow.ja} en={eyebrow.en} />
           </p>
@@ -278,11 +284,36 @@ export function OverlayHero({
               <T ja={body.ja} en={body.en} />
             </p>
           )}
-          <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3">
-            {links.map((l) => (
-              <HeroLink key={l.href} href={l.href} label={l.label} />
-            ))}
-          </div>
+          {links.length > 0 && (
+            <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3">
+              {links.map((l) => (
+                <HeroLink key={l.href} href={l.href} label={l.label} />
+              ))}
+            </div>
+          )}
+          {choices && (
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {choices.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="group flex items-center justify-between gap-6 border border-paper/40 bg-cream px-6 py-5 text-navy shadow-lg transition-colors hover:bg-paper md:px-8 md:py-6"
+                >
+                  <span>
+                    <span className="title block text-[1.75rem] md:text-[2rem]">
+                      <T ja={c.title.ja} en={c.title.en} />
+                    </span>
+                    <span className="mt-1 block text-[0.9375rem] leading-snug text-navy/70">
+                      <T ja={c.line.ja} en={c.line.en} />
+                    </span>
+                  </span>
+                  <span aria-hidden className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy text-[1.25rem] text-paper transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
         </Container>
         {caption && <p className="label absolute bottom-5 right-5 hidden text-paper/70 md:block">{caption}</p>}
       </div>
@@ -343,5 +374,61 @@ export function StoryCard({
         <T ja={meta.ja} en={meta.en} /> <span aria-hidden>→</span>
       </p>
     </Link>
+  );
+}
+
+/**
+ * The bar under the header on a business page: back to the top page, a switch
+ * between the two businesses (the one you are on is filled), and links to the
+ * sections of the page. It stays in view while scrolling.
+ */
+export function SubNav({
+  lang,
+  current,
+  back,
+  links,
+}: {
+  lang: Lang;
+  current: "homes" | "commercial";
+  back?: { href: string; label: Bi };
+  links: { href: string; label: Bi }[];
+}) {
+  const ja = lang === "ja";
+  const tabs = [
+    { key: "homes", href: "/homes", label: { en: "Homes", ja: "住まい" } },
+    { key: "commercial", href: "/commercial", label: { en: "Shops & Offices", ja: "お店・オフィス" } },
+  ];
+  const backTo = back ?? { href: "/", label: { en: "NAMI top", ja: "NAMIトップ" } };
+  return (
+    <nav aria-label={ja ? "このページ" : "This page"} className="sticky top-20 z-40 mt-20 border-b border-navy/15 bg-paper/95 backdrop-blur md:top-24 md:mt-24">
+      <Container className="flex flex-wrap items-center gap-x-5 gap-y-2 py-2.5">
+        <Link href={localHref(lang, backTo.href)} className="shrink-0 text-[0.9375rem] text-navy/75 transition-colors hover:text-vermilion">
+          ← {backTo.label[lang]}
+        </Link>
+        <div role="group" aria-label={ja ? "分野" : "Service"} className="flex shrink-0 border border-navy">
+          {tabs.map((t) => (
+            <Link
+              key={t.key}
+              href={localHref(lang, t.href)}
+              aria-current={t.key === current ? "page" : undefined}
+              className="px-4 py-2 text-[0.9375rem] text-navy transition-colors hover:bg-navy/10 aria-[current=page]:bg-navy aria-[current=page]:text-paper"
+            >
+              {t.label[lang]}
+            </Link>
+          ))}
+        </div>
+        {links.length > 0 && (
+          <ul className="-mx-1 flex w-full gap-1 overflow-x-auto whitespace-nowrap lg:ml-auto lg:w-auto">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="block px-2 py-1 text-[0.9375rem] text-navy/70 transition-colors hover:text-vermilion">
+                  {l.label[lang]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </Container>
+    </nav>
   );
 }

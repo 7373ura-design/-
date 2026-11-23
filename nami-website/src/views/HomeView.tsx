@@ -17,9 +17,13 @@ export function HomeView({ lang }: { lang: Lang }) {
         title={{ en: "Japandi interior design\nfor homes, shops\nand offices.", ja: "住まいと、\nお店・オフィスに、\nジャパンディを。" }}
         body={hero.intro}
         image={{ src: "/images/washi/shoji.jpg", alt: "Woodblock-style picture of a quiet Japanese room: an open shoji screen, a low timber bench with a vase, and a gum-tree landscape beyond", position: "35% 50%" }}
-        links={[
-          { href: localHref(lang, "/homes"), label: { en: "Explore Homes", ja: "住まいを見る" } },
-          { href: localHref(lang, "/commercial"), label: { en: "Explore Shops & Offices", ja: "お店・オフィスを見る" } },
+        choices={[
+          { href: localHref(lang, "/homes"), title: { en: "Homes", ja: "住まい" }, line: { en: "New builds, renovations, one room, budget styling", ja: "新築・リノベーション・1部屋・手軽なスタイリング" } },
+          {
+            href: localHref(lang, "/commercial"),
+            title: { en: "Shops & Offices", ja: "お店・オフィス" },
+            line: { en: "Offices, clinics, schools, shops and cafés", ja: "オフィス・クリニック・教室・お店・カフェ" },
+          },
         ]}
       />
       <Section

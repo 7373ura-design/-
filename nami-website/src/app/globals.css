@@ -165,33 +165,10 @@
     margin-top: 0;
     padding-top: 0.5rem;
   }
-  html[data-lang="en"] .post-head-text {
+  /* Both languages read across, title on the left (easier to read than vertical Japanese) */
+  .post-head-text {
     max-width: 30em;
     padding-top: 2.4rem;
-  }
-  /* Japanese: title set vertically on the right, read first */
-  html:not([data-lang="en"]) .post-head {
-    flex-direction: row-reverse;
-  }
-  html:not([data-lang="en"]) .post-head-title {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1.25rem;
-  }
-  html:not([data-lang="en"]) .post-head-kicker {
-    writing-mode: vertical-rl;
-    margin: 0.4rem 0 0;
-  }
-  html:not([data-lang="en"]) .tategaki {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    text-wrap: nowrap;
-    word-break: keep-all;
-    line-height: 1.7;
-    letter-spacing: 0.14em;
-  }
-  html:not([data-lang="en"]) .post-head-rule {
-    display: none;
   }
 }
 

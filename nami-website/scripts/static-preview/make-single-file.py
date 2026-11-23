@@ -21,8 +21,11 @@ def img(m):
         images[path] = f"data:{mime};base64," + base64.b64encode(open(os.path.join(SRC, path), "rb").read()).decode()
     return f'data-nami-src="{path}"'
 
-def link(m):
+def link(m, current="index.html"):
     href = m.group(1)
+    # Same-page section links become a page + section address
+    if href.startswith("#") and len(href) > 1 and not href.startswith("#page="):
+        return f'href="#page={current}&at={href[1:]}"'
     if href == "./": href = "index.html"
     page, _, at = href.partition("#")
     if page not in pages: return m.group(0)
@@ -39,7 +42,7 @@ for p in pages:
         body = re.search(r"<body[^>]*>(.*)</body>", t, re.S).group(1)
     body = re.sub(r'<script src="(site|js/nami)\.js"></script>', "", body)
     body = re.sub(r'src="(images/[^"]+)"', img, body)
-    body = re.sub(r'href="([^"]+)"', link, body)
+    body = re.sub(r'href="([^"]+)"', lambda m: link(m, p), body)
     meta[p] = {"title": title, "lang": lang}
     templates.append(f'<template id="page:{p}">{body}</template>')
 
