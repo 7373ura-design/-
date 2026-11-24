@@ -1,155 +1,78 @@
-# クリスマス・お正月のDIY投稿：材料と作り方
+# クリスマス・お正月のDIY：材料と作り方
 
-撮影日：11/26（リース）、11/28（風呂敷・しめ飾り・だるまと鏡餅を作り始める）、11/30（だるまと鏡餅の仕上げ）
-作ったものはそのままブースに飾る。
+**今回作るのは2つだけ（11/24決定）**
+| | 作るもの | 作る日 | 投稿 |
+|---|---|---|---|
+| ① クリスマス | 張り子で作るだるまサンタ | 11/27 貼る → 11/29 色を塗る | 12/12ごろ |
+| ② お正月 | Daisoのしめ縄で作るしめ飾り | 11/28 | 12/2 |
+
+どちらもMatsuriのブースに飾る。それ以外の投稿は `../instagram/インスタ方針.md` に沿って作る。
+買うもの → `買い物リスト.md`
 
 ---
 
-## ① Japandiクリスマスリース（11/27投稿）
+## ① クリスマス：張り子（はりこ）で作るだるまサンタ（12/12ごろ投稿。11/27から作ってブースに飾る）
 
-**ポイント：** 全体をぐるっと埋めない。リングの1/3だけに緑を付けて、残りは空けておく。日本の「間（ま）」の考え方で、これがJapandiらしさになる。
+**ポイント：** だるまは本来「張り子」という、型に紙を何枚も貼り重ねて作る日本の伝統技法で作られている。その技法で、だるまをサンタにする。
+- 材料は風船と古新聞が中心で、**もったいない文化**（古新聞の再利用）にもつながる。
+- 「願いをかなえるだるま」と「願いをかなえるサンタ」は同じ役目、という話でクリスマスとお正月をつなげられる。
+- 日本のクリスマス＝**大事な人を思って小さな特別を作る日**。だるまサンタに、大事な人への願い事をして片目を描く、という見せ方ができる。
+
+**注意：** 貼って乾かすのに1〜2日かかる。**11/27に貼り始めて、11/29に色を塗る。**
 
 ### 材料（目安 $15〜25）
-| もの | 買う場所 | メモ |
-|---|---|---|
-| リースの土台（ラタン、柳、木のリング 25〜30cm） | Kmart / IKEA / Daiso | 自然素材の色のもの |
-| 造花のグリーン（ユーカリ、オリーブ、松など） | IKEA（SMYCKAシリーズ）/ Kmart | 生のユーカリ（スーパーや花屋）でもよい |
-| ドライフラワー（パンパスグラス、バニーテールなど） | Kmart / Daiso | 白やベージュ |
-| 赤いアクセント1つ（赤い実、赤い水引、赤い木の玉） | Daiso / Kmart | 日の丸のイメージで「赤は1点だけ」 |
-| 麻ひも、またはリネンのリボン | Daiso / Kmart | 吊るす用 |
-| 細いワイヤー、またはグルーガン | Daiso / Kmart | |
-| はさみ、ニッパー | | |
-
-### 作り方
-1. リングを机に置き、どこに緑を付けるか決める（例：左下から下にかけての1/3）。
-2. グリーンを10〜15cmに切る。
-3. 3〜4本ずつまとめて、根元をワイヤーで巻いて小さな束を5〜6個作る。
-4. 束を同じ向きに少しずつ重ねながら、リングにワイヤーで留めていく。次の束で前の束の根元を隠すようにする。
-5. 一番最後（重なりの終わり）にドライフラワーを差し込む。
-6. 赤いアクセントを1つだけ、緑の付け根に付ける。
-7. 上に麻ひもかリボンで輪を作って吊るす。リボンは長めに垂らすと和の雰囲気になる。
-
-### 撮影の流れ
-完成品を壁に飾ったところ（2秒）→ 材料を並べる（値札が見えるように）→ 束を作る → リングに留める → 赤を1つ付ける → 吊るす → 部屋の全体
-
-### キャプション（英語）
-> $20 Japandi wreath with IKEA & Kmart finds 🎄
-> In Japan we leave empty space on purpose — it's called *ma* (間). Cover only one-third of the ring and let it breathe.
->
-> 🛒 What I used
-> ・Rattan wreath ring – Kmart $__
-> ・Faux eucalyptus – IKEA SMYCKA $__
-> ・Dried bunny tails – Kmart $__
-> ・Red bead / mizuhiki – Daiso $__
-> ・Jute twine – Daiso $__
->
-> Save for later & follow for more Japanese DIY ✨
-> #japandi #christmaswreath #ikeahack #kmarthack #japanesedesign #sydneyhome
-
-（値段は買ったときのレシートを見て入れる）
-
-### 参考リンク
-- https://www.instagram.com/reel/DVmjA1dk1KA/
-- https://www.instagram.com/reel/DdRI3ibJaes/
-
----
-
-## ② 風呂敷でクリスマスプレゼントを包む（12/1投稿）
-
-**ポイント：** 紙を使わず布で包む、日本の知恵。布はもらった人がまた使えるので、ゴミが出ない（zero-waste）。
-
-### 材料（目安 $5〜10）
-| もの | 買う場所 | メモ |
-|---|---|---|
-| 正方形の布（風呂敷、スカーフ、大判のハンカチ、ティータオル） | Daiso / Kmart | 布の対角線が、箱の長い辺の約3倍あるもの。箱が20cmなら布は約45〜50cm角 |
-| プレゼントの箱 | | 四角い箱がいちばん簡単 |
-| 飾り（ユーカリやローズマリーの小枝、名前のタグ） | | 結び目に差す |
-
-### 作り方（基本の「お使い包み」）
-1. 布を裏向きにひし形に置き、真ん中に箱を置く。
-2. 手前の角を箱にかぶせ、余った分は箱の下に折り込む。
-3. 奥の角も箱にかぶせる（手前の布の上に重なる）。
-4. 左右の角を上に持ち上げて、箱の上で「真結び（square knot）」にする。
-   - 1回目：右を左の上にかけて結ぶ
-   - 2回目：今度は左を右の上にかけて結ぶ
-   - 1回目と2回目で上にかける側を逆にすると、ほどけにくく、結び目が横にまっすぐ並ぶ
-5. 結び目の両端の「耳」を整えて、小枝とタグを差したら完成。
-
-（余裕があれば、ワインボトルを包む「ボトル包み」も2本目のネタになる）
-
-### 撮影の流れ
-完成品をツリーの下に置いたところ → 布と箱 → 包む手元（真上から）→ 結ぶ → 小枝を差す → 完成品を並べる
-
-### キャプション（英語）
-> No paper, no waste — wrap gifts the Japanese way 🎁
-> *Furoshiki* (風呂敷) is a cloth used in Japan for centuries. The gift wrap becomes a second gift.
->
-> 🛒 Tea towel – Kmart $__ / Eucalyptus sprig – from the garden
-> Tip: choose a cloth whose diagonal is about 3× the length of your box.
->
-> Save this for Christmas 🎄 #furoshiki #zerowastechristmas #japanesewrapping #giftwrapping #japandi
-
-### 参考リンク
-- 日本の環境省の風呂敷の包み方（英語、14通り）：https://www.env.go.jp/en/focus/attach/060403-5.html
-- 箱の包み方の解説（英語）：https://www.chatelaine.com/living/furoshiki-gift-wrapping-how-to/
-
----
-
-## ③ 糸で作るだるまと鏡餅（12/3投稿）
-
-**ポイント：** 風船に糸を巻いて固めるだけ。針と糸で作れて簡単なのに、日本らしさがはっきり伝わる。ブースの飾りにもなり、子どもにも喜ばれる。
-**注意：** 乾くのに丸1〜2日かかる。**11/28に作って、11/30に仕上げる** 予定にする。
-
-### 材料（目安 $15〜20）
 | もの | 英語での呼び方 | 買う場所 |
 |---|---|---|
-| 刺繍糸（だるま用に赤、鏡餅用に白、橙用にオレンジ） | embroidery floss / embroidery thread | Spotlight / Kmart / Daiso |
-| 水風船（小さい風船） | water balloons | Kmart / Big W / Daiso / スーパーのパーティー用品の棚 |
-| 太い針（穴の大きいもの） | tapestry needle / darning needle | Spotlight / Daiso |
-| 木工用ボンド | PVA glue（白いボトル） | Kmart / Officeworks / Bunnings |
-| 折り紙 | origami paper | Daiso / Kmart / Officeworks |
-| 顔を描くペン（黒・金） | Posca pen / permanent marker | Kmart / Officeworks |
-| あれば：ワセリンか油（風船に塗ると糸がはがれやすい） | Vaseline | スーパー |
+| 水風船（こぶし大にふくらむもの） | water balloons | Kmart / Daiso |
+| 古新聞（なければ茶色のクラフト紙） | newspaper | 無料の地域新聞、スーパーの入口 |
+| 白い紙（最後の1層用。コピー用紙か和紙） | | 家 / Daiso |
+| 木工用ボンド | PVA glue | Kmart / Officeworks |
+| アクリル絵の具（赤・白・黒・金） | acrylic paint | Kmart / Daiso |
+| 筆 | paint brush | Kmart / Daiso |
+| 綿（ひげと帽子のふち用） | cotton balls | スーパー / Kmart |
+| 赤いフェルトか赤い折り紙（帽子） | felt / origami paper | Spotlight / Daiso |
+| 小さな白いポンポン（帽子の先） | mini pom poms | Kmart / Daiso |
+| 重り（小銭か粘土を少し） | coins / air dry clay | 家 / Daiso |
+| Poscaペン（黒・金） | Posca pen | Kmart / Officeworks |
 
 ### 作り方
-1. 針に刺繍糸を通す。その針をボンドの容器の横（下の方）に刺して、反対側まで通す。針だけ抜くと、糸がボンドの中を通る状態になる。
-2. 風船をふくらませて口を結ぶ（だるまはこぶし大、鏡餅は大と小の2つ）。表面にワセリンを薄く塗っておくと、あとで外しやすい。
-3. 糸を引っぱると、ボンドがついた糸が出てくる。それを風船にいろんな方向からぐるぐる巻きつける。たくさん巻くほどしっかりする。
-4. 吊るして丸1〜2日乾かす（夏のシドニーなら1日でもOK）。
-5. 完全に固まったら、針で風船を割って、糸の間から引き抜く。へこんだら、風船をもう一度入れて内側からふくらませると形が戻る。
-6. 仕上げをする。
-   - **だるま（赤）：** 底を少し押してつぶし、立つようにする。白い折り紙を丸く切って顔の位置に貼り、眉・ひげ・目の輪郭をペンで描く。**目は描かないで白いまま残す**（下の「文化の説明」で使う）。
-   - **鏡餅（白）：** 大きい玉の上に小さい玉を重ねてボンドで留める。オレンジの糸で小さい玉を作って一番上にのせる（橙＝だいだい）。下に赤と白の折り紙を敷く。
+1. 風船をこぶし大にふくらませて口を結ぶ。
+2. 新聞を2〜3cmの小さな四角にちぎる（はさみより、ちぎった方が表面がなめらかになる）。
+3. ボンドと水を1：1で混ぜる。
+4. 新聞をボンド水にくぐらせて、風船に少しずつ重ねて貼る。結び口のまわりは丸く空けておく。**3〜4層** 重ねる。
+5. 最後の1層は白い紙で貼る（色を塗ったときにきれいになる）。
+6. 吊るして丸1日乾かす。
+7. 乾いたら風船を針で割って、空けておいた口から抜く。
+8. 口のところから重り（小銭か粘土）を入れて底に貼り付け、紙で口をふさぐ。**押しても起き上がる「起き上がりこぼし」** になる。
+9. 全体を赤く塗る。顔の部分だけ丸く白く塗る。
+10. 綿でひげを作って顔の下に貼る。
+11. 赤いフェルトか折り紙で小さな三角帽子を作ってかぶせ、ふちに綿、先にポンポンを付ける。
+12. 眉と、目の輪郭をペンで描く。**目の中は白いまま残す。**
 
 ### 撮影の流れ
-完成品（だるまと鏡餅を並べたところ）→ 材料 → 針をボンドに刺すところ（ここが一番「えっ」となるポイント）→ 巻く → 乾いたら風船を割る → 顔を描く → だるまの片目を描き入れる → 完成品
+完成品（だるまサンタが並んでいる）→ 材料（風船と古新聞）→ 新聞を貼る手元 → 乾いたら風船を割る → 押しても起き上がる → 色を塗る → ひげと帽子 → 最後に片目を描き入れる
 
 ### 文化の説明（キャプションに入れる）
-- **だるま：** 願い事をするときに片方の目を描き、願いがかなったらもう片方の目を描く。転んでも起き上がる「七転び八起き」の縁起物。
-- **鏡餅：** 新しい年の神様（年神様）へのお供え。丸いお餅は円満、重ねるのは「年を重ねる」「福が重なる」という意味。上の橙は「家が代々続く」。
-- 鏡餅は1月11日の「鏡開き」で下げて、お餅を食べる。
+- **張り子（hariko）：** 型に紙を貼り重ねて作る日本の伝統技法。だるまも、昔からこの方法で作られている。
+- **だるま：** 願い事をするときに片方の目を描き、かなったらもう片方を描く。転んでも起き上がる「七転び八起き」の縁起物。
+- **日本のクリスマス：** 宗教の行事ではなく、恋人・友だち・家族など、大事な人を思って小さな特別を作る日。
 
 ### キャプション（英語）
-> Make a Japanese daruma & kagami mochi with just thread and a balloon 🎈
+> Daruma Santa, made the Japanese way 🎅🔴
+> Daruma dolls are traditionally made with *hariko* — layers of paper over a mould. I used a balloon and old newspaper.
 >
-> 🔴 Daruma (だるま) — paint one eye when you make a wish, and the other when it comes true.
-> ⚪ Kagami mochi (鏡餅) — a New Year offering. Two stacked rounds mean "another year, more good fortune". The orange on top means the family continues for generations.
+> In Japan, Christmas isn't religious. It's a day to make a small, special moment for someone you care about.
+> So make a wish for someone special — paint one eye now, and the other when it comes true ✨
 >
-> 🛒 Embroidery thread – Spotlight $__ / Water balloons – Kmart $__ / PVA glue – Officeworks $__ / Origami paper – Daiso $__
-> Tip: push the needle through the glue bottle so the thread coats itself!
->
-> What would you wish for in 2027? Tell me below 👇
-> Save for New Year & follow for more Japanese DIY ✨
-> #daruma #kagamimochi #japanesenewyear #oshogatsu #kidscraft #japandi #sydneycraft
+> 🛒 Water balloons – Kmart $__ / PVA glue – Kmart $__ / Acrylic paint – Daiso $__ / Newspaper – free!
+> Push it over — it always gets back up. That's daruma.
+> #daruma #japanesechristmas #hariko #papiermache #mottainai #japandi #sydney
 
-⚠️ 針を使うので、子どもが作るときは大人が見ていること（キャプションにも一言入れる）
-
-### 参考リンク
-- https://www.instagram.com/reel/DTAFHW4k0u-/ （糸で作るだるま。同じ作り方で鏡餅も作れる）
+⚠️ 針で風船を割るので、子どもと作るときは大人が見ていること。
 
 ---
 
-## ④ Daisoのしめ縄で作るしめ飾り（12/10ごろ投稿。ブースに飾るので11/28に作る）
+## ② お正月：Daisoのしめ縄で作るしめ飾り（12/2投稿。11/28に作ってブースに飾る）
 
 **ポイント：** 日本人が作るからこそ意味が伝わる投稿。「何のために飾るのか」「いつ飾るのか」まで説明すると保存されやすい。
 （折り紙で作るしめ縄は内容がかぶるのでやらない）
@@ -223,18 +146,167 @@
 
 ---
 
-## ⑤ クリスマスの追加候補（内容・投稿日は未定）
+
+---
+
+# 参考：今回はやらないもの（来年以降の候補として残す）
+
+### ① Japandiクリスマスリース（11/27投稿）
+
+**ポイント：** 全体をぐるっと埋めない。リングの1/3だけに緑を付けて、残りは空けておく。日本の「間（ま）」の考え方で、これがJapandiらしさになる。
+
+### 材料（目安 $15〜25）
+| もの | 買う場所 | メモ |
+|---|---|---|
+| リースの土台（ラタン、柳、木のリング 25〜30cm） | Kmart / IKEA / Daiso | 自然素材の色のもの |
+| 造花のグリーン（ユーカリ、オリーブ、松など） | IKEA（SMYCKAシリーズ）/ Kmart | 生のユーカリ（スーパーや花屋）でもよい |
+| ドライフラワー（パンパスグラス、バニーテールなど） | Kmart / Daiso | 白やベージュ |
+| 赤いアクセント1つ（赤い実、赤い水引、赤い木の玉） | Daiso / Kmart | 日の丸のイメージで「赤は1点だけ」 |
+| 麻ひも、またはリネンのリボン | Daiso / Kmart | 吊るす用 |
+| 細いワイヤー、またはグルーガン | Daiso / Kmart | |
+| はさみ、ニッパー | | |
+
+### 作り方
+1. リングを机に置き、どこに緑を付けるか決める（例：左下から下にかけての1/3）。
+2. グリーンを10〜15cmに切る。
+3. 3〜4本ずつまとめて、根元をワイヤーで巻いて小さな束を5〜6個作る。
+4. 束を同じ向きに少しずつ重ねながら、リングにワイヤーで留めていく。次の束で前の束の根元を隠すようにする。
+5. 一番最後（重なりの終わり）にドライフラワーを差し込む。
+6. 赤いアクセントを1つだけ、緑の付け根に付ける。
+7. 上に麻ひもかリボンで輪を作って吊るす。リボンは長めに垂らすと和の雰囲気になる。
+
+### 撮影の流れ
+完成品を壁に飾ったところ（2秒）→ 材料を並べる（値札が見えるように）→ 束を作る → リングに留める → 赤を1つ付ける → 吊るす → 部屋の全体
+
+### キャプション（英語）
+> $20 Japandi wreath with IKEA & Kmart finds 🎄
+> In Japan we leave empty space on purpose — it's called *ma* (間). Cover only one-third of the ring and let it breathe.
+>
+> 🛒 What I used
+> ・Rattan wreath ring – Kmart $__
+> ・Faux eucalyptus – IKEA SMYCKA $__
+> ・Dried bunny tails – Kmart $__
+> ・Red bead / mizuhiki – Daiso $__
+> ・Jute twine – Daiso $__
+>
+> Save for later & follow for more Japanese DIY ✨
+> #japandi #christmaswreath #ikeahack #kmarthack #japanesedesign #sydneyhome
+
+（値段は買ったときのレシートを見て入れる）
+
+### 参考リンク
+- https://www.instagram.com/reel/DVmjA1dk1KA/
+- https://www.instagram.com/reel/DdRI3ibJaes/
+
+---
+
+### ② 風呂敷でクリスマスプレゼントを包む（12/1投稿）
+
+**ポイント：** 紙を使わず布で包む、日本の知恵。布はもらった人がまた使えるので、ゴミが出ない（zero-waste）。
+
+### 材料（目安 $5〜10）
+| もの | 買う場所 | メモ |
+|---|---|---|
+| 正方形の布（風呂敷、スカーフ、大判のハンカチ、ティータオル） | Daiso / Kmart | 布の対角線が、箱の長い辺の約3倍あるもの。箱が20cmなら布は約45〜50cm角 |
+| プレゼントの箱 | | 四角い箱がいちばん簡単 |
+| 飾り（ユーカリやローズマリーの小枝、名前のタグ） | | 結び目に差す |
+
+### 作り方（基本の「お使い包み」）
+1. 布を裏向きにひし形に置き、真ん中に箱を置く。
+2. 手前の角を箱にかぶせ、余った分は箱の下に折り込む。
+3. 奥の角も箱にかぶせる（手前の布の上に重なる）。
+4. 左右の角を上に持ち上げて、箱の上で「真結び（square knot）」にする。
+   - 1回目：右を左の上にかけて結ぶ
+   - 2回目：今度は左を右の上にかけて結ぶ
+   - 1回目と2回目で上にかける側を逆にすると、ほどけにくく、結び目が横にまっすぐ並ぶ
+5. 結び目の両端の「耳」を整えて、小枝とタグを差したら完成。
+
+（余裕があれば、ワインボトルを包む「ボトル包み」も2本目のネタになる）
+
+### 撮影の流れ
+完成品をツリーの下に置いたところ → 布と箱 → 包む手元（真上から）→ 結ぶ → 小枝を差す → 完成品を並べる
+
+### キャプション（英語）
+> No paper, no waste — wrap gifts the Japanese way 🎁
+> *Furoshiki* (風呂敷) is a cloth used in Japan for centuries. The gift wrap becomes a second gift.
+>
+> 🛒 Tea towel – Kmart $__ / Eucalyptus sprig – from the garden
+> Tip: choose a cloth whose diagonal is about 3× the length of your box.
+>
+> Save this for Christmas 🎄 #furoshiki #zerowastechristmas #japanesewrapping #giftwrapping #japandi
+
+### 参考リンク
+- 日本の環境省の風呂敷の包み方（英語、14通り）：https://www.env.go.jp/en/focus/attach/060403-5.html
+- 箱の包み方の解説（英語）：https://www.chatelaine.com/living/furoshiki-gift-wrapping-how-to/
+
+---
+
+### ③ 糸で作るだるまと鏡餅（12/3投稿）
+
+**ポイント：** 風船に糸を巻いて固めるだけ。針と糸で作れて簡単なのに、日本らしさがはっきり伝わる。ブースの飾りにもなり、子どもにも喜ばれる。
+**注意：** 乾くのに丸1〜2日かかる。**11/28に作って、11/30に仕上げる** 予定にする。
+
+### 材料（目安 $15〜20）
+| もの | 英語での呼び方 | 買う場所 |
+|---|---|---|
+| 刺繍糸（だるま用に赤、鏡餅用に白、橙用にオレンジ） | embroidery floss / embroidery thread | Spotlight / Kmart / Daiso |
+| 水風船（小さい風船） | water balloons | Kmart / Big W / Daiso / スーパーのパーティー用品の棚 |
+| 太い針（穴の大きいもの） | tapestry needle / darning needle | Spotlight / Daiso |
+| 木工用ボンド | PVA glue（白いボトル） | Kmart / Officeworks / Bunnings |
+| 折り紙 | origami paper | Daiso / Kmart / Officeworks |
+| 顔を描くペン（黒・金） | Posca pen / permanent marker | Kmart / Officeworks |
+| あれば：ワセリンか油（風船に塗ると糸がはがれやすい） | Vaseline | スーパー |
+
+### 作り方
+1. 針に刺繍糸を通す。その針をボンドの容器の横（下の方）に刺して、反対側まで通す。針だけ抜くと、糸がボンドの中を通る状態になる。
+2. 風船をふくらませて口を結ぶ（だるまはこぶし大、鏡餅は大と小の2つ）。表面にワセリンを薄く塗っておくと、あとで外しやすい。
+3. 糸を引っぱると、ボンドがついた糸が出てくる。それを風船にいろんな方向からぐるぐる巻きつける。たくさん巻くほどしっかりする。
+4. 吊るして丸1〜2日乾かす（夏のシドニーなら1日でもOK）。
+5. 完全に固まったら、針で風船を割って、糸の間から引き抜く。へこんだら、風船をもう一度入れて内側からふくらませると形が戻る。
+6. 仕上げをする。
+   - **だるま（赤）：** 底を少し押してつぶし、立つようにする。白い折り紙を丸く切って顔の位置に貼り、眉・ひげ・目の輪郭をペンで描く。**目は描かないで白いまま残す**（下の「文化の説明」で使う）。
+   - **鏡餅（白）：** 大きい玉の上に小さい玉を重ねてボンドで留める。オレンジの糸で小さい玉を作って一番上にのせる（橙＝だいだい）。下に赤と白の折り紙を敷く。
+
+### 撮影の流れ
+完成品（だるまと鏡餅を並べたところ）→ 材料 → 針をボンドに刺すところ（ここが一番「えっ」となるポイント）→ 巻く → 乾いたら風船を割る → 顔を描く → だるまの片目を描き入れる → 完成品
+
+### 文化の説明（キャプションに入れる）
+- **だるま：** 願い事をするときに片方の目を描き、願いがかなったらもう片方の目を描く。転んでも起き上がる「七転び八起き」の縁起物。
+- **鏡餅：** 新しい年の神様（年神様）へのお供え。丸いお餅は円満、重ねるのは「年を重ねる」「福が重なる」という意味。上の橙は「家が代々続く」。
+- 鏡餅は1月11日の「鏡開き」で下げて、お餅を食べる。
+
+### キャプション（英語）
+> Make a Japanese daruma & kagami mochi with just thread and a balloon 🎈
+>
+> 🔴 Daruma (だるま) — paint one eye when you make a wish, and the other when it comes true.
+> ⚪ Kagami mochi (鏡餅) — a New Year offering. Two stacked rounds mean "another year, more good fortune". The orange on top means the family continues for generations.
+>
+> 🛒 Embroidery thread – Spotlight $__ / Water balloons – Kmart $__ / PVA glue – Officeworks $__ / Origami paper – Daiso $__
+> Tip: push the needle through the glue bottle so the thread coats itself!
+>
+> What would you wish for in 2027? Tell me below 👇
+> Save for New Year & follow for more Japanese DIY ✨
+> #daruma #kagamimochi #japanesenewyear #oshogatsu #kidscraft #japandi #sydneycraft
+
+⚠️ 針を使うので、子どもが作るときは大人が見ていること（キャプションにも一言入れる）
+
+### 参考リンク
+- https://www.instagram.com/reel/DTAFHW4k0u-/ （糸で作るだるま。同じ作り方で鏡餅も作れる）
+
+---
+
+### ⑤ クリスマスの追加候補（内容・投稿日は未定）
 - https://www.instagram.com/reel/DffWdLtiVkk/
 
 ---
 
-## ⑥ 毛糸のノーム（もこもこサンタ。Matsuriの後）
+### ⑥ 毛糸のノーム（もこもこサンタ。Matsuriの後）
 - 参考：https://www.instagram.com/reel/DQq0PXeD4vL/
 - 切り口は「笠地蔵」か「北欧のトムテ」（`投稿計画.md` のアイデアメモ）
 
 ---
 
-## ⑦ 日本×クリスマスのアイデア4つ（Matsuriの後、12月に投稿）
+### ⑦ 日本×クリスマスのアイデア4つ（Matsuriの後、12月に投稿）
 折り紙ツリーと折り鶴は簡単なので、**Matsuri前に作ってブースのツリーに飾る**。
 
 ### 7-1. 和紙の折り紙ツリー（難易度：簡単）
@@ -262,5 +334,3 @@
 
 ---
 
-## 買い物メモ
-全部まとめたリストは `買い物リスト.md` を見る。
