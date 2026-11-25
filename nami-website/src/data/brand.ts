@@ -39,6 +39,10 @@ export const background = {
       line: { ja: "Contemporary Japanese Architecture(東京大学)", en: "Contemporary Japanese Architecture (The University of Tokyo)" },
     },
     {
+      title: { ja: "住宅製図", en: "Residential drafting" },
+      line: { ja: "オーストラリアの住宅製図(Certificate IV)", en: "Australian residential drafting (Certificate IV)" },
+    },
+    {
       title: { ja: "不動産", en: "Real estate" },
       line: {
         ja: "NSW Real Estate Certificate of Registration / 宅地建物取引士(日本)",

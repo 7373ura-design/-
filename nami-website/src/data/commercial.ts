@@ -58,8 +58,8 @@ export const commercialFaq: Faq[] = [
   {
     q: { en: "Is the design proposal really free?", ja: "デザインの提案は本当に無料ですか？" },
     a: {
-      en: "Yes. The briefing, measure-up, layout options, mood board, material board, 3D renders, furniture list, budget estimate and the building quote from Japan Homes are all free when the project is built with Japan Homes. If you would like to take the design to another builder, a design fee applies, and we agree it in writing before we start. Free places are limited.",
-      ja: "はい。ヒアリング・採寸、レイアウト案、ムードボード、素材ボード、3Dパース、家具リスト、概算予算、ジャパンホームズの工事見積もりまで、ジャパンホームズで施工する場合は無料です。デザインだけをほかの会社に持っていかれる場合はデザイン料がかかり、始める前に書面でお約束します。無料の枠には限りがあります。",
+      en: "Yes. The briefing, measure-up, layout options, mood board, material board, 3D renders, furniture list, budget estimate and the building quote from Japan Homes are all free when the project is built with Japan Homes. If you would like to take the design to another builder, a design fee applies, and we agree it in writing before we start. The free proposal is limited to 10 businesses to celebrate our launch.",
+      ja: "はい。ヒアリング・採寸、レイアウト案、ムードボード、素材ボード、3Dパース、家具リスト、概算予算、ジャパンホームズの工事見積もりまで、ジャパンホームズで施工する場合は無料です。デザインだけをほかの会社に持っていかれる場合はデザイン料がかかり、始める前に書面でお約束します。無料の提案は、オープン記念として10社限定です。",
     },
   },
   {
@@ -110,5 +110,21 @@ export const commercialFaq: Faq[] = [
       en: "We are based in Sydney. For projects elsewhere in Australia, please get in touch and we will talk about your project individually.",
       ja: "シドニーを拠点にしています。オーストラリアのほかの地域のご依頼は、個別にご相談ください。",
     },
+  },
+];
+
+/** "Like it, but...": who helps when something holds a client back. Partners are not named on the site. */
+export const partnerHelp: Item[] = [
+  {
+    title: { en: "\"Who will build it?\"", ja: "「工事は誰が?」" },
+    line: { en: "Japan Homes, our licensed building partner, quotes and builds it. You contract with them directly; we check it matches the design", ja: "ライセンスを持つパートナー、ジャパンホームズが見積もりと工事を担当。契約はお客様と直接、NAMIはデザイン通りか確認します" },
+  },
+  {
+    title: { en: "\"The budget isn't there yet.\"", ja: "「予算が足りない」" },
+    line: { en: "We can introduce a trusted finance broker who can talk you through options. We don't give loan advice ourselves", ja: "信頼できるファイナンスブローカーをご紹介します。資金づくりの方法を相談できます。NAMI自身はローンのアドバイスは行いません" },
+  },
+  {
+    title: { en: "\"I'm too busy to run it.\"", ja: "「忙しくて手が回らない」" },
+    line: { en: "From design to finding your builder, we arrange it for you. No running around", ja: "デザインから施工会社探しまで、こちらで手配します。あちこち走り回る必要はありません" },
   },
 ];

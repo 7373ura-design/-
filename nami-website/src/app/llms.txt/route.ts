@@ -32,7 +32,7 @@ export function GET() {
     ...glossary.map((g) => `- ${g.term} (${g.kana}): ${g.what.en} How NAMI uses it: ${g.use.en}`),
     "",
     `## Shops and offices (${abs("/commercial")})`,
-    "Free design proposal (when built with Japan Homes; limited places):",
+    "Launch offer: free design proposal for 10 businesses (when built with Japan Homes):",
     ...freeProposal.map((s) => `- ${s.title.en}: ${s.line.en}`),
     "Concept projects (design visualisations; Engawa Office is a sample for a fictional company):",
     ...concepts.map((c) => `- [${c.title}](${abs(`/commercial/concepts/${c.slug}`)}): ${c.kind.en}. ${c.lead.en}`),

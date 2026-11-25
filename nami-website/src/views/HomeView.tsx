@@ -28,17 +28,20 @@ export function HomeView({ lang }: { lang: Lang }) {
           },
         ]}
       />
-      <Link href={localHref(lang, "/homes#offer")} className="group block bg-vermilion text-paper">
-        <span className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-center gap-x-4 gap-y-1 px-5 py-4 text-center md:px-10">
+      <div className="bg-vermilion text-paper">
+        <p className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-center gap-x-5 gap-y-1 px-5 py-4 text-center md:px-10">
           <span className="label">{launchOffer.kicker}</span>
           <span className="text-[1.0625rem]">
-            <T ja="10軒限定、住まいのデザインが無料に。" en="Free interior design for 10 homes." />
+            <T ja="住まい10軒・お店とオフィス10社限定で、デザインが無料に。" en="Free design for 10 homes and 10 businesses." />
           </span>
-          <span className="label underline underline-offset-4 group-hover:no-underline">
-            <T ja="詳しく見る →" en="See the offer →" />
-          </span>
-        </span>
-      </Link>
+          <Link href={localHref(lang, "/homes#offer")} className="label underline underline-offset-4 hover:no-underline">
+            <T ja="住まい →" en="Homes →" />
+          </Link>
+          <Link href={localHref(lang, "/commercial#free-proposal")} className="label underline underline-offset-4 hover:no-underline">
+            <T ja="お店・オフィス →" en="Shops & Offices →" />
+          </Link>
+        </p>
+      </div>
       <Section
         id="choose"
         kicker="TWO WAYS WE WORK"
