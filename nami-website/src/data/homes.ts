@@ -2,7 +2,7 @@ import type { Bi } from "@/lib/i18n";
 
 /**
  * Homes: NAMI's residential design (new builds, renovations, single rooms)
- * and budget styling. Japanese words people already search for (hinoki,
+ * plus materials that last and design that adds value. Japanese words people already search for (hinoki,
  * shoji, tatami, washi ...) are used as hooks, each explained plainly.
  */
 
@@ -37,10 +37,17 @@ export const homeServices: Item[] = [
     line: { en: "Start with just the living room, kitchen or a bedroom", ja: "リビング、キッチン、寝室など1部屋から" },
   },
   {
-    title: { en: "Budget styling", ja: "予算に合わせたスタイリング" },
+    title: { en: "Ageing in place", ja: "エイジング・イン・プレイス" },
     line: {
-      en: "A Japandi look with affordable pieces from IKEA, Kmart and similar stores. Ideas on our Instagram",
-      ja: "IKEAやKmartなど、手に入りやすい家具や雑貨でつくるジャパンディ。アイデアはInstagramで発信中",
+      en: "Step-free entries, walk-in showers, wider doors and good lighting, designed to look beautiful, not clinical, so you can stay in the home you love",
+      ja: "段差のない入口、ウォークインシャワー、広い扉、明るい照明。介護っぽく見せず美しく、住み慣れた家で長く暮らせるように",
+    },
+  },
+  {
+    title: { en: "Granny flats", ja: "グラニーフラット(離れ)" },
+    line: {
+      en: "A separate small home on your land for family, guests or rental income, designed to sit well with the main house",
+      ja: "敷地内の小さな離れ。家族や来客、賃貸収入にも。母屋となじむデザインで",
     },
   },
   {
@@ -175,3 +182,51 @@ export const homeSteps: Item[] = [
   { title: { en: "Changes and decisions", ja: "修正・決定" }, line: { en: "We refine the design together until you are happy", ja: "ご納得いただけるまで、一緒に整えます" } },
   { title: { en: "Through to completion", ja: "完成まで" }, line: { en: "We work with your builder and trades, and check the result matches the design", ja: "工務店や職人の方と連携し、デザイン通りに仕上がるか確認します" } },
 ];
+
+/** Materials chosen to last and to age well (shown like the glossary). */
+export const lastingMaterials: { term: string; kana: string; what: Bi; use: Bi }[] = [
+  {
+    term: "Hinoki",
+    kana: "檜",
+    what: { en: "Japanese cypress: fragrant, resistant to moisture and rot, and used in temples that have stood for over a thousand years.", ja: "日本のヒノキ。香りがよく、湿気や腐れに強く、千年以上建つ寺院にも使われています。" },
+    use: { en: "Baths, bathroom walls and vanities that only grow richer in colour.", ja: "湯船、浴室の壁、洗面台に。年月とともに色の深みが増します。" },
+  },
+  {
+    term: "Solid timber",
+    kana: "無垢材",
+    what: { en: "Real wood all the way through, not a thin veneer. It can be sanded and refinished again and again.", ja: "表面だけの薄い板ではなく、芯まで本物の木。何度でも削り直して仕上げ直せます。" },
+    use: { en: "Floors, joinery and furniture that last a lifetime.", ja: "床、造作、家具など、一生使えるものに。" },
+  },
+  {
+    term: "Natural stone",
+    kana: "天然石",
+    what: { en: "Stone with its own pattern, cool to the touch and almost impossible to wear out.", ja: "一つひとつ模様の違う石。触れるとひんやりとして、ほとんどすり減りません。" },
+    use: { en: "Entries, bathrooms and garden paths.", ja: "玄関、浴室、庭の小道に。" },
+  },
+  {
+    term: "Craftsmanship",
+    kana: "職人の手仕事",
+    what: { en: "Joinery, paper screens and finishes made by skilled hands, with the care that machine-made pieces lack.", ja: "造作家具、障子、仕上げなど、熟練の職人による手仕事。機械にはない丁寧さがあります。" },
+    use: { en: "Built-in joinery, shoji-style screens and hand-finished details.", ja: "造り付けの家具、障子風の建具、手仕上げのディテールに。" },
+  },
+];
+
+/** Design that adds value: the designer's real estate background. */
+export const valueIntro: Bi = {
+  en: "Our designer also holds a real estate qualification, so we design with the property market in mind. Whether you plan to stay for decades or sell in a few years, we focus on the changes that make a home more enjoyable to live in and more appealing to buyers.",
+  ja: "NAMIのデザイナーは不動産の資格も持っています。だから不動産の視点も持ってデザインします。何十年も住み続ける方にも、数年後に売却を考えている方にも、暮らしやすさと、買い手にとっての魅力の両方が高まるポイントに力を入れます。",
+};
+
+export const valuePoints: { title: Bi; line: Bi }[] = [
+  { title: { en: "Kitchens and bathrooms", ja: "キッチンと浴室" }, line: { en: "The rooms buyers look at most closely, and where good materials show", ja: "買い手が最もよく見る場所。良い素材の差がはっきり出ます" } },
+  { title: { en: "Light and flow", ja: "光と動線" }, line: { en: "Brighter rooms and an easy flow to the garden make a home feel larger", ja: "明るい部屋と庭への自然なつながりで、家が広く感じられます" } },
+  { title: { en: "Storage", ja: "収納" }, line: { en: "Built-in storage keeps rooms calm and is always in demand", ja: "造り付けの収納は部屋をすっきり保ち、いつも求められます" } },
+  { title: { en: "Ageing in place", ja: "エイジング・イン・プレイス" }, line: { en: "Step-free, easy-care homes suit more buyers, including downsizers", ja: "段差がなく手入れしやすい家は、住み替えの方など、より多くの買い手に合います" } },
+  { title: { en: "Granny flats", ja: "グラニーフラット" }, line: { en: "A second dwelling can add living space, flexibility and rental income", ja: "離れは住まいの広さと使い道を広げ、賃貸収入にもつながります" } },
+  { title: { en: "Styling for sale", ja: "売却前のスタイリング" }, line: { en: "Calm, well-styled rooms photograph better and help buyers picture living there", ja: "落ち着いて整えられた部屋は写真映えし、買い手が暮らしを想像しやすくなります" } },
+];
+
+export const valueNote: Bi = {
+  en: "This is general design advice, not a valuation or financial advice. For the value of your property, talk to a licensed valuer or agent.",
+  ja: "これはデザインの一般的なアドバイスであり、査定や金融のアドバイスではありません。物件の価値については、資格を持つ鑑定士や不動産会社にご相談ください。",
+};

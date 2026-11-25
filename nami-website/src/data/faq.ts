@@ -172,8 +172,8 @@ export const faqGroups: FaqGroup[] = [
       {
         q: { en: "Does a Japandi home have to be expensive?", ja: "ジャパンディの家はお金がかかりますか？" },
         a: {
-          en: "Not necessarily. Japandi is about choosing fewer things with care rather than adding more. By keeping the number of materials and colours small, we can design to your budget. We are also happy to advise on DIY projects.",
-          ja: "必ずしもそうではありません。ジャパンディは物を増やすより、少ないものを丁寧に選ぶ考え方です。素材や色の数を絞ることで、ご予算に合わせたデザインもできます。DIYのご相談にも対応しています。",
+          en: "Japandi is about choosing fewer, better things rather than more. Materials such as hinoki, solid timber and natural stone can cost more at the start, but they last for decades and look better with age, so the home keeps its quality and its value. We keep the number of materials small and put the budget where it matters most, and we always agree the scope and fees with you before we start.",
+          ja: "ジャパンディは、物を増やすより、少なく良いものを選ぶ考え方です。檜や無垢材、天然石などの素材は最初の費用はかかりますが、何十年も長持ちし、年月とともに味わいが増すので、住まいの質と価値が保たれます。素材の数を絞り、大切なところに予算をかけるようにご提案します。内容と費用は、始める前に必ずご相談して決めます。",
         },
       },
       {

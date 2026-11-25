@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
-import { glossary, homeServices, homeSteps, homesHero } from "@/data/homes";
+import { glossary, homeServices, homeSteps, homesHero, lastingMaterials, valueIntro, valueNote, valuePoints } from "@/data/homes";
+import { T } from "@/lib/i18n";
 import { answeredFaq } from "@/data/faq";
 import { getWorks } from "@/data/works";
-import { site } from "@/data/site";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
 
@@ -13,18 +13,18 @@ export function homesMetadata(lang: Lang): Metadata {
     ? {
         title: "住まいのインテリアデザイン（新築・リノベーション）｜シドニー",
         description:
-          "シドニー拠点のNAMIによる、ジャパンディの住まいのデザイン。新築、リノベーション、1部屋のスタイリング、IKEAやKmartを使った手軽なスタイリング。檜・障子・畳・和紙など日本の要素も。日本出身のデザイナーが担当します。",
+          "シドニー拠点のNAMIによる、ジャパンディの住まいのデザイン。新築、リノベーション、エイジング・イン・プレイス、グラニーフラット、1部屋のスタイリング。檜・障子・畳・和紙など長く使える素材と日本の要素で、住まいの価値も考えたデザインを。日本出身のデザイナーが担当します。",
         alternates: alternates(lang, "/homes"),
       }
     : {
         title: "Japandi Home Interior Design in Sydney | New Builds & Renovations",
         description:
-          "Japandi interior design for homes in Sydney: new builds, renovations, single-room and budget styling with IKEA and Kmart. Hinoki baths, shoji screens, tatami and washi, by a designer from Japan.",
+          "Japandi interior design for homes in Sydney: new builds, renovations, ageing-in-place and granny flats. Hinoki, solid timber, shoji and washi that last, designed with your property's value in mind, by a designer from Japan.",
         alternates: alternates(lang, "/homes"),
       };
 }
 
-/** Homes: services, budget styling, projects, Japanese design words, process and FAQ. */
+/** Homes: services, materials that last, property value, projects, Japanese design words, process and FAQ. */
 export function HomesView({ lang }: { lang: Lang }) {
   const works = getWorks();
   const faq = answeredFaq();
@@ -48,7 +48,8 @@ export function HomesView({ lang }: { lang: Lang }) {
         current="homes"
         links={[
           { href: "#services", label: { en: "Services", ja: "サービス" } },
-          { href: "#budget", label: { en: "Budget styling", ja: "手軽なスタイリング" } },
+          { href: "#materials", label: { en: "Materials", ja: "素材" } },
+          { href: "#value", label: { en: "Property value", ja: "住まいの価値" } },
           { href: "#projects", label: { en: "Projects", ja: "作品" } },
           { href: "#japanese-design", label: { en: "Japanese design", ja: "用語解説" } },
           { href: "#process", label: { en: "How it works", ja: "進め方" } },
@@ -74,18 +75,27 @@ export function HomesView({ lang }: { lang: Lang }) {
       </Section>
 
       <Section
-        id="budget"
-        kicker="BUDGET STYLING"
-        title={{ en: "Japandi\non a budget.", ja: "手軽に、\nジャパンディ。" }}
+        id="materials"
+        kicker="MATERIALS THAT LAST"
+        title={{ en: "Made to last,\nand to age well.", ja: "長く使えて、\n味わいが深まる素材。" }}
         intro={{
-          en: "A Japandi home does not have to be expensive. We style rooms with affordable pieces from IKEA, Kmart and similar stores, choosing fewer things with care and keeping colours and materials simple. We share ideas you can try yourself on Instagram, and we are happy to advise on DIY projects.",
-          ja: "ジャパンディの家は、お金をかけなくてもつくれます。IKEAやKmartなど手に入りやすい家具や雑貨を使い、物を絞って丁寧に選び、色と素材をシンプルにまとめます。自分で試せるアイデアはInstagramで発信中。DIYのご相談にも対応しています。",
+          en: "We choose fewer things, and better ones: natural materials and skilled hands that look better in twenty years than on the first day. It is the Japanese idea of caring for a home over a lifetime.",
+          ja: "数を絞って、良いものを。20年後に、最初の日よりも美しく見える自然素材と職人の仕事を選びます。住まいを一生かけて大切にする、日本の考え方です。",
         }}
+        wide
       >
-        <p className="mt-6">
-          <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="text-[1rem] text-vermilion hover:underline">
-            {lang === "ja" ? `Instagramを見る（${site.instagramHandle}）→` : `See ideas on Instagram (${site.instagramHandle}) →`}
-          </a>
+        <Glossary items={lastingMaterials} />
+      </Section>
+
+      <Section
+        id="value"
+        kicker="DESIGN THAT ADDS VALUE"
+        title={{ en: "A home you love,\nand an asset that holds its value.", ja: "愛着のある家を、\n価値ある資産に。" }}
+        intro={valueIntro}
+      >
+        <Notes items={valuePoints} />
+        <p className="mt-6 text-[0.875rem] leading-relaxed text-navy/60">
+          <T ja={valueNote.ja} en={valueNote.en} />
         </p>
       </Section>
 

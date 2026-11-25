@@ -18,7 +18,7 @@ export function HomeView({ lang }: { lang: Lang }) {
         body={hero.intro}
         image={{ src: "/images/washi/shoji.jpg", alt: "Woodblock-style picture of a quiet Japanese room: an open shoji screen, a low timber bench with a vase, and a gum-tree landscape beyond", position: "35% 50%" }}
         choices={[
-          { href: localHref(lang, "/homes"), title: { en: "Homes", ja: "住まい" }, line: { en: "New builds, renovations, one room, budget styling", ja: "新築・リノベーション・1部屋・手軽なスタイリング" } },
+          { href: localHref(lang, "/homes"), title: { en: "Homes", ja: "住まい" }, line: { en: "New builds, renovations, ageing in place, granny flats", ja: "新築・リノベーション・エイジングインプレイス・グラニーフラット" } },
           {
             href: localHref(lang, "/commercial"),
             title: { en: "Shops & Offices", ja: "お店・オフィス" },

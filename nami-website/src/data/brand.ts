@@ -55,8 +55,8 @@ export const businesses = [
     meta: { en: "Residential · Explore homes", ja: "住まい · 詳しく見る" },
     strip: ["/images/portfolio/old-meets-new/03.jpg", "/images/portfolio/living-in-green/10.jpg", "/images/portfolio/old-meets-new/05.jpg"],
     line: {
-      en: "New builds, renovations and single-room styling, plus budget styling with IKEA and Kmart",
-      ja: "新築、リノベーション、1部屋のスタイリング。IKEAやKmartを使った手軽なスタイリングも",
+      en: "New builds, renovations, ageing-in-place and granny flats, in materials that last and with your property's value in mind",
+      ja: "新築、リノベーション、エイジング・イン・プレイス、グラニーフラット。長く使える素材で、住まいの価値まで考えて",
     },
     image: "/images/portfolio/old-meets-new/02.jpg",
     alt: "Old Meets New: a Japandi renovation by NAMI with timber slat screens at the entry",
