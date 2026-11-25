@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui";
-import { CtaBand, OverlayHero, Section, Steps, SubNav } from "@/components/blocks";
+import { CtaBand, OverlayHero, Section, SubNav } from "@/components/blocks";
 import { JsonLd, breadcrumbLd } from "@/components/JsonLd";
 import { site } from "@/data/site";
 import { concepts, getConcept } from "@/data/concepts";
@@ -103,10 +103,6 @@ export async function ConceptView({ lang, params }: ConceptProps & { lang: Lang 
           </p>
         </Container>
       </section>
-
-      <Section id="words" kicker="JAPANESE WORDS IN THIS DESIGN" title={{ en: "The words behind it.", ja: "デザインに込めた言葉。" }}>
-        <Steps items={c.words.map((w) => ({ title: { en: `${w.term} ${w.kana}`, ja: `${w.kana}(${w.term})` }, line: w.line }))} />
-      </Section>
 
       {others.length > 0 && (
         <Section id="more" kicker="MORE CONCEPTS" title={{ en: "Another concept.", ja: "ほかの事例。" }}>

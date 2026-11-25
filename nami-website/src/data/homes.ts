@@ -10,8 +10,8 @@ export const homesHero = {
   kicker: "JAPANDI HOME INTERIOR DESIGN, SYDNEY",
   title: { en: "Japandi Interiors\nfor Your Home", ja: "日本の美意識を、\n住まいに。" },
   body: {
-    en: "Calm, natural homes, inspired by Japan and made for everyday life. From a small everyday worry to a full renovation or a new build, with details such as hinoki, shoji and tatami. Our designer was born and raised in Japan.",
-    ja: "日本に学んだ、落ち着いた自然な住まいを、毎日の暮らしに。毎日のちょっとしたお悩みから、リノベーション、新築まで。檜(ひのき)、障子、畳など日本の要素も。デザイナーは日本生まれ、日本育ちです。",
+    en: "Calm, natural homes, inspired by Japan and made for everyday life: Japandi, modern or something in between. From a small everyday worry to a full renovation or a new build, and beyond, to the furniture, the builder and the value of your home. Our designer was born and raised in Japan.",
+    ja: "日本に学んだ、落ち着いた自然な住まいを、毎日の暮らしに。ジャパンディでも、モダンでも、その間でも。毎日のちょっとしたお悩みから、リノベーション、新築、そして家具や施工会社、住まいの価値まで。デザイナーは日本生まれ、日本育ちです。",
   },
 };
 
@@ -230,3 +230,112 @@ export const valueNote: Bi = {
   en: "This is general design advice, not a valuation or financial advice. For the value of your property, talk to a licensed valuer or agent.",
   ja: "これはデザインの一般的なアドバイスであり、査定や金融のアドバイスではありません。物件の価値については、資格を持つ鑑定士や不動産会社にご相談ください。",
 };
+
+/**
+ * What we design for homes, as categories. Japanese ideas appear as examples
+ * inside each one (hinoki, shoji, kotatsu ...), not as a glossary.
+ */
+export type Category = { key: string; title: Bi; line: Bi; ideas: Bi };
+
+export const homeCategories: Category[] = [
+  {
+    key: "new-builds",
+    title: { en: "New builds", ja: "新築" },
+    line: {
+      en: "Interiors planned with the build, so layout, light, storage and materials work together from day one.",
+      ja: "家づくりと一緒に内装を計画。間取り、光、収納、素材を最初からまとめてデザインします。",
+    },
+    ideas: {
+      en: "For example: a genkan-style entry with built-in shoe storage, a raised tatami corner, a deck that opens the living room to the garden.",
+      ja: "例えば:靴の収納を造り付けた玄関、小上がりの畳コーナー、リビングと庭をつなぐ縁側のようなデッキ。",
+    },
+  },
+  {
+    key: "renovations",
+    title: { en: "Renovations, kitchens and bathrooms", ja: "リノベーション・キッチン・浴室" },
+    line: {
+      en: "We keep what is good about your home and bring it up to date, from one kitchen to the whole house.",
+      ja: "今の家の良さを残しながら、新しく。キッチンひとつから、家まるごとまで。",
+    },
+    ideas: {
+      en: "For example: a hinoki soaking tub, shoji-style screens that soften the light, a calm kitchen in solid timber and stone.",
+      ja: "例えば:檜(ひのき)の湯船、光をやわらげる障子風の建具、無垢材と石の落ち着いたキッチン。",
+    },
+  },
+  {
+    key: "room-by-room",
+    title: { en: "Room by room", ja: "1部屋から" },
+    line: {
+      en: "Start with the living room, a bedroom or a home office, and take it further when you are ready.",
+      ja: "リビング、寝室、書斎など、1部屋から。必要に合わせて広げていけます。",
+    },
+    ideas: {
+      en: "For example: a kotatsu corner for winter evenings, washi paper lighting for a softer bedroom, a quiet study with a view.",
+      ja: "例えば:冬の夜のこたつコーナー、和紙の照明でやわらかくした寝室、景色の見える静かな書斎。",
+    },
+  },
+  {
+    key: "living-well",
+    title: { en: "Living well, for longer", ja: "これからの暮らしに" },
+    line: {
+      en: "Ageing in place and downsizing: homes that stay easy and beautiful for the years ahead.",
+      ja: "エイジング・イン・プレイスや住み替え。これからもずっと、心地よく美しく暮らせる家に。",
+    },
+    ideas: {
+      en: "For example: step-free entries and walk-in showers that don't look clinical, good lighting, fewer and better things when you downsize.",
+      ja: "例えば:介護っぽく見えない段差のない入口とウォークインシャワー、明るい照明、住み替えのときは「少なく良いもの」に。",
+    },
+  },
+  {
+    key: "sell-rent-invest",
+    title: { en: "Sell, rent or invest", ja: "売る・貸す・資産として" },
+    line: {
+      en: "Design with the property market in mind: styling for sale, granny flats and the updates buyers value most.",
+      ja: "不動産の視点でデザイン。売却前のスタイリング、グラニーフラット、買い手が重視するポイントの改修。",
+    },
+    ideas: {
+      en: "For example: calm, well-styled rooms that photograph well, a granny flat for family or rental income, a refreshed kitchen and bathroom.",
+      ja: "例えば:写真映えする落ち着いた部屋づくり、家族用や賃貸用のグラニーフラット、キッチンと浴室の改修。",
+    },
+  },
+  {
+    key: "gardens",
+    title: { en: "Gardens and outdoor living", ja: "庭と外まわり" },
+    line: {
+      en: "Gardens and decks that connect with the rooms inside, for the Sydney climate.",
+      ja: "室内とつながる庭やデッキを、シドニーの気候に合わせて。",
+    },
+    ideas: {
+      en: "For example: a Japanese garden with stone and moss, an outdoor soaking tub, a shaded deck for long summer evenings.",
+      ja: "例えば:石と苔の日本庭園、屋外の湯船、夏の夕暮れを過ごす日陰のデッキ。",
+    },
+  },
+];
+
+/** Styles: not only Japanese. */
+export const homeStyles: { title: Bi; line: Bi }[] = [
+  { title: { en: "Japandi", ja: "ジャパンディ" }, line: { en: "Japanese calm with Scandinavian warmth", ja: "日本の落ち着きと、北欧の温かさ" } },
+  { title: { en: "Japanese modern", ja: "和モダン" }, line: { en: "Timber, paper and stone, with clean modern lines", ja: "木・紙・石を、すっきりとした今のかたちで" } },
+  { title: { en: "Scandinavian", ja: "北欧" }, line: { en: "Light, soft textiles and simple, friendly furniture", ja: "明るさ、やわらかな布、やさしい形の家具" } },
+  { title: { en: "Modern minimal", ja: "モダン・ミニマル" }, line: { en: "Clean, uncluttered and quietly refined", ja: "すっきりと、物を減らし、静かに上質に" } },
+  { title: { en: "Natural and organic", ja: "ナチュラル" }, line: { en: "Raw materials, plants and textures that age well", ja: "素材そのもの、植物、年月とともに味わいの出る質感" } },
+  { title: { en: "Coastal", ja: "コースタル" }, line: { en: "Breezy, bright and made for Sydney living", ja: "風が通り、明るく、シドニーの暮らしに合う" } },
+];
+
+/** Beyond designing the house: from the builder to everyday life and future value. */
+export const beyondSteps: { title: Bi; line: Bi }[] = [
+  { title: { en: "Design", ja: "デザインする" }, line: { en: "Layout, light, colours and materials, in the style you love", ja: "レイアウト、光、色、素材を、お好きなスタイルで" } },
+  { title: { en: "Build", ja: "建てる・つくる" }, line: { en: "We find your builder and gather quotes, and check the work matches the design", ja: "施工会社探しと見積もりの手配。工事がデザイン通りか確認します" } },
+  { title: { en: "Live", ja: "暮らす" }, line: { en: "We picture daily life in the home before it is built, down to where the morning light falls", ja: "完成前から、そこでの毎日を思い描きます。朝の光がどこに差すかまで" } },
+  { title: { en: "Look ahead", ja: "その先へ" }, line: { en: "Design that keeps its value, for the day you may sell or rent", ja: "いつか売るとき、貸すときにも価値が続くデザインを" } },
+];
+
+/** Everything in a home is design: what we can help choose, if you like. */
+export const everydayDesign: { title: Bi; line: Bi }[] = [
+  { title: { en: "Furniture and art", ja: "家具とアート" }, line: { en: "Pieces chosen for the room and for how you live", ja: "部屋と暮らし方に合わせて選びます" } },
+  { title: { en: "Tableware", ja: "器" }, line: { en: "Plates, bowls and cups that make every meal feel considered", ja: "毎日の食事が少し特別になる、皿・椀・湯呑み" } },
+  { title: { en: "Scent", ja: "香り" }, line: { en: "A home's scent, from hinoki to incense, part of the welcome", ja: "檜やお香など、家の香りもおもてなしの一部" } },
+  { title: { en: "Light", ja: "明かり" }, line: { en: "Lamps and lighting for evening calm", ja: "夜をくつろげる照明とランプ" } },
+  { title: { en: "Linen and textiles", ja: "布もの" }, line: { en: "Bedding, curtains and throws in natural fibres", ja: "自然素材の寝具、カーテン、ブランケット" } },
+  { title: { en: "Plants and flowers", ja: "植物と花" }, line: { en: "Greenery and seasonal flowers that bring the garden in", ja: "庭を室内に連れてくる緑と季節の花" } },
+];

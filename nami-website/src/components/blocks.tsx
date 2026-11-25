@@ -432,3 +432,42 @@ export function SubNav({
     </nav>
   );
 }
+
+/** Service categories: title, what it is, and example ideas. */
+export function Categories({ items }: { items: { key: string; title: Bi; line: Bi; ideas: Bi }[] }) {
+  return (
+    <ul className="grid gap-px overflow-hidden border border-navy/15 bg-navy/15 md:grid-cols-2 lg:grid-cols-3">
+      {items.map((c) => (
+        <li key={c.key} id={c.key} className="scroll-mt-40 bg-cream p-6 md:p-7">
+          <p className="title text-[1.5rem] !leading-snug">
+            <T ja={c.title.ja} en={c.title.en} />
+          </p>
+          <p className="mt-3 text-[1.0625rem] leading-relaxed text-navy/80">
+            <T ja={c.line.ja} en={c.line.en} />
+          </p>
+          <p className="mt-3 text-[0.9375rem] leading-relaxed text-deep">
+            <T ja={c.ideas.ja} en={c.ideas.en} />
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** A compact grid of short items (styles, everyday design). */
+export function Pills({ items }: { items: { title: Bi; line: Bi }[] }) {
+  return (
+    <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((s) => (
+        <li key={s.title.en} className="border-t border-vermilion/60 pt-4">
+          <p className="title text-[1.3rem] !leading-snug">
+            <T ja={s.title.ja} en={s.title.en} />
+          </p>
+          <p className="mt-1.5 text-[1rem] leading-relaxed text-navy/75">
+            <T ja={s.line.ja} en={s.line.en} />
+          </p>
+        </li>
+      ))}
+    </ul>
+  );
+}

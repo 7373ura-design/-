@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 import { background, strengths } from "@/data/brand";
-import { glossary, homeServices } from "@/data/homes";
+import { beyondSteps, everydayDesign, homeCategories, homeStyles } from "@/data/homes";
 import { commercialFaq, freeProposal, sectors } from "@/data/commercial";
 import { getWorks } from "@/data/works";
 import { concepts } from "@/data/concepts";
@@ -23,13 +23,17 @@ export function GET() {
     ...strengths.map((s) => `- ${s.title.en}: ${s.line.en}`),
     "",
     `## Homes (${abs("/homes")})`,
-    ...homeServices.map((s) => `- ${s.title.en}: ${s.line.en}`),
+    ...homeCategories.map((c) => `- ${c.title.en}: ${c.line.en} ${c.ideas.en}`),
+    "",
+    "### Styles (not only Japanese)",
+    ...homeStyles.map((s) => `- ${s.title.en}: ${s.line.en}`),
+    "",
+    "### Beyond designing the house",
+    ...beyondSteps.map((s) => `- ${s.title.en}: ${s.line.en}`),
+    `- If you'd like, we also help with: ${everydayDesign.map((e) => e.title.en.toLowerCase()).join(", ")}`,
     "",
     "### Projects",
     ...getWorks().map((w) => `- [${w.title.en}](${abs(`/homes/projects/${w.slug}`)}): ${w.type.en}. ${w.lead.en}`),
-    "",
-    "### Japanese design words",
-    ...glossary.map((g) => `- ${g.term} (${g.kana}): ${g.what.en} How NAMI uses it: ${g.use.en}`),
     "",
     `## Shops and offices (${abs("/commercial")})`,
     "Launch offer: free design proposal for 10 businesses (when built with Japan Homes):",

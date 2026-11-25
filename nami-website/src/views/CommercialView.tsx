@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, OverlayHero, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { commercialFaq, commercialHero, commercialSteps, freeProposal, partnerHelp, sectors, staffBenefit } from "@/data/commercial";
 import Image from "next/image";
 import { Container } from "@/components/ui";
 import { T } from "@/lib/i18n";
-import { glossary } from "@/data/homes";
 import { concepts, meaningSteps } from "@/data/concepts";
 import type { Faq } from "@/data/faq";
 import { alternates } from "@/lib/meta";
@@ -27,7 +26,12 @@ export function commercialMetadata(lang: Lang): Metadata {
       };
 }
 
-const atWork = glossary.filter((g) => ["Hinoki", "Shoji", "Washi", "Wabi-sabi"].includes(g.term));
+const atWork = [
+  { title: { en: "Reception", ja: "受付" }, line: { en: "Timber slats, a hinoki or solid timber counter and a single washi paper light, a welcome rather than a front desk", ja: "木の格子、檜や無垢材のカウンター、ひとつの和紙の照明。「窓口」ではなく「おもてなし」の場に" } },
+  { title: { en: "Meeting and treatment rooms", ja: "打ち合わせ室・施術室" }, line: { en: "Shoji-style screens and soft curtains: daylight in, conversations private", ja: "障子風の仕切りややわらかなカーテン。光は通し、会話は守ります" } },
+  { title: { en: "Workspaces", ja: "執務スペース" }, line: { en: "Desks facing the light, natural materials, plants and acoustic panels for focus", ja: "光に向かうデスク、自然素材、植物、吸音パネルで集中できる空間に" } },
+  { title: { en: "Shop floors and cafés", ja: "売り場・カフェ" }, line: { en: "Japandi, modern or coastal: a look that tells your story and makes people stay", ja: "ジャパンディ、モダン、コースタルなど。お店の物語を伝え、長く居たくなる空間に" } },
+];
 
 /** Shops and offices: the free proposal, who it is for, process, staff benefit and FAQ. */
 export function CommercialView({ lang }: { lang: Lang }) {
@@ -146,7 +150,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
         }}
         wide
       >
-        <Glossary items={atWork} />
+        <Notes items={atWork} />
       </Section>
 
       <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilt by Japan Homes.", ja: "デザインはNAMI、\n工事はジャパンホームズ。" }}>
