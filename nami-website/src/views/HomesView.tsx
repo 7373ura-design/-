@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { site } from "@/data/site";
+import { launchOffer } from "@/data/brand";
 import { CtaBand, FaqList, Glossary, OverlayHero, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { glossary, homeServices, homeSteps, homesHero, lastingMaterials, valueIntro, valueNote, valuePoints } from "@/data/homes";
@@ -47,6 +49,7 @@ export function HomesView({ lang }: { lang: Lang }) {
         lang={lang}
         current="homes"
         links={[
+          { href: "#offer", label: { en: "Launch offer", ja: "オープン記念" } },
           { href: "#services", label: { en: "Services", ja: "サービス" } },
           { href: "#materials", label: { en: "Materials", ja: "素材" } },
           { href: "#value", label: { en: "Property value", ja: "住まいの価値" } },
@@ -69,6 +72,21 @@ export function HomesView({ lang }: { lang: Lang }) {
         ]}
         caption="OLD MEETS NEW"
       />
+
+      <Section id="offer" kicker={launchOffer.kicker} title={launchOffer.title} intro={launchOffer.body}>
+        <Notes items={launchOffer.includes} />
+        <p className="mt-6 text-[1.0625rem]">
+          <T ja={launchOffer.cta.ja} en={launchOffer.cta.en} />
+        </p>
+        <p className="mt-4 flex flex-wrap gap-3">
+          <a href={`mailto:${site.email}`} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
+            {lang === "ja" ? "メールする" : "Email us"} →
+          </a>
+          <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
+            Instagram DM →
+          </a>
+        </p>
+      </Section>
 
       <Section id="services" kicker="SERVICES" title={{ en: "From one room\nto the whole home.", ja: "1部屋から、\n家まるごとまで。" }}>
         <Notes items={homeServices} />
@@ -139,8 +157,8 @@ export function HomesView({ lang }: { lang: Lang }) {
 
       <CtaBand
         lang={lang}
-        title={{ en: "Talk to us about your home", ja: "住まいのご相談はお気軽に" }}
-        line={{ en: "The first consultation is free. English or Japanese.", ja: "最初のご相談は無料です。日本語でも英語でも。" }}
+        title={{ en: "Let's design your home.", ja: "あなたの住まいを、一緒に。" }}
+        line={{ en: "From a small everyday worry to a full renovation or a new build, tell us anything. It all starts with a chat.", ja: "毎日のちょっとしたお悩みから、リノベーション、新築まで。何でもご相談ください。すべては、気軽なおしゃべりから。" }}
       />
     </>
   );

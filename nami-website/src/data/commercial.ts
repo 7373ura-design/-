@@ -65,8 +65,8 @@ export const commercialFaq: Faq[] = [
   {
     q: { en: "Who does the building work?", ja: "工事は誰がしますか？" },
     a: {
-      en: "Japan Homes, our building partner, does the fit-out under its own licence. Japan Homes has built homes in New Zealand and Australia for over 20 years. You sign the building contract directly with Japan Homes, and NAMI checks that the work matches the design.",
-      ja: "工事は、パートナーのジャパンホームズが自社のライセンスで行います。ジャパンホームズは、ニュージーランドとオーストラリアで20年以上の家づくりの実績があります。工事の契約はお客様とジャパンホームズの直接契約で、NAMIはデザイン通りに仕上がっているかを確認します。",
+      en: "Japan Homes, our building partner, does the fit-out under its own licence. Japan Homes brings 20+ years of trusted connections and proven building craftsmanship. You sign the building contract directly with Japan Homes, and NAMI checks that the work matches the design.",
+      ja: "工事は、パートナーのジャパンホームズが自社のライセンスで行います。ジャパンホームズには、20年以上の信頼のつながりと、確かな施工技術があります。工事の契約はお客様とジャパンホームズの直接契約で、NAMIはデザイン通りに仕上がっているかを確認します。",
     },
   },
   {

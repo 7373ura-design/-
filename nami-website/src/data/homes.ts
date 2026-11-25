@@ -10,8 +10,8 @@ export const homesHero = {
   kicker: "JAPANDI HOME INTERIOR DESIGN, SYDNEY",
   title: { en: "Japandi Interiors\nfor Your Home", ja: "日本の美意識を、\n住まいに。" },
   body: {
-    en: "We design Japandi homes in Sydney: new builds, renovations and single rooms, with Japanese details such as hinoki timber, shoji screens and tatami. Our designer is from Japan.",
-    ja: "シドニーで、ジャパンディの住まいをデザインしています。新築、リノベーション、1部屋のスタイリングまで。檜(ひのき)、障子、畳など、日本の要素も取り入れます。デザイナーは日本出身です。",
+    en: "Calm, natural homes, inspired by Japan and made for everyday life. From a small everyday worry to a full renovation or a new build, with details such as hinoki, shoji and tatami. Our designer was born and raised in Japan.",
+    ja: "日本に学んだ、落ち着いた自然な住まいを、毎日の暮らしに。毎日のちょっとしたお悩みから、リノベーション、新築まで。檜(ひのき)、障子、畳など日本の要素も。デザイナーは日本生まれ、日本育ちです。",
   },
 };
 
@@ -213,8 +213,8 @@ export const lastingMaterials: { term: string; kana: string; what: Bi; use: Bi }
 
 /** Design that adds value: the designer's real estate background. */
 export const valueIntro: Bi = {
-  en: "Our designer also holds a real estate qualification, so we design with the property market in mind. Whether you plan to stay for decades or sell in a few years, we focus on the changes that make a home more enjoyable to live in and more appealing to buyers.",
-  ja: "NAMIのデザイナーは不動産の資格も持っています。だから不動産の視点も持ってデザインします。何十年も住み続ける方にも、数年後に売却を考えている方にも、暮らしやすさと、買い手にとっての魅力の両方が高まるポイントに力を入れます。",
+  en: "Our designer holds an NSW Real Estate Certificate of Registration and is a licensed real estate agent in Japan (Takken-shi), so we design with the property market in mind. Whether you plan to stay for decades or sell in a few years, we focus on the changes that make a home more enjoyable to live in and more appealing to buyers.",
+  ja: "NAMIのデザイナーは、NSW州の不動産資格(Certificate of Registration)と、日本の宅地建物取引士の資格を持っています。だから不動産の視点も持ってデザインします。何十年も住み続ける方にも、数年後に売却を考えている方にも、暮らしやすさと、買い手にとっての魅力の両方が高まるポイントに力を入れます。",
 };
 
 export const valuePoints: { title: Bi; line: Bi }[] = [

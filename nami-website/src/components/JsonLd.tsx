@@ -24,6 +24,7 @@ export function organizationLd(lang: Lang) {
     logo: abs("/images/logo/nami-logo.png"),
     image: abs("/opengraph-image"),
     email: site.email,
+    telephone: site.phoneIntl,
     address: { "@type": "PostalAddress", addressLocality: "Sydney", addressRegion: "NSW", addressCountry: "AU" },
     areaServed: [
       { "@type": "City", name: "Sydney" },

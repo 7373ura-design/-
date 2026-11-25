@@ -1,6 +1,8 @@
 import { BackgroundSection, ContactSection } from "@/components/home/sections";
-import { ChoiceCards, OverlayHero, Section, Strengths } from "@/components/blocks";
-import { businesses, hero, philosophy, strengths } from "@/data/brand";
+import Link from "next/link";
+import { ChoiceCards, Notes, OverlayHero, Section, Strengths } from "@/components/blocks";
+import { T } from "@/lib/i18n";
+import { businesses, hero, launchOffer, philosophy, strengths } from "@/data/brand";
 import { localHref, type Lang } from "@/lib/lang";
 
 /**
@@ -13,8 +15,8 @@ export function HomeView({ lang }: { lang: Lang }) {
     <>
       <OverlayHero
         id="hero-heading"
-        eyebrow={{ en: "NAMI Interior Design · Sydney", ja: "NAMI インテリアデザイン · シドニー" }}
-        title={{ en: "Japandi interior design\nfor homes, shops\nand offices.", ja: "住まいと、\nお店・オフィスに、\nジャパンディを。" }}
+        eyebrow={{ en: "NAMI · Japandi Interior Design · Sydney", ja: "NAMI · ジャパンディ・インテリアデザイン · シドニー" }}
+        title={{ en: "A new wave\nof Japandi.", ja: "ジャパンディに、\n新しい波を。" }}
         body={hero.intro}
         image={{ src: "/images/washi/shoji.jpg", alt: "Woodblock-style picture of a quiet Japanese room: an open shoji screen, a low timber bench with a vase, and a gum-tree landscape beyond", position: "35% 50%" }}
         choices={[
@@ -26,6 +28,17 @@ export function HomeView({ lang }: { lang: Lang }) {
           },
         ]}
       />
+      <Link href={localHref(lang, "/homes#offer")} className="group block bg-vermilion text-paper">
+        <span className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-center gap-x-4 gap-y-1 px-5 py-4 text-center md:px-10">
+          <span className="label">{launchOffer.kicker}</span>
+          <span className="text-[1.0625rem]">
+            <T ja="10軒限定、住まいのデザインが無料に。" en="Free interior design for 10 homes." />
+          </span>
+          <span className="label underline underline-offset-4 group-hover:no-underline">
+            <T ja="詳しく見る →" en="See the offer →" />
+          </span>
+        </span>
+      </Link>
       <Section
         id="choose"
         kicker="TWO WAYS WE WORK"
@@ -35,10 +48,12 @@ export function HomeView({ lang }: { lang: Lang }) {
       >
         <ChoiceCards lang={lang} items={businesses} />
       </Section>
-      <Section id="why" kicker="WHY NAMI" title={{ en: "Japanese calm,\nmade for Australia.", ja: "日本の落ち着きを、\nオーストラリアの暮らしに。" }} wide>
+      <Section id="why" kicker="ABOUT NAMI" title={{ en: "Why choose NAMI?", ja: "NAMIが選ばれる理由。" }} wide>
         <Strengths items={strengths} />
       </Section>
-      <Section id="philosophy" kicker="OUR PHILOSOPHY" title={philosophy.title} intro={philosophy.body} />
+      <Section id="approach" kicker="OUR APPROACH" title={philosophy.title} intro={philosophy.body}>
+        <Notes items={philosophy.points} />
+      </Section>
       <div id="about" className="scroll-mt-16">
         <BackgroundSection />
       </div>

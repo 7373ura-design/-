@@ -106,13 +106,21 @@ export function ContactSection({ lang }: { lang: Lang }) {
     <Post id="contact" labelledBy="contact-h" art="bridge">
       <PostHead kicker="START A PROJECT" title={{ ja: "あなたの空間を、\n一緒に。", en: "Let\u2019s design\nyour space." }} id="contact-h">
         <p>
-          <T ja="住まい · お店 · オフィス" en="Homes · Shops · Offices" />
-          <br />
+          <T
+            ja="毎日のちょっとしたお悩みから、リノベーション、新築、お店やオフィスまで。何でもご相談ください。すべては、気軽なおしゃべりから。"
+            en="From a small everyday worry to a full renovation, a new build or a new workplace, tell us anything. It all starts with a chat."
+          />
+        </p>
+        <p className="mt-3">
           <T ja={`${site.base.ja}。`} en={`${site.base.en}.`} />
         </p>
         <p className="mt-3">
           <a href={`mailto:${site.email}`} className="text-vermilion hover:underline">
             {site.email}
+          </a>
+          <br />
+          <a href={`tel:${site.phoneIntl}`} className="text-vermilion hover:underline">
+            {site.phone}
           </a>
         </p>
       </PostHead>

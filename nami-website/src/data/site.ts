@@ -15,6 +15,8 @@ export const site = {
   instagramHandle: "@nami.studio_au",
   facebook: "https://www.facebook.com/share/1CV1XTPuqW/",
   email: "hello@nami-studio.com.au",
+  phone: "0406 880 243",
+  phoneIntl: "+61406880243",
 };
 
 /** Main menu: the two businesses, then who NAMI is and how to get in touch. */

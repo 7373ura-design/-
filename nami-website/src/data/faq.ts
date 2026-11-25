@@ -212,8 +212,8 @@ export const faqGroups: FaqGroup[] = [
       {
         q: { en: "How many rounds of changes are included?", ja: "デザインの修正は何回までできますか？" },
         a: {
-          en: "We work through the design together until you are happy with it. If larger changes are needed many times over, we will talk with you first.",
-          ja: "ご納得いただけるまで、話し合いながら進めます。大きな変更が何度も必要な場合は、事前にご相談させていただきます。",
+          en: "The launch offer includes up to two rounds of revisions. For other projects, we agree the number of rounds in the quote before we start, and we always talk with you first if larger changes come up.",
+          ja: "オープン記念の無料デザインでは、修正は2回までです。そのほかのご依頼では、始める前にお見積もりで回数を決めます。大きな変更が出てきたときは、必ず事前にご相談します。",
         },
       },
       {
@@ -231,17 +231,17 @@ export const faqGroups: FaqGroup[] = [
         },
       },
       {
-        q: { en: "What is the NAMI Founding Monitors campaign?", ja: "NAMIファウンディングモニターとは何ですか？" },
+        q: { en: "Is there a launch offer?", ja: "オープン記念の特典はありますか？" },
         a: {
-          en: "To mark NAMI's start, we are looking for people building or renovating in Sydney to become Founding Monitors. We design with you on special terms, and in return we share photos of the finished home and your thoughts. Get in touch for details.",
-          ja: "NAMIのスタートにあたって、シドニーで家づくりをされる方を「ファウンディングモニター」として募集しているキャンペーンです。特別な条件でデザインをお手伝いする代わりに、完成した家の写真やご感想を紹介させていただきます。詳しくはお問い合わせください。",
+          en: "Yes. To celebrate our opening, we're offering a free design to only 10 homes: a personal design consultation, a tailored design concept, a mood board, up to two rounds of revisions, and builder search and quotes arranged for you. Want the details? Email us or DM @nami.studio_au.",
+          ja: "はい。オープンを記念して、10軒限定で住まいのデザインを無料でお引き受けします。個別のデザイン相談、あなただけのデザインコンセプト、ムードボード、2回までの修正、施工会社探しと見積もりの手配まで含まれます。詳しくは、メールかInstagram(@nami.studio_au)のDMでどうぞ。",
         },
       },
       {
         q: { en: "How do I get started?", ja: "相談するにはどうすればいいですか？" },
         a: {
-          en: "Send us an email, or a message on Instagram or Facebook. English or Japanese is fine.",
-          ja: "メール、Instagram、FacebookのDMからお気軽にご連絡ください。日本語でも英語でも大丈夫です。",
+          en: "It all starts with a chat. From a small everyday worry to a full renovation or a new build, tell us anything: email us, call 0406 880 243, or message us on Instagram or Facebook. English or Japanese is fine.",
+          ja: "まずは気軽なおしゃべりから。毎日のちょっとしたお悩みから、リノベーションや新築まで、何でもご相談ください。メール、お電話(0406 880 243)、InstagramやFacebookのDMから。日本語でも英語でも大丈夫です。",
         },
       },
     ],

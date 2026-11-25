@@ -1,17 +1,16 @@
 import type { Bi } from "@/lib/i18n";
 
 /**
- * Brand copy. The English is the wording of the NAMI Instagram posts
- * ("What is NAMI?"); the Japanese follows it. Keep the two in step with the
- * posts rather than adding to them here.
+ * Brand copy. Wording follows the NAMI tri-fold leaflet ("NAMI 三つ折りチラシ"
+ * in Canva) and the Instagram posts: short, warm, plain. Keep them in step.
  */
 
 export const hero = {
   kicker: "JAPANDI INTERIOR DESIGN, SYDNEY",
   /** The shared summary on the top page, before the two businesses. */
   intro: {
-    en: "NAMI is a Japandi interior design studio based in Sydney, led by a designer from Japan. We design homes, and shops and offices, bringing Japanese ideas of light, natural materials and calm to the way Australians live and work.",
-    ja: "NAMIは、シドニーを拠点とするジャパンディのインテリアデザインスタジオです。デザイナーは日本出身。住まいと、お店・オフィスのデザインを手がけ、日本の光の取り入れ方、自然素材、落ち着きを、オーストラリアの暮らしと仕事の場に届けます。",
+    en: "Calm, natural spaces, inspired by Japan and made for everyday life. NAMI is a Japandi interior design studio in Sydney, led by a designer born and raised in Japan. We design homes, shops and offices.",
+    ja: "日本に学んだ、落ち着いた自然な空間を、毎日の暮らしに。NAMIはシドニーのジャパンディ・インテリアデザインスタジオです。デザイナーは日本生まれ、日本育ち。住まいと、お店・オフィスをデザインしています。",
   },
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
@@ -20,28 +19,35 @@ export const hero = {
   },
 };
 
-/** About NAMI: the designer's training and Japan Homes, as a list. */
+/** About NAMI: the designer and their qualifications (as on the leaflet). */
 export const background = {
   items: [
     {
-      title: { ja: "出身", en: "From Japan" },
-      line: { ja: "日本出身。日本の住まいの考え方を、実際の暮らしの中で身につける", en: "Originally from Japan, with a first-hand feel for the Japanese way of living" },
-    },
-    { title: { ja: "建築", en: "Architecture" }, line: { ja: "日本の大学で建築を学ぶ", en: "Studied architecture at university in Japan" } },
-    {
-      title: { ja: "資格", en: "Qualifications" },
-      line: { ja: "日本庭園・ジャパンディ・インテリアデザイン", en: "Japanese garden design, Japandi, interior design" },
+      title: { ja: "日本生まれ、日本育ち", en: "Born and raised in Japan" },
+      line: { ja: "日本の暮らしの知恵を、実体験として。それをオーストラリアの家へ", en: "Real, everyday wisdom from Japan, brought into your Australian home" },
     },
     {
-      title: { ja: "Residential Drafting", en: "Residential Drafting" },
-      line: { ja: "オーストラリアの住宅製図（Certificate IV）の専門教育", en: "Training in Australian residential drafting (Certificate IV)" },
+      title: { ja: "インテリア", en: "Interior design" },
+      line: { ja: "Certificate of Interior Design & Property Styling", en: "Certificate of Interior Design & Property Styling" },
     },
     {
-      title: { ja: "Japan Homes 公認", en: "Recognised by Japan Homes" },
+      title: { ja: "日本庭園", en: "Japanese gardens" },
+      line: { ja: "Certificate in Japanese Garden Design Essentials", en: "Certificate in Japanese Garden Design Essentials" },
+    },
+    {
+      title: { ja: "建築", en: "Architecture" },
+      line: { ja: "Contemporary Japanese Architecture(東京大学)", en: "Contemporary Japanese Architecture (The University of Tokyo)" },
+    },
+    {
+      title: { ja: "不動産", en: "Real estate" },
       line: {
-        ja: "ニュージーランドとオーストラリアで20年以上、実用的な住まいを建ててきたJapan Homesの公認インテリアデザイン",
-        en: "Interior design recognised by Japan Homes, builders of practical homes in New Zealand and Australia for over 20 years",
+        ja: "NSW Real Estate Certificate of Registration / 宅地建物取引士(日本)",
+        en: "NSW Real Estate Certificate of Registration; Licensed Real Estate Agent, Japan (Takken-shi)",
       },
+    },
+    {
+      title: { ja: "ジャパンホームズ", en: "Japan Homes" },
+      line: { ja: "ジャパンホームズのバックアップ。20年以上の信頼のつながり", en: "Backed by Japan Homes, with 20+ years of trusted connections" },
     },
   ],
 };
@@ -76,31 +82,63 @@ export const businesses = [
   },
 ] as const;
 
-/** What both businesses share. */
+/** Why choose NAMI (from the leaflet). */
 export const strengths = [
   {
-    title: { en: "A designer from Japan", ja: "日本出身のデザイナー" },
-    line: { en: "The Japanese way of living, known first-hand, not just studied", ja: "日本の住まいの考え方を、学んだだけでなく実体験として" },
+    title: { en: "Qualified", ja: "確かな資格" },
+    line: { en: "Interior design, Japanese gardens and real estate, in Australia and Japan. Any room, garden or the whole home", ja: "インテリア、日本庭園、不動産の資格を、オーストラリアと日本で。1部屋から、庭、家まるごとまで" },
   },
   {
-    title: { en: "Japandi, made for Australia", ja: "オーストラリアに合うジャパンディ" },
-    line: { en: "Hinoki, shoji, tatami and washi, shaped for Australian homes, light and climate", ja: "檜、障子、畳、和紙を、オーストラリアの家と光と気候に合わせて" },
+    title: { en: "Designed with property value in mind", ja: "住まいの価値まで考えて" },
+    line: { en: "A real estate background means we design for how you live and for what the home is worth", ja: "不動産の視点で、暮らしやすさと住まいの価値の両方を考えます" },
   },
   {
-    title: { en: "Built with Japan Homes", ja: "ジャパンホームズと施工" },
-    line: { en: "Building work by our licensed partner, with over 20 years in New Zealand and Australia", ja: "ニュージーランドとオーストラリアで20年以上の実績を持つ、ライセンスのあるパートナーが工事" },
+    title: { en: "Backed by Japan Homes", ja: "ジャパンホームズのバックアップ" },
+    line: { en: "20+ years of trusted connections and proven building craftsmanship. High-quality materials and trades", ja: "20年以上の信頼のつながりと、確かな施工技術。質の高い素材と職人" },
   },
   {
-    title: { en: "English and Japanese", ja: "日本語と英語" },
-    line: { en: "Talk to us in either language, in person in Sydney or online", ja: "どちらの言葉でも。シドニーで直接でも、オンラインでも" },
+    title: { en: "Responsible from design to build", ja: "デザインから施工まで責任を持って" },
+    line: { en: "From design to finding your builder, budget-aware until the build begins. Easy for you, no running around", ja: "デザインから施工会社探しまで。工事が始まるまで予算に気を配ります。あちこち走り回る必要はありません" },
   },
 ];
 
-/** Our philosophy, shared by both businesses. */
+/** Our approach (from the leaflet). */
 export const philosophy = {
-  title: { en: "Design begins with light,\nnatural materials\nand calm.", ja: "デザインは、\n光と自然素材と\n落ち着きから。" },
+  title: { en: "In Japan, it was never\njust a look.", ja: "日本では、\n見た目だけの\nものではなかった。" },
   body: {
-    en: "We plan how daylight moves through each room, choose natural materials such as timber, paper and stone, and keep only what is needed. The result is a space that stays calm and easy to live or work in for years, rather than one that follows a trend.",
-    ja: "部屋ごとに光の入り方を考え、木・紙・石などの自然素材を選び、必要なものだけを残します。流行を追うのではなく、何年たっても落ち着いて、暮らしやすく働きやすい空間をつくります。",
+    en: "Outside Japan, Japandi is often about the look. In Japan, it was simply how we live: calm, practical and made to last.",
+    ja: "日本の外では、ジャパンディは「見た目」として語られがちです。でも日本では、それはただの暮らし方でした。落ち着いていて、実用的で、長く使えるもの。",
   },
+  points: [
+    {
+      title: { en: "We design for function, too", ja: "使いやすさまでデザイン" },
+      line: { en: "Japanese ways of living, adjusted to Australian homes, climate and lifestyle, for a better everyday", ja: "日本の暮らし方を、オーストラリアの家と気候と生活に合わせて。毎日をもっと心地よく" },
+    },
+    {
+      title: { en: "Born and raised in Japan", ja: "日本生まれ、日本育ち" },
+      line: { en: "Real, everyday wisdom from Japan, brought into your Australian home", ja: "日本の本物の暮らしの知恵を、オーストラリアの家へ" },
+    },
+    {
+      title: { en: "Any style you love", ja: "お好きなスタイルで" },
+      line: { en: "Japandi, modern or something in between, always designed around how you live", ja: "ジャパンディでも、モダンでも、その間でも。いつも暮らし方に合わせてデザインします" },
+    },
+  ],
+};
+
+/** The launch offer (from the leaflet). */
+export const launchOffer = {
+  kicker: "TO CELEBRATE NAMI'S LAUNCH",
+  title: { en: "Free interior design\nfor your home.", ja: "住まいのインテリアデザインを、\n無料で。" },
+  body: {
+    en: "To celebrate our opening, we're offering a free design to only 10 homes. A$0 design fee.",
+    ja: "オープンを記念して、10軒限定で住まいのデザインを無料でお引き受けします。デザイン料は0ドルです。",
+  },
+  includes: [
+    { title: { en: "Personal design consultation", ja: "個別のデザイン相談" }, line: { en: "We listen to how you live and what you love", ja: "暮らし方やお好みをじっくりうかがいます" } },
+    { title: { en: "Tailored design concept", ja: "あなただけのデザインコンセプト" }, line: { en: "A concept made for your home, not a template", ja: "型ではなく、あなたの家のためのコンセプト" } },
+    { title: { en: "Mood board for your space", ja: "ムードボード" }, line: { en: "Colours, materials and the feel of the room in one place", ja: "色、素材、雰囲気を一目で" } },
+    { title: { en: "Up to two rounds of revisions", ja: "修正は2回まで" }, line: { en: "We refine the design together", ja: "一緒にデザインを整えます" } },
+    { title: { en: "Builder search & quotes arranged", ja: "施工会社探しと見積もりの手配" }, line: { en: "Reliable builders, arranged for you", ja: "信頼できる施工会社を、こちらで手配します" } },
+  ],
+  cta: { en: "Want the details? Email us or DM @nami.studio_au.", ja: "詳しくは、メールかInstagram(@nami.studio_au)のDMでお気軽にどうぞ。" },
 };
