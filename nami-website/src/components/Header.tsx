@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
 import { langOfPath, localHref, stripLang } from "@/lib/lang";
 import { Logo } from "@/components/Logo";
-import Image from "next/image";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
 
 export function Header() {
@@ -116,9 +115,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="relative mt-8 aspect-[2/1] w-full" aria-hidden>
-          <Image src="/images/washi/wave-sun.jpg" alt="" fill sizes="100vw" className="object-cover object-bottom" />
-        </div>
       </div>
     </>
   );

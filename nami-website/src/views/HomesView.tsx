@@ -63,15 +63,15 @@ export function HomesView({ lang }: { lang: Lang }) {
       <OverlayHero
         flush
         id="homes-h"
-        eyebrow={{ en: "Homes · Japandi Interior Design · Sydney", ja: "住まい · ジャパンディ · シドニー" }}
-        title={{ en: "Japandi interiors\nfor your home.", ja: "日本の美意識を、\n住まいに。" }}
+        eyebrow={{ en: "Homes · Interior Design · Sydney", ja: "住まい · インテリアデザイン · シドニー" }}
+        title={{ en: "Interiors for\nthe way you live.", ja: "暮らし方に合わせた、\n住まいのデザイン。" }}
         body={homesHero.body}
-        image={{ src: "/images/portfolio/old-meets-new/03.jpg", alt: "Old Meets New: timber slat screens and a warm timber floor in a Japandi renovation by NAMI" }}
+        image={{ src: "/images/portfolio/living-in-green/06.jpg", alt: "Living in Green by NAMI: a bright living room opening through wide glass doors onto a timber deck and garden", position: "50% 55%" }}
         links={[
           { href: "#projects", label: { en: "See projects", ja: "作品を見る" } },
           { href: localHref(lang, "/#contact"), label: { en: "Start a project", ja: "相談する" } },
         ]}
-        caption="OLD MEETS NEW"
+        caption="LIVING IN GREEN"
       />
 
       <Section id="offer" kicker={launchOffer.kicker} title={launchOffer.title} intro={launchOffer.body}>

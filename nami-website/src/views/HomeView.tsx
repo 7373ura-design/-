@@ -15,10 +15,10 @@ export function HomeView({ lang }: { lang: Lang }) {
     <>
       <OverlayHero
         id="hero-heading"
-        eyebrow={{ en: "NAMI · Japandi Interior Design · Sydney", ja: "NAMI · ジャパンディ・インテリアデザイン · シドニー" }}
-        title={{ en: "A new wave\nof Japandi.", ja: "ジャパンディに、\n新しい波を。" }}
+        eyebrow={{ en: "NAMI · Interior Design · Sydney", ja: "NAMI · インテリアデザイン · シドニー" }}
+        title={{ en: "A new wave\nof interior design.", ja: "インテリアに、\n新しい波を。" }}
         body={hero.intro}
-        image={{ src: "/images/washi/shoji.jpg", alt: "Woodblock-style picture of a quiet Japanese room: an open shoji screen, a low timber bench with a vase, and a gum-tree landscape beyond", position: "35% 50%" }}
+        image={{ src: "/images/portfolio/simply-special/01.jpg", alt: "Simply Special by NAMI: a timber deck looking out over the city and the sky", position: "50% 60%" }}
         choices={[
           { href: localHref(lang, "/homes"), title: { en: "Homes", ja: "住まい" }, line: { en: "New builds, renovations, ageing in place, granny flats", ja: "新築・リノベーション・エイジングインプレイス・グラニーフラット" } },
           {

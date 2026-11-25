@@ -9,8 +9,8 @@ export const hero = {
   kicker: "JAPANDI INTERIOR DESIGN, SYDNEY",
   /** The shared summary on the top page, before the two businesses. */
   intro: {
-    en: "Calm, natural spaces, inspired by Japan and made for everyday life. NAMI is a Japandi interior design studio in Sydney, led by a designer born and raised in Japan. We design homes, shops and offices.",
-    ja: "日本に学んだ、落ち着いた自然な空間を、毎日の暮らしに。NAMIはシドニーのジャパンディ・インテリアデザインスタジオです。デザイナーは日本生まれ、日本育ち。住まいと、お店・オフィスをデザインしています。",
+    en: "Calm, natural spaces designed around how you live, from Japanese-inspired to modern and everything in between. NAMI is an interior design studio in Sydney, led by a designer born and raised in Japan. We design homes, shops and offices.",
+    ja: "暮らし方に合わせた、落ち着いた自然な空間を。和の要素を取り入れたデザインから、モダンなデザイン、その間まで。NAMIはシドニーのインテリアデザインスタジオです。デザイナーは日本生まれ、日本育ち。住まいと、お店・オフィスをデザインしています。",
   },
   heading: { ja: "暮らしと\n記憶を、\n空間に。", en: "Where Life\nand Memories\nFind a Home" },
   body: {
@@ -63,13 +63,13 @@ export const businesses = [
     href: "/homes",
     title: { en: "Homes", ja: "住まい" },
     meta: { en: "Residential · Explore homes", ja: "住まい · 詳しく見る" },
-    strip: ["/images/portfolio/old-meets-new/03.jpg", "/images/portfolio/living-in-green/10.jpg", "/images/portfolio/old-meets-new/05.jpg"],
+    strip: ["/images/portfolio/welcome-home/03.jpg", "/images/portfolio/simply-special/05.jpg", "/images/portfolio/old-meets-new/07.jpg"],
     line: {
       en: "New builds, renovations, ageing-in-place and granny flats, in materials that last and with your property's value in mind",
       ja: "新築、リノベーション、エイジング・イン・プレイス、グラニーフラット。長く使える素材で、住まいの価値まで考えて",
     },
-    image: "/images/portfolio/old-meets-new/02.jpg",
-    alt: "Old Meets New: a Japandi renovation by NAMI with timber slat screens at the entry",
+    image: "/images/portfolio/living-in-green/09.jpg",
+    alt: "Living in Green by NAMI: a bright open-plan living room with light timber floors",
   },
   {
     key: "commercial",

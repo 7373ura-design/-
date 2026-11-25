@@ -59,7 +59,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
           { href: "#free-proposal", label: { en: "Launch offer", ja: "オープン記念" } },
           { href: "#partners", label: { en: "Partners", ja: "パートナー" } },
           { href: "#sectors", label: { en: "Who it's for", ja: "対象の業種" } },
-          { href: "#japandi-at-work", label: { en: "Japandi at work", ja: "ジャパンディ" } },
+          { href: "#japandi-at-work", label: { en: "Design at work", ja: "空間づくり" } },
           { href: "#process", label: { en: "How it works", ja: "進め方" } },
           { href: "#staff-benefit", label: { en: "Staff benefit", ja: "社員特典" } },
           { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
@@ -68,8 +68,8 @@ export function CommercialView({ lang }: { lang: Lang }) {
       <OverlayHero
         flush
         id="commercial-h"
-        eyebrow={{ en: "Shops & Offices · Japandi Interior Design · Sydney", ja: "お店・オフィス · ジャパンディ · シドニー" }}
-        title={{ en: "Japandi design\nfor offices and shops.", ja: "日本の美意識を、\nお店とオフィスに。" }}
+        eyebrow={{ en: "Shops & Offices · Interior Design · Sydney", ja: "お店・オフィス · インテリアデザイン · シドニー" }}
+        title={{ en: "Interior design\nfor offices and shops.", ja: "お店とオフィスの\nインテリアデザイン。" }}
         body={commercialHero.body}
         image={{ src: "/images/concepts/sunrise-and-waves/01-lounge.jpg", alt: "Sunrise & Waves, a Japanese massage studio concept by NAMI: lounge with timber slats and seigaiha fabric across the ceiling", position: "50% 55%" }}
         links={[
@@ -142,7 +142,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
 
       <Section
         id="japandi-at-work"
-        kicker="JAPANDI AT WORK"
+        kicker="DESIGN AT WORK"
         title={{ en: "Calm spaces\nthat work hard.", ja: "働く場所に、\n日本の落ち着きを。" }}
         intro={{
           en: "Calm, uncluttered and warm: Japanese materials make a reception, treatment room or shop floor feel welcoming.",

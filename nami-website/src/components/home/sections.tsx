@@ -19,18 +19,25 @@ function Post({
   id,
   labelledBy,
   art,
+  photo,
   children,
   className = "",
 }: {
   id?: string;
   labelledBy: string;
   art?: ArtName;
+  photo?: { src: string; alt: string; position?: string };
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative scroll-mt-16 ${art ? "" : "section-rule"} ${className}`} aria-labelledby={labelledBy}>
+    <section id={id} className={`relative scroll-mt-16 ${art || photo ? "" : "section-rule"} ${className}`} aria-labelledby={labelledBy}>
       {art && <Art name={art} position="50% 100%" className="h-[clamp(200px,34vw,460px)]" />}
+      {photo && (
+        <div className="relative h-[clamp(240px,40vw,560px)] w-full overflow-hidden bg-beige">
+          <Image src={photo.src} alt={photo.alt} fill sizes="100vw" className="object-cover" style={{ objectPosition: photo.position ?? "center" }} />
+        </div>
+      )}
       <Container className="pb-24 pt-14 md:pb-32 md:pt-20">{children}</Container>
     </section>
   );
@@ -85,7 +92,7 @@ export function Card({
 
 export function BackgroundSection() {
   return (
-    <Post id="background" labelledBy="background-h" art="tea">
+    <Post id="background" labelledBy="background-h" photo={{ src: "/images/portfolio/welcome-home/03.jpg", alt: "Welcome Home by NAMI: a bright kitchen with light timber cabinetry and a wave-shaped pendant light", position: "50% 45%" }}>
       <PostHead kicker="ABOUT NAMI" title={{ ja: "日本出身の\nデザイナー。", en: "A designer\nfrom Japan." }} id="background-h">
         <Notes items={background.items} />
       </PostHead>
@@ -103,7 +110,7 @@ const field = "mt-1.5 w-full border border-navy/25 bg-paper/70 px-3 py-2.5 text-
 export function ContactSection({ lang }: { lang: Lang }) {
   const ja = lang === "ja";
   return (
-    <Post id="contact" labelledBy="contact-h" art="bridge">
+    <Post id="contact" labelledBy="contact-h">
       <PostHead kicker="START A PROJECT" title={{ ja: "あなたの空間を、\n一緒に。", en: "Let\u2019s design\nyour space." }} id="contact-h">
         <p>
           <T

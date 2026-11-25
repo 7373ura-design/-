@@ -271,7 +271,7 @@ export function OverlayHero({
     <section className={`relative ${flush ? "" : "pt-20 md:pt-24"}`} aria-labelledby={id}>
       <div className={`relative w-full overflow-hidden bg-navy ${choices ? "min-h-[640px] md:h-[min(90svh,900px)]" : "h-[min(70svh,720px)] min-h-[480px]"}`}>
         <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: image.position ?? "center" }} />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/55 to-navy/30" />
         <Container className={`${choices ? "relative pt-24 md:absolute md:inset-x-0 md:bottom-0 md:pt-0" : "absolute inset-x-0 bottom-0"} pb-10 md:pb-14`}>
           <p className="kicker !text-paper/85">
             <T ja={eyebrow.ja} en={eyebrow.en} />
