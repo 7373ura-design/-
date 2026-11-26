@@ -1,5 +1,5 @@
 /**
- * NAMI STUDIO — Founding Monitors 応募フォームを自動で作るスクリプト
+ * NAMI STUDIO — Matsuri Sydney 応募フォームを自動で作るスクリプト
  *
  * 使い方（3分）：
  *  1. https://script.google.com を開き「新しいプロジェクト」
@@ -12,19 +12,23 @@
  * 紙で集めた応募も、同じスプレッドシートに手で追加すれば連絡先リストが1つにまとまる。
  */
 function createNamiForm() {
-  var form = FormApp.create('NAMI STUDIO — Founding Monitors');
+  var form = FormApp.create('NAMI STUDIO — Free Interior Design for 10 Homes (Matsuri Sydney)');
   form.setDescription(
-    '10 Sydney homes. Free Japandi interior design.\n' +
-    'Tell us about your home — we\'ll email you within a week.\n\n' +
-    'Design fee only. Furniture, materials and construction are not included.\n' +
-    'Your details are used only by NAMI STUDIO and never shared or sold.'
+    'For guests who visited us at Matsuri Sydney.\n' +
+    'To celebrate our launch, NAMI STUDIO will design 10 Sydney homes for free.\n\n' +
+    'What\'s included: a design consultation, a design concept and mood board, ' +
+    'up to two rounds of changes, and help finding a licensed builder and quotes.\n' +
+    'Not included: construction, materials and furniture.\n\n' +
+    'It takes about 1 minute. We\'ll email you within a week.\n' +
+    'Your details are used only by NAMI STUDIO and are never shared or sold.'
   );
   form.setCollectEmail(false);
   form.setConfirmationMessage(
     'Thank you! We\'ll email you within a week.\n' +
-    'In the meantime, find our Japandi DIY ideas on Instagram.'
+    'In the meantime, find home ideas on Instagram @nami.studio_au'
   );
 
+  // ── 連絡先 ──
   form.addTextItem().setTitle('Name').setRequired(true);
 
   var emailCheck = FormApp.createTextValidation()
@@ -37,51 +41,68 @@ function createNamiForm() {
     .setRequired(true);
 
   form.addTextItem().setTitle('Phone (optional)');
-  form.addTextItem().setTitle('Instagram @ (optional)');
   form.addTextItem().setTitle('Suburb').setRequired(true);
+
+  // ── 家について ──
+  form.addMultipleChoiceItem().setTitle('Your home')
+    .setChoiceValues(['I own my home', 'I\'m planning to buy or build', 'I rent'])
+    .setRequired(true);
 
   form.addMultipleChoiceItem().setTitle('Home type')
     .setChoiceValues(['House', 'Apartment', 'Townhouse'])
     .showOtherOption(true).setRequired(true);
 
-  form.addMultipleChoiceItem().setTitle('Do you own or rent?')
-    .setChoiceValues(['Own', 'Rent']).setRequired(true);
-
-  form.addCheckboxItem().setTitle('Which space would you like to change?')
-    .setChoiceValues(['Living', 'Bedroom', 'Kitchen', 'Entry', 'Outdoor'])
+  form.addCheckboxItem().setTitle('What would you like help with?')
+    .setChoiceValues([
+      'New build',
+      'Renovation',
+      'One room or styling',
+      'Garden',
+      'Shop or office'
+    ])
     .showOtherOption(true).setRequired(true);
 
   form.addMultipleChoiceItem().setTitle('When would you like to start?')
-    .setChoiceValues(['Soon', 'Early 2027', 'Later in 2027', 'Just curious']);
+    .setChoiceValues(['Within 3 months', 'Within a year', 'Just exploring for now']);
+
+  form.addMultipleChoiceItem().setTitle('Rough budget for the project (optional)')
+    .setChoiceValues(['Under $20k', '$20k–$100k', 'Over $100k', 'Not sure yet']);
 
   form.addParagraphTextItem()
-    .setTitle('What kind of home would you love to live in?')
-    .setHelpText('A few words is fine.')
+    .setTitle('What would you most like to change or solve at home?')
+    .setHelpText('e.g. clutter, light, layout, feel. A few words is fine.')
     .setRequired(true);
 
-  form.addParagraphTextItem()
-    .setTitle('What would you most like to change?')
-    .setHelpText('e.g. clutter, light, layout, feel');
+  // ── 住んだ後のサポート（新サービスの需要を知るため）──
+  form.addCheckboxItem()
+    .setTitle('Would any of these help you after moving in? (optional)')
+    .setChoiceValues([
+      'Storage and organising',
+      'Choosing furniture',
+      'Matching tableware, colours and scents',
+      'A shopping list of what to buy'
+    ]);
 
   form.addMultipleChoiceItem()
     .setTitle('Where did you hear about NAMI?')
     .setChoiceValues(['Matsuri Sydney', 'Instagram', 'Japan Homes', 'A friend'])
     .showOtherOption(true);
 
+  // ── 同意 ──
   form.addCheckboxItem()
     .setTitle('Consent')
-    .setChoiceValues(['Yes, NAMI STUDIO may email me about Founding Monitors.'])
+    .setChoiceValues(['Yes, NAMI STUDIO may email me about this free design offer.'])
     .setRequired(true);
 
   form.addCheckboxItem()
     .setTitle('Newsletter (optional)')
-    .setChoiceValues(['Also send me NAMI\'s DIY ideas & news now and then. (Unsubscribe any time)']);
+    .setChoiceValues(['Also send me NAMI\'s home tips and news now and then. (Unsubscribe any time)']);
 
   // 回答用スプレッドシート（紙の応募もここに手入力する）
-  var ss = SpreadsheetApp.create('NAMI — Founding Monitors 応募リスト');
+  var ss = SpreadsheetApp.create('NAMI — Matsuri Sydney 応募リスト');
   form.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId());
 
-  Logger.log('回答用URL（QR・プロフィールに使う）: ' + form.getPublishedUrl());
+  Logger.log('回答用URL（QRに使う）: ' + form.getPublishedUrl());
   Logger.log('短縮URL: ' + form.shortenFormUrl(form.getPublishedUrl()));
   Logger.log('編集用URL: ' + form.getEditUrl());
   Logger.log('スプレッドシート: ' + ss.getUrl());
