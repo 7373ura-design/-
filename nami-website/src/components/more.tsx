@@ -33,7 +33,7 @@ export function ServiceCards({ lang, items }: { lang: Lang; items: Service[] }) 
         <li key={s.slug}>
           <Link href={localHref(lang, `/services/${s.slug}`)} className="group block">
             <div className="relative aspect-[4/3] overflow-hidden bg-beige">
-              <Image src={s.photos[0].src} alt={s.photos[0].alt} fill sizes="(min-width:1024px) 24vw, (min-width:640px) 45vw, 90vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <Image src={(s.hero ?? s.photos[0]).src} alt={(s.hero ?? s.photos[0]).alt} fill sizes="(min-width:1024px) 24vw, (min-width:640px) 45vw, 90vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             </div>
             <p className="title mt-4 text-[1.3rem] !leading-snug transition-colors group-hover:text-deep">
               <T ja={s.title.ja} en={s.title.en} />

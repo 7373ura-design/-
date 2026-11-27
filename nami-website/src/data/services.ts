@@ -14,7 +14,13 @@ export type Service = {
   worries: { worry: Bi; help: Bi }[];
   include: { title: Bi; line: Bi }[];
   ideas: Bi;
+  /** NAMI's own photos or concept renders. Shown as the work on this page. */
   photos: { src: string; alt: string }[];
+  /**
+   * A background picture that is NOT NAMI's work (labelled "image" on the
+   * page). Used for the top of the page when NAMI has no photo of its own yet.
+   */
+  hero?: { src: string; alt: string };
   guides: string[];
   concept?: boolean;
 };
@@ -67,7 +73,6 @@ export const services: Service[] = [
     worries: [
       { worry: { en: "Hard to keep clean.", ja: "掃除が大変。" }, help: { en: "Fewer joints, wall-hung fittings and easy-care surfaces.", ja: "目地を減らし、浮かせた器具と手入れしやすい素材に。" } },
       { worry: { en: "Too small.", ja: "狭い。" }, help: { en: "Glass, light and storage planned to make it feel larger.", ja: "ガラス、光、収納で広く感じるように。" } },
-      { worry: { en: "Safe later on?", ja: "将来も安全?" }, help: { en: "Step-free showers and space for grab rails, designed in.", ja: "段差のないシャワーや手すりの下地を最初から。" } },
     ],
     include: [
       { title: { en: "Layout", ja: "レイアウト" }, line: { en: "Shower, bath, vanity and storage", ja: "シャワー、浴槽、洗面、収納" } },
@@ -85,7 +90,7 @@ export const services: Service[] = [
       P("simply-special", "10", "A bathroom with a floating timber vanity and a walk-in shower"),
       P("welcome-home", "09", "A white bathroom with a glass shower"),
     ],
-    guides: ["bathroom-renovation-tips", "ageing-in-place-five-places"],
+    guides: ["bathroom-renovation-tips"],
   },
   {
     slug: "home-renovation",
@@ -152,70 +157,6 @@ export const services: Service[] = [
     guides: ["kitchen-renovation-sydney", "home-renovation-where-to-start"],
   },
   {
-    slug: "ageing-in-place",
-    group: "homes",
-    title: { en: "Ageing in place and downsizing", ja: "エイジング・イン・プレイスと住み替え" },
-    line: { en: "Stay in the home you love: safe, easy and beautiful.", ja: "住み慣れた家に、安全に、楽に、美しく。" },
-    lead: {
-      en: "Step-free entries, walk-in showers, wider doorways and good lighting, planned now and designed to look beautiful, not clinical. Moving to a smaller home? We help you keep what matters.",
-      ja: "段差のない入口、ウォークインシャワー、広い出入口、明るい照明を、今のうちに、介護っぽくなく美しく。小さな家への住み替えでは、大切なものを残すお手伝いをします。",
-    },
-    worries: [
-      { worry: { en: "Stairs and steps are getting harder.", ja: "階段や段差がつらくなってきた。" }, help: { en: "Step-free routes and rails that look like part of the design.", ja: "段差のない動線と、デザインになじむ手すりを。" } },
-      { worry: { en: "We don't want it to look like a hospital.", ja: "病院みたいにはしたくない。" }, help: { en: "Warm materials and good light.", ja: "温かな素材と、明るい光で。" } },
-      { worry: { en: "Downsizing, but too many things.", ja: "住み替えたいけど、物が多い。" }, help: { en: "We choose what to keep, and where it goes.", ja: "残すものと、その置き場所を一緒に決めます。" } },
-    ],
-    include: [
-      { title: { en: "Safety review", ja: "安全の見直し" }, line: { en: "Entries, bathrooms, stairs and lighting", ja: "玄関、浴室、階段、照明" } },
-      { title: { en: "Bathroom", ja: "浴室" }, line: { en: "Walk-in shower, seat and space for rails", ja: "ウォークインシャワー、腰掛け、手すりの下地" } },
-      { title: { en: "Downsizing plan", ja: "住み替えの計画" }, line: { en: "Fewer, better things that fit the new home", ja: "新しい家に合う、少なく良いもの" } },
-      { title: { en: "Builder quotes", ja: "施工会社の見積もり" }, line: { en: "Licensed builders arranged and quotes compared", ja: "ライセンスを持つ施工会社を手配し、見積もりを比較" } },
-    ],
-    ideas: {
-      en: "For example: a genkan-style bench to sit on while taking off shoes, soft washi paper lighting for night-time, or a step-free shower in warm timber and stone.",
-      ja: "例えば:靴を脱ぐときに座れる玄関のベンチ、夜も安心なやわらかい和紙の照明、木と石で温かくまとめた段差のないシャワー。",
-    },
-    photos: [
-      P("simply-special", "10", "A walk-in shower with a floating timber vanity"),
-      P("welcome-home", "09", "A bright, step-free bathroom"),
-      P("old-meets-new", "04", "A calm bedroom with timber floors"),
-      P("simply-special", "11", "A bright hallway with wide doorways"),
-    ],
-    guides: ["ageing-in-place-five-places", "bathroom-renovation-tips"],
-  },
-  {
-    slug: "granny-flats",
-    group: "homes",
-    title: { en: "Granny flats", ja: "グラニーフラット(離れ)" },
-    line: { en: "A small home for family, guests or rental income.", ja: "家族、来客、賃貸収入のための小さな家。" },
-    lead: {
-      en: "A secondary dwelling can add space, flexibility and income. We design it to feel like a real home and to sit well with the main house, and arrange licensed builders through Japan Homes' connections.",
-      ja: "敷地内の離れは、住まいの広さと使い道を広げ、収入にもつながります。小さくても本物の家と感じられ、母屋となじむデザインに。施工会社はジャパンホームズのつながりで手配します。",
-    },
-    worries: [
-      { worry: { en: "Is it allowed on our land?", ja: "うちの土地に建てられる?" }, help: { en: "We check the basics early and point you to the rules.", ja: "早い段階で基本を確認し、ルールをお伝えします。" } },
-      { worry: { en: "Small spaces feel cramped.", ja: "狭いと窮屈そう。" }, help: { en: "Light, storage and built-ins that make it feel larger.", ja: "光、収納、造り付けで広く感じるように。" } },
-      { worry: { en: "Will it pay off?", ja: "元は取れる?" }, help: { en: "Designed for the way it will be used: family, guests or rental.", ja: "家族用、来客用、賃貸用など、使い方に合わせて。" } },
-    ],
-    include: [
-      { title: { en: "Layout", ja: "間取り" }, line: { en: "Compact plans that live larger", ja: "広く暮らせるコンパクトな間取り" } },
-      { title: { en: "Fit with the main house", ja: "母屋との調和" }, line: { en: "Privacy, garden and outlook", ja: "プライバシー、庭、眺め" } },
-      { title: { en: "Interior and furniture", ja: "内装と家具" }, line: { en: "Ready to live in or to rent", ja: "すぐ住める、すぐ貸せる状態に" } },
-      { title: { en: "Builder quotes", ja: "施工会社の見積もり" }, line: { en: "Licensed builders arranged and quotes compared", ja: "ライセンスを持つ施工会社を手配し、見積もりを比較" } },
-    ],
-    ideas: {
-      en: "For example: a small deck that works like an engawa between the two homes, sliding screens to divide a studio, or a compact kitchen with a place for everything.",
-      ja: "例えば:2つの家のあいだで縁側のように使える小さなデッキ、ワンルームを仕切る引き戸、すべてに居場所があるコンパクトなキッチン。",
-    },
-    photos: [
-      P("living-in-green", "02", "A compact home with dark cladding and an apricot entry"),
-      P("living-in-green", "06", "A small, bright living space opening to the garden"),
-      P("living-in-green", "05", "Sliding doors opening onto a timber deck"),
-      P("welcome-home", "05", "A compact, light-filled room"),
-    ],
-    guides: ["granny-flat-rules-nsw", "add-value-before-you-sell"],
-  },
-  {
     slug: "styling-for-sale-and-rent",
     group: "homes",
     title: { en: "Styling to sell, rent or invest", ja: "売る・貸す・投資のためのスタイリング" },
@@ -234,7 +175,6 @@ export const services: Service[] = [
       { title: { en: "Styling", ja: "スタイリング" }, line: { en: "Furniture, art and lighting for photos and inspections, with furniture hire for the campaign", ja: "写真と内覧のための家具、アート、照明。販売期間中の家具レンタルも" } },
       { title: { en: "Working with your agent", ja: "不動産会社と連携" }, line: { en: "Timed to the photo shoot and open homes", ja: "撮影日や内覧会に合わせて" } },
       { title: { en: "Rental fit-out", ja: "賃貸用の内装" }, line: { en: "Durable materials and furniture", ja: "丈夫な素材と家具" } },
-      { title: { en: "Granny flats", ja: "グラニーフラット" }, line: { en: "A second dwelling for income", ja: "収入のための離れ" } },
     ],
     ideas: {
       en: "For example: calm, uncluttered rooms with a few natural textures, a refreshed kitchen and bathroom, or a welcoming entry that makes a strong first impression.",
@@ -304,6 +244,7 @@ export const services: Service[] = [
       en: "For example: timber slat walls and a single washi paper light at reception, shoji-style screens for private meeting rooms, or desks facing the light.",
       ja: "例えば:受付の木の格子とひとつの和紙の照明、打ち合わせ室を仕切る障子風の建具、光に向かって並ぶデスク。",
     },
+    hero: { src: "/images/stock/office.jpg", alt: "Image: a calm office with light timber furniture and plants" },
     photos: [C("engawa-office", "01-reception", "Engawa Office sample concept: a calm reception with timber slat walls and a washi paper light")],
     guides: ["office-fit-out-steps"],
     concept: true,
@@ -332,6 +273,7 @@ export const services: Service[] = [
       en: "For example: round washi paper lanterns, indigo fabric with the seigaiha wave pattern, or sudare bamboo blinds that soften the view from the street.",
       ja: "例えば:丸い和紙の提灯、青海波(せいがいは)模様の藍色の布、通りからの視線をやわらげる簾(すだれ)。",
     },
+    hero: { src: "/images/stock/clinic.jpg", alt: "Image: a calm clinic waiting room with timber walls" },
     photos: [
       C("sunrise-and-waves", "03-sunrise-room", "Sunrise & Waves concept: a treatment room with a washi lantern"),
       C("sunrise-and-waves", "02-reception", "Sunrise & Waves concept: reception with a hanging scroll"),
@@ -364,6 +306,7 @@ export const services: Service[] = [
       en: "For example: fabric waves across the ceiling, a timber counter with a hanging scroll behind it, or soft lighting that makes customers linger.",
       ja: "例えば:天井に揺れる布の波、掛け軸を背にした木のカウンター、つい長居したくなるやわらかな照明。",
     },
+    hero: { src: "/images/stock/cafe.jpg", alt: "Image: a small bright café with a timber counter" },
     photos: [
       C("sunrise-and-waves", "01-lounge", "Sunrise & Waves concept: lounge with fabric waves across the ceiling"),
       C("sunrise-and-waves", "02-reception", "Sunrise & Waves concept: a timber reception counter"),
@@ -395,7 +338,8 @@ export const services: Service[] = [
       en: "For example: timber and soft indigo for calm, shoji-style screens to divide rooms, or a reading corner with good natural light.",
       ja: "例えば:落ち着きを生む木とやわらかな藍色、部屋を仕切る障子風の建具、自然光の入る読書コーナー。",
     },
-    photos: [C("engawa-office", "01-reception", "Engawa Office sample concept: a calm reception with timber slats")],
+    hero: { src: "/images/stock/classroom.jpg", alt: "Image: a bright learning studio with timber tables and bookshelves" },
+    photos: [],
     guides: ["office-fit-out-steps"],
     concept: true,
   },
@@ -423,6 +367,7 @@ export const services: Service[] = [
       en: "For example: a hinoki tub by a window onto a small garden, an outdoor soaking tub on a shaded deck, or hinoki stools and a bath mat to bring the scent into an existing bathroom.",
       ja: "例えば:小さな庭が見える窓辺の檜の湯船、日陰のデッキに置いた屋外の湯船、今の浴室に檜の腰掛けやバスマットで香りを足すことも。",
     },
+    hero: { src: "/images/stock/hinoki.jpg", alt: "Image: a calm bathroom with a square hinoki cypress soaking tub" },
     photos: [
       P("old-meets-new", "02", "A timber soaking tub on a deck beside a slatted entry"),
       P("old-meets-new", "05", "A bathroom with timber details and warm indirect light"),
@@ -485,6 +430,7 @@ export const services: Service[] = [
       en: "For example: a ramen counter in hinoki with a noren curtain at the door, a calm salon with washi lighting, or an office that feels familiar to staff from Japan.",
       ja: "例えば:入口に暖簾をかけた檜のラーメンカウンター、和紙の照明の落ち着いたサロン、日本から来た社員がなじめるオフィス。",
     },
+    hero: { src: "/images/stock/restaurant.jpg", alt: "Image: a Japanese restaurant with a timber counter and paper lanterns" },
     photos: [
       C("sunrise-and-waves", "02-reception", "Sunrise & Waves concept: a timber reception counter with a hanging scroll"),
       C("sunrise-and-waves", "01-lounge", "Sunrise & Waves concept: a calm lounge"),

@@ -37,20 +37,6 @@ export const homeServices: Item[] = [
     line: { en: "Start with just the living room, kitchen or a bedroom", ja: "リビング、キッチン、寝室など1部屋から" },
   },
   {
-    title: { en: "Ageing in place", ja: "エイジング・イン・プレイス" },
-    line: {
-      en: "Step-free entries, walk-in showers, wider doors and good lighting, designed to look beautiful, not clinical, so you can stay in the home you love",
-      ja: "段差のない入口、ウォークインシャワー、広い扉、明るい照明。介護っぽく見せず美しく、住み慣れた家で長く暮らせるように",
-    },
-  },
-  {
-    title: { en: "Granny flats", ja: "グラニーフラット(離れ)" },
-    line: {
-      en: "A separate small home on your land for family, guests or rental income, designed to sit well with the main house",
-      ja: "敷地内の小さな離れ。家族や来客、賃貸収入にも。母屋となじむデザインで",
-    },
-  },
-  {
     title: { en: "Colours and materials", ja: "色と素材の選定" },
     line: {
       en: "Cladding, floors, kitchens and bathrooms, chosen to work together",
@@ -221,8 +207,6 @@ export const valuePoints: { title: Bi; line: Bi }[] = [
   { title: { en: "Kitchens and bathrooms", ja: "キッチンと浴室" }, line: { en: "The rooms buyers look at most closely, and where good materials show", ja: "買い手が最もよく見る場所。良い素材の差がはっきり出ます" } },
   { title: { en: "Light and flow", ja: "光と動線" }, line: { en: "Brighter rooms and an easy flow to the garden make a home feel larger", ja: "明るい部屋と庭への自然なつながりで、家が広く感じられます" } },
   { title: { en: "Storage", ja: "収納" }, line: { en: "Built-in storage keeps rooms calm and is always in demand", ja: "造り付けの収納は部屋をすっきり保ち、いつも求められます" } },
-  { title: { en: "Ageing in place", ja: "エイジング・イン・プレイス" }, line: { en: "Step-free, easy-care homes suit more buyers, including downsizers", ja: "段差がなく手入れしやすい家は、住み替えの方など、より多くの買い手に合います" } },
-  { title: { en: "Granny flats", ja: "グラニーフラット" }, line: { en: "A second dwelling can add living space, flexibility and rental income", ja: "離れは住まいの広さと使い道を広げ、賃貸収入にもつながります" } },
   { title: { en: "Styling for sale", ja: "売却前のスタイリング" }, line: { en: "Calm, well-styled rooms photograph better and help buyers picture living there", ja: "落ち着いて整えられた部屋は写真映えし、買い手が暮らしを想像しやすくなります" } },
 ];
 
@@ -275,27 +259,15 @@ export const homeCategories: Category[] = [
     },
   },
   {
-    key: "living-well",
-    title: { en: "Living well, for longer", ja: "これからの暮らしに" },
-    line: {
-      en: "Ageing in place and downsizing: homes that stay easy and beautiful for the years ahead.",
-      ja: "エイジング・イン・プレイスや住み替え。これからもずっと、心地よく美しく暮らせる家に。",
-    },
-    ideas: {
-      en: "For example: step-free entries and walk-in showers that don't look clinical, good lighting, fewer and better things when you downsize.",
-      ja: "例えば:介護っぽく見えない段差のない入口とウォークインシャワー、明るい照明、住み替えのときは「少なく良いもの」に。",
-    },
-  },
-  {
     key: "sell-rent-invest",
     title: { en: "Sell, rent or invest", ja: "売る・貸す・資産として" },
     line: {
-      en: "Design with the property market in mind: styling for sale, granny flats and the updates buyers value most.",
-      ja: "不動産の視点でデザイン。売却前のスタイリング、グラニーフラット、買い手が重視するポイントの改修。",
+      en: "Design with the property market in mind: styling for sale, rental fit-outs and the updates buyers value most.",
+      ja: "不動産の視点でデザイン。売却前のスタイリング、賃貸用の内装、買い手が重視するポイントの改修。",
     },
     ideas: {
-      en: "For example: calm, well-styled rooms that photograph well, a granny flat for family or rental income, a refreshed kitchen and bathroom.",
-      ja: "例えば:写真映えする落ち着いた部屋づくり、家族用や賃貸用のグラニーフラット、キッチンと浴室の改修。",
+      en: "For example: calm, well-styled rooms that photograph well, easy-care rental interiors, a refreshed kitchen and bathroom.",
+      ja: "例えば:写真映えする落ち着いた部屋づくり、手入れしやすい賃貸用の内装、キッチンと浴室の改修。",
     },
   },
   {

@@ -294,7 +294,7 @@ export function OverlayHero({
             </div>
           )}
           {choices && (
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className={`mt-8 grid gap-4 ${choices.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
               {choices.map((c) => (
                 <Link
                   key={c.href}
@@ -477,5 +477,55 @@ export function Finder({ lang, items }: { lang: Lang; items: { worry: Bi; to: st
         </li>
       ))}
     </ul>
+  );
+}
+
+/** Before and after, side by side (stacked on phones). Works without JavaScript. */
+export function BeforeAfter({
+  lang,
+  items,
+}: {
+  lang: Lang;
+  items: { slug: string; title: Bi; note: Bi; concept?: boolean; before: string; after: string }[];
+}) {
+  return (
+    <div className="space-y-16">
+      {items.map((p) => (
+        <figure key={p.slug}>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {([
+              ["before", p.before, { en: "BEFORE", ja: "BEFORE · 前" }],
+              ["after", p.after, p.concept ? { en: "AFTER · CONCEPT", ja: "AFTER · コンセプト" } : { en: "AFTER", ja: "AFTER · 後" }],
+            ] as const).map(([k, src, label]) => (
+              <div key={k} className="relative aspect-[4/3] overflow-hidden bg-beige">
+                <Image src={src} alt={`${tr(p.title, lang)}: ${k}`} fill sizes="(min-width:640px) 45vw, 90vw" className="object-cover" />
+                <span className={`label absolute left-3 top-3 px-2 py-1 ${k === "after" ? "bg-vermilion text-paper" : "bg-cream/90 text-navy"}`}>{tr(label, lang)}</span>
+              </div>
+            ))}
+          </div>
+          <figcaption className="mt-4 max-w-3xl">
+            <span className="title block text-[1.25rem]">{tr(p.title, lang)}</span>
+            <span className="mt-1 block text-[1rem] leading-relaxed text-navy/75">{tr(p.note, lang)}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * A row of background pictures that are not NAMI's work. Each carries a small
+ * "image" label so no one takes it for a project.
+ */
+export function ImageStrip({ lang, items }: { lang: Lang; items: { src: string; alt: string }[] }) {
+  return (
+    <div className={`mt-10 grid gap-3 ${items.length >= 3 ? "sm:grid-cols-3" : items.length === 2 ? "sm:grid-cols-2" : ""}`}>
+      {items.map((p) => (
+        <div key={p.src} className={`relative overflow-hidden bg-beige ${items.length === 1 ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
+          <Image src={p.src} alt={p.alt} fill sizes={items.length === 1 ? "(min-width:768px) 60vw, 90vw" : "(min-width:640px) 30vw, 90vw"} className="object-cover" />
+          <span className="label absolute bottom-2 right-2 bg-cream/85 px-2 py-0.5 text-[0.6875rem] text-navy/70">{tr({ en: "IMAGE", ja: "イメージ" }, lang)}</span>
+        </div>
+      ))}
+    </div>
   );
 }

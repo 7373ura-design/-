@@ -7,6 +7,22 @@ const nextConfig: NextConfig = {
   // The site is now one page plus the project pages; old addresses land on their section
   async redirects() {
     return [
+      // Granny flats and ageing-in-place are no longer offered
+      { source: "/nami-nagomi", destination: "/", permanent: true },
+      { source: "/services/ageing-in-place", destination: "/nami-home", permanent: true },
+      { source: "/guides/ageing-in-place-five-places", destination: "/guides", permanent: true },
+      { source: "/ja/nami-nagomi", destination: "/ja", permanent: true },
+      { source: "/ja/services/ageing-in-place", destination: "/ja/nami-home", permanent: true },
+      { source: "/ja/guides/ageing-in-place-five-places", destination: "/ja/guides", permanent: true },
+      { source: "/zh/nami-nagomi", destination: "/zh", permanent: true },
+      { source: "/zh/services/ageing-in-place", destination: "/zh/nami-home", permanent: true },
+      { source: "/zh/guides/ageing-in-place-five-places", destination: "/zh/guides", permanent: true },
+      { source: "/services/granny-flats", destination: "/nami-value", permanent: true },
+      { source: "/guides/granny-flat-rules-nsw", destination: "/guides", permanent: true },
+      { source: "/ja/services/granny-flats", destination: "/ja/nami-value", permanent: true },
+      { source: "/ja/guides/granny-flat-rules-nsw", destination: "/ja/guides", permanent: true },
+      { source: "/zh/services/granny-flats", destination: "/zh/nami-value", permanent: true },
+      { source: "/zh/guides/granny-flat-rules-nsw", destination: "/zh/guides", permanent: true },
       // Homes and Shops & Offices became the NAMI Home and NAMI Works sites
       { source: "/homes", destination: "/nami-home", permanent: true },
       { source: "/commercial", destination: "/nami-works", permanent: true },

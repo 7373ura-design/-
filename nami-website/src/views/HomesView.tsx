@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site as site_ } from "@/data/site";
 import { launchOffer } from "@/data/brand";
-import { CtaBand, FaqList, Finder, OverlayHero, Pills, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Finder, ImageStrip, OverlayHero, Pills, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
 import { getBrandSite } from "@/data/sites";
 import { guides } from "@/data/guides";
 import { LinkList } from "@/components/more";
@@ -117,6 +117,7 @@ export function HomesView({ lang }: { lang: Lang }) {
       </Section>
 
       <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilders found through Japan Homes.", ja: "デザインはNAMI、\n施工会社はジャパンホームズを通して。" }}>
+        <ImageStrip lang={lang} items={[{ src: "/images/stock/materials.jpg", alt: "Image: timber, washi, stone and fabric samples laid out with a floor plan" }]} />
         <Steps items={site.steps} />
         <p className="mt-8">
           <Link href={localHref(lang, "/how-we-work")} className="label text-vermilion hover:underline">
@@ -127,6 +128,14 @@ export function HomesView({ lang }: { lang: Lang }) {
 
       <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCare.title} intro={afterCare.body}>
         <Notes items={afterCare.points} />
+        <ImageStrip
+          lang={lang}
+          items={[
+            { src: "/images/stock/storage.jpg", alt: "Image: neat built-in timber storage with folded linen and baskets" },
+            { src: "/images/stock/tableware.jpg", alt: "Image: handmade ceramic tableware and a linen napkin on an oak table" },
+            { src: "/images/stock/moving.jpg", alt: "Image: moving boxes in a bright, empty new home" },
+          ]}
+        />
       </Section>
 
       <Section id="projects" kicker="PROJECTS" title={{ en: "Complete homes.\nTheir own stories.", ja: "完成した住まいと、\nそれぞれの物語。" }} wide>

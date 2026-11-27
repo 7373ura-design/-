@@ -47,10 +47,10 @@ export function HomeView({ lang }: { lang: Lang }) {
       <Section
         id="businesses"
         kicker="OUR BUSINESSES"
-        title={{ en: "One NAMI,\nfour businesses.", ja: "ひとつのNAMIと、\n4つの事業。" }}
+        title={{ en: "One NAMI,\nthree businesses.", ja: "ひとつのNAMIと、\n3つの事業。" }}
         intro={{
-          en: "NAMI is an interior design company in Sydney. Inside it are four small businesses, each with its own site, services and focus. Choose the one that fits you.",
-          ja: "NAMIはシドニーのインテリアデザイン会社です。その中に4つの小さな事業があり、それぞれにサイト、サービス、得意分野があります。あなたに合うものを選んでください。",
+          en: "NAMI is an interior design company in Sydney. Inside it are three small businesses, each with its own site, services and focus. Choose the one that fits you.",
+          ja: "NAMIはシドニーのインテリアデザイン会社です。その中に3つの小さな事業があり、それぞれにサイト、サービス、得意分野があります。あなたに合うものを選んでください。",
         }}
         wide
       >

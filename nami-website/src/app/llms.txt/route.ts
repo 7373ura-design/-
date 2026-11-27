@@ -22,7 +22,7 @@ export function GET() {
     "",
     `> ${site.description.en}`,
     "",
-    `NAMI (${site.tagline}) is a Japandi interior design studio based in Sydney, Australia. The designer is from Japan. Four businesses, each with its own site: NAMI Home (home design), NAMI Nagomi (ageing in place and downsizing), NAMI Value (selling, investing and granny flats) and NAMI Works (shops and offices). NAMI and its partner Japan Homes do not do building work themselves: through Japan Homes' 20+ years of connections, NAMI arranges licensed builders, and the client contracts the builder directly. Consultations in English and Japanese.`,
+    `NAMI (${site.tagline}) is a Japandi interior design studio based in Sydney, Australia. The designer is from Japan. Three businesses, each with its own site: NAMI Home (home design), NAMI Value (selling, renting and investing) and NAMI Works (shops and offices). NAMI and its partner Japan Homes do not do building work themselves: through Japan Homes' 20+ years of connections, NAMI arranges licensed builders, and the client contracts the builder directly. Consultations in English and Japanese.`,
     "",
     "## Why NAMI",
     ...strengths.map((s) => `- ${s.title.en}: ${s.line.en}`),

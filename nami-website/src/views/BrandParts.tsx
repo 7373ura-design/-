@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CtaBand, FaqList, Finder, Notes, OverlayHero, Section, Steps, faqLd } from "@/components/blocks";
+import { BeforeAfter, CtaBand, FaqList, Finder, ImageStrip, Notes, OverlayHero, Section, Steps, faqLd } from "@/components/blocks";
+import { getBeforeAfter } from "@/data/beforeAfter";
 import { KindWords, LinkList, ServiceCards } from "@/components/more";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { brands, getBrand } from "@/data/brands";
@@ -10,7 +11,7 @@ import { guides } from "@/data/guides";
 import { valueIntro, valueNote, valuePoints } from "@/data/homes";
 import { afterCare, kindWords } from "@/data/nami";
 import { services } from "@/data/services";
-import { brandSites, downsizing, familyFarAway, fivePlaces, getBrandSite } from "@/data/sites";
+import { brandSites, getBrandSite } from "@/data/sites";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
 import { tr } from "@/lib/tr";
@@ -23,10 +24,10 @@ export function OtherBusinesses({ lang, current }: { lang: Lang; current: string
       id="other-businesses"
       kicker="NAMI GROUP"
       title={{ en: "Looking for\nsomething else?", ja: "ほかのことで\nお困りなら。" }}
-      intro={{ en: "NAMI has four businesses. Each one has its own site.", ja: "NAMIには4つの事業があり、それぞれにサイトがあります。" }}
+      intro={{ en: "NAMI has three businesses. Each one has its own site.", ja: "NAMIには3つの事業があり、それぞれにサイトがあります。" }}
       wide
     >
-      <ul className="grid gap-6 md:grid-cols-3">
+      <ul className="grid gap-6 md:grid-cols-2">
         {others.map((s) => {
           const b = brands.find((x) => x.slug === s.slug)!;
           return (
@@ -57,7 +58,7 @@ export function brandSiteMetadata(lang: Lang, slug: string): Metadata {
   };
 }
 
-/** A brand's own top page (NAMI Nagomi, NAMI Value). */
+/** A brand's own top page (NAMI Value). */
 export function BrandSiteView({ lang, slug }: { lang: Lang; slug: string }) {
   const b = getBrand(slug);
   const site = getBrandSite(slug);
@@ -93,23 +94,11 @@ export function BrandSiteView({ lang, slug }: { lang: Lang; slug: string }) {
         <ServiceCards lang={lang} items={items} />
       </Section>
 
-      {slug === "nami-nagomi" && (
-        <>
-          <Section
-            id="five-places"
-            kicker="FIVE PLACES"
-            title={{ en: "Five places\nto change now.", ja: "今から直しておきたい、\n5つの場所。" }}
-            intro={{ en: "Small changes, planned early, make a home safer and easier for years. Each one is designed to look like part of a calm home.", ja: "早めに計画した小さな変化が、何年も先まで家を安全に、楽にします。どれも、落ち着いた家の一部に見えるようにデザインします。" }}
-          >
-            <Notes items={fivePlaces} />
-          </Section>
-          <Section id="family" kicker="FOR FAMILIES" title={familyFarAway.title} intro={familyFarAway.body}>
-            <Notes items={familyFarAway.points} />
-          </Section>
-          <Section id="downsizing" kicker="DOWNSIZING" title={downsizing.title} intro={downsizing.body}>
-            <Notes items={downsizing.points} />
-          </Section>
-        </>
+
+      {slug === "nami-value" && getBeforeAfter().length > 0 && (
+        <Section id="before-after" kicker="BEFORE / AFTER" title={{ en: "Before\nand after.", ja: "ビフォー・\nアフター。" }} wide>
+          <BeforeAfter lang={lang} items={getBeforeAfter()} />
+        </Section>
       )}
 
       {slug === "nami-value" && (
@@ -120,14 +109,10 @@ export function BrandSiteView({ lang, slug }: { lang: Lang; slug: string }) {
       )}
 
       <Section id="process" kicker="HOW IT WORKS" title={{ en: "How it works.", ja: "進め方。" }}>
+        <ImageStrip lang={lang} items={[{ src: "/images/stock/materials.jpg", alt: "Image: timber, washi, stone and fabric samples laid out with a floor plan" }]} />
         <Steps items={site.steps} />
       </Section>
 
-      {slug === "nami-nagomi" && (
-        <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCare.title} intro={afterCare.body}>
-          <Notes items={afterCare.points} />
-        </Section>
-      )}
 
       <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words for NAMI.", ja: "NAMIへの、お客様の声。" }} wide>
         <KindWords items={kindWords.filter((k) => k.group === "homes").slice(0, 4)} />

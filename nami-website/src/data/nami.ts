@@ -62,14 +62,6 @@ export const beliefs: { key: string; title: Bi; body: Bi; points?: Point[]; note
     ],
   },
   {
-    key: "safe-for-years-ahead",
-    title: { en: "Safe and easy, for years ahead.", ja: "これからも、安全で暮らしやすく。" },
-    body: {
-      en: "Step-free entries, walk-in showers, wider doorways and good lighting. Planned now, so you can stay in the home you love. Beautiful, not clinical.",
-      ja: "段差のない入口、ウォークインシャワー、広い出入口、明るい照明。今から計画しておけば、住み慣れた家に長く暮らせます。介護っぽくなく、美しく。",
-    },
-  },
-  {
     key: "made-to-last",
     title: { en: "Made to last.", ja: "長く使えるものを。" },
     body: {

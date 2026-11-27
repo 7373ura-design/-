@@ -43,7 +43,7 @@ export async function serviceMetadata(lang: Lang, { params }: SlugProps): Promis
     title: lang === "en" ? `${s.title.en} in Sydney` : `${tr(s.title, lang)}｜${lang === "ja" ? "シドニー" : "悉尼"}`,
     description: `${tr(s.line, lang)} ${tr(s.lead, lang)}`.slice(0, 300),
     alternates: alternates(lang, `/services/${s.slug}`),
-    openGraph: { images: [{ url: s.photos[0].src }] },
+    openGraph: { images: [{ url: (s.hero ?? s.photos[0]).src }] },
   };
 }
 
@@ -73,9 +73,9 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
         eyebrow={{ en: `${brandOfService(s.slug)?.name ?? groupName.en} · Sydney`, ja: `${brandOfService(s.slug)?.name ?? groupName.ja} · シドニー` }}
         title={s.title}
         body={s.lead}
-        image={s.photos[0]}
+        image={s.hero ?? s.photos[0]}
         links={[{ href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } }]}
-        caption={s.concept ? (tr({ ja: "コンセプトデザイン", en: "CONCEPT DESIGN" }, lang)) : undefined}
+        caption={s.hero ? tr({ ja: "イメージ", en: "IMAGE" }, lang) : s.concept ? tr({ ja: "コンセプトデザイン", en: "CONCEPT DESIGN" }, lang) : undefined}
       />
 
       <Section id="worries" kicker="YOUR WORRY, HOW WE HELP" title={{ en: "Sound familiar?", ja: "こんなお悩み、ありませんか?" }}>
@@ -88,14 +88,19 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
         <Notes items={s.include} />
       </Section>
 
-      {s.photos.length > 1 && (
-        <section className="section-rule" aria-label={tr({ ja: "写真", en: "Photos" }, lang)}>
-          <Container className="grid gap-4 py-16 sm:grid-cols-2 md:py-20" >
-            {s.photos.slice(1).map((p) => (
+      {(s.hero ? s.photos : s.photos.slice(1)).length > 0 && (
+        <section className="section-rule" aria-label={tr({ ja: "NAMIの事例", en: "NAMI's work" }, lang)}>
+          <Container className="py-16 md:py-20">
+          {s.hero && (
+            <p className="kicker mb-6">{tr({ en: s.concept ? "NAMI'S WORK · CONCEPT DESIGN" : "NAMI'S WORK", ja: s.concept ? "NAMIの事例 · コンセプトデザイン" : "NAMIの事例" }, lang)}</p>
+          )}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {(s.hero ? s.photos : s.photos.slice(1)).map((p) => (
               <div key={p.src} className="relative aspect-[4/3] overflow-hidden bg-beige">
                 <Image src={p.src} alt={p.alt} fill sizes="(min-width:640px) 45vw, 90vw" className="object-cover" />
               </div>
             ))}
+          </div>
           </Container>
         </section>
       )}

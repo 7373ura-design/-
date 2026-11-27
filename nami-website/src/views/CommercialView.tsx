@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, FaqList, Finder, OverlayHero, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Finder, ImageStrip, OverlayHero, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
 import { getBrandSite } from "@/data/sites";
 import { brands } from "@/data/brands";
 import { guides } from "@/data/guides";
@@ -137,12 +137,21 @@ export function CommercialView({ lang }: { lang: Lang }) {
 
       <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCareWorks.title} intro={afterCareWorks.body}>
         <Notes items={afterCareWorks.points} />
+        <ImageStrip
+          lang={lang}
+          items={[
+            { src: "/images/stock/storage.jpg", alt: "Image: neat built-in timber storage with baskets" },
+            { src: "/images/stock/restaurant.jpg", alt: "Image: tableware set out along a timber counter" },
+            { src: "/images/stock/moving.jpg", alt: "Image: moving boxes in a bright, empty space" },
+          ]}
+        />
       </Section>
       <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
         <KindWords items={kindWords.filter((k) => k.group === "commercial")} />
       </Section>
 
       <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilders arranged for you.", ja: "デザインはNAMI、\n施工会社も手配。" }}>
+        <ImageStrip lang={lang} items={[{ src: "/images/stock/materials.jpg", alt: "Image: timber, washi, stone and fabric samples laid out with a floor plan" }]} />
         <Steps items={commercialSteps} />
       </Section>
 

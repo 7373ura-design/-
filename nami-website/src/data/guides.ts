@@ -108,7 +108,7 @@ export const guides: Guide[] = [
         body: [{ en: "Niches in the shower and a deep drawer under the basin keep surfaces clear.", ja: "シャワーの壁のくぼみ棚や、洗面台下の深い引き出しで、まわりをすっきり保てます。" }],
       },
     ],
-    services: ["bathroom-design", "ageing-in-place"],
+    services: ["bathroom-design"],
   },
   {
     slug: "home-renovation-where-to-start",
@@ -135,42 +135,6 @@ export const guides: Guide[] = [
     ],
     sources: [{ label: "NSW Planning Portal", url: "https://www.planningportal.nsw.gov.au/" }],
     services: ["home-renovation", "new-build-interiors"],
-  },
-  {
-    slug: "ageing-in-place-five-places",
-    title: { en: "Ageing in place: five places to change now", ja: "エイジング・イン・プレイス:今から直しておきたい5か所" },
-    description: { en: "Small changes that let you stay in the home you love, without it looking clinical.", ja: "介護っぽく見せずに、住み慣れた家に長く暮らすための小さな工夫。" },
-    date: "2026-11-27",
-    sections: [
-      { heading: { en: "1. The entry", ja: "1. 玄関" }, body: [{ en: "A step-free path, good lighting and a bench to sit on while taking off shoes.", ja: "段差のないアプローチ、明るい照明、靴を脱ぐときに座れるベンチ。" }] },
-      { heading: { en: "2. The bathroom", ja: "2. 浴室" }, body: [{ en: "A walk-in shower, a seat and blocking for grab rails. Choose warm materials so it still feels like home.", ja: "ウォークインシャワー、腰掛け、手すりの下地。温かな素材を選べば、家らしさも保てます。" }] },
-      { heading: { en: "3. Lighting", ja: "3. 照明" }, body: [{ en: "Brighter, even light and soft night lights along the way to the bathroom.", ja: "明るく均一な照明と、浴室までの道を照らすやわらかな足元灯。" }] },
-      { heading: { en: "4. Doors and floors", ja: "4. 扉と床" }, body: [{ en: "Wider doorways, lever handles and non-slip floors without thresholds.", ja: "広めの出入口、レバーハンドル、敷居のない滑りにくい床。" }] },
-      { heading: { en: "5. Storage", ja: "5. 収納" }, body: [{ en: "Everyday things between hip and shoulder height, so there's no climbing or bending.", ja: "よく使うものは腰から肩の高さに。踏み台やかがむ動作を減らします。" }] },
-    ],
-    services: ["ageing-in-place", "bathroom-design"],
-  },
-  {
-    slug: "granny-flat-rules-nsw",
-    title: { en: "Granny flats in NSW: the basics", ja: "NSW州のグラニーフラット:基本のルール" },
-    description: { en: "Size, approvals and design tips for a secondary dwelling in NSW.", ja: "NSW州の離れ(セカンダリードゥエリング)の広さ、許可、デザインのコツ。" },
-    date: "2026-11-27",
-    sections: [
-      {
-        heading: { en: "What counts as a granny flat", ja: "グラニーフラットとは" },
-        body: [{ en: "In NSW a granny flat is called a secondary dwelling: a self-contained home on the same lot as the main house. It generally can't be subdivided and sold separately.", ja: "NSW州では、グラニーフラットはセカンダリードゥエリングと呼ばれ、母屋と同じ敷地にある、独立して暮らせる住まいです。一般に、分筆して別に売ることはできません。" }],
-      },
-      {
-        heading: { en: "Size and approvals", ja: "広さと許可" },
-        body: [{ en: "Under the state rules, a secondary dwelling is generally limited to 60 m² of floor area, and may be approved as complying development if it meets the standards, or through a development application to council. Rules depend on your lot, so check the NSW Planning Portal or your council early.", ja: "州のルールでは、セカンダリードゥエリングの床面積は一般に60㎡までです。基準を満たせばコンプライング・デベロップメント(簡易な許可)、満たさなければ役所への開発申請(DA)になります。敷地によって条件が変わるので、早めにNSW Planning Portalや役所で確認しましょう。" }],
-      },
-      {
-        heading: { en: "Design so it lives larger", ja: "広く暮らせるデザインに" },
-        body: [{ en: "High ceilings, big windows, built-in storage and a deck that extends the living room make a small home feel generous.", ja: "高めの天井、大きな窓、造り付けの収納、リビングを広げるデッキで、小さな家もゆったり感じられます。" }],
-      },
-    ],
-    sources: [{ label: "NSW Planning Portal", url: "https://www.planningportal.nsw.gov.au/" }],
-    services: ["granny-flats", "styling-for-sale-and-rent"],
   },
   {
     slug: "add-value-before-you-sell",
@@ -217,7 +181,7 @@ export const guides: Guide[] = [
   {
     slug: "buying-new-property-from-overseas",
     title: { en: "Bought a new home in Australia from overseas? Getting it ready", ja: "海外からオーストラリアの新築物件を買ったら:準備のしかた" },
-    description: { en: "The basics on what overseas buyers can purchase, and how to get a new home ready to rent or live in from abroad.", ja: "海外の方が買える物件の基本と、離れた場所から新築物件を貸せる・住める状態にする方法。" },
+    description: { en: "The basics on what overseas buyers can purchase, and how to get a new home ready to rent or live in from abroad.", ja: "海外の方が買える物件の基本と、海外から新築物件を貸せる・住める状態にする方法。" },
     date: "2026-11-27",
     sections: [
       { heading: { en: "New homes, not established ones", ja: "中古ではなく新築" }, body: [{ en: "According to the Australian Taxation Office, foreign persons are currently banned from buying established homes, with limited exceptions, and the ban has been extended to 30 June 2029. Buying a new or off-the-plan home is generally still possible with foreign investment approval. Rules change, so always check the ATO and FIRB guidance and get professional advice.", ja: "オーストラリア国税庁(ATO)によると、外国人による中古住宅の購入は現在、一部の例外を除き禁止されていて、その期間は2029年6月30日まで延長されています。新築やオフザプラン(完成前)の物件は、外国投資の許可を得れば、一般に購入できます。ルールは変わることがあるので、必ずATOやFIRBの案内を確認し、専門家に相談してください。" }] },

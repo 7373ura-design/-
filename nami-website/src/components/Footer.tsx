@@ -15,7 +15,7 @@ const icon = "flex h-11 w-11 items-center justify-center rounded-full text-paper
 
 /**
  * Footer. On a brand site it says the brand is part of NAMI; on every page it
- * lists NAMI's four businesses so a visitor can always find the right one.
+ * lists NAMI's three businesses so a visitor can always find the right one.
  */
 export function Footer() {
   const pathname = usePathname() || "/";
@@ -56,15 +56,15 @@ export function Footer() {
           <p className="mt-8 text-[1rem] text-paper/80">
             {tr(
               {
-                en: `${cur.name} is one of NAMI's four businesses.`,
-                ja: `${cur.name}は、NAMIの4つの事業のひとつです。`,
+                en: `${cur.name} is one of NAMI's three businesses.`,
+                ja: `${cur.name}は、NAMIの3つの事業のひとつです。`,
               },
               lang,
             )}
           </p>
         )}
 
-        <nav aria-label={tr({ en: "NAMI businesses", ja: "NAMIの事業" }, lang)} className="mt-8 grid gap-6 border-t border-paper/15 pt-8 sm:grid-cols-2 lg:grid-cols-5">
+        <nav aria-label={tr({ en: "NAMI businesses", ja: "NAMIの事業" }, lang)} className="mt-8 grid gap-6 border-t border-paper/15 pt-8 sm:grid-cols-2 lg:grid-cols-4">
           {brandSites.map((s) => {
             const b = brands.find((x) => x.slug === s.slug)!;
             return (

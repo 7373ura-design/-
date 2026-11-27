@@ -65,8 +65,8 @@ export const businesses = [
     meta: { en: "Residential · Explore homes", ja: "住まい · 詳しく見る" },
     strip: ["/images/portfolio/welcome-home/03.jpg", "/images/portfolio/simply-special/05.jpg", "/images/portfolio/old-meets-new/07.jpg"],
     line: {
-      en: "New builds, renovations, ageing-in-place and granny flats, in materials that last and with your property's value in mind",
-      ja: "新築、リノベーション、エイジング・イン・プレイス、グラニーフラット。長く使える素材で、住まいの価値まで考えて",
+      en: "New builds, renovations and styling, in materials that last and with your property's value in mind",
+      ja: "新築、リノベーション、スタイリング。長く使える素材で、住まいの価値まで考えて",
     },
     image: "/images/portfolio/living-in-green/09.jpg",
     alt: "Living in Green by NAMI: a bright open-plan living room with light timber floors",
