@@ -25,13 +25,13 @@ export function homesMetadata(lang: Lang): Metadata {
     ? {
         title: "NAMI Home｜住まいのインテリアデザイン（新築・リノベーション）シドニー",
         description:
-          "シドニー拠点のNAMIによる、ジャパンディの住まいのデザイン。キッチン、浴室、檜風呂、リノベーション、新築、庭。1部屋のスタイリングから家まるごとまで。檜・障子・畳・和紙など長く使える素材と日本の要素で、住まいの価値も考えたデザインを。日本出身のデザイナーが担当します。",
+          "シドニー拠点のNAMIによる、ジャパンディの住まいのデザイン。キッチン、浴室、檜風呂、リノベーション、新築。1部屋のスタイリングから家まるごとまで。檜・障子・畳・和紙など長く使える素材と日本の要素で、住まいの価値も考えたデザインを。日本出身のデザイナーが担当します。",
         alternates: alternates(lang, "/nami-home"),
       }
     : {
         title: "NAMI Home | Home Interior Design in Sydney: New Builds & Renovations",
         description:
-          "Japandi interior design for homes in Sydney: kitchens, bathrooms, hinoki baths, renovations, new builds and gardens. Hinoki, solid timber, shoji and washi that last, designed with your property's value in mind, by a designer from Japan.",
+          "Japandi interior design for homes in Sydney: kitchens, bathrooms, hinoki baths, renovations and new builds. Hinoki, solid timber, shoji and washi that last, designed with your property's value in mind, by a designer from Japan.",
         alternates: alternates(lang, "/nami-home"),
       };
 }

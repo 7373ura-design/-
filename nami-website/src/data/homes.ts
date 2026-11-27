@@ -54,10 +54,6 @@ export const homeServices: Item[] = [
       ja: "檜のお風呂、障子、畳コーナー、和紙の照明、木の格子",
     },
   },
-  {
-    title: { en: "Gardens and outdoors", ja: "庭と外まわり" },
-    line: { en: "Japanese gardens and decks that connect with the rooms inside", ja: "室内とつながる日本庭園やデッキまわり" },
-  },
 ];
 
 /** Japanese design words, explained: what each is and how we use it in an Australian home. */
@@ -268,18 +264,6 @@ export const homeCategories: Category[] = [
     ideas: {
       en: "For example: calm, well-styled rooms that photograph well, easy-care rental interiors, a refreshed kitchen and bathroom.",
       ja: "例えば:写真映えする落ち着いた部屋づくり、手入れしやすい賃貸用の内装、キッチンと浴室の改修。",
-    },
-  },
-  {
-    key: "gardens",
-    title: { en: "Gardens and outdoor living", ja: "庭と外まわり" },
-    line: {
-      en: "Gardens and decks that connect with the rooms inside, for the Sydney climate.",
-      ja: "室内とつながる庭やデッキを、シドニーの気候に合わせて。",
-    },
-    ideas: {
-      en: "For example: a Japanese garden with stone and moss, an outdoor soaking tub, a shaded deck for long summer evenings.",
-      ja: "例えば:石と苔の日本庭園、屋外の湯船、夏の夕暮れを過ごす日陰のデッキ。",
     },
   },
 ];

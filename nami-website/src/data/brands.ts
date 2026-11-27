@@ -21,10 +21,10 @@ export const brands: Brand[] = [
     name: "NAMI Home",
     tagline: { en: "Homes designed for the way you live.", ja: "暮らし方に合わせた住まいを。" },
     lead: {
-      en: "Kitchens, bathrooms, whole-home renovations, new build interiors and gardens, from one room to the whole home, in Japanese, modern or any style you love.",
-      ja: "キッチン、浴室、家まるごとのリノベーション、新築のインテリア、庭。1部屋から家まるごとまで、和でもモダンでも、お好きなスタイルで。",
+      en: "Kitchens, bathrooms, whole-home renovations and new build interiors, from one room to the whole home, in Japanese, modern or any style you love.",
+      ja: "キッチン、浴室、家まるごとのリノベーション、新築のインテリア。1部屋から家まるごとまで、和でもモダンでも、お好きなスタイルで。",
     },
-    services: ["kitchen-design", "bathroom-design", "hinoki-baths", "home-renovation", "new-build-interiors", "gardens-and-outdoor"],
+    services: ["kitchen-design", "bathroom-design", "hinoki-baths", "home-renovation", "new-build-interiors"],
     guides: ["is-design-expensive", "kitchen-renovation-sydney", "bathroom-renovation-tips", "hinoki-bath-guide", "home-renovation-where-to-start"],
     photo: { src: "/images/portfolio/living-in-green/06.jpg", alt: "A bright living room opening onto a timber deck and garden" },
   },

@@ -44,7 +44,6 @@ export const brandSites: BrandSite[] = [
       { worry: { en: "We'd love a real Japanese hinoki bath", ja: "本物の檜風呂がほしい" }, to: S("hinoki-baths"), label: { en: "Hinoki baths", ja: "檜風呂" } },
       { worry: { en: "We want to renovate, but don't know where to start", ja: "リノベーションしたいけど、何から始めればいい?" }, to: S("home-renovation"), label: { en: "Home renovation", ja: "住まいのリノベーション" } },
       { worry: { en: "We're building a new home and need help choosing everything", ja: "新築中。何を選べばいいかわからない" }, to: S("new-build-interiors"), label: { en: "New build interiors", ja: "新築のインテリア" } },
-      { worry: { en: "The garden doesn't connect with the house", ja: "庭と家がつながっていない" }, to: S("gardens-and-outdoor"), label: { en: "Gardens and outdoor", ja: "庭とアウトドア" } },
       { worry: { en: "We've moved in, but it still doesn't feel finished", ja: "住み始めたけど、まだ完成した感じがしない" }, to: "/nami-home#aftercare", label: { en: "After you move in", ja: "住み始めてから" } },
     ],
     steps: [
@@ -69,7 +68,6 @@ export const brandSites: BrandSite[] = [
     finder: [
       { worry: { en: "We're selling soon. What's worth fixing?", ja: "もうすぐ売る。何を直すべき?" }, to: S("styling-for-sale-and-rent"), label: { en: "Styling to sell or rent", ja: "売る・貸すためのスタイリング" } },
       { worry: { en: "The rooms look empty or tired in photos", ja: "写真で部屋がさみしく、古く見える" }, to: S("styling-for-sale-and-rent"), label: { en: "Styling for photos and open homes", ja: "撮影・内覧のスタイリング" } },
-      { worry: { en: "We own a home in Japan and want to rent it as a holiday stay, sell it or grow its value", ja: "日本にある家を、民泊にしたい・売りたい・資産にしたい" }, to: "/nami-value#faq", label: { en: "Homes in Japan", ja: "日本の物件" } },
       { worry: { en: "I bought a new apartment in Australia from overseas", ja: "海外からオーストラリアの新築物件を買った" }, to: S("investor-turnkey-interiors"), label: { en: "Turnkey interiors", ja: "おまかせ内装パッケージ" } },
       { worry: { en: "Short-stay or long-term rental: which interior?", ja: "民泊と長期賃貸、どんな内装がいい?" }, to: S("styling-for-sale-and-rent"), label: { en: "Rental fit-out", ja: "賃貸用の内装" } },
     ],
@@ -92,13 +90,6 @@ export const brandSites: BrandSite[] = [
       {
         q: { en: "How long before listing should we start?", ja: "売りに出す、どのくらい前から始めればいいですか?" },
         a: { en: "Ideally four to eight weeks before photos, so there is time for small updates. Styling alone can often be done in a week or two.", ja: "撮影の4〜8週間前が理想です。小さな手直しの時間がとれます。スタイリングだけなら、1〜2週間でできることも多いです。" },
-      },
-      {
-        q: { en: "Can you help with a property in Japan?", ja: "日本にある物件も相談できますか?" },
-        a: {
-          en: "Yes. Our designer is also a licensed real estate agent in Japan (Takken-shi). We plan the design and styling for a home in Japan, whether you want to run it as a holiday stay (minpaku), sell it, or keep it as a long-term asset, and work with you online. How the work on site is arranged is discussed case by case.",
-          ja: "はい。NAMIのデザイナーは日本の宅地建物取引士の資格も持っています。日本にある家を、民泊として貸す、売る、資産として持ち続ける、どの場合もデザインとスタイリングを計画し、オンラインで一緒に進めます。現地の工事の手配は、物件ごとにご相談させてください。",
-        },
       },
       {
         q: { en: "Is this a valuation?", ja: "これは査定ですか?" },

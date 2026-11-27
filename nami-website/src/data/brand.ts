@@ -90,7 +90,7 @@ export const businesses = [
 export const strengths = [
   {
     title: { en: "Qualified", ja: "確かな資格" },
-    line: { en: "Interior design, Japanese gardens and real estate, in Australia and Japan. Any room, garden or the whole home", ja: "インテリア、日本庭園、不動産の資格を、オーストラリアと日本で。1部屋から、庭、家まるごとまで" },
+    line: { en: "Interior design, Japanese gardens and real estate, in Australia and Japan. Any room or the whole home", ja: "インテリア、日本庭園、不動産の資格を、オーストラリアと日本で。1部屋から家まるごとまで" },
   },
   {
     title: { en: "Designed with property value in mind", ja: "住まいの価値まで考えて" },

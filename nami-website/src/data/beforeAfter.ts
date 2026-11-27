@@ -16,17 +16,9 @@ type PairInfo = {
   concept?: boolean;
 };
 
-const info: PairInfo[] = [
-  {
-    slug: "shonan-house",
-    title: { en: "A house in Shonan, Japan · Concept", ja: "湘南の家(日本)· コンセプト" },
-    note: {
-      en: "An older house by the sea in Shonan, redesigned so it can work as a holiday stay (minpaku), be sold, or be kept as an asset that grows in value. The same design serves all three.",
-      ja: "湘南の海の近くにある築年数のたった家を、民泊として貸すことも、売ることも、資産として持ち続けることもできるようにデザインしました。ひとつのデザインで、3つの使い道に。",
-    },
-    concept: true,
-  },
-];
+// Next: the Shonan house in Japan (holiday stay / sale / asset), once the
+// owner's concept design is ready. Add it here with its two pictures.
+const info: PairInfo[] = [];
 
 const DIR = path.join(process.cwd(), "public", "images", "before-after");
 const find = (slug: string, name: string) => {

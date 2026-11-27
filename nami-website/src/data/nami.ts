@@ -265,7 +265,7 @@ export const story: { title: Bi; body: Bi }[] = [
 /** Qualifications, as in ① Why choose NAMI? (plus residential drafting). */
 export const qualifications: Point[] = [
   { title: { en: "Interior Design & Property Styling", ja: "インテリアデザイン&プロパティスタイリング" }, line: { en: "Layouts, colours, materials and styling.", ja: "レイアウト、色、素材、スタイリング。" } },
-  { title: { en: "Japanese Garden Design", ja: "日本庭園デザイン" }, line: { en: "Gardens that connect with the rooms inside.", ja: "室内とつながる庭を。" } },
+  { title: { en: "Japanese Garden Design", ja: "日本庭園デザイン" }, line: { en: "How rooms meet light and the outdoors.", ja: "部屋と光、外とのつながりを。" } },
   { title: { en: "Contemporary Japanese Architecture", ja: "現代日本建築" }, line: { en: "The University of Tokyo.", ja: "東京大学。" } },
   { title: { en: "Residential Drafting (Certificate IV)", ja: "住宅製図(Certificate IV)" }, line: { en: "Australian residential drafting.", ja: "オーストラリアの住宅製図。" } },
   { title: { en: "NSW Real Estate Registration", ja: "NSW州 不動産資格" }, line: { en: "Design with your property's value in mind.", ja: "住まいの価値まで考えたデザインを。" } },

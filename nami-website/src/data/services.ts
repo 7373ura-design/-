@@ -189,38 +189,6 @@ export const services: Service[] = [
     guides: ["pre-sale-styling-sydney", "add-value-before-you-sell"],
   },
   {
-    slug: "gardens-and-outdoor",
-    group: "homes",
-    title: { en: "Gardens and outdoor living", ja: "庭と外まわり" },
-    line: { en: "Gardens and decks that connect with the rooms inside.", ja: "室内とつながる庭とデッキ。" },
-    lead: {
-      en: "Qualified in Japanese garden design, we plan gardens, decks and entries that make the outdoors part of everyday life, suited to the Australian climate.",
-      ja: "日本庭園デザインの資格を生かし、庭、デッキ、アプローチを計画します。オーストラリアの気候に合わせて、外を毎日の暮らしの一部に。",
-    },
-    worries: [
-      { worry: { en: "We never use the garden.", ja: "庭を使っていない。" }, help: { en: "A deck and path that invite you out.", ja: "外に出たくなるデッキと小道を。" } },
-      { worry: { en: "Too much upkeep.", ja: "手入れが大変。" }, help: { en: "Gravel, stone and easy-care planting.", ja: "砂利、石、手間のかからない植栽で。" } },
-      { worry: { en: "Too hot in summer.", ja: "夏が暑すぎる。" }, help: { en: "Shade, trees and breezes planned in.", ja: "日陰、木、風の通り道を計画します。" } },
-    ],
-    include: [
-      { title: { en: "Garden design", ja: "庭のデザイン" }, line: { en: "Stone, gravel, moss and planting", ja: "石、砂利、苔、植栽" } },
-      { title: { en: "Decks", ja: "デッキ" }, line: { en: "Timber decks that extend the living room", ja: "リビングを広げる木のデッキ" } },
-      { title: { en: "Entries", ja: "アプローチ" }, line: { en: "Paths, gates and a welcoming arrival", ja: "小道、門、迎え入れる玄関まわり" } },
-      { title: { en: "Outdoor bathing", ja: "屋外の湯船" }, line: { en: "A soaking tub under the sky", ja: "空の下の湯船" } },
-    ],
-    ideas: {
-      en: "For example: a Japanese garden of stone and moss, stepping stones through white gravel, or an outdoor soaking tub on a shaded deck.",
-      ja: "例えば:石と苔の日本庭園、白い砂利の中の飛び石、日陰のデッキに置いた屋外の湯船。",
-    },
-    photos: [
-      P("living-in-green", "03", "A timber deck reaching out to a lawn and planting"),
-      P("living-in-green", "04", "Stepping stones through white gravel"),
-      P("simply-special", "01", "A deck with views over the city"),
-      P("living-in-green", "07", "A deck and garden off the living room"),
-    ],
-    guides: ["home-renovation-where-to-start"],
-  },
-  {
     slug: "office-design",
     group: "commercial",
     title: { en: "Office design", ja: "オフィスのデザイン" },

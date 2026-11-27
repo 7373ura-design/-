@@ -49,8 +49,8 @@ export const faqGroups: FaqGroup[] = [
       {
         q: { en: "What services do you offer?", ja: "どんなサービスがありますか？" },
         a: {
-          en: "We offer:\n- interior design for the whole home or single rooms\n- colour and material selections (cladding, floors, kitchens, bathrooms)\n- lighting and furniture advice\n- styling\n- Japanese elements such as tatami areas, shoji-style screens and timber baths\n- garden and outdoor design\n\nWe can combine these to suit your project.",
-          ja: "主に次のことをお手伝いしています。\n- 家全体や1部屋ごとの内装デザイン\n- 色や素材の選定(外壁・床・キッチン・浴室など)\n- 照明や家具の提案\n- スタイリング\n- 畳・障子風の建具・木のお風呂など、日本の要素の取り入れ\n- 庭や外まわりのデザイン\n\n内容はご相談に合わせて組み合わせられます。",
+          en: "We offer:\n- interior design for the whole home or single rooms\n- colour and material selections (cladding, floors, kitchens, bathrooms)\n- lighting and furniture advice\n- styling\n- Japanese elements such as tatami areas, shoji-style screens and timber baths\n\nWe can combine these to suit your project.",
+          ja: "主に次のことをお手伝いしています。\n- 家全体や1部屋ごとの内装デザイン\n- 色や素材の選定(外壁・床・キッチン・浴室など)\n- 照明や家具の提案\n- スタイリング\n- 畳・障子風の建具・木のお風呂など、日本の要素の取り入れ\n\n内容はご相談に合わせて組み合わせられます。",
         },
       },
       {
@@ -101,13 +101,6 @@ export const faqGroups: FaqGroup[] = [
         a: {
           en: "Yes. We design Japanese elements such as a tatami corner, shoji-style screens, timber slat details and timber baths in a way that suits an Australian home.",
           ja: "はい、できます。畳コーナーや障子風の建具、木の格子、木のお風呂など、日本の要素をオーストラリアの家に合う形で取り入れたデザインもご提案しています。",
-        },
-      },
-      {
-        q: { en: "Do you design Japanese gardens and outdoor spaces?", ja: "日本庭園や外まわりもデザインできますか？" },
-        a: {
-          en: "Yes. Our designer is qualified in Japanese garden design, so we can design gardens and outdoor areas too, including gardens that connect with the rooms inside and the spaces around a deck.",
-          ja: "はい。日本庭園の資格を持っているので、庭や外まわりのデザインもご相談いただけます。室内とつながる庭づくりや、デッキまわりの提案もできます。",
         },
       },
     ],
