@@ -3,7 +3,7 @@ import { site } from "@/data/site";
 import { launchOffer } from "@/data/brand";
 import { CtaBand, FaqList, OverlayHero, Pills, Section, Notes, StoryCard, SubNav, faqLd } from "@/components/blocks";
 import { KindWords, ServiceCards } from "@/components/more";
-import { kindWords } from "@/data/nami";
+import { afterCare, kindWords } from "@/data/nami";
 import { homeServicesList } from "@/data/services";
 import { brands } from "@/data/brands";
 import Link from "next/link";
@@ -59,6 +59,7 @@ export function HomesView({ lang }: { lang: Lang }) {
           { href: "#services", label: { en: "Services", ja: "サービス" } },
           { href: "#styles", label: { en: "Styles", ja: "スタイル" } },
           { href: "#worries", label: { en: "Worries", ja: "お悩み" } },
+          { href: "#aftercare", label: { en: "After you move in", ja: "住み始めてから" } },
           { href: "#projects", label: { en: "Projects", ja: "作品" } },
           { href: "#kind-words", label: { en: "Kind words", ja: "お客様の声" } },
           { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
@@ -152,6 +153,10 @@ export function HomesView({ lang }: { lang: Lang }) {
             {tr({ ja: "お役立ちガイド", en: "Guides" }, lang)} →
           </a>
         </p>
+      </Section>
+
+      <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCare.title} intro={afterCare.body}>
+        <Notes items={afterCare.points} />
       </Section>
 
       <Section id="projects" kicker="PROJECTS" title={{ en: "Complete homes.\nTheir own stories.", ja: "完成した住まいと、\nそれぞれの物語。" }} wide>

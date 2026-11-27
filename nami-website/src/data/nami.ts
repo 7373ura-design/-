@@ -156,6 +156,8 @@ export const journey: { key: string; title: Bi; items: { worry: Bi; help: Bi }[]
       { worry: { en: "Each room feels different.", ja: "部屋ごとにバラバラ。" }, help: { en: "We tie the rooms together with colour and materials.", ja: "色と素材で、部屋どうしをつなげます。" } },
       { worry: { en: "Not enough storage.", ja: "収納が足りない。" }, help: { en: "Storage ideas that fit your life.", ja: "暮らしに合う収納のアイデアを。" } },
       { worry: { en: "Little things bother us.", ja: "小さなことが気になる。" }, help: { en: "Small, practical tips, one at a time.", ja: "小さく実用的なアドバイスを、ひとつずつ。" } },
+      { worry: { en: "We don't know what tableware or small things to buy.", ja: "器や小物まで手が回らない。" }, help: { en: "We help you choose them, so everything feels like one home.", ja: "家全体がまとまるように、一緒に選びます。" } },
+      { worry: { en: "Moving day feels overwhelming.", ja: "引っ越しが大変。" }, help: { en: "We plan where everything goes, arrange trusted movers and help you settle in.", ja: "何をどこに置くかを計画し、信頼できる引っ越し業者を手配して、住み始めまでお手伝いします。" } },
     ],
   },
 ];
@@ -285,3 +287,18 @@ export const numbers: { value: string; label: Bi; note?: Bi }[] = [
   { value: "1,000+", label: { en: "Clients served by our partner Japan Homes since 2008", ja: "パートナー、ジャパンホームズのお客様(2008年から)" } },
   { value: "200+", label: { en: "Checklist items at each stage in Japan Homes' quality system", ja: "ジャパンホームズの品質管理で、工程ごとに確認する項目" } },
 ];
+
+/** After the design: help that comes with every service, not a separate business. */
+export const afterCare = {
+  title: { en: "Even after\nyou move in.", ja: "住み始めてからも、\nずっと。" },
+  body: {
+    en: "Finding your builder is part of every project, and so is what comes after. Once you live in the home, small worries appear. We're still here to help, even with things that aren't strictly design.",
+    ja: "施工会社探しはどのご依頼にも含まれています。そして、その先も。住み始めると、小さな困りごとが出てきます。デザインの分野ではないことも含めて、その後もお手伝いします。",
+  },
+  points: [
+    { title: { en: "Storage", ja: "収納" }, line: { en: "Storage that fits your life, and help putting things away", ja: "暮らしに合う収納と、片付けのお手伝い" } },
+    { title: { en: "Tableware and small things", ja: "器と小物" }, line: { en: "Plates, cups, linen and the little things you might not choose yourself", ja: "皿、カップ、リネンなど、自分ではなかなか選ばない小物まで" } },
+    { title: { en: "Moving day", ja: "引っ越し" }, line: { en: "Planning where everything goes, arranging trusted movers and helping you settle in", ja: "何をどこに置くかの計画、信頼できる引っ越し業者の手配、住み始めのお手伝い" } },
+    { title: { en: "When life changes", ja: "暮らしが変わったら" }, line: { en: "Children grow and needs change: come back and talk to us any time", ja: "子どもの成長や暮らしの変化に合わせて、いつでもご相談を" } },
+  ],
+};

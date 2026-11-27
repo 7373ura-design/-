@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { areas, getArea } from "@/data/areas";
 import { brandOfService, brands, getBrand } from "@/data/brands";
 import { getGuide, guides } from "@/data/guides";
-import { beliefs, journey, kindWords, numbers, qualifications, story, whyChoose } from "@/data/nami";
+import { afterCare, beliefs, journey, kindWords, numbers, qualifications, story, whyChoose } from "@/data/nami";
 import { commercialServicesList, getService, homeServicesList, services } from "@/data/services";
 import { site } from "@/data/site";
 import { T } from "@/lib/i18n";
@@ -575,6 +575,11 @@ export function BrandView({ lang, slug }: { lang: Lang; slug: string }) {
           <div className="mt-8">
             <LinkList items={rel.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: tr(g.title, lang) }))} />
           </div>
+        </Section>
+      )}
+      {group === "homes" && (
+        <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCare.title} intro={afterCare.body}>
+          <Notes items={afterCare.points} />
         </Section>
       )}
       <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
