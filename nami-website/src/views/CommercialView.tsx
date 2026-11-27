@@ -10,7 +10,7 @@ import type { Faq } from "@/data/faq";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
 import { KindWords, ServiceCards } from "@/components/more";
-import { kindWords } from "@/data/nami";
+import { afterCareWorks, kindWords } from "@/data/nami";
 import { commercialServicesList } from "@/data/services";
 import { tr } from "@/lib/tr";
 
@@ -57,6 +57,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
           { href: "#free-proposal", label: { en: "Launch offer", ja: "オープン記念" } },
           { href: "#partners", label: { en: "Partners", ja: "パートナー" } },
           { href: "#services", label: { en: "Services", ja: "サービス" } },
+          { href: "#aftercare", label: { en: "After you open", ja: "オープンしてから" } },
           { href: "#kind-words", label: { en: "Kind words", ja: "お客様の声" } },
           { href: "#process", label: { en: "How it works", ja: "進め方" } },
           { href: "#staff-benefit", label: { en: "Staff benefit", ja: "社員特典" } },
@@ -138,6 +139,9 @@ export function CommercialView({ lang }: { lang: Lang }) {
         <ServiceCards lang={lang} items={commercialServicesList} />
       </Section>
 
+      <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCareWorks.title} intro={afterCareWorks.body}>
+        <Notes items={afterCareWorks.points} />
+      </Section>
       <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
         <KindWords items={kindWords.filter((k) => k.group === "commercial")} />
       </Section>

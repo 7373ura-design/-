@@ -302,3 +302,18 @@ export const afterCare = {
     { title: { en: "When life changes", ja: "暮らしが変わったら" }, line: { en: "Children grow and needs change: come back and talk to us any time", ja: "子どもの成長や暮らしの変化に合わせて、いつでもご相談を" } },
   ],
 };
+
+/** After the design, for shops and offices: same help, business version. */
+export const afterCareWorks = {
+  title: { en: "Even after\nyou open.", ja: "オープンしてからも、\nずっと。" },
+  body: {
+    en: "Opening day is not the end. Once you start working in the space, small problems appear. We're still here to help, even with things that aren't strictly design.",
+    ja: "オープンして終わりではありません。実際に使い始めると、小さな困りごとが出てきます。デザインの分野ではないことも含めて、その後もお手伝いします。",
+  },
+  points: [
+    { title: { en: "Storage", ja: "収納" }, line: { en: "Back-of-house, stock and document storage that keeps the space tidy", ja: "バックヤード、在庫、書類まで、すっきり保てる収納" } },
+    { title: { en: "Tableware and small things", ja: "器と小物" }, line: { en: "Tableware for cafes and restaurants, display props, plants and the small things that finish a space", ja: "カフェや飲食店の器、ディスプレイの小物、グリーンなど、空間を仕上げる細かなものまで" } },
+    { title: { en: "Moving and opening", ja: "移転・オープン準備" }, line: { en: "Planning where everything goes, arranging trusted movers and getting ready for opening day", ja: "何をどこに置くかの計画、信頼できる引っ越し業者の手配、オープン当日までの準備" } },
+    { title: { en: "When business changes", ja: "事業が変わったら" }, line: { en: "More staff, a new menu or a seasonal refresh: come back and talk to us any time", ja: "スタッフが増えた、メニューが変わった、季節の模様替えなど、いつでもご相談を" } },
+  ],
+};

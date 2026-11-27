@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { areas, getArea } from "@/data/areas";
 import { brandOfService, brands, getBrand } from "@/data/brands";
 import { getGuide, guides } from "@/data/guides";
-import { afterCare, beliefs, journey, kindWords, numbers, qualifications, story, whyChoose } from "@/data/nami";
+import { afterCare, afterCareWorks, beliefs, journey, kindWords, numbers, qualifications, story, whyChoose } from "@/data/nami";
 import { commercialServicesList, getService, homeServicesList, services } from "@/data/services";
 import { site } from "@/data/site";
 import { T } from "@/lib/i18n";
@@ -577,11 +577,14 @@ export function BrandView({ lang, slug }: { lang: Lang; slug: string }) {
           </div>
         </Section>
       )}
-      {group === "homes" && (
-        <Section id="aftercare" kicker="AFTER THE DESIGN" title={afterCare.title} intro={afterCare.body}>
-          <Notes items={afterCare.points} />
-        </Section>
-      )}
+      {(() => {
+        const ac = group === "homes" ? afterCare : afterCareWorks;
+        return (
+          <Section id="aftercare" kicker="AFTER THE DESIGN" title={ac.title} intro={ac.body}>
+            <Notes items={ac.points} />
+          </Section>
+        );
+      })()}
       <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
         <KindWords items={kindWords.filter((k) => k.group === group).slice(0, 4)} />
       </Section>
