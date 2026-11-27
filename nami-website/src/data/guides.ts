@@ -28,7 +28,12 @@ export const guides: Guide[] = [
       {
         heading: { en: "Design often saves money", ja: "デザインは、むしろ節約になることが多い" },
         body: [
-          { en: "The most expensive mistakes are the ones made during the build: the wrong layout, a benchtop that doesn't fit, materials that don't work together. A plan made before work begins avoids most of them.", ja: "一番高くつく失敗は、工事中に起きます。合わない間取り、入らない天板、ちぐはぐな素材。工事の前に計画を立てておけば、その多くは防げます。" },
+          { en: "Design costs money, but it often saves more than it costs. Here is where the money usually goes when there is no plan, and what a design avoids.", ja: "デザインにはお金がかかります。でも、それ以上にお金を使わずに済むことがよくあります。計画がないときにお金が消えがちな場所と、デザインで防げることです。" },
+          { en: "No changes in the middle of the build. Moving a wall or a power point after the builder has started means extra charges (variations) and lost days. When the layout, lighting and outlets are decided on paper first, the builder can quote once and build once.", ja: "工事の途中で変更しなくていい。工事が始まってから壁やコンセントの位置を変えると、追加料金(変更工事)と日数がかかります。間取り、照明、コンセントを図面の上で先に決めておけば、見積もりも工事も一度で済みます。" },
+          { en: "No buying twice. A sofa that is too big for the room, a rug in the wrong colour, a fridge that doesn't fit the space: returning or replacing them costs time and money. With measurements and a furniture list, you buy the right thing the first time.", ja: "買い直さなくていい。部屋に入らないソファ、色の合わないラグ、場所に収まらない冷蔵庫。返品や買い直しには、お金も時間もかかります。寸法と家具リストがあれば、最初から合うものを買えます。" },
+          { en: "Keeping what works. A design often finds that the kitchen can stay where it is, the plumbing doesn't need to move, or your existing furniture can stay. Moving water, gas and walls is one of the biggest costs in any renovation.", ja: "そのまま使えるものを生かせる。キッチンの位置を動かさなくていい、配管を移さなくていい、今の家具を使い続けられる。そう分かることもよくあります。水まわりやガス、壁の移動は、リノベーションで一番お金がかかるところのひとつです。" },
+          { en: "Spending where it shows, saving where it doesn't. Instead of a premium finish on everything, the budget goes into what you touch every day and what lasts, and simpler choices go where no one will notice.", ja: "見えるところにかけて、見えないところは抑える。すべてを高級な仕上げにするのではなく、毎日触れるもの、長く使うものに予算を回し、目立たないところはシンプルなものを選びます。" },
+          { en: "Fewer things you don't need. With storage planned in, you don't end up buying extra shelves and boxes to deal with clutter later.", ja: "いらない物を買わなくていい。収納を最初から計画しておけば、あとから散らかりに困って、棚や収納ケースを買い足すことが減ります。" },
         ],
       },
       {
