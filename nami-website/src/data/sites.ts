@@ -69,6 +69,7 @@ export const brandSites: BrandSite[] = [
     finder: [
       { worry: { en: "We're selling soon. What's worth fixing?", ja: "もうすぐ売る。何を直すべき?" }, to: S("styling-for-sale-and-rent"), label: { en: "Styling to sell or rent", ja: "売る・貸すためのスタイリング" } },
       { worry: { en: "The rooms look empty or tired in photos", ja: "写真で部屋がさみしく、古く見える" }, to: S("styling-for-sale-and-rent"), label: { en: "Styling for photos and open homes", ja: "撮影・内覧のスタイリング" } },
+      { worry: { en: "We own a home in Japan and want to rent it as a holiday stay, sell it or grow its value", ja: "日本にある家を、民泊にしたい・売りたい・資産にしたい" }, to: "/nami-value#faq", label: { en: "Homes in Japan", ja: "日本の物件" } },
       { worry: { en: "I bought a new apartment in Australia from overseas", ja: "海外からオーストラリアの新築物件を買った" }, to: S("investor-turnkey-interiors"), label: { en: "Turnkey interiors", ja: "おまかせ内装パッケージ" } },
       { worry: { en: "Short-stay or long-term rental: which interior?", ja: "民泊と長期賃貸、どんな内装がいい?" }, to: S("styling-for-sale-and-rent"), label: { en: "Rental fit-out", ja: "賃貸用の内装" } },
     ],
@@ -93,6 +94,13 @@ export const brandSites: BrandSite[] = [
         a: { en: "Ideally four to eight weeks before photos, so there is time for small updates. Styling alone can often be done in a week or two.", ja: "撮影の4〜8週間前が理想です。小さな手直しの時間がとれます。スタイリングだけなら、1〜2週間でできることも多いです。" },
       },
       {
+        q: { en: "Can you help with a property in Japan?", ja: "日本にある物件も相談できますか?" },
+        a: {
+          en: "Yes. Our designer is also a licensed real estate agent in Japan (Takken-shi). We plan the design and styling for a home in Japan, whether you want to run it as a holiday stay (minpaku), sell it, or keep it as a long-term asset, and work with you online. How the work on site is arranged is discussed case by case.",
+          ja: "はい。NAMIのデザイナーは日本の宅地建物取引士の資格も持っています。日本にある家を、民泊として貸す、売る、資産として持ち続ける、どの場合もデザインとスタイリングを計画し、オンラインで一緒に進めます。現地の工事の手配は、物件ごとにご相談させてください。",
+        },
+      },
+      {
         q: { en: "Is this a valuation?", ja: "これは査定ですか?" },
         a: { en: "No. It is design advice with the property market in mind. For the value of your property, talk to a licensed valuer or agent.", ja: "いいえ。不動産の視点を持ったデザインのアドバイスです。物件の価値については、資格を持つ鑑定士や不動産会社にご相談ください。" },
       },
@@ -101,7 +109,7 @@ export const brandSites: BrandSite[] = [
   {
     slug: "nami-works",
     short: "Works",
-    forWho: { en: "For offices, clinics, shops, cafés and schools.", ja: "オフィス、クリニック、お店、カフェ、教室へ。" },
+    forWho: { en: "For offices, clinics, shops and cafés.", ja: "オフィス、クリニック、お店、カフェへ。" },
     menu: [
       { href: "/nami-works#concepts", label: { en: "CONCEPTS", ja: "デザイン事例" } },
       { href: "/nami-works#services", label: { en: "SERVICES", ja: "サービス" } },
@@ -112,7 +120,6 @@ export const brandSites: BrandSite[] = [
       { worry: { en: "Our office doesn't fit how the team works", ja: "オフィスがチームの働き方に合っていない" }, to: S("office-design"), label: { en: "Office design", ja: "オフィスのデザイン" } },
       { worry: { en: "Patients feel nervous in our clinic", ja: "患者さんがクリニックで緊張している" }, to: S("clinic-design"), label: { en: "Clinic design", ja: "クリニックのデザイン" } },
       { worry: { en: "We're opening a shop or café", ja: "お店やカフェを開きたい" }, to: S("retail-and-cafe-design"), label: { en: "Shops and cafés", ja: "お店・カフェ" } },
-      { worry: { en: "Our classroom or school needs a refresh", ja: "教室やスクールを新しくしたい" }, to: S("school-design"), label: { en: "Schools and classrooms", ja: "教室・スクール" } },
       { worry: { en: "We're a Japanese business opening in Australia", ja: "日本のお店・会社でオーストラリアに出店する" }, to: S("japanese-business-fit-outs"), label: { en: "Japanese business fit-outs", ja: "日本のお店・企業の出店" } },
       { worry: { en: "We like the design, but can't find a builder", ja: "デザインはいいけど、施工会社が見つからない" }, to: "/nami-works#partners", label: { en: "Partners and builders", ja: "パートナーと施工会社" } },
     ],
@@ -132,7 +139,7 @@ export const groupFinder: Finder[] = [
   { worry: { en: "Building a new home, or want a hinoki bath", ja: "新築中、または檜風呂がほしい" }, to: "/nami-home", label: { en: "NAMI Home", ja: "NAMI Home" } },
   { worry: { en: "Selling, renting or investing in a property", ja: "家を売る・貸す・投資する" }, to: "/nami-value", label: { en: "NAMI Value", ja: "NAMI Value" } },
   { worry: { en: "Bought a home in Australia from overseas", ja: "海外からオーストラリアの物件を買った" }, to: "/nami-value", label: { en: "NAMI Value", ja: "NAMI Value" } },
-  { worry: { en: "An office, clinic, shop, café or school", ja: "オフィス、クリニック、お店、カフェ、教室" }, to: "/nami-works", label: { en: "NAMI Works", ja: "NAMI Works" } },
+  { worry: { en: "An office, clinic, shop or café", ja: "オフィス、クリニック、お店、カフェ" }, to: "/nami-works", label: { en: "NAMI Works", ja: "NAMI Works" } },
   { worry: { en: "A Japanese business opening in Australia", ja: "日本のお店・会社のオーストラリア出店" }, to: "/nami-works", label: { en: "NAMI Works", ja: "NAMI Works" } },
 ];
 

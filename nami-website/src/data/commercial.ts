@@ -15,8 +15,8 @@ export const commercialHero = {
   kicker: "OFFICE & SHOP INTERIOR DESIGN, SYDNEY",
   title: { en: "Japandi Design\nfor Offices and Shops", ja: "日本の美意識を、\nお店とオフィスに。" },
   body: {
-    en: "We design offices, clinics, schools, shops and cafés in Sydney. The design proposal, up to 3D renders and a budget estimate, is free, and through our partner Japan Homes we arrange licensed builders for the fit-out.",
-    ja: "シドニーで、オフィス、クリニック、教室、お店、カフェをデザインしています。3Dパースと概算予算までのデザイン提案は無料。工事は、パートナーのジャパンホームズを通して、ライセンスを持つ施工会社を手配します。",
+    en: "We design offices, clinics, shops and cafés in Sydney. The design proposal, up to 3D renders and a budget estimate, is free, and through our partner Japan Homes we arrange licensed builders for the fit-out.",
+    ja: "シドニーで、オフィス、クリニック、お店、カフェをデザインしています。3Dパースと概算予算までのデザイン提案は無料。工事は、パートナーのジャパンホームズを通して、ライセンスを持つ施工会社を手配します。",
   },
 };
 
@@ -33,7 +33,6 @@ export const freeProposal: Item[] = [
 export const sectors: Item[] = [
   { title: { en: "Offices", ja: "オフィス" }, line: { en: "Real estate agencies, accounting and law firms, migration agents and IT companies", ja: "不動産会社、会計事務所、法律事務所、移民エージェント、IT企業など" } },
   { title: { en: "Clinics", ja: "クリニック" }, line: { en: "Dental and medical practices, including a second or third location", ja: "歯科・医療クリニック。2院目、3院目の開院にも" } },
-  { title: { en: "Schools", ja: "教室" }, line: { en: "Tutoring colleges and language schools", ja: "塾や語学学校" } },
   { title: { en: "Shops and cafés", ja: "お店・カフェ" }, line: { en: "Retail, cafés and showrooms, from the first store to the next", ja: "小売店、カフェ、ショールーム。1店舗目から次の店舗まで" } },
   { title: { en: "Japanese companies in Australia", ja: "日本企業のオーストラリア拠点" }, line: { en: "Offices with a Japanese feel your team will recognise", ja: "日本人スタッフにもなじむ、日本らしさのあるオフィス" } },
 ];
@@ -80,8 +79,8 @@ export const commercialFaq: Faq[] = [
   {
     q: { en: "What kinds of businesses do you design for?", ja: "どんな業種のデザインをしていますか？" },
     a: {
-      en: "Offices such as real estate agencies, accounting and law firms, migration agents and IT companies; dental and medical clinics; tutoring and language schools; shops and cafés; and the Australian offices of Japanese companies.",
-      ja: "不動産会社、会計事務所、法律事務所、移民エージェント、IT企業などのオフィス、歯科・医療クリニック、塾や語学学校、お店やカフェ、日本企業のオーストラリア拠点などです。",
+      en: "Offices such as real estate agencies, accounting and law firms, migration agents and IT companies; dental and medical clinics; shops and cafés; and the Australian offices of Japanese companies.",
+      ja: "不動産会社、会計事務所、法律事務所、移民エージェント、IT企業などのオフィス、歯科・医療クリニック、お店やカフェ、日本企業のオーストラリア拠点などです。",
     },
   },
   {

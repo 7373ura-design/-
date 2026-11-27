@@ -18,11 +18,11 @@ type PairInfo = {
 
 const info: PairInfo[] = [
   {
-    slug: "styling-01",
-    title: { en: "Styling to sell", ja: "売却前のスタイリング" },
+    slug: "shonan-house",
+    title: { en: "A house in Shonan, Japan · Concept", ja: "湘南の家(日本)· コンセプト" },
     note: {
-      en: "The same room, before and after styling: fewer things, calmer colours and furniture placed so buyers can picture living there.",
-      ja: "同じ部屋の、スタイリング前と後。物を減らし、色を落ち着かせ、買い手が暮らしを思い描けるように家具を置きました。",
+      en: "An older house by the sea in Shonan, redesigned so it can work as a holiday stay (minpaku), be sold, or be kept as an asset that grows in value. The same design serves all three.",
+      ja: "湘南の海の近くにある築年数のたった家を、民泊として貸すことも、売ることも、資産として持ち続けることもできるようにデザインしました。ひとつのデザインで、3つの使い道に。",
     },
     concept: true,
   },

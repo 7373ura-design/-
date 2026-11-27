@@ -125,16 +125,16 @@ export const concepts: Concept[] = [
     title: "Engawa Office",
     kind: { en: "Office for a professional services firm · Sample concept", ja: "士業・コンサルティング会社のオフィス · サンプルコンセプト" },
     note: {
-      en: "A sample concept to show how we work. The company is fictional; the picture is a design visualisation.",
-      ja: "NAMIの進め方をお見せするためのサンプルです。会社は架空で、画像はイメージです。",
+      en: "A sample concept to show how we work. The company is fictional; the pictures are 3D renders.",
+      ja: "NAMIの進め方をお見せするためのサンプルです。会社は架空で、画像は3Dパース(イメージ)です。",
     },
     lead: {
-      en: "An office for an accounting and advisory firm, built around the engawa: the timber veranda where Japanese households welcomed neighbours for tea and talk.",
-      ja: "会計・アドバイザリー会社のオフィス。テーマは「縁側」。日本の家で、ご近所さんをお茶とおしゃべりで迎えた木の縁側です。",
+      en: "A modern office for an accounting and advisory firm. The idea comes from the engawa, the veranda where Japanese homes welcomed neighbours for tea and talk; the look is a calm, contemporary workplace.",
+      ja: "会計・アドバイザリー会社の、今のオフィス。考え方のもとは「縁側」。日本の家でご近所さんをお茶とおしゃべりで迎えた場所です。見た目は、落ち着いた現代のオフィスに。",
     },
     cover: {
       src: "/images/concepts/engawa-office/01-reception.jpg",
-      alt: "Engawa Office sample concept: a calm reception with timber slat walls, a timber counter and a round washi paper light",
+      alt: "Engawa Office sample concept (3D render): a modern reception with an oak desk and a timber window bench",
     },
     brief: {
       title: { en: "The brief", ja: "どんな場所にしたかったか" },
@@ -154,8 +154,8 @@ export const concepts: Concept[] = [
       {
         title: { en: "Open, but private", ja: "開かれていて、守られている" },
         body: {
-          en: "Timber slats and shoji-style screens let light and glimpses pass but keep conversations private, just as good advice is open and confidential at once.",
-          ja: "木の格子と障子風の仕切りは、光と気配は通しながら、会話は守ります。良い相談が、率直でありながら秘密が守られるのと同じです。",
+          en: "Frosted glass in slim timber frames lets light pass but keeps conversations private, just as good advice is open and confidential at once.",
+          ja: "細い木枠のすりガラスは、光は通しながら、会話は守ります。良い相談が、率直でありながら秘密が守られるのと同じです。",
         },
       },
       {
@@ -169,39 +169,41 @@ export const concepts: Concept[] = [
     values: {
       title: { en: "From meaning to space", ja: "意味を、空間に" },
       body: {
-        en: "We began by asking the team what they want clients to feel, and what they want to feel themselves at work. The answers were trust, ease and focus. Natural timber and a single washi light make the reception feel like a welcome rather than a front desk. Meeting rooms sit behind shoji-style screens for daylight and privacy. The work area faces the windows, with soft indigo accents for calm, so the team can concentrate on the details that clients rely on.",
-        ja: "まず社員の皆さんに、お客様にどう感じてほしいか、自分たちは職場でどう感じたいかを聞くことから始めます。答えは「信頼」「気軽さ」「集中」。無垢の木とひとつの和紙の照明で、受付を「窓口」ではなく「おもてなし」の場に。打ち合わせ室は障子風の仕切りの奥に置き、光とプライバシーを両立。執務スペースは窓に向けて配置し、落ち着いた藍色をアクセントに。お客様が頼りにする細かな仕事に、チームが集中できるようにしています。",
+        en: "We began by asking the team what they want clients to feel, and what they want to feel themselves at work. The answers were trust, ease and focus. Warm oak and a long window bench make the reception feel like a welcome rather than a front desk. Meeting rooms sit behind frosted glass for daylight and privacy. The work area faces the windows, with soft indigo accents for calm, so the team can concentrate on the details that clients rely on.",
+        ja: "まず社員の皆さんに、お客様にどう感じてほしいか、自分たちは職場でどう感じたいかを聞くことから始めます。答えは「信頼」「気軽さ」「集中」。温かなオークと窓辺の長いベンチで、受付を「窓口」ではなく「おもてなし」の場に。打ち合わせ室はすりガラスの奥に置き、光とプライバシーを両立。執務スペースは窓に向けて配置し、落ち着いた藍色をアクセントに。お客様が頼りにする細かな仕事に、チームが集中できるようにしています。",
       },
     },
     rooms: [
       {
         src: "/images/concepts/engawa-office/01-reception.jpg",
-        alt: "Engawa Office sample concept: reception with timber slat walls, a timber counter and a round washi paper light",
+        alt: "Engawa Office sample concept (3D render): reception with an oak desk and a timber window bench",
         title: { en: "Reception", ja: "受付" },
         line: {
-          en: "Timber slat walls, a low timber counter and a single round washi light. Seating by the window, like sitting on an engawa.",
-          ja: "木の格子の壁、低い木のカウンター、ひとつの丸い和紙の照明。窓辺の椅子は、縁側に腰掛けるように。",
+          en: "A low oak desk where clients and staff sit at eye level, and a long timber bench by the windows, like sitting on an engawa.",
+          ja: "お客様とスタッフが目線をそろえて座れる低いオークのデスク。窓辺の長い木のベンチは、縁側に腰掛けるように。",
         },
       },
       {
+        src: "/images/concepts/engawa-office/02-meeting.jpg",
+        alt: "Engawa Office sample concept (3D render): a meeting room with an oak table behind frosted glass",
         title: { en: "Meeting rooms", ja: "打ち合わせ室" },
         line: {
-          en: "Behind shoji-style screens: daylight comes through, conversations stay private. One solid timber table.",
-          ja: "障子風の仕切りの奥に。光は通り、会話は守られます。無垢の木のテーブルをひとつ。",
+          en: "Behind frosted glass in timber frames: daylight comes through, conversations stay private. One solid oak table.",
+          ja: "木枠のすりガラスの奥に。光は通り、会話は守られます。無垢のオークのテーブルをひとつ。",
         },
       },
       {
+        src: "/images/concepts/engawa-office/03-work.jpg",
+        alt: "Engawa Office sample concept (3D render): an open work area with oak desks facing the windows",
         title: { en: "Work area", ja: "執務スペース" },
         line: {
-          en: "Desks facing the light, indigo accents and plants. Calm enough to focus on the detail.",
-          ja: "光に向かうデスク、藍色のアクセント、植物。細かな仕事に集中できる落ち着き。",
+          en: "Oak desks facing the light, indigo accents, acoustic panels and plants. Calm enough to focus on the detail.",
+          ja: "光に向かうオークのデスク、藍色のアクセント、吸音パネル、植物。細かな仕事に集中できる落ち着き。",
         },
       },
     ],
     words: [
       { term: "Engawa", kana: "縁側", line: { en: "The timber veranda between house and garden, where neighbours were welcomed", ja: "家と庭のあいだの木の縁側。ご近所さんを迎えた場所" } },
-      { term: "Shoji", kana: "障子", line: { en: "Paper screens on a timber lattice that soften light and give privacy", ja: "木の格子に和紙を貼った仕切り。光をやわらげ、目線を守る" } },
-      { term: "Washi", kana: "和紙", line: { en: "Japanese paper that turns light soft and even", ja: "光をやわらかく均一にする日本の紙" } },
       { term: "Omotenashi", kana: "おもてなし", line: { en: "Japanese hospitality: caring for a guest before they need to ask", ja: "日本のおもてなし。頼まれる前に相手を思いやる心" } },
     ],
   },

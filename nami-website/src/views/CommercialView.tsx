@@ -24,13 +24,13 @@ export function commercialMetadata(lang: Lang): Metadata {
     ? {
         title: "NAMI Works｜オフィス・店舗のインテリアデザイン シドニー",
         description:
-          "シドニー拠点のNAMIによる、オフィス・クリニック・教室・お店・カフェのジャパンディデザイン。3Dパースと概算予算までのデザイン提案は無料。施工会社はパートナーのジャパンホームズを通して手配します。",
+          "シドニー拠点のNAMIによる、オフィス・クリニック・お店・カフェのジャパンディデザイン。3Dパースと概算予算までのデザイン提案は無料。施工会社はパートナーのジャパンホームズを通して手配します。",
         alternates: alternates(lang, "/nami-works"),
       }
     : {
         title: "NAMI Works | Office & Shop Interior Design in Sydney",
         description:
-          "Japandi interior design for offices, clinics, schools, shops and cafés in Sydney. A free design proposal with 3D renders and a budget estimate; licensed builders arranged through our partner Japan Homes.",
+          "Japandi interior design for offices, clinics, shops and cafés in Sydney. A free design proposal with 3D renders and a budget estimate; licensed builders arranged through our partner Japan Homes.",
         alternates: alternates(lang, "/nami-works"),
       };
 }
@@ -131,7 +131,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
         <Notes items={partnerHelp} />
       </Section>
 
-      <Section id="services" kicker="NAMI WORKS" title={{ en: "Offices, clinics,\nshops and schools.", ja: "オフィス、クリニック、\nお店、教室。" }} intro={{ en: "NAMI Works is our brand for shops and offices. Choose a service to see what's included and example ideas.", ja: "NAMI Worksは、お店とオフィスのためのブランドです。サービスを選ぶと、内容とアイデアの例をご覧いただけます。" }} wide>
+      <Section id="services" kicker="NAMI WORKS" title={{ en: "Offices, clinics,\nshops and cafés.", ja: "オフィス、クリニック、\nお店、カフェ。" }} intro={{ en: "NAMI Works is our brand for shops and offices. Choose a service to see what's included and example ideas.", ja: "NAMI Worksは、お店とオフィスのためのブランドです。サービスを選ぶと、内容とアイデアの例をご覧いただけます。" }} wide>
         <ServiceCards lang={lang} items={commercialServicesList} />
       </Section>
 

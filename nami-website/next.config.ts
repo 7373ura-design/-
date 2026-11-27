@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
   // The site is now one page plus the project pages; old addresses land on their section
   async redirects() {
     return [
-      // Granny flats and ageing-in-place are no longer offered
+      // Granny flats, ageing-in-place and schools are no longer offered
+      { source: "/services/school-design", destination: "/nami-works", permanent: true },
+      { source: "/ja/services/school-design", destination: "/ja/nami-works", permanent: true },
+      { source: "/zh/services/school-design", destination: "/zh/nami-works", permanent: true },
       { source: "/nami-nagomi", destination: "/", permanent: true },
       { source: "/services/ageing-in-place", destination: "/nami-home", permanent: true },
       { source: "/guides/ageing-in-place-five-places", destination: "/guides", permanent: true },

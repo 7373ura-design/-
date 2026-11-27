@@ -45,10 +45,10 @@ export const brands: Brand[] = [
     name: "NAMI Works",
     tagline: { en: "Shops and offices people remember.", ja: "記憶に残る、お店とオフィスを。" },
     lead: {
-      en: "Offices, clinics, shops, cafés and schools. A free design proposal up to 3D renders, with licensed builders arranged through Japan Homes' connections.",
-      ja: "オフィス、クリニック、お店、カフェ、教室。3Dパースまでの無料デザイン提案と、ジャパンホームズのつながりによる施工会社の手配。",
+      en: "Offices, clinics, shops and cafés. A free design proposal up to 3D renders, with licensed builders arranged through Japan Homes' connections.",
+      ja: "オフィス、クリニック、お店、カフェ。3Dパースまでの無料デザイン提案と、ジャパンホームズのつながりによる施工会社の手配。",
     },
-    services: ["office-design", "clinic-design", "retail-and-cafe-design", "school-design", "japanese-business-fit-outs"],
+    services: ["office-design", "clinic-design", "retail-and-cafe-design", "japanese-business-fit-outs"],
     guides: ["office-fit-out-steps", "opening-japanese-business-australia"],
     photo: { src: "/images/concepts/sunrise-and-waves/01-lounge.jpg", alt: "Sunrise & Waves concept: a calm lounge with fabric waves across the ceiling" },
   },
