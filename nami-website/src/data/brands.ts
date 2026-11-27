@@ -2,7 +2,7 @@ import type { Bi } from "@/lib/i18n";
 
 /**
  * NAMI's five brands, each with its own page. Every service belongs to one.
- * Kept to five for the 6 December launch.
+ * Kept to four for the 6 December launch.
  */
 export type Brand = {
   slug: string;
@@ -21,10 +21,10 @@ export const brands: Brand[] = [
     name: "NAMI Home",
     tagline: { en: "Homes designed for the way you live.", ja: "暮らし方に合わせた住まいを。" },
     lead: {
-      en: "Kitchens, bathrooms, whole-home renovations and new build interiors, from one room to the whole home, in Japanese, modern or any style you love.",
-      ja: "キッチン、浴室、家まるごとのリノベーション、新築のインテリア。1部屋から家まるごとまで、和でもモダンでも、お好きなスタイルで。",
+      en: "Kitchens, bathrooms, whole-home renovations, new build interiors and gardens, from one room to the whole home, in Japanese, modern or any style you love.",
+      ja: "キッチン、浴室、家まるごとのリノベーション、新築のインテリア、庭。1部屋から家まるごとまで、和でもモダンでも、お好きなスタイルで。",
     },
-    services: ["kitchen-design", "bathroom-design", "home-renovation", "new-build-interiors"],
+    services: ["kitchen-design", "bathroom-design", "home-renovation", "new-build-interiors", "gardens-and-outdoor"],
     guides: ["is-design-expensive", "kitchen-renovation-sydney", "bathroom-renovation-tips", "home-renovation-where-to-start"],
     photo: { src: "/images/portfolio/living-in-green/06.jpg", alt: "A bright living room opening onto a timber deck and garden" },
   },
@@ -52,19 +52,6 @@ export const brands: Brand[] = [
     services: ["styling-for-sale-and-rent", "granny-flats"],
     guides: ["add-value-before-you-sell", "granny-flat-rules-nsw"],
     photo: { src: "/images/portfolio/old-meets-new/08.jpg", alt: "A styled living room with timber floors" },
-  },
-  {
-    slug: "nami-niwa",
-    name: "NAMI Niwa",
-    word: { en: "Niwa (庭): garden", ja: "庭(にわ)" },
-    tagline: { en: "Gardens that connect with the rooms inside.", ja: "室内とつながる庭を。" },
-    lead: {
-      en: "Gardens, decks and entries, from a Japanese garden of stone and moss to a shaded deck for long summer evenings, suited to the Australian climate.",
-      ja: "庭、デッキ、アプローチ。石と苔の日本庭園から、夏の夕暮れを過ごす日陰のデッキまで、オーストラリアの気候に合わせて。",
-    },
-    services: ["gardens-and-outdoor"],
-    guides: ["home-renovation-where-to-start"],
-    photo: { src: "/images/portfolio/living-in-green/04.jpg", alt: "Stepping stones through white gravel beside a timber deck" },
   },
   {
     slug: "nami-works",

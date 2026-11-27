@@ -97,7 +97,7 @@ export function HomesView({ lang }: { lang: Lang }) {
         id="services"
         kicker="WHAT WE DESIGN"
         title={{ en: "From one room\nto the whole home.", ja: "1部屋から、\n家まるごとまで。" }}
-        intro={{ en: "Four brands for homes. Choose a service to see what's included, example ideas and photos.", ja: "住まいのための4つのブランド。サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
+        intro={{ en: "Three brands for homes. Choose a service to see what's included, example ideas and photos.", ja: "住まいのための3つのブランド。サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
         wide
       >
         <div className="space-y-14">

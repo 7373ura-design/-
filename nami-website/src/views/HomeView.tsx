@@ -57,8 +57,8 @@ export function HomeView({ lang }: { lang: Lang }) {
       <Section
         id="brands"
         kicker="OUR BRANDS"
-        title={{ en: "Five ways\nwe can help.", ja: "5つのブランド。" }}
-        intro={{ en: "Homes, living well for longer, property value, gardens, and shops and offices.", ja: "住まい、これからの暮らし、住まいの価値、庭、そしてお店とオフィス。" }}
+        title={{ en: "Four ways\nwe can help.", ja: "4つのブランド。" }}
+        intro={{ en: "Homes, living well for longer, property value, and shops and offices.", ja: "住まい、これからの暮らし、住まいの価値、そしてお店とオフィス。" }}
         wide
       >
         <BrandCards lang={lang} />
