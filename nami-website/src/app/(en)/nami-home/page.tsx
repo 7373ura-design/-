@@ -1,7 +1,7 @@
-import { BrandView, brandMetadata } from "@/views/MoreViews";
+import { HomesView, homesMetadata } from "@/views/HomesView";
 
-export const metadata = brandMetadata("en", "nami-home");
+export const metadata = homesMetadata("en");
 
 export default function Page() {
-  return <BrandView lang="en" slug="nami-home" />;
+  return <HomesView lang="en" />;
 }

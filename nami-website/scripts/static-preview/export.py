@@ -15,9 +15,7 @@ OUT=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,"..","nami-static-prev
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT)
 get=lambda p: urllib.request.urlopen(B+p).read().decode()
 # English is the main site ("/"), Japanese the sub site ("/ja")
-routes={"/":"index.html","/ja":"ja.html",
-        "/homes":"homes.html","/ja/homes":"ja-homes.html",
-        "/commercial":"commercial.html","/ja/commercial":"ja-commercial.html"}
+routes={"/":"index.html","/ja":"ja.html"}
 works=["welcome-home","old-meets-new","living-in-green","simply-special"]
 for s in ["sunrise-and-waves","engawa-office"]:
     routes[f"/commercial/concepts/{s}"]=f"concept-{s}.html"

@@ -27,7 +27,7 @@ export function SiteShell({ lang, children }: { lang: Lang; children: React.Reac
         <LangProvider lang={lang}>
           <Header />
           <main id="main">{children}</main>
-          <Footer lang={lang} />
+          <Footer />
           <FloatingContact lang={lang} />
         </LangProvider>
         {/* Photo viewer (shared with the static preview) */}

@@ -1,8 +1,8 @@
 import { zhMeta } from "@/lib/tr";
-import { BrandView, brandMetadata } from "@/views/MoreViews";
+import { HomesView, homesMetadata } from "@/views/HomesView";
 
-export const metadata = zhMeta(brandMetadata("zh", "nami-home"));
+export const metadata = zhMeta(homesMetadata("zh"));
 
 export default function Page() {
-  return <BrandView lang="zh" slug="nami-home" />;
+  return <HomesView lang="zh" />;
 }

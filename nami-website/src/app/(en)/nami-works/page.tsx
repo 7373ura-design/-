@@ -1,7 +1,7 @@
-import { BrandView, brandMetadata } from "@/views/MoreViews";
+import { CommercialView, commercialMetadata } from "@/views/CommercialView";
 
-export const metadata = brandMetadata("en", "nami-works");
+export const metadata = commercialMetadata("en");
 
 export default function Page() {
-  return <BrandView lang="en" slug="nami-works" />;
+  return <CommercialView lang="en" />;
 }

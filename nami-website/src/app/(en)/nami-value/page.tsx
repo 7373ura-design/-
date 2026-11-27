@@ -1,7 +1,7 @@
-import { BrandView, brandMetadata } from "@/views/MoreViews";
+import { BrandSiteView, brandSiteMetadata } from "@/views/BrandParts";
 
-export const metadata = brandMetadata("en", "nami-value");
+export const metadata = brandSiteMetadata("en", "nami-value");
 
 export default function Page() {
-  return <BrandView lang="en" slug="nami-value" />;
+  return <BrandSiteView lang="en" slug="nami-value" />;
 }

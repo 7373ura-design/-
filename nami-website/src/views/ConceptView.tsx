@@ -49,12 +49,12 @@ export async function ConceptView({ lang, params }: ConceptProps & { lang: Lang 
             creator: { "@id": new URL("/#organization", site.url).toString() },
           },
           breadcrumbLd(lang, [
-            { name: tr({ ja: "お店・オフィス", en: "Shops and Offices" }, lang), path: "/commercial" },
+            { name: "NAMI Works", path: "/nami-works" },
             { name: c.title, path: `/commercial/concepts/${c.slug}` },
           ]),
         ]}
       />
-      <SubNav lang={lang} current="commercial" back={{ href: "/commercial#concepts", label: { en: "All concepts", ja: "デザイン事例一覧" } }} links={[]} />
+      <SubNav lang={lang} back={{ href: "/nami-works#concepts", label: { en: "NAMI Works · All concepts", ja: "NAMI Works · デザイン事例一覧" } }} links={[]} />
       <OverlayHero flush id="concept-h" eyebrow={c.kind} title={{ en: c.title, ja: c.title }} body={c.lead} image={c.cover} />
 
       <Section id="brief" kicker="THE BRIEF" title={c.brief.title} intro={c.brief.body} />

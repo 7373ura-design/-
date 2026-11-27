@@ -23,10 +23,9 @@ export const site = {
   wechat: "https://u.wechat.com/kDr5JdFcXya2qu37WkaZUUU?s=2",
 };
 
-/** Main menu: the two businesses, then who NAMI is and how to get in touch. */
+/** Group menu (NAMI's own pages). Each brand site has its own menu in sites.ts. */
 export const navigation = [
-  { label: { en: "HOMES", ja: "住まい" }, href: "/homes" },
-  { label: { en: "SHOPS & OFFICES", ja: "お店・オフィス" }, href: "/commercial" },
+  { label: { en: "OUR BUSINESSES", ja: "事業紹介" }, href: "/#businesses" },
   { label: { en: "ABOUT", ja: "NAMIについて" }, href: "/about" },
   { label: { en: "GUIDES", ja: "お役立ち" }, href: "/guides" },
   { label: { en: "CONTACT", ja: "お問い合わせ" }, href: "/book" },

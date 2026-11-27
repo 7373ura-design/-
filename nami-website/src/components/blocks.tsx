@@ -386,39 +386,21 @@ export function StoryCard({
  */
 export function SubNav({
   lang,
-  current,
   back,
   links,
 }: {
   lang: Lang;
-  current: "homes" | "commercial";
+  current?: string;
   back?: { href: string; label: Bi };
   links: { href: string; label: Bi }[];
 }) {
-  const ja = lang === "ja";
-  const tabs = [
-    { key: "homes", href: "/homes", label: { en: "Homes", ja: "住まい" } },
-    { key: "commercial", href: "/commercial", label: { en: "Shops & Offices", ja: "お店・オフィス" } },
-  ];
   const backTo = back ?? { href: "/", label: { en: "NAMI top", ja: "NAMIトップ" } };
   return (
     <nav aria-label={tr({ ja: "このページ", en: "This page" }, lang)} className="sticky top-20 z-40 mt-20 border-b border-navy/15 bg-paper/95 backdrop-blur md:top-24 md:mt-24">
-      <Container className="flex flex-wrap items-center gap-x-5 gap-y-2 py-2.5">
+      <Container className="flex flex-wrap items-center gap-x-5 gap-y-2 py-3">
         <Link href={localHref(lang, backTo.href)} className="shrink-0 text-[0.9375rem] text-navy/75 transition-colors hover:text-vermilion">
           ← {tr(backTo.label, lang)}
         </Link>
-        <div role="group" aria-label={tr({ ja: "分野", en: "Service" }, lang)} className="flex shrink-0 border border-navy">
-          {tabs.map((t) => (
-            <Link
-              key={t.key}
-              href={localHref(lang, t.href)}
-              aria-current={t.key === current ? "page" : undefined}
-              className="px-4 py-2 text-[0.9375rem] text-navy transition-colors hover:bg-navy/10 aria-[current=page]:bg-navy aria-[current=page]:text-paper"
-            >
-              {tr(t.label, lang)}
-            </Link>
-          ))}
-        </div>
         {links.length > 0 && (
           <ul className="-mx-1 flex w-full gap-1 overflow-x-auto whitespace-nowrap lg:ml-auto lg:w-auto">
             {links.map((l) => (
@@ -468,6 +450,30 @@ export function Pills({ items }: { items: { title: Bi; line: Bi }[] }) {
           <p className="mt-1.5 text-[1rem] leading-relaxed text-navy/75">
             <T ja={s.line.ja} en={s.line.en} />
           </p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * "If this is your worry, look here": one row per worry, each a link to the
+ * page that answers it. Used on the NAMI top page and on every brand site.
+ */
+export function Finder({ lang, items }: { lang: Lang; items: { worry: Bi; to: string; label: Bi }[] }) {
+  return (
+    <ul className="mt-8 border-b border-navy/15">
+      {items.map((f) => (
+        <li key={f.worry.en} className="border-t border-navy/15">
+          <Link
+            href={localHref(lang, f.to)}
+            className="group grid gap-1 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8"
+          >
+            <span className="text-[1.0625rem] leading-relaxed text-navy">{tr(f.worry, lang)}</span>
+            <span className="label whitespace-nowrap text-vermilion transition-transform group-hover:translate-x-1">
+              {tr(f.label, lang)} →
+            </span>
+          </Link>
         </li>
       ))}
     </ul>

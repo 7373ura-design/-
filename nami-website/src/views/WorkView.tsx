@@ -46,12 +46,12 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
         data={[
           projectLd(lang, work),
           breadcrumbLd(lang, [
-            { name: tr({ ja: "住まい", en: "Homes" }, lang), path: "/homes" },
+            { name: "NAMI Home", path: "/nami-home" },
             { name: tr(work.title, lang), path: `/homes/projects/${work.slug}` },
           ]),
         ]}
       />
-      <SubNav lang={lang} current="homes" back={{ href: "/homes#projects", label: { en: "All projects", ja: "作品一覧" } }} links={[]} />
+      <SubNav lang={lang} back={{ href: "/nami-home#projects", label: { en: "NAMI Home · All projects", ja: "NAMI Home · 作品一覧" } }} links={[]} />
       <section>
         <div className="relative h-[clamp(260px,52vw,720px)] w-full overflow-hidden bg-beige" data-lightbox-item>
           <Image src={cover.src} alt={cover.alt} fill priority sizes="100vw" className="object-cover" />
@@ -112,7 +112,7 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
               ))}
             </div>
             <div className="mt-14 text-center">
-              <TextLink href={localHref(lang, "/homes#projects")}>
+              <TextLink href={localHref(lang, "/nami-home#projects")}>
                 <T ja="プロジェクト一覧" en="All projects" />
               </TextLink>
             </div>

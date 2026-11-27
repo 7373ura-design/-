@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { site } from "@/data/site";
+import { site as site_ } from "@/data/site";
 import { launchOffer } from "@/data/brand";
-import { CtaBand, FaqList, OverlayHero, Pills, Section, Notes, StoryCard, SubNav, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Finder, OverlayHero, Pills, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
+import { getBrandSite } from "@/data/sites";
+import { guides } from "@/data/guides";
+import { LinkList } from "@/components/more";
+import { OtherBusinesses } from "@/views/BrandParts";
 import { KindWords, ServiceCards } from "@/components/more";
 import { afterCare, kindWords } from "@/data/nami";
 import { homeServicesList } from "@/data/services";
@@ -19,16 +23,16 @@ import { tr } from "@/lib/tr";
 export function homesMetadata(lang: Lang): Metadata {
   return lang === "ja"
     ? {
-        title: "住まいのインテリアデザイン（新築・リノベーション）｜シドニー",
+        title: "NAMI Home｜住まいのインテリアデザイン（新築・リノベーション）シドニー",
         description:
-          "シドニー拠点のNAMIによる、ジャパンディの住まいのデザイン。新築、リノベーション、エイジング・イン・プレイス、グラニーフラット、1部屋のスタイリング。檜・障子・畳・和紙など長く使える素材と日本の要素で、住まいの価値も考えたデザインを。日本出身のデザイナーが担当します。",
-        alternates: alternates(lang, "/homes"),
+          "シドニー拠点のNAMIによる、ジャパンディの住まいのデザイン。キッチン、浴室、檜風呂、リノベーション、新築、庭。1部屋のスタイリングから家まるごとまで。檜・障子・畳・和紙など長く使える素材と日本の要素で、住まいの価値も考えたデザインを。日本出身のデザイナーが担当します。",
+        alternates: alternates(lang, "/nami-home"),
       }
     : {
-        title: "Japandi Home Interior Design in Sydney | New Builds & Renovations",
+        title: "NAMI Home | Home Interior Design in Sydney: New Builds & Renovations",
         description:
-          "Japandi interior design for homes in Sydney: new builds, renovations, ageing-in-place and granny flats. Hinoki, solid timber, shoji and washi that last, designed with your property's value in mind, by a designer from Japan.",
-        alternates: alternates(lang, "/homes"),
+          "Japandi interior design for homes in Sydney: kitchens, bathrooms, hinoki baths, renovations, new builds and gardens. Hinoki, solid timber, shoji and washi that last, designed with your property's value in mind, by a designer from Japan.",
+        alternates: alternates(lang, "/nami-home"),
       };
 }
 
@@ -36,48 +40,40 @@ export function homesMetadata(lang: Lang): Metadata {
 export function HomesView({ lang }: { lang: Lang }) {
   const works = getWorks();
   const faq = answeredFaq();
+  const site = getBrandSite("nami-home")!;
+  const brand = brands.find((b) => b.slug === "nami-home")!;
+  const rel = guides.filter((g) => brand.guides.includes(g.slug));
   return (
     <>
       <JsonLd
         data={[
           serviceLd(lang, {
-            path: "/homes",
-            name: tr({ ja: "住まいのインテリアデザイン", en: "Japandi home interior design" }, lang),
+            path: "/nami-home",
+            name: "NAMI Home",
             serviceType: "Residential interior design",
             description: tr(homesHero.body, lang),
-            offers: homeServicesList.map((s) => tr(s.title, lang)),
+            offers: homeServicesList.filter((s) => brand.services.includes(s.slug)).map((s) => tr(s.title, lang)),
           }),
           faqLd(lang, faq.flatMap((g) => g.items)),
-          breadcrumbLd(lang, [{ name: tr({ ja: "住まい", en: "Homes" }, lang), path: "/homes" }]),
-        ]}
-      />
-      <SubNav
-        lang={lang}
-        current="homes"
-        links={[
-          { href: "#offer", label: { en: "Launch offer", ja: "オープン記念" } },
-          { href: "#services", label: { en: "Services", ja: "サービス" } },
-          { href: "#styles", label: { en: "Styles", ja: "スタイル" } },
-          { href: "#worries", label: { en: "Worries", ja: "お悩み" } },
-          { href: "#aftercare", label: { en: "After you move in", ja: "住み始めてから" } },
-          { href: "#projects", label: { en: "Projects", ja: "作品" } },
-          { href: "#kind-words", label: { en: "Kind words", ja: "お客様の声" } },
-          { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
+          breadcrumbLd(lang, [{ name: "NAMI Home", path: "/nami-home" }]),
         ]}
       />
       <OverlayHero
-        flush
         id="homes-h"
-        eyebrow={{ en: "Homes · Interior Design · Sydney", ja: "住まい · インテリアデザイン · シドニー" }}
+        eyebrow={{ en: "NAMI Home · Interior Design · Sydney", ja: "NAMI Home · 住まいのインテリアデザイン · シドニー" }}
         title={{ en: "Interiors for\nthe way you live.", ja: "暮らし方に合わせた、\n住まいのデザイン。" }}
         body={homesHero.body}
         image={{ src: "/images/portfolio/living-in-green/06.jpg", alt: "Living in Green by NAMI: a bright living room opening through wide glass doors onto a timber deck and garden", position: "50% 55%" }}
         links={[
-          { href: "#projects", label: { en: "See projects", ja: "作品を見る" } },
+          { href: "#find", label: { en: "Find what you need", ja: "お悩みから探す" } },
           { href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } },
         ]}
         caption="LIVING IN GREEN"
       />
+
+      <Section id="find" kicker="START HERE" title={{ en: "What would you\nlike to change?", ja: "どんなことで\nお困りですか?" }} intro={{ en: "Choose the one closest to you. Each link goes to the page that answers it.", ja: "近いものを選んでください。それぞれ、答えが書いてあるページにつながっています。" }}>
+        <Finder lang={lang} items={site.finder} />
+      </Section>
 
       <Section id="offer" kicker={launchOffer.kicker} title={launchOffer.title} intro={launchOffer.body}>
         <Notes items={launchOffer.includes} />
@@ -85,10 +81,10 @@ export function HomesView({ lang }: { lang: Lang }) {
           <T ja={launchOffer.cta.ja} en={launchOffer.cta.en} />
         </p>
         <p className="mt-4 flex flex-wrap gap-3">
-          <a href={`mailto:${site.email}`} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
+          <a href={`mailto:${site_.email}`} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
             {tr({ ja: "メールする", en: "Email us" }, lang)} →
           </a>
-          <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
+          <a href={site_.instagram} target="_blank" rel="noopener noreferrer" className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
             Instagram DM →
           </a>
         </p>
@@ -96,28 +92,12 @@ export function HomesView({ lang }: { lang: Lang }) {
 
       <Section
         id="services"
-        kicker="WHAT WE DESIGN"
+        kicker="SERVICES"
         title={{ en: "From one room\nto the whole home.", ja: "1部屋から、\n家まるごとまで。" }}
-        intro={{ en: "Three brands for homes. Choose a service to see what's included, example ideas and photos.", ja: "住まいのための3つのブランド。サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
+        intro={{ en: "Choose a service to see what's included, example ideas and photos.", ja: "サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
         wide
       >
-        <div className="space-y-14">
-          {brands
-            .filter((b) => b.slug !== "nami-works")
-            .map((b) => (
-              <div key={b.slug}>
-                <p className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-navy/15 pb-3">
-                  <Link href={localHref(lang, `/${b.slug}`)} className="title text-[1.6rem] hover:text-deep">
-                    {b.name} →
-                  </Link>
-                  <span className="text-[1rem] text-navy/70">{tr(b.tagline, lang)}</span>
-                </p>
-                <div className="mt-6">
-                  <ServiceCards lang={lang} items={homeServicesList.filter((s) => b.services.includes(s.slug))} />
-                </div>
-              </div>
-            ))}
-        </div>
+        <ServiceCards lang={lang} items={homeServicesList.filter((s) => brand.services.includes(s.slug))} />
       </Section>
 
       <Section
@@ -136,22 +116,12 @@ export function HomesView({ lang }: { lang: Lang }) {
         </p>
       </Section>
 
-      <Section
-        id="worries"
-        kicker="WHEREVER YOU ARE"
-        title={{ en: "No worry\nis too small.", ja: "どんな小さな悩みも。" }}
-        intro={{
-          en: "Before you buy, just bought, budget, design, build, after you move in. See how we help at every stage, and read our guides on costs and property value.",
-          ja: "家を買う前、買ったばかり、予算、デザイン、工事、住み始めてから。どの段階でもお手伝いします。費用や住まいの価値についてのガイドもどうぞ。",
-        }}
-      >
-        <p className="mt-6 flex flex-wrap gap-3">
-          <a href={localHref(lang, "/how-we-work")} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
-            {tr({ ja: "段階ごとのお手伝い", en: "How we help" }, lang)} →
-          </a>
-          <a href={localHref(lang, "/guides")} className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
-            {tr({ ja: "お役立ちガイド", en: "Guides" }, lang)} →
-          </a>
+      <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilders found through Japan Homes.", ja: "デザインはNAMI、\n施工会社はジャパンホームズを通して。" }}>
+        <Steps items={site.steps} />
+        <p className="mt-8">
+          <Link href={localHref(lang, "/how-we-work")} className="label text-vermilion hover:underline">
+            {tr({ ja: "段階ごとのお悩みと、お手伝いを見る →", en: "See how we help at every stage →" }, lang)}
+          </Link>
         </p>
       </Section>
 
@@ -183,6 +153,14 @@ export function HomesView({ lang }: { lang: Lang }) {
       <Section id="faq" kicker="FAQ" title={{ en: "Questions,\nanswered.", ja: "よくあるご質問。" }} wide>
         <FaqList lang={lang} groups={faq} />
       </Section>
+
+      <Section id="guides" kicker="GUIDES" title={{ en: "Helpful guides.", ja: "お役立ちガイド。" }}>
+        <div className="mt-8">
+          <LinkList items={rel.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: tr(g.title, lang) }))} />
+        </div>
+      </Section>
+
+      <OtherBusinesses lang={lang} current="nami-home" />
 
       <CtaBand
         lang={lang}

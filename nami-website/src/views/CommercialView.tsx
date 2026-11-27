@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { CtaBand, FaqList, OverlayHero, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, Finder, OverlayHero, Section, Notes, Steps, StoryCard, faqLd } from "@/components/blocks";
+import { getBrandSite } from "@/data/sites";
+import { brands } from "@/data/brands";
+import { guides } from "@/data/guides";
+import { LinkList } from "@/components/more";
+import { OtherBusinesses } from "@/views/BrandParts";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { commercialFaq, commercialHero, commercialSteps, freeProposal, partnerHelp, sectors, staffBenefit } from "@/data/commercial";
 import Image from "next/image";
@@ -17,16 +22,16 @@ import { tr } from "@/lib/tr";
 export function commercialMetadata(lang: Lang): Metadata {
   return lang === "ja"
     ? {
-        title: "オフィス・店舗のインテリアデザイン｜シドニー",
+        title: "NAMI Works｜オフィス・店舗のインテリアデザイン シドニー",
         description:
           "シドニー拠点のNAMIによる、オフィス・クリニック・教室・お店・カフェのジャパンディデザイン。3Dパースと概算予算までのデザイン提案は無料。施工会社はパートナーのジャパンホームズを通して手配します。",
-        alternates: alternates(lang, "/commercial"),
+        alternates: alternates(lang, "/nami-works"),
       }
     : {
-        title: "Office & Shop Interior Design in Sydney | Free Design Proposal",
+        title: "NAMI Works | Office & Shop Interior Design in Sydney",
         description:
           "Japandi interior design for offices, clinics, schools, shops and cafés in Sydney. A free design proposal with 3D renders and a budget estimate; licensed builders arranged through our partner Japan Homes.",
-        alternates: alternates(lang, "/commercial"),
+        alternates: alternates(lang, "/nami-works"),
       };
 }
 
@@ -34,50 +39,41 @@ export function commercialMetadata(lang: Lang): Metadata {
 /** Shops and offices: the free proposal, who it is for, process, staff benefit and FAQ. */
 export function CommercialView({ lang }: { lang: Lang }) {
   const faq = commercialFaq.filter((f): f is Required<Faq> => !!f.a);
+  const site = getBrandSite("nami-works")!;
+  const brand = brands.find((b) => b.slug === "nami-works")!;
+  const rel = guides.filter((g) => brand.guides.includes(g.slug));
   return (
     <>
       <JsonLd
         data={[
           serviceLd(lang, {
-            path: "/commercial",
-            name: tr({ ja: "オフィス・店舗のインテリアデザイン", en: "Office and shop interior design" }, lang),
+            path: "/nami-works",
+            name: "NAMI Works",
             serviceType: "Commercial interior design",
             description: tr(commercialHero.body, lang),
             offers: freeProposal.map((s) => tr(s.title, lang)),
           }),
           faqLd(lang, faq),
-          breadcrumbLd(lang, [{ name: tr({ ja: "お店・オフィス", en: "Shops and Offices" }, lang), path: "/commercial" }]),
-        ]}
-      />
-      <SubNav
-        lang={lang}
-        current="commercial"
-        links={[
-          { href: "#concepts", label: { en: "Concepts", ja: "デザイン事例" } },
-          { href: "#free-proposal", label: { en: "Launch offer", ja: "オープン記念" } },
-          { href: "#partners", label: { en: "Partners", ja: "パートナー" } },
-          { href: "#services", label: { en: "Services", ja: "サービス" } },
-          { href: "#aftercare", label: { en: "After you open", ja: "オープンしてから" } },
-          { href: "#kind-words", label: { en: "Kind words", ja: "お客様の声" } },
-          { href: "#process", label: { en: "How it works", ja: "進め方" } },
-          { href: "#staff-benefit", label: { en: "Staff benefit", ja: "社員特典" } },
-          { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
+          breadcrumbLd(lang, [{ name: "NAMI Works", path: "/nami-works" }]),
         ]}
       />
       <OverlayHero
-        flush
         id="commercial-h"
-        eyebrow={{ en: "Shops & Offices · Interior Design · Sydney", ja: "お店・オフィス · インテリアデザイン · シドニー" }}
+        eyebrow={{ en: "NAMI Works · Shops & Offices · Sydney", ja: "NAMI Works · お店・オフィス · シドニー" }}
         title={{ en: "Interior design\nfor offices and shops.", ja: "お店とオフィスの\nインテリアデザイン。" }}
         body={commercialHero.body}
         image={{ src: "/images/concepts/sunrise-and-waves/01-lounge.jpg", alt: "Sunrise & Waves, a Japanese massage studio concept by NAMI: lounge with timber slats and seigaiha fabric across the ceiling", position: "50% 55%" }}
         links={[
-          { href: "#concepts", label: { en: "See concept projects", ja: "デザイン事例を見る" } },
+          { href: "#find", label: { en: "Find what you need", ja: "お悩みから探す" } },
           { href: "#free-proposal", label: { en: "Free proposal for 10 businesses", ja: "10社限定の無料提案" } },
           { href: localHref(lang, "/book"), label: { en: "Ask for a free proposal", ja: "無料提案を相談する" } },
         ]}
         caption="SUNRISE & WAVES · CONCEPT DESIGN"
       />
+
+      <Section id="find" kicker="START HERE" title={{ en: "What does your\nbusiness need?", ja: "どんなことで\nお困りですか?" }} intro={{ en: "Choose the one closest to you. Each link goes to the page that answers it.", ja: "近いものを選んでください。それぞれ、答えが書いてあるページにつながっています。" }}>
+        <Finder lang={lang} items={site.finder} />
+      </Section>
 
       <Section
         id="concepts"
@@ -155,6 +151,14 @@ export function CommercialView({ lang }: { lang: Lang }) {
       <Section id="faq" kicker="FAQ" title={{ en: "Questions,\nanswered.", ja: "よくあるご質問。" }} wide>
         <FaqList lang={lang} groups={[{ items: faq }]} />
       </Section>
+
+      <Section id="guides" kicker="GUIDES" title={{ en: "Helpful guides.", ja: "お役立ちガイド。" }}>
+        <div className="mt-8">
+          <LinkList items={rel.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: tr(g.title, lang) }))} />
+        </div>
+      </Section>
+
+      <OtherBusinesses lang={lang} current="nami-works" />
 
       <CtaBand
         lang={lang}

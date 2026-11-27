@@ -1,17 +1,19 @@
 import { BackgroundSection, ContactSection } from "@/components/home/sections";
 import Link from "next/link";
-import { ChoiceCards, Notes, OverlayHero, Section, Strengths } from "@/components/blocks";
+import { Finder, Notes, OverlayHero, Section, Strengths } from "@/components/blocks";
 import { T } from "@/lib/i18n";
 import { KindWords } from "@/components/more";
-import { BrandCards } from "@/views/MoreViews";
+import { BusinessRows } from "@/views/BrandParts";
 import { kindWords } from "@/data/nami";
-import { businesses, hero, launchOffer, philosophy, strengths } from "@/data/brand";
+import { brands } from "@/data/brands";
+import { brandSites, groupFinder } from "@/data/sites";
+import { hero, launchOffer, philosophy, strengths } from "@/data/brand";
 import { localHref, type Lang } from "@/lib/lang";
 
 /**
- * The top page (where the business-card QR code lands): a cover picture and
- * what NAMI is, a choice of the two businesses, what they share, our
- * philosophy, who designs, and an enquiry form.
+ * The NAMI top page (where the business-card QR code lands). NAMI is the
+ * parent company; its four businesses each have their own site. This page
+ * says what NAMI is and sends each visitor to the right business.
  */
 export function HomeView({ lang }: { lang: Lang }) {
   return (
@@ -22,14 +24,11 @@ export function HomeView({ lang }: { lang: Lang }) {
         title={{ en: "A new wave\nof interior design.", ja: "インテリアに、\n新しい波を。" }}
         body={hero.intro}
         image={{ src: "/images/portfolio/simply-special/01.jpg", alt: "Simply Special by NAMI: a timber deck looking out over the city and the sky", position: "50% 60%" }}
-        choices={[
-          { href: localHref(lang, "/homes"), title: { en: "Homes", ja: "住まい" }, line: { en: "New builds, renovations, ageing in place, granny flats", ja: "新築・リノベーション・エイジングインプレイス・グラニーフラット" } },
-          {
-            href: localHref(lang, "/commercial"),
-            title: { en: "Shops & Offices", ja: "お店・オフィス" },
-            line: { en: "Offices, clinics, schools, shops and cafés", ja: "オフィス・クリニック・教室・お店・カフェ" },
-          },
-        ]}
+        choices={brandSites.map((x) => ({
+          href: localHref(lang, `/${x.slug}`),
+          title: { en: brands.find((b) => b.slug === x.slug)!.name, ja: brands.find((b) => b.slug === x.slug)!.name },
+          line: x.forWho,
+        }))}
       />
       <div className="bg-vermilion text-paper">
         <p className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-center gap-x-5 gap-y-1 px-5 py-4 text-center md:px-10">
@@ -37,31 +36,33 @@ export function HomeView({ lang }: { lang: Lang }) {
           <span className="text-[1.0625rem]">
             <T ja="住まい10軒・お店とオフィス10社限定で、デザインが無料に。" en="Free design for 10 homes and 10 businesses." />
           </span>
-          <Link href={localHref(lang, "/homes#offer")} className="label underline underline-offset-4 hover:no-underline">
-            <T ja="住まい →" en="Homes →" />
+          <Link href={localHref(lang, "/nami-home#offer")} className="label underline underline-offset-4 hover:no-underline">
+            <T ja="NAMI Home →" en="NAMI Home →" />
           </Link>
-          <Link href={localHref(lang, "/commercial#free-proposal")} className="label underline underline-offset-4 hover:no-underline">
-            <T ja="お店・オフィス →" en="Shops & Offices →" />
+          <Link href={localHref(lang, "/nami-works#free-proposal")} className="label underline underline-offset-4 hover:no-underline">
+            <T ja="NAMI Works →" en="NAMI Works →" />
           </Link>
         </p>
       </div>
       <Section
-        id="choose"
-        kicker="TWO WAYS WE WORK"
-        title={{ en: "Homes.\nShops and offices.", ja: "住まいと、\nお店・オフィス。" }}
-        intro={{ en: "Choose the one that fits you to see our services, work and answers to common questions.", ja: "ご希望に近いほうを選ぶと、サービス内容、作品、よくあるご質問をご覧いただけます。" }}
+        id="businesses"
+        kicker="OUR BUSINESSES"
+        title={{ en: "One NAMI,\nfour businesses.", ja: "ひとつのNAMIと、\n4つの事業。" }}
+        intro={{
+          en: "NAMI is an interior design company in Sydney. Inside it are four small businesses, each with its own site, services and focus. Choose the one that fits you.",
+          ja: "NAMIはシドニーのインテリアデザイン会社です。その中に4つの小さな事業があり、それぞれにサイト、サービス、得意分野があります。あなたに合うものを選んでください。",
+        }}
         wide
       >
-        <ChoiceCards lang={lang} items={businesses} />
+        <BusinessRows lang={lang} />
       </Section>
       <Section
-        id="brands"
-        kicker="OUR BRANDS"
-        title={{ en: "Four ways\nwe can help.", ja: "4つのブランド。" }}
-        intro={{ en: "Homes, living well for longer, property value, and shops and offices.", ja: "住まい、これからの暮らし、住まいの価値、そしてお店とオフィス。" }}
-        wide
+        id="find"
+        kicker="NOT SURE WHERE TO LOOK?"
+        title={{ en: "Start from\nyour worry.", ja: "お悩みから\n探す。" }}
+        intro={{ en: "Find the line closest to you. It takes you to the business that can help.", ja: "いちばん近いものを選ぶと、お手伝いできる事業のサイトにつながります。" }}
       >
-        <BrandCards lang={lang} />
+        <Finder lang={lang} items={groupFinder} />
       </Section>
       <Section id="why" kicker="ABOUT NAMI" title={{ en: "Why choose NAMI?", ja: "NAMIが選ばれる理由。" }} wide>
         <Strengths items={strengths} />

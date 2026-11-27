@@ -1,7 +1,7 @@
-import { BrandView, brandMetadata } from "@/views/MoreViews";
+import { BrandSiteView, brandSiteMetadata } from "@/views/BrandParts";
 
-export const metadata = brandMetadata("ja", "nami-nagomi");
+export const metadata = brandSiteMetadata("ja", "nami-nagomi");
 
 export default function Page() {
-  return <BrandView lang="ja" slug="nami-nagomi" />;
+  return <BrandSiteView lang="ja" slug="nami-nagomi" />;
 }

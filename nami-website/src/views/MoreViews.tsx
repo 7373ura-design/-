@@ -50,9 +50,10 @@ export async function serviceMetadata(lang: Lang, { params }: SlugProps): Promis
 export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) {
   const s = getService((await params).slug);
   if (!s) notFound();
-  const groupPath = s.group === "homes" ? "/homes" : "/commercial";
-  const groupName = s.group === "homes" ? { en: "Homes", ja: "住まい" } : { en: "Shops & Offices", ja: "お店・オフィス" };
-  const siblings = services.filter((o) => o.group === s.group && o.slug !== s.slug);
+  const ownBrand = brandOfService(s.slug);
+  const groupPath = ownBrand ? `/${ownBrand.slug}` : "/";
+  const groupName = ownBrand ? { en: ownBrand.name, ja: ownBrand.name } : { en: "NAMI top", ja: "NAMIトップ" };
+  const siblings = services.filter((o) => (ownBrand ? ownBrand.services.includes(o.slug) : o.group === s.group) && o.slug !== s.slug);
   const related = guides.filter((g) => s.guides.includes(g.slug));
   return (
     <>
@@ -65,7 +66,7 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
           ]),
         ]}
       />
-      <SubNav lang={lang} current={s.group} back={{ href: groupPath, label: groupName }} links={[]} />
+      <SubNav lang={lang} back={{ href: groupPath, label: groupName }} links={[]} />
       <OverlayHero
         flush
         id="service-h"
@@ -526,72 +527,6 @@ export { commercialServicesList, homeServicesList };
 
 /* --------------------------------------------------------------- Brands */
 
-
-export function brandMetadata(lang: Lang, slug: string): Metadata {
-  const b = getBrand(slug)!;
-  return {
-    title: `${b.name}: ${tr(b.tagline, lang)}`,
-    description: tr(b.lead, lang),
-    alternates: alternates(lang, `/${b.slug}`),
-    openGraph: { images: [{ url: b.photo.src }] },
-  };
-}
-
-export function BrandView({ lang, slug }: { lang: Lang; slug: string }) {
-  const b = getBrand(slug);
-  if (!b) notFound();
-  const items = services.filter((s) => b.services.includes(s.slug));
-  const group = items[0]?.group ?? "homes";
-  const rel = guides.filter((g) => b.guides.includes(g.slug));
-  return (
-    <>
-      <JsonLd
-        data={[
-          serviceLd(lang, { path: `/${b.slug}`, name: b.name, serviceType: tr(b.tagline, lang), description: tr(b.lead, lang), offers: items.map((s) => tr(s.title, lang)) }),
-          breadcrumbLd(lang, [{ name: b.name, path: `/${b.slug}` }]),
-        ]}
-      />
-      <SubNav
-        lang={lang}
-        current={group}
-        back={group === "homes" ? { href: "/homes", label: { en: "Homes", ja: "住まい" } } : { href: "/commercial", label: { en: "Shops & Offices", ja: "お店・オフィス" } }}
-        links={[]}
-      />
-      <OverlayHero
-        flush
-        id="brand-h"
-        eyebrow={b.word ?? { en: "A NAMI brand · Sydney", ja: "NAMIのブランド · シドニー" }}
-        title={{ en: b.name, ja: b.name }}
-        body={b.tagline}
-        image={b.photo}
-        links={[{ href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } }]}
-      />
-      <Section id="about-brand" kicker={b.name.toUpperCase()} title={b.tagline} intro={b.lead} />
-      <Section id="services" kicker="SERVICES" title={{ en: "What we do.", ja: "サービス。" }} wide>
-        <ServiceCards lang={lang} items={items} />
-      </Section>
-      {rel.length > 0 && (
-        <Section id="guides" kicker="GUIDES" title={{ en: "Helpful guides.", ja: "お役立ちガイド。" }}>
-          <div className="mt-8">
-            <LinkList items={rel.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: tr(g.title, lang) }))} />
-          </div>
-        </Section>
-      )}
-      {(() => {
-        const ac = group === "homes" ? afterCare : afterCareWorks;
-        return (
-          <Section id="aftercare" kicker="AFTER THE DESIGN" title={ac.title} intro={ac.body}>
-            <Notes items={ac.points} />
-          </Section>
-        );
-      })()}
-      <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
-        <KindWords items={kindWords.filter((k) => k.group === group).slice(0, 4)} />
-      </Section>
-      {cta(lang)}
-    </>
-  );
-}
 
 /** The five brands as cards (top page, homes page). */
 export function BrandCards({ lang, only }: { lang: Lang; only?: string[] }) {
