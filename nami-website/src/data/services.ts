@@ -310,7 +310,7 @@ export const services: Service[] = [
       en: "For example: a hinoki tub by a window onto a small garden, an outdoor soaking tub on a shaded deck, or hinoki stools and a bath mat to bring the scent into an existing bathroom.",
       ja: "例えば:小さな庭が見える窓辺の檜の湯船、日陰のデッキに置いた屋外の湯船、今の浴室に檜の腰掛けやバスマットで香りを足すことも。",
     },
-    hero: { src: "/images/stock/hinoki-photo.jpg", alt: "Image: a round hinoki cypress bathtub in a timber-lined bathroom looking out to snowy mountains", credit: "Photo: Motomi Kawakami / Wikimedia Commons (CC BY 1.0)" },
+    hero: { src: "/images/stock/hinoki.jpg", alt: "Image: a calm bathroom with a square hinoki cypress soaking tub" },
     photos: [
       P("old-meets-new", "02", "A timber soaking tub on a deck beside a slatted entry"),
       P("old-meets-new", "05", "A bathroom with timber details and warm indirect light"),
