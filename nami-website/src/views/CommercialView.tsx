@@ -134,7 +134,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
         <Notes items={partnerHelp} />
       </Section>
 
-      <Section id="services" kicker="WHAT WE DESIGN" title={{ en: "Offices, clinics,\nshops and schools.", ja: "オフィス、クリニック、\nお店、教室。" }} intro={{ en: "Choose a service to see what's included and example ideas.", ja: "サービスを選ぶと、内容とアイデアの例をご覧いただけます。" }} wide>
+      <Section id="services" kicker="NAMI WORKS" title={{ en: "Offices, clinics,\nshops and schools.", ja: "オフィス、クリニック、\nお店、教室。" }} intro={{ en: "NAMI Works is our brand for shops and offices. Choose a service to see what's included and example ideas.", ja: "NAMI Worksは、お店とオフィスのためのブランドです。サービスを選ぶと、内容とアイデアの例をご覧いただけます。" }} wide>
         <ServiceCards lang={lang} items={commercialServicesList} />
       </Section>
 

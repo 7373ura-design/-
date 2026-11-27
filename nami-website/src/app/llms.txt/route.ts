@@ -7,6 +7,7 @@ import { concepts } from "@/data/concepts";
 import { services } from "@/data/services";
 import { guides } from "@/data/guides";
 import { areas } from "@/data/areas";
+import { brands } from "@/data/brands";
 import { kindWords, story } from "@/data/nami";
 import { answeredFaq, type Faq } from "@/data/faq";
 
@@ -46,6 +47,9 @@ export function GET() {
     ...concepts.map((c) => `- [${c.title}](${abs(`/commercial/concepts/${c.slug}`)}): ${c.kind.en}. ${c.lead.en}`),
     "Who we design for:",
     ...sectors.map((s) => `- ${s.title.en}: ${s.line.en}`),
+    "",
+    "## Brands",
+    ...brands.map((b) => `- [${b.name}](${abs(`/${b.slug}`)}): ${b.tagline.en} ${b.lead.en}`),
     "",
     "## Services (one page each)",
     ...services.map((x) => `- [${x.title.en}](${abs(`/services/${x.slug}`)}): ${x.line.en}`),

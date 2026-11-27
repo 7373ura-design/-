@@ -5,6 +5,8 @@ import { CtaBand, FaqList, OverlayHero, Pills, Section, Notes, StoryCard, SubNav
 import { KindWords, ServiceCards } from "@/components/more";
 import { kindWords } from "@/data/nami";
 import { homeServicesList } from "@/data/services";
+import { brands } from "@/data/brands";
+import Link from "next/link";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { homeStyles, homesHero, smallThings } from "@/data/homes";
 import { T } from "@/lib/i18n";
@@ -95,10 +97,26 @@ export function HomesView({ lang }: { lang: Lang }) {
         id="services"
         kicker="WHAT WE DESIGN"
         title={{ en: "From one room\nto the whole home.", ja: "1部屋から、\n家まるごとまで。" }}
-        intro={{ en: "Choose a service to see what's included, example ideas and photos.", ja: "サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
+        intro={{ en: "Four brands for homes. Choose a service to see what's included, example ideas and photos.", ja: "住まいのための4つのブランド。サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
         wide
       >
-        <ServiceCards lang={lang} items={homeServicesList} />
+        <div className="space-y-14">
+          {brands
+            .filter((b) => b.slug !== "nami-works")
+            .map((b) => (
+              <div key={b.slug}>
+                <p className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-navy/15 pb-3">
+                  <Link href={localHref(lang, `/${b.slug}`)} className="title text-[1.6rem] hover:text-deep">
+                    {b.name} →
+                  </Link>
+                  <span className="text-[1rem] text-navy/70">{tr(b.tagline, lang)}</span>
+                </p>
+                <div className="mt-6">
+                  <ServiceCards lang={lang} items={homeServicesList.filter((s) => b.services.includes(s.slug))} />
+                </div>
+              </div>
+            ))}
+        </div>
       </Section>
 
       <Section

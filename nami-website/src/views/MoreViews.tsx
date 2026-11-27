@@ -7,6 +7,7 @@ import { CtaBand, Notes, OverlayHero, Section, SubNav } from "@/components/block
 import { KindWords, LinkList, Numbers, PageTop, ServiceCards, WorryTable } from "@/components/more";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
 import { areas, getArea } from "@/data/areas";
+import { brandOfService, brands, getBrand } from "@/data/brands";
 import { getGuide, guides } from "@/data/guides";
 import { beliefs, journey, kindWords, numbers, qualifications, story, whyChoose } from "@/data/nami";
 import { commercialServicesList, getService, homeServicesList, services } from "@/data/services";
@@ -68,7 +69,7 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
       <OverlayHero
         flush
         id="service-h"
-        eyebrow={{ en: `${groupName.en} · Sydney`, ja: `${groupName.ja} · シドニー` }}
+        eyebrow={{ en: `${brandOfService(s.slug)?.name ?? groupName.en} · Sydney`, ja: `${brandOfService(s.slug)?.name ?? groupName.ja} · シドニー` }}
         title={s.title}
         body={s.lead}
         image={s.photos[0]}
@@ -522,3 +523,84 @@ export function BookView({ lang }: { lang: Lang }) {
 }
 
 export { commercialServicesList, homeServicesList };
+
+/* --------------------------------------------------------------- Brands */
+
+
+export function brandMetadata(lang: Lang, slug: string): Metadata {
+  const b = getBrand(slug)!;
+  return {
+    title: `${b.name}: ${tr(b.tagline, lang)}`,
+    description: tr(b.lead, lang),
+    alternates: alternates(lang, `/${b.slug}`),
+    openGraph: { images: [{ url: b.photo.src }] },
+  };
+}
+
+export function BrandView({ lang, slug }: { lang: Lang; slug: string }) {
+  const b = getBrand(slug);
+  if (!b) notFound();
+  const items = services.filter((s) => b.services.includes(s.slug));
+  const group = items[0]?.group ?? "homes";
+  const rel = guides.filter((g) => b.guides.includes(g.slug));
+  return (
+    <>
+      <JsonLd
+        data={[
+          serviceLd(lang, { path: `/${b.slug}`, name: b.name, serviceType: tr(b.tagline, lang), description: tr(b.lead, lang), offers: items.map((s) => tr(s.title, lang)) }),
+          breadcrumbLd(lang, [{ name: b.name, path: `/${b.slug}` }]),
+        ]}
+      />
+      <SubNav
+        lang={lang}
+        current={group}
+        back={group === "homes" ? { href: "/homes", label: { en: "Homes", ja: "住まい" } } : { href: "/commercial", label: { en: "Shops & Offices", ja: "お店・オフィス" } }}
+        links={[]}
+      />
+      <OverlayHero
+        flush
+        id="brand-h"
+        eyebrow={b.word ?? { en: "A NAMI brand · Sydney", ja: "NAMIのブランド · シドニー" }}
+        title={{ en: b.name, ja: b.name }}
+        body={b.tagline}
+        image={b.photo}
+        links={[{ href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } }]}
+      />
+      <Section id="about-brand" kicker={b.name.toUpperCase()} title={b.tagline} intro={b.lead} />
+      <Section id="services" kicker="SERVICES" title={{ en: "What we do.", ja: "サービス。" }} wide>
+        <ServiceCards lang={lang} items={items} />
+      </Section>
+      {rel.length > 0 && (
+        <Section id="guides" kicker="GUIDES" title={{ en: "Helpful guides.", ja: "お役立ちガイド。" }}>
+          <div className="mt-8">
+            <LinkList items={rel.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: tr(g.title, lang) }))} />
+          </div>
+        </Section>
+      )}
+      <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
+        <KindWords items={kindWords.filter((k) => k.group === group).slice(0, 4)} />
+      </Section>
+      {cta(lang)}
+    </>
+  );
+}
+
+/** The five brands as cards (top page, homes page). */
+export function BrandCards({ lang, only }: { lang: Lang; only?: string[] }) {
+  const list = only ? brands.filter((b) => only.includes(b.slug)) : brands;
+  return (
+    <ul className={`grid gap-6 sm:grid-cols-2 ${list.length > 3 ? "lg:grid-cols-5" : "lg:grid-cols-3"}`}>
+      {list.map((b) => (
+        <li key={b.slug}>
+          <Link href={localHref(lang, `/${b.slug}`)} className="group block">
+            <div className="relative aspect-[4/5] overflow-hidden bg-beige">
+              <Image src={b.photo.src} alt={b.photo.alt} fill sizes="(min-width:1024px) 19vw, 45vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+            </div>
+            <p className="title mt-4 text-[1.35rem] transition-colors group-hover:text-deep">{b.name}</p>
+            <p className="mt-1 text-[0.9375rem] leading-relaxed text-navy/70">{tr(b.tagline, lang)}</p>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}

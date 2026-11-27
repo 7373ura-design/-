@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChoiceCards, Notes, OverlayHero, Section, Strengths } from "@/components/blocks";
 import { T } from "@/lib/i18n";
 import { KindWords } from "@/components/more";
+import { BrandCards } from "@/views/MoreViews";
 import { kindWords } from "@/data/nami";
 import { businesses, hero, launchOffer, philosophy, strengths } from "@/data/brand";
 import { localHref, type Lang } from "@/lib/lang";
@@ -52,6 +53,15 @@ export function HomeView({ lang }: { lang: Lang }) {
         wide
       >
         <ChoiceCards lang={lang} items={businesses} />
+      </Section>
+      <Section
+        id="brands"
+        kicker="OUR BRANDS"
+        title={{ en: "Five ways\nwe can help.", ja: "5つのブランド。" }}
+        intro={{ en: "Homes, living well for longer, property value, gardens, and shops and offices.", ja: "住まい、これからの暮らし、住まいの価値、庭、そしてお店とオフィス。" }}
+        wide
+      >
+        <BrandCards lang={lang} />
       </Section>
       <Section id="why" kicker="ABOUT NAMI" title={{ en: "Why choose NAMI?", ja: "NAMIが選ばれる理由。" }} wide>
         <Strengths items={strengths} />
