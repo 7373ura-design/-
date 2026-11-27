@@ -1,5 +1,7 @@
 import { site } from "@/data/site";
 import { localHref, type Lang } from "@/lib/lang";
+import { tr } from "@/lib/tr";
+import { langTag } from "@/lib/lang";
 
 /**
  * Structured data (schema.org JSON-LD) so search engines and AI assistants can
@@ -19,7 +21,7 @@ export function organizationLd(lang: Lang) {
     name: "NAMI",
     alternateName: ["NAMI Studio", "nami.studio"],
     slogan: site.tagline,
-    description: site.description[lang],
+    description: tr(site.description, lang),
     url: abs(localHref(lang, "/")),
     logo: abs("/images/logo/nami-logo.png"),
     image: abs("/opengraph-image"),
@@ -31,7 +33,7 @@ export function organizationLd(lang: Lang) {
       { "@type": "Country", name: "Australia" },
       { "@type": "Country", name: "New Zealand" },
     ],
-    knowsLanguage: ["en", "ja"],
+    knowsLanguage: ["en", "ja", "zh"],
     knowsAbout: ["Japandi interior design", "Interior design", "Residential interior design", "Home renovation design", "Japanese design"],
     sameAs: [site.instagram, site.facebook],
   };
@@ -43,7 +45,7 @@ export function websiteLd(lang: Lang) {
     "@type": "WebSite",
     name: "NAMI",
     url: abs(localHref(lang, "/")),
-    inLanguage: lang === "ja" ? "ja" : "en-AU",
+    inLanguage: langTag(lang),
     publisher: { "@id": abs("/#organization") },
   };
 }
@@ -63,11 +65,11 @@ export function projectLd(lang: Lang, w: { slug: string; title: { en: string; ja
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: w.title[lang],
-    headline: w.lead[lang],
+    name: tr(w.title, lang),
+    headline: tr(w.lead, lang),
     about: lang === "ja" ? `ジャパンディのインテリアデザイン（${w.type.ja}）` : `Japandi interior design for a ${w.type.en.toLowerCase()}`,
     genre: "Japandi interior design",
-    inLanguage: lang === "ja" ? "ja" : "en-AU",
+    inLanguage: langTag(lang),
     url: abs(localHref(lang, `/homes/projects/${w.slug}`)),
     image: w.photos.map((p) => abs(p.src)),
     creator: { "@id": abs("/#organization") },

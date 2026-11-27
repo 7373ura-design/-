@@ -17,6 +17,10 @@ export const site = {
   email: "hello@nami-studio.com.au",
   phone: "0406 880 243",
   phoneIntl: "+61406880243",
+  /** Chat apps for the floating buttons. Leave LINE / WeChat empty until the IDs are set. */
+  whatsapp: "https://wa.me/61406880243",
+  line: "",
+  wechat: "",
 };
 
 /** Main menu: the two businesses, then who NAMI is and how to get in touch. */

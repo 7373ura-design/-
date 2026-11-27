@@ -14,6 +14,8 @@ import { site } from "@/data/site";
 import { T } from "@/lib/i18n";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
+import { tr } from "@/lib/tr";
+import { langTag } from "@/lib/lang";
 
 type SlugProps = { params: Promise<{ slug: string }> };
 export type { SlugProps };
@@ -38,7 +40,7 @@ export async function serviceMetadata(lang: Lang, { params }: SlugProps): Promis
   if (!s) return {};
   return {
     title: lang === "ja" ? `${s.title.ja}｜シドニー` : `${s.title.en} in Sydney`,
-    description: `${s.line[lang]} ${s.lead[lang]}`.slice(0, 300),
+    description: `${tr(s.line, lang)} ${tr(s.lead, lang)}`.slice(0, 300),
     alternates: alternates(lang, `/services/${s.slug}`),
     openGraph: { images: [{ url: s.photos[0].src }] },
   };
@@ -55,10 +57,10 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
     <>
       <JsonLd
         data={[
-          serviceLd(lang, { path: `/services/${s.slug}`, name: s.title[lang], serviceType: s.title.en, description: s.lead[lang], offers: s.include.map((i) => i.title[lang]) }),
+          serviceLd(lang, { path: `/services/${s.slug}`, name: tr(s.title, lang), serviceType: s.title.en, description: tr(s.lead, lang), offers: s.include.map((i) => tr(i.title, lang)) }),
           breadcrumbLd(lang, [
-            { name: groupName[lang], path: groupPath },
-            { name: s.title[lang], path: `/services/${s.slug}` },
+            { name: tr(groupName, lang), path: groupPath },
+            { name: tr(s.title, lang), path: `/services/${s.slug}` },
           ]),
         ]}
       />
@@ -71,7 +73,7 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
         body={s.lead}
         image={s.photos[0]}
         links={[{ href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } }]}
-        caption={s.concept ? (lang === "ja" ? "コンセプトデザイン" : "CONCEPT DESIGN") : undefined}
+        caption={s.concept ? (tr({ ja: "コンセプトデザイン", en: "CONCEPT DESIGN" }, lang)) : undefined}
       />
 
       <Section id="worries" kicker="YOUR WORRY, HOW WE HELP" title={{ en: "Sound familiar?", ja: "こんなお悩み、ありませんか?" }}>
@@ -85,7 +87,7 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
       </Section>
 
       {s.photos.length > 1 && (
-        <section className="section-rule" aria-label={lang === "ja" ? "写真" : "Photos"}>
+        <section className="section-rule" aria-label={tr({ ja: "写真", en: "Photos" }, lang)}>
           <Container className="grid gap-4 py-16 sm:grid-cols-2 md:py-20" >
             {s.photos.slice(1).map((p) => (
               <div key={p.src} className="relative aspect-[4/3] overflow-hidden bg-beige">
@@ -99,8 +101,8 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
       {(related.length > 0 || siblings.length > 0) && (
         <Section id="more" kicker="READ MORE" title={{ en: "Helpful guides and more services.", ja: "お役立ちガイドと、ほかのサービス。" }}>
           <div className="mt-8 grid gap-10 sm:grid-cols-2">
-            <LinkList items={related.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: g.title[lang] }))} />
-            <LinkList items={siblings.map((o) => ({ href: localHref(lang, `/services/${o.slug}`), label: o.title[lang] }))} />
+            <LinkList items={related.map((g) => ({ href: localHref(lang, `/guides/${g.slug}`), label: tr(g.title, lang) }))} />
+            <LinkList items={siblings.map((o) => ({ href: localHref(lang, `/services/${o.slug}`), label: tr(o.title, lang) }))} />
           </div>
         </Section>
       )}
@@ -118,7 +120,7 @@ export async function areaMetadata(lang: Lang, { params }: SlugProps): Promise<M
   if (!a) return {};
   return {
     title: lang === "ja" ? `${a.name.ja}のインテリアデザイン` : `Interior Design in ${a.name.en}`,
-    description: a.lead[lang],
+    description: tr(a.lead, lang),
     alternates: alternates(lang, `/areas/${a.slug}`),
   };
 }
@@ -128,7 +130,7 @@ export async function AreaView({ lang, params }: SlugProps & { lang: Lang }) {
   if (!a) notFound();
   return (
     <>
-      <JsonLd data={breadcrumbLd(lang, [{ name: lang === "ja" ? "対応エリア" : "Areas", path: "/areas" }, { name: a.name[lang], path: `/areas/${a.slug}` }])} />
+      <JsonLd data={breadcrumbLd(lang, [{ name: tr({ ja: "対応エリア", en: "Areas" }, lang), path: "/areas" }, { name: tr(a.name, lang), path: `/areas/${a.slug}` }])} />
       <PageTop id="area-h" kicker="WHERE WE WORK" title={{ en: `Interior design in ${a.name.en}.`, ja: `${a.name.ja}のインテリアデザイン。` }} lead={a.lead} />
       <Section id="how" kicker="HOW WE WORK HERE" title={{ en: "How it works.", ja: "進め方。" }}>
         <Notes items={a.how} />
@@ -143,8 +145,8 @@ export async function AreaView({ lang, params }: SlugProps & { lang: Lang }) {
 
 export function areasIndexMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ja" ? "対応エリア" : "Areas We Work In",
-    description: lang === "ja" ? "シドニー拠点。メルボルン、パース、ニュージーランド、日本にも対応しています。" : "Based in Sydney, with projects in Melbourne, Perth, New Zealand and Japan.",
+    title: tr({ ja: "対応エリア", en: "Areas We Work In" }, lang),
+    description: tr({ ja: "シドニー拠点。メルボルン、パース、ニュージーランド、日本にも対応しています。", en: "Based in Sydney, with projects in Melbourne, Perth, New Zealand and Japan." }, lang),
     alternates: alternates(lang, "/areas"),
   };
 }
@@ -160,7 +162,7 @@ export function AreasIndexView({ lang }: { lang: Lang }) {
       />
       <Section id="list" kicker="AREAS" title={{ en: "Choose your area.", ja: "エリアを選ぶ。" }}>
         <div className="mt-8">
-          <LinkList items={areas.map((a) => ({ href: localHref(lang, `/areas/${a.slug}`), label: a.name[lang] }))} />
+          <LinkList items={areas.map((a) => ({ href: localHref(lang, `/areas/${a.slug}`), label: tr(a.name, lang) }))} />
         </div>
       </Section>
       {cta(lang)}
@@ -172,7 +174,7 @@ export function AreasIndexView({ lang }: { lang: Lang }) {
 
 export function guidesIndexMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ja" ? "お役立ちガイド(費用・リノベーション・住まいの価値)" : "Guides: Costs, Renovations and Property Value",
+    title: tr({ ja: "お役立ちガイド(費用・リノベーション・住まいの価値)", en: "Guides: Costs, Renovations and Property Value" }, lang),
     description:
       lang === "ja"
         ? "家づくりは高い?どこから始める?住まいの価値は?NAMIが、よくあるお悩みにお答えするガイドです。"
@@ -194,9 +196,9 @@ export function GuidesIndexView({ lang }: { lang: Lang }) {
         <Container className="grid gap-x-10 gap-y-10 py-16 md:grid-cols-2 md:py-20">
           {guides.map((g) => (
             <Link key={g.slug} href={localHref(lang, `/guides/${g.slug}`)} className="group block border-t border-navy/20 pt-5">
-              <p className="title text-[1.4rem] !leading-snug transition-colors group-hover:text-deep">{g.title[lang]}</p>
-              <p className="mt-2 text-[1rem] leading-relaxed text-navy/75">{g.description[lang]}</p>
-              <p className="label mt-3 text-vermilion">{lang === "ja" ? "読む →" : "Read →"}</p>
+              <p className="title text-[1.4rem] !leading-snug transition-colors group-hover:text-deep">{tr(g.title, lang)}</p>
+              <p className="mt-2 text-[1rem] leading-relaxed text-navy/75">{tr(g.description, lang)}</p>
+              <p className="label mt-3 text-vermilion">{tr({ ja: "読む →", en: "Read →" }, lang)}</p>
             </Link>
           ))}
         </Container>
@@ -211,7 +213,7 @@ export const guideParams = () => guides.map((g) => ({ slug: g.slug }));
 export async function guideMetadata(lang: Lang, { params }: SlugProps): Promise<Metadata> {
   const g = getGuide((await params).slug);
   if (!g) return {};
-  return { title: g.title[lang], description: g.description[lang], alternates: alternates(lang, `/guides/${g.slug}`) };
+  return { title: tr(g.title, lang), description: tr(g.description, lang), alternates: alternates(lang, `/guides/${g.slug}`) };
 }
 
 export async function GuideView({ lang, params }: SlugProps & { lang: Lang }) {
@@ -226,21 +228,21 @@ export async function GuideView({ lang, params }: SlugProps & { lang: Lang }) {
           {
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: g.title[lang],
-            description: g.description[lang],
+            headline: tr(g.title, lang),
+            description: tr(g.description, lang),
             datePublished: g.date,
-            inLanguage: lang === "ja" ? "ja" : "en-AU",
+            inLanguage: langTag(lang),
             author: { "@id": abs("/#organization") },
             publisher: { "@id": abs("/#organization") },
             mainEntityOfPage: abs(localHref(lang, `/guides/${g.slug}`)),
           },
-          breadcrumbLd(lang, [{ name: lang === "ja" ? "お役立ちガイド" : "Guides", path: "/guides" }, { name: g.title[lang], path: `/guides/${g.slug}` }]),
+          breadcrumbLd(lang, [{ name: tr({ ja: "お役立ちガイド", en: "Guides" }, lang), path: "/guides" }, { name: tr(g.title, lang), path: `/guides/${g.slug}` }]),
         ]}
       />
       <PageTop id="guide-h" kicker="GUIDE" title={g.title} lead={g.description}>
         <p className="mt-4">
           <Link href={localHref(lang, "/guides")} className="text-[0.9375rem] text-navy/70 hover:text-vermilion">
-            ← {lang === "ja" ? "ガイド一覧" : "All guides"}
+            ← {tr({ ja: "ガイド一覧", en: "All guides" }, lang)}
           </Link>
         </p>
       </PageTop>
@@ -248,17 +250,17 @@ export async function GuideView({ lang, params }: SlugProps & { lang: Lang }) {
         <Container className="max-w-3xl py-14 md:py-20">
           {g.sections.map((sec) => (
             <section key={sec.heading.en} className="mt-12 first:mt-0">
-              <h2 className="title text-[1.6rem] !leading-snug">{sec.heading[lang]}</h2>
+              <h2 className="title text-[1.6rem] !leading-snug">{tr(sec.heading, lang)}</h2>
               {sec.body.map((p) => (
                 <p key={p.en} className="jp-body mt-4 text-[1.0625rem] text-navy/85">
-                  {p[lang]}
+                  {tr(p, lang)}
                 </p>
               ))}
             </section>
           ))}
           {g.sources && (
             <p className="mt-12 text-[0.875rem] text-navy/60">
-              {lang === "ja" ? "参考:" : "Sources: "}
+              {tr({ ja: "参考:", en: "Sources: " }, lang)}
               {g.sources.map((s) => (
                 <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-vermilion">
                   {s.label}
@@ -268,9 +270,9 @@ export async function GuideView({ lang, params }: SlugProps & { lang: Lang }) {
           )}
           {rel.length > 0 && (
             <div className="mt-12 border-t border-navy/15 pt-8">
-              <p className="kicker text-vermilion">{lang === "ja" ? "関連するサービス" : "RELATED SERVICES"}</p>
+              <p className="kicker text-vermilion">{tr({ ja: "関連するサービス", en: "RELATED SERVICES" }, lang)}</p>
               <div className="mt-4">
-                <LinkList items={rel.map((s) => ({ href: localHref(lang, `/services/${s.slug}`), label: s.title[lang] }))} />
+                <LinkList items={rel.map((s) => ({ href: localHref(lang, `/services/${s.slug}`), label: tr(s.title, lang) }))} />
               </div>
             </div>
           )}
@@ -285,7 +287,7 @@ export async function GuideView({ lang, params }: SlugProps & { lang: Lang }) {
 
 export function aboutMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ja" ? "NAMIについて(想い・資格・お客様の声)" : "About NAMI: Our Story, Qualifications and Kind Words",
+    title: tr({ ja: "NAMIについて(想い・資格・お客様の声)", en: "About NAMI: Our Story, Qualifications and Kind Words" }, lang),
     description:
       lang === "ja"
         ? "日本生まれ、日本育ちのデザイナーが立ち上げた、シドニーのインテリアデザインスタジオ。建築・インテリア・日本庭園・不動産の資格と、ジャパンホームズのバックアップ。"
@@ -297,7 +299,7 @@ export function aboutMetadata(lang: Lang): Metadata {
 export function AboutView({ lang }: { lang: Lang }) {
   return (
     <>
-      <JsonLd data={breadcrumbLd(lang, [{ name: lang === "ja" ? "NAMIについて" : "About", path: "/about" }])} />
+      <JsonLd data={breadcrumbLd(lang, [{ name: tr({ ja: "NAMIについて", en: "About" }, lang), path: "/about" }])} />
       <OverlayHero
         id="about-h"
         eyebrow={{ en: "About NAMI · Interior Design · Sydney", ja: "NAMIについて · インテリアデザイン · シドニー" }}
@@ -313,8 +315,8 @@ export function AboutView({ lang }: { lang: Lang }) {
         <ul className="grid gap-x-10 gap-y-10 md:grid-cols-2">
           {whyChoose.map((w) => (
             <li key={w.title.en} className="border-t border-vermilion/60 pt-5">
-              <p className="title text-[1.5rem] !leading-snug">{w.title[lang]}</p>
-              <p className="jp-body mt-3 text-[1.0625rem] text-navy/80">{w.body[lang]}</p>
+              <p className="title text-[1.5rem] !leading-snug">{tr(w.title, lang)}</p>
+              <p className="jp-body mt-3 text-[1.0625rem] text-navy/80">{tr(w.body, lang)}</p>
             </li>
           ))}
         </ul>
@@ -324,11 +326,11 @@ export function AboutView({ lang }: { lang: Lang }) {
         <div className="mx-auto max-w-3xl space-y-10">
           {story.map((p) => (
             <div key={p.title.en}>
-              <h3 className="title text-[1.4rem]">{p.title[lang]}</h3>
-              <p className="jp-body mt-3 text-[1.0625rem] text-navy/85">{p.body[lang]}</p>
+              <h3 className="title text-[1.4rem]">{tr(p.title, lang)}</h3>
+              <p className="jp-body mt-3 text-[1.0625rem] text-navy/85">{tr(p.body, lang)}</p>
             </div>
           ))}
-          <p className="text-[0.9375rem] text-navy/60">— {lang === "ja" ? "NAMI 代表・デザイナー" : "Founder and designer, NAMI"}</p>
+          <p className="text-[0.9375rem] text-navy/60">— {tr({ ja: "NAMI 代表・デザイナー", en: "Founder and designer, NAMI" }, lang)}</p>
         </div>
       </Section>
 
@@ -340,18 +342,18 @@ export function AboutView({ lang }: { lang: Lang }) {
         <ul className="grid gap-x-10 gap-y-12 md:grid-cols-2">
           {beliefs.map((b) => (
             <li key={b.key} id={b.key} className="scroll-mt-40 border-t border-navy/20 pt-5">
-              <p className="title text-[1.45rem] !leading-snug">{b.title[lang]}</p>
-              <p className="jp-body mt-3 text-[1.0625rem] text-navy/80">{b.body[lang]}</p>
+              <p className="title text-[1.45rem] !leading-snug">{tr(b.title, lang)}</p>
+              <p className="jp-body mt-3 text-[1.0625rem] text-navy/80">{tr(b.body, lang)}</p>
               {b.points && (
                 <ul className="mt-4 space-y-2">
                   {b.points.map((p) => (
                     <li key={p.title.en} className="text-[1rem] text-navy/80">
-                      <span className="title text-navy">{p.title[lang]}</span> {p.line[lang]}
+                      <span className="title text-navy">{tr(p.title, lang)}</span> {tr(p.line, lang)}
                     </li>
                   ))}
                 </ul>
               )}
-              {b.note && <p className="mt-3 text-[0.8125rem] text-navy/55">{b.note[lang]}</p>}
+              {b.note && <p className="mt-3 text-[0.8125rem] text-navy/55">{tr(b.note, lang)}</p>}
             </li>
           ))}
         </ul>
@@ -373,7 +375,7 @@ export function AboutView({ lang }: { lang: Lang }) {
 
 export function worriesMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ja" ? "家づくりのお悩み相談(買う前から住んだあとまで)" : "How We Work: From Before You Buy to After You Move In",
+    title: tr({ ja: "家づくりのお悩み相談(買う前から住んだあとまで)", en: "How We Work: From Before You Buy to After You Move In" }, lang),
     description:
       lang === "ja"
         ? "家を買う前、買ったばかり、予算、デザイン、工事、住み始めてから。どの段階のお悩みにも、NAMIがお手伝いします。"
@@ -394,10 +396,10 @@ export function WorriesView({ lang }: { lang: Lang }) {
           ja: "今どの段階でも、困っていることを教えてください。一歩ずつ、一緒に解決します。20年以上の信頼のつながりで、ぴったりの人をご紹介できます。",
         }}
       >
-        <nav className="mt-8 flex flex-wrap gap-2" aria-label={lang === "ja" ? "段階" : "Stages"}>
+        <nav className="mt-8 flex flex-wrap gap-2" aria-label={tr({ ja: "段階", en: "Stages" }, lang)}>
           {journey.map((j, i) => (
             <a key={j.key} href={`#${j.key}`} className="border border-navy/30 px-4 py-2 text-[0.9375rem] text-navy transition-colors hover:bg-navy hover:text-paper">
-              {String(i + 1).padStart(2, "0")} {j.title[lang]}
+              {String(i + 1).padStart(2, "0")} {tr(j.title, lang)}
             </a>
           ))}
         </nav>
@@ -418,7 +420,7 @@ export function WorriesView({ lang }: { lang: Lang }) {
 
 export function bookMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ja" ? "無料相談の予約" : "Book a Free Consultation",
+    title: tr({ ja: "無料相談の予約", en: "Book a Free Consultation" }, lang),
     description:
       lang === "ja"
         ? "最初のご相談は無料です。シドニーで対面、またはオンラインで。日本語でも英語でも。2営業日以内にご返信します。"
@@ -455,55 +457,55 @@ export function BookView({ lang }: { lang: Lang }) {
       <section className="section-rule">
         <Container className="py-16 md:py-20">
           <form id="enquiry" data-enquiry={site.email} className="mx-auto max-w-2xl border border-navy/15 bg-cream p-6 md:p-8">
-            <p className="kicker text-vermilion">{ja ? "ご相談の予約" : "BOOK YOUR FREE CONSULTATION"}</p>
-            <p className="title mt-2 text-[1.5rem]">{ja ? "空間について、少し教えてください。" : "Tell us a little about your space."}</p>
+            <p className="kicker text-vermilion">{tr({ ja: "ご相談の予約", en: "BOOK YOUR FREE CONSULTATION" }, lang)}</p>
+            <p className="title mt-2 text-[1.5rem]">{tr({ ja: "空間について、少し教えてください。", en: "Tell us a little about your space." }, lang)}</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <label className="text-[0.9375rem] text-navy/80">
-                {ja ? "お名前 *" : "Name *"}
+                {tr({ ja: "お名前 *", en: "Name *" }, lang)}
                 <input name="name" required className={field} />
               </label>
               <label className="text-[0.9375rem] text-navy/80">
-                {ja ? "メールアドレス *" : "Email *"}
+                {tr({ ja: "メールアドレス *", en: "Email *" }, lang)}
                 <input name="email" type="email" required className={field} />
               </label>
               <label className="text-[0.9375rem] text-navy/80">
-                {ja ? "電話番号" : "Phone"}
+                {tr({ ja: "電話番号", en: "Phone" }, lang)}
                 <input name="phone" type="tel" className={field} />
               </label>
               <label className="text-[0.9375rem] text-navy/80">
-                {ja ? "ご相談の種類" : "Project type"}
+                {tr({ ja: "ご相談の種類", en: "Project type" }, lang)}
                 <select name="type" className={field}>
                   {services.map((s) => (
-                    <option key={s.slug}>{s.title[lang]}</option>
+                    <option key={s.slug}>{tr(s.title, lang)}</option>
                   ))}
-                  <option>{ja ? "その他・まだ決めていない" : "Other / not sure yet"}</option>
+                  <option>{tr({ ja: "その他・まだ決めていない", en: "Other / not sure yet" }, lang)}</option>
                 </select>
               </label>
               <label className="text-[0.9375rem] text-navy/80">
-                {ja ? "相談方法" : "How to meet"}
+                {tr({ ja: "相談方法", en: "How to meet" }, lang)}
                 <select name="method" className={field}>
-                  <option>{ja ? "対面(シドニー)" : "In person (Sydney)"}</option>
-                  <option>{ja ? "オンライン" : "Online"}</option>
-                  <option>{ja ? "どちらでも" : "Either"}</option>
+                  <option>{tr({ ja: "対面(シドニー)", en: "In person (Sydney)" }, lang)}</option>
+                  <option>{tr({ ja: "オンライン", en: "Online" }, lang)}</option>
+                  <option>{tr({ ja: "どちらでも", en: "Either" }, lang)}</option>
                 </select>
               </label>
               <label className="text-[0.9375rem] text-navy/80">
-                {ja ? "ご希望の日時" : "Preferred day and time"}
-                <input name="when" className={field} placeholder={ja ? "例:平日の午後" : "e.g. weekday afternoons"} />
+                {tr({ ja: "ご希望の日時", en: "Preferred day and time" }, lang)}
+                <input name="when" className={field} placeholder={tr({ ja: "例:平日の午後", en: "e.g. weekday afternoons" }, lang)} />
               </label>
               <label className="text-[0.9375rem] text-navy/80 sm:col-span-2">
-                {ja ? "ご相談内容" : "Tell us about your project"}
+                {tr({ ja: "ご相談内容", en: "Tell us about your project" }, lang)}
                 <textarea name="message" rows={5} className={field} />
               </label>
             </div>
             <button type="submit" className="label mt-6 inline-flex items-center gap-2 bg-navy px-7 py-4 text-paper transition-colors hover:bg-deep">
-              {ja ? "送信する" : "Send"} <span aria-hidden>→</span>
+              {tr({ ja: "送信する", en: "Send" }, lang)} <span aria-hidden>→</span>
             </button>
             <p className="mt-3 text-[0.875rem] text-navy/60">
-              {ja ? "送信すると、内容が入ったメールが開きます。そのまま送ってください。" : "Sending opens an email with your details filled in, ready to send."}
+              {tr({ ja: "送信すると、内容が入ったメールが開きます。そのまま送ってください。", en: "Sending opens an email with your details filled in, ready to send." }, lang)}
             </p>
             <p className="mt-6 text-[0.9375rem] text-navy/75">
-              {ja ? "お電話やDMでも:" : "Or call or message us:"}{" "}
+              {tr({ ja: "お電話やDMでも:", en: "Or call or message us:" }, lang)}{" "}
               <a href={`tel:${site.phoneIntl}`} className="text-vermilion hover:underline">
                 {site.phone}
               </a>{" "}

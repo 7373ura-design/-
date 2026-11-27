@@ -7,13 +7,14 @@ import { navigation } from "@/data/site";
 import { langOfPath, localHref, stripLang } from "@/lib/lang";
 import { Logo } from "@/components/Logo";
 import { LanguageSwitch } from "@/components/LanguageSwitch";
+import { tr } from "@/lib/tr";
 
 export function Header() {
   const pathname = usePathname() || "/";
   const lang = langOfPath(pathname);
   const here = stripLang(pathname);
   const menu = navigation.map((item) => ({
-    label: item.label[lang],
+    label: tr(item.label, lang),
     href: localHref(lang, item.href),
     // The business page you are on (or one of its projects) is marked in the menu
     current: !item.href.includes("#") && (here === item.href || here.startsWith(item.href + "/")),
@@ -36,11 +37,11 @@ export function Header() {
         href="#main"
         className="label sr-only z-[80] bg-navy px-4 py-3 text-paper focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
-        Skip to content
+        {tr({ ja: "本文へ", en: "Skip to content" }, lang)}
       </a>
       <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-cream">
         <div className="mx-auto flex h-20 w-full max-w-[1360px] items-center justify-between px-5 md:h-24 md:px-10 lg:px-16">
-          <Logo href={localHref(lang, "/")} priority className="h-9 w-auto md:h-10" />
+          <Logo href={localHref(lang, "/")} priority className="h-7 w-auto sm:h-9 md:h-10" />
 
           <nav aria-label="Main" className="hidden items-center gap-7 xl:gap-9 lg:flex">
             {menu.map((item) => (
@@ -55,12 +56,12 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <Link
               href={localHref(lang, "/book")}
               className="label hidden bg-navy px-4 py-2.5 text-paper transition-colors hover:bg-deep sm:inline-flex"
             >
-              {lang === "ja" ? "無料相談" : "BOOK"}
+              {tr({ ja: "無料相談", en: "BOOK" }, lang)}
             </Link>
             <LanguageSwitch />
             <button
@@ -70,7 +71,7 @@ export function Header() {
               aria-controls="mobile-menu"
               className="flex h-11 w-11 flex-col items-center justify-center gap-[7px] lg:hidden"
             >
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">{tr({ ja: "メニューを開く", en: "Open menu" }, lang)}</span>
               <span className="h-px w-7 bg-navy" />
               <span className="h-px w-7 bg-navy" />
               <span className="h-px w-4 self-end bg-vermilion mr-2" />

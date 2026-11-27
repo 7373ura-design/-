@@ -5,6 +5,8 @@ import { Art, PostHead, type ArtName } from "@/components/washi";
 import { T, type Bi } from "@/lib/i18n";
 import { localHref, type Lang } from "@/lib/lang";
 import type { Faq } from "@/data/faq";
+import { tr } from "@/lib/tr";
+import { langTag } from "@/lib/lang";
 
 /*
  * Page sections shared by the top page and the two business pages, set like
@@ -146,18 +148,18 @@ export function FaqList({ lang, groups }: { lang: Lang; groups: { title?: Bi; it
     <div className="mx-auto max-w-3xl">
       {groups.map((g, gi) => (
         <div key={g.title?.en ?? gi} className="mt-12 first:mt-0">
-          {g.title && <h3 className="title text-[1.4rem]">{g.title[lang]}</h3>}
+          {g.title && <h3 className="title text-[1.4rem]">{tr(g.title, lang)}</h3>}
           <div className="mt-4 border-b border-navy/15">
             {g.items.map((i) => (
               <details key={i.q.en} className="group border-t border-navy/15">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 [&::-webkit-details-marker]:hidden">
-                  <h4 className="title text-[1.2rem] !leading-snug">{i.q[lang]}</h4>
+                  <h4 className="title text-[1.2rem] !leading-snug">{tr(i.q, lang)}</h4>
                   <span aria-hidden className="mt-1 text-[1.25rem] leading-none text-vermilion transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
                 <div className="jp-body pb-6 text-[1.0625rem] leading-relaxed text-navy/80">
-                  <Answer text={i.a[lang]} />
+                  <Answer text={tr(i.a, lang)} />
                 </div>
               </details>
             ))}
@@ -173,8 +175,8 @@ export function faqLd(lang: Lang, items: Required<Faq>[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    inLanguage: lang === "ja" ? "ja" : "en-AU",
-    mainEntity: items.map((i) => ({ "@type": "Question", name: i.q[lang], acceptedAnswer: { "@type": "Answer", text: i.a[lang] } })),
+    inLanguage: langTag(lang),
+    mainEntity: items.map((i) => ({ "@type": "Question", name: tr(i.q, lang), acceptedAnswer: { "@type": "Answer", text: tr(i.a, lang) } })),
   };
 }
 
@@ -227,13 +229,13 @@ export function CtaBand({ lang, title, line }: { lang: Lang; title: Bi; line: Bi
   return (
     <section className="bg-navy text-paper">
       <Container className="py-16 text-center md:py-20">
-        <h2 className="title !text-paper text-[2rem] md:text-[2.4rem]">{title[lang]}</h2>
-        <p className="jp-body mx-auto mt-4 max-w-2xl text-[1.0625rem] text-paper/80">{line[lang]}</p>
+        <h2 className="title !text-paper text-[2rem] md:text-[2.4rem]">{tr(title, lang)}</h2>
+        <p className="jp-body mx-auto mt-4 max-w-2xl text-[1.0625rem] text-paper/80">{tr(line, lang)}</p>
         <Link
           href={localHref(lang, "/book")}
           className="label mt-8 inline-flex items-center gap-2 border border-paper/70 px-7 py-4 transition-colors hover:bg-paper hover:text-navy"
         >
-          {lang === "ja" ? "無料相談を予約する" : "Book a free consultation"} <span aria-hidden>→</span>
+          {tr({ ja: "無料相談を予約する", en: "Book a free consultation" }, lang)} <span aria-hidden>→</span>
         </Link>
       </Container>
     </section>
@@ -400,12 +402,12 @@ export function SubNav({
   ];
   const backTo = back ?? { href: "/", label: { en: "NAMI top", ja: "NAMIトップ" } };
   return (
-    <nav aria-label={ja ? "このページ" : "This page"} className="sticky top-20 z-40 mt-20 border-b border-navy/15 bg-paper/95 backdrop-blur md:top-24 md:mt-24">
+    <nav aria-label={tr({ ja: "このページ", en: "This page" }, lang)} className="sticky top-20 z-40 mt-20 border-b border-navy/15 bg-paper/95 backdrop-blur md:top-24 md:mt-24">
       <Container className="flex flex-wrap items-center gap-x-5 gap-y-2 py-2.5">
         <Link href={localHref(lang, backTo.href)} className="shrink-0 text-[0.9375rem] text-navy/75 transition-colors hover:text-vermilion">
-          ← {backTo.label[lang]}
+          ← {tr(backTo.label, lang)}
         </Link>
-        <div role="group" aria-label={ja ? "分野" : "Service"} className="flex shrink-0 border border-navy">
+        <div role="group" aria-label={tr({ ja: "分野", en: "Service" }, lang)} className="flex shrink-0 border border-navy">
           {tabs.map((t) => (
             <Link
               key={t.key}
@@ -413,7 +415,7 @@ export function SubNav({
               aria-current={t.key === current ? "page" : undefined}
               className="px-4 py-2 text-[0.9375rem] text-navy transition-colors hover:bg-navy/10 aria-[current=page]:bg-navy aria-[current=page]:text-paper"
             >
-              {t.label[lang]}
+              {tr(t.label, lang)}
             </Link>
           ))}
         </div>
@@ -422,7 +424,7 @@ export function SubNav({
             {links.map((l) => (
               <li key={l.href}>
                 <a href={l.href} className="block px-2 py-1 text-[0.9375rem] text-navy/70 transition-colors hover:text-vermilion">
-                  {l.label[lang]}
+                  {tr(l.label, lang)}
                 </a>
               </li>
             ))}

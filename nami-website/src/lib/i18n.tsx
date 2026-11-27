@@ -2,6 +2,7 @@
 
 import { createContext, useContext, type ReactNode } from "react";
 import type { Lang } from "@/lib/lang";
+import { zhOf } from "@/lib/tr";
 
 /**
  * Bilingual copy. English is the main site at "/", Japanese is the sub site at
@@ -36,7 +37,7 @@ export function T({
   className?: string;
 }) {
   const lang = useLang();
-  const v = lang === "ja" ? ja : en;
+  const v = lang === "ja" ? ja : lang === "zh" && typeof en === "string" ? zhOf(en) : en;
   const content =
     typeof v === "string"
       ? v.split("\n").map((line, i, all) => (

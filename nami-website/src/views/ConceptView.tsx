@@ -9,6 +9,8 @@ import { concepts, getConcept } from "@/data/concepts";
 import { T } from "@/lib/i18n";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
+import { tr } from "@/lib/tr";
+import { langTag } from "@/lib/lang";
 
 export type ConceptProps = { params: Promise<{ slug: string }> };
 
@@ -20,8 +22,8 @@ export async function conceptMetadata(lang: Lang, { params }: ConceptProps): Pro
   const c = getConcept((await params).slug);
   if (!c) return {};
   return {
-    title: `${c.title} | ${c.kind[lang]}`,
-    description: `${c.lead[lang]} ${lang === "ja" ? "シドニー拠点のNAMIによるジャパンディのデザイン。" : "Japandi design by NAMI, based in Sydney."}`,
+    title: `${c.title} | ${tr(c.kind, lang)}`,
+    description: `${tr(c.lead, lang)} ${tr({ ja: "シドニー拠点のNAMIによるジャパンディのデザイン。", en: "Japandi design by NAMI, based in Sydney." }, lang)}`,
     alternates: alternates(lang, `/commercial/concepts/${c.slug}`),
     openGraph: { images: [{ url: c.cover.src }] },
   };
@@ -40,14 +42,14 @@ export async function ConceptView({ lang, params }: ConceptProps & { lang: Lang 
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             name: c.title,
-            headline: c.lead[lang],
+            headline: tr(c.lead, lang),
             genre: "Japandi commercial interior design concept",
-            inLanguage: lang === "ja" ? "ja" : "en-AU",
+            inLanguage: langTag(lang),
             image: c.rooms.filter((r) => r.src).map((r) => new URL(r.src!, site.url).toString()),
             creator: { "@id": new URL("/#organization", site.url).toString() },
           },
           breadcrumbLd(lang, [
-            { name: lang === "ja" ? "お店・オフィス" : "Shops and Offices", path: "/commercial" },
+            { name: tr({ ja: "お店・オフィス", en: "Shops and Offices" }, lang), path: "/commercial" },
             { name: c.title, path: `/commercial/concepts/${c.slug}` },
           ]),
         ]}
@@ -78,7 +80,7 @@ export async function ConceptView({ lang, params }: ConceptProps & { lang: Lang 
       <section id="rooms" className="section-rule scroll-mt-36 md:scroll-mt-40" aria-labelledby="rooms-h">
         <Container className="pb-24 pt-14 md:pb-32 md:pt-20">
           <p className="kicker">ROOM BY ROOM</p>
-          <h2 id="rooms-h" className="title mt-3 text-[clamp(2rem,4vw,2.6rem)]">{lang === "ja" ? "空間ごとに。" : "Room by room."}</h2>
+          <h2 id="rooms-h" className="title mt-3 text-[clamp(2rem,4vw,2.6rem)]">{tr({ ja: "空間ごとに。", en: "Room by room." }, lang)}</h2>
           <div className="mt-10 grid gap-x-6 gap-y-10 md:grid-cols-3" data-lightbox>
             {c.rooms.map((r, i) => (
               <figure key={r.title.en} className={r.src && i === 0 ? "md:col-span-3" : ""}>
@@ -110,7 +112,7 @@ export async function ConceptView({ lang, params }: ConceptProps & { lang: Lang 
             {others.map((o) => (
               <li key={o.slug}>
                 <a href={localHref(lang, `/commercial/concepts/${o.slug}`)} className="text-[1.0625rem] text-vermilion hover:underline">
-                  {o.title}: {o.kind[lang]} →
+                  {o.title}: {tr(o.kind, lang)} →
                 </a>
               </li>
             ))}

@@ -12,6 +12,7 @@ import { localHref, type Lang } from "@/lib/lang";
 import { KindWords, ServiceCards } from "@/components/more";
 import { kindWords } from "@/data/nami";
 import { commercialServicesList } from "@/data/services";
+import { tr } from "@/lib/tr";
 
 export function commercialMetadata(lang: Lang): Metadata {
   return lang === "ja"
@@ -39,13 +40,13 @@ export function CommercialView({ lang }: { lang: Lang }) {
         data={[
           serviceLd(lang, {
             path: "/commercial",
-            name: lang === "ja" ? "オフィス・店舗のインテリアデザイン" : "Office and shop interior design",
+            name: tr({ ja: "オフィス・店舗のインテリアデザイン", en: "Office and shop interior design" }, lang),
             serviceType: "Commercial interior design",
-            description: commercialHero.body[lang],
-            offers: freeProposal.map((s) => s.title[lang]),
+            description: tr(commercialHero.body, lang),
+            offers: freeProposal.map((s) => tr(s.title, lang)),
           }),
           faqLd(lang, faq),
-          breadcrumbLd(lang, [{ name: lang === "ja" ? "お店・オフィス" : "Shops and Offices", path: "/commercial" }]),
+          breadcrumbLd(lang, [{ name: tr({ ja: "お店・オフィス", en: "Shops and Offices" }, lang), path: "/commercial" }]),
         ]}
       />
       <SubNav

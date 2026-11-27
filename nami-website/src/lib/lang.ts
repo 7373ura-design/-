@@ -1,20 +1,29 @@
-/** Site languages: English (main, at "/") and Japanese (sub, at "/ja"). */
-export type Lang = "en" | "ja";
+/** Site languages: English (main, at "/"), Japanese ("/ja") and Simplified Chinese ("/zh"). */
+export type Lang = "en" | "ja" | "zh";
+export const LANGS: Lang[] = ["en", "ja", "zh"];
+
+/** BCP 47 tag, Open Graph locale. */
+export const langTag = (lang: Lang) => (lang === "ja" ? "ja" : lang === "zh" ? "zh-Hans" : "en-AU");
+export const ogLocale = (lang: Lang) => (lang === "ja" ? "ja_JP" : lang === "zh" ? "zh_CN" : "en_AU");
 
 /** The address of a page in the given language: "/works/x" -> "/ja/works/x", "/#works" -> "/ja#works". */
 export function localHref(lang: Lang, path: string) {
   if (lang === "en") return path;
-  if (path === "/") return "/ja";
-  if (path.startsWith("/#")) return "/ja" + path.slice(1);
-  return "/ja" + path;
+  const p = "/" + lang;
+  if (path === "/") return p;
+  if (path.startsWith("/#")) return p + path.slice(1);
+  return p + path;
 }
 
-/** The language of a pathname, and the same page in the other language. */
 export function langOfPath(pathname: string): Lang {
-  return pathname === "/ja" || pathname.startsWith("/ja/") ? "ja" : "en";
+  for (const l of ["ja", "zh"] as const) if (pathname === "/" + l || pathname.startsWith("/" + l + "/")) return l;
+  return "en";
 }
 
 export function stripLang(pathname: string) {
-  if (pathname === "/ja") return "/";
-  return pathname.startsWith("/ja/") ? pathname.slice(3) : pathname;
+  for (const l of ["ja", "zh"]) {
+    if (pathname === "/" + l) return "/";
+    if (pathname.startsWith("/" + l + "/")) return pathname.slice(l.length + 1);
+  }
+  return pathname;
 }

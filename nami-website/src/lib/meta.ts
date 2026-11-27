@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
-import { localHref, type Lang } from "@/lib/lang";
+import { localHref, ogLocale, type Lang } from "@/lib/lang";
+import { tr } from "@/lib/tr";
 
 /** hreflang links for a page that exists in both languages. */
 export function alternates(lang: Lang, path: string): Metadata["alternates"] {
   return {
     canonical: localHref(lang, path),
-    languages: { "en-AU": path, ja: localHref("ja", path), "x-default": path },
+    languages: { "en-AU": path, ja: localHref("ja", path), "zh-Hans": localHref("zh", path), "x-default": path },
   };
 }
 
@@ -14,19 +15,19 @@ export function alternates(lang: Lang, path: string): Metadata["alternates"] {
 export function siteMetadata(lang: Lang): Metadata {
   return {
     metadataBase: new URL(site.url),
-    title: { default: site.title[lang], template: "%s | NAMI" },
-    description: site.description[lang],
+    title: { default: tr(site.title, lang), template: "%s | NAMI" },
+    description: tr(site.description, lang),
     applicationName: "NAMI",
     openGraph: {
       type: "website",
       siteName: "NAMI",
-      title: site.title[lang],
-      description: site.description[lang],
-      locale: lang === "ja" ? "ja_JP" : "en_AU",
-      alternateLocale: [lang === "ja" ? "en_AU" : "ja_JP"],
+      title: tr(site.title, lang),
+      description: tr(site.description, lang),
+      locale: ogLocale(lang),
+      alternateLocale: (["en", "ja", "zh"] as const).filter((l) => l !== lang).map(ogLocale),
       url: localHref(lang, "/"),
     },
-    twitter: { card: "summary_large_image", title: site.title[lang], description: site.description[lang] },
+    twitter: { card: "summary_large_image", title: tr(site.title, lang), description: tr(site.description, lang) },
     alternates: alternates(lang, "/"),
   };
 }

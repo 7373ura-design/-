@@ -12,6 +12,7 @@ import { answeredFaq } from "@/data/faq";
 import { getWorks } from "@/data/works";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
+import { tr } from "@/lib/tr";
 
 export function homesMetadata(lang: Lang): Metadata {
   return lang === "ja"
@@ -39,13 +40,13 @@ export function HomesView({ lang }: { lang: Lang }) {
         data={[
           serviceLd(lang, {
             path: "/homes",
-            name: lang === "ja" ? "住まいのインテリアデザイン" : "Japandi home interior design",
+            name: tr({ ja: "住まいのインテリアデザイン", en: "Japandi home interior design" }, lang),
             serviceType: "Residential interior design",
-            description: homesHero.body[lang],
-            offers: homeServicesList.map((s) => s.title[lang]),
+            description: tr(homesHero.body, lang),
+            offers: homeServicesList.map((s) => tr(s.title, lang)),
           }),
           faqLd(lang, faq.flatMap((g) => g.items)),
-          breadcrumbLd(lang, [{ name: lang === "ja" ? "住まい" : "Homes", path: "/homes" }]),
+          breadcrumbLd(lang, [{ name: tr({ ja: "住まい", en: "Homes" }, lang), path: "/homes" }]),
         ]}
       />
       <SubNav
@@ -82,7 +83,7 @@ export function HomesView({ lang }: { lang: Lang }) {
         </p>
         <p className="mt-4 flex flex-wrap gap-3">
           <a href={`mailto:${site.email}`} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
-            {lang === "ja" ? "メールする" : "Email us"} →
+            {tr({ ja: "メールする", en: "Email us" }, lang)} →
           </a>
           <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
             Instagram DM →
@@ -127,10 +128,10 @@ export function HomesView({ lang }: { lang: Lang }) {
       >
         <p className="mt-6 flex flex-wrap gap-3">
           <a href={localHref(lang, "/how-we-work")} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
-            {lang === "ja" ? "段階ごとのお手伝い" : "How we help"} →
+            {tr({ ja: "段階ごとのお手伝い", en: "How we help" }, lang)} →
           </a>
           <a href={localHref(lang, "/guides")} className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
-            {lang === "ja" ? "お役立ちガイド" : "Guides"} →
+            {tr({ ja: "お役立ちガイド", en: "Guides" }, lang)} →
           </a>
         </p>
       </Section>

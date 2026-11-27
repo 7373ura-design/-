@@ -10,6 +10,7 @@ import { JsonLd, breadcrumbLd, projectLd } from "@/components/JsonLd";
 import { SubNav } from "@/components/blocks";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
+import { tr } from "@/lib/tr";
 
 export type WorkProps = { params: Promise<{ slug: string }> };
 
@@ -45,8 +46,8 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
         data={[
           projectLd(lang, work),
           breadcrumbLd(lang, [
-            { name: lang === "ja" ? "住まい" : "Homes", path: "/homes" },
-            { name: work.title[lang], path: `/homes/projects/${work.slug}` },
+            { name: tr({ ja: "住まい", en: "Homes" }, lang), path: "/homes" },
+            { name: tr(work.title, lang), path: `/homes/projects/${work.slug}` },
           ]),
         ]}
       />
@@ -64,8 +65,8 @@ export async function WorkView({ lang, params }: WorkProps & { lang: Lang }) {
             sub={`JAPANDI ${work.type.en.toUpperCase()}`}
             size="lg"
           >
-            <p className="title !text-[1.3rem] !leading-relaxed text-navy">{work.lead[lang]}</p>
-            {work.story[lang].map((para) => (
+            <p className="title !text-[1.3rem] !leading-relaxed text-navy">{tr(work.lead, lang)}</p>
+            {tr(work.story, lang).map((para) => (
               <p key={para} className="mt-4">
                 {para}
               </p>

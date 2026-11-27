@@ -1,0 +1,9 @@
+import { zhMeta } from "@/lib/tr";
+import { ServiceView, serviceMetadata, serviceParams, type SlugProps } from "@/views/MoreViews";
+
+export const generateStaticParams = serviceParams;
+export const generateMetadata = async (props: SlugProps) => zhMeta(await serviceMetadata("zh", props));
+
+export default function Page(props: SlugProps) {
+  return <ServiceView lang="zh" {...props} />;
+}

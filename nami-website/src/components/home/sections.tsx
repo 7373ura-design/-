@@ -8,6 +8,7 @@ import { Art, PostHead, type ArtName } from "@/components/washi";
 import { EmailButton, FacebookIcon, InstagramIcon, MailIcon } from "@/components/SocialIcons";
 import { T, type Bi } from "@/lib/i18n";
 import type { Lang } from "@/lib/lang";
+import { tr, zhOf } from "@/lib/tr";
 
 /*
  * Sections of the home page (and the shared Card), set like the NAMI Instagram carousels:
@@ -153,42 +154,42 @@ export function ContactSection({ lang }: { lang: Lang }) {
       </ul>
 
       <form id="enquiry" data-enquiry={site.email} className="mx-auto mt-14 max-w-2xl scroll-mt-28 border border-navy/15 bg-cream/70 p-6 md:p-8">
-        <p className="kicker text-vermilion">{ja ? "ご相談フォーム" : "PROJECT ENQUIRY"}</p>
-        <p className="title mt-2 text-[1.5rem]">{ja ? "空間について、少し教えてください。" : "Tell us a little about your space."}</p>
+        <p className="kicker text-vermilion">{tr({ ja: "ご相談フォーム", en: "PROJECT ENQUIRY" }, lang)}</p>
+        <p className="title mt-2 text-[1.5rem]">{tr({ ja: "空間について、少し教えてください。", en: "Tell us a little about your space." }, lang)}</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <label className="text-[0.9375rem] text-navy/80">
-            {ja ? "お名前 *" : "Name *"}
+            {tr({ ja: "お名前 *", en: "Name *" }, lang)}
             <input name="name" required className={field} />
           </label>
           <label className="text-[0.9375rem] text-navy/80">
-            {ja ? "メールアドレス *" : "Email *"}
+            {tr({ ja: "メールアドレス *", en: "Email *" }, lang)}
             <input name="email" type="email" required className={field} />
           </label>
           <label className="text-[0.9375rem] text-navy/80">
-            {ja ? "電話番号" : "Phone"}
+            {tr({ ja: "電話番号", en: "Phone" }, lang)}
             <input name="phone" type="tel" className={field} />
           </label>
           <label className="text-[0.9375rem] text-navy/80">
-            {ja ? "ご相談の種類" : "Project type"}
-            <select name="type" className={field} defaultValue={ja ? "住まい（新築・リノベーション）" : "Home (new build or renovation)"}>
+            {tr({ ja: "ご相談の種類", en: "Project type" }, lang)}
+            <select name="type" className={field} defaultValue={tr({ ja: "住まい（新築・リノベーション）", en: "Home (new build or renovation)" }, lang)}>
               {(ja
                 ? ["住まい（新築・リノベーション）", "住まい（1部屋・スタイリング）", "お店・オフィス", "その他"]
                 : ["Home (new build or renovation)", "Home (single room or styling)", "Shop or office", "Other"]
               ).map((o) => (
-                <option key={o}>{o}</option>
+                <option key={o}>{lang === "zh" ? zhOf(o) : o}</option>
               ))}
             </select>
           </label>
           <label className="text-[0.9375rem] text-navy/80 sm:col-span-2">
-            {ja ? "ご相談内容" : "Tell us about your project"}
+            {tr({ ja: "ご相談内容", en: "Tell us about your project" }, lang)}
             <textarea name="message" rows={5} className={field} />
           </label>
         </div>
         <button type="submit" className="label mt-6 inline-flex items-center gap-2 bg-navy px-7 py-4 text-paper transition-colors hover:bg-deep">
-          {ja ? "送信する" : "Send enquiry"} <span aria-hidden>→</span>
+          {tr({ ja: "送信する", en: "Send enquiry" }, lang)} <span aria-hidden>→</span>
         </button>
         <p className="mt-3 text-[0.875rem] text-navy/60">
-          {ja ? "送信すると、内容が入ったメールが開きます。そのまま送ってください。" : "Sending opens an email with your details filled in, ready to send."}
+          {tr({ ja: "送信すると、内容が入ったメールが開きます。そのまま送ってください。", en: "Sending opens an email with your details filled in, ready to send." }, lang)}
         </p>
       </form>
     </Post>

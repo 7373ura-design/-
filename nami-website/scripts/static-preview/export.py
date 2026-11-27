@@ -31,7 +31,13 @@ for path in _extra:
     routes["/ja"+path]=f"ja-{name}.html"
 for s in works:
     routes[f"/homes/projects/{s}"]=f"project-{s}.html"
+    routes[f"/zh/homes/projects/{s}"]=f"zh-project-{s}.html"
     routes[f"/ja/homes/projects/{s}"]=f"ja-project-{s}.html"
+
+# Chinese: the same pages as Japanese, under /zh
+for k,v in list(routes.items()):
+    if k=="/ja": routes["/zh"]="zh.html"
+    elif k.startswith("/ja/"): routes["/zh"+k[3:]]="zh-"+v[3:]
 
 # CSS
 home=get("/")
@@ -58,7 +64,7 @@ for r,fn in routes.items():
     body=re.sub(r'<link [^>]*>',"",body)
     body=re.sub(r'href=(["\'])(/[^"\'#]*)(#[^"\']*)?\1',link,body)
     # Same-page section links on the Japanese home
-    body=body.replace('href="/ja#','href="ja.html#')
+    body=body.replace('href="/ja#','href="ja.html#').replace('href="/zh#','href="zh.html#')
     body=body.replace('href="#','href="#')
     from urllib.parse import unquote
     body=re.sub(r'\s(srcSet|srcset|sizes)="[^"]*"','',body)
