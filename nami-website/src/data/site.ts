@@ -19,8 +19,8 @@ export const site = {
   phoneIntl: "+61406880243",
   /** Chat apps for the floating buttons. Leave LINE / WeChat empty until the IDs are set. */
   whatsapp: "https://wa.me/61406880243",
-  line: "",
-  wechat: "",
+  line: "https://lin.ee/rcwUfcc",
+  wechat: "https://u.wechat.com/kDr5JdFcXya2qu37WkaZUUU?s=2",
 };
 
 /** Main menu: the two businesses, then who NAMI is and how to get in touch. */
