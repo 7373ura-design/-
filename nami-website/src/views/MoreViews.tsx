@@ -40,7 +40,7 @@ export async function serviceMetadata(lang: Lang, { params }: SlugProps): Promis
   const s = getService((await params).slug);
   if (!s) return {};
   return {
-    title: lang === "ja" ? `${s.title.ja}｜シドニー` : `${s.title.en} in Sydney`,
+    title: lang === "en" ? `${s.title.en} in Sydney` : `${tr(s.title, lang)}｜${lang === "ja" ? "シドニー" : "悉尼"}`,
     description: `${tr(s.line, lang)} ${tr(s.lead, lang)}`.slice(0, 300),
     alternates: alternates(lang, `/services/${s.slug}`),
     openGraph: { images: [{ url: s.photos[0].src }] },
@@ -262,8 +262,8 @@ export async function GuideView({ lang, params }: SlugProps & { lang: Lang }) {
           {g.sources && (
             <p className="mt-12 text-[0.875rem] text-navy/60">
               {tr({ ja: "参考:", en: "Sources: " }, lang)}
-              {g.sources.map((s) => (
-                <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-vermilion">
+              {g.sources.map((s, i) => (
+                <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="mr-3 underline hover:text-vermilion">
                   {s.label}
                 </a>
               ))}

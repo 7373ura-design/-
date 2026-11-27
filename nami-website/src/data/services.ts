@@ -221,8 +221,8 @@ export const services: Service[] = [
     title: { en: "Styling to sell, rent or invest", ja: "売る・貸す・投資のためのスタイリング" },
     line: { en: "Design with the property market in mind.", ja: "不動産の視点を持ったデザイン。" },
     lead: {
-      en: "With a real estate background in Australia and Japan, we focus on the places buyers and tenants notice: kitchens, bathrooms, light, storage and the first impression.",
-      ja: "オーストラリアと日本の不動産の資格を持つからこそ、買い手や借り手が目を留める場所に力を入れます。キッチン、浴室、光、収納、そして第一印象。",
+      en: "With a real estate background in Australia and Japan, we focus on the places buyers and tenants notice: kitchens, bathrooms, light, storage and the first impression. We work alongside your real estate agent, from a pre-sale checklist to styling for photos and open homes.",
+      ja: "オーストラリアと日本の不動産の資格を持つからこそ、買い手や借り手が目を留める場所に力を入れます。キッチン、浴室、光、収納、そして第一印象。売却前のチェックリストから、写真撮影や内覧のためのスタイリングまで、不動産会社と一緒に進めます。",
     },
     worries: [
       { worry: { en: "What's worth fixing before we sell?", ja: "売る前に、何を直すべき?" }, help: { en: "We help you spend where it really matters.", ja: "本当に大事なところにお金をかけられるように。" } },
@@ -231,7 +231,8 @@ export const services: Service[] = [
     ],
     include: [
       { title: { en: "Pre-sale review", ja: "売却前の見直し" }, line: { en: "What to update, and what to leave", ja: "直すところ、そのままでいいところ" } },
-      { title: { en: "Styling", ja: "スタイリング" }, line: { en: "Furniture, art and lighting for photos and inspections", ja: "写真と内覧のための家具、アート、照明" } },
+      { title: { en: "Styling", ja: "スタイリング" }, line: { en: "Furniture, art and lighting for photos and inspections, with furniture hire for the campaign", ja: "写真と内覧のための家具、アート、照明。販売期間中の家具レンタルも" } },
+      { title: { en: "Working with your agent", ja: "不動産会社と連携" }, line: { en: "Timed to the photo shoot and open homes", ja: "撮影日や内覧会に合わせて" } },
       { title: { en: "Rental fit-out", ja: "賃貸用の内装" }, line: { en: "Durable materials and furniture", ja: "丈夫な素材と家具" } },
       { title: { en: "Granny flats", ja: "グラニーフラット" }, line: { en: "A second dwelling for income", ja: "収入のための離れ" } },
     ],
@@ -245,7 +246,7 @@ export const services: Service[] = [
       P("simply-special", "04", "A calm, bright open-plan room"),
       P("old-meets-new", "11", "A styled kitchen and dining area"),
     ],
-    guides: ["add-value-before-you-sell", "kitchen-renovation-sydney"],
+    guides: ["pre-sale-styling-sydney", "add-value-before-you-sell"],
   },
   {
     slug: "gardens-and-outdoor",
@@ -396,6 +397,100 @@ export const services: Service[] = [
     },
     photos: [C("engawa-office", "01-reception", "Engawa Office sample concept: a calm reception with timber slats")],
     guides: ["office-fit-out-steps"],
+    concept: true,
+  },
+  {
+    slug: "hinoki-baths",
+    group: "homes",
+    title: { en: "Hinoki baths and Japanese bathing", ja: "檜(ひのき)風呂と日本のお風呂時間" },
+    line: { en: "A Japanese cypress soaking tub, planned into your bathroom or deck.", ja: "檜の湯船を、浴室やデッキに。" },
+    lead: {
+      en: "Hinoki, Japanese cypress, has been used for baths in Japan for centuries for its fresh scent and its resistance to moisture. We design the bathroom or deck around a deep soaking tub, choose the tub with you and plan the ventilation, drainage and care it needs to last.",
+      ja: "檜(ひのき)は、さわやかな香りと水への強さから、日本で何百年もお風呂に使われてきた木です。深い湯船を中心に浴室やデッキをデザインし、湯船選びから、長持ちさせるための換気・排水・お手入れまで一緒に計画します。",
+    },
+    worries: [
+      { worry: { en: "Will timber last in a bathroom?", ja: "木のお風呂は長持ちする?" }, help: { en: "Ventilation, drainage and a simple care routine, planned in.", ja: "換気、排水、簡単なお手入れ方法を最初から計画します。" } },
+      { worry: { en: "Where would it even fit?", ja: "どこに置けばいい?" }, help: { en: "Indoors, on a deck or in the garden: we find the right place.", ja: "室内、デッキ、庭。合う場所を一緒に探します。" } },
+      { worry: { en: "Where do we get one?", ja: "どこで手に入る?" }, help: { en: "We help you choose and source the tub.", ja: "湯船の選定と手配をお手伝いします。" } },
+    ],
+    include: [
+      { title: { en: "Bathroom or deck design", ja: "浴室・デッキのデザイン" }, line: { en: "Layout, materials and light around the tub", ja: "湯船を中心にしたレイアウト、素材、光" } },
+      { title: { en: "Choosing the tub", ja: "湯船選び" }, line: { en: "Size, shape and depth for how you bathe", ja: "入り方に合わせた大きさ、形、深さ" } },
+      { title: { en: "Ventilation and drainage", ja: "換気と排水" }, line: { en: "So the timber can dry between baths", ja: "使うたびに木がしっかり乾くように" } },
+      { title: { en: "Japanese bath details", ja: "日本のお風呂の小物" }, line: { en: "Hinoki stools, bath mats and soft lighting", ja: "檜の腰掛け、バスマット、やわらかな照明" } },
+    ],
+    ideas: {
+      en: "For example: a hinoki tub by a window onto a small garden, an outdoor soaking tub on a shaded deck, or hinoki stools and a bath mat to bring the scent into an existing bathroom.",
+      ja: "例えば:小さな庭が見える窓辺の檜の湯船、日陰のデッキに置いた屋外の湯船、今の浴室に檜の腰掛けやバスマットで香りを足すことも。",
+    },
+    photos: [
+      P("old-meets-new", "02", "A timber soaking tub on a deck beside a slatted entry"),
+      P("old-meets-new", "05", "A bathroom with timber details and warm indirect light"),
+      P("old-meets-new", "06", "A calm bathroom with timber and soft lighting"),
+    ],
+    guides: ["hinoki-bath-guide", "bathroom-renovation-tips"],
+  },
+  {
+    slug: "investor-turnkey-interiors",
+    group: "homes",
+    title: { en: "Turnkey interiors for overseas buyers", ja: "海外オーナー向け・おまかせ内装パッケージ" },
+    line: { en: "Bought a new apartment in Australia from overseas? We make it ready to rent or live in.", ja: "海外からオーストラリアの新築物件を買った方へ。すぐ貸せる・住める状態に。" },
+    lead: {
+      en: "For owners in Japan, China and elsewhere who have bought a new or off-the-plan home in Australia. We furnish and style it, arrange photos for leasing, and keep you updated online, in Japanese, Chinese or English.",
+      ja: "日本や中国などからオーストラリアの新築・オフザプラン物件を購入された方へ。家具の手配とスタイリング、賃貸募集用の写真まで行い、日本語・中国語・英語でオンラインでご報告します。",
+    },
+    worries: [
+      { worry: { en: "I can't be there in person.", ja: "現地に行けない。" }, help: { en: "We handle it on site and report to you online.", ja: "現地での作業はこちらで行い、オンラインでご報告します。" } },
+      { worry: { en: "I want it rented quickly.", ja: "早く貸したい。" }, help: { en: "Durable, appealing interiors and photos for leasing.", ja: "丈夫で魅力的な内装と、募集用の写真で。" } },
+      { worry: { en: "Language and time zones.", ja: "言葉と時差が心配。" }, help: { en: "Japanese, Chinese or English, at times that suit you.", ja: "日本語・中国語・英語で、ご都合のよい時間に。" } },
+    ],
+    include: [
+      { title: { en: "Furniture package", ja: "家具一式" }, line: { en: "Chosen for the space and for tenants", ja: "空間と入居者に合わせて選定" } },
+      { title: { en: "Styling and photos", ja: "スタイリングと写真" }, line: { en: "Ready for leasing or for your own visits", ja: "賃貸募集にも、ご自身の滞在にも" } },
+      { title: { en: "Online updates", ja: "オンラインでのご報告" }, line: { en: "Photos and progress at every step", ja: "各段階で写真と進み具合をお送りします" } },
+      { title: { en: "Trusted contacts", ja: "信頼できる紹介先" }, line: { en: "Real estate agents and property managers, if you need them", ja: "必要に応じて、不動産会社や管理会社をご紹介" } },
+    ],
+    ideas: {
+      en: "For example: a calm, easy-care apartment in light timber and linen that photographs well, or a few Japanese touches, such as washi lighting, that make a listing stand out.",
+      ja: "例えば:写真映えする、明るい木とリネンの手入れしやすい部屋や、和紙の照明など、募集で目を引く少しの日本の要素。",
+    },
+    photos: [
+      P("simply-special", "04", "A calm, bright open-plan living space"),
+      P("simply-special", "02", "A bright bedroom with large windows"),
+      P("welcome-home", "05", "A light-filled room ready to furnish"),
+    ],
+    guides: ["buying-new-property-from-overseas", "add-value-before-you-sell"],
+  },
+  {
+    slug: "japanese-business-fit-outs",
+    group: "commercial",
+    title: { en: "Fit-outs for Japanese businesses opening in Australia", ja: "日本のお店・企業のオーストラリア出店" },
+    line: { en: "Restaurants, cafés, salons and offices: we bridge Japan and Australia.", ja: "飲食店、カフェ、サロン、オフィス。日本とオーストラリアの橋渡しを。" },
+    lead: {
+      en: "Japanese food and brands are growing in Australia. For Japanese restaurants, cafés, salons and companies opening here, we design the space in Japanese and English, keep your brand's feel, and arrange local licensed builders through Japan Homes' connections.",
+      ja: "オーストラリアでは日本の食やブランドが広がっています。日本の飲食店、カフェ、サロン、企業の出店に、日本語と英語でデザインを進め、ブランドらしさを守りながら、ジャパンホームズのつながりで現地のライセンスを持つ施工会社を手配します。",
+    },
+    worries: [
+      { worry: { en: "We don't know how things work here.", ja: "現地のやり方がわからない。" }, help: { en: "We explain each step in Japanese.", ja: "日本語で一つずつご説明します。" } },
+      { worry: { en: "Will it still feel like our brand?", ja: "ブランドらしさは保てる?" }, help: { en: "We keep your look, adjusted to Australian rules and customers.", ja: "雰囲気はそのまま、現地のルールとお客様に合わせて。" } },
+      { worry: { en: "Finding builders from Japan.", ja: "日本から施工会社を探すのは難しい。" }, help: { en: "Licensed builders arranged through Japan Homes.", ja: "ジャパンホームズを通して、ライセンスを持つ施工会社を手配。" } },
+    ],
+    include: [
+      { title: { en: "Site and lease check", ja: "物件の確認" }, line: { en: "A quick layout before you sign", ja: "契約前に簡単なレイアウトを" } },
+      { title: { en: "Bilingual design", ja: "日英でのデザイン" }, line: { en: "Drawings and meetings in Japanese and English", ja: "図面も打ち合わせも日本語と英語で" } },
+      { title: { en: "3D renders", ja: "3Dパース" }, line: { en: "To share with your head office", ja: "本社との共有用に" } },
+      { title: { en: "Builders and professionals", ja: "施工会社と専門家" }, line: { en: "Licensed builders, and licensed professionals for approvals", ja: "ライセンスを持つ施工会社と、許可申請の専門家" } },
+    ],
+    ideas: {
+      en: "For example: a ramen counter in hinoki with a noren curtain at the door, a calm salon with washi lighting, or an office that feels familiar to staff from Japan.",
+      ja: "例えば:入口に暖簾をかけた檜のラーメンカウンター、和紙の照明の落ち着いたサロン、日本から来た社員がなじめるオフィス。",
+    },
+    photos: [
+      C("sunrise-and-waves", "02-reception", "Sunrise & Waves concept: a timber reception counter with a hanging scroll"),
+      C("sunrise-and-waves", "01-lounge", "Sunrise & Waves concept: a calm lounge"),
+      C("engawa-office", "01-reception", "Engawa Office sample concept: a calm reception"),
+    ],
+    guides: ["opening-japanese-business-australia", "office-fit-out-steps"],
     concept: true,
   },
 ];

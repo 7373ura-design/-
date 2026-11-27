@@ -24,8 +24,8 @@ export const brands: Brand[] = [
       en: "Kitchens, bathrooms, whole-home renovations, new build interiors and gardens, from one room to the whole home, in Japanese, modern or any style you love.",
       ja: "キッチン、浴室、家まるごとのリノベーション、新築のインテリア、庭。1部屋から家まるごとまで、和でもモダンでも、お好きなスタイルで。",
     },
-    services: ["kitchen-design", "bathroom-design", "home-renovation", "new-build-interiors", "gardens-and-outdoor"],
-    guides: ["is-design-expensive", "kitchen-renovation-sydney", "bathroom-renovation-tips", "home-renovation-where-to-start"],
+    services: ["kitchen-design", "bathroom-design", "hinoki-baths", "home-renovation", "new-build-interiors", "gardens-and-outdoor"],
+    guides: ["is-design-expensive", "kitchen-renovation-sydney", "bathroom-renovation-tips", "hinoki-bath-guide", "home-renovation-where-to-start"],
     photo: { src: "/images/portfolio/living-in-green/06.jpg", alt: "A bright living room opening onto a timber deck and garden" },
   },
   {
@@ -46,11 +46,11 @@ export const brands: Brand[] = [
     name: "NAMI Value",
     tagline: { en: "Design with property value in mind.", ja: "住まいの価値まで考えたデザインを。" },
     lead: {
-      en: "Styling to sell, rent or invest, and granny flats for family or rental income. Backed by real estate qualifications in Australia and Japan.",
-      ja: "売る・貸す・投資のためのスタイリングと、家族用や賃貸用のグラニーフラット(離れ)。オーストラリアと日本の不動産の資格を生かして。",
+      en: "Pre-sale styling with your agent, turnkey interiors for overseas buyers, and granny flats for family or rental income. Backed by real estate qualifications in Australia and Japan.",
+      ja: "不動産会社と連携した売却前のスタイリング、海外オーナー向けのおまかせ内装、家族用や賃貸用のグラニーフラット(離れ)。オーストラリアと日本の不動産の資格を生かして。",
     },
-    services: ["styling-for-sale-and-rent", "granny-flats"],
-    guides: ["add-value-before-you-sell", "granny-flat-rules-nsw"],
+    services: ["styling-for-sale-and-rent", "investor-turnkey-interiors", "granny-flats"],
+    guides: ["pre-sale-styling-sydney", "buying-new-property-from-overseas", "add-value-before-you-sell", "granny-flat-rules-nsw"],
     photo: { src: "/images/portfolio/old-meets-new/08.jpg", alt: "A styled living room with timber floors" },
   },
   {
@@ -61,8 +61,8 @@ export const brands: Brand[] = [
       en: "Offices, clinics, shops, cafés and schools. A free design proposal up to 3D renders, with licensed builders arranged through Japan Homes' connections.",
       ja: "オフィス、クリニック、お店、カフェ、教室。3Dパースまでの無料デザイン提案と、ジャパンホームズのつながりによる施工会社の手配。",
     },
-    services: ["office-design", "clinic-design", "retail-and-cafe-design", "school-design"],
-    guides: ["office-fit-out-steps"],
+    services: ["office-design", "clinic-design", "retail-and-cafe-design", "school-design", "japanese-business-fit-outs"],
+    guides: ["office-fit-out-steps", "opening-japanese-business-australia"],
     photo: { src: "/images/concepts/sunrise-and-waves/01-lounge.jpg", alt: "Sunrise & Waves concept: a calm lounge with fabric waves across the ceiling" },
   },
 ];

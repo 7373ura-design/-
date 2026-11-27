@@ -199,6 +199,69 @@ export const guides: Guide[] = [
     ],
     services: ["office-design", "retail-and-cafe-design"],
   },
+  {
+    slug: "pre-sale-styling-sydney",
+    title: { en: "Styling your home before you sell in Sydney", ja: "シドニーで家を売る前のスタイリング" },
+    description: { en: "What pre-sale styling is, what it usually costs in Sydney, and what to do first.", ja: "売却前のスタイリングとは何か、シドニーでの費用の目安、最初にやること。" },
+    date: "2026-11-27",
+    sections: [
+      { heading: { en: "What pre-sale styling is", ja: "売却前のスタイリングとは" }, body: [{ en: "Styling (also called staging) means arranging furniture, art and lighting so buyers can picture living in the home. Most buyers see your home online first, so it is really about the photos and the first few seconds of an open home.", ja: "スタイリング(ステージングとも呼ばれます)は、家具、アート、照明を整えて、買い手がそこでの暮らしを思い描けるようにすることです。多くの買い手はまずネットで家を見るので、大切なのは写真と、内覧の最初の数秒です。" }] },
+      { heading: { en: "What it usually costs", ja: "費用の目安" }, body: [{ en: "One Sydney agency puts professional styling at around $2,000 to $8,000, including furniture hire for about four to eight weeks. The cost depends on the size of the home and how much furniture is needed.", ja: "シドニーのある不動産会社によると、プロのスタイリングは家具の4〜8週間のレンタル込みで、おおよそ2,000〜8,000ドルです。家の広さや必要な家具の量によって変わります。" }] },
+      { heading: { en: "Does it help?", ja: "効果はある?" }, body: [{ en: "Agents widely report that styled homes photograph better and tend to sell faster, but independent Australian data is limited, so be wary of exact percentages. What is certain is that a calm, uncluttered, well-lit home is easier for buyers to love.", ja: "スタイリングした家は写真映えし、早く売れやすいと多くの不動産会社が伝えています。ただ、オーストラリアの中立的なデータは少ないので、具体的な数字には注意が必要です。確かなのは、すっきりと明るく落ち着いた家のほうが、買い手に好かれやすいということです。" }] },
+      { heading: { en: "Where to start", ja: "最初にやること" }, body: [{ en: "Declutter, fix small things, brighten the lighting and refresh the kitchen and bathroom details. Then plan the styling around the photo shoot with your agent.", ja: "物を減らし、小さな不具合を直し、照明を明るくし、キッチンと浴室の細かなところを新しくします。そのうえで、不動産会社と撮影日に合わせてスタイリングを計画します。" }] },
+      { heading: { en: "A note", ja: "ご注意" }, body: [{ en: "This is general design advice, not a valuation. For pricing your home, talk to a licensed agent or valuer.", ja: "これは一般的なデザインのアドバイスであり、査定ではありません。売り出し価格は、資格を持つ不動産会社や鑑定士にご相談ください。" }] },
+    ],
+    sources: [{ label: "DiJones: staging your house for sale", url: "https://www.dijones.com.au/library/blog/selling-property/staging-your-house-for-sale" }],
+    services: ["styling-for-sale-and-rent"],
+  },
+  {
+    slug: "buying-new-property-from-overseas",
+    title: { en: "Bought a new home in Australia from overseas? Getting it ready", ja: "海外からオーストラリアの新築物件を買ったら:準備のしかた" },
+    description: { en: "The basics on what overseas buyers can purchase, and how to get a new home ready to rent or live in from abroad.", ja: "海外の方が買える物件の基本と、離れた場所から新築物件を貸せる・住める状態にする方法。" },
+    date: "2026-11-27",
+    sections: [
+      { heading: { en: "New homes, not established ones", ja: "中古ではなく新築" }, body: [{ en: "According to the Australian Taxation Office, foreign persons are currently banned from buying established homes, with limited exceptions, and the ban has been extended to 30 June 2029. Buying a new or off-the-plan home is generally still possible with foreign investment approval. Rules change, so always check the ATO and FIRB guidance and get professional advice.", ja: "オーストラリア国税庁(ATO)によると、外国人による中古住宅の購入は現在、一部の例外を除き禁止されていて、その期間は2029年6月30日まで延長されています。新築やオフザプラン(完成前)の物件は、外国投資の許可を得れば、一般に購入できます。ルールは変わることがあるので、必ずATOやFIRBの案内を確認し、専門家に相談してください。" }] },
+      { heading: { en: "From handover to ready", ja: "引き渡しから入居・賃貸まで" }, body: [{ en: "A new home is usually handed over empty. Furniture, window coverings, lighting and a few finishing touches make the difference between an empty unit and one that tenants want to live in.", ja: "新築物件は、ふつう空っぽの状態で引き渡されます。家具、カーテンやブラインド、照明、ちょっとした仕上げで、ただの空き部屋が「住みたい部屋」に変わります。" }] },
+      { heading: { en: "Managing it from abroad", ja: "海外から進めるには" }, body: [{ en: "Choose one contact who can work on site, send photos at every step and speak your language. That saves trips and avoids misunderstandings.", ja: "現地で動けて、各段階で写真を送り、あなたの言葉で話せる窓口をひとつ決めましょう。移動の手間と行き違いを減らせます。" }] },
+      { heading: { en: "How NAMI helps", ja: "NAMIのお手伝い" }, body: [{ en: "We furnish and style the home, arrange photos for leasing and report to you online in Japanese, Chinese or English. We don't give legal, tax or foreign investment advice; we can introduce trusted professionals.", ja: "家具の手配とスタイリング、賃貸募集用の写真までを行い、日本語・中国語・英語でオンラインでご報告します。法律・税金・外国投資のアドバイスは行いませんが、信頼できる専門家をご紹介できます。" }] },
+    ],
+    sources: [
+      { label: "ATO: types of property a foreign person can buy", url: "https://www.ato.gov.au/individuals-and-families/investments-and-assets/foreign-investment-in-australia/types-of-property-a-foreign-person-can-buy" },
+      { label: "ATO: banning foreign purchases of established dwellings", url: "https://www.ato.gov.au/about-ato/new-legislation/in-detail/international/banning-foreign-purchases-of-established-dwellings" },
+    ],
+    services: ["investor-turnkey-interiors"],
+  },
+  {
+    slug: "hinoki-bath-guide",
+    title: { en: "Hinoki baths: why Japanese cypress, and how to care for one", ja: "檜(ひのき)風呂:なぜ檜なのか、どうお手入れするか" },
+    description: { en: "What makes hinoki special, how to plan a hinoki tub into an Australian home, and the simple care it needs.", ja: "檜の特別なところ、オーストラリアの家への取り入れ方、簡単なお手入れ。" },
+    date: "2026-11-27",
+    sections: [
+      { heading: { en: "Why hinoki", ja: "なぜ檜なのか" }, body: [{ en: "Hinoki is a Japanese cypress with a fresh, lemony scent. Its natural oils help it resist moisture and rot, which is why it has long been used for baths and buildings in Japan. Natural compounds in the wood are often said to resist bacteria and mould, though it still needs care like any timber.", ja: "檜は、さわやかでレモンのような香りを持つ日本の木です。木に含まれる天然の油分で水や腐れに強く、日本では昔からお風呂や建物に使われてきました。木の成分には抗菌・防カビの働きがあるとよく言われますが、ほかの木と同じようにお手入れは必要です。" }] },
+      { heading: { en: "Planning one in", ja: "取り入れ方" }, body: [{ en: "A hinoki tub needs good ventilation so it can dry between baths, a floor that drains well and a spot out of strong afternoon sun. It can sit in a bathroom, by a window onto a small garden, or outdoors on a shaded deck.", ja: "檜の湯船には、使うたびに乾かせる換気、水はけのよい床、強い午後の日差しを避けられる場所が必要です。浴室にも、小さな庭が見える窓辺にも、日陰のデッキにも置けます。" }] },
+      { heading: { en: "Simple care", ja: "簡単なお手入れ" }, body: [{ en: "After bathing, drain the tub, rinse it, wipe it dry with a cloth and leave it to air in a well-ventilated room. Avoid harsh cleaners. If the scent fades, hinoki bath chips or a light sanding can bring it back.", ja: "入浴後はお湯を抜いて流し、布で水気を拭き取り、風通しのよい部屋で乾かします。強い洗剤は避けましょう。香りが弱くなったら、檜のチップを使ったり、軽くやすりをかけたりすると戻ります。" }] },
+      { heading: { en: "Start small", ja: "小さく始める" }, body: [{ en: "Not ready for a tub? A hinoki stool, bath mat or bath chips bring the same scent into an existing bathroom.", ja: "湯船はまだ、という方は、檜の腰掛けやバスマット、チップから。今の浴室に同じ香りを取り入れられます。" }] },
+    ],
+    sources: [
+      { label: "Jinen: hinoki care guide", url: "https://jinenstore.com/pages/hinoki-care-guide" },
+      { label: "Japan Up Close: hinoki", url: "https://japanupclose.web-japan.org/tech/t20171215_2.html" },
+    ],
+    services: ["hinoki-baths", "bathroom-design"],
+  },
+  {
+    slug: "opening-japanese-business-australia",
+    title: { en: "Opening a Japanese restaurant, café or shop in Australia: the fit-out", ja: "日本の飲食店・カフェ・お店をオーストラリアに出すとき:内装の進め方" },
+    description: { en: "From choosing a site to opening day, for Japanese brands opening their first store in Australia.", ja: "物件選びからオープンまで。オーストラリアに1号店を出す日本のブランドへ。" },
+    date: "2026-11-27",
+    sections: [
+      { heading: { en: "A growing market", ja: "広がる市場" }, body: [{ en: "Japanese food is popular across Australia, and well-known Japanese chains continue to open here. IBISWorld estimates the Japanese restaurant industry in Australia at about $2.4 billion in 2026.", ja: "オーストラリアでは日本食の人気が高く、有名な日本のチェーンの出店も続いています。IBISWorldの推計では、オーストラリアの日本食レストラン業界の市場規模は2026年に約24億ドルです。" }] },
+      { heading: { en: "Before you sign the lease", ja: "賃貸契約の前に" }, body: [{ en: "Check that the space suits your kitchen, seating and customer flow. A quick layout before signing avoids costly surprises.", ja: "厨房、席数、お客様の動線にその物件が合うかを確認しましょう。契約前の簡単なレイアウトで、高くつく想定外を防げます。" }] },
+      { heading: { en: "Approvals and trades", ja: "許可と工事" }, body: [{ en: "Food businesses usually need council approvals and fit-outs that meet food safety and building rules. These are handled by licensed professionals and builders; we arrange licensed builders through Japan Homes' connections and coordinate with them.", ja: "飲食店では一般に、役所の許可と、食品衛生や建築のルールに合った内装が必要です。これらは資格を持つ専門家と施工会社が担当します。NAMIはジャパンホームズのつながりでライセンスを持つ施工会社を手配し、調整します。" }] },
+      { heading: { en: "Keep your brand, fit the market", ja: "ブランドを守り、現地に合わせる" }, body: [{ en: "Keep the look your customers in Japan know, then adjust for Australian customers, climate and rules. We work in Japanese and English, and prepare 3D renders you can share with your head office.", ja: "日本のお客様が知っている雰囲気はそのままに、オーストラリアのお客様、気候、ルールに合わせて調整します。日本語と英語で進め、本社と共有できる3Dパースもご用意します。" }] },
+    ],
+    sources: [{ label: "IBISWorld: Japanese restaurants in Australia", url: "https://www.ibisworld.com/australia/industry/japanese-restaurants/5648/" }],
+    services: ["japanese-business-fit-outs", "retail-and-cafe-design"],
+  },
 ];
 
 export function getGuide(slug: string) {
