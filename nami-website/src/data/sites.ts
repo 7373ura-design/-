@@ -58,7 +58,7 @@ export const brandSites: BrandSite[] = [
   {
     slug: "nami-value",
     short: "Value",
-    forWho: { en: "For owners who are selling, renting out or investing in a home.", ja: "家を売る・貸す・投資する方へ。" },
+    forWho: { en: "For owners who want to sell or rent sooner, on better terms.", ja: "家を早く、良い条件で売りたい・貸したい方へ。" },
     menu: [
       { href: "/nami-value#services", label: { en: "SERVICES", ja: "サービス" } },
       { href: "/nami-value#value", label: { en: "WHAT ADDS VALUE", ja: "価値を上げる場所" } },
@@ -74,22 +74,18 @@ export const brandSites: BrandSite[] = [
     steps: [
       { title: { en: "Get in touch", ja: "お問い合わせ" }, line: { en: "Tell us about the property and your timing, in English, Japanese or Chinese", ja: "物件とご予定の時期をお聞かせください。日本語・英語・中国語で" } },
       { title: { en: "Property review", ja: "物件の確認" }, line: { en: "On site or online: what to change, what to leave, and what it will cost", ja: "現地またはオンラインで。直すところ、そのままでいいところ、費用まで" } },
-      { title: { en: "Plan with your agent", ja: "不動産会社と計画" }, line: { en: "Timed to photos, open homes, settlement or the first tenants", ja: "撮影、内覧、引き渡し、入居のタイミングに合わせて" } },
+      { title: { en: "Plan the timing", ja: "時期を計画" }, line: { en: "Around your photo shoot, open homes, settlement or first tenants", ja: "撮影、内覧、引き渡し、入居の予定に合わせて" } },
       { title: { en: "Work and styling", ja: "工事とスタイリング" }, line: { en: "Builders arranged through Japan Homes; furniture and styling by NAMI", ja: "施工会社はジャパンホームズを通して手配。家具とスタイリングはNAMIが" } },
       { title: { en: "Ready to sell, rent or live in", ja: "売る・貸す・住む準備が完了" }, line: { en: "Photos and a short report, sent online if you are overseas", ja: "写真と簡単なご報告を。海外の方にはオンラインで" } },
     ],
     faq: [
       {
         q: { en: "Do you work with our real estate agent?", ja: "うちの不動産会社と一緒に進められますか?" },
-        a: { en: "Yes. We plan the work and styling around your agent's dates for photos and open homes, and can talk to them directly.", ja: "はい。撮影日や内覧会の日程に合わせて、工事とスタイリングを計画します。不動産会社と直接やりとりすることもできます。" },
+        a: { en: "Yes. Tell us your agent's dates for photos and open homes, and we plan the work and styling around them.", ja: "はい。撮影日や内覧会の日程を教えていただければ、それに合わせて工事とスタイリングを計画します。" },
       },
       {
         q: { en: "I'm overseas. Can everything be done remotely?", ja: "海外にいます。すべて遠隔でお願いできますか?" },
         a: { en: "Yes. We handle the work on site and keep you updated online with photos, in Japanese, Chinese or English.", ja: "はい。現地での作業はこちらで行い、写真付きでオンラインでご報告します。日本語・中国語・英語に対応しています。" },
-      },
-      {
-        q: { en: "How long before listing should we start?", ja: "売りに出す、どのくらい前から始めればいいですか?" },
-        a: { en: "Ideally four to eight weeks before photos, so there is time for small updates. Styling alone can often be done in a week or two.", ja: "撮影の4〜8週間前が理想です。小さな手直しの時間がとれます。スタイリングだけなら、1〜2週間でできることも多いです。" },
       },
       {
         q: { en: "Is this a valuation?", ja: "これは査定ですか?" },

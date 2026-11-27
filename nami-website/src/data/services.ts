@@ -20,7 +20,7 @@ export type Service = {
    * A background picture that is NOT NAMI's work (labelled "image" on the
    * page). Used for the top of the page when NAMI has no photo of its own yet.
    */
-  hero?: { src: string; alt: string };
+  hero?: { src: string; alt: string; credit?: string };
   guides: string[];
   concept?: boolean;
 };
@@ -162,8 +162,8 @@ export const services: Service[] = [
     title: { en: "Styling to sell, rent or invest", ja: "売る・貸す・投資のためのスタイリング" },
     line: { en: "Design with the property market in mind.", ja: "不動産の視点を持ったデザイン。" },
     lead: {
-      en: "With a real estate background in Australia and Japan, we focus on the places buyers and tenants notice: kitchens, bathrooms, light, storage and the first impression. We work alongside your real estate agent, from a pre-sale checklist to styling for photos and open homes.",
-      ja: "オーストラリアと日本の不動産の資格を持つからこそ、買い手や借り手が目を留める場所に力を入れます。キッチン、浴室、光、収納、そして第一印象。売却前のチェックリストから、写真撮影や内覧のためのスタイリングまで、不動産会社と一緒に進めます。",
+      en: "With a real estate background in Australia and Japan, we focus on the places buyers and tenants notice: kitchens, bathrooms, light, storage and the first impression. From a pre-sale checklist to styling for photos and open homes, we plan around your sale dates.",
+      ja: "オーストラリアと日本の不動産の資格を持つからこそ、買い手や借り手が目を留める場所に力を入れます。キッチン、浴室、光、収納、そして第一印象。売却前のチェックリストから、写真撮影や内覧のためのスタイリングまで、売り出しの予定に合わせて進めます。",
     },
     worries: [
       { worry: { en: "What's worth fixing before we sell?", ja: "売る前に、何を直すべき?" }, help: { en: "We help you spend where it really matters.", ja: "本当に大事なところにお金をかけられるように。" } },
@@ -173,7 +173,7 @@ export const services: Service[] = [
     include: [
       { title: { en: "Pre-sale review", ja: "売却前の見直し" }, line: { en: "What to update, and what to leave", ja: "直すところ、そのままでいいところ" } },
       { title: { en: "Styling", ja: "スタイリング" }, line: { en: "Furniture, art and lighting for photos and inspections, with furniture hire for the campaign", ja: "写真と内覧のための家具、アート、照明。販売期間中の家具レンタルも" } },
-      { title: { en: "Working with your agent", ja: "不動産会社と連携" }, line: { en: "Timed to the photo shoot and open homes", ja: "撮影日や内覧会に合わせて" } },
+      { title: { en: "Timed to your sale", ja: "売り出しの予定に合わせて" }, line: { en: "Ready for the photo shoot and open homes", ja: "撮影日や内覧会に間に合うように" } },
       { title: { en: "Rental fit-out", ja: "賃貸用の内装" }, line: { en: "Durable materials and furniture", ja: "丈夫な素材と家具" } },
     ],
     ideas: {
@@ -310,7 +310,7 @@ export const services: Service[] = [
       en: "For example: a hinoki tub by a window onto a small garden, an outdoor soaking tub on a shaded deck, or hinoki stools and a bath mat to bring the scent into an existing bathroom.",
       ja: "例えば:小さな庭が見える窓辺の檜の湯船、日陰のデッキに置いた屋外の湯船、今の浴室に檜の腰掛けやバスマットで香りを足すことも。",
     },
-    hero: { src: "/images/stock/hinoki.jpg", alt: "Image: a calm bathroom with a square hinoki cypress soaking tub" },
+    hero: { src: "/images/stock/hinoki-photo.jpg", alt: "Image: a round hinoki cypress bathtub in a timber-lined bathroom looking out to snowy mountains", credit: "Photo: Motomi Kawakami / Wikimedia Commons (CC BY 1.0)" },
     photos: [
       P("old-meets-new", "02", "A timber soaking tub on a deck beside a slatted entry"),
       P("old-meets-new", "05", "A bathroom with timber details and warm indirect light"),

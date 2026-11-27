@@ -75,7 +75,7 @@ export async function ServiceView({ lang, params }: SlugProps & { lang: Lang }) 
         body={s.lead}
         image={s.hero ?? s.photos[0]}
         links={[{ href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } }]}
-        caption={s.hero ? tr({ ja: "イメージ", en: "IMAGE" }, lang) : s.concept ? tr({ ja: "コンセプトデザイン", en: "CONCEPT DESIGN" }, lang) : undefined}
+        caption={s.hero ? [tr({ ja: "イメージ", en: "IMAGE" }, lang), s.hero.credit].filter(Boolean).join(" · ") : s.concept ? tr({ ja: "コンセプトデザイン", en: "CONCEPT DESIGN" }, lang) : undefined}
       />
 
       <Section id="worries" kicker="YOUR WORRY, HOW WE HELP" title={{ en: "Sound familiar?", ja: "こんなお悩み、ありませんか?" }}>

@@ -274,7 +274,7 @@ export function OverlayHero({
       <div className={`relative w-full overflow-hidden bg-navy ${choices ? "min-h-[640px] md:h-[min(90svh,900px)]" : "h-[min(70svh,720px)] min-h-[480px]"}`}>
         <Image src={image.src} alt={image.alt} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: image.position ?? "center" }} />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/55 to-navy/30" />
-        <Container className={`${choices ? "relative pt-24 md:absolute md:inset-x-0 md:bottom-0 md:pt-0" : "absolute inset-x-0 bottom-0"} pb-10 md:pb-14`}>
+        <Container className={`${choices ? "relative pt-24 md:absolute md:inset-x-0 md:bottom-0 md:pt-0" : "absolute inset-x-0 bottom-0"} ${caption ? "pb-16" : "pb-10"} md:pb-14`}>
           <p className="kicker !text-paper/85">
             <T ja={eyebrow.ja} en={eyebrow.en} />
           </p>
@@ -317,7 +317,7 @@ export function OverlayHero({
             </div>
           )}
         </Container>
-        {caption && <p className="label absolute bottom-5 right-5 hidden text-paper/70 md:block">{caption}</p>}
+        {caption && <p className="label absolute bottom-3 left-5 right-20 text-left text-[0.625rem] !leading-snug text-paper/70 md:bottom-5 md:left-auto md:right-5 md:text-right md:text-[0.75rem]">{caption}</p>}
       </div>
     </section>
   );

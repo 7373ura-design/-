@@ -31,10 +31,10 @@ export const brands: Brand[] = [
   {
     slug: "nami-value",
     name: "NAMI Value",
-    tagline: { en: "Design with property value in mind.", ja: "住まいの価値まで考えたデザインを。" },
+    tagline: { en: "Design to sell or rent sooner, on better terms.", ja: "早く、良い条件で売る・貸すためのデザインを。" },
     lead: {
-      en: "Pre-sale styling with your agent, rental fit-outs, and turnkey interiors for overseas buyers. Backed by real estate qualifications in Australia and Japan.",
-      ja: "不動産会社と連携した売却前のスタイリング、賃貸用の内装、海外オーナー向けのおまかせ内装。オーストラリアと日本の不動産の資格を生かして。",
+      en: "Pre-sale styling timed to your sale, rental fit-outs, and turnkey interiors for overseas buyers. Backed by real estate qualifications in Australia and Japan.",
+      ja: "売り出しの予定に合わせた売却前のスタイリング、賃貸用の内装、海外オーナー向けのおまかせ内装。オーストラリアと日本の不動産の資格を生かして。",
     },
     services: ["styling-for-sale-and-rent", "investor-turnkey-interiors"],
     guides: ["pre-sale-styling-sydney", "buying-new-property-from-overseas", "add-value-before-you-sell"],
