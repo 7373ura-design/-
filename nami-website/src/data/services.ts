@@ -405,17 +405,17 @@ export const services: Service[] = [
     title: { en: "Hinoki baths and Japanese bathing", ja: "檜(ひのき)風呂と日本のお風呂時間" },
     line: { en: "A Japanese cypress soaking tub, planned into your bathroom or deck.", ja: "檜の湯船を、浴室やデッキに。" },
     lead: {
-      en: "Hinoki, Japanese cypress, has been used for baths in Japan for centuries for its fresh scent and its resistance to moisture. We design the bathroom or deck around a deep soaking tub, choose the tub with you and plan the ventilation, drainage and care it needs to last.",
-      ja: "檜(ひのき)は、さわやかな香りと水への強さから、日本で何百年もお風呂に使われてきた木です。深い湯船を中心に浴室やデッキをデザインし、湯船選びから、長持ちさせるための換気・排水・お手入れまで一緒に計画します。",
+      en: "Hinoki, Japanese cypress, has been used for baths in Japan for centuries for its fresh scent and its resistance to moisture. We design the bathroom or deck around a deep soaking tub, help you choose a tub available here in Australia, and plan the ventilation, drainage and care it needs to last. Ask us about sizes, prices and timing.",
+      ja: "檜(ひのき)は、さわやかな香りと水への強さから、日本で何百年もお風呂に使われてきた木です。深い湯船を中心に浴室やデッキをデザインし、オーストラリア国内で手に入る湯船選びから、長持ちさせるための換気・排水・お手入れまで一緒に計画します。サイズ、価格、納期はお気軽にお問い合わせください。",
     },
     worries: [
       { worry: { en: "Will timber last in a bathroom?", ja: "木のお風呂は長持ちする?" }, help: { en: "Ventilation, drainage and a simple care routine, planned in.", ja: "換気、排水、簡単なお手入れ方法を最初から計画します。" } },
       { worry: { en: "Where would it even fit?", ja: "どこに置けばいい?" }, help: { en: "Indoors, on a deck or in the garden: we find the right place.", ja: "室内、デッキ、庭。合う場所を一緒に探します。" } },
-      { worry: { en: "Where do we get one?", ja: "どこで手に入る?" }, help: { en: "We help you choose and source the tub.", ja: "湯船の選定と手配をお手伝いします。" } },
+      { worry: { en: "Where do we get one?", ja: "どこで手に入る?" }, help: { en: "Available through our partners in Australia. Ask us for details.", ja: "オーストラリア国内のパートナーを通して手配できます。詳しくはお問い合わせください。" } },
     ],
     include: [
       { title: { en: "Bathroom or deck design", ja: "浴室・デッキのデザイン" }, line: { en: "Layout, materials and light around the tub", ja: "湯船を中心にしたレイアウト、素材、光" } },
-      { title: { en: "Choosing the tub", ja: "湯船選び" }, line: { en: "Size, shape and depth for how you bathe", ja: "入り方に合わせた大きさ、形、深さ" } },
+      { title: { en: "Choosing the tub", ja: "湯船選び" }, line: { en: "Size, shape and depth for how you bathe; sizes and prices on request", ja: "入り方に合わせた大きさ、形、深さ。サイズと価格はお問い合わせください" } },
       { title: { en: "Ventilation and drainage", ja: "換気と排水" }, line: { en: "So the timber can dry between baths", ja: "使うたびに木がしっかり乾くように" } },
       { title: { en: "Japanese bath details", ja: "日本のお風呂の小物" }, line: { en: "Hinoki stools, bath mats and soft lighting", ja: "檜の腰掛け、バスマット、やわらかな照明" } },
     ],
