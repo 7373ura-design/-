@@ -2,6 +2,8 @@ import { BackgroundSection, ContactSection } from "@/components/home/sections";
 import Link from "next/link";
 import { ChoiceCards, Notes, OverlayHero, Section, Strengths } from "@/components/blocks";
 import { T } from "@/lib/i18n";
+import { KindWords } from "@/components/more";
+import { kindWords } from "@/data/nami";
 import { businesses, hero, launchOffer, philosophy, strengths } from "@/data/brand";
 import { localHref, type Lang } from "@/lib/lang";
 
@@ -56,6 +58,14 @@ export function HomeView({ lang }: { lang: Lang }) {
       </Section>
       <Section id="approach" kicker="OUR APPROACH" title={philosophy.title} intro={philosophy.body}>
         <Notes items={philosophy.points} />
+      </Section>
+      <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
+        <KindWords items={kindWords.slice(2, 6)} />
+        <p className="mt-10 text-center">
+          <Link href={localHref(lang, "/about#kind-words")} className="label text-vermilion hover:underline">
+            <T ja="NAMIについて、もっと見る →" en="More about NAMI →" />
+          </Link>
+        </p>
       </Section>
       <div id="about" className="scroll-mt-16">
         <BackgroundSection />

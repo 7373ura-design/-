@@ -9,29 +9,26 @@ import { concepts, meaningSteps } from "@/data/concepts";
 import type { Faq } from "@/data/faq";
 import { alternates } from "@/lib/meta";
 import { localHref, type Lang } from "@/lib/lang";
+import { KindWords, ServiceCards } from "@/components/more";
+import { kindWords } from "@/data/nami";
+import { commercialServicesList } from "@/data/services";
 
 export function commercialMetadata(lang: Lang): Metadata {
   return lang === "ja"
     ? {
         title: "オフィス・店舗のインテリアデザイン｜シドニー",
         description:
-          "シドニー拠点のNAMIによる、オフィス・クリニック・教室・お店・カフェのジャパンディデザイン。3Dパースと概算予算までのデザイン提案は無料。工事はライセンスを持つジャパンホームズが担当します。",
+          "シドニー拠点のNAMIによる、オフィス・クリニック・教室・お店・カフェのジャパンディデザイン。3Dパースと概算予算までのデザイン提案は無料。施工会社はパートナーのジャパンホームズを通して手配します。",
         alternates: alternates(lang, "/commercial"),
       }
     : {
         title: "Office & Shop Interior Design in Sydney | Free Design Proposal",
         description:
-          "Japandi interior design for offices, clinics, schools, shops and cafés in Sydney. A free design proposal with 3D renders and a budget estimate; fit-out by our licensed partner, Japan Homes.",
+          "Japandi interior design for offices, clinics, schools, shops and cafés in Sydney. A free design proposal with 3D renders and a budget estimate; licensed builders arranged through our partner Japan Homes.",
         alternates: alternates(lang, "/commercial"),
       };
 }
 
-const atWork = [
-  { title: { en: "Reception", ja: "受付" }, line: { en: "Timber slats, a hinoki or solid timber counter and a single washi paper light, a welcome rather than a front desk", ja: "木の格子、檜や無垢材のカウンター、ひとつの和紙の照明。「窓口」ではなく「おもてなし」の場に" } },
-  { title: { en: "Meeting and treatment rooms", ja: "打ち合わせ室・施術室" }, line: { en: "Shoji-style screens and soft curtains: daylight in, conversations private", ja: "障子風の仕切りややわらかなカーテン。光は通し、会話は守ります" } },
-  { title: { en: "Workspaces", ja: "執務スペース" }, line: { en: "Desks facing the light, natural materials, plants and acoustic panels for focus", ja: "光に向かうデスク、自然素材、植物、吸音パネルで集中できる空間に" } },
-  { title: { en: "Shop floors and cafés", ja: "売り場・カフェ" }, line: { en: "Japandi, modern or coastal: a look that tells your story and makes people stay", ja: "ジャパンディ、モダン、コースタルなど。お店の物語を伝え、長く居たくなる空間に" } },
-];
 
 /** Shops and offices: the free proposal, who it is for, process, staff benefit and FAQ. */
 export function CommercialView({ lang }: { lang: Lang }) {
@@ -58,8 +55,8 @@ export function CommercialView({ lang }: { lang: Lang }) {
           { href: "#concepts", label: { en: "Concepts", ja: "デザイン事例" } },
           { href: "#free-proposal", label: { en: "Launch offer", ja: "オープン記念" } },
           { href: "#partners", label: { en: "Partners", ja: "パートナー" } },
-          { href: "#sectors", label: { en: "Who it's for", ja: "対象の業種" } },
-          { href: "#japandi-at-work", label: { en: "Design at work", ja: "空間づくり" } },
+          { href: "#services", label: { en: "Services", ja: "サービス" } },
+          { href: "#kind-words", label: { en: "Kind words", ja: "お客様の声" } },
           { href: "#process", label: { en: "How it works", ja: "進め方" } },
           { href: "#staff-benefit", label: { en: "Staff benefit", ja: "社員特典" } },
           { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
@@ -75,7 +72,7 @@ export function CommercialView({ lang }: { lang: Lang }) {
         links={[
           { href: "#concepts", label: { en: "See concept projects", ja: "デザイン事例を見る" } },
           { href: "#free-proposal", label: { en: "Free proposal for 10 businesses", ja: "10社限定の無料提案" } },
-          { href: localHref(lang, "/#contact"), label: { en: "Ask for a free proposal", ja: "無料提案を相談する" } },
+          { href: localHref(lang, "/book"), label: { en: "Ask for a free proposal", ja: "無料提案を相談する" } },
         ]}
         caption="SUNRISE & WAVES · CONCEPT DESIGN"
       />
@@ -114,8 +111,8 @@ export function CommercialView({ lang }: { lang: Lang }) {
         kicker="TO CELEBRATE NAMI'S LAUNCH"
         title={{ en: "A free design proposal\nfor 10 businesses.", ja: "10社限定、\nデザイン提案を無料で。" }}
         intro={{
-          en: "To celebrate our opening, we're offering a free design proposal to only 10 shops and offices. Most studios stop at a consultation and a floor plan. Ours goes all the way to 3D renders, a furniture list and a building quote, free when the project is built with Japan Homes.",
-          ja: "オープンを記念して、お店・オフィス10社限定で、デザインの提案を無料でお引き受けします。多くの会社は、無料の範囲が相談と間取り図まで。NAMIは3Dパース、家具リスト、工事の見積もりまで無料でご提案します(ジャパンホームズで施工する場合)。",
+          en: "To celebrate our opening, we're offering a free design proposal to only 10 shops and offices. Most studios stop at a consultation and a floor plan. Ours goes all the way to 3D renders, a furniture list and builder quotes, free when the build is arranged through NAMI and Japan Homes.",
+          ja: "オープンを記念して、お店・オフィス10社限定で、デザインの提案を無料でお引き受けします。多くの会社は、無料の範囲が相談と間取り図まで。NAMIは3Dパース、家具リスト、施工会社の見積もりまで無料でご提案します(NAMIとジャパンホームズを通して施工会社を手配する場合)。",
         }}
       >
         <Notes items={freeProposal} />
@@ -136,24 +133,15 @@ export function CommercialView({ lang }: { lang: Lang }) {
         <Notes items={partnerHelp} />
       </Section>
 
-      <Section id="sectors" kicker="WHO WE DESIGN FOR" title={{ en: "Offices, clinics,\nschools and shops.", ja: "オフィス、クリニック、\n教室、お店。" }}>
-        <Notes items={sectors} />
+      <Section id="services" kicker="WHAT WE DESIGN" title={{ en: "Offices, clinics,\nshops and schools.", ja: "オフィス、クリニック、\nお店、教室。" }} intro={{ en: "Choose a service to see what's included and example ideas.", ja: "サービスを選ぶと、内容とアイデアの例をご覧いただけます。" }} wide>
+        <ServiceCards lang={lang} items={commercialServicesList} />
       </Section>
 
-      <Section
-        id="japandi-at-work"
-        kicker="DESIGN AT WORK"
-        title={{ en: "Calm spaces\nthat work hard.", ja: "働く場所に、\n日本の落ち着きを。" }}
-        intro={{
-          en: "Calm, uncluttered and warm: Japanese materials make a reception, treatment room or shop floor feel welcoming.",
-          ja: "落ち着いていて、すっきりして、温かい。日本の素材が、受付や診察室、売り場を迎え入れるような空間にします。",
-        }}
-        wide
-      >
-        <Notes items={atWork} />
+      <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
+        <KindWords items={kindWords.filter((k) => k.group === "commercial")} />
       </Section>
 
-      <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilt by Japan Homes.", ja: "デザインはNAMI、\n工事はジャパンホームズ。" }}>
+      <Section id="process" kicker="HOW IT WORKS" title={{ en: "Designed by NAMI.\nBuilders arranged for you.", ja: "デザインはNAMI、\n施工会社も手配。" }}>
         <Steps items={commercialSteps} />
       </Section>
 

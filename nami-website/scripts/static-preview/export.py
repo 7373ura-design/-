@@ -22,6 +22,13 @@ works=["welcome-home","old-meets-new","living-in-green","simply-special"]
 for s in ["sunrise-and-waves","engawa-office"]:
     routes[f"/commercial/concepts/{s}"]=f"concept-{s}.html"
     routes[f"/ja/commercial/concepts/{s}"]=f"ja-concept-{s}.html"
+sys.path.insert(0, HERE)
+import json as _json
+_extra=_json.load(open(os.path.join(HERE,"pages.json")))
+for path in _extra:
+    name=path.strip("/").replace("/","-")
+    routes[path]=f"{name}.html"
+    routes["/ja"+path]=f"ja-{name}.html"
 for s in works:
     routes[f"/homes/projects/{s}"]=f"project-{s}.html"
     routes[f"/ja/homes/projects/{s}"]=f"ja-project-{s}.html"

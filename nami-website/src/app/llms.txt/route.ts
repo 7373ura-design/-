@@ -4,6 +4,10 @@ import { beyondSteps, everydayDesign, homeCategories, homeStyles } from "@/data/
 import { commercialFaq, freeProposal, sectors } from "@/data/commercial";
 import { getWorks } from "@/data/works";
 import { concepts } from "@/data/concepts";
+import { services } from "@/data/services";
+import { guides } from "@/data/guides";
+import { areas } from "@/data/areas";
+import { kindWords, story } from "@/data/nami";
 import { answeredFaq, type Faq } from "@/data/faq";
 
 export const dynamic = "force-static";
@@ -17,7 +21,7 @@ export function GET() {
     "",
     `> ${site.description.en}`,
     "",
-    `NAMI (${site.tagline}) is a Japandi interior design studio based in Sydney, Australia. The designer is from Japan. Two services: homes, and shops and offices. Building work is done by NAMI's licensed partner, Japan Homes. Consultations in English and Japanese.`,
+    `NAMI (${site.tagline}) is a Japandi interior design studio based in Sydney, Australia. The designer is from Japan. Two services: homes, and shops and offices. NAMI and its partner Japan Homes do not do building work themselves: through Japan Homes' 20+ years of connections, NAMI arranges licensed builders, and the client contracts the builder directly. Consultations in English and Japanese.`,
     "",
     "## Why NAMI",
     ...strengths.map((s) => `- ${s.title.en}: ${s.line.en}`),
@@ -36,12 +40,27 @@ export function GET() {
     ...getWorks().map((w) => `- [${w.title.en}](${abs(`/homes/projects/${w.slug}`)}): ${w.type.en}. ${w.lead.en}`),
     "",
     `## Shops and offices (${abs("/commercial")})`,
-    "Launch offer: free design proposal for 10 businesses (when built with Japan Homes):",
+    "Launch offer: free design proposal for 10 businesses (when the build is arranged through NAMI and Japan Homes):",
     ...freeProposal.map((s) => `- ${s.title.en}: ${s.line.en}`),
     "Concept projects (design visualisations; Engawa Office is a sample for a fictional company):",
     ...concepts.map((c) => `- [${c.title}](${abs(`/commercial/concepts/${c.slug}`)}): ${c.kind.en}. ${c.lead.en}`),
     "Who we design for:",
     ...sectors.map((s) => `- ${s.title.en}: ${s.line.en}`),
+    "",
+    "## Services (one page each)",
+    ...services.map((x) => `- [${x.title.en}](${abs(`/services/${x.slug}`)}): ${x.line.en}`),
+    "",
+    "## Guides",
+    ...guides.map((g) => `- [${g.title.en}](${abs(`/guides/${g.slug}`)}): ${g.description.en}`),
+    "",
+    "## Areas",
+    ...areas.map((a) => `- [${a.name.en}](${abs(`/areas/${a.slug}`)}): ${a.lead.en}`),
+    "",
+    "## Our story",
+    ...story.map((p) => `- ${p.title.en} ${p.body.en}`),
+    "",
+    "## Kind words (clients, initials only)",
+    ...kindWords.map((k) => `- "${k.quote.en}" (${k.who}, ${k.place.en})`),
     "",
     "## About the designer",
     ...background.items.map((b) => `- ${b.title.en}: ${b.line.en}`),

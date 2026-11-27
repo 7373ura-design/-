@@ -230,10 +230,10 @@ export function CtaBand({ lang, title, line }: { lang: Lang; title: Bi; line: Bi
         <h2 className="title !text-paper text-[2rem] md:text-[2.4rem]">{title[lang]}</h2>
         <p className="jp-body mx-auto mt-4 max-w-2xl text-[1.0625rem] text-paper/80">{line[lang]}</p>
         <Link
-          href={localHref(lang, "/#contact")}
+          href={localHref(lang, "/book")}
           className="label mt-8 inline-flex items-center gap-2 border border-paper/70 px-7 py-4 transition-colors hover:bg-paper hover:text-navy"
         >
-          {lang === "ja" ? "お問い合わせ" : "Get in touch"} <span aria-hidden>→</span>
+          {lang === "ja" ? "無料相談を予約する" : "Book a free consultation"} <span aria-hidden>→</span>
         </Link>
       </Container>
     </section>

@@ -143,14 +143,14 @@
     var v = function (n) { var el = f.elements[n]; return el ? el.value.trim() : ""; };
     var ja = !isEn();
     var subject = (ja ? "【NAMI】ご相談: " : "NAMI enquiry: ") + v("type") + " / " + v("name");
-    var body = [
-      (ja ? "お名前: " : "Name: ") + v("name"),
-      (ja ? "メール: " : "Email: ") + v("email"),
-      (ja ? "電話: " : "Phone: ") + v("phone"),
-      (ja ? "種類: " : "Project type: ") + v("type"),
-      "",
-      v("message"),
-    ].join("\n");
+    var lines = [];
+    Array.prototype.forEach.call(f.elements, function (el) {
+      if (!el.name || el.name === "message" || !el.value) return;
+      var label = el.closest("label");
+      var text = label ? label.childNodes[0].textContent.replace("*", "").trim() : el.name;
+      lines.push(text + ": " + el.value.trim());
+    });
+    var body = lines.concat(["", v("message")]).join("\n");
     window.location.href = "mailto:" + f.getAttribute("data-enquiry") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });
 

@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   // The site is now one page plus the project pages; old addresses land on their section
   async redirects() {
     return [
-      { source: "/about", destination: "/#about", permanent: true },
       { source: "/projects", destination: "/homes#projects", permanent: true },
       { source: "/services", destination: "/homes#services", permanent: true },
       { source: "/faq", destination: "/homes#faq", permanent: true },
@@ -18,7 +17,7 @@ const nextConfig: NextConfig = {
       { source: "/works/hillcrest-house", destination: "/homes/projects/simply-special", permanent: true },
       { source: "/works/:slug", destination: "/homes/projects/:slug", permanent: true },
       { source: "/ja/works/:slug", destination: "/ja/homes/projects/:slug", permanent: true },
-      { source: "/contact", destination: "/#contact", permanent: true },
+      { source: "/contact", destination: "/book", permanent: true },
       // Project pages are named after their Instagram posts
     ];
   },

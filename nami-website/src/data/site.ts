@@ -23,6 +23,7 @@ export const site = {
 export const navigation = [
   { label: { en: "HOMES", ja: "住まい" }, href: "/homes" },
   { label: { en: "SHOPS & OFFICES", ja: "お店・オフィス" }, href: "/commercial" },
-  { label: { en: "ABOUT", ja: "プロフィール" }, href: "/#about" },
-  { label: { en: "CONTACT", ja: "お問い合わせ" }, href: "/#contact" },
+  { label: { en: "ABOUT", ja: "NAMIについて" }, href: "/about" },
+  { label: { en: "GUIDES", ja: "お役立ち" }, href: "/guides" },
+  { label: { en: "CONTACT", ja: "お問い合わせ" }, href: "/book" },
 ];

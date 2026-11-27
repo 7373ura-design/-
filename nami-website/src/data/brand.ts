@@ -78,8 +78,8 @@ export const businesses = [
     meta: { en: "Commercial · Explore shops and offices", ja: "お店・オフィス · 詳しく見る" },
     strip: ["/images/concepts/engawa-office/01-reception.jpg", "/images/concepts/sunrise-and-waves/02-reception.jpg", "/images/concepts/sunrise-and-waves/03-sunrise-room.jpg"],
     line: {
-      en: "Offices, clinics, schools, shops and cafés, with a free design proposal and building by Japan Homes",
-      ja: "オフィス、クリニック、教室、お店、カフェ。無料のデザイン提案と、ジャパンホームズによる工事",
+      en: "Offices, clinics, schools, shops and cafés, with a free design proposal and builders arranged for you",
+      ja: "オフィス、クリニック、教室、お店、カフェ。無料のデザイン提案と、施工会社の手配まで",
     },
     image: "/images/concepts/sunrise-and-waves/01-lounge.jpg",
     alt: "Sunrise & Waves, a Japanese massage studio concept by NAMI",

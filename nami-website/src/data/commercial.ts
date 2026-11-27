@@ -4,8 +4,9 @@ import type { Item } from "@/data/homes";
 
 /**
  * Shops and offices, from "NAMI 事業の進め方（案）" (23 Nov 2026).
- * NAMI designs; building work is done by Japan Homes under its licence and
- * contracted directly with the client. NAMI never calls itself an architect,
+ * NAMI designs. Through Japan Homes' 20+ years of connections we arrange
+ * licensed builders; the client contracts the builder directly. Neither NAMI
+ * nor Japan Homes is described as doing the building work. NAMI never calls itself an architect,
  * never takes on or manages building work, gives no loan advice and makes no
  * promises about savings.
  */
@@ -14,8 +15,8 @@ export const commercialHero = {
   kicker: "OFFICE & SHOP INTERIOR DESIGN, SYDNEY",
   title: { en: "Japandi Design\nfor Offices and Shops", ja: "日本の美意識を、\nお店とオフィスに。" },
   body: {
-    en: "We design offices, clinics, schools, shops and cafés in Sydney. The design proposal, up to 3D renders and a budget estimate, is free, and the fit-out is built by our licensed partner, Japan Homes.",
-    ja: "シドニーで、オフィス、クリニック、教室、お店、カフェをデザインしています。3Dパースと概算予算までのデザイン提案は無料。工事はライセンスを持つパートナー、ジャパンホームズが行います。",
+    en: "We design offices, clinics, schools, shops and cafés in Sydney. The design proposal, up to 3D renders and a budget estimate, is free, and through our partner Japan Homes we arrange licensed builders for the fit-out.",
+    ja: "シドニーで、オフィス、クリニック、教室、お店、カフェをデザインしています。3Dパースと概算予算までのデザイン提案は無料。工事は、パートナーのジャパンホームズを通して、ライセンスを持つ施工会社を手配します。",
   },
 };
 
@@ -26,7 +27,7 @@ export const freeProposal: Item[] = [
   { title: { en: "Mood board and material board", ja: "ムードボード・素材ボード" }, line: { en: "The look, colours and finishes in one place", ja: "雰囲気、色、仕上げを一目で" } },
   { title: { en: "3D renders", ja: "3Dパース" }, line: { en: "Three to five images so you can see the space before it is built", ja: "完成前に空間がわかる3〜5枚のイメージ" } },
   { title: { en: "Furniture list", ja: "家具リスト" }, line: { en: "Furniture and fittings chosen for the design", ja: "デザインに合わせた家具・備品の一覧" } },
-  { title: { en: "Budget estimate and building quote", ja: "概算予算と工事の見積もり" }, line: { en: "An estimate, plus a quote for the building work from Japan Homes", ja: "概算予算と、ジャパンホームズによる工事の見積もり" } },
+  { title: { en: "Budget estimate and building quote", ja: "概算予算と工事の見積もり" }, line: { en: "An estimate, plus builder quotes arranged through Japan Homes", ja: "概算予算と、ジャパンホームズを通して手配する施工会社の見積もり" } },
 ];
 
 export const sectors: Item[] = [
@@ -40,7 +41,7 @@ export const sectors: Item[] = [
 export const commercialSteps: Item[] = [
   { title: { en: "Get in touch", ja: "お問い合わせ" }, line: { en: "Email, Instagram or Facebook, in English or Japanese", ja: "メール、Instagram、Facebookから。日本語でも英語でも" } },
   { title: { en: "Free design proposal", ja: "無料のデザイン提案" }, line: { en: "Briefing, layouts, mood board, 3D renders, furniture list and budget", ja: "ヒアリングからレイアウト、ムードボード、3Dパース、家具リスト、予算まで" } },
-  { title: { en: "Building by Japan Homes", ja: "ジャパンホームズによる工事" }, line: { en: "You contract the fit-out directly with Japan Homes, a licensed builder", ja: "工事は、ライセンスを持つジャパンホームズとお客様が直接ご契約" } },
+  { title: { en: "Builders arranged", ja: "施工会社の手配" }, line: { en: "Through Japan Homes we arrange licensed builders; you contract the builder directly", ja: "ジャパンホームズを通して、ライセンスを持つ施工会社を手配。工事の契約はお客様と施工会社が直接" } },
   { title: { en: "We check the design", ja: "デザイン通りか確認" }, line: { en: "During the work, we check everything matches the design", ja: "工事中、デザイン通りに進んでいるか確認します" } },
   { title: { en: "Open for business", ja: "完成・オープン" }, line: { en: "A finished space your team and customers enjoy", ja: "スタッフにもお客様にも心地よい空間の完成" } },
 ];
@@ -58,15 +59,15 @@ export const commercialFaq: Faq[] = [
   {
     q: { en: "Is the design proposal really free?", ja: "デザインの提案は本当に無料ですか？" },
     a: {
-      en: "Yes. The briefing, measure-up, layout options, mood board, material board, 3D renders, furniture list, budget estimate and the building quote from Japan Homes are all free when the project is built with Japan Homes. If you would like to take the design to another builder, a design fee applies, and we agree it in writing before we start. The free proposal is limited to 10 businesses to celebrate our launch.",
-      ja: "はい。ヒアリング・採寸、レイアウト案、ムードボード、素材ボード、3Dパース、家具リスト、概算予算、ジャパンホームズの工事見積もりまで、ジャパンホームズで施工する場合は無料です。デザインだけをほかの会社に持っていかれる場合はデザイン料がかかり、始める前に書面でお約束します。無料の提案は、オープン記念として10社限定です。",
+      en: "Yes. The briefing, measure-up, layout options, mood board, material board, 3D renders, furniture list, budget estimate and builder quotes are all free when the build is arranged through NAMI and Japan Homes. If you would like to take the design to another builder, a design fee applies, and we agree it in writing before we start. The free proposal is limited to 10 businesses to celebrate our launch.",
+      ja: "はい。ヒアリング・採寸、レイアウト案、ムードボード、素材ボード、3Dパース、家具リスト、概算予算、施工会社の見積もりまで、NAMIとジャパンホームズを通して施工会社を手配する場合は無料です。デザインだけをほかの会社に持っていかれる場合はデザイン料がかかり、始める前に書面でお約束します。無料の提案は、オープン記念として10社限定です。",
     },
   },
   {
     q: { en: "Who does the building work?", ja: "工事は誰がしますか？" },
     a: {
-      en: "Japan Homes, our building partner, does the fit-out under its own licence. Japan Homes brings 20+ years of trusted connections and proven building craftsmanship. You sign the building contract directly with Japan Homes, and NAMI checks that the work matches the design.",
-      ja: "工事は、パートナーのジャパンホームズが自社のライセンスで行います。ジャパンホームズには、20年以上の信頼のつながりと、確かな施工技術があります。工事の契約はお客様とジャパンホームズの直接契約で、NAMIはデザイン通りに仕上がっているかを確認します。",
+      en: "A licensed builder. Neither NAMI nor Japan Homes does the building work itself. Through Japan Homes' 20+ years of trusted connections, we can work with many licensed builders and trades, and arrange the right one for your project. You sign the building contract directly with the builder, and NAMI checks the work matches the design.",
+      ja: "ライセンスを持つ施工会社です。NAMIもジャパンホームズも、自社で工事はしていません。ジャパンホームズとの20年以上の信頼のつながりを通して、たくさんの施工会社・職人と関わることができ、プロジェクトに合う会社を手配します。工事の契約はお客様と施工会社の直接契約で、NAMIはデザイン通りに仕上がっているかを確認します。",
     },
   },
   {
@@ -117,7 +118,7 @@ export const commercialFaq: Faq[] = [
 export const partnerHelp: Item[] = [
   {
     title: { en: "\"Who will build it?\"", ja: "「工事は誰が?」" },
-    line: { en: "Japan Homes, our licensed building partner, quotes and builds it. You contract with them directly; we check it matches the design", ja: "ライセンスを持つパートナー、ジャパンホームズが見積もりと工事を担当。契約はお客様と直接、NAMIはデザイン通りか確認します" },
+    line: { en: "Through Japan Homes' connections we arrange licensed builders and quotes. You contract the builder directly; we check it matches the design", ja: "ジャパンホームズのつながりで、ライセンスを持つ施工会社と見積もりを手配。契約はお客様と施工会社が直接、NAMIはデザイン通りか確認します" },
   },
   {
     title: { en: "\"The budget isn't there yet.\"", ja: "「予算が足りない」" },

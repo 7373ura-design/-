@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
 import { launchOffer } from "@/data/brand";
-import { Categories, CtaBand, FaqList, Glossary, OverlayHero, Pills, Section, Notes, Steps, StoryCard, SubNav, faqLd } from "@/components/blocks";
+import { CtaBand, FaqList, OverlayHero, Pills, Section, Notes, StoryCard, SubNav, faqLd } from "@/components/blocks";
+import { KindWords, ServiceCards } from "@/components/more";
+import { kindWords } from "@/data/nami";
+import { homeServicesList } from "@/data/services";
 import { JsonLd, breadcrumbLd, serviceLd } from "@/components/JsonLd";
-import { beyondSteps, everydayDesign, homeCategories, homeSteps, homeStyles, homesHero, lastingMaterials, valueIntro, valueNote, valuePoints } from "@/data/homes";
+import { homeStyles, homesHero, smallThings } from "@/data/homes";
 import { T } from "@/lib/i18n";
 import { answeredFaq } from "@/data/faq";
 import { getWorks } from "@/data/works";
@@ -26,7 +29,7 @@ export function homesMetadata(lang: Lang): Metadata {
       };
 }
 
-/** Homes: launch offer, categories, styles, beyond design, materials, property value, projects, process and FAQ. */
+/** Homes: launch offer, services (each with its own page), styles, worries, projects, kind words and FAQ. */
 export function HomesView({ lang }: { lang: Lang }) {
   const works = getWorks();
   const faq = answeredFaq();
@@ -39,7 +42,7 @@ export function HomesView({ lang }: { lang: Lang }) {
             name: lang === "ja" ? "住まいのインテリアデザイン" : "Japandi home interior design",
             serviceType: "Residential interior design",
             description: homesHero.body[lang],
-            offers: homeCategories.map((s) => s.title[lang]),
+            offers: homeServicesList.map((s) => s.title[lang]),
           }),
           faqLd(lang, faq.flatMap((g) => g.items)),
           breadcrumbLd(lang, [{ name: lang === "ja" ? "住まい" : "Homes", path: "/homes" }]),
@@ -50,13 +53,11 @@ export function HomesView({ lang }: { lang: Lang }) {
         current="homes"
         links={[
           { href: "#offer", label: { en: "Launch offer", ja: "オープン記念" } },
-          { href: "#services", label: { en: "What we design", ja: "サービス" } },
+          { href: "#services", label: { en: "Services", ja: "サービス" } },
           { href: "#styles", label: { en: "Styles", ja: "スタイル" } },
-          { href: "#beyond", label: { en: "Beyond design", ja: "家の先まで" } },
-          { href: "#materials", label: { en: "Materials", ja: "素材" } },
-          { href: "#value", label: { en: "Property value", ja: "住まいの価値" } },
+          { href: "#worries", label: { en: "Worries", ja: "お悩み" } },
           { href: "#projects", label: { en: "Projects", ja: "作品" } },
-          { href: "#process", label: { en: "How it works", ja: "進め方" } },
+          { href: "#kind-words", label: { en: "Kind words", ja: "お客様の声" } },
           { href: "#faq", label: { en: "FAQ", ja: "よくある質問" } },
         ]}
       />
@@ -69,7 +70,7 @@ export function HomesView({ lang }: { lang: Lang }) {
         image={{ src: "/images/portfolio/living-in-green/06.jpg", alt: "Living in Green by NAMI: a bright living room opening through wide glass doors onto a timber deck and garden", position: "50% 55%" }}
         links={[
           { href: "#projects", label: { en: "See projects", ja: "作品を見る" } },
-          { href: localHref(lang, "/#contact"), label: { en: "Start a project", ja: "相談する" } },
+          { href: localHref(lang, "/book"), label: { en: "Book a free consultation", ja: "無料相談を予約する" } },
         ]}
         caption="LIVING IN GREEN"
       />
@@ -93,69 +94,44 @@ export function HomesView({ lang }: { lang: Lang }) {
         id="services"
         kicker="WHAT WE DESIGN"
         title={{ en: "From one room\nto the whole home.", ja: "1部屋から、\n家まるごとまで。" }}
-        intro={{
-          en: "Six ways we can help. Japanese ideas appear where they suit your home, never as a theme.",
-          ja: "6つのかたちでお手伝いします。日本の要素は、住まいに合うところに自然に取り入れます。",
-        }}
+        intro={{ en: "Choose a service to see what's included, example ideas and photos.", ja: "サービスを選ぶと、内容、アイデアの例、写真をご覧いただけます。" }}
         wide
       >
-        <Categories items={homeCategories} />
+        <ServiceCards lang={lang} items={homeServicesList} />
       </Section>
 
       <Section
         id="styles"
         kicker="ANY STYLE YOU LOVE"
-        title={{ en: "Not only Japanese.", ja: "日本のスタイルだけじゃない。" }}
+        title={{ en: "Japanese, and much more.", ja: "和のかたちも、\nそれ以外も。" }}
         intro={{
-          en: "Japandi, modern or something in between, always designed around how you live. Our Japanese roots shape how we work, not which style you must choose.",
-          ja: "ジャパンディでも、モダンでも、その間でも。いつも暮らし方に合わせてデザインします。日本のルーツは私たちの仕事の仕方に生きていて、スタイルを決めるものではありません。",
+          en: "Traditional or modern Japanese, Japan mixed with another country's style, or no Japanese touch at all. We start with how you live and what you like.",
+          ja: "昔ながらの和も、モダンな和も、日本とほかの国を合わせたスタイルも、和にこだわらないデザインも。暮らし方とお好みから始めます。",
         }}
         wide
       >
         <Pills items={homeStyles} />
+        <p className="jp-body mx-auto mt-14 max-w-3xl text-[1.0625rem] text-navy/80">
+          <T ja={smallThings.ja} en={smallThings.en} />
+        </p>
       </Section>
 
       <Section
-        id="beyond"
-        kicker="BEYOND DESIGNING THE HOUSE"
-        title={{ en: "Everything is design.", ja: "暮らしのすべてが、\nデザイン。" }}
+        id="worries"
+        kicker="WHEREVER YOU ARE"
+        title={{ en: "No worry\nis too small.", ja: "どんな小さな悩みも。" }}
         intro={{
-          en: "We don't stop at the floor plan. We find your builder, picture your life in the home, and think ahead to its value when you may one day sell. And if you'd like, we help with everything that makes a house feel like yours: furniture, tableware, light, even scent.",
-          ja: "間取りで終わりではありません。施工会社を見つけ、そこでの暮らしを思い描き、いつか売るときの価値まで考えます。ご希望があれば、家具、器、明かり、香りまで。家を「自分の家」にするすべてをお手伝いします。",
+          en: "Before you buy, just bought, budget, design, build, after you move in. See how we help at every stage, and read our guides on costs and property value.",
+          ja: "家を買う前、買ったばかり、予算、デザイン、工事、住み始めてから。どの段階でもお手伝いします。費用や住まいの価値についてのガイドもどうぞ。",
         }}
-        wide
       >
-        <div className="mx-auto max-w-3xl">
-          <Steps items={beyondSteps} />
-        </div>
-        <h3 className="title mt-14 text-[1.5rem]">{lang === "ja" ? "必要なら、ここまでサポートします" : "If you'd like, we can help with"}</h3>
-        <div className="mt-6">
-          <Pills items={everydayDesign} />
-        </div>
-      </Section>
-
-      <Section
-        id="materials"
-        kicker="MATERIALS THAT LAST"
-        title={{ en: "Made to last,\nand to age well.", ja: "長く使えて、\n味わいが深まる素材。" }}
-        intro={{
-          en: "We choose fewer things, and better ones: natural materials and skilled hands that look better in twenty years than on the first day. It is the Japanese idea of caring for a home over a lifetime.",
-          ja: "数を絞って、良いものを。20年後に、最初の日よりも美しく見える自然素材と職人の仕事を選びます。住まいを一生かけて大切にする、日本の考え方です。",
-        }}
-        wide
-      >
-        <Glossary items={lastingMaterials} />
-      </Section>
-
-      <Section
-        id="value"
-        kicker="DESIGN THAT ADDS VALUE"
-        title={{ en: "A home you love,\nand an asset that holds its value.", ja: "愛着のある家を、\n価値ある資産に。" }}
-        intro={valueIntro}
-      >
-        <Notes items={valuePoints} />
-        <p className="mt-6 text-[0.875rem] leading-relaxed text-navy/60">
-          <T ja={valueNote.ja} en={valueNote.en} />
+        <p className="mt-6 flex flex-wrap gap-3">
+          <a href={localHref(lang, "/how-we-work")} className="label inline-flex items-center gap-2 bg-navy px-6 py-3.5 text-paper transition-colors hover:bg-deep">
+            {lang === "ja" ? "段階ごとのお手伝い" : "How we help"} →
+          </a>
+          <a href={localHref(lang, "/guides")} className="label inline-flex items-center gap-2 border border-navy px-6 py-3.5 text-navy transition-colors hover:bg-navy hover:text-paper">
+            {lang === "ja" ? "お役立ちガイド" : "Guides"} →
+          </a>
         </p>
       </Section>
 
@@ -176,8 +152,8 @@ export function HomesView({ lang }: { lang: Lang }) {
         </div>
       </Section>
 
-      <Section id="process" kicker="HOW IT WORKS" title={{ en: "Six simple steps.", ja: "6つのステップ。" }}>
-        <Steps items={homeSteps} />
+      <Section id="kind-words" kicker="KIND WORDS" title={{ en: "Kind words.", ja: "お客様の声。" }} wide>
+        <KindWords items={kindWords.filter((k) => k.group === "homes")} />
       </Section>
 
       <Section id="faq" kicker="FAQ" title={{ en: "Questions,\nanswered.", ja: "よくあるご質問。" }} wide>

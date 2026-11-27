@@ -312,15 +312,21 @@ export const homeCategories: Category[] = [
   },
 ];
 
-/** Styles: not only Japanese. */
+/** Styles: many kinds of Japanese, Japan mixed with others, and styles without Japan at all. */
 export const homeStyles: { title: Bi; line: Bi }[] = [
-  { title: { en: "Japandi", ja: "ジャパンディ" }, line: { en: "Japanese calm with Scandinavian warmth", ja: "日本の落ち着きと、北欧の温かさ" } },
-  { title: { en: "Japanese modern", ja: "和モダン" }, line: { en: "Timber, paper and stone, with clean modern lines", ja: "木・紙・石を、すっきりとした今のかたちで" } },
-  { title: { en: "Scandinavian", ja: "北欧" }, line: { en: "Light, soft textiles and simple, friendly furniture", ja: "明るさ、やわらかな布、やさしい形の家具" } },
-  { title: { en: "Modern minimal", ja: "モダン・ミニマル" }, line: { en: "Clean, uncluttered and quietly refined", ja: "すっきりと、物を減らし、静かに上質に" } },
-  { title: { en: "Natural and organic", ja: "ナチュラル" }, line: { en: "Raw materials, plants and textures that age well", ja: "素材そのもの、植物、年月とともに味わいの出る質感" } },
-  { title: { en: "Coastal", ja: "コースタル" }, line: { en: "Breezy, bright and made for Sydney living", ja: "風が通り、明るく、シドニーの暮らしに合う" } },
+  { title: { en: "Traditional Japanese", ja: "和風・古民家風" }, line: { en: "Timber, tatami, shoji and the warmth of an old house", ja: "木、畳、障子、古い家のぬくもり" } },
+  { title: { en: "Japanese modern", ja: "和モダン" }, line: { en: "Japanese materials with clean, modern lines", ja: "和の素材を、すっきりとした今のかたちで" } },
+  { title: { en: "Wabi-sabi", ja: "侘び寂び" }, line: { en: "Raw, natural materials that grow more beautiful with age", ja: "素材そのままの、年月とともに美しくなる空間" } },
+  { title: { en: "Japandi (Japan × Scandinavia)", ja: "ジャパンディ(日本×北欧)" }, line: { en: "Japanese calm with Scandinavian warmth", ja: "日本の落ち着きと、北欧の温かさ" } },
+  { title: { en: "Japan × the world", ja: "日本×ほかの国" }, line: { en: "Japanese with coastal, Mediterranean, mid-century or industrial", ja: "日本×コースタル、地中海、ミッドセンチュリー、インダストリアルなど" } },
+  { title: { en: "And without Japan", ja: "和にこだわらないデザインも" }, line: { en: "Modern, minimal, natural, classic or coastal: whatever suits how you live", ja: "モダン、ミニマル、ナチュラル、クラシック、コースタルなど、暮らしに合うものを" } },
 ];
+
+/** The small things: shown as examples, for people who want to care about every detail. */
+export const smallThings: Bi = {
+  en: "We choose the furniture with you, of course. And if you'd like to care about the smallest things too (the tableware on your table, the scent as you walk in, the linen on the bed, a plant by the window) we can help with that as well. For us, all of it is design.",
+  ja: "家具を一緒に選ぶのはもちろん。食卓の器、玄関に入ったときの香り、ベッドのリネン、窓辺の植物まで。小さなものまでこだわりたい方には、そこまでお手伝いします。私たちにとっては、そのすべてがデザインです。",
+};
 
 /** Beyond designing the house: from the builder to everyday life and future value. */
 export const beyondSteps: { title: Bi; line: Bi }[] = [
