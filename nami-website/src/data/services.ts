@@ -405,13 +405,13 @@ export const services: Service[] = [
     title: { en: "Hinoki baths and Japanese bathing", ja: "檜(ひのき)風呂と日本のお風呂時間" },
     line: { en: "A Japanese cypress soaking tub, planned into your bathroom or deck.", ja: "檜の湯船を、浴室やデッキに。" },
     lead: {
-      en: "Hinoki, Japanese cypress, has been used for baths in Japan for centuries for its fresh scent and its resistance to moisture. We design the bathroom or deck around a deep soaking tub, help you choose a tub available here in Australia, and plan the ventilation, drainage and care it needs to last. Ask us about sizes, prices and timing.",
-      ja: "檜(ひのき)は、さわやかな香りと水への強さから、日本で何百年もお風呂に使われてきた木です。深い湯船を中心に浴室やデッキをデザインし、オーストラリア国内で手に入る湯船選びから、長持ちさせるための換気・排水・お手入れまで一緒に計画します。サイズ、価格、納期はお気軽にお問い合わせください。",
+      en: "Hinoki, Japanese cypress, has been used for baths in Japan for centuries for its fresh scent and its resistance to moisture. We design the bathroom or deck around a deep soaking tub, and plan the ventilation, drainage and care it needs to last. Hinoki baths are supplied through our partner Japan Homes for projects in Australia; availability and pricing on request.",
+      ja: "檜(ひのき)は、さわやかな香りと水への強さから、日本で何百年もお風呂に使われてきた木です。深い湯船を中心に浴室やデッキをデザインし、長持ちさせるための換気・排水・お手入れまで一緒に計画します。檜の湯船は、パートナーのジャパンホームズを通して、オーストラリアのプロジェクト向けに手配します。在庫と価格はお問い合わせください。",
     },
     worries: [
       { worry: { en: "Will timber last in a bathroom?", ja: "木のお風呂は長持ちする?" }, help: { en: "Ventilation, drainage and a simple care routine, planned in.", ja: "換気、排水、簡単なお手入れ方法を最初から計画します。" } },
       { worry: { en: "Where would it even fit?", ja: "どこに置けばいい?" }, help: { en: "Indoors, on a deck or in the garden: we find the right place.", ja: "室内、デッキ、庭。合う場所を一緒に探します。" } },
-      { worry: { en: "Where do we get one?", ja: "どこで手に入る?" }, help: { en: "Available through our partners in Australia. Ask us for details.", ja: "オーストラリア国内のパートナーを通して手配できます。詳しくはお問い合わせください。" } },
+      { worry: { en: "Where do we get one?", ja: "どこで手に入る?" }, help: { en: "Supplied through our partner Japan Homes. Ask us for details.", ja: "パートナーのジャパンホームズを通して手配します。詳しくはお問い合わせください。" } },
     ],
     include: [
       { title: { en: "Bathroom or deck design", ja: "浴室・デッキのデザイン" }, line: { en: "Layout, materials and light around the tub", ja: "湯船を中心にしたレイアウト、素材、光" } },
