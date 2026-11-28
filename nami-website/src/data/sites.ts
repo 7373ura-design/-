@@ -123,6 +123,49 @@ export const brandSites: BrandSite[] = [
     steps: [], // NAMI Works uses commercialSteps
     faq: [], // NAMI Works uses commercialFaq
   },
+  {
+    slug: "nami-japan",
+    short: "Japan",
+    color: "#B8323F",
+    logo: "/images/logo/nami-logo-japan.png",
+    forWho: { en: "For people in Australia who want to live in Japan.", ja: "日本で暮らしたい、オーストラリアの方へ。" },
+    menu: [
+      { href: "/nami-japan#services", label: { en: "SERVICES", ja: "できること" } },
+      { href: "/nami-japan#process", label: { en: "HOW IT WORKS", ja: "進め方" } },
+      { href: "/nami-japan#faq", label: { en: "FAQ", ja: "よくある質問" } },
+    ],
+    finder: [
+      { worry: { en: "I want to live in Japan, but don't know where to start", ja: "日本に住みたいけど、何から始めればいい?" }, to: "/nami-japan#services", label: { en: "First consultation", ja: "最初のご相談" } },
+      { worry: { en: "Which visa could I use?", ja: "どのビザが使えるのか知りたい" }, to: "/nami-japan#services", label: { en: "Visa options explained", ja: "ビザの種類のご説明" } },
+      { worry: { en: "Which area of Japan would suit us?", ja: "日本のどの地域が自分たちに合う?" }, to: "/nami-japan#services", label: { en: "Area report", ja: "地域の調査レポート" } },
+      { worry: { en: "I want to buy a home in Japan", ja: "日本で家を買いたい" }, to: "/nami-japan#later", label: { en: "Home search, coming later", ja: "家探しのお手伝い（これから）" } },
+    ],
+    steps: [
+      { title: { en: "Get in touch", ja: "お問い合わせ" }, line: { en: "Tell us who is moving, when, and what you are hoping for", ja: "どなたが、いつ頃、どんな暮らしを考えているかをお聞かせください" } },
+      { title: { en: "What we can do, and the fee", ja: "内容と料金のご案内" }, line: { en: "We tell you what the consultation covers and its fee before anything starts", ja: "始める前に、ご相談の内容と料金をお知らせします" } },
+      { title: { en: "First consultation", ja: "最初のご相談" }, line: { en: "In Sydney or online, in English or Japanese", ja: "シドニーで、またはオンラインで。日本語・英語で" } },
+      { title: { en: "Research and report", ja: "調査とレポート" }, line: { en: "Visa options and the areas you are considering, in one report", ja: "ビザの種類と、気になる地域のことを1つのレポートに" } },
+      { title: { en: "Your next step", ja: "次の一歩へ" }, line: { en: "We introduce Japanese specialists and real estate agents when you are ready", ja: "必要になったら、日本の専門家や不動産会社をご紹介します" } },
+    ],
+    faq: [
+      {
+        q: { en: "Can you buy or sell a home in Japan for me?", ja: "日本の家の売買をお願いできますか?" },
+        a: { en: "Not at the moment. For buying and selling, we introduce you to a real estate agent in Japan.", ja: "今は行っていません。売買は、日本の不動産会社におつなぎします。" },
+      },
+      {
+        q: { en: "Can you apply for my visa?", ja: "ビザの申請を代わりにしてもらえますか?" },
+        a: { en: "No. We explain the visa options and the general steps. For the application itself, we introduce you to a licensed specialist in Japan (gyoseishoshi).", ja: "いいえ。ビザの種類と大まかな流れをご説明します。申請の書類は、日本の専門家（行政書士）におつなぎします。" },
+      },
+      {
+        q: { en: "Can we talk online?", ja: "オンラインで相談できますか?" },
+        a: { en: "Yes. We can meet in Sydney or online, in English or Japanese.", ja: "はい。シドニーでお会いしても、オンラインでも大丈夫です。日本語・英語で。" },
+      },
+      {
+        q: { en: "How much does it cost?", ja: "費用はいくらですか?" },
+        a: { en: "It depends on what you need. After you get in touch, we tell you what the consultation covers and its fee before anything starts.", ja: "ご相談の内容によって変わります。お問い合わせのあと、始める前に内容と料金をお知らせします。" },
+      },
+    ],
+  },
 ];
 
 export const getBrandSite = (slug: string) => brandSites.find((b) => b.slug === slug);
@@ -138,6 +181,7 @@ export const groupFinder: Finder[] = [
   { worry: { en: "Bought a home in Australia from overseas", ja: "海外からオーストラリアの物件を買った" }, to: "/nami-value", label: { en: "NAMI Value", ja: "NAMI Value" } },
   { worry: { en: "An office, clinic, shop or café", ja: "オフィス、クリニック、お店、カフェ" }, to: "/nami-works", label: { en: "NAMI Works", ja: "NAMI Works" } },
   { worry: { en: "A Japanese business opening in Australia", ja: "日本のお店・会社のオーストラリア出店" }, to: "/nami-works", label: { en: "NAMI Works", ja: "NAMI Works" } },
+  { worry: { en: "Want to live in Japan, or own a home there", ja: "日本に住みたい、日本に家を持ちたい" }, to: "/nami-japan", label: { en: "NAMI Japan", ja: "NAMI Japan" } },
 ];
 
 /**
@@ -146,7 +190,7 @@ export const groupFinder: Finder[] = [
  */
 export function brandOfPath(here: string, serviceBrand: (s: string) => string | undefined, guideBrand: (g: string) => string | undefined): string | null {
   const first = here.split("/")[1] ?? "";
-  if (["nami-home", "nami-value", "nami-works"].includes(first)) return first;
+  if (["nami-home", "nami-value", "nami-works", "nami-japan"].includes(first)) return first;
   if (first === "homes" || first === "how-we-work") return "nami-home";
   if (first === "commercial") return "nami-works";
   const slug = here.split("/")[2];

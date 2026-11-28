@@ -294,22 +294,22 @@ export function OverlayHero({
             </div>
           )}
           {choices && (
-            <div className={`mt-8 grid gap-4 ${choices.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+            <div className={`mt-8 grid gap-4 ${choices.length === 4 ? "md:grid-cols-2 xl:grid-cols-4" : choices.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
               {choices.map((c) => (
                 <Link
                   key={c.href}
                   href={c.href}
-                  className="group flex items-center justify-between gap-6 border border-paper/40 bg-cream px-6 py-5 text-navy shadow-lg transition-colors hover:bg-paper md:px-8 md:py-6"
+                  className={`group flex items-center justify-between border border-paper/40 bg-cream px-6 py-5 text-navy shadow-lg transition-colors hover:bg-paper ${choices.length === 4 ? "gap-3 md:px-6 md:py-5" : "gap-6 md:px-8 md:py-6"}`}
                 >
                   <span>
-                    <span className="title block text-[1.75rem] md:text-[2rem]">
+                    <span className={`title block whitespace-nowrap ${choices.length === 4 ? "text-[1.6rem] xl:text-[1.5rem]" : "text-[1.75rem] md:text-[2rem]"}`}>
                       <T ja={c.title.ja} en={c.title.en} />
                     </span>
                     <span className="mt-1 block text-[0.9375rem] leading-snug text-navy/70">
                       <T ja={c.line.ja} en={c.line.en} />
                     </span>
                   </span>
-                  <span aria-hidden className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy text-[1.25rem] text-paper transition-transform group-hover:translate-x-1">
+                  <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy text-[1.25rem] text-paper transition-transform group-hover:translate-x-1">
                     →
                   </span>
                 </Link>
