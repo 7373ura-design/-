@@ -135,15 +135,15 @@ export const brandSites: BrandSite[] = [
       { href: "/nami-japan#faq", label: { en: "FAQ", ja: "よくある質問" } },
     ],
     finder: [
-      { worry: { en: "I want to live in Japan, but don't know where to start", ja: "日本に住みたいけど、何から始めればいい?" }, to: "/nami-japan#services", label: { en: "First consultation", ja: "最初のご相談" } },
+      { worry: { en: "I want to live in Japan, but don't know where to start", ja: "日本に住みたいけど、何から始めればいい?" }, to: "/nami-japan#services", label: { en: "Free first consultation", ja: "無料のご相談" } },
       { worry: { en: "Which visa could I use?", ja: "どのビザが使えるのか知りたい" }, to: "/nami-japan#services", label: { en: "Visa options explained", ja: "ビザの種類のご説明" } },
       { worry: { en: "Which area of Japan would suit us?", ja: "日本のどの地域が自分たちに合う?" }, to: "/nami-japan#services", label: { en: "Area report", ja: "地域の調査レポート" } },
       { worry: { en: "I want to buy a home in Japan", ja: "日本で家を買いたい" }, to: "/nami-japan#later", label: { en: "Home search, coming later", ja: "家探しのお手伝い（これから）" } },
     ],
     steps: [
       { title: { en: "Get in touch", ja: "お問い合わせ" }, line: { en: "Tell us who is moving, when, and what you are hoping for", ja: "どなたが、いつ頃、どんな暮らしを考えているかをお聞かせください" } },
-      { title: { en: "What we can do, and the fee", ja: "内容と料金のご案内" }, line: { en: "We tell you what the consultation covers and its fee before anything starts", ja: "始める前に、ご相談の内容と料金をお知らせします" } },
-      { title: { en: "First consultation", ja: "最初のご相談" }, line: { en: "In Sydney or online, in English or Japanese", ja: "シドニーで、またはオンラインで。日本語・英語で" } },
+      { title: { en: "Free first consultation", ja: "無料のご相談" }, line: { en: "In Sydney or online, in English or Japanese. We listen to what you are unsure about", ja: "シドニーで、またはオンラインで。日本語・英語で。気になっていることをうかがいます" } },
+      { title: { en: "What we can do, and the fee", ja: "内容と料金のご案内" }, line: { en: "If you would like more, we tell you what it covers and its fee before anything starts", ja: "その先をご希望の場合は、始める前に内容と料金をお知らせします" } },
       { title: { en: "Research and report", ja: "調査とレポート" }, line: { en: "Visa options and the areas you are considering, in one report", ja: "ビザの種類と、気になる地域のことを1つのレポートに" } },
       { title: { en: "Your next step", ja: "次の一歩へ" }, line: { en: "We introduce Japanese specialists and real estate agents when you are ready", ja: "必要になったら、日本の専門家や不動産会社をご紹介します" } },
     ],
@@ -162,7 +162,7 @@ export const brandSites: BrandSite[] = [
       },
       {
         q: { en: "How much does it cost?", ja: "費用はいくらですか?" },
-        a: { en: "It depends on what you need. After you get in touch, we tell you what the consultation covers and its fee before anything starts.", ja: "ご相談の内容によって変わります。お問い合わせのあと、始める前に内容と料金をお知らせします。" },
+        a: { en: "The first consultation is free. The visa explanation and area report are paid; we tell you what they cover and the fee before anything starts.", ja: "最初のご相談は無料です。ビザの種類のご説明と地域の調査レポートは有料で、始める前に内容と料金をお知らせします。" },
       },
     ],
   },

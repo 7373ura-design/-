@@ -60,7 +60,7 @@ export function brandSiteMetadata(lang: Lang, slug: string): Metadata {
 
 /** NAMI Japan: what it offers now, and what comes later. */
 const japanNow = [
-  { title: { en: "First consultation", ja: "最初のご相談" }, line: { en: "Why Japan, when, who is moving and your budget. We sort out together what to do first.", ja: "日本で暮らしたい理由、時期、ご家族、ご予算をうかがい、何から始めるかを一緒に整理します。" } },
+  { title: { en: "Free first consultation", ja: "無料のご相談" }, line: { en: "Free. Why Japan, when, who is moving and what you are unsure about. We sort out together what to do first.", ja: "無料です。日本で暮らしたい理由、時期、ご家族、気になっていることをうかがい、何から始めるかを一緒に整理します。" } },
   { title: { en: "Visa options explained", ja: "ビザの種類のご説明" }, line: { en: "The visas that may suit you and the general steps. For the application, we introduce a licensed specialist in Japan.", ja: "使えそうなビザの種類と、大まかな流れをご説明します。申請の書類は、日本の専門家（行政書士）におつなぎします。" } },
   { title: { en: "Area report", ja: "地域の調査レポート" }, line: { en: "Daily life, climate, transport, schools and home prices in the areas you are considering, in one report.", ja: "気になる地域の暮らし、気候、交通、学校、家の相場を調べて、1つのレポートにまとめます。" } },
 ];
@@ -157,7 +157,7 @@ export function BrandSiteView({ lang, slug }: { lang: Lang; slug: string }) {
         title={{ en: "It all starts with a chat.", ja: "すべては、気軽なおしゃべりから。" }}
         line={
           slug === "nami-japan"
-            ? { en: "Tell us about your plans, in English or Japanese. We let you know what the consultation covers and its fee first.", ja: "日本での暮らしのこと、日本語・英語でお聞かせください。ご相談の内容と料金は、先にお知らせします。" }
+            ? { en: "Tell us about your plans, in English or Japanese. The first consultation is free.", ja: "日本での暮らしのこと、日本語・英語でお聞かせください。最初のご相談は無料です。" }
             : { en: "Tell us anything, in English, Japanese or Chinese. The first consultation is free.", ja: "何でもご相談ください。日本語・英語・中国語で。最初のご相談は無料です。" }
         }
       />

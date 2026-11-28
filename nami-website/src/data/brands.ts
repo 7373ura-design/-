@@ -57,8 +57,8 @@ export const brands: Brand[] = [
     name: "NAMI Japan",
     tagline: { en: "Your first step to living in Japan.", ja: "日本で暮らしたい方の、最初の相談窓口。" },
     lead: {
-      en: "For people in Australia who want to live in Japan or own a home there: a first consultation, the visa options explained, and a report on the areas you are considering. In English or Japanese.",
-      ja: "日本に住みたい、日本に家を持ちたいオーストラリアの方へ。最初のご相談、ビザの種類のご説明、気になる地域の調査レポートまで。日本語・英語で。",
+      en: "For people in Australia who want to live in Japan or own a home there: a free first consultation, the visa options explained, and a report on the areas you are considering. In English or Japanese.",
+      ja: "日本に住みたい、日本に家を持ちたいオーストラリアの方へ。無料のご相談から、ビザの種類のご説明、気になる地域の調査レポートまで。日本語・英語で。",
     },
     services: [],
     guides: [],
