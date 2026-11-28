@@ -51,16 +51,19 @@ export function Header() {
       >
         {tr({ ja: "本文へ", en: "Skip to content" }, lang)}
       </a>
+      {/* On a brand site, the accent colour becomes the brand's colour */}
+      {site && <style>{`:root{--color-vermilion:${site.color}}`}</style>}
       <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-cream">
         <div className="mx-auto flex h-20 w-full max-w-[1360px] items-center justify-between px-5 md:h-24 md:px-10 lg:px-16">
           <div className="flex min-w-0 flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-4">
-            <Logo href={localHref(lang, "/")} priority className={`${site ? "h-6" : "h-7"} w-auto sm:h-9 md:h-10`} />
+            <Logo href={localHref(lang, "/")} src={site?.logo} priority className={`${site ? "h-6" : "h-7"} w-auto sm:h-9 md:h-10`} />
             {site && (
               <Link
                 href={localHref(lang, `/${site.slug}`)}
-                className="title text-[1rem] !leading-none tracking-[0.1em] text-navy transition-colors hover:text-vermilion sm:border-l sm:border-navy/25 sm:pl-4 sm:text-[1.4rem] md:text-[1.7rem]"
+                style={{ color: site.color }}
+                className="label text-[0.8rem] !leading-none !tracking-[0.3em] transition-opacity hover:opacity-70 sm:text-[1rem] md:text-[1.15rem]"
               >
-                {site.short}
+                {site.short.toUpperCase()}
               </Link>
             )}
           </div>
@@ -113,8 +116,8 @@ export function Header() {
       >
         <div className="flex h-20 items-center justify-between px-5 md:px-10">
           <div className="flex items-center gap-3">
-            <Logo href={localHref(lang, "/")} className="h-9 w-auto" />
-            {site && <span className="title border-l border-navy/25 pl-3 text-[1.5rem] !leading-none tracking-[0.08em]">{site.short}</span>}
+            <Logo href={localHref(lang, "/")} src={site?.logo} className="h-9 w-auto" />
+            {site && <span style={{ color: site.color }} className="label text-[1rem] !leading-none !tracking-[0.3em]">{site.short.toUpperCase()}</span>}
           </div>
           <button
             type="button"

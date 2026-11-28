@@ -16,6 +16,10 @@ export type BrandSite = {
   slug: string;
   /** Short name shown next to the NAMI logo, e.g. "Home". */
   short: string;
+  /** The brand's colour: its name, headings' small labels and buttons use it. */
+  color: string;
+  /** The NAMI logo with the brand's own sea colour. */
+  logo: string;
   /** One line: who this site is for. */
   forWho: Bi;
   /** Menu of the brand site (anchors on its top page, then guides and contact). */
@@ -31,6 +35,8 @@ export const brandSites: BrandSite[] = [
   {
     slug: "nami-home",
     short: "Home",
+    color: "#9A6B3F",
+    logo: "/images/logo/nami-logo-home.png",
     forWho: { en: "For anyone designing, building or renovating a home.", ja: "家を建てる・直す・整えるすべての方へ。" },
     menu: [
       { href: "/nami-home#services", label: { en: "SERVICES", ja: "サービス" } },
@@ -58,6 +64,8 @@ export const brandSites: BrandSite[] = [
   {
     slug: "nami-value",
     short: "Value",
+    color: "#3B4A9A",
+    logo: "/images/logo/nami-logo-value.png",
     forWho: { en: "For owners who want to sell or rent sooner, on better terms.", ja: "家を早く、良い条件で売りたい・貸したい方へ。" },
     menu: [
       { href: "/nami-value#services", label: { en: "SERVICES", ja: "サービス" } },
@@ -96,6 +104,8 @@ export const brandSites: BrandSite[] = [
   {
     slug: "nami-works",
     short: "Works",
+    color: "#2F8A6E",
+    logo: "/images/logo/nami-logo-works.png",
     forWho: { en: "For offices, clinics, shops and cafés.", ja: "オフィス、クリニック、お店、カフェへ。" },
     menu: [
       { href: "/nami-works#concepts", label: { en: "CONCEPTS", ja: "デザイン事例" } },

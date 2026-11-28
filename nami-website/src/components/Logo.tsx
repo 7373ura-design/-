@@ -7,7 +7,10 @@ export function Logo({
   className = "h-10 w-auto",
   priority = false,
   href = "/",
+  src,
 }: {
+  /** Another colour version of the same logo, e.g. a brand's own. */
+  src?: string;
   stacked?: boolean;
   className?: string;
   priority?: boolean;
@@ -16,7 +19,7 @@ export function Logo({
   return (
     <Link href={href} aria-label="NAMI — Home" className="inline-flex shrink-0 items-center">
       <Image
-        src={stacked ? "/images/logo/nami-logo-stacked.png" : "/images/logo/nami-logo.png"}
+        src={src ?? (stacked ? "/images/logo/nami-logo-stacked.png" : "/images/logo/nami-logo.png")}
         alt="NAMI"
         width={stacked ? 482 : 724}
         height={stacked ? 442 : 188}
